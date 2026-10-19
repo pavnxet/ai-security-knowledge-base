@@ -1,0 +1,15 @@
+name: ggshield
+platforms:
+- generic
+detects: 500+ secret types incl. pre-commit hook
+install: pip install ggshield
+run: ggshield secret scan path .
+output_format: text/json
+maps_to:
+- SKB-GEN-SECRETS-0022
+license: MIT
+source: GitGuardian/ggshield
+requires: external-binary+token
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

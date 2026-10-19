@@ -1,0 +1,17 @@
+name: emba
+platforms:
+- iot
+detects: Firmware security analysis (embedded)
+install: git clone https://github.com/e-m-b-a/emba && cd emba
+run: ./emba -f firmware.bin -l ./logs
+output_format: html/json
+maps_to:
+- SKB-IOT-SECRETS-0059
+- SKB-IOT-UPDATE-0057
+- SKB-IOT-EXPOSURE-0058
+license: GPL-3.0
+source: e-m-b-a/emba
+requires: external-binary+linux
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

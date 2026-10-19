@@ -1,0 +1,16 @@
+name: helmet
+platforms:
+- web
+detects: Missing/insecure HTTP security headers (Express)
+install: npm install helmet
+run: 'app.use(require(''helmet'')())  # then verify headers'
+output_format: n/a
+maps_to:
+- SKB-WEB-HEADERS-0011
+- SKB-WEB-NET-0012
+license: MIT
+source: helmetjs/helmet
+requires: library
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

@@ -1,0 +1,20 @@
+name: mobsf
+platforms:
+- mobile
+- android
+- ios
+detects: Automated mobile static + dynamic analysis
+install: docker pull opensecurity/mobile-security-framework-mobsf
+run: docker run -p 8000:8000 opensecurity/mobile-security-framework-mobsf
+output_format: json/api
+maps_to:
+- SKB-MOB-STORAGE-0024
+- SKB-MOB-NETWORK-0026
+- SKB-AND-COMPONENTS-0027
+- SKB-AND-WEBVIEW-0029
+license: GPL-3.0
+source: MobSF/Mobile-Security-Framework-MobSF
+requires: external-binary+docker
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

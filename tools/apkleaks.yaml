@@ -1,0 +1,16 @@
+name: apkleaks
+platforms:
+- android
+- mobile
+detects: Secrets, URIs and endpoints inside an APK
+install: pip install apkleaks
+run: apkleaks -f app.apk -o apkleaks.json
+output_format: json
+maps_to:
+- SKB-MOB-APKSECRETS-0031
+license: Apache-2.0
+source: dwisiswant0/apkleaks
+requires: external-binary
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

@@ -1,0 +1,23 @@
+name: semgrep
+platforms:
+- web
+- api
+- cloud
+- web3
+- llm
+- vibe
+detects: Static patterns for injection, XSS, misconfig across many languages
+install: pip install semgrep
+run: semgrep --config p/owasp-top-ten --config p/secrets --json -o semgrep.json .
+output_format: json
+maps_to:
+- SKB-WEB-INJECT-0003
+- SKB-WEB-XSS-0004
+- SKB-WEB-DESER-0009
+- SKB-W3-REENTRANCY-0060
+- SKB-LLM-INJECT-0065
+license: LGPL-2.1
+source: semgrep/semgrep
+requires: external-binary
+verified: true
+verified_on: '2026-10-19'

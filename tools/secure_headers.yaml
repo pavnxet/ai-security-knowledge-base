@@ -1,0 +1,15 @@
+name: secure_headers
+platforms:
+- web
+detects: Security headers with safe defaults (Rails)
+install: gem install secure_headers
+run: 'SecureHeaders::Configuration.default  # then verify headers'
+output_format: n/a
+maps_to:
+- SKB-WEB-HEADERS-0011
+license: MIT
+source: github/secure_headers
+requires: library
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

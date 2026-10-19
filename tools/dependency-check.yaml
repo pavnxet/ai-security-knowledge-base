@@ -1,0 +1,18 @@
+name: dependency-check
+platforms:
+- generic
+- web
+- api
+- cloud
+detects: Vulnerable dependencies (SCA) against CVE/NVD
+install: 'brew install dependency-check  # or docker'
+run: dependency-check --project app --scan . --format JSON --out dc.json
+output_format: json
+maps_to:
+- SKB-GEN-SCA-0023
+- SKB-VIBE-SLOPSQUAT-0073
+license: Apache-2.0
+source: dependency-check/DependencyCheck
+requires: external-binary
+verified: true
+verified_on: '2026-10-19'

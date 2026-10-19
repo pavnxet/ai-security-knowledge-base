@@ -1,0 +1,21 @@
+name: gitleaks
+platforms:
+- generic
+- web
+- api
+- cloud
+- vibe
+detects: Hardcoded secrets in working tree and git history
+install: 'brew install gitleaks  # or: go install github.com/gitleaks/gitleaks/v8@latest'
+run: 'gitleaks dir --report-format json --report-path gitleaks.json .  # v8.30+; ''detect'' is deprecated'
+output_format: json
+maps_to:
+- SKB-GEN-SECRETS-0022
+- SKB-VIBE-SECRETS-0069
+- SKB-TG-SECRETS-0033
+- SKB-MOB-APKSECRETS-0031
+license: MIT
+source: gitleaks/gitleaks
+requires: external-binary
+verified: true
+verified_on: '2026-10-19'

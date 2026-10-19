@@ -1,0 +1,19 @@
+name: zaproxy
+platforms:
+- web
+- api
+detects: 'Runtime web/API vulnerabilities (DAST): headers, XSS, injection, auth'
+install: docker pull zaproxy/zap-stable
+run: docker run -t zaproxy/zap-stable zap-baseline.py -t https://TARGET -J zap.json
+output_format: json
+maps_to:
+- SKB-WEB-HEADERS-0011
+- SKB-WEB-XSS-0004
+- SKB-WEB-INJECT-0003
+- SKB-API-AUTH-0015
+license: Apache-2.0
+source: zaproxy/zaproxy
+requires: external-binary+network
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit

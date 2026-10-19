@@ -1,0 +1,15 @@
+name: tosint
+platforms:
+- telegram
+detects: Telegram bot token exposure recon (defensive)
+install: 'pip install -r requirements.txt  # from repo'
+run: python3 tosint.py --token <BOT_TOKEN>
+output_format: text
+maps_to:
+- SKB-TG-SECRETS-0033
+license: GPL-3.0
+source: drego85/tosint
+requires: external-script
+verified: false
+verified_on: '2026-10-19'
+verify_note: install/run not confirmed against the tool README at the pinned commit
