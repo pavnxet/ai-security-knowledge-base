@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-319
+cwe_source: mapped
 owasp:
 - BASE:5. No TLS
 refs:

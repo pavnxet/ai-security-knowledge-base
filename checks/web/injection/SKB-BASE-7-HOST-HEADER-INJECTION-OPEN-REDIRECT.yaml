@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-601
+cwe_source: mapped
 owasp:
 - BASE:7. Host header injection / open redirect
 refs:

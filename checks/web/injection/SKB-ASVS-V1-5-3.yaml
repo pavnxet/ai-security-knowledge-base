@@ -13,9 +13,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-502
+cwe_source: mapped
 owasp:
 - ASVS:V1.5.3
 refs:
@@ -23,7 +24,7 @@ refs:
 - ASVS V1.5.3
 check: Verify that different parsers used in the application for the same data type (e.g., JSON parsers,
   XML parsers, URL parsers), perform parsing in a consistent way and use the same character encoding mechanism
-  to avoid issues such as JSON Interoperability vulnerabilities or differen
+  to avoid issues such as JSON Interoperabili
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V1.5.3) for remediation.'
 detect:

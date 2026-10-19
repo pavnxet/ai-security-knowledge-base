@@ -14,14 +14,19 @@ phase:
 severity: high
 priority: 65
 cwe:
+- CWE-367
+- CWE-840
+- CWE-841
 - CWE-22
-cwe_source: heuristic
+- CWE-89
+- CWE-79
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Why Business Logic Flaws Are Different
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Why Business Logic Flaws Are Different
 check: Why Business Logic Flaws Are Different Most well-known web vulnerabilities (SQL injection, XSS,
-  CSRF, path traversal) have a clea
+  CSR
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Why Business
   Logic Flaws Are Different) for remediation.'
 detect:

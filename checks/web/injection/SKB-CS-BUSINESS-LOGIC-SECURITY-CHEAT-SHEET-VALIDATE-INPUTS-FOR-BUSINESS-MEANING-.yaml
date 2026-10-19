@@ -13,14 +13,16 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Validate Inputs for Business Meaning, No
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Validate Inputs for Business Meaning, No
-check: Validate Inputs for Business Meaning, Not Just Format See the [Input Validation Cheat Sheet](Input_Validation_Cheat_Sheet.md)
-  fo
+check: Validate Inputs for Business Meaning, Not Just Format See the [Input
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Validate
   Inputs for Business Meaning, Not Just Format) for remediation.'
 detect:

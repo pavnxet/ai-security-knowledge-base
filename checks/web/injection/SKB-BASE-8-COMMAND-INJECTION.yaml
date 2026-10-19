@@ -13,9 +13,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 45
-cwe: []
-cwe_source: extracted
+priority: 55
+cwe:
+- CWE-78
+cwe_source: mapped
 owasp:
 - BASE:8. Command injection
 refs:
@@ -51,10 +52,10 @@ sources:
   extraction: programmatic
   verified: true
 - repo: yesmayank/secure-coding-baseline
-  path: 11-go.md
+  path: 12-rust.md
   anchor: 7. Command injection
   commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
-  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
   license: Apache-2.0
   type: github
   extraction: programmatic
@@ -66,6 +67,6 @@ verified: true
 corroboration: 1
 last_verified: '2026-10-19'
 merged_from:
-- SKB-BASE-7-COMMAND-INJECTION
+- SKB-BASE-F545A70BC4
 aliases:
-- SKB-BASE-7-COMMAND-INJECTION
+- SKB-BASE-F545A70BC4
