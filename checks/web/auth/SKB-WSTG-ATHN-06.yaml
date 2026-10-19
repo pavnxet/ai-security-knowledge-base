@@ -1,0 +1,53 @@
+id: SKB-WSTG-ATHN-06
+title: Browser Cache Weaknesses
+summary: Browser Cache Weaknesses. Review if the application stores sensitive information on the client-side.
+  Review if access can occur without auth
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-ATHN-06
+refs:
+- WSTG-ATHN-06
+check: Browser Cache Weaknesses. Review if the application stores sensitive information on the client-side.
+  Review if access can occur without authorization.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-ATHN-06) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-ATHN-06
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

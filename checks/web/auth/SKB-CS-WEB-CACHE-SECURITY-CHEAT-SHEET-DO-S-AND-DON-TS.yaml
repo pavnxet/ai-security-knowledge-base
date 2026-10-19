@@ -1,0 +1,55 @@
+id: SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS
+title: Do's and Don'ts
+summary: 'Do''s and Don''ts Use these checks alongside the [HTTP caching requirements in RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html)
+  and the '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Cache_Security_Cheat_Sheet#Do's and Don'ts
+refs:
+- CS:Web_Cache_Security_Cheat_Sheet#Do's and Don'ts
+check: 'Do''s and Don''ts Use these checks alongside the [HTTP caching requirements in RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html)
+  and the application''s normal authorization review. Do: - Set an explicit Cache-Control policy on every
+  security-relevant response. - Verify that ev'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Cache_Security_Cheat_Sheet.md (anchor: Do''s and Don''ts)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Cache_Security_Cheat_Sheet.md
+  anchor: Do's and Don'ts
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Cache_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

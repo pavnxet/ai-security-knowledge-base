@@ -1,0 +1,57 @@
+id: SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-TECHNOLOGY-COMPONENTS
+title: Technology Components
+summary: 'Technology Components Zero Trust requires several technology categories working together: -
+  Identity and Access Management : Strong authenti'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Technology Components
+refs:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Technology Components
+check: 'Technology Components Zero Trust requires several technology categories working together: - Identity
+  and Access Management : Strong authentication (MFA) and risk-based access decisions - Zero Trust Network
+  Access (ZTNA) : Resource-specific access co'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md (anchor: Technology
+  Components) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- technology
+- components
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  anchor: Technology Components
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

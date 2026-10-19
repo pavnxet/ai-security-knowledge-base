@@ -1,0 +1,58 @@
+id: SKB-ASVS-V10-2-1
+title: OAuth Client - V10.2.1
+summary: Verify that, if the code flow is used, the OAuth client has protection against browser-based
+  request forgery attacks, commonly known as cros
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V10.2.1
+refs:
+- ASVS:V10.2.1
+- ASVS V10.2.1
+check: Verify that, if the code flow is used, the OAuth client has protection against browser-based request
+  forgery attacks, commonly known as cross-site request forgery (CSRF), which trigger token requests,
+  either by using proof key for code exchange (PKCE) functionality or checking the '
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V10.2.1) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V10.2.1
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-LEGACY-SYSTEM-CHALLENGES
+title: Legacy System Challenges
+summary: Legacy System Challenges Common Problems Legacy systems present some of the biggest challenges
+  in Zero Trust implementations, and they're of
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Legacy System Challenges
+refs:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Legacy System Challenges
+check: Legacy System Challenges Common Problems Legacy systems present some of the biggest challenges
+  in Zero Trust implementations, and they're often where attackers focus their efforts because these systems
+  are harder to secu
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md (anchor: Legacy System
+  Challenges) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- legacy
+- system
+- challenges
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  anchor: Legacy System Challenges
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

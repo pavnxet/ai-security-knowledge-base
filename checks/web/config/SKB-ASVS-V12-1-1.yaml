@@ -1,0 +1,58 @@
+id: SKB-ASVS-V12-1-1
+title: General TLS Security Guidance - V12.1.1
+summary: Verify that only the latest recommended versions of the TLS protocol are enabled, such as TLS
+  1.2 and TLS 1.3. The latest version of the TLS
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 50
+cwe:
+- CWE-400
+cwe_source: extracted
+owasp:
+- ASVS:V12.1.1
+refs:
+- ASVS:V12.1.1
+- ASVS V12.1.1
+check: Verify that only the latest recommended versions of the TLS protocol are enabled, such as TLS 1.2
+  and TLS 1.3. The latest version of the TLS protocol must be the preferred option.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V12.1.1) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V12.1.1
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

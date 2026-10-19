@@ -1,0 +1,56 @@
+id: SKB-CS-VERIFYING-THIRD-PARTY-AGENT-EXECUTION-EVIDENCE-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This cheat sheet helps developers assess execution records supplied by an agent,
+  a Model Context Protocol (MCP) server, or a se
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Verifying_Third_Party_Agent_Execution_Evidence_Cheat_Sheet#Introduction
+refs:
+- CS:Verifying_Third_Party_Agent_Execution_Evidence_Cheat_Sheet#Introduction
+check: Introduction This cheat sheet helps developers assess execution records supplied by an agent, a
+  Model Context Protocol (MCP) server, or a service they do not control. A supplier can sign a record
+  that omits actions or de
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Verifying_Third_Party_Agent_Execution_Evidence_Cheat_Sheet.md
+  (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Verifying_Third_Party_Agent_Execution_Evidence_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Verifying_Third_Party_Agent_Execution_Evidence_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

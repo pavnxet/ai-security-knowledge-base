@@ -1,0 +1,55 @@
+id: SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: 'Introduction Webhooks are HTTP callbacks: a publisher pushes event notifications to a URL that
+  a subscriber registered, so both parties run '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Webhook_Security_Cheat_Sheet#Introduction
+refs:
+- CS:Webhook_Security_Cheat_Sheet#Introduction
+check: 'Introduction Webhooks are HTTP callbacks: a publisher pushes event notifications to a URL that
+  a subscriber registered, so both parties run HTTP servers ([Standard Webhooks specification](https://github.com/standard-webhooks/standard-webhooks/blob/main/spec/standard-webhooks.md'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Webhook_Security_Cheat_Sheet.md (anchor: Introduction) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Webhook_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Webhook_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-REPLAY-DUPLICATES-AND-ABUSE
+title: Replay, Duplicates, and Abuse
+summary: Replay, Duplicates, and Abuse Replay Attack Protection A captured delivery carries a valid signature,
+  so signature verification alone does n
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Webhook_Security_Cheat_Sheet#Replay, Duplicates, and Abuse
+refs:
+- CS:Webhook_Security_Cheat_Sheet#Replay, Duplicates, and Abuse
+check: Replay, Duplicates, and Abuse Replay Attack Protection A captured delivery carries a valid signature,
+  so signature verification alone does not stop repeated processing. For protocols with authenticated
+  delivery timestamp
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Webhook_Security_Cheat_Sheet.md (anchor: Replay, Duplicates,
+  and Abuse) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- replay
+- duplicates
+- abuse
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Webhook_Security_Cheat_Sheet.md
+  anchor: Replay, Duplicates, and Abuse
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Webhook_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

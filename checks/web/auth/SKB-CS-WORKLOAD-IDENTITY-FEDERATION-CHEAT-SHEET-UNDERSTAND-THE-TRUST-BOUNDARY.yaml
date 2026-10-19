@@ -1,0 +1,57 @@
+id: SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-UNDERSTAND-THE-TRUST-BOUNDARY
+title: Understand the Trust Boundary
+summary: Understand the Trust Boundary The CI/CD platform issues a signed OIDC token describing the job.
+  The job presents it to the cloud provider, w
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Workload_Identity_Federation_Cheat_Sheet#Understand the Trust Boundary
+refs:
+- CS:Workload_Identity_Federation_Cheat_Sheet#Understand the Trust Boundary
+check: Understand the Trust Boundary The CI/CD platform issues a signed OIDC token describing the job.
+  The job presents it to the cloud provider, which validates it against a configured trust pol
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Workload_Identity_Federation_Cheat_Sheet.md (anchor: Understand
+  the Trust Boundary) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- understand
+- trust
+- boundary
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Workload_Identity_Federation_Cheat_Sheet.md
+  anchor: Understand the Trust Boundary
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Workload_Identity_Federation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

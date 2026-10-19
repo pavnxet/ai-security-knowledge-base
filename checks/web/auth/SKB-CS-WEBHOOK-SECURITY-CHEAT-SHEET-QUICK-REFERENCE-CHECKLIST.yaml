@@ -1,0 +1,57 @@
+id: SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-QUICK-REFERENCE-CHECKLIST
+title: Quick Reference Checklist
+summary: Quick Reference Checklist Stripe's and GitHub's best-practice pages ([Stripe](https://docs.stripe.com/webhooks
+  best-practices), [GitHub](htt
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Webhook_Security_Cheat_Sheet#Quick Reference Checklist
+refs:
+- CS:Webhook_Security_Cheat_Sheet#Quick Reference Checklist
+check: Quick Reference Checklist Stripe's and GitHub's best-practice pages ([Stripe](https://docs.stripe.com/webhooks
+  best-practices), [GitHub](https://docs.github.com/en/webhooks/using-webhooks/best-practices-for-using-webh
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Webhook_Security_Cheat_Sheet.md (anchor: Quick Reference
+  Checklist) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- quick
+- reference
+- checklist
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Webhook_Security_Cheat_Sheet.md
+  anchor: Quick Reference Checklist
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Webhook_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

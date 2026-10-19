@@ -1,0 +1,59 @@
+id: SKB-ASVS-V10-7-2
+title: Consent Management - V10.7.2
+summary: Verify that when the authorization server prompts for user consent, it presents sufficient and
+  clear information about what is being consent
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-366
+cwe_source: extracted
+owasp:
+- ASVS:V10.7.2
+refs:
+- ASVS:V10.7.2
+- ASVS V10.7.2
+check: Verify that when the authorization server prompts for user consent, it presents sufficient and
+  clear information about what is being consented to. When applicable, this should include the nature
+  of the requested authorizations (typically based on sco
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V10.7.2) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V10.7.2
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

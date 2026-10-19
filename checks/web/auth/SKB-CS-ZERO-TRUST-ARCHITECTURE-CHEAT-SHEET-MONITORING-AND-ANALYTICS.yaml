@@ -1,0 +1,57 @@
+id: SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-MONITORING-AND-ANALYTICS
+title: Monitoring and Analytics
+summary: 'Monitoring and Analytics Security Operations Set up these monitoring capabilities: - SIEM integration
+  : Collect and analyze logs from all sy'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Monitoring and Analytics
+refs:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Monitoring and Analytics
+check: 'Monitoring and Analytics Security Operations Set up these monitoring capabilities: - SIEM integration
+  : Collect and analyze logs from all systems - Threat hunting : Actively look for signs of attack - Automated
+  response'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md (anchor: Monitoring
+  and Analytics) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- monitoring
+- analytics
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  anchor: Monitoring and Analytics
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

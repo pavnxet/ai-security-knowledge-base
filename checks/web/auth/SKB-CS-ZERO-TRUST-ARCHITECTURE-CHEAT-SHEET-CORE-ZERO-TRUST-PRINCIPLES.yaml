@@ -1,0 +1,57 @@
+id: SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-CORE-ZERO-TRUST-PRINCIPLES
+title: Core Zero Trust Principles
+summary: 'Core Zero Trust Principles These principles come from [NIST SP 800-207](https://csrc.nist.gov/publications/detail/sp/800-207/final):
+  1. All '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Core Zero Trust Principles
+refs:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Core Zero Trust Principles
+check: 'Core Zero Trust Principles These principles come from [NIST SP 800-207](https://csrc.nist.gov/publications/detail/sp/800-207/final):
+  1. All Data Sources and Computing Services are Resources Everything in your network is'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md (anchor: Core Zero
+  Trust Principles) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- core
+- zero
+- trust
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  anchor: Core Zero Trust Principles
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
