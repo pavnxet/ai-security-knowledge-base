@@ -1,0 +1,16 @@
+title = "secure-kb"
+[extend]
+useDefault = true
+[[allowlists]]
+description = "card IDs"
+regexTarget = "match"
+regexes = ['''SKB-[A-Z0-9]+-[A-Z0-9-]+''']
+[[allowlists]]
+description = "detection-regex literals"
+regexTarget = "match"
+regexes = ['''AKIA\[0-9A-Z\]\{16\}''', '''-----BEGIN \.\*PRIVATE KEY-----''', '''postgresql://user:password@host''']
+
+[[allowlists]]
+description = "documented canary fixture (fake key used only by the CI self-test; appears in past commits)"
+regexTarget = "match"
+regexes = ['''AKIAQWERTYUIOPASDFGH''']

@@ -79,7 +79,7 @@ jobs:
         run: |
           ./gitleaks dir --config .gitleaks.toml --report-format json --report-path gl-dir.json . || true
           python3 scripts/gitleaks_report.py gl-dir.json
-          ./gitleaks git --config .gitleaks.toml --report-format json --report-path gl-git.json . || true
+          ./gitleaks git --config .gitleaks.history.toml --report-format json --report-path gl-git.json . || true
           python3 scripts/gitleaks_report.py gl-git.json
       - name: canary - the allowlist must NOT blind gitleaks
         run: |

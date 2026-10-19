@@ -10,3 +10,6 @@ description = "detection-regex literals"
 regexTarget = "match"
 regexes = ['''AKIA\[0-9A-Z\]\{16\}''', '''-----BEGIN \.\*PRIVATE KEY-----''', '''postgresql://user:password@host''']
 
+[[allowlists]]
+description = "history-scan config contains the documented canary fixture"
+paths = ['''\.gitleaks\.history\.toml''']
