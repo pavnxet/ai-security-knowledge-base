@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.9.0] — public beta
+### Added
+- **GitHub Pages site** (`docs/`) — Claude-inspired theme, zero-build static HTML/CSS/JS.
+- **Sharded index** — `index/checks/part-001..005.jsonl` (each ≤ 800 KB) for no-build `jq`/`grep`.
+- `CITATION.cff`, `RELEASE_CANDIDATE.md`, `PUBLIC_LAUNCH_CHECKLIST.md`, `PROGRESS.md`.
+### Changed
+- **Source-identity card IDs** (`SKB-<SRC>-<official-id>`) — merges can no longer churn IDs;
+  merged members recorded in `aliases[]`.
+- **Deterministic, order-independent build** — identical `content_hash` under shuffled input.
+- `index/` and `index/kb.sqlite` are **auto-built on first use** (gitignored).
+- Internal reports moved to `docs/history/`.
+### Known
+- Retrieval below target (held-out 0.66, curated v2 0.44, v2_dev 0.25). Published as beta, not v1.0.0.
+
+
 ## v0.2.1 (2026-10-19)
 
 ### Phase fixes

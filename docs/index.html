@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>secure-kb — AI-agent-searchable security verification knowledge base</title>
+<meta name="description" content="2,057 atomic security check cards distilled from 67 public security repositories, with provenance back to source path, anchor and commit. Built for AI agents.">
+<meta property="og:title" content="secure-kb">
+<meta property="og:description" content="An AI-agent-searchable security verification knowledge base — 2,057 check cards from 67 public security repos.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%23D97757'/></svg>">
+</head>
+<body>
+
+<header class="nav"><div class="wrap">
+  <span class="brand"><span class="dot"></span>secure-kb</span>
+  <nav>
+    <a href="#what">What it is</a>
+    <a href="#start">Quick start</a>
+    <a href="#workflow">Workflow</a>
+    <a href="#coverage">Coverage</a>
+    <a href="#bench">Benchmarks</a>
+    <a href="#limits">Limitations</a>
+  </nav>
+</div></header>
+
+<main>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow reveal">Public beta · v0.9.0</span>
+  <h1 class="reveal">Give an agent a codebase.<br><em>Get the checks that matter.</em></h1>
+  <p class="lede reveal">secure-kb merges 67 public security repositories into <b>2,057 atomic check cards</b>.
+  Each card traces to a real file, anchor and commit — so an agent can go from “I have this codebase”
+  to “here are the 15–25 checks that matter” in seconds.</p>
+  <div class="cta reveal">
+    <a class="btn primary" href="#start">Get started</a>
+    <a class="btn" href="https://github.com/pavnxet/awesome-vulnerability-tests">View on GitHub</a>
+  </div>
+  <div class="stats reveal">
+    <div class="stat"><b>2,057</b><span>check cards</span></div>
+    <div class="stat"><b>67</b><span>source repositories</span></div>
+    <div class="stat"><b>13</b><span>platforms covered</span></div>
+    <div class="stat"><b>99.3%</b><span>programmatic extraction</span></div>
+    <div class="stat"><b>~0.3s</b><span>warm query latency</span></div>
+  </div>
+</div></section>
+
+<section id="what"><div class="wrap">
+  <h2 class="reveal">What it is — and what it is not</h2>
+  <p class="sub reveal">A knowledge base of security checks, packaged for retrieval by AI agents. It contains no running service and executes nothing against your code.</p>
+  <div class="grid">
+    <div class="card reveal"><span class="pill g">It is</span><h3>A retrieval layer</h3>
+      <p>Distilled, normalised, atomic cards with provenance, a router, a fast gate, and a SQLite FTS5 index.</p></div>
+    <div class="card reveal"><span class="pill g">It is</span><h3>A merged corpus</h3>
+      <p>OWASP ASVS 5.0, MASVS/MASTG, WSTG, Top 10, API Top 10, LLM Top 10, 137 cheat sheets, web3, IoT and more.</p></div>
+    <div class="card reveal"><span class="pill w">It is not</span><h3>A scanner</h3>
+      <p>It tells an agent <em>what to verify</em>. Tool adapters describe how to call scanners; they don’t run them for you.</p></div>
+    <div class="card reveal"><span class="pill w">It is not</span><h3>A substitute for an audit</h3>
+      <p>It does not replace a professional security review. Card text is defensive guidance, never exploit payloads.</p></div>
+  </div>
+</div></section>
+
+<section id="start"><div class="wrap">
+  <h2 class="reveal">Install in 60 seconds</h2>
+  <p class="sub reveal">Zero required dependencies — standard-library Python only. <code>index/</code> and <code>kb.sqlite</code> build themselves on first use.</p>
+  <pre class="reveal"><code>git clone https://github.com/pavnxet/awesome-vulnerability-tests.git
+cd awesome-vulnerability-tests
+
+python3 cli/secure_kb.py detect /path/to/your/project
+python3 cli/secure_kb.py profile web --gate fast --format brief
+python3 cli/secure_kb.py search "how do I stop sql injection" --k 5
+python3 cli/secure_kb.py get SKB-ASVS-V1-2-4 --format md</code></pre>
+  <div class="note reveal" style="margin-top:18px">
+    <b>Zero-dependency fallback:</b> the index ships as shards, so plain tooling works with no build —
+    <span class="mono">cat index/checks/*.jsonl | jq -c 'select(.severity=="critical")'</span>
+  </div>
+</div></section>
+
+<section id="workflow"><div class="wrap">
+  <h2 class="reveal">The five-step agent workflow</h2>
+  <p class="sub reveal">Detect → profile → fast gate → drill down → report.</p>
+  <div class="steps">
+    <div class="step reveal"><div><b>Detect the stack</b><p>Fingerprint files and signals to rank platforms: web, api, mobile, telegram, cloud, web3, llm, vibe, browser-ext, desktop.</p></div></div>
+    <div class="step reveal"><div><b>Pick a profile</b><p>Each platform maps to an ordered gate. Multiple profiles merge (e.g. Cloudflare Worker + Telegram bot + LLM).</p></div></div>
+    <div class="step reveal"><div><b>Run the fast gate</b><p>The top checks by priority, domain-balanced, in a tiny token budget.</p></div></div>
+    <div class="step reveal"><div><b>Drill into cards</b><p>Fetch one card by id with <code>get</code>, or resolve by CWE / ASVS / MASVS / OWASP ref.</p></div></div>
+    <div class="step reveal"><div><b>Report</b><p>Record pass / fail / n-a / unknown with evidence; no “pass” without evidence.</p></div></div>
+  </div>
+</div></section>
+
+<section id="coverage"><div class="wrap">
+  <h2 class="reveal">Coverage</h2>
+  <p class="sub reveal">Cards by platform. Every declared platform has cards; no platform is empty.</p>
+  <div class="tablewrap reveal">
+  <table>
+    <thead><tr><th>Platform</th><th>Source examples</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Web / API</td><td>ASVS, WSTG, Top 10, API Top 10, Cheat Sheets</td><td class="yes">covered</td></tr>
+      <tr><td>Mobile (Android / iOS)</td><td>MASVS, MASTG</td><td class="yes">covered</td></tr>
+      <tr><td>LLM / AI apps</td><td>OWASP LLM Top 10, RAG &amp; prompt-injection cheat sheets</td><td class="yes">covered</td></tr>
+      <tr><td>Cloud / DevOps / IoT</td><td>OWASP ISTG, Docker, Kubernetes, CI/CD cheat sheets</td><td class="yes">covered</td></tr>
+      <tr><td>Smart contracts</td><td>kadenzipfel, crytic</td><td class="yes">covered</td></tr>
+      <tr><td>Vibe-coded apps</td><td>vibe-security-skill, secure-coding-baseline</td><td class="yes">covered</td></tr>
+      <tr><td>Telegram bots / browser-ext / desktop</td><td>Authored cards (official-doc verified)</td><td class="part">authored</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div></section>
+
+<section id="bench"><div class="wrap">
+  <h2 class="reveal">Measured benchmarks — reported honestly</h2>
+  <p class="sub reveal">Held-out sets, frozen. Lower numbers are shown as they are; this is a beta.</p>
+  <div class="tablewrap reveal">
+  <table>
+    <thead><tr><th>Set</th><th>n</th><th>recall@5</th><th>Target</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Held-out (all)</td><td>154</td><td>0.66</td><td>≥ 0.70</td><td class="no">below</td></tr>
+      <tr><td>Curated v1</td><td>59</td><td>0.25</td><td>—</td><td class="part">reference</td></tr>
+      <tr><td>Curated v2 (standards-derived)</td><td>59</td><td>0.44</td><td>≥ 0.60</td><td class="no">below</td></tr>
+      <tr><td>v2_dev (developer vocabulary)</td><td>40</td><td>0.25</td><td>≥ 0.60</td><td class="no">below</td></tr>
+      <tr><td>Templated</td><td>95</td><td>0.92</td><td>≥ 0.90</td><td class="yes">met</td></tr>
+      <tr><td>Lab coverage (strict)</td><td>30</td><td>73.3%</td><td>—</td><td class="part">partial</td></tr>
+      <tr><td>Fast-gate recall (strict)</td><td>30</td><td>26.7%</td><td>≥ 0.70</td><td class="no">below</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Why it’s a beta:</b> retrieval targets are not met, so this is published as <b>v0.9.0</b>, not v1.0.0. The build itself is deterministic and shuffle-stable (content hash <span class="mono">0c921baa291a4af4</span>).</div>
+</div></section>
+
+<section id="limits"><div class="wrap">
+  <h2 class="reveal">Known limitations</h2>
+  <p class="sub reveal">Stated plainly, so you can judge fit.</p>
+  <div class="grid">
+    <div class="card reveal"><h3>Retrieval below target</h3><p>Free-text paraphrase recall is the weakest area. Corpus growth added distractors; dedupe and re-rank experiments did not recover it.</p></div>
+    <div class="card reveal"><h3>First-call index build</h3><p>Building <code>kb.sqlite</code> on first use takes ~19s on a cold checkout; later queries are sub-second.</p></div>
+    <div class="card reveal"><h3>Not-yet-implemented</h3><p><code>kind: check/guidance</code>, deterministic <code>fix_refs</code>, official-source CWE enrichment, and real-lab end-to-end runs.</p></div>
+    <div class="card reveal"><h3>Unverified items</h3><p>8 of 12 tool adapters; the Telegram <code>secret_token</code> claim; two project-declared licences.</p></div>
+  </div>
+</div></section>
+
+<section id="license"><div class="wrap">
+  <h2 class="reveal">License &amp; attribution</h2>
+  <div class="grid">
+    <div class="card reveal"><h3>Content — CC BY-SA 4.0</h3><p>Derived largely from OWASP material; attribution and ShareAlike preserved. Sources that are unlicensed or reference-only are not redistributed.</p></div>
+    <div class="card reveal"><h3>Code — MIT</h3><p>The CLI, MCP server and build scripts. No GPL/AGPL tool code is vendored.</p></div>
+  </div>
+  <div class="note reveal" style="margin-top:18px"><b>Human legal review recommended.</b> This knowledge base does not replace a professional security audit, and implies no OWASP endorsement.</div>
+</div></section>
+
+</main>
+
+<footer><div class="wrap">
+  <span>secure-kb v0.9.0 · public beta · <span class="mono">content hash 0c921baa291a4af4</span></span>
+  <span><a href="https://github.com/pavnxet/awesome-vulnerability-tests">GitHub</a> · <a href="https://github.com/pavnxet/awesome-vulnerability-tests/releases">Releases</a> · <a href="https://github.com/pavnxet/awesome-vulnerability-tests/blob/main/CONTRIBUTING.md">Contributing</a></span>
+</div></footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

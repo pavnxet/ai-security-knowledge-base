@@ -1,142 +1,140 @@
 # secure-kb
 
-**One merged, AI-agent-searchable security verification knowledge base.** Give an agent a codebase
-and it gets the exact 15–25 checks that matter in seconds, with a tiny token budget, then drills
-down only when needed.
+**An AI-agent-searchable security verification knowledge base.**
+2,057 atomic check cards distilled from 67 public security repositories — each traceable to a real
+file, anchor and commit.
 
-Built from **67 public security repos** into **832 atomic check cards** — 817 of them extracted
-programmatically from real source files at pinned commits — covering web, API, mobile (Android/iOS),
-Telegram bots, cloud/DevOps, IoT, smart contracts, LLM/AI apps, vibe-coded apps, browser extensions
-and desktop.
+> **Status: public beta (v0.9.0).** The build is deterministic and reproducible; retrieval targets are
+> **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
+> [Known limitations](#known-limitations).
+
+[**Website →**](https://pavnxet.github.io/awesome-vulnerability-tests/) ·
+[Releases](https://github.com/pavnxet/awesome-vulnerability-tests/releases) ·
+[Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
+
+---
+
+## What it is — and what it is not
+
+**It is** a retrieval layer for AI agents: a merged, normalised corpus of security *checks* with
+provenance, a platform router, a fast gate, and a zero-dependency SQLite FTS5 index.
+
+**It is not** a scanner, and it does not replace a professional security audit. It tells an agent
+*what to verify*; tool adapters only describe how to invoke external scanners.
 
 ## Install in 60 seconds
 
-The repository is currently **private**. Clone with a token (or use the public form once it is public):
+Zero required dependencies (standard-library Python only). `index/` and `index/kb.sqlite` build
+themselves on first use.
 
 ```bash
-# private (replace <TOKEN> with a GitHub token that can read the repo)
-git clone https://<TOKEN>@github.com/pavnxet/secure-kb.git
-cd secure-kb
+git clone https://github.com/pavnxet/awesome-vulnerability-tests.git
+cd awesome-vulnerability-tests
 
-# public (ready for later - same command, no token)
-# git clone https://github.com/pavnxet/secure-kb.git
-
-# 1. detect the stack of any codebase
-python3 cli/secure_kb.py detect /path/to/your-app
-
-# 2. get the ordered fast gate for the detected platform
-python3 cli/secure_kb.py profile telegram --gate fast
-
-# 3. search and drill down
-python3 cli/secure_kb.py search "webhook secret" --k 5
-python3 cli/secure_kb.py get SKB-TG-WEBHOOK-0034 --format md
+python3 cli/secure_kb.py detect /path/to/project
+python3 cli/secure_kb.py profile web --gate fast --format brief
+python3 cli/secure_kb.py search "how do I stop sql injection" --k 5
+python3 cli/secure_kb.py get SKB-ASVS-V1-2-4 --format md
 ```
 
-**No install, no build step.** The CLI is Python-stdlib only; the generated `index/` is committed, so
-a plain clone works immediately. Python 3.9+.
-
-### Zero-dependency fallback (no CLI, no SQLite)
+**No-build fallback** — the index ships as shards, so plain tooling works with no build step:
 
 ```bash
-# every critical/high check for a platform
-jq -c 'select((.platforms|index("telegram")) and (.severity=="critical" or .severity=="high"))
-       | {id,title,check}' index/checks.jsonl
-
-# grep shards (one file per platform)
-grep -i webhook index/by_platform/telegram.jsonl
-
-# cheap scan of everything
-cut -f1,2,4 index/brief.tsv | head
+cat index/checks/*.jsonl | jq -c 'select(.severity=="critical")'
+cat index/checks/*.jsonl | grep -c "SKB-ASVS"
 ```
 
-### MCP server (Claude Desktop / any MCP client)
+## The five-step agent workflow
+
+1. **Detect** the stack (`detect`) → ranked platforms.
+2. **Profile** it (`profile <platform> --gate fast`).
+3. **Gate** — the top checks by priority, domain-balanced, in a small token budget.
+4. **Drill down** (`get <id>`, or by CWE / ASVS / MASVS ref).
+5. **Report** — pass / fail / n-a / unknown, with evidence. No “pass” without evidence.
+
+## MCP setup
+
+The MCP server exposes `search_checks`, `get_check`, `profile_gate`, `detect_stack`, `report_init`,
+`report_validate`.
+
+**Claude Code**
+
+```bash
+claude mcp add secure-kb -- python3 /abs/path/to/awesome-vulnerability-tests/mcp/server.py
+```
+
+**Claude Desktop** (`claude_desktop_config.json`)
 
 ```json
-{
-  "mcpServers": {
-    "secure-kb": {
-      "command": "python3",
-      "args": ["/absolute/path/to/secure-kb/mcp/server.py"]
-    }
-  }
-}
+{ "mcpServers": { "secure-kb": {
+  "command": "python3",
+  "args": ["/abs/path/to/awesome-vulnerability-tests/mcp/server.py"] } } }
 ```
 
-Tools exposed: `detect_stack`, `get_profile`, `search_checks`, `get_check`, `list_tools`,
-`start_report`, `submit_result`. Read-only on any target codebase.
+**Generic MCP client** — JSON-RPC 2.0 over stdio; `initialize` then `tools/call`.
 
-## Why
+## What's in it
 
-Security checklists are scattered across dozens of repos in dozens of formats. An agent can't read
-them all, and shouldn't. secure-kb normalises them into small cards **with real file provenance**,
-adds a router so detection → relevant checks is instant, and ships a zero-dependency fallback.
+| Source | Cards | Licence |
+|---|---|---|
+| OWASP ASVS 5.0 | 345 | CC BY-SA 4.0 |
+| OWASP Cheat Sheet Series | 1,045 | CC BY-SA 4.0 |
+| OWASP MASTG (Android/iOS tests) | 92 | CC BY-SA 4.0 |
+| OWASP WSTG | 115 | CC BY-SA 4.0 |
+| OWASP MASVS | 24 | CC BY-SA 4.0 |
+| OWASP Top 10 / API Top 10 / LLM Top 10 | 30 | CC BY-SA 4.0 |
+| Web3 (kadenzipfel, crytic) | 49 | see `LICENSES/` |
+| OWASP ISTG (IoT) | 19 | CC BY-SA 4.0 |
+| vibe-security-skill, baselines, checklists (Tier-2) | 468 | see `LICENSES/` |
+| Authored (Telegram, browser-ext, desktop, IoT gaps) | 15 | CC BY-SA 4.0 |
 
-## Repository layout
+Cards use **source-identity IDs** — `SKB-<SRC>-<official-id>` (e.g. `SKB-ASVS-V3-4-5`,
+`SKB-WSTG-INFO-01`) or a short hash of `repo|path|anchor`. Merged cards keep every member id in
+`aliases[]`, so any historical id still resolves. See [`docs/PIPELINE.md`](docs/PIPELINE.md).
 
-```
-AGENTS.md            the only file an agent reads first (<=1.5k tokens)
-llms.txt             crawler pointers
-manifest.json        version, counts, content hash
-sources.yaml         67 sources: url, commit SHA, license, archived, tier, ingest_mode
-schema/              JSON schemas + controlled vocabularies
-checks/<platform>/<domain>/*.yaml   source-of-truth cards
-profiles/<platform>.yaml            ordered launch gates (fast/standard/full)
-playbooks/           quick-25, pr-review, pre-launch, full-audit
-tools/               scanner adapters (no vendored code) + verification status
-fixtures/            lab -> check mappings (benchmark)
-references/          Tier-3 link index + known gaps
-bench/               held-out benchmark + results
-docs/PRIORITY.md     the priority formula
-index/               GENERATED: checks.jsonl, brief.tsv, by_*.json, by_platform/, router.json, kb.sqlite (FTS5)
-cli/ mcp/ scripts/ tests/  .github/workflows/
-```
+## Benchmarks
 
-## How retrieval works
+Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as measured.
 
-1. **Detect** fingerprints files + content signals → ranked platforms.
-2. **Router** maps fingerprints → profile(s); multiple profiles merge.
-3. **Fast gate** returns the top ≤25 checks by `priority` (≤4k tokens); `standard` ≤100; `full` all.
-4. **Direct lookup** O(1) by id / CWE / ASVS / MASVS / API / Top10 via `index/by_*.json`.
-5. **Free-text** FTS5 (BM25) with weighted columns + filters + synonym expansion.
-6. **Ranking** = bm25 × platform/stack boost × severity weight × priority.
-7. **No-result** returns `gap: true` + suggestions from `references/`. Never fabricates.
-
-## Provenance & confidence
-
-Every distilled card records `sources[].path + anchor + commit` — the exact file and commit the text
-came from. Cards built where no public checklist exists (Telegram, browser extensions, desktop) are
-`origin: authored` with a verified official-doc URL and `confidence` set honestly. See
-`AUDIT_v0.1.md` and `references/index.yaml` → `known_gaps`.
-
-## Licensing
-
-- **Content** is **CC BY-SA 4.0** (OWASP-derived) — `LICENSES/CONTENT.md`.
-- **Code** is **MIT** — `LICENSE`.
-- Attribution for all 67 sources: `NOTICE.md`.
-- No GPL/AGPL tool code is vendored; `tools/*.yaml` only describe external invocation.
-- ⚠️ Two OWASP sources carry a **project-declared** (unverified) licence — see `LICENSES/CONTENT.md`.
-- ⚠️ **Human-legal review is required before making this repository public.** Not legal advice.
-
-## Safety
-
-All ingested text is treated as untrusted DATA. Cards are defensive (what to verify/fix), never
-exploit payloads. The CLI/MCP are read-only on the target by default. See `SECURITY.md`.
-
-## Quality gates & benchmark
-
-CI runs schema validation, token limits, coverage matrix, provenance and licence checks, a duplicate
-detector, and the held-out benchmark. Current honest numbers (832 cards):
-
-| benchmark set | n | recall@5 | recall@10 | MRR |
+| Set | n | recall@5 | Target | Status |
 |---|---|---|---|---|
-| held-out (all) | 154 | 0.70 | 0.73 | 0.66 |
-| curated v1 (memory-written refs) | 59 | 0.31 | 0.34 | 0.23 |
-| curated v2 (refs from standards text) | 59 | 0.68 | 0.71 | 0.46 |
-| templated | 95 | 0.95 | 0.98 | 0.92 |
+| Held-out (all) | 154 | **0.66** | ≥ 0.70 | below |
+| Curated v2 (standards-derived) | 59 | **0.44** | ≥ 0.60 | below |
+| v2_dev (developer vocabulary) | 40 | **0.25** | ≥ 0.60 | below |
+| Templated | 95 | **0.92** | ≥ 0.90 | met |
+| Fast-gate recall (strict) | 30 | **26.7%** | ≥ 0.70 | below |
 
-Lab coverage 36.7%; fast-gate recall 20.0%. See `BUILD_REPORT.md` and `bench/results.json` for
-worst-case failures and known weaknesses.
+Determinism: two consecutive rebuilds — and a rebuild with **shuffled** staging input — produce the
+identical `manifest.content_hash` `0c921baa291a4af4`. Reproduce with
+`python3 scripts/fetch_sources.py && python3 scripts/ingest_from_cache.py && python3 scripts/build_cards_v2.py`.
 
-## Status
+## Known limitations
 
-v0.2.1 (pre-release). See `CHANGELOG.md` and `BUILD_REPORT.md`.
+- **Retrieval is below target.** Paraphrase recall is the weak spot; corpus growth added distractors
+  that dedupe did not fully remove.
+- **First-call index build ≈ 19 s** on a cold checkout (later queries sub-second).
+- **Not yet implemented:** `kind: check|guidance`, deterministic `fix_refs`, official-source CWE
+  enrichment, real-lab end-to-end evaluation.
+- **Unverified:** 8 of 12 tool adapters; the Telegram `secret_token` claim; two project-declared
+  licences.
+- **Card text is untrusted DATA** — never executable instructions or system policy (see `AGENTS.md`).
+
+## Licence & attribution
+
+- **Content:** CC BY-SA 4.0, where provenance and upstream terms permit; attribution and ShareAlike
+  preserved. Unlicensed / reference-only sources are not redistributed.
+- **Code:** MIT.
+- **Human legal review recommended.** No OWASP endorsement is implied.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). New cards require provenance: source repo, path, anchor,
+commit, licence.
+
+## Security
+
+See [SECURITY.md](SECURITY.md) for private vulnerability reporting.
+
+## Citation
+
+See [CITATION.cff](CITATION.cff).
