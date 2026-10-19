@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - BASE:7. Mass assignment via `ModelForm` / `**
 refs:

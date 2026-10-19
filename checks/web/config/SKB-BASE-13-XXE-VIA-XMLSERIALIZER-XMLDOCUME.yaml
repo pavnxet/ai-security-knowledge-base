@@ -13,9 +13,10 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 30
-cwe: []
-cwe_source: extracted
+priority: 40
+cwe:
+- CWE-611
+cwe_source: mapped
 owasp:
 - BASE:13. XXE via `XmlSerializer` / `XmlDocume
 refs:

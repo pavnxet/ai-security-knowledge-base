@@ -16,7 +16,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-524
-cwe_source: extracted
+cwe_source: mapped
 owasp:
 - ASVS:V8.1.1
 refs:

@@ -14,15 +14,15 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - BASE:7. Mass assignment / `[Bind]` misuse
 refs:
 - BASE:7. Mass assignment / `[Bind]` misuse
 check: '7. Mass assignment / [Bind] misuse What: Action parameter bound to an entity type lets attackers
-  set IsAdmin . Fix: Use [Bind] allowlist or DTOs; [JsonIgnore] / [NeverAutoUpdate] privileged fields.
-  Detection: r'
+  set IsAdmin . Fix: Use [Bind] allowlist or DTOs; [JsonIgnore] / [NeverAutoUpdate] p'
 fix: 'See yesmayank/secure-coding-baseline 13-aspnet-core.md (anchor: 7. Mass assignment / `[Bind]` misuse)
   for remediation.'
 detect:

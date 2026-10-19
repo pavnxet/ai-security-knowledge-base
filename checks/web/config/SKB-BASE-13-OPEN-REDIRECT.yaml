@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-601
+cwe_source: mapped
 owasp:
 - BASE:13. Open redirect
 refs:
@@ -49,9 +50,22 @@ sources:
   type: github
   extraction: programmatic
   verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 16-nextjs.md
+  anchor: 8. Open redirect in `redirect()` / `next/navigation`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/16-nextjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
 last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-8-OPEN-REDIRECT-IN-REDIRECT-NEXT
+aliases:
+- SKB-BASE-8-OPEN-REDIRECT-IN-REDIRECT-NEXT

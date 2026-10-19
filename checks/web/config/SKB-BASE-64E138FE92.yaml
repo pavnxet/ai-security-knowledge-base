@@ -16,7 +16,7 @@ severity: medium
 priority: 30
 cwe:
 - CWE-639
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - BASE:8. BOLA / IDOR
 refs:
@@ -59,6 +59,15 @@ sources:
   type: github
   extraction: programmatic
   verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: 9. BOLA / IDOR
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
@@ -67,5 +76,7 @@ corroboration: 1
 last_verified: '2026-10-19'
 merged_from:
 - SKB-BASE-20A257BB16
+- SKB-BASE-B0C15AC1A4
 aliases:
 - SKB-BASE-20A257BB16
+- SKB-BASE-B0C15AC1A4

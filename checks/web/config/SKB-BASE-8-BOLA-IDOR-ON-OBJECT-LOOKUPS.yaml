@@ -16,7 +16,7 @@ severity: medium
 priority: 30
 cwe:
 - CWE-639
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - BASE:8. BOLA / IDOR on object lookups
 refs:
