@@ -92,7 +92,8 @@ def main():
     v2d_path = os.path.join(ROOT,"bench","v2_dev","queries.yaml")
     v2d = yaml.safe_load(open(v2d_path))["queries"] if os.path.exists(v2d_path) else []
     v2d_r, _ = eval_set(v2d, "v2_dev") if v2d else ({"set":"v2_dev","n":0}, [])
-    user = yaml.safe_load(open(os.path.join(ROOT,"bench","user_queries.yaml"))).get("queries") or []
+    _uq = os.path.join(ROOT, "bench", "user_queries.yaml")
+    user = (yaml.safe_load(open(_uq)).get("queries") or []) if os.path.exists(_uq) else []
     user_r = eval_set(user, "user")[0] if user else {"set":"user","n":0,"note":"empty - add real queries"}
 
     cur_v2 = [q for q in held_v2 if q.get("set")=="curated"]

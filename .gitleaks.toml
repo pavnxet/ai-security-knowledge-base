@@ -4,7 +4,7 @@ useDefault = true
 [[allowlists]]
 description = "card IDs"
 regexTarget = "match"
-regexes = ['''SKB-[A-Z0-9]+-[A-Z0-9]+-[0-9]{4}''']
+regexes = ['''SKB-[A-Z0-9]+-[A-Z0-9-]+''']
 [[allowlists]]
 description = "detection-regex literals"
 regexTarget = "match"

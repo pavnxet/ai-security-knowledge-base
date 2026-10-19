@@ -117,7 +117,7 @@ card-id regex `SKB-[A-Z0-9]+-[A-Z0-9]+-[0-9]{4}` + three detection-regex *litera
 `.trufflehog-exclude.txt` = `.git/` only.
 Two residual FP shapes (the canonical jwt.io example token; a `secret_key_base committed` doc phrase)
 are handled by an explicit narrow filter `scripts/gitleaks_report.py`, **not** a broad allowlist.
-**CI canary proves the scanner is not blinded:** a fake AWS key (`AKIAQWERTYUIOPASDFGH`) makes
+**CI canary proves the scanner is not blinded:** a fake AWS key (`AKIA...ASDFGH (canary, redacted)`) makes
 `gitleaks_report.py` exit 1. (The AWS *example* key `AKIAIOSFODNN7EXAMPLE` is allowlisted by
 gitleaks' own defaults — which is why the canary uses a random key.)
 

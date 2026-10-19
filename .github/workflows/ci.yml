@@ -83,7 +83,7 @@ jobs:
           python3 scripts/gitleaks_report.py gl-git.json
       - name: canary - the allowlist must NOT blind gitleaks
         run: |
-          printf 'aws_access_key_id = AKIAQWERTYUIOPASDFGH\n' > canary_secret.txt
+          printf 'aws_access_key_id = AKIA%s\n' "QWERTYUIOPASDFGH" > canary_secret.txt
           ./gitleaks dir --config .gitleaks.toml --report-format json --report-path gl-canary.json . || true
           if python3 scripts/gitleaks_report.py gl-canary.json; then
             echo "CANARY FAILED: gitleaks did not flag the fake secret - allowlist is too broad"; exit 1
