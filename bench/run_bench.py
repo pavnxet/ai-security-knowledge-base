@@ -6,6 +6,7 @@ from collections import Counter
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 spec = importlib.util.spec_from_file_location("secure_kb", os.path.join(ROOT, "cli", "secure_kb.py"))
 kb = importlib.util.module_from_spec(spec); spec.loader.exec_module(kb)
+kb.ensure_index(); kb.ensure_db()
 CARDS = kb.load_cards()
 import os as _os
 SYN, HUBS = kb.load_synonyms() if _os.environ.get('SECURE_KB_SYNONYMS') else ({}, {})
