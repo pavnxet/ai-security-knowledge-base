@@ -1,0 +1,26 @@
+# secure-kb
+
+> Merged, AI-agent-searchable security verification knowledge base: 76 atomic check cards distilled
+> from 67 public security repos, covering web, API, mobile, Telegram bots, cloud, IoT, smart
+> contracts, LLM apps, vibe-coded apps, browser extensions and desktop.
+
+Start here: [AGENTS.md](AGENTS.md) — the only file an agent needs to read first.
+
+## Key files
+- [index/checks.jsonl](index/checks.jsonl) — all cards, one JSON per line (grep/jq friendly)
+- [index/kb.sqlite](index/kb.sqlite) — SQLite FTS5 search index
+- [manifest.json](manifest.json) — version, counts, content hash
+- [sources.yaml](sources.yaml) — all 67 sources with commit SHA + license
+- [schema/check.schema.json](schema/check.schema.json) — card schema
+
+## Interfaces
+- CLI: `cli/secure_kb.py` (detect | profile | search | get | cwe | ref | tools | report)
+- MCP: `mcp/server.py` (detect_stack, get_profile, search_checks, get_check, list_tools, start_report, submit_result)
+
+## Layout
+- `checks/<platform>/<domain>/*.yaml` — source-of-truth cards
+- `profiles/<platform>.yaml` — ordered launch gates
+- `playbooks/` — quick-15, pr-review, pre-launch, full-audit
+- `tools/` — scanner adapters (no vendored code)
+- `fixtures/` — lab -> check mappings for benchmarking
+- `references/` — Tier-3 link index + known gaps

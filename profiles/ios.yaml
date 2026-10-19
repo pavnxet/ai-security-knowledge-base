@@ -1,0 +1,45 @@
+name: ios
+description: Security launch gate for ios targets.
+platforms:
+- ios
+detect:
+  files:
+  - Info.plist
+  - Podfile
+  - '*.xcodeproj'
+  - '*.xcworkspace'
+  signals:
+  - UIKit
+  - SwiftUI
+gate:
+  fast:
+  - SKB-MASTG-TEST-0062
+  - SKB-MASTG-TEST-0064
+  - SKB-MASTG-TEST-0052
+  - SKB-MASTG-TEST-0067
+  - SKB-MASTG-TEST-0071
+  - SKB-MASTG-TEST-0072
+  - SKB-MASTG-TEST-0078
+  - SKB-MASTG-TEST-0081
+  standard:
+  - SKB-MASTG-TEST-0062
+  - SKB-MASTG-TEST-0064
+  - SKB-MASTG-TEST-0052
+  - SKB-MASTG-TEST-0067
+  - SKB-MASTG-TEST-0071
+  - SKB-MASTG-TEST-0072
+  - SKB-MASTG-TEST-0078
+  - SKB-MASTG-TEST-0081
+  full:
+  - SKB-MASTG-TEST-0062
+  - SKB-MASTG-TEST-0064
+  - SKB-MASTG-TEST-0052
+  - SKB-MASTG-TEST-0067
+  - SKB-MASTG-TEST-0071
+  - SKB-MASTG-TEST-0072
+  - SKB-MASTG-TEST-0078
+  - SKB-MASTG-TEST-0081
+counts:
+  fast: 8
+  standard: 8
+  full: 8

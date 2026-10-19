@@ -1,0 +1,55 @@
+references:
+- repo: trimstray/the-book-of-secret-knowledge
+  topics:
+  - cheatsheets
+  - tools
+  - manuals
+  tier: 3
+- repo: Hack-with-Github/Awesome-Hacking
+  topics:
+  - meta-list
+  - pentest
+  - research
+  tier: 3
+- repo: lissy93/personal-security-checklist
+  topics:
+  - privacy
+  - end-user
+  - checklist
+  tier: 3
+- repo: sbilly/awesome-security
+  topics:
+  - security
+  - tools
+  - books
+  tier: 3
+- repo: qazbnm456/awesome-web-security
+  topics:
+  - web
+  - materials
+  tier: 3
+- repo: paragonie/awesome-appsec
+  topics:
+  - appsec
+  - learning
+  tier: 3
+- repo: infoslack/awesome-web-hacking
+  topics:
+  - web
+  - hacking
+  tier: 3
+- repo: Eyadkelleh/awesome-skills-security
+  topics:
+  - ai-agent
+  - payloads
+  tier: 3
+known_gaps:
+- area: browser-ext
+  status: authored-only
+  note: No public checklist found; cards authored from Chrome MV3 docs. Confidence medium.
+- area: desktop
+  status: authored-only
+  note: No public checklist found; cards authored from Electron security docs. Confidence medium.
+- area: telegram
+  status: authored-only
+  note: No canonical repo; cards authored from Telegram Bot API docs; tosint used for token recon.

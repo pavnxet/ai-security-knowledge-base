@@ -1,0 +1,46 @@
+name: telegram
+description: Security launch gate for telegram targets.
+platforms:
+- telegram
+detect:
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.ts'
+  signals:
+  - api.telegram.org
+  - setWebhook
+  - grammy
+  - telegraf
+  - python-telegram-bot
+  - aiogram
+  - telebot
+gate:
+  fast:
+  - SKB-TG-ACCESS-0037
+  - SKB-TG-SECRETS-0033
+  - SKB-TG-INPUT-0036
+  - SKB-TG-MINIAPP-0041
+  - SKB-TG-WEBHOOK-0034
+  - SKB-TG-WEBHOOK-0035
+  - SKB-TG-RATE-0038
+  standard:
+  - SKB-TG-ACCESS-0037
+  - SKB-TG-SECRETS-0033
+  - SKB-TG-INPUT-0036
+  - SKB-TG-MINIAPP-0041
+  - SKB-TG-WEBHOOK-0034
+  - SKB-TG-WEBHOOK-0035
+  - SKB-TG-RATE-0038
+  full:
+  - SKB-TG-ACCESS-0037
+  - SKB-TG-SECRETS-0033
+  - SKB-TG-INPUT-0036
+  - SKB-TG-MINIAPP-0041
+  - SKB-TG-WEBHOOK-0034
+  - SKB-TG-WEBHOOK-0035
+  - SKB-TG-RATE-0038
+counts:
+  fast: 7
+  standard: 7
+  full: 7

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "secure-kb"
+version = "0.2.1"
+description = "Merged, AI-agent-searchable security verification knowledge base"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "secure-kb contributors" }]
+keywords = ["security", "appsec", "owasp", "checklist", "ai-agent", "mcp"]
+dependencies = []
+
+[project.optional-dependencies]
+build = ["jsonschema>=4", "pyyaml>=6"]
+dev = ["jsonschema>=4", "pyyaml>=6", "pytest"]
+
+[project.scripts]
+secure-kb = "secure_kb:main"
+
+[project.urls]
+Homepage = "https://github.com/secure-kb/secure-kb"
+
+[tool.setuptools]
+package-dir = { "" = "cli" }
+py-modules = ["secure_kb"]

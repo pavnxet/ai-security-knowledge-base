@@ -1,0 +1,54 @@
+name: llm
+description: Security launch gate for llm targets.
+platforms:
+- llm
+detect:
+  files:
+  - '**/*.py'
+  - '**/*.ts'
+  signals:
+  - openai
+  - anthropic
+  - langchain
+  - llamaindex
+  - prompt
+  - completion
+  - embedding
+gate:
+  fast:
+  - SKB-LLM-LLM01-2025
+  - SKB-LLM-LLM02-2025
+  - SKB-LLM-LLM03-2025
+  - SKB-LLM-LLM04-2025
+  - SKB-LLM-LLM05-2025
+  - SKB-LLM-LLM06-2025
+  - SKB-LLM-LLM07-2025
+  - SKB-LLM-LLM08-2025
+  - SKB-LLM-LLM09-2025
+  - SKB-LLM-LLM10-2025
+  standard:
+  - SKB-LLM-LLM01-2025
+  - SKB-LLM-LLM02-2025
+  - SKB-LLM-LLM03-2025
+  - SKB-LLM-LLM04-2025
+  - SKB-LLM-LLM05-2025
+  - SKB-LLM-LLM06-2025
+  - SKB-LLM-LLM07-2025
+  - SKB-LLM-LLM08-2025
+  - SKB-LLM-LLM09-2025
+  - SKB-LLM-LLM10-2025
+  full:
+  - SKB-LLM-LLM01-2025
+  - SKB-LLM-LLM02-2025
+  - SKB-LLM-LLM03-2025
+  - SKB-LLM-LLM04-2025
+  - SKB-LLM-LLM05-2025
+  - SKB-LLM-LLM06-2025
+  - SKB-LLM-LLM07-2025
+  - SKB-LLM-LLM08-2025
+  - SKB-LLM-LLM09-2025
+  - SKB-LLM-LLM10-2025
+counts:
+  fast: 10
+  standard: 10
+  full: 10

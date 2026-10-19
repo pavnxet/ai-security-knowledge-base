@@ -1,0 +1,34 @@
+name: desktop
+description: Security launch gate for desktop targets.
+platforms:
+- desktop
+detect:
+  files:
+  - electron
+  - '**/main.js'
+  - '**/main.ts'
+  - tauri.conf.json
+  signals:
+  - electron
+  - BrowserWindow
+  - tauri
+gate:
+  fast:
+  - SKB-DESK-ELECTRON-0046
+  - SKB-DESK-IPC-0047
+  - SKB-DESK-UPDATE-0048
+  - SKB-DESK-CSP-0049
+  standard:
+  - SKB-DESK-ELECTRON-0046
+  - SKB-DESK-IPC-0047
+  - SKB-DESK-UPDATE-0048
+  - SKB-DESK-CSP-0049
+  full:
+  - SKB-DESK-ELECTRON-0046
+  - SKB-DESK-IPC-0047
+  - SKB-DESK-UPDATE-0048
+  - SKB-DESK-CSP-0049
+counts:
+  fast: 4
+  standard: 4
+  full: 4

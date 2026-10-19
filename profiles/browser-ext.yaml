@@ -1,0 +1,31 @@
+name: browser-ext
+description: Security launch gate for browser-ext targets.
+platforms:
+- browser-ext
+detect:
+  files:
+  - manifest.json
+  signals:
+  - chrome.runtime
+  - content_scripts
+  - manifest_version
+gate:
+  fast:
+  - SKB-EXT-INJECT-0045
+  - SKB-EXT-CSP-0043
+  - SKB-EXT-MSG-0044
+  - SKB-EXT-PERMS-0042
+  standard:
+  - SKB-EXT-INJECT-0045
+  - SKB-EXT-CSP-0043
+  - SKB-EXT-MSG-0044
+  - SKB-EXT-PERMS-0042
+  full:
+  - SKB-EXT-INJECT-0045
+  - SKB-EXT-CSP-0043
+  - SKB-EXT-MSG-0044
+  - SKB-EXT-PERMS-0042
+counts:
+  fast: 4
+  standard: 4
+  full: 4

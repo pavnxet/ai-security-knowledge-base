@@ -1,0 +1,132 @@
+{
+  "platforms": [
+    "web",
+    "api",
+    "mobile",
+    "android",
+    "ios",
+    "telegram",
+    "cloud",
+    "iot",
+    "web3",
+    "llm",
+    "vibe",
+    "browser-ext",
+    "desktop",
+    "generic"
+  ],
+  "domains": [
+    "auth",
+    "session",
+    "access-control",
+    "injection",
+    "xss",
+    "csrf",
+    "ssrf",
+    "input-validation",
+    "crypto",
+    "secrets",
+    "config",
+    "supply-chain",
+    "logging",
+    "storage",
+    "network",
+    "headers",
+    "rate-limiting",
+    "webhook",
+    "file-upload",
+    "deserialization",
+    "error-handling",
+    "data-protection",
+    "infra",
+    "firmware",
+    "smart-contract",
+    "llm",
+    "privacy",
+    "business-logic",
+    "api"
+  ],
+  "phases": [
+    "pr-review",
+    "pre-launch",
+    "full-audit"
+  ],
+  "severity": [
+    "critical",
+    "high",
+    "medium",
+    "low",
+    "info"
+  ],
+  "synonyms": {
+    "xss": [
+      "cross-site scripting",
+      "cross site scripting"
+    ],
+    "sqli": [
+      "sql injection",
+      "sql-injection"
+    ],
+    "jwt": [
+      "json web token",
+      "json web tokens"
+    ],
+    "idor": [
+      "insecure direct object reference",
+      "broken object level authorization",
+      "bola"
+    ],
+    "ssrf": [
+      "server side request forgery",
+      "server-side request forgery"
+    ],
+    "csrf": [
+      "cross-site request forgery",
+      "xsrf"
+    ],
+    "rce": [
+      "remote code execution"
+    ],
+    "lfi": [
+      "local file inclusion"
+    ],
+    "rls": [
+      "row level security",
+      "row-level security"
+    ],
+    "cors": [
+      "cross origin resource sharing",
+      "cross-origin resource sharing"
+    ],
+    "csp": [
+      "content security policy"
+    ],
+    "mfa": [
+      "multi-factor authentication",
+      "2fa",
+      "two factor"
+    ],
+    "waf": [
+      "web application firewall"
+    ],
+    "sca": [
+      "software composition analysis"
+    ],
+    "sast": [
+      "static application security testing"
+    ],
+    "dast": [
+      "dynamic application security testing"
+    ],
+    "pii": [
+      "personally identifiable information"
+    ],
+    "ats": [
+      "app transport security"
+    ],
+    "ipc": [
+      "inter-process communication",
+      "interprocess communication"
+    ]
+  }
+}
