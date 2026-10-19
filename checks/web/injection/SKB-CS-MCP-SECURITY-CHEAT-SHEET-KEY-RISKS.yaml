@@ -1,0 +1,56 @@
+id: SKB-CS-MCP-SECURITY-CHEAT-SHEET-KEY-RISKS
+title: Key Risks
+summary: 'Key Risks - Tool Poisoning : Malicious instructions hidden in tool descriptions, parameter schemas,
+  or return values that manipulate the LLM'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:MCP_Security_Cheat_Sheet#Key Risks
+refs:
+- CS:MCP_Security_Cheat_Sheet#Key Risks
+check: 'Key Risks - Tool Poisoning : Malicious instructions hidden in tool descriptions, parameter schemas,
+  or return values that manipulate the LLM''s behavior. - Rug Pull Attacks : A server changes its tool
+  definitions after initial user approval, turning a trusted tool malicious. - To'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/MCP_Security_Cheat_Sheet.md (anchor: Key Risks) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- risks
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/MCP_Security_Cheat_Sheet.md
+  anchor: Key Risks
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/MCP_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

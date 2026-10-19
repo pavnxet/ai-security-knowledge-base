@@ -1,0 +1,57 @@
+id: SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This cheat sheet provides guidance for securely configuring SQL databases such as
+  MySQL, PostgreSQL, MariaDB, and Microsoft SQL
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Database_Security_Cheat_Sheet#Introduction
+refs:
+- CS:Database_Security_Cheat_Sheet#Introduction
+check: Introduction This cheat sheet provides guidance for securely configuring SQL databases such as
+  MySQL, PostgreSQL, MariaDB, and Microsoft SQL Server. It is designed primarily for application developers
+  and system administrators responsible for managi
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Database_Security_Cheat_Sheet.md (anchor: Introduction) for
+  remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Database_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Database_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

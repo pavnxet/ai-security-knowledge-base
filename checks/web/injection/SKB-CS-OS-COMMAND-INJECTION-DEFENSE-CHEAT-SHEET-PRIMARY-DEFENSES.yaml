@@ -1,0 +1,58 @@
+id: SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-PRIMARY-DEFENSES
+title: Primary Defenses
+summary: 'Primary Defenses Defense Option 1: Avoid calling OS commands directly The primary defense is
+  to avoid calling OS commands directly. Built-in'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OS_Command_Injection_Defense_Cheat_Sheet#Primary Defenses
+refs:
+- CS:OS_Command_Injection_Defense_Cheat_Sheet#Primary Defenses
+check: 'Primary Defenses Defense Option 1: Avoid calling OS commands directly The primary defense is to
+  avoid calling OS commands directly. Built-in library functions are a very good alternative to OS Commands,
+  as they cannot b'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md (anchor: Primary
+  Defenses) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- primary
+- defenses
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md
+  anchor: Primary Defenses
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

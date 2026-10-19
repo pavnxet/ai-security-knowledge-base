@@ -1,0 +1,57 @@
+id: SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction Definition Software frameworks sometimes allow developers to automatically bind
+  HTTP request parameters into program code varia
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mass_Assignment_Cheat_Sheet#Introduction
+refs:
+- CS:Mass_Assignment_Cheat_Sheet#Introduction
+check: Introduction Definition Software frameworks sometimes allow developers to automatically bind HTTP
+  request parameters into program code variables or objects to make using that framework easier on developers.
+  This can sometimes cause harm. Attackers ca
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mass_Assignment_Cheat_Sheet.md (anchor: Introduction) for
+  remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mass_Assignment_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mass_Assignment_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

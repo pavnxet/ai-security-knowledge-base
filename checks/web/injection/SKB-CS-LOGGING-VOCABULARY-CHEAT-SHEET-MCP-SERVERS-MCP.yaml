@@ -1,0 +1,57 @@
+id: SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-MCP-SERVERS-MCP
+title: MCP Servers [MCP]
+summary: MCP Servers [MCP] This section focuses on concerns related to the use of MCP servers either within
+  productivity applications, or at the ente
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Vocabulary_Cheat_Sheet#MCP Servers [MCP]
+refs:
+- CS:Logging_Vocabulary_Cheat_Sheet#MCP Servers [MCP]
+check: MCP Servers [MCP] This section focuses on concerns related to the use of MCP servers either within
+  productivity applications, or at the enterprise level. --- mcp_prompt_injection[:userid] Description
+  When an MCP client or server detects indicators of
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Vocabulary_Cheat_Sheet.md (anchor: MCP Servers [MCP])
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- servers
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  anchor: MCP Servers [MCP]
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

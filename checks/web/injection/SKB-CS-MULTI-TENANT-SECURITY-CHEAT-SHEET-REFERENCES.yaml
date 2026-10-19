@@ -1,0 +1,57 @@
+id: SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [AWS SaaS Lens: Tenant Isolation](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/tenant-isolation.html)
+  - [Postgr'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Multi_Tenant_Security_Cheat_Sheet#References
+refs:
+- CS:Multi_Tenant_Security_Cheat_Sheet#References
+check: 'References - [AWS SaaS Lens: Tenant Isolation](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/tenant-isolation.html)
+  - [PostgreSQL: Row Security Policies](https://www.postgresql.org/docs/current/ddl-rowsecurity.html)
+  - [Microsoft: Messagin'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

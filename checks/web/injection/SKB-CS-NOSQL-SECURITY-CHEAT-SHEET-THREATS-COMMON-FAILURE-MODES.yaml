@@ -1,0 +1,58 @@
+id: SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-THREATS-COMMON-FAILURE-MODES
+title: Threats & Common Failure Modes
+summary: Threats & Common Failure Modes - NoSQL Injection — Unsafe construction of query objects or query
+  strings from untrusted input. - Exposed Man
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NoSQL_Security_Cheat_Sheet#Threats & Common Failure Modes
+refs:
+- CS:NoSQL_Security_Cheat_Sheet#Threats & Common Failure Modes
+check: Threats & Common Failure Modes - NoSQL Injection — Unsafe construction of query objects or query
+  strings from untrusted input. - Exposed Management Interfaces —
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NoSQL_Security_Cheat_Sheet.md (anchor: Threats & Common Failure
+  Modes) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- threats
+- common
+- failure
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NoSQL_Security_Cheat_Sheet.md
+  anchor: Threats & Common Failure Modes
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NoSQL_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

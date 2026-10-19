@@ -1,0 +1,58 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-3-CONTEXT-WINDOW-ATTACKS
+title: 'Section 3: Context Window Attacks'
+summary: 'Section 3: Context Window Attacks When retrieved documents are injected into the language model''s
+  context window, they can override system p'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 3: Context Window Attacks'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 3: Context Window Attacks'
+check: 'Section 3: Context Window Attacks When retrieved documents are injected into the language model''s
+  context window, they can override system prompts, alter the model''s behavior, or cause it'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 3: Context Window
+  Attacks) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- section
+- context
+- window
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 3: Context Window Attacks'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

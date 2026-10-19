@@ -1,0 +1,55 @@
+id: SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [SEI CERT C: Do not call system()](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/rules/environme'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OS_Command_Injection_Defense_Cheat_Sheet#References
+refs:
+- CS:OS_Command_Injection_Defense_Cheat_Sheet#References
+check: 'References - [SEI CERT C: Do not call system()](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/rules/environment-env/env33-c/)
+  - [CWE-77: Command Injection](https://cwe.mitre.org/data/definitions/77.html)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OS_Command_Injection_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

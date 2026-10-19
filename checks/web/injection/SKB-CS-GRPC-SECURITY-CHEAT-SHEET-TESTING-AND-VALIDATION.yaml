@@ -1,0 +1,58 @@
+id: SKB-CS-GRPC-SECURITY-CHEAT-SHEET-TESTING-AND-VALIDATION
+title: Testing and Validation
+summary: 'Testing and Validation Perform gRPC Security Testing Include gRPC-specific security tests in
+  your development pipeline. Test categories: - A'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:gRPC_Security_Cheat_Sheet#Testing and Validation
+refs:
+- CS:gRPC_Security_Cheat_Sheet#Testing and Validation
+check: 'Testing and Validation Perform gRPC Security Testing Include gRPC-specific security tests in your
+  development pipeline. Test categories: - Authentication bypass attempts - Authorization boundary testing
+  - Input validatio'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/gRPC_Security_Cheat_Sheet.md (anchor: Testing and Validation)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- testing
+- validation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/gRPC_Security_Cheat_Sheet.md
+  anchor: Testing and Validation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/gRPC_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-ERROR-HANDLING-CHEAT-SHEET-CONTEXT
+title: Context
+summary: Context Issues at the error handling level can reveal a lot of information about the target and
+  can also be used to identify injection point
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Error_Handling_Cheat_Sheet#Context
+refs:
+- CS:Error_Handling_Cheat_Sheet#Context
+check: Context Issues at the error handling level can reveal a lot of information about the target and
+  can also be used to identify injection points in the target's features. Below is an example of the disclosure
+  of a technology stack, here the Struts2 and Tomcat versions, via an excep
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Error_Handling_Cheat_Sheet.md (anchor: Context) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- context
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Error_Handling_Cheat_Sheet.md
+  anchor: Context
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Error_Handling_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

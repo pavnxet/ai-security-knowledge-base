@@ -1,0 +1,58 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-USER-INTERFACE
+title: User Interface
+summary: 'User Interface 1. UI Data Masking - Mask sensitive information on UI fields to prevent shoulder
+  surfing. 2. User Notifications - Inform the '
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#User Interface
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#User Interface
+check: User Interface 1. UI Data Masking - Mask sensitive information on UI fields to prevent shoulder
+  surfing. 2. User Notifications - Inform the user about security-related activities, such as logins from
+  new devices. 3. Inpu
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: User
+  Interface) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- user
+- interface
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: User Interface
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

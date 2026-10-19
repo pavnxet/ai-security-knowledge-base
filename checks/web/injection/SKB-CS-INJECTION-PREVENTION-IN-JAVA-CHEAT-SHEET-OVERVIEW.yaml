@@ -1,0 +1,57 @@
+id: SKB-CS-INJECTION-PREVENTION-IN-JAVA-CHEAT-SHEET-OVERVIEW
+title: (whole sheet)
+summary: Injection Prevention Cheat Sheet in Java This information has been moved to the dedicated [Java
+  Security CheatSheet](Java_Security_Cheat_She
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Injection_Prevention_in_Java_Cheat_Sheet#overview
+refs:
+- CS:Injection_Prevention_in_Java_Cheat_Sheet#overview
+check: Injection Prevention Cheat Sheet in Java This information has been moved to the dedicated [Java
+  Security CheatSheet](Java_Security_Cheat_Sheet.md injection-prevention-in-java)
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Injection_Prevention_in_Java_Cheat_Sheet.md (anchor: (whole
+  sheet)) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- whole
+- sheet
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Injection_Prevention_in_Java_Cheat_Sheet.md
+  anchor: (whole sheet)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Injection_Prevention_in_Java_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

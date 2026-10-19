@@ -1,0 +1,56 @@
+id: SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-ITEMS
+title: Items
+summary: Items Command Injection Ruby offers a function called "eval" which will dynamically build new
+  Ruby code based on Strings. It also has a numb
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Ruby_on_Rails_Cheat_Sheet#Items
+refs:
+- CS:Ruby_on_Rails_Cheat_Sheet#Items
+check: Items Command Injection Ruby offers a function called "eval" which will dynamically build new Ruby
+  code based on Strings. It also has a number of ways to call system commands. While the power of these
+  commands is quite useful, extreme care should be taken when using them in a Ra
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Ruby_on_Rails_Cheat_Sheet.md (anchor: Items) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- items
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  anchor: Items
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

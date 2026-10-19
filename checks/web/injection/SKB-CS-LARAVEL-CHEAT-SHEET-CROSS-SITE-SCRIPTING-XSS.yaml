@@ -1,0 +1,59 @@
+id: SKB-CS-LARAVEL-CHEAT-SHEET-CROSS-SITE-SCRIPTING-XSS
+title: Cross Site Scripting (XSS)
+summary: Cross Site Scripting (XSS) [XSS attacks](https://owasp.org/www-community/attacks/xss/) are injection
+  attacks where malicious scripts (such a
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Laravel_Cheat_Sheet#Cross Site Scripting (XSS)
+refs:
+- CS:Laravel_Cheat_Sheet#Cross Site Scripting (XSS)
+check: Cross Site Scripting (XSS) [XSS attacks](https://owasp.org/www-community/attacks/xss/) are injection
+  attacks where malicious scripts (such as JavaScript code snippets) are injected into trusted websites.
+  Laravel's [Bla
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Laravel_Cheat_Sheet.md (anchor: Cross Site Scripting (XSS))
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- cross
+- site
+- scripting
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Laravel_Cheat_Sheet.md
+  anchor: Cross Site Scripting (XSS)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Laravel_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-4-DON-T-RUN-CONTAINERS-AS-ROOT
+title: 4) Don’t run containers as root
+summary: 4) Don’t run containers as root The principle of least privilege is a long-time security control
+  from the early days of Unix and we should a
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 65
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- CS:NodeJS_Docker_Cheat_Sheet#4) Don’t run containers as root
+refs:
+- CS:NodeJS_Docker_Cheat_Sheet#4) Don’t run containers as root
+check: 4) Don’t run containers as root The principle of least privilege is a long-time security control
+  from the early days of Unix and we should always follow this wh
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NodeJS_Docker_Cheat_Sheet.md (anchor: 4) Don’t run containers
+  as root) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- containers
+- root
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  anchor: 4) Don’t run containers as root
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

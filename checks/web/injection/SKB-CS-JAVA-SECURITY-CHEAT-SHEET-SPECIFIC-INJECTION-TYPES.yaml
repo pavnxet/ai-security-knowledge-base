@@ -1,0 +1,59 @@
+id: SKB-CS-JAVA-SECURITY-CHEAT-SHEET-SPECIFIC-INJECTION-TYPES
+title: Specific Injection types
+summary: Specific Injection types Examples in this section will be provided in Java technology (see Maven
+  project associated) but advice is applicabl
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Java_Security_Cheat_Sheet#Specific Injection types
+refs:
+- CS:Java_Security_Cheat_Sheet#Specific Injection types
+check: Specific Injection types Examples in this section will be provided in Java technology (see Maven
+  project associated) but advice is applicable to others technologies like .Net / PHP / Ruby / Python...
+  SQL Symptom Injecti
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Java_Security_Cheat_Sheet.md (anchor: Specific Injection
+  types) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- specific
+- injection
+- types
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Java_Security_Cheat_Sheet.md
+  anchor: Specific Injection types
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Java_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

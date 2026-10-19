@@ -1,0 +1,58 @@
+id: SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-DANGEROUS-LANGUAGE-SURFACE
+title: Dangerous Language Surface
+summary: Dangerous Language Surface eval , Function , and with Never build code from strings. See [MDN's
+  eval guidance](https://developer.mozilla.org
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Dangerous Language Surface
+refs:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Dangerous Language Surface
+check: Dangerous Language Surface eval , Function , and with Never build code from strings. See [MDN's
+  eval guidance](https://developer.mozilla.org/en-US/docs/Web/Ja
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md (anchor:
+  Dangerous Language Surface) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- dangerous
+- language
+- surface
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  anchor: Dangerous Language Surface
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

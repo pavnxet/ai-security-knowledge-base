@@ -1,0 +1,58 @@
+id: SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-QUICK-NOSQL-SECURITY-CHECKLIST
+title: Quick NoSQL Security Checklist
+summary: Quick NoSQL Security Checklist - Enable authentication & RBAC - Enforce TLS for client and node
+  communication - Bind DB to internal IPs / us
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NoSQL_Security_Cheat_Sheet#Quick NoSQL Security Checklist
+refs:
+- CS:NoSQL_Security_Cheat_Sheet#Quick NoSQL Security Checklist
+check: Quick NoSQL Security Checklist - Enable authentication & RBAC - Enforce TLS for client and node
+  communication - Bind DB to internal IPs / use private networks - Use least privilege service
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NoSQL_Security_Cheat_Sheet.md (anchor: Quick NoSQL Security
+  Checklist) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- quick
+- nosql
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NoSQL_Security_Cheat_Sheet.md
+  anchor: Quick NoSQL Security Checklist
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NoSQL_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

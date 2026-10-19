@@ -1,0 +1,58 @@
+id: SKB-CS-GRAPHQL-CHEAT-SHEET-BEST-PRACTICES-AND-RECOMMENDATIONS
+title: Best Practices and Recommendations
+summary: Best Practices and Recommendations For the original security analysis, see [Doyensec's GraphQL
+  security overview](https://blog.doyensec.com/
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GraphQL_Cheat_Sheet#Best Practices and Recommendations
+refs:
+- CS:GraphQL_Cheat_Sheet#Best Practices and Recommendations
+check: Best Practices and Recommendations For the original security analysis, see [Doyensec's GraphQL
+  security overview](https://blog.doyensec.com/2018/05/17/graphql-security-overview.html). Inpu
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GraphQL_Cheat_Sheet.md (anchor: Best Practices and Recommendations)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- best
+- practices
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GraphQL_Cheat_Sheet.md
+  anchor: Best Practices and Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GraphQL_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-LDAP-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction The Lightweight Directory Access Protocol (LDAP) allows an application to remotely
+  perform operations such as searching and mod
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:LDAP_Injection_Prevention_Cheat_Sheet#Introduction
+refs:
+- CS:LDAP_Injection_Prevention_Cheat_Sheet#Introduction
+check: Introduction The Lightweight Directory Access Protocol (LDAP) allows an application to remotely
+  perform operations such as searching and modifying records in directories. LDAP injection results from
+  inadequate input sanitization and validation and a
+fix: 'See OWASP/CheatSheetSeries cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-OAUTH2-CHEAT-SHEET-PKCE-PROOF-KEY-FOR-CODE-EXCHANGE-MECHA
+title: PKCE - Proof Key for Code Exchange Mechanism
+summary: PKCE - Proof Key for Code Exchange Mechanism OAuth 2.0 public clients utilizing the Authorization
+  Code Grant are susceptible to the authoriz
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OAuth2_Cheat_Sheet#PKCE - Proof Key for Code Exchange Mecha
+refs:
+- CS:OAuth2_Cheat_Sheet#PKCE - Proof Key for Code Exchange Mecha
+check: PKCE - Proof Key for Code Exchange Mechanism OAuth 2.0 public clients utilizing the Authorization
+  Code Grant are susceptible to the authorization code intercept
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OAuth2_Cheat_Sheet.md (anchor: PKCE - Proof Key for Code
+  Exchange Mechanism) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- pkce
+- proof
+- code
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OAuth2_Cheat_Sheet.md
+  anchor: PKCE - Proof Key for Code Exchange Mechanism
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OAuth2_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

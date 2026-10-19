@@ -1,0 +1,58 @@
+id: SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-INJECTION-PREVENTION-RULES
+title: Injection Prevention Rules
+summary: Injection Prevention Rules Rule \ 1 (Perform proper input validation) Perform proper input validation.
+  Positive or allowlist input validatio
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Injection_Prevention_Cheat_Sheet#Injection Prevention Rules
+refs:
+- CS:Injection_Prevention_Cheat_Sheet#Injection Prevention Rules
+check: Injection Prevention Rules Rule \ 1 (Perform proper input validation) Perform proper input validation.
+  Positive or allowlist input validation with appropriate canonicalization is also recomm
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Injection_Prevention_Cheat_Sheet.md (anchor: Injection Prevention
+  Rules) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- prevention
+- rules
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Injection_Prevention_Cheat_Sheet.md
+  anchor: Injection Prevention Rules
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Injection_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
