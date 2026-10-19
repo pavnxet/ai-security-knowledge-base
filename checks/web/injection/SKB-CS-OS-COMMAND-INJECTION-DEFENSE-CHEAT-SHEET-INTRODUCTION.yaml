@@ -12,9 +12,11 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-77
+- CWE-78
+cwe_source: mapped
 owasp:
 - CS:OS_Command_Injection_Defense_Cheat_Sheet#Introduction
 refs:

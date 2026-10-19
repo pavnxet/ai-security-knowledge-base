@@ -13,15 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-93
+cwe_source: mapped
 owasp:
 - CS:Java_Security_Cheat_Sheet#Specific Injection types
 refs:
 - CS:Java_Security_Cheat_Sheet#Specific Injection types
 check: Specific Injection types Examples in this section will be provided in Java technology (see Maven
-  project associated) but advice is applicable to others technologies like .Net / PHP / Ruby / Python...
-  SQL Symptom Injecti
+  project associated) but advice is applicable to others technologies like .Net / PHP / Ruby /
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Java_Security_Cheat_Sheet.md (anchor: Specific Injection
   types) for remediation.'
 detect:
