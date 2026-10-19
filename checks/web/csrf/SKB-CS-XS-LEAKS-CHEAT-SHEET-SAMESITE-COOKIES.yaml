@@ -1,0 +1,54 @@
+id: SKB-CS-XS-LEAKS-CHEAT-SHEET-SAMESITE-COOKIES
+title: SameSite Cookies
+summary: SameSite Cookies The SameSite attribute of a cookie tells the browser whether it should include
+  the cookie in the request from the other sit
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XS_Leaks_Cheat_Sheet#SameSite Cookies
+refs:
+- CS:XS_Leaks_Cheat_Sheet#SameSite Cookies
+check: 'SameSite Cookies The SameSite attribute of a cookie tells the browser whether it should include
+  the cookie in the request from the other site. The SameSite attribute takes the following values: -
+  None - the cookie will be attached to a request from another site, but it must be sent over a secure
+  HTTPS channel'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XS_Leaks_Cheat_Sheet.md (anchor: SameSite Cookies) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- samesite
+- cookies
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XS_Leaks_Cheat_Sheet.md
+  anchor: SameSite Cookies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XS_Leaks_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

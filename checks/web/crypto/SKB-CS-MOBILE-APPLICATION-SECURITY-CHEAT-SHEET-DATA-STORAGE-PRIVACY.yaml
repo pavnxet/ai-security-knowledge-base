@@ -1,0 +1,59 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-DATA-STORAGE-PRIVACY
+title: Data Storage & Privacy
+summary: Data Storage & Privacy 1. Data Encryption - Encrypt sensitive data both at rest and in transit.
+  - Store private data on the device's interna
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Data Storage & Privacy
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Data Storage & Privacy
+check: Data Storage & Privacy 1. Data Encryption - Encrypt sensitive data both at rest and in transit.
+  - Store private data on the device's internal storage. - Use platform APIs for encryption. Do not attempt
+  to implement your
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Data
+  Storage & Privacy) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- data
+- storage
+- privacy
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Data Storage & Privacy
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

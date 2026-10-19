@@ -1,0 +1,55 @@
+id: SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-TOKEN-BASED-MITIGATION
+title: Token-Based Mitigation
+summary: Token-Based Mitigation The [synchronizer token pattern]( synchronizer-token-pattern) is one of
+  the most popular and recommended methods to m
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Token-Based Mitigation
+refs:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Token-Based Mitigation
+check: Token-Based Mitigation The [synchronizer token pattern]( synchronizer-token-pattern) is one of
+  the most popular and recommended methods to mitigate CSRF. Synchronizer Token Pattern CSRF tokens should
+  be generated on the
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Token-Based Mitigation) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- token
+- based
+- mitigation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Token-Based Mitigation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

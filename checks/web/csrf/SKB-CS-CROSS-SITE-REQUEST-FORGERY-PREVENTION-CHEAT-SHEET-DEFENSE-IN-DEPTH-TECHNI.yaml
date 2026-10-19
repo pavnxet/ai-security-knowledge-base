@@ -1,0 +1,54 @@
+id: SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-DEFENSE-IN-DEPTH-TECHNI
+title: Defense In Depth Techniques
+summary: Defense In Depth Techniques SameSite (Cookie Attribute) SameSite is a cookie attribute (similar
+  to HTTPOnly, Secure etc.) which aims to miti
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Defense In Depth Techniques
+refs:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Defense In Depth Techniques
+check: Defense In Depth Techniques SameSite (Cookie Attribute) SameSite is a cookie attribute (similar
+  to HTTPOnly, Secure etc.) which aims to mitigate CSRF attacks. It is defined in [RFC6265bis](https://tools.ietf.org/html/dr
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Defense In Depth Techniques) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- defense
+- depth
+- techniques
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Defense In Depth Techniques
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

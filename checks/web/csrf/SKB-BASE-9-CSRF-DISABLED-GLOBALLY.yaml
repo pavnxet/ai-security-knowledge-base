@@ -1,0 +1,55 @@
+id: SKB-BASE-9-CSRF-DISABLED-GLOBALLY
+title: 9. CSRF disabled globally
+summary: '9. CSRF disabled globally What: csrf_exempt on a base view or middleware disables protection
+  for sensitive routes. Fix: Keep CSRF on; for AP'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. CSRF disabled globally
+refs:
+- BASE:9. CSRF disabled globally
+check: '9. CSRF disabled globally What: csrf_exempt on a base view or middleware disables protection for
+  sensitive routes. Fix: Keep CSRF on; for APIs use token/JWT auth instead of stripping CSRF. Detection:
+  rg -n "csrf_exempt CsrfViewMiddleware. disabled" / .py ---'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 9. CSRF disabled globally) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- csrf
+- disabled
+- globally
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 9. CSRF disabled globally
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

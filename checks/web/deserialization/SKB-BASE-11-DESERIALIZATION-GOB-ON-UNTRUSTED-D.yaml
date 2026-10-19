@@ -1,0 +1,58 @@
+id: SKB-BASE-11-DESERIALIZATION-GOB-ON-UNTRUSTED-D
+title: 11. Deserialization / gob on untrusted data
+summary: '11. Deserialization / gob on untrusted data What: gob.Decode of untrusted input can trigger
+  panics or unwanted type instantiation. Fix: Avoi'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: deserialization
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. Deserialization / gob on untrusted d
+refs:
+- BASE:11. Deserialization / gob on untrusted d
+check: '11. Deserialization / gob on untrusted data What: gob.Decode of untrusted input can trigger panics
+  or unwanted type instantiation. Fix: Avoid gob for untrusted i'
+fix: 'See yesmayank/secure-coding-baseline 11-go.md (anchor: 11. Deserialization / gob on untrusted data)
+  for remediation.'
+detect:
+  grep:
+  - pickle.load
+  - unserialize(
+  - yaml.load(
+  - ObjectInputStream
+  files:
+  - '**/*.py'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- deserialization
+- deserialization
+- untrusted
+- data
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: 11. Deserialization / gob on untrusted data
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

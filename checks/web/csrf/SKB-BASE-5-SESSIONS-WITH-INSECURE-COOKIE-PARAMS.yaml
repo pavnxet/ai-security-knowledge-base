@@ -1,0 +1,56 @@
+id: SKB-BASE-5-SESSIONS-WITH-INSECURE-COOKIE-PARAMS
+title: 5. Sessions with insecure cookie params
+summary: '5. Sessions with insecure cookie params What: Default session.cookie_httponly=0 , cookie_secure=0
+  , cookie_samesite= enables theft/CSRF. Fix'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Sessions with insecure cookie params
+refs:
+- BASE:5. Sessions with insecure cookie params
+check: '5. Sessions with insecure cookie params What: Default session.cookie_httponly=0 , cookie_secure=0
+  , cookie_samesite= enables theft/CSRF. Fix: session.cookie_httponly=1 , cookie_secure=1 , cookie_samesite=Strict
+  , use_strict_mode=1 . Detection: rg -n'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 5. Sessions with insecure cookie params)
+  for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- sessions
+- with
+- insecure
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 5. Sessions with insecure cookie params
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

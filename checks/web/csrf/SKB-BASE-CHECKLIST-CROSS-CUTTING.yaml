@@ -1,0 +1,56 @@
+id: SKB-BASE-CHECKLIST-CROSS-CUTTING
+title: Checklist (cross-cutting)
+summary: Checklist (cross-cutting) - [ ] No secrets in source (scan with gitleaks ) - [ ] All imports
+  resolve to real, non-typosquat packages ( npm l
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist (cross-cutting)
+refs:
+- BASE:Checklist (cross-cutting)
+check: Checklist (cross-cutting) - [ ] No secrets in source (scan with gitleaks ) - [ ] All imports resolve
+  to real, non-typosquat packages ( npm ls / pip-audit ) - [ ] Dependencies pinned and scanned - [ ] Every
+  :id route has object-level authz - [ ] No raw body bound to models - [ ] A
+fix: 'See yesmayank/secure-coding-baseline 26-vibe-coded-overview.md (anchor: Checklist (cross-cutting))
+  for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- checklist
+- cross
+- cutting
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 26-vibe-coded-overview.md
+  anchor: Checklist (cross-cutting)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/26-vibe-coded-overview.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

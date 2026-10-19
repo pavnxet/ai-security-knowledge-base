@@ -1,0 +1,58 @@
+id: SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-2-PRIORITIZE-MIGRATION-WORK
+title: 'Stage 2: Prioritize migration work'
+summary: 'Stage 2: Prioritize migration work Prioritize data that must stay confidential for years and
+  systems that will be difficult to update later,'
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 2: Prioritize migration work'
+refs:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 2: Prioritize migration work'
+check: 'Stage 2: Prioritize migration work Prioritize data that must stay confidential for years and systems
+  that will be difficult to update later, following the [NCSC migration planning guidance'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md (anchor: Stage 2:
+  Prioritize migration work) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- stage
+- prioritize
+- migration
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  anchor: 'Stage 2: Prioritize migration work'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

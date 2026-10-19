@@ -1,0 +1,56 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-SAMESITE-COOKIES
+title: Defending with SameSite Cookies
+summary: Defending with SameSite Cookies Cookies marked SameSite=Strict or SameSite=Lax are withheld from
+  [cross-site iframe requests](https://develo
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending with SameSite Cookies
+refs:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending with SameSite Cookies
+check: Defending with SameSite Cookies Cookies marked SameSite=Strict or SameSite=Lax are withheld from
+  [cross-site iframe requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie
+  samesitesamesi
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: Defending with
+  SameSite Cookies) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- defending
+- with
+- samesite
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: Defending with SameSite Cookies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CROSS-SITE-REQUEST-FORGERY-CSRF
+title: Cross Site Request Forgery (CSRF)
+summary: Cross Site Request Forgery (CSRF) - Include the django.middleware.csrf.CsrfViewMiddleware module
+  in the MIDDLEWARE setting in your project's
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Cross Site Request Forgery (CSRF)
+refs:
+- CS:Django_Security_Cheat_Sheet#Cross Site Request Forgery (CSRF)
+check: Cross Site Request Forgery (CSRF) - Include the django.middleware.csrf.CsrfViewMiddleware module
+  in the MIDDLEWARE setting in your project's settings.py to add CSRF related headers to your responses.
+  - In forms use the {% csrf_token %} template tag
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Cross Site Request
+  Forgery (CSRF)) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- cross
+- site
+- request
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Cross Site Request Forgery (CSRF)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

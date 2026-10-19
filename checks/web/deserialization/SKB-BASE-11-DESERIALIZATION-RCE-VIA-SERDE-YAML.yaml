@@ -1,0 +1,58 @@
+id: SKB-BASE-11-DESERIALIZATION-RCE-VIA-SERDE-YAML
+title: 11. Deserialization RCE via `serde_yaml` / unsafe `Deserialize`
+summary: '11. Deserialization RCE via serde_yaml / unsafe Deserialize What: While serde is generally safe,
+  deserializing into overly permissive types '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: deserialization
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. Deserialization RCE via `serde_yaml`
+refs:
+- BASE:11. Deserialization RCE via `serde_yaml`
+check: '11. Deserialization RCE via serde_yaml / unsafe Deserialize What: While serde is generally safe,
+  deserializing into overly permissive'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 11. Deserialization RCE via `serde_yaml`
+  / unsafe `Deserialize`) for remediation.'
+detect:
+  grep:
+  - pickle.load
+  - unserialize(
+  - yaml.load(
+  - ObjectInputStream
+  files:
+  - '**/*.py'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- deserialization
+- deserialization
+- serde
+- yaml
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 11. Deserialization RCE via `serde_yaml` / unsafe `Deserialize`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

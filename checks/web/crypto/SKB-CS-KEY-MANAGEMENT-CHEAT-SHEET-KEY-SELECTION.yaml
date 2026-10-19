@@ -1,0 +1,57 @@
+id: SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-KEY-SELECTION
+title: Key Selection
+summary: Key Selection Selection of the cryptographic and key management algorithms to use within a given
+  application should begin with an understand
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Key_Management_Cheat_Sheet#Key Selection
+refs:
+- CS:Key_Management_Cheat_Sheet#Key Selection
+check: Key Selection Selection of the cryptographic and key management algorithms to use within a given
+  application should begin with an understanding of the objectives of the application. For example, if
+  the application is required to store data securely, then the developer should sele
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Key_Management_Cheat_Sheet.md (anchor: Key Selection) for
+  remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- selection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Key_Management_Cheat_Sheet.md
+  anchor: Key Selection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Key_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

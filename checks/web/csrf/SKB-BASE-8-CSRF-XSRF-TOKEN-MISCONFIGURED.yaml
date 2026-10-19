@@ -1,0 +1,56 @@
+id: SKB-BASE-8-CSRF-XSRF-TOKEN-MISCONFIGURED
+title: 8. CSRF / XSRF token misconfigured
+summary: '8. CSRF / XSRF token misconfigured What: HttpClient XSRF protection disabled or cookie names
+  mismatched. Fix: Enable HttpClientXsrfModule /b'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:8. CSRF / XSRF token misconfigured
+refs:
+- BASE:8. CSRF / XSRF token misconfigured
+check: '8. CSRF / XSRF token misconfigured What: HttpClient XSRF protection disabled or cookie names mismatched.
+  Fix: Enable HttpClientXsrfModule /built-in XSRF; ensure backend validates the header. Detection: rg
+  -n "XSRF Csrf withXSRF" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 18-angular.md (anchor: 8. CSRF / XSRF token misconfigured)
+  for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- csrf
+- xsrf
+- token
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 8. CSRF / XSRF token misconfigured
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

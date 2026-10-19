@@ -1,0 +1,55 @@
+id: SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-FETCH-METADATA-HEADERS
+title: Fetch Metadata headers
+summary: Fetch Metadata headers Fetch Metadata request headers provide extra information about the context
+  from which an HTTP request was made. Serve
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Fetch Metadata headers
+refs:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Fetch Metadata headers
+check: Fetch Metadata headers Fetch Metadata request headers provide extra information about the context
+  from which an HTTP request was made. Servers can use these headers — most importantly Sec-Fetch-Site
+  — as a lightweight a
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Fetch Metadata headers) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- fetch
+- metadata
+- headers
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Fetch Metadata headers
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-KEY-MANAGEMENT-LIFECYCLE-BEST-PRACTICES
+title: Key Management Lifecycle Best Practices
+summary: Key Management Lifecycle Best Practices Generation Cryptographic keys shall be generated within
+  cryptographic module with at least a FIPS 14
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Key_Management_Cheat_Sheet#Key Management Lifecycle Best Practices
+refs:
+- CS:Key_Management_Cheat_Sheet#Key Management Lifecycle Best Practices
+check: Key Management Lifecycle Best Practices Generation Cryptographic keys shall be generated within
+  cryptographic module with at least a FIPS 140-2 or 140-3 compliance. For explanatory purposes,
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Key_Management_Cheat_Sheet.md (anchor: Key Management Lifecycle
+  Best Practices) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- management
+- lifecycle
+- best
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Key_Management_Cheat_Sheet.md
+  anchor: Key Management Lifecycle Best Practices
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Key_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

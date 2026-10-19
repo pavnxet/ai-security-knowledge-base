@@ -1,0 +1,54 @@
+id: SKB-CS-SAML-SECURITY-CHEAT-SHEET-UNSOLICITED-RESPONSE-IE-IDP-INITIATED
+title: Unsolicited Response (ie. IdP Initiated SSO) Considerations for Service Providers
+summary: Unsolicited Response (ie. IdP Initiated SSO) Considerations for Service Providers Unsolicited
+  Response is inherently less secure by design d
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:SAML_Security_Cheat_Sheet#Unsolicited Response (ie. IdP Initiated '
+refs:
+- 'CS:SAML_Security_Cheat_Sheet#Unsolicited Response (ie. IdP Initiated '
+check: Unsolicited Response (ie. IdP Initiated SSO) Considerations for Service Providers Unsolicited Response
+  is inherently less secur
+fix: 'See OWASP/CheatSheetSeries cheatsheets/SAML_Security_Cheat_Sheet.md (anchor: Unsolicited Response
+  (ie. IdP Initiated SSO) Considerations for Service Providers) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- unsolicited
+- response
+- initiated
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/SAML_Security_Cheat_Sheet.md
+  anchor: Unsolicited Response (ie. IdP Initiated SSO) Considerations for Service Providers
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/SAML_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

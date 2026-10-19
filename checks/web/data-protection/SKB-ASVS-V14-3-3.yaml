@@ -1,0 +1,55 @@
+id: SKB-ASVS-V14-3-3
+title: Client-side Data Protection - V14.3.3
+summary: Verify that data stored in browser storage (such as localStorage, sessionStorage, IndexedDB,
+  or cookies) does not contain sensitive data, wi
+platforms:
+- web
+- api
+stacks:
+- any
+domain: data-protection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-200
+cwe_source: extracted
+owasp:
+- ASVS:V14.3.3
+refs:
+- ASVS:V14.3.3
+- ASVS V14.3.3
+check: Verify that data stored in browser storage (such as localStorage, sessionStorage, IndexedDB, or
+  cookies) does not contain sensitive data, with the exception of session tokens.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V14.3.3) for remediation.'
+detect:
+  grep:
+  - serialize
+  - jsonify
+  - toJSON
+  files:
+  - '**/api/**'
+  - '**/serializers/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- data-protection
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V14.3.3
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

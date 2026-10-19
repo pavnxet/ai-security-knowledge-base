@@ -1,0 +1,56 @@
+id: SKB-BASE-9-CSRF-ON-SERVER-ACTIONS-MUTATIONS
+title: 9. CSRF on server actions / mutations
+summary: '9. CSRF on server actions / mutations What: Server Actions without CSRF protection (Next.js
+  has built-in origin checks; disabling them or us'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. CSRF on server actions / mutations
+refs:
+- BASE:9. CSRF on server actions / mutations
+check: '9. CSRF on server actions / mutations What: Server Actions without CSRF protection (Next.js has
+  built-in origin checks; disabling them or using raw POST routes removes protection). Fix: Keep allowDevelopmentOrigin
+  /origin checks enabled; verify Origin on mutations'
+fix: 'See yesmayank/secure-coding-baseline 16-nextjs.md (anchor: 9. CSRF on server actions / mutations)
+  for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- csrf
+- server
+- actions
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 16-nextjs.md
+  anchor: 9. CSRF on server actions / mutations
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/16-nextjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

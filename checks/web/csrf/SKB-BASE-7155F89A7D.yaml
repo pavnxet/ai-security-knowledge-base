@@ -1,0 +1,54 @@
+id: SKB-BASE-7155F89A7D
+title: Checklist
+summary: Checklist - [ ] Default-deny authz; explicit public paths - [ ] CSRF enabled for session apps
+  - [ ] BCrypt/Argon2 password encoding - [ ] JW
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] Default-deny authz; explicit public paths - [ ] CSRF enabled for session apps -
+  [ ] BCrypt/Argon2 password encoding - [ ] JWT key from secret store; none alg rejected - [ ] Session
+  fixation protection; secure cookies - [ ] Method-level authz where needed - [ ] Consistent role prefix;
+  no role from input - [ ] Redirect targets allowlisted - [ ] Constant-
+fix: 'See yesmayank/secure-coding-baseline 07-spring-security.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 07-spring-security.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/07-spring-security.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

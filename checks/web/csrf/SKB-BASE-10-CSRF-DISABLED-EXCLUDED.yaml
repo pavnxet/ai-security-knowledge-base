@@ -1,0 +1,55 @@
+id: SKB-BASE-10-CSRF-DISABLED-EXCLUDED
+title: 10. CSRF disabled / excluded
+summary: '10. CSRF disabled / excluded What: VerifyCsrfToken::$except broad exclusions on state-changing
+  routes. Fix: Keep CSRF on; exclude only webho'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:10. CSRF disabled / excluded
+refs:
+- BASE:10. CSRF disabled / excluded
+check: '10. CSRF disabled / excluded What: VerifyCsrfToken::$except broad exclusions on state-changing
+  routes. Fix: Keep CSRF on; exclude only webhooks with signature verification. Detection: rg -n "except
+  VerifyCsrfToken WithoutMiddleware" app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 10. CSRF disabled / excluded) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- csrf
+- disabled
+- excluded
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 10. CSRF disabled / excluded
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,51 @@
+id: SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction A [Cross-Site Request Forgery (CSRF)](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_T
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Introduction
+refs:
+- CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Introduction
+check: Introduction A [Cross-Site Request Forgery (CSRF)](https://owasp.org/www-project-web-security-testing-guide/v42/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery)
+  attack occurs when a malicious web site, email, blog, instan
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Introduction) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

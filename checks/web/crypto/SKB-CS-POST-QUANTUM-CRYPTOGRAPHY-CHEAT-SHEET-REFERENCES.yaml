@@ -1,0 +1,57 @@
+id: SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [NCSC: Timelines for migration to post-quantum cryptography](https://www.ncsc.gov.uk/guidance/pqc-migration-timelines)
+  - [NIST '
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Post_Quantum_Cryptography_Cheat_Sheet#References
+refs:
+- CS:Post_Quantum_Cryptography_Cheat_Sheet#References
+check: 'References - [NCSC: Timelines for migration to post-quantum cryptography](https://www.ncsc.gov.uk/guidance/pqc-migration-timelines)
+  - [NIST CSWP 39-upd1: Considerations for Achieving Crypto Agility](https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.39-upd1.pdf)
+  - [RFC 9794: Terminolog'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

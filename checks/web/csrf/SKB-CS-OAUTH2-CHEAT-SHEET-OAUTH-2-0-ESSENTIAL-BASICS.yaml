@@ -1,0 +1,55 @@
+id: SKB-CS-OAUTH2-CHEAT-SHEET-OAUTH-2-0-ESSENTIAL-BASICS
+title: OAuth 2.0 Essential Basics
+summary: OAuth 2.0 Essential Basics 1. Clients and Authorization Server must not expose URLs that forward
+  the user's browser to arbitrary URIs obtain
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OAuth2_Cheat_Sheet#OAuth 2.0 Essential Basics
+refs:
+- CS:OAuth2_Cheat_Sheet#OAuth 2.0 Essential Basics
+check: OAuth 2.0 Essential Basics 1. Clients and Authorization Server must not expose URLs that forward
+  the user's browser to arbitrary URIs obtained from a query parameter ("open redirectors") which can
+  enable exfiltration of authorization codes and access tokens. 2. Clients have ensur
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OAuth2_Cheat_Sheet.md (anchor: OAuth 2.0 Essential Basics)
+  for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- oauth
+- essential
+- basics
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OAuth2_Cheat_Sheet.md
+  anchor: OAuth 2.0 Essential Basics
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OAuth2_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

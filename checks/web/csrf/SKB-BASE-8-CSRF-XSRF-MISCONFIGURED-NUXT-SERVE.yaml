@@ -1,0 +1,56 @@
+id: SKB-BASE-8-CSRF-XSRF-MISCONFIGURED-NUXT-SERVE
+title: 8. CSRF / XSRF misconfigured (Nuxt server routes)
+summary: '8. CSRF / XSRF misconfigured (Nuxt server routes) What: Nuxt server routes without CSRF protection
+  on mutations. Fix: Enable CSRF token; val'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:8. CSRF / XSRF misconfigured (Nuxt serve
+refs:
+- BASE:8. CSRF / XSRF misconfigured (Nuxt serve
+check: '8. CSRF / XSRF misconfigured (Nuxt server routes) What: Nuxt server routes without CSRF protection
+  on mutations. Fix: Enable CSRF token; validate Origin on mutations. Detection: rg -n "csrf xsrf sameSite"
+  server/ nuxt.config. ---'
+fix: 'See yesmayank/secure-coding-baseline 19-vue-nuxt.md (anchor: 8. CSRF / XSRF misconfigured (Nuxt
+  server routes)) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- csrf
+- xsrf
+- misconfigured
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 8. CSRF / XSRF misconfigured (Nuxt server routes)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

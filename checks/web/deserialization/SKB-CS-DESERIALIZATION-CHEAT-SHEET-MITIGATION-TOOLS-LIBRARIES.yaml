@@ -1,0 +1,57 @@
+id: SKB-CS-DESERIALIZATION-CHEAT-SHEET-MITIGATION-TOOLS-LIBRARIES
+title: Mitigation Tools/Libraries
+summary: Mitigation Tools/Libraries - [Java secure deserialization library](https://github.com/ikkisoft/SerialKiller)
+  - [SWAT - tool for creating all
+platforms:
+- web
+stacks:
+- any
+domain: deserialization
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Deserialization_Cheat_Sheet#Mitigation Tools/Libraries
+refs:
+- CS:Deserialization_Cheat_Sheet#Mitigation Tools/Libraries
+check: Mitigation Tools/Libraries - [Java secure deserialization library](https://github.com/ikkisoft/SerialKiller)
+  - [SWAT - tool for creating allowlists](https://github.com/cschneider4711/S
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Deserialization_Cheat_Sheet.md (anchor: Mitigation Tools/Libraries)
+  for remediation.'
+detect:
+  grep:
+  - pickle.load
+  - unserialize(
+  - yaml.load(
+  - ObjectInputStream
+  files:
+  - '**/*.py'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- deserialization
+- mitigation
+- tools
+- libraries
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Deserialization_Cheat_Sheet.md
+  anchor: Mitigation Tools/Libraries
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Deserialization_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

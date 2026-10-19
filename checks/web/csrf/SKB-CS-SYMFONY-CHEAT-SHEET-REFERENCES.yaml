@@ -1,0 +1,51 @@
+id: SKB-CS-SYMFONY-CHEAT-SHEET-REFERENCES
+title: References
+summary: References - [Symfony CSRF Documentation](https://symfony.com/doc/current/security/csrf.html)
+  - [Symfony Twig Documentation](https://symfony
+platforms:
+- web
+stacks:
+- any
+domain: csrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Symfony_Cheat_Sheet#References
+refs:
+- CS:Symfony_Cheat_Sheet#References
+check: References - [Symfony CSRF Documentation](https://symfony.com/doc/current/security/csrf.html) -
+  [Symfony Twig Documentation](https://symfony.com/doc/current/templates.html) - [Doctrine Security Documentation](https://www.doctrine-project.org/projects/doctrine-dbal/en/4.5/reference/security.html)
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Symfony_Cheat_Sheet.md (anchor: References) for remediation.'
+detect:
+  grep:
+  - csrf
+  - _token
+  files:
+  - '**/routes/**'
+  - '**/views/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- csrf
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Symfony_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Symfony_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

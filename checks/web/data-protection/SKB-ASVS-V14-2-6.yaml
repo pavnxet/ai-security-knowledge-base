@@ -1,0 +1,55 @@
+id: SKB-ASVS-V14-2-6
+title: General Data Protection - V14.2.6
+summary: Verify that the application only returns the minimum required sensitive data for the application's
+  functionality. For example, only returnin
+platforms:
+- web
+- api
+stacks:
+- any
+domain: data-protection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V14.2.6
+refs:
+- ASVS:V14.2.6
+- ASVS V14.2.6
+check: Verify that the application only returns the minimum required sensitive data for the application's
+  functionality. For example, only returning some of the digits of a credit card number and not the full
+  number. If the complete data is required, it should be masked in the user interface unless t
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V14.2.6) for remediation.'
+detect:
+  grep:
+  - serialize
+  - jsonify
+  - toJSON
+  files:
+  - '**/api/**'
+  - '**/serializers/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- data-protection
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V14.2.6
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

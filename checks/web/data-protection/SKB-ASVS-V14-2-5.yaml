@@ -1,0 +1,55 @@
+id: SKB-ASVS-V14-2-5
+title: General Data Protection - V14.2.5
+summary: Verify that caching mechanisms are configured to only cache responses which have the expected
+  content type for that resource and do not cont
+platforms:
+- web
+- api
+stacks:
+- any
+domain: data-protection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V14.2.5
+refs:
+- ASVS:V14.2.5
+- ASVS V14.2.5
+check: Verify that caching mechanisms are configured to only cache responses which have the expected content
+  type for that resource and do not contain sensitive, dynamic content. The web server should return a
+  404 or 302 response when a non-existent file is accessed rather than returning a different,
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V14.2.5) for remediation.'
+detect:
+  grep:
+  - serialize
+  - jsonify
+  - toJSON
+  files:
+  - '**/api/**'
+  - '**/serializers/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- data-protection
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V14.2.5
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-BASE-9-DESERIALIZATION-OF-UNTRUSTED-PROTO
+title: 9. Deserialization of untrusted proto
+summary: '9. Deserialization of untrusted proto What: While protobuf is typed, custom Any payloads or
+  JSON-gateway transcoding can inject unexpected t'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: deserialization
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. Deserialization of untrusted proto
+refs:
+- BASE:9. Deserialization of untrusted proto
+check: '9. Deserialization of untrusted proto What: While protobuf is typed, custom Any payloads or JSON-gateway
+  transcoding can inject unexpected types. Fix: Restrict google.protobuf.Any type URLs; v'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 9. Deserialization of untrusted proto)
+  for remediation.'
+detect:
+  grep:
+  - pickle.load
+  - unserialize(
+  - yaml.load(
+  - ObjectInputStream
+  files:
+  - '**/*.py'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- deserialization
+- deserialization
+- untrusted
+- proto
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 9. Deserialization of untrusted proto
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
