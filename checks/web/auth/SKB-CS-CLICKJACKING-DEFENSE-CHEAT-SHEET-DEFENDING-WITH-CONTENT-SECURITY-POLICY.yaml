@@ -1,0 +1,57 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-CONTENT-SECURITY-POLICY
+title: Defending with Content Security Policy (CSP) frame-ancestors directive
+summary: Defending with Content Security Policy (CSP) frame-ancestors directive The frame-ancestors directive
+  can be used in a Content-Security-Polic
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending with Content Security Policy (
+refs:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending with Content Security Policy (
+check: Defending with Content Security Policy (CSP) frame-ancestors directive The frame-ancestors direct
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: Defending with
+  Content Security Policy (CSP) frame-ancestors directive) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- defending
+- with
+- content
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: Defending with Content Security Policy (CSP) frame-ancestors directive
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

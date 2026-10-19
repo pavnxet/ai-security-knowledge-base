@@ -1,0 +1,56 @@
+id: SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-TEST-AND-MAINTAIN-SECURITY
+title: Test and Maintain Security
+summary: Test and Maintain Security Follow [NHTSA's lifecycle practices, section 4.2](https://www.nhtsa.gov/sites/nhtsa.gov/files/2022-09/cybersecuri
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Automotive_Security_Cheat_Sheet#Test and Maintain Security
+refs:
+- CS:Automotive_Security_Cheat_Sheet#Test and Maintain Security
+check: 'Test and Maintain Security Follow [NHTSA''s lifecycle practices, section 4.2](https://www.nhtsa.gov/sites/nhtsa.gov/files/2022-09/cybersecurity-best-practices-safety-modern-vehicles-2022-tag.pdf
+  page=8): - Track componen'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Automotive_Security_Cheat_Sheet.md (anchor: Test and Maintain
+  Security) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- test
+- maintain
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Automotive_Security_Cheat_Sheet.md
+  anchor: Test and Maintain Security
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Automotive_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

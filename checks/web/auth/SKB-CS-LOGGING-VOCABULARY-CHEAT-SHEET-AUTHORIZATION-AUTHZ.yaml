@@ -1,0 +1,57 @@
+id: SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-AUTHORIZATION-AUTHZ
+title: Authorization [AUTHZ]
+summary: 'Authorization [AUTHZ] --- authz_fail[:userid,resource] Description An attempt was made to access
+  a resource which was unauthorized Level: : '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Vocabulary_Cheat_Sheet#Authorization [AUTHZ]
+refs:
+- CS:Logging_Vocabulary_Cheat_Sheet#Authorization [AUTHZ]
+check: 'Authorization [AUTHZ] --- authz_fail[:userid,resource] Description An attempt was made to access
+  a resource which was unauthorized Level: : CRITICAL Example: --- authz_change[:userid,from,to] Description
+  The user or entity entitlements was changed Le'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Vocabulary_Cheat_Sheet.md (anchor: Authorization
+  [AUTHZ]) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- authorization
+- authz
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  anchor: Authorization [AUTHZ]
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

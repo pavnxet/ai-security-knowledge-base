@@ -1,0 +1,57 @@
+id: SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-EXTERNAL-ENTITY-IDENTITY-PROPAGATION
+title: External Entity Identity Propagation
+summary: External Entity Identity Propagation Propagate authenticated user context in a form each receiving
+  service can validate, and authenticate th
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Microservices_Security_Cheat_Sheet#External Entity Identity Propagation
+refs:
+- CS:Microservices_Security_Cheat_Sheet#External Entity Identity Propagation
+check: External Entity Identity Propagation Propagate authenticated user context in a form each receiving
+  service can validate, and authenticate the calling service separately. A signature protect
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Microservices_Security_Cheat_Sheet.md (anchor: External Entity
+  Identity Propagation) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- external
+- entity
+- identity
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Microservices_Security_Cheat_Sheet.md
+  anchor: External Entity Identity Propagation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Microservices_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

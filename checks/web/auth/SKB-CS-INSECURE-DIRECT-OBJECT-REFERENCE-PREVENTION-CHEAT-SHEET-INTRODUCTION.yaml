@@ -1,0 +1,57 @@
+id: SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction Insecure Direct Object Reference (IDOR) is a vulnerability that arises when attackers
+  can access or modify objects by manipulat
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Introduction
+refs:
+- CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Introduction
+check: Introduction Insecure Direct Object Reference (IDOR) is a vulnerability that arises when attackers
+  can access or modify objects by manipulating identifiers used in a web application's URLs or parameters.
+  It occurs due to
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

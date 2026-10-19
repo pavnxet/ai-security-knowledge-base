@@ -1,0 +1,57 @@
+id: SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-DEFENDING-SPECIFIC-FLOWS
+title: Defending Specific Flows
+summary: Defending Specific Flows Account creation (OAT-019) - Verify email before the account is usable;
+  do not just send a confirmation, gate featu
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Defending Specific Flows
+refs:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Defending Specific Flows
+check: Defending Specific Flows Account creation (OAT-019) - Verify email before the account is usable;
+  do not just send a confirmation, gate features behind it. - Check email against disposable-do
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md (anchor:
+  Defending Specific Flows) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- defending
+- specific
+- flows
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  anchor: Defending Specific Flows
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

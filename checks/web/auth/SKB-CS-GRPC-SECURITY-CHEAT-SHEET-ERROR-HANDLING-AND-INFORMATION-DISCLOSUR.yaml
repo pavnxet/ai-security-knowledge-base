@@ -1,0 +1,57 @@
+id: SKB-CS-GRPC-SECURITY-CHEAT-SHEET-ERROR-HANDLING-AND-INFORMATION-DISCLOSUR
+title: Error Handling and Information Disclosure
+summary: Error Handling and Information Disclosure Secure Error Responses Detailed error messages can
+  reveal system internals to attackers. Return ge
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:gRPC_Security_Cheat_Sheet#Error Handling and Information Disclosur
+refs:
+- CS:gRPC_Security_Cheat_Sheet#Error Handling and Information Disclosur
+check: Error Handling and Information Disclosure Secure Error Responses Detailed error messages can reveal
+  system internals to attackers. Return generic error messages while logging detailed inform
+fix: 'See OWASP/CheatSheetSeries cheatsheets/gRPC_Security_Cheat_Sheet.md (anchor: Error Handling and
+  Information Disclosure) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- error
+- handling
+- information
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/gRPC_Security_Cheat_Sheet.md
+  anchor: Error Handling and Information Disclosure
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/gRPC_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

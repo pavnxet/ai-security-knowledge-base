@@ -1,0 +1,58 @@
+id: SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-GENERATE-FOR-EACH-RELEASE
+title: Generate for each release
+summary: 'Generate for each release Automate generation after dependency resolution, then reconcile the
+  inventory with the final package or container '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Dependency_Graph_SBOM_Cheat_Sheet#Generate for each release
+refs:
+- CS:Dependency_Graph_SBOM_Cheat_Sheet#Generate for each release
+check: Generate for each release Automate generation after dependency resolution, then reconcile the inventory
+  with the final package or container image. Include bundled libraries and operating system packages where
+  applicable;
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Dependency_Graph_SBOM_Cheat_Sheet.md (anchor: Generate for
+  each release) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- generate
+- each
+- release
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Dependency_Graph_SBOM_Cheat_Sheet.md
+  anchor: Generate for each release
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Dependency_Graph_SBOM_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

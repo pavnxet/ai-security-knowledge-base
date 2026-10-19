@@ -1,0 +1,57 @@
+id: SKB-CS-GRPC-SECURITY-CHEAT-SHEET-TRANSPORT-SECURITY
+title: Transport Security
+summary: Transport Security Always Use TLS in Production Production deployments need TLS encryption to
+  protect against eavesdropping and man-in-the-m
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:gRPC_Security_Cheat_Sheet#Transport Security
+refs:
+- CS:gRPC_Security_Cheat_Sheet#Transport Security
+check: Transport Security Always Use TLS in Production Production deployments need TLS encryption to protect
+  against eavesdropping and man-in-the-middle attacks. Configure TLS 1.2 or higher with strong cipher
+  suites, and disable weak protocols and ciphers. Implement Mutual TLS (mTLS) fo
+fix: 'See OWASP/CheatSheetSeries cheatsheets/gRPC_Security_Cheat_Sheet.md (anchor: Transport Security)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- transport
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/gRPC_Security_Cheat_Sheet.md
+  anchor: Transport Security
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/gRPC_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

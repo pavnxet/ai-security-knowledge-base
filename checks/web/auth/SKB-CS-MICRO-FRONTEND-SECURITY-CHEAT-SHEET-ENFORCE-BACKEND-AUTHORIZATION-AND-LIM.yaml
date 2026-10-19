@@ -1,0 +1,57 @@
+id: SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-ENFORCE-BACKEND-AUTHORIZATION-AND-LIM
+title: Enforce Backend Authorization and Limit Shared Data
+summary: 'Enforce Backend Authorization and Limit Shared Data Authorize Every Request on the Server Neither
+  the shell nor a remote micro-frontend can '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Micro_Frontend_Security_Cheat_Sheet#Enforce Backend Authorization and Limit '
+refs:
+- 'CS:Micro_Frontend_Security_Cheat_Sheet#Enforce Backend Authorization and Limit '
+check: Enforce Backend Authorization and Limit Shared Data Authorize Every Request on the Server Neither
+  the shell nor a remote micro-frontend can enforce authorizatio
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Micro_Frontend_Security_Cheat_Sheet.md (anchor: Enforce Backend
+  Authorization and Limit Shared Data) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- enforce
+- backend
+- authorization
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Micro_Frontend_Security_Cheat_Sheet.md
+  anchor: Enforce Backend Authorization and Limit Shared Data
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Micro_Frontend_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

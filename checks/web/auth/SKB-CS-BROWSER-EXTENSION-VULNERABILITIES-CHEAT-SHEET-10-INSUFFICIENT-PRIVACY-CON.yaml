@@ -1,0 +1,57 @@
+id: SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-10-INSUFFICIENT-PRIVACY-CON
+title: 10. Insufficient Privacy Controls
+summary: '10. Insufficient Privacy Controls Vulnerability: Insufficient Privacy Controls If an extension
+  does not clearly define how it collects and h'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#10. Insufficient Privacy Controls
+refs:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#10. Insufficient Privacy Controls
+check: '10. Insufficient Privacy Controls Vulnerability: Insufficient Privacy Controls If an extension
+  does not clearly define how it collects and handles user data, it'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md (anchor:
+  10. Insufficient Privacy Controls) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- insufficient
+- privacy
+- controls
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  anchor: 10. Insufficient Privacy Controls
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

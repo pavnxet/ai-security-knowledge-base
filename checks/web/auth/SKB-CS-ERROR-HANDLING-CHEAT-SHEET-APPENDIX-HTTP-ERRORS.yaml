@@ -1,0 +1,58 @@
+id: SKB-CS-ERROR-HANDLING-CHEAT-SHEET-APPENDIX-HTTP-ERRORS
+title: Appendix HTTP Errors
+summary: Appendix HTTP Errors A reference for HTTP errors can be found here [RFC 2616](https://www.ietf.org/rfc/rfc2616.txt).
+  Using error messages th
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Error_Handling_Cheat_Sheet#Appendix HTTP Errors
+refs:
+- CS:Error_Handling_Cheat_Sheet#Appendix HTTP Errors
+check: Appendix HTTP Errors A reference for HTTP errors can be found here [RFC 2616](https://www.ietf.org/rfc/rfc2616.txt).
+  Using error messages that do not provide implementation details is important to avoid information leakage.
+  In general, consider usin
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Error_Handling_Cheat_Sheet.md (anchor: Appendix HTTP Errors)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- appendix
+- http
+- errors
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Error_Handling_Cheat_Sheet.md
+  anchor: Appendix HTTP Errors
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Error_Handling_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

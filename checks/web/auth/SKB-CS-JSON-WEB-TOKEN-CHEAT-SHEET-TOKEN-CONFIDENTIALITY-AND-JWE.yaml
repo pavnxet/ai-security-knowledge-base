@@ -1,0 +1,55 @@
+id: SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-TOKEN-CONFIDENTIALITY-AND-JWE
+title: Token Confidentiality and JWE
+summary: Token Confidentiality and JWE Signed JWTs are not confidential A signed JWT ([JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JSON_Web_Token_Cheat_Sheet#Token Confidentiality and JWE
+refs:
+- CS:JSON_Web_Token_Cheat_Sheet#Token Confidentiality and JWE
+check: Token Confidentiality and JWE Signed JWTs are not confidential A signed JWT ([JSON Web Signature](https://datatracker.ietf.org/doc/html/rfc7515),
+  JWS) provides integrity and authenticity, but not confidentiality. The pa
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JSON_Web_Token_Cheat_Sheet.md (anchor: Token Confidentiality
+  and JWE) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- token
+- confidentiality
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  anchor: Token Confidentiality and JWE
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
