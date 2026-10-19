@@ -13,14 +13,16 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Enforce Workflows as Explicit State Mach
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Enforce Workflows as Explicit State Mach
-check: Enforce Workflows as Explicit State Machines Multi-step processes (signup flows, checkouts, approvals,
-  KYC verification, password
+check: Enforce Workflows as Explicit State Machines Multi-step processes (signup flows, checkouts, approva
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Enforce Workflows
   as Explicit State Machines) for remediation.'
 detect:
