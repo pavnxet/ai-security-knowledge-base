@@ -1,6 +1,9 @@
-# secure-kb
+# AI Security Knowledge Base (`secure-kb`)
 
-**An AI-agent-searchable security verification knowledge base.**
+**An AI security knowledge base — security check cards an AI coding agent can search.**
+
+> Keywords: AI security · AI agent security · OWASP ASVS · WSTG · MASTG · Top 10 · LLM security · prompt injection · secure code review · AppSec · DevSecOps · MCP · Claude · Cursor
+
 2,057 atomic check cards distilled from 67 public security repositories — each traceable to a real
 file, anchor and commit.
 
@@ -8,8 +11,8 @@ file, anchor and commit.
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
 
-[**Website →**](https://pavnxet.github.io/secure-kb/) ·
-[Releases](https://github.com/pavnxet/secure-kb/releases) ·
+[**Website →**](https://pavnxet.github.io/ai-security-knowledge-base/) ·
+[Releases](https://github.com/pavnxet/ai-security-knowledge-base/releases) ·
 [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 ---
@@ -28,8 +31,8 @@ Zero required dependencies (standard-library Python only). `index/` and `index/k
 themselves on first use.
 
 ```bash
-git clone https://github.com/pavnxet/secure-kb.git
-cd secure-kb
+git clone https://github.com/pavnxet/ai-security-knowledge-base.git
+cd ai-security-knowledge-base
 
 python3 cli/secure_kb.py detect /path/to/project
 python3 cli/secure_kb.py profile web --gate fast --format brief

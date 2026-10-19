@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pavnxet.github.io/ai-security-knowledge-base/sitemap.xml
