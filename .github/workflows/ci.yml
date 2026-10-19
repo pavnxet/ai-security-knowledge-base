@@ -5,6 +5,14 @@ on:
     branches: [main, master]
   pull_request:
 
+# One run per branch; a newer push cancels superseded queued/in-progress runs.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   quality-gates:
     runs-on: ubuntu-latest
@@ -23,11 +31,39 @@ jobs:
         run: |
           python cli/secure_kb.py detect .
           python cli/secure_kb.py profile web --gate fast --format brief | head -5
-          python cli/secure_kb.py get SKB-WEB-INJECT-0003 --format md | head -5
-      - name: Zero-dependency fallback works
+          python cli/secure_kb.py get SKB-ASVS-V1-2-4 --format md | head -5
+      - name: Zero-dependency fallback works (sharded index, no build step)
         run: |
-          jq -c 'select(.severity=="critical") | {id,title}' index/checks.jsonl | head -3
+          cat index/checks/*.jsonl | jq -c 'select(.severity=="critical") | {id,title}' | head -3
+          cat index/checks/*.jsonl | grep -c "SKB-ASVS"
           cut -f1,2 index/brief.tsv | head -3
+
+  determinism:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build deps
+        run: pip install pyyaml
+      - name: Rebuild from pinned sources and compare content_hash to committed manifest
+        run: |
+          python scripts/fetch_sources.py
+          python scripts/ingest_from_cache.py
+          python scripts/build_cards_v2.py
+          python scripts/build_authored.py
+          python scripts/dedupe.py
+          python scripts/build_index.py
+          python scripts/phase_d.py
+          python scripts/build_index.py
+          python - <<'PY'
+          import json
+          rebuilt=json.load(open("manifest.json"))["content_hash"]
+          committed=json.load(open("manifest.committed.json"))["content_hash"]
+          print("rebuilt", rebuilt, "committed", committed)
+          assert rebuilt==committed, "content_hash mismatch: build is not reproducible"
+          PY
 
   secret-scan:
     runs-on: ubuntu-latest
