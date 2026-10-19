@@ -1,0 +1,15 @@
+platforms:
+- web
+- api
+source: OWASP/NodeGoat
+maps:
+  NoSQL injection:
+  - SKB-WEB-INJECT-0003
+  SSRF:
+  - SKB-WEB-SSRF-0007
+  Broken access control:
+  - SKB-WEB-ACCESS-0006
+  Unvalidated redirects:
+  - SKB-WEB-SSRF-0007
+  Sensitive data exposure:
+  - SKB-API-DATAEXPOSURE-0018

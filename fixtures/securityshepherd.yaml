@@ -1,0 +1,13 @@
+platforms:
+- web
+- mobile
+source: OWASP/SecurityShepherd
+maps:
+  Injection:
+  - SKB-WEB-INJECT-0003
+  XSS:
+  - SKB-WEB-XSS-0004
+  CSRF:
+  - SKB-WEB-CSRF-0005
+  Session management:
+  - SKB-WEB-SESSION-0002

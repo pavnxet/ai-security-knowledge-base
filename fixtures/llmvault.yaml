@@ -1,0 +1,12 @@
+platforms:
+- llm
+source: CyberSunil/LLMVault
+maps:
+  Prompt injection:
+  - SKB-LLM-INJECT-0065
+  Insecure output handling:
+  - SKB-LLM-OUTPUT-0066
+  Excessive agency:
+  - SKB-LLM-AGENCY-0067
+  Sensitive info disclosure:
+  - SKB-LLM-DISCLOSURE-0068

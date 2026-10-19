@@ -1,0 +1,96 @@
+{
+ "cards": 2108,
+ "per_platform": {
+  "api": 783,
+  "web": 1869,
+  "cloud": 16,
+  "mobile": 58,
+  "android": 19,
+  "ios": 15,
+  "iot": 13,
+  "llm": 10,
+  "web3": 49,
+  "vibe": 39,
+  "telegram": 7,
+  "browser-ext": 4,
+  "desktop": 4
+ },
+ "src_cards": {
+  "OWASP/API-Security": 10,
+  "OWASP/CheatSheetSeries": 1040,
+  "shieldfy/API-Security-Checklist": 13,
+  "OWASP/ASVS": 339,
+  "OWASP/Top10": 10,
+  "OWASP/wstg": 112,
+  "mgreiler/secure-code-review-checklist": 8,
+  "yesmayank/secure-coding-baseline": 447,
+  "OWASP/mastg": 92,
+  "OWASP/masvs": 24,
+  "OWASP/owasp-istg": 19,
+  "OWASP/www-project-top-10-for-large-language-model-applications": 10,
+  "crytic/not-so-smart-contracts": 11,
+  "kadenzipfel/smart-contract-vulnerabilities": 38,
+  "raroque/vibe-security-skill": 39
+ },
+ "extraction": {
+  "programmatic": 2093,
+  "authored": 15
+ },
+ "bench": {
+  "cards": 2108,
+  "heldout": {
+   "all": {
+    "set": "all",
+    "n": 154,
+    "recall@5": 0.61,
+    "recall@10": 0.649,
+    "mrr": 0.57,
+    "p50_ms": 66.11,
+    "p95_ms": 113.38,
+    "avg_tokens": 45.8
+   },
+   "curated_v1": {
+    "set": "curated",
+    "n": 59,
+    "recall@5": 0.322,
+    "recall@10": 0.39,
+    "mrr": 0.27,
+    "p50_ms": 68.38,
+    "p95_ms": 112.25,
+    "avg_tokens": 46.2
+   },
+   "curated_v2": {
+    "set": "curated_v2",
+    "n": 59,
+    "recall@5": 0.39,
+    "recall@10": 0.525,
+    "mrr": 0.262,
+    "p50_ms": 73.77,
+    "p95_ms": 118.29,
+    "avg_tokens": 46.2
+   },
+   "templated": {
+    "set": "templated",
+    "n": 95,
+    "recall@5": 0.789,
+    "recall@10": 0.811,
+    "mrr": 0.755,
+    "p50_ms": 79.33,
+    "p95_ms": 163.9,
+    "avg_tokens": 45.5
+   },
+   "user": {
+    "set": "user",
+    "n": 0,
+    "note": "empty - add real queries"
+   }
+  },
+  "lab_coverage": {
+   "classes": 30,
+   "covered": 29,
+   "coverage_pct": 96.7,
+   "in_fast_gate": 15,
+   "gate_recall_pct": 50.0
+  }
+ }
+}

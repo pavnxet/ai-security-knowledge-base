@@ -1,0 +1,318 @@
+[
+{
+"old_id": "SKB-I-AUTH-4065",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-4065",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7090",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7094",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-7916",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-AUTH-9240",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-CONFIG-0827",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-CONFIG-7090",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-CRYPTO-7090",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-LOGGING-2716",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-LOGGING-4243",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-LOGGING-4243",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-LOGGING-7091",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-I-SECRETS-8568",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-M-CONFIG-4951",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-M-CONFIG-5534",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-M-CONFIG-9188",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-M-STORAGE-3564",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-0292",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-0931",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-2938",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-FILEUPLOAD-4503",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-INJECTION-1064",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SESSION-0221",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-XSS-0190",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-ACCESSCONT-3782",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-ACCESSCONT-6570",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-ACCESSCONT-8883",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-1112",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-2032",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-2424",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-2617",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-7621",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-AUTH-9361",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-0413",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-0922",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-2420",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-3571",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-4688",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-4830",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-5876",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-6713",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-6987",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-9036",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-9080",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-9189",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CONFIG-9889",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-CRYPTO-7242",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-FILEUPLOAD-7955",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-INPUTVALID-6509",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-INPUTVALID-8756",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-0526",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-0863",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-0977",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-2135",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-7305",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-LOGGING-9690",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-RATELIMITI-0469",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-RATELIMITI-0868",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-RATELIMITI-1079",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-RATELIMITI-8102",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SECRETS-0024",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SECRETS-1479",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SECRETS-3885",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SECRETS-9178",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SMARTCONTR-0974",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SMARTCONTR-1516",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SMARTCONTR-3316",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SMARTCONTR-3698",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SMARTCONTR-4862",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-STORAGE-1109",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-STORAGE-2874",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-STORAGE-5501",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+},
+{
+"old_id": "SKB-W-SUPPLYCHAI-5648",
+"reason": "source path/anchor not present in v0.3.0 corpus (renamed parser output or dropped)"
+}
+]

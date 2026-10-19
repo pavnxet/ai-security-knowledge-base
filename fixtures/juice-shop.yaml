@@ -1,0 +1,20 @@
+platforms:
+- web
+source: juice-shop/juice-shop
+maps:
+  XSS (DOM/reflected):
+  - SKB-WEB-XSS-0004
+  SQL injection:
+  - SKB-WEB-INJECT-0003
+  Broken authentication:
+  - SKB-WEB-AUTH-0001
+  - SKB-API-AUTH-0015
+  Broken access control / IDOR:
+  - SKB-WEB-ACCESS-0006
+  - SKB-API-BOLA-0016
+  Sensitive data exposure:
+  - SKB-API-DATAEXPOSURE-0018
+  No CSRF on some routes:
+  - SKB-WEB-CSRF-0005
+  Security misconfiguration:
+  - SKB-WEB-HEADERS-0011

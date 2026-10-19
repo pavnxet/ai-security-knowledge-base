@@ -1,0 +1,16 @@
+platforms:
+- web
+source: digininja/DVWA
+maps:
+  SQL injection:
+  - SKB-WEB-INJECT-0003
+  Reflected/Stored XSS:
+  - SKB-WEB-XSS-0004
+  CSRF:
+  - SKB-WEB-CSRF-0005
+  File inclusion/upload:
+  - SKB-WEB-FILEUP-0008
+  Weak session IDs:
+  - SKB-WEB-SESSION-0002
+  Brute force:
+  - SKB-WEB-RATE-0013

@@ -1,0 +1,14 @@
+platforms:
+- api
+source: erev0s/VAmPI
+maps:
+  BOLA:
+  - SKB-API-BOLA-0016
+  Broken authentication:
+  - SKB-API-AUTH-0015
+  Mass assignment:
+  - SKB-API-MASSASSIGN-0017
+  Excessive data exposure:
+  - SKB-API-DATAEXPOSURE-0018
+  Lack of rate limiting:
+  - SKB-API-RESOURCE-0019

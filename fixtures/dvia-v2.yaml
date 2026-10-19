@@ -1,0 +1,12 @@
+platforms:
+- ios
+source: prateek147/DVIA-v2
+maps:
+  Insecure data storage:
+  - SKB-MOB-STORAGE-0024
+  ATS bypass:
+  - SKB-IOS-ATS-0032
+  Jailbreak detection bypass:
+  - SKB-MOB-RESILIENCE-0030
+  Hardcoded secrets:
+  - SKB-MOB-APKSECRETS-0031

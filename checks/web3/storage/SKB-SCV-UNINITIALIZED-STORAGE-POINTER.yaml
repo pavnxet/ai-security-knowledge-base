@@ -1,0 +1,55 @@
+id: SKB-SCV-UNINITIALIZED-STORAGE-POINTER
+title: Uninitialized Storage Pointer
+summary: Uninitialized Storage Pointer Preconditions - Solidity version <0.5.0 - Local variables of complex
+  types (structs, arrays) are declared with
+platforms:
+- web3
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Uninitialized Storage Pointer
+refs:
+- SCV:Uninitialized Storage Pointer
+check: Uninitialized Storage Pointer Preconditions - Solidity version <0.5.0 - Local variables of complex
+  types (structs, arrays) are declared without an explicit storage or memory data location - The variable
+  defaults to stora
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/uninitialized-storage-pointer.md (anchor:
+  Uninitialized Storage Pointer) for remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/uninitialized-storage-pointer.md
+  anchor: Uninitialized Storage Pointer
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/uninitialized-storage-pointer.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

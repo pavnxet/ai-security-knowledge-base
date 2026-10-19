@@ -1,0 +1,54 @@
+id: SKB-SCV-REENTRANCY
+title: Reentrancy
+summary: Reentrancy Preconditions - Contract makes an external call (ETH transfer, token transfer, .call()
+  , .send() , .transfer() , callback hook) -
+platforms:
+- web3
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Reentrancy
+refs:
+- SCV:Reentrancy
+check: 'Reentrancy Preconditions - Contract makes an external call (ETH transfer, token transfer, .call()
+  , .send() , .transfer() , callback hook) - State is modified after the external call, not before - No
+  reentrancy guard ( nonReentrant modifier) on the function - For cross-function: two or more functions
+  share state, and at least one makes an'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/reentrancy.md (anchor: Reentrancy) for
+  remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/reentrancy.md
+  anchor: Reentrancy
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/reentrancy.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,14 @@
+platforms:
+- web
+source: WebGoat/WebGoat
+maps:
+  Injection:
+  - SKB-WEB-INJECT-0003
+  XSS:
+  - SKB-WEB-XSS-0004
+  Access control flaws:
+  - SKB-WEB-ACCESS-0006
+  Insecure deserialization:
+  - SKB-WEB-DESER-0009
+  SSRF:
+  - SKB-WEB-SSRF-0007

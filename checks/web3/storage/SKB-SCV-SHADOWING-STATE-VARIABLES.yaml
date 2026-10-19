@@ -1,0 +1,55 @@
+id: SKB-SCV-SHADOWING-STATE-VARIABLES
+title: Shadowing State Variables
+summary: Shadowing State Variables Preconditions - Contract inherits from one or more parent contracts
+  - A state variable in the child contract has t
+platforms:
+- web3
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Shadowing State Variables
+refs:
+- SCV:Shadowing State Variables
+check: Shadowing State Variables Preconditions - Contract inherits from one or more parent contracts -
+  A state variable in the child contract has the same name as a state variable in a parent contract -
+  Solidity version <0.6.0 ( =0.6.0 disallows state vari
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/shadowing-state-variables.md (anchor:
+  Shadowing State Variables) for remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/shadowing-state-variables.md
+  anchor: Shadowing State Variables
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/shadowing-state-variables.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

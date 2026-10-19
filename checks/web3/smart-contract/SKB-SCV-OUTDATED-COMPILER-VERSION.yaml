@@ -1,0 +1,53 @@
+id: SKB-SCV-OUTDATED-COMPILER-VERSION
+title: Outdated Compiler Version
+summary: 'Outdated Compiler Version Preconditions - Contract is compiled with a Solidity version significantly
+  behind the latest stable release - The '
+platforms:
+- web3
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Outdated Compiler Version
+refs:
+- SCV:Outdated Compiler Version
+check: Outdated Compiler Version Preconditions - Contract is compiled with a Solidity version significantly
+  behind the latest stable release - The compiler version used has known bugs or is missing important
+  security features Vulnerable Pattern solidity // Old version missing built-in o
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/outdated-compiler-version.md (anchor:
+  Outdated Compiler Version) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/outdated-compiler-version.md
+  anchor: Outdated Compiler Version
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/outdated-compiler-version.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
