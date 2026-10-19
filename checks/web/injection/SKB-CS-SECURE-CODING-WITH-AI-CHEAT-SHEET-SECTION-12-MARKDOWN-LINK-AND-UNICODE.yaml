@@ -1,0 +1,58 @@
+id: SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-12-MARKDOWN-LINK-AND-UNICODE
+title: 'Section 12: Markdown, Link, and Unicode Injection'
+summary: 'Section 12: Markdown, Link, and Unicode Injection Agent output rendered in IDE chat panes, PR
+  comments, or review interfaces can contain Mar'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Secure_Coding_with_AI_Cheat_Sheet#Section 12: Markdown, Link, and Unicode '
+refs:
+- 'CS:Secure_Coding_with_AI_Cheat_Sheet#Section 12: Markdown, Link, and Unicode '
+check: 'Section 12: Markdown, Link, and Unicode Injection Agent output rendered in IDE chat panes, PR
+  comments, or review interfaces can'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md (anchor: Section 12:
+  Markdown, Link, and Unicode Injection) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- section
+- markdown
+- link
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md
+  anchor: 'Section 12: Markdown, Link, and Unicode Injection'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

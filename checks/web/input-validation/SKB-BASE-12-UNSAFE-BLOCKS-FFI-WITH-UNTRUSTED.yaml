@@ -1,0 +1,57 @@
+id: SKB-BASE-12-UNSAFE-BLOCKS-FFI-WITH-UNTRUSTED
+title: 12. `unsafe` blocks / FFI with untrusted input
+summary: '12. unsafe blocks / FFI with untrusted input What: unsafe parsing or FFI calls with untrusted
+  input can cause memory unsafety. Fix: Avoid un'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. `unsafe` blocks / FFI with untrusted
+refs:
+- BASE:12. `unsafe` blocks / FFI with untrusted
+check: '12. unsafe blocks / FFI with untrusted input What: unsafe parsing or FFI calls with untrusted
+  input can cause memory unsafety. Fix: Avoid unsafe on untrusted input; fuzz any unsafe path. Detec'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 12. `unsafe` blocks / FFI with untrusted
+  input) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- unsafe
+- blocks
+- with
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 12. `unsafe` blocks / FFI with untrusted input
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

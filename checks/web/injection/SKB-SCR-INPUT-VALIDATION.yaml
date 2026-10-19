@@ -1,0 +1,57 @@
+id: SKB-SCR-INPUT-VALIDATION
+title: Input Validation
+summary: Input Validation - [ ] Are inputs from external sources validated? - [ ] Is user input tested
+  for type, length, format, and range, and by en
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- SCR:Input Validation
+refs:
+- SCR:Input Validation
+check: Input Validation - [ ] Are inputs from external sources validated? - [ ] Is user input tested for
+  type, length, format, and range, and by enforcing limits? - [ ] Are flaws in regular expressions causing
+  data validation problems? - [ ] Are exact match approaches used? - [ ] Are al
+fix: 'See mgreiler/secure-code-review-checklist README.md (anchor: Input Validation) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- input
+- validation
+sources:
+- repo: mgreiler/secure-code-review-checklist
+  path: README.md
+  anchor: Input Validation
+  commit: 40ce5d4b28f4ab4db3897d4aee3b63d8cd1323ad
+  url: https://github.com/mgreiler/secure-code-review-checklist/blob/40ce5d4b28f4ab4db3897d4aee3b63d8cd1323ad/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-10-GATEWAY-TRANSCODING-WITHOUT-INPUT-VA
+title: 10. Gateway/transcoding without input validation
+summary: '10. Gateway/transcoding without input validation What: grpc-gateway maps REST to RPC; missing
+  field validation lets bad input reach services'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:10. Gateway/transcoding without input va
+refs:
+- BASE:10. Gateway/transcoding without input va
+check: '10. Gateway/transcoding without input validation What: grpc-gateway maps REST to RPC; missing
+  field validation lets bad input reach services. Fix: Validate in handl'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 10. Gateway/transcoding without input validation)
+  for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- gateway
+- transcoding
+- without
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 10. Gateway/transcoding without input validation
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

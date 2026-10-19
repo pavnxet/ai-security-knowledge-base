@@ -1,0 +1,58 @@
+id: SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-OWASP-TOP-10-MAPPING
+title: OWASP Top 10 Mapping
+summary: 'OWASP Top 10 Mapping OWASP Top 10 Relevant Section --- --- A01: Broken Access Control Section
+  5: Agent Runtime Sandboxing, Section 11: CI/CD'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Coding_with_AI_Cheat_Sheet#OWASP Top 10 Mapping
+refs:
+- CS:Secure_Coding_with_AI_Cheat_Sheet#OWASP Top 10 Mapping
+check: 'OWASP Top 10 Mapping OWASP Top 10 Relevant Section --- --- A01: Broken Access Control Section
+  5: Agent Runtime Sandboxing, Section 11: CI/CD Agents A03: Injection Section 3: Indirect Prompt Injection,
+  Section 12: Markdow'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md (anchor: OWASP Top 10
+  Mapping) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- owasp
+- mapping
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md
+  anchor: OWASP Top 10 Mapping
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Coding_with_AI_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-BASE-12-MISSING-INPUT-VALIDATION-TYPE-CONF
+title: 12. Missing input validation / type confusion
+summary: 12. Missing input validation / type confusion
+platforms:
+- web
+- api
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Missing input validation / type conf
+refs:
+- BASE:12. Missing input validation / type conf
+check: 12. Missing input validation / type confusion
+fix: 'See yesmayank/secure-coding-baseline 29-vibe-coded-injection-validation.md (anchor: 12. Missing
+  input validation / type confusion) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- missing
+- input
+- validation
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 29-vibe-coded-injection-validation.md
+  anchor: 12. Missing input validation / type confusion
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/29-vibe-coded-injection-validation.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

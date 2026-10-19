@@ -1,0 +1,57 @@
+id: SKB-BASE-3-INNERHTML-SETATTRIBUTE-WITH-USE
+title: 3. `innerHTML` / `setAttribute` with user input
+summary: '3. innerHTML / setAttribute with user input What: Direct DOM manipulation bypasses Vue''s escaping.
+  Fix: Avoid; sanitize if unavoidable. Dete'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. `innerHTML` / `setAttribute` with use
+refs:
+- BASE:3. `innerHTML` / `setAttribute` with use
+check: '3. innerHTML / setAttribute with user input What: Direct DOM manipulation bypasses Vue''s escaping.
+  Fix: Avoid; sanitize if unavoidable. Detection: rg -n "innerHTML'
+fix: 'See yesmayank/secure-coding-baseline 19-vue-nuxt.md (anchor: 3. `innerHTML` / `setAttribute` with
+  user input) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- innerhtml
+- setattribute
+- with
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 3. `innerHTML` / `setAttribute` with user input
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

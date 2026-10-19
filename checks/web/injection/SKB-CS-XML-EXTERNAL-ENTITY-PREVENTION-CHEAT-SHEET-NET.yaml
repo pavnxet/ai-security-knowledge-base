@@ -1,0 +1,56 @@
+id: SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-NET
+title: .NET control
+summary: .NET Up-to-date information for XXE injection in .NET is taken directly from the [web application
+  of unit tests by Dean Fleming](https://git
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#.NET
+refs:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#.NET
+check: .NET Up-to-date information for XXE injection in .NET is taken directly from the [web application
+  of unit tests by Dean Fleming](https://github.com/deanf1/dotnet-security-unit-tests), which covers all
+  currently supported .NET XML parsers, and has te
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md (anchor: .NET)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  anchor: .NET
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

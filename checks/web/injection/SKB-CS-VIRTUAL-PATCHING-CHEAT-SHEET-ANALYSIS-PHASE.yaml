@@ -1,0 +1,58 @@
+id: SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-ANALYSIS-PHASE
+title: Analysis Phase
+summary: 'Analysis Phase Here are the recommended steps to start the analysis phase: 1. Determine Virtual
+  Patching Applicability - Virtual patching is'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Virtual_Patching_Cheat_Sheet#Analysis Phase
+refs:
+- CS:Virtual_Patching_Cheat_Sheet#Analysis Phase
+check: 'Analysis Phase Here are the recommended steps to start the analysis phase: 1. Determine Virtual
+  Patching Applicability - Virtual patching is ideally suited for injection-type flaws but may not provide
+  an adequate level of attack surface reduction fo'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Virtual_Patching_Cheat_Sheet.md (anchor: Analysis Phase)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- analysis
+- phase
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  anchor: Analysis Phase
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

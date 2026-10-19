@@ -1,0 +1,56 @@
+id: SKB-WSTG-BUSL-01
+title: Business Logic Data Validation
+summary: Business Logic Data Validation. Identify data injection points. Validate that all checks are
+  occurring on the backend and can't be bypassed.
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-BUSL-01
+refs:
+- WSTG-BUSL-01
+check: Business Logic Data Validation. Identify data injection points. Validate that all checks are occurring
+  on the backend and can't be bypassed. Attempt to break the format of the expected data and analyze how
+  the application is handling it. Determine whether parameters that the frontend restricts (type, range,
+  s
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-BUSL-01) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-BUSL-01
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

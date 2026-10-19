@@ -1,0 +1,57 @@
+id: SKB-BASE-10-PATH-TRAVERSAL-LFI
+title: 10. Path traversal / LFI
+summary: '10. Path traversal / LFI What: include($_GET[''page''].".php") enables LFI and traversal. Fix:
+  Allowlist pages; resolve and bounds-check; neve'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:10. Path traversal / LFI
+refs:
+- BASE:10. Path traversal / LFI
+check: '10. Path traversal / LFI What: include($_GET[''page''].".php") enables LFI and traversal. Fix:
+  Allowlist pages; resolve and bounds-check; never include user input. Detection: rg -n "include\(. \$_
+  require\(. \$_ include_once\(. \$_" .php ---'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 10. Path traversal / LFI) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- path
+- traversal
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 10. Path traversal / LFI
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

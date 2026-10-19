@@ -1,0 +1,54 @@
+id: SKB-WSTG-INJT-10
+title: IMAP SMTP Injection
+summary: IMAP SMTP Injection. Identify IMAP/SMTP injection points. Understand the data flow and deployment
+  structure of the system. Assess the inject
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-INJT-10
+refs:
+- WSTG-INJT-10
+check: IMAP SMTP Injection. Identify IMAP/SMTP injection points. Understand the data flow and deployment
+  structure of the system. Assess the injection impacts.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-INJT-10) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-INJT-10
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

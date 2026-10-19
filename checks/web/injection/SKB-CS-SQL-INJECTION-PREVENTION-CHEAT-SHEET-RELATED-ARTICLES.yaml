@@ -1,0 +1,57 @@
+id: SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-RELATED-ARTICLES
+title: Related Articles
+summary: Related Articles See the [Query Parameterization Cheat Sheet](Query_Parameterization_Cheat_Sheet.md)
+  for language-specific examples of prepa
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:SQL_Injection_Prevention_Cheat_Sheet#Related Articles
+refs:
+- CS:SQL_Injection_Prevention_Cheat_Sheet#Related Articles
+check: Related Articles See the [Query Parameterization Cheat Sheet](Query_Parameterization_Cheat_Sheet.md)
+  for language-specific examples of prepared statements and stored procedures.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.md (anchor: Related
+  Articles) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- related
+- articles
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.md
+  anchor: Related Articles
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
