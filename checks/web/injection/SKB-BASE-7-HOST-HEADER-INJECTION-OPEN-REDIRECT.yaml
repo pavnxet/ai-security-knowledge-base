@@ -1,0 +1,59 @@
+id: SKB-BASE-7-HOST-HEADER-INJECTION-OPEN-REDIRECT
+title: 7. Host header injection / open redirect
+summary: '7. Host header injection / open redirect What: return 301 https://$host$request_uri; uses unvalidated
+  $host → header injection / redirect ab'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. Host header injection / open redirect
+refs:
+- BASE:7. Host header injection / open redirect
+check: '7. Host header injection / open redirect What: return 301 https://$host$request_uri; uses unvalidated
+  $host → header injection / redirect abuse. Fix: Use $server_name or a val'
+fix: 'See yesmayank/secure-coding-baseline 22-nginx.md (anchor: 7. Host header injection / open redirect)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- host
+- header
+- injection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 22-nginx.md
+  anchor: 7. Host header injection / open redirect
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/22-nginx.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

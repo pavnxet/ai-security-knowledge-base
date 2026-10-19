@@ -1,0 +1,59 @@
+id: SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-WHY-BUSINESS-LOGIC-FLAWS-ARE-DIFFEREN
+title: Why Business Logic Flaws Are Different
+summary: Why Business Logic Flaws Are Different Most well-known web vulnerabilities (SQL injection, XSS,
+  CSRF, path traversal) have a clear technical
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 65
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- CS:Business_Logic_Security_Cheat_Sheet#Why Business Logic Flaws Are Different
+refs:
+- CS:Business_Logic_Security_Cheat_Sheet#Why Business Logic Flaws Are Different
+check: Why Business Logic Flaws Are Different Most well-known web vulnerabilities (SQL injection, XSS,
+  CSRF, path traversal) have a clea
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Why Business
+  Logic Flaws Are Different) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- business
+- logic
+- flaws
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Business_Logic_Security_Cheat_Sheet.md
+  anchor: Why Business Logic Flaws Are Different
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Business_Logic_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

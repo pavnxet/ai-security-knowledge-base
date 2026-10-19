@@ -1,0 +1,59 @@
+id: SKB-BASE-7-SQL-INJECTION-VIA-STRING-CONCATENATIO
+title: 7. SQL injection via string concatenation
+summary: '7. SQL injection via string concatenation What: jdbcTemplate.query("... WHERE id = " + id) or
+  @Query("... :? { user}") misuse. Fix: Use ? pl'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. SQL injection via string concatenatio
+refs:
+- BASE:7. SQL injection via string concatenatio
+check: '7. SQL injection via string concatenation What: jdbcTemplate.query("... WHERE id = " + id) or
+  @Query("... :? { user}") misuse. Fix: Use ? placeholders or named parame'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 7. SQL injection via string concatenation)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- string
+- concatenation
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 7. SQL injection via string concatenation
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

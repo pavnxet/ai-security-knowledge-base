@@ -1,0 +1,57 @@
+id: SKB-BASE-4B957B502E
+title: Checklist
+summary: Checklist - [ ] DEBUG = False in prod; ALLOWED_HOSTS set - [ ] SECRET_KEY from env; rotated if
+  leaked - [ ] Private media behind auth; no di
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] DEBUG = False in prod; ALLOWED_HOSTS set - [ ] SECRET_KEY from env; rotated if
+  leaked - [ ] Private media behind auth; no directory listing - [ ] gunicorn / uwsgi in prod, not runserver
+  - [ ] Admin restricted + 2FA + rate limit - [ ] No raw SQL with interpolation - [ ] ModelForm with explicit
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-XSS-DEFENSE-PHILOSOPHY
+title: XSS Defense Philosophy
+summary: XSS Defense Philosophy In order for an XSS attack to be successful, an attacker must be able
+  to insert and execute malicious content in a we
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross_Site_Scripting_Prevention_Cheat_Sheet#XSS Defense Philosophy
+refs:
+- CS:Cross_Site_Scripting_Prevention_Cheat_Sheet#XSS Defense Philosophy
+check: XSS Defense Philosophy In order for an XSS attack to be successful, an attacker must be able to
+  insert and execute malicious content in a webpage. Thus, all variables in a web application n
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md (anchor: XSS
+  Defense Philosophy) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- defense
+- philosophy
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md
+  anchor: XSS Defense Philosophy
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

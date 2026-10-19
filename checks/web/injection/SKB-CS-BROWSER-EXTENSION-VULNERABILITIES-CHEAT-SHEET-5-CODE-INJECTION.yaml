@@ -1,0 +1,57 @@
+id: SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-5-CODE-INJECTION
+title: 5. Code Injection
+summary: '5. Code Injection Vulnerability: Code Injection An extension that dynamically loads scripts
+  from an untrusted source can be exploited to inj'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#5. Code Injection
+refs:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#5. Code Injection
+check: '5. Code Injection Vulnerability: Code Injection An extension that dynamically loads scripts from
+  an untrusted source can be exploited to inject and execute malicious code. Example: Code Inje'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md (anchor:
+  5. Code Injection) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- code
+- injection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  anchor: 5. Code Injection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

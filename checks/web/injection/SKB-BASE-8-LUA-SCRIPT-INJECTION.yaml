@@ -1,0 +1,58 @@
+id: SKB-BASE-8-LUA-SCRIPT-INJECTION
+title: 8. Lua script injection
+summary: '8. Lua script injection What: EVAL with user input concatenated into the script → script injection
+  / logic bypass. Fix: Use EVALSHA with par'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:8. Lua script injection
+refs:
+- BASE:8. Lua script injection
+check: '8. Lua script injection What: EVAL with user input concatenated into the script → script injection
+  / logic bypass. Fix: Use EVALSHA with parameterized KEYS / ARGV ; never interpolate user input into
+  the script body. Detection: rg -n "EVA'
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 8. Lua script injection) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- script
+- injection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: 8. Lua script injection
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

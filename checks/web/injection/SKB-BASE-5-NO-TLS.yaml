@@ -1,0 +1,56 @@
+id: SKB-BASE-5-NO-TLS
+title: 5. No TLS
+summary: '5. No TLS What: Cleartext credentials and data on the wire. Fix: ssl = on ; require hostssl
+  + sslmode=verify-full in pg_hba.conf and client '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. No TLS
+refs:
+- BASE:5. No TLS
+check: '5. No TLS What: Cleartext credentials and data on the wire. Fix: ssl = on ; require hostssl +
+  sslmode=verify-full in pg_hba.conf and client DSN. Detection: rg -n "^ssl hostssl sslmode" postgresql.conf
+  pg_hba.conf ---'
+fix: 'See yesmayank/secure-coding-baseline 24-postgresql.md (anchor: 5. No TLS) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 24-postgresql.md
+  anchor: 5. No TLS
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/24-postgresql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

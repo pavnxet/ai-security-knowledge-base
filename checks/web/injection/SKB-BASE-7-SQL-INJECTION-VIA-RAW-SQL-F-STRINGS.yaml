@@ -1,0 +1,58 @@
+id: SKB-BASE-7-SQL-INJECTION-VIA-RAW-SQL-F-STRINGS
+title: 7. SQL injection via raw SQL / f-strings
+summary: '7. SQL injection via raw SQL / f-strings What: session.execute(f"... WHERE id = {id}") is SQLi.
+  Fix: Use ORM or bound params: session.execut'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. SQL injection via raw SQL / f-strings
+refs:
+- BASE:7. SQL injection via raw SQL / f-strings
+check: '7. SQL injection via raw SQL / f-strings What: session.execute(f"... WHERE id = {id}") is SQLi.
+  Fix: Use ORM or bound params: session.execute(text("... WHERE id = :id"), {"id": id}) .'
+fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 7. SQL injection via raw SQL / f-strings)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- strings
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 7. SQL injection via raw SQL / f-strings
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

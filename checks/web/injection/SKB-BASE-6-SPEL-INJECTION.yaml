@@ -1,0 +1,58 @@
+id: SKB-BASE-6-SPEL-INJECTION
+title: 6. SpEL injection
+summary: '6. SpEL injection What: SpelExpressionParser on user input evaluates arbitrary expressions →
+  RCE. Dangerous pattern: Fix: Never parse untrus'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. SpEL injection
+refs:
+- BASE:6. SpEL injection
+check: '6. SpEL injection What: SpelExpressionParser on user input evaluates arbitrary expressions → RCE.
+  Dangerous pattern: Fix: Never parse untrusted input as SpEL; use a safe template engine with escaping.
+  Detection: rg -n "SpelExpressionParser parseExpression" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 6. SpEL injection) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- spel
+- injection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 6. SpEL injection
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

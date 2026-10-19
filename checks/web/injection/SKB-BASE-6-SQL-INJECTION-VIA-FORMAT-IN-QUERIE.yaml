@@ -1,0 +1,59 @@
+id: SKB-BASE-6-SQL-INJECTION-VIA-FORMAT-IN-QUERIE
+title: 6. SQL injection via `format!` in queries
+summary: '6. SQL injection via format! in queries What: format!("... WHERE id = {}", id) passed to query
+  (non-parameterized). Fix: Use bound params: s'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. SQL injection via `format!` in querie
+refs:
+- BASE:6. SQL injection via `format!` in querie
+check: '6. SQL injection via format! in queries What: format!("... WHERE id = {}", id) passed to query
+  (non-parameterized). Fix: Use bound params: sqlx::query("... WHERE id = ?").bind(id) ; or query_a'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 6. SQL injection via `format!` in queries)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- format
+- queries
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 6. SQL injection via `format!` in queries
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

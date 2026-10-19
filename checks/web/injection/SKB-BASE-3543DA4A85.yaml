@@ -1,0 +1,59 @@
+id: SKB-BASE-3543DA4A85
+title: 6. SQL injection via string concatenation
+summary: '6. SQL injection via string concatenation What: $"SELECT ... WHERE id = {id}" with SqlCommand
+  or interpolated EF FromSqlRaw . Fix: Use param'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. SQL injection via string concatenatio
+refs:
+- BASE:6. SQL injection via string concatenatio
+check: '6. SQL injection via string concatenation What: $"SELECT ... WHERE id = {id}" with SqlCommand
+  or interpolated EF FromSqlRaw . Fix: Use parameterized queries: FromSqlInterp'
+fix: 'See yesmayank/secure-coding-baseline 13-aspnet-core.md (anchor: 6. SQL injection via string concatenation)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- string
+- concatenation
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 13-aspnet-core.md
+  anchor: 6. SQL injection via string concatenation
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/13-aspnet-core.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

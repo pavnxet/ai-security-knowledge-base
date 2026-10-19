@@ -1,0 +1,57 @@
+id: SKB-BASE-744FA847D4
+title: Checklist
+summary: 'Checklist - [ ] consider_all_requests_local = false in prod - [ ] secret_key_base from env;
+  rotated if leaked - [ ] show_exceptions set to :'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] consider_all_requests_local = false in prod - [ ] secret_key_base from env; rotated
+  if leaked - [ ] show_exceptions set to :none / :remote - [ ] protect_from_forgery enabled - [ ] No sensitive
+  dirs under public/ - [ ] Strong params on every controller - [ ] Parameterized SQL; allowlisted orde
+fix: 'See yesmayank/secure-coding-baseline 10-rails.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 10-rails.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/10-rails.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-8-LACK-OF-CONTENT-SECURITY-
+title: 8. Lack of Content Security Policy (CSP)
+summary: '8. Lack of Content Security Policy (CSP) Vulnerability: Lack of Content Security Policy (CSP)
+  Weakening an extension’s Content Security Poli'
+platforms:
+- web
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#8. Lack of Content Security Policy (CSP)
+refs:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#8. Lack of Content Security Policy (CSP)
+check: '8. Lack of Content Security Policy (CSP) Vulnerability: Lack of Content Security Policy (CSP)
+  Weake'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md (anchor:
+  8. Lack of Content Security Policy (CSP)) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- lack
+- content
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  anchor: 8. Lack of Content Security Policy (CSP)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

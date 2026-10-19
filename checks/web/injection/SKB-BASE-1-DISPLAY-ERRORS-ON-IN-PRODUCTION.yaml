@@ -1,0 +1,59 @@
+id: SKB-BASE-1-DISPLAY-ERRORS-ON-IN-PRODUCTION
+title: 1. `display_errors=On` in production
+summary: '1. display_errors=On in production What: PHP error output renders file paths, line numbers,
+  and sometimes config/SQL in the HTTP response. F'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:1. `display_errors=On` in production
+refs:
+- BASE:1. `display_errors=On` in production
+check: '1. display_errors=On in production What: PHP error output renders file paths, line numbers, and
+  sometimes config/SQL in the HTTP response. Fix: display_errors=Off , log_errors=On in prod. Detection:'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 1. `display_errors=On` in production)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- display
+- errors
+- production
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 1. `display_errors=On` in production
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

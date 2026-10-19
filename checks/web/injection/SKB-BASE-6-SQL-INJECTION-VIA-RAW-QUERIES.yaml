@@ -1,0 +1,59 @@
+id: SKB-BASE-6-SQL-INJECTION-VIA-RAW-QUERIES
+title: 6. SQL injection via raw queries
+summary: '6. SQL injection via raw queries What: raw() , extra() , or cursor.execute with string interpolation
+  bypasses parameterization. Dangerous pa'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. SQL injection via raw queries
+refs:
+- BASE:6. SQL injection via raw queries
+check: '6. SQL injection via raw queries What: raw() , extra() , or cursor.execute with string interpolation
+  bypasses parameterization. Dangerous pattern: Fix: Use the ORM, or raw() with params list: Model.objects.raw("...
+  WHERE id = %s", [id]) . De'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 6. SQL injection via raw queries) for
+  remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- queries
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 6. SQL injection via raw queries
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

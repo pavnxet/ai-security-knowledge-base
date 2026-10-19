@@ -1,0 +1,57 @@
+id: SKB-BASE-INFRASTRUCTURE-DATA
+title: Infrastructure / data
+summary: Infrastructure / data 20. [Docker](./20-docker.md) 21. [Kubernetes](./21-kubernetes.md) 22. [Nginx](./22-nginx.md)
+  23. [Redis](./23-redis.md
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Infrastructure / data
+refs:
+- BASE:Infrastructure / data
+check: Infrastructure / data 20. [Docker](./20-docker.md) 21. [Kubernetes](./21-kubernetes.md) 22. [Nginx](./22-nginx.md)
+  23. [Redis](./23-redis.md) 24. [PostgreSQL](./24-postgresql.md) 25. [MongoDB](./25-mongodb.md)
+fix: 'See yesmayank/secure-coding-baseline README.md (anchor: Infrastructure / data) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- infrastructure
+- data
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: README.md
+  anchor: Infrastructure / data
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

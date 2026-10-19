@@ -1,0 +1,71 @@
+id: SKB-BASE-3B992EC867
+title: Checklist
+summary: Checklist - [ ] File server scoped to static/ - [ ] Generic error messages; recover middleware
+  - [ ] html/template for HTML - [ ] CORS allow
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] File server scoped to static/ - [ ] Generic error messages; recover middleware
+  - [ ] html/template for HTML - [ ] CORS allowlist explicit - [ ] pprof/expvar on internal listener only
+  - [ ] Parameterized SQL - [ ] No shell with user input - [ ] File paths bounds-checked - [ ] Outbound
+  HTTP all
+fix: 'See yesmayank/secure-coding-baseline 11-go.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-BD2DC462D2
+aliases:
+- SKB-BASE-BD2DC462D2

@@ -1,0 +1,57 @@
+id: SKB-BASE-7-SQL-INJECTION-IN-APP
+title: 7. SQL injection in app
+summary: '7. SQL injection in app What: String-concatenated queries ( "... WHERE id = " + id ) reach the
+  DB. Fix: Parameterized queries / prepared sta'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. SQL injection in app
+refs:
+- BASE:7. SQL injection in app
+check: '7. SQL injection in app What: String-concatenated queries ( "... WHERE id = " + id ) reach the
+  DB. Fix: Parameterized queries / prepared statements / ORM; never interpolate. Detection: rg -n "execute\(.
+  \+ query\(. \+ fmt\.Sprintf. WHERE" app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 24-postgresql.md (anchor: 7. SQL injection in app) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 24-postgresql.md
+  anchor: 7. SQL injection in app
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/24-postgresql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
