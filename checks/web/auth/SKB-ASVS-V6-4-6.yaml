@@ -1,0 +1,57 @@
+id: SKB-ASVS-V6-4-6
+title: Authentication Factor Lifecycle and Recovery - V6.4.6
+summary: Verify that administrative users can initiate the password reset process for the user, but that
+  this does not allow them to change or choose
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V6.4.6
+refs:
+- ASVS:V6.4.6
+- ASVS V6.4.6
+check: Verify that administrative users can initiate the password reset process for the user, but that
+  this does not allow them to change or choose the user's password. This prevents a situation where they
+  know the user's password.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V6.4.6) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V6.4.6
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

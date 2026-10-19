@@ -1,0 +1,57 @@
+id: SKB-BASE-250ECF3FCA
+title: Checklist
+summary: 'Checklist - [ ] bindIp restricted; not 0.0.0.0 - [ ] security.authorization: enabled - [ ] Least-privilege
+  app role; no root - [ ] TLS requi'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: 'Checklist - [ ] bindIp restricted; not 0.0.0.0 - [ ] security.authorization: enabled - [ ] Least-privilege
+  app role; no root - [ ] TLS required; invalid certs rejected - [ ] 27017 firewalled to internal - [
+  ] Profiling not logging full documents in prod - [ ] No $where /JS with user input - [ ] Request body
+  validated; no raw spread into q'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

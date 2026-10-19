@@ -1,0 +1,59 @@
+id: SKB-BASE-1-BINDIP-0-0-0-0-WITH-NO-AUTH
+title: '1. `bindIp: 0.0.0.0` with no auth'
+summary: '1. bindIp: 0.0.0.0 with no auth What: MongoDB historically shipped with auth disabled and bound
+  to all interfaces; unauthenticated instances'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- 'BASE:1. `bindIp: 0.0.0.0` with no auth'
+refs:
+- 'BASE:1. `bindIp: 0.0.0.0` with no auth'
+check: '1. bindIp: 0.0.0.0 with no auth What: MongoDB historically shipped with auth disabled and bound
+  to all interfaces; unauthenticated instances are routinely ransomwared and data-exfiltrated within hours.
+  Fix: net.bindIp: 127.0.0.1 or internal interface; security.autho'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: 1. `bindIp: 0.0.0.0` with no auth) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- bindip
+- with
+- auth
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: '1. `bindIp: 0.0.0.0` with no auth'
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

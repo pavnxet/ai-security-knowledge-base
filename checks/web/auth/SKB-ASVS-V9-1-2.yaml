@@ -1,0 +1,57 @@
+id: SKB-ASVS-V9-1-2
+title: Token source and integrity - V9.1.2
+summary: 'Verify that only algorithms on an allowlist can be used to create and verify self-contained
+  tokens, for a given context. The allowlist must '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V9.1.2
+refs:
+- ASVS:V9.1.2
+- ASVS V9.1.2
+check: Verify that only algorithms on an allowlist can be used to create and verify self-contained tokens,
+  for a given context. The allowlist must include the permitted algorithms, ideally only either symmetric
+  or asymmetric algorithms, and must not include the 'None' algorithm. If both symmetric and
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V9.1.2) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V9.1.2
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

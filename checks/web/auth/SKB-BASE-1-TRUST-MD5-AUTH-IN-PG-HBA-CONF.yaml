@@ -1,0 +1,59 @@
+id: SKB-BASE-1-TRUST-MD5-AUTH-IN-PG-HBA-CONF
+title: 1. `trust` / `md5` auth in `pg_hba.conf`
+summary: '1. trust / md5 auth in pg_hba.conf What: trust allows passwordless connections; md5 is weak.
+  With trust on 0.0.0.0/0 , anyone on the network'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:1. `trust` / `md5` auth in `pg_hba.conf`
+refs:
+- BASE:1. `trust` / `md5` auth in `pg_hba.conf`
+check: '1. trust / md5 auth in pg_hba.conf What: trust allows passwordless connections; md5 is weak. With
+  trust on 0.0.0.0/0 , anyone on the network gets full DB access. Fix: scram-sha-256 everywhere; restrict
+  by IP/network; never trust for rem'
+fix: 'See yesmayank/secure-coding-baseline 24-postgresql.md (anchor: 1. `trust` / `md5` auth in `pg_hba.conf`)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- trust
+- auth
+- conf
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 24-postgresql.md
+  anchor: 1. `trust` / `md5` auth in `pg_hba.conf`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/24-postgresql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

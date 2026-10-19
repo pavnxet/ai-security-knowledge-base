@@ -1,0 +1,52 @@
+id: SKB-ASVS-V4-4-1
+title: WebSocket - V4.4.1
+summary: Verify that WebSocket over TLS (WSS) is used for all WebSocket connections.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: api
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V4.4.1
+refs:
+- ASVS:V4.4.1
+- ASVS V4.4.1
+check: Verify that WebSocket over TLS (WSS) is used for all WebSocket connections.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V4.4.1) for remediation.'
+detect:
+  grep:
+  - /api/
+  - router.
+  - '@app.'
+  files:
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- api
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V4.4.1
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,59 @@
+id: SKB-BASE-12-EXPOSING-INTERNAL-ROUTES-STATE-VIA-D
+title: 12. Exposing internal routes/state via deep links
+summary: '12. Exposing internal routes/state via deep links What: SPA routes that assume auth but render
+  structure/data before client-side auth check '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Exposing internal routes/state via d
+refs:
+- BASE:12. Exposing internal routes/state via d
+check: '12. Exposing internal routes/state via deep links What: SPA routes that assume auth but render
+  structure/data before client-side auth check completes. Fix: Gate rendering behind auth state; don''t
+  ship privileged data in'
+fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 12. Exposing internal routes/state
+  via deep links) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- exposing
+- internal
+- routes
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 17-react-spa.md
+  anchor: 12. Exposing internal routes/state via deep links
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/17-react-spa.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

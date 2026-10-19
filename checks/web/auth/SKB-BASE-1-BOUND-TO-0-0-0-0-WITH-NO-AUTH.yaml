@@ -1,0 +1,59 @@
+id: SKB-BASE-1-BOUND-TO-0-0-0-0-WITH-NO-AUTH
+title: 1. Bound to `0.0.0.0` with no auth
+summary: '1. Bound to 0.0.0.0 with no auth What: bind 0.0.0.0 + no requirepass exposes Redis to the network.
+  Redis has historically been abused for RC'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:1. Bound to `0.0.0.0` with no auth
+refs:
+- BASE:1. Bound to `0.0.0.0` with no auth
+check: '1. Bound to 0.0.0.0 with no auth What: bind 0.0.0.0 + no requirepass exposes Redis to the network.
+  Redis has historically been abused for RCE (CONFIG SET dir + dbfilename + SAVE to write webshells/SSH
+  keys) and as a cryptomining pivot. Fix: bind 12'
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 1. Bound to `0.0.0.0` with no auth) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- bound
+- with
+- auth
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: 1. Bound to `0.0.0.0` with no auth
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

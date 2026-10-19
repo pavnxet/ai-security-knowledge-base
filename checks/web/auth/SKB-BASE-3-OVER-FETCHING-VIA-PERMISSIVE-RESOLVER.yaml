@@ -1,0 +1,59 @@
+id: SKB-BASE-3-OVER-FETCHING-VIA-PERMISSIVE-RESOLVER
+title: 3. Over-fetching via permissive resolvers
+summary: '3. Over-fetching via permissive resolvers What: Resolvers returning full objects without field-level
+  authz leak sensitive fields ( email , p'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. Over-fetching via permissive resolver
+refs:
+- BASE:3. Over-fetching via permissive resolver
+check: '3. Over-fetching via permissive resolvers What: Resolvers returning full objects without field-level
+  authz leak sensitive fields ( email , passwordHash ). Fix: Field-level authz; return only requested
+  fields; use @'
+fix: 'See yesmayank/secure-coding-baseline 14-graphql.md (anchor: 3. Over-fetching via permissive resolvers)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- over
+- fetching
+- permissive
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 14-graphql.md
+  anchor: 3. Over-fetching via permissive resolvers
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/14-graphql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

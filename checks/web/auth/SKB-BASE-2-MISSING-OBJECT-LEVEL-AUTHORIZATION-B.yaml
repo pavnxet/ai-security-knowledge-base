@@ -1,0 +1,57 @@
+id: SKB-BASE-2-MISSING-OBJECT-LEVEL-AUTHORIZATION-B
+title: 2. Missing object-level authorization (BOLA / IDOR)
+summary: 2. Missing object-level authorization (BOLA / IDOR)
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- BASE:2. Missing object-level authorization (B
+refs:
+- BASE:2. Missing object-level authorization (B
+check: 2. Missing object-level authorization (BOLA / IDOR)
+fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: 2. Missing object-level
+  authorization (BOLA / IDOR)) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- missing
+- object
+- level
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 28-vibe-coded-auth-authz.md
+  anchor: 2. Missing object-level authorization (BOLA / IDOR)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/28-vibe-coded-auth-authz.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
