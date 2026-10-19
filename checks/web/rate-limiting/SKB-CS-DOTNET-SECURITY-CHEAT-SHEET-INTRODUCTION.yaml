@@ -1,0 +1,54 @@
+id: SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This cheat sheet focuses on security decisions for modern .NET and ASP.NET Core.
+  Guidance for existing .NET Framework applicati
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:DotNet_Security_Cheat_Sheet#Introduction
+refs:
+- CS:DotNet_Security_Cheat_Sheet#Introduction
+check: Introduction This cheat sheet focuses on security decisions for modern .NET and ASP.NET Core. Guidance
+  for existing .NET Framework applications is separated at the end. Keep the runtime and packages supported
+  and patched. Follow the [.NET security announcements](https:/
+fix: 'See OWASP/CheatSheetSeries cheatsheets/DotNet_Security_Cheat_Sheet.md (anchor: Introduction) for
+  remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/DotNet_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/DotNet_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

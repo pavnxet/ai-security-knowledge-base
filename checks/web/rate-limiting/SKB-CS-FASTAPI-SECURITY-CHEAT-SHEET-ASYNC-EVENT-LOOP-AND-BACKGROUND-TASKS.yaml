@@ -1,0 +1,55 @@
+id: SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-ASYNC-EVENT-LOOP-AND-BACKGROUND-TASKS
+title: Async Event Loop and Background Tasks
+summary: 'Async Event Loop and Background Tasks Blocking a worker''s event loop prevents it from handling
+  other requests, creating a Denial of Service '
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:FastAPI_Security_Cheat_Sheet#Async Event Loop and Background Tasks
+refs:
+- CS:FastAPI_Security_Cheat_Sheet#Async Event Loop and Background Tasks
+check: Async Event Loop and Background Tasks Blocking a worker's event loop prevents it from handling
+  other requests, creating a Denial of Service (DoS) risk. See the [FastAPI async tutorial](https
+fix: 'See OWASP/CheatSheetSeries cheatsheets/FastAPI_Security_Cheat_Sheet.md (anchor: Async Event Loop
+  and Background Tasks) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- async
+- event
+- loop
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  anchor: Async Event Loop and Background Tasks
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

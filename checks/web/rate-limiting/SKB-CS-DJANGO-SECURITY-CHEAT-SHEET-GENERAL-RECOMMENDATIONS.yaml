@@ -1,0 +1,55 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-GENERAL-RECOMMENDATIONS
+title: General Recommendations
+summary: General Recommendations - Always keep Django and your application's dependencies up-to-date to
+  keep up with security vulnerabilities. - Ensu
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#General Recommendations
+refs:
+- CS:Django_Security_Cheat_Sheet#General Recommendations
+check: General Recommendations - Always keep Django and your application's dependencies up-to-date to
+  keep up with security vulnerabilities. - Ensure that the application is never in DEBUG mode in a production
+  environment. Neve
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: General Recommendations)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- general
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: General Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

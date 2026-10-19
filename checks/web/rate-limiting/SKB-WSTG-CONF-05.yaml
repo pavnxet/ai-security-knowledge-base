@@ -1,0 +1,52 @@
+id: SKB-WSTG-CONF-05
+title: Enumerate Infrastructure and Application Admin Interfaces
+summary: Enumerate Infrastructure and Application Admin Interfaces. Identify hidden administrator interfaces
+  and functionality, including cloud, cont
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-CONF-05
+refs:
+- WSTG-CONF-05
+check: Enumerate Infrastructure and Application Admin Interfaces. Identify hidden administrator interfaces
+  and functionality, including cloud, container-orchestration, API-management, and CI/CD management consoles.
+  Check any discovered interface for default, weak, or reused credentials, and for exposure to network
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-CONF-05) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-CONF-05
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

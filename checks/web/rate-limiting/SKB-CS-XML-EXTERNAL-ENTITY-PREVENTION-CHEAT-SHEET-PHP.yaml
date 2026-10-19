@@ -1,0 +1,53 @@
+id: SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-PHP
+title: PHP control
+summary: PHP With libxml 2.9.0 or later, entity substitution is disabled by default. Do not enable LIBXML_NOENT
+  , LIBXML_DTDLOAD , or LIBXML_DTDVALID
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#PHP
+refs:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#PHP
+check: PHP With libxml 2.9.0 or later, entity substitution is disabled by default. Do not enable LIBXML_NOENT
+  , LIBXML_DTDLOAD , or LIBXML_DTDVALID for untrusted XML without explicitly blocking external resources;
+  these options can require [additional protection against external entity
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md (anchor: PHP)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  anchor: PHP
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

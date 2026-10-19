@@ -1,0 +1,55 @@
+id: SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-MAINTAIN-CURATED-SHARED-WORKFLOWS-AND
+title: Maintain curated shared workflows and actions
+summary: Maintain curated shared workflows and actions If you need to support several repositories, establish
+  a centralized repository of curated, se
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Maintain curated shared workflows and ac
+refs:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Maintain curated shared workflows and ac
+check: Maintain curated shared workflows and actions If you need to support several repositories, establish
+  a centralized repository of curated, security-reviewed workflows
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md (anchor: Maintain
+  curated shared workflows and actions) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- maintain
+- curated
+- shared
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  anchor: Maintain curated shared workflows and actions
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

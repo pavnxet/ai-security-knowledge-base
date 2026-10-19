@@ -1,0 +1,55 @@
+id: SKB-CS-NPM-SECURITY-CHEAT-SHEET-5-AUDIT-FOR-VULNERABILITIES-IN-OPEN-SOU
+title: 5) Audit for vulnerabilities in open source dependencies
+summary: 5) Audit for vulnerabilities in open source dependencies The npm ecosystem is the single largest
+  repository of application libraries among a
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NPM_Security_Cheat_Sheet#5) Audit for vulnerabilities in open sou
+refs:
+- CS:NPM_Security_Cheat_Sheet#5) Audit for vulnerabilities in open sou
+check: 5) Audit for vulnerabilities in open source dependencies The npm ecosystem is the single largest
+  repository of application libraries among all the other languag
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 5) Audit for vulnerabilities
+  in open source dependencies) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- audit
+- vulnerabilities
+- open
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NPM_Security_Cheat_Sheet.md
+  anchor: 5) Audit for vulnerabilities in open source dependencies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NPM_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

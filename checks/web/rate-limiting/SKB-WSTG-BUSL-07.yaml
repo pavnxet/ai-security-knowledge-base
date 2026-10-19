@@ -1,0 +1,52 @@
+id: SKB-WSTG-BUSL-07
+title: Defenses Against Application Misuse
+summary: Defenses Against Application Misuse. Generate notes from all tests conducted against the system.
+  Review which tests had a different function
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-BUSL-07
+refs:
+- WSTG-BUSL-07
+check: Defenses Against Application Misuse. Generate notes from all tests conducted against the system.
+  Review which tests had a different functionality based on aggressive input. Understand the defenses
+  in place and verify if they are enough to protect the system against bypassing techniques.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-BUSL-07) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-BUSL-07
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

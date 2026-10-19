@@ -1,0 +1,55 @@
+id: SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-CHANGE-MANAGEMENT
+title: Change Management
+summary: Change Management The ultimate goal for most legacy applications will be to migrate from the
+  unmaintainable system to a solution which is bo
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Legacy_Application_Management_Cheat_Sheet#Change Management
+refs:
+- CS:Legacy_Application_Management_Cheat_Sheet#Change Management
+check: Change Management The ultimate goal for most legacy applications will be to migrate from the unmaintainable
+  system to a solution which is both maintainable and architected to be resilient to contemporary threats.
+  Staged
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Legacy_Application_Management_Cheat_Sheet.md (anchor: Change
+  Management) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- change
+- management
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  anchor: Change Management
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

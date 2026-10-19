@@ -1,0 +1,55 @@
+id: SKB-CS-PROTOTYPE-POLLUTION-PREVENTION-CHEAT-SHEET-SUGGESTED-PROTECTION-MECHANISM
+title: Suggested protection mechanisms
+summary: Suggested protection mechanisms Use "new Set()" or "new Map()" Developers should use new Set()
+  or new Map() instead of using object literals
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Prototype_Pollution_Prevention_Cheat_Sheet#Suggested protection mechanisms
+refs:
+- CS:Prototype_Pollution_Prevention_Cheat_Sheet#Suggested protection mechanisms
+check: 'Suggested protection mechanisms Use "new Set()" or "new Map()" Developers should use new Set()
+  or new Map() instead of using object literals: If objects or obj'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md (anchor: Suggested
+  protection mechanisms) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- suggested
+- protection
+- mechanisms
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md
+  anchor: Suggested protection mechanisms
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

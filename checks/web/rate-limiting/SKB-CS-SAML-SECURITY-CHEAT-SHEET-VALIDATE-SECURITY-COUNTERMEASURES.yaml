@@ -1,0 +1,54 @@
+id: SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-SECURITY-COUNTERMEASURES
+title: Validate Security Countermeasures
+summary: Validate Security Countermeasures Revisit each security threat that exists within the [SAML Security](https://docs.oasis-open.org/security/s
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:SAML_Security_Cheat_Sheet#Validate Security Countermeasures
+refs:
+- CS:SAML_Security_Cheat_Sheet#Validate Security Countermeasures
+check: Validate Security Countermeasures Revisit each security threat that exists within the [SAML Security](https://docs.oasis-open.org/security/saml/v2.0/saml-sec-consider-2.0-os.pdf)
+  document a
+fix: 'See OWASP/CheatSheetSeries cheatsheets/SAML_Security_Cheat_Sheet.md (anchor: Validate Security Countermeasures)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- validate
+- security
+- countermeasures
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/SAML_Security_Cheat_Sheet.md
+  anchor: Validate Security Countermeasures
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/SAML_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

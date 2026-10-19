@@ -1,0 +1,56 @@
+id: SKB-BASE-REVIEW-PROMPT-FOR-AI-GENERATED-CODE
+title: Review prompt for AI-generated code
+summary: 'Review prompt for AI-generated code A short checklist to paste when reviewing vibe-coded PRs:
+  ---'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Review prompt for AI-generated code
+refs:
+- BASE:Review prompt for AI-generated code
+check: 'Review prompt for AI-generated code A short checklist to paste when reviewing vibe-coded PRs:
+  ---'
+fix: 'See yesmayank/secure-coding-baseline 26-vibe-coded-overview.md (anchor: Review prompt for AI-generated
+  code) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- review
+- prompt
+- generated
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 26-vibe-coded-overview.md
+  anchor: Review prompt for AI-generated code
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/26-vibe-coded-overview.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

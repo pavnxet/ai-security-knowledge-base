@@ -1,0 +1,54 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-DJANGO-S-BUILT-IN-COMMAND-CHECK-DEPLO
+title: Django's built-in command `check --deploy`
+summary: Django's built-in command check --deploy Django has built-in command [ check --deploy ](https://docs.djangoproject.com/en/stable/ref/django-
+platforms:
+- web
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Django's built-in command `check --deplo
+refs:
+- CS:Django_Security_Cheat_Sheet#Django's built-in command `check --deplo
+check: Django's built-in command check --deploy Django has built-in command [ check --deploy ](https://docs.djangoproject.com/en/stable/ref/django-admin/
+  cmdoption-check-deploy
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Django''s built-in
+  command `check --deploy`) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- django
+- built
+- command
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Django's built-in command `check --deploy`
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
