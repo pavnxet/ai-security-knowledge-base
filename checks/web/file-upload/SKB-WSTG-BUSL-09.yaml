@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-434
+cwe_source: mapped
 owasp:
 - WSTG-BUSL-09
 refs:
@@ -22,7 +23,7 @@ refs:
 check: Upload of Malicious Files. Identify the file upload functionality. Review the project documentation
   to identify what file types are considered acceptable, and what types would be considered dangerous
   or malicious. If documentation is not available then consider what would be appropriate based on the
-  purpose of the application. Determine h
+  purpose o
 fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-BUSL-09) for remediation.'
 detect:
   grep:
