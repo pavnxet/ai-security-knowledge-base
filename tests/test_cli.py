@@ -65,3 +65,50 @@ def test_mcp_lists_tools():
     tools = next((x["result"]["tools"] for x in lines if x.get("id") == 2), [])
     names = {t["name"] for t in tools}
     assert {"search_checks", "get_check", "detect_stack", "get_profile"} <= names
+
+
+# ---------- Verifiable Security Attestation (VSA) ----------
+def _mk_target(d):
+    (d / "app.py").write_text("from flask import Flask\napp = Flask(__name__)\n")
+    (d / "requirements.txt").write_text("flask==3.0\n")
+
+def test_attest_roundtrip(tmp_path):
+    tgt = tmp_path / "t"; tgt.mkdir(); _mk_target(tgt)
+    att = tmp_path / "a.json"
+    r = _cli("attest", str(tgt), "--gate", "fast", "--key", "k", "--out", str(att))
+    assert r.returncode == 0 and att.exists()
+    v = _cli("verify-attestation", str(att), "--key", "k", "--path", str(tgt))
+    assert v.returncode == 0
+    assert '"status": "VALID"' in v.stdout or '"VALID"' in v.stdout
+
+def test_attest_tamper_detected(tmp_path):
+    tgt = tmp_path / "t"; tgt.mkdir(); _mk_target(tgt)
+    att = tmp_path / "a.json"
+    _cli("attest", str(tgt), "--gate", "fast", "--out", str(att))
+    a = json.loads(att.read_text()); a["checks"][0]["status"] = "pass"; att.write_text(json.dumps(a))
+    v = _cli("verify-attestation", str(att))
+    assert v.returncode == 1
+
+def test_attest_target_change_detected(tmp_path):
+    tgt = tmp_path / "t"; tgt.mkdir(); _mk_target(tgt)
+    att = tmp_path / "a.json"
+    _cli("attest", str(tgt), "--gate", "fast", "--out", str(att))
+    (tgt / "app.py").write_text("x = 1\n")          # mutate the tree
+    v = _cli("verify-attestation", str(att), "--path", str(tgt))
+    assert v.returncode == 1
+
+def test_attest_wrong_key(tmp_path):
+    tgt = tmp_path / "t"; tgt.mkdir(); _mk_target(tgt)
+    att = tmp_path / "a.json"
+    _cli("attest", str(tgt), "--gate", "fast", "--key", "right", "--out", str(att))
+    v = _cli("verify-attestation", str(att), "--key", "wrong")
+    assert v.returncode == 1
+
+def test_attest_fingerprint_is_deterministic(tmp_path):
+    tgt = tmp_path / "t"; tgt.mkdir(); _mk_target(tgt)
+    a1 = tmp_path / "a1.json"; a2 = tmp_path / "a2.json"
+    _cli("attest", str(tgt), "--gate", "fast", "--out", str(a1))
+    _cli("attest", str(tgt), "--gate", "fast", "--out", str(a2))
+    j1 = json.loads(a1.read_text()); j2 = json.loads(a2.read_text())
+    assert j1["attestation_id"] == j2["attestation_id"]
+    assert j1["target"]["fingerprint"] == j2["target"]["fingerprint"]

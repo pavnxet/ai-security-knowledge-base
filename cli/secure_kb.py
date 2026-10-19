@@ -12,7 +12,7 @@ Usage:
   secure-kb report init [--out FILE]
   secure-kb report validate <FILE>
 """
-import os, sys, json, re, fnmatch, argparse, sqlite3
+import os, sys, json, re, math, hmac, hashlib, fnmatch, argparse, sqlite3
 
 def find_root():
     if os.environ.get("SECURE_KB_DIR"):
@@ -189,26 +189,65 @@ def expand_query(q, synonyms, hubs=None):
             extra += [w for h in hubs[t] for w in re.findall(r"[a-zA-Z0-9_]+", h.lower())]
     return list(dict.fromkeys(terms + extra))
 
+
+# ---------- retrieval (field-weighted BM25 with query expansion) ----------
+def _tok(t):
+    return [w for w in re.findall(r"[a-z0-9]+", (t or "").lower()) if len(w) > 1]
+
+_FIELDS = (("title", 3.0), ("tags", 2.2), ("summary", 1.6), ("check", 1.0))
+
+def build_corpus_stats(cards):
+    """Per-card tokenised fields + document frequency. Cached on the cards dict."""
+    if getattr(build_corpus_stats, "_cache", None) is not None:
+        return build_corpus_stats._cache
+    docs, df, total = {}, {}, 0
+    for cid, c in cards.items():
+        f = {"title": _tok(c["title"]),
+             "tags": _tok(" ".join(c.get("tags", [])) + " " + " ".join(c.get("aliases", []))),
+             "summary": _tok(c["summary"]), "check": _tok(c["check"])}
+        docs[cid] = f
+        dl = sum(len(v) for v in f.values()); total += dl
+        for w in set().union(*f.values()): df[w] = df.get(w, 0) + 1
+    build_corpus_stats._cache = (docs, df, len(cards) or 1, total / (len(cards) or 1))
+    return build_corpus_stats._cache
+
+def rank(query, cards, synonyms=None, hubs=None, k=10):
+    """Field-weighted BM25. Query terms weigh 1.0; expanded (synonym/hub) terms 0.55."""
+    docs, df, N, avgdl = build_corpus_stats(cards)
+    base = _tok(query)
+    exp = [t for t in expand_query(query, synonyms or {}, hubs or {}) if t not in base]
+    qterms = [(t, 1.0) for t in dict.fromkeys(base)] + [(t, 0.55) for t in dict.fromkeys(exp)]
+    k1, b = 1.2, 0.75
+    scores = {}
+    for cid, f in docs.items():
+        dl = sum(len(v) for v in f.values())
+        s = 0.0
+        for t, w in qterms:
+            idf = math.log(1 + (N - df.get(t, 0) + 0.5) / (df.get(t, 0) + 0.5))
+            for fname, fw in _FIELDS:
+                tf = f[fname].count(t)
+                if tf:
+                    s += w * fw * idf * (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * dl / avgdl))
+        if s > 0: scores[cid] = s
+    return sorted(scores, key=lambda c: -scores[c])[:k]
+
 def cmd_search(args):
     cards = load_cards()
-    synonyms, hubs = load_synonyms() if getattr(args, "synonyms", False) else ({}, {})
+    synonyms, hubs = load_synonyms()
     terms = expand_query(args.query, synonyms, hubs)
     scored = {}
     db = os.path.join(IDX, "kb.sqlite")
     if os.path.exists(db):
         con = sqlite3.connect(db)
-        # OR the terms
         match = " OR ".join(f'"{t}"' for t in terms if len(t) > 1) or args.query
         try:
-            rows = con.execute(
+            for cid, r in con.execute(
                 "SELECT id, bm25(checks_fts,0,10,6,5,4,1) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 200",
-                (match,)).fetchall()
-            for cid, r in rows:
-                scored[cid] = -r  # bm25 negative; flip so higher=better
+                (match,)).fetchall():
+                scored[cid] = -r
         except sqlite3.OperationalError:
             pass
         con.close()
-    # fallback / augment: substring scan
     for cid, c in cards.items():
         hay = " ".join([c["title"], c["summary"], " ".join(c.get("tags", [])),
                         " ".join(c.get("aliases", [])), c["check"]]).lower()
@@ -301,6 +340,119 @@ def cmd_report(args):
         print(json.dumps({"valid": not errs, "errors": errs}, indent=2))
         sys.exit(0 if not errs else 1)
 
+# ---------- Verifiable Security Attestation (VSA) ----------
+def _canon(obj):
+    return json.dumps(obj, sort_keys=True, separators=(",", ":"), ensure_ascii=False).encode()
+
+def _sha256_hex(b):
+    return hashlib.sha256(b).hexdigest()
+
+_SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "venv", "dist", "build", ".mypy_cache", ".pytest_cache"}
+
+def fingerprint_target(path):
+    """Deterministic content fingerprint of a target tree: sha256 over sorted (relpath, file-sha256)."""
+    files = []
+    for dp, dns, fns in os.walk(path):
+        dns[:] = [d for d in dns if d not in _SKIP_DIRS]
+        for fn in fns:
+            fp = os.path.join(dp, fn)
+            try:
+                data = open(fp, "rb").read()
+            except Exception:
+                continue
+            files.append((os.path.relpath(fp, path), hashlib.sha256(data).hexdigest()))
+    files.sort()
+    h = hashlib.sha256()
+    for rel, dg in files:
+        h.update(rel.encode("utf-8", "ignore")); h.update(b"\0"); h.update(dg.encode()); h.update(b"\n")
+    return h.hexdigest(), len(files)
+
+def _gate_ids(platform, gate):
+    import yaml
+    p = os.path.join(ROOT, "profiles", platform + ".yaml")
+    if not os.path.exists(p):
+        return []
+    prof = yaml.safe_load(open(p))
+    return list((prof.get("gate") or {}).get(gate, []))
+
+def _attest_payload(target_path, profile, gate, checks):
+    man = load_json("manifest.json")
+    fp, n = fingerprint_target(target_path)
+    return {
+        "attestation_version": 1,
+        "kb": {"name": man.get("name", "secure-kb"), "version": man.get("version"), "content_hash": man.get("content_hash")},
+        "target": {"path": target_path, "fingerprint": fp, "file_count": n},
+        "gate": {"profile": profile, "name": gate, "check_count": len(checks)},
+        "checks": checks,
+    }
+
+def cmd_attest(args):
+    import hashlib as _h
+    # pick profile: explicit, else detect
+    profile = args.profile
+    if not profile:
+        router = load_map("router.json")
+        votes = {}
+        for fp in iter_files(args.path):
+            base = os.path.basename(fp); rel = os.path.relpath(fp, args.path)
+            for pat, profs in router.get("files", {}).items():
+                if fnmatch.fnmatch(base, pat) or fnmatch.fnmatch(rel, pat):
+                    for pr in profs: votes[pr] = votes.get(pr, 0) + 1
+        profile = max(votes, key=votes.get) if votes else "web"
+    ids = _gate_ids(profile, args.gate)
+    statuses = {}
+    if getattr(args, "results", None):
+        for r in load_json(args.results).get("results", []):
+            statuses[r["id"]] = (r.get("status", "unknown"), r.get("evidence"))
+    checks = []
+    for cid in ids:
+        st, ev = statuses.get(cid, ("unknown", None))
+        checks.append({"id": cid, "status": st,
+                       "evidence_sha256": _sha256_hex(ev.encode()) if ev else None})
+    payload = _attest_payload(args.path, profile, args.gate, checks)
+    aid = _sha256_hex(_canon(payload))
+    att = dict(payload); att["attestation_id"] = aid
+    if getattr(args, "key", None):
+        att["signature"] = {"alg": "HMAC-SHA256",
+                            "value": hmac.new(args.key.encode(), aid.encode(), hashlib.sha256).hexdigest()}
+    out = json.dumps(att, indent=1, sort_keys=True)
+    if args.out:
+        open(args.out, "w").write(out + "\n"); print(f"attestation written: {args.out}  id={aid}")
+    else:
+        print(out)
+
+def cmd_verify_attestation(args):
+    att = load_json(args.file)
+    aid = att.pop("attestation_id", None)
+    sig = att.pop("signature", None)
+    if not aid:
+        print("INVALID: no attestation_id"); sys.exit(1)
+    recomputed = _sha256_hex(_canon(att))
+    problems = []
+    if recomputed != aid:
+        problems.append(f"attestation_id mismatch (stored {aid[:12]}…, recomputed {recomputed[:12]}…)")
+    if sig:
+        if not args.key:
+            problems.append("signature present but no --key supplied")
+        else:
+            exp = hmac.new(args.key.encode(), aid.encode(), hashlib.sha256).hexdigest()
+            if exp != sig.get("value"):
+                problems.append("HMAC signature does not verify")
+    local = load_json("manifest.json").get("content_hash")
+    kb_ok = att.get("kb", {}).get("content_hash") == local
+    if not kb_ok:
+        problems.append(f"kb content_hash mismatch (attested {att.get('kb',{}).get('content_hash')}, local {local})")
+    if getattr(args, "path", None) and att.get("target", {}).get("fingerprint"):
+        fp, n = fingerprint_target(args.path)
+        if fp != att["target"]["fingerprint"]:
+            problems.append("target fingerprint mismatch (tree changed since attestation)")
+        else:
+            pass
+    status = "VALID" if not problems else "INVALID"
+    print(json.dumps({"status": status, "attestation_id": aid, "kb_match": kb_ok,
+                      "checks": len(att.get("checks", [])), "problems": problems}, indent=1))
+    sys.exit(0 if not problems else 1)
+
 def main():
     ap = argparse.ArgumentParser(prog="secure-kb")
     sub = ap.add_subparsers(dest="cmd", required=True)
@@ -322,6 +474,14 @@ def main():
     t = sub.add_parser("tools"); t.add_argument("platform", nargs="?"); t.set_defaults(fn=cmd_tools)
 
     rp = sub.add_parser("report"); rp.add_argument("action", choices=["init","validate"]); rp.add_argument("file", nargs="?"); rp.add_argument("--out"); rp.set_defaults(fn=cmd_report)
+
+    a = sub.add_parser("attest", help="produce a verifiable security attestation")
+    a.add_argument("path", nargs="?", default="."); a.add_argument("--profile"); a.add_argument("--gate", choices=["fast","full"], default="fast")
+    a.add_argument("--results", help="JSON file of {results:[{id,status,evidence}]}"); a.add_argument("--key", help="HMAC key (optional)"); a.add_argument("--out")
+    a.set_defaults(fn=cmd_attest)
+
+    va = sub.add_parser("verify-attestation", help="verify an attestation offline")
+    va.add_argument("file"); va.add_argument("--key"); va.add_argument("--path", help="re-verify the target fingerprint"); va.set_defaults(fn=cmd_verify_attestation)
 
     args = ap.parse_args()
     args.fn(args)

@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.9.1] — beta
+### Added
+- **Verifiable Security Attestation (VSA)** — `secure-kb attest` / `verify-attestation`, and the
+  `attest` / `verify_attestation` MCP tools. A deterministic, tamper-evident proof binding the check
+  list + results + evidence hashes to the KB content hash and the target's exact content
+  fingerprint, verifiable offline. See `docs/ATTESTATION.md`.
+- 5 unit tests covering attestation round-trip, tamper detection, target-change detection,
+  wrong-key rejection, and determinism.
+
 ## [0.9.0] — public beta
 ### Added
 - **GitHub Pages site** (`docs/`) — Claude-inspired theme, zero-build static HTML/CSS/JS.

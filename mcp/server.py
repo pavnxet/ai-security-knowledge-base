@@ -32,6 +32,10 @@ TOOLS = [
   "inputSchema": {"type": "object", "properties": {"platform": {"type": "string"}}}},
  {"name": "start_report", "description": "Create a security report skeleton for a target.",
   "inputSchema": {"type": "object", "properties": {"target": {"type": "string"}}}},
+ {"name": "attest", "description": "Produce a Verifiable Security Attestation: a deterministic, tamper-evident record of which checks were run against a target's exact content fingerprint and which KB version. Verifiable offline.",
+  "inputSchema": {"type": "object", "properties": {"path": {"type": "string"}, "profile": {"type": "string"}, "gate": {"enum": ["fast","full"]}, "results": {"type": "array"}, "key": {"type": "string"}}, "required": ["path"]}},
+ {"name": "verify_attestation", "description": "Verify a Verifiable Security Attestation offline: recompute its id, check the KB content hash, and (optionally) its HMAC signature and target fingerprint.",
+  "inputSchema": {"type": "object", "properties": {"attestation": {"type": "object"}, "key": {"type": "string"}, "path": {"type": "string"}}, "required": ["attestation"]}},
  {"name": "submit_result", "description": "Record one check result (pass/fail/n/a/unknown) with evidence.",
   "inputSchema": {"type": "object", "properties": {"id": {"type": "string"}, "status": {"enum": ["pass","fail","n/a","unknown"]}, "evidence": {"type": "string"}}, "required": ["id","status"]}},
 ]
@@ -52,6 +56,47 @@ def call(name, a):
         cards = kb.load_cards()
         return {"profile": a["name"], "gate": a.get("gate", "fast"),
                 "checks": [kb.brief(cards[i]) for i in ids if i in cards]}
+    if name == "attest":
+        import hashlib as _h, json as _j, fnmatch as _fn
+        path = a.get("path", ".")
+        profile = a.get("profile")
+        if not profile:
+            router = kb.load_map("router.json"); votes = {}
+            for fp in kb.iter_files(path):
+                base = os.path.basename(fp); rel = os.path.relpath(fp, path)
+                for pat, profs in router.get("files", {}).items():
+                    if _fn.fnmatch(base, pat) or _fn.fnmatch(rel, pat):
+                        for pr in profs: votes[pr] = votes.get(pr, 0) + 1
+            profile = max(votes, key=votes.get) if votes else "web"
+        gate = a.get("gate", "fast")
+        ids = kb._gate_ids(profile, gate)
+        st = {r.get("id"): r for r in (a.get("results") or [])}
+        checks = [{"id": cid, "status": st.get(cid, {}).get("status", "unknown"),
+                   "evidence_sha256": _h.sha256(str(st.get(cid, {}).get("evidence", "")).encode()).hexdigest() if st.get(cid, {}).get("evidence") else None}
+                  for cid in ids]
+        payload = kb._attest_payload(path, profile, gate, checks)
+        aid = _h.sha256(kb._canon(payload)).hexdigest()
+        out = dict(payload); out["attestation_id"] = aid
+        if a.get("key"):
+            import hmac as _hm
+            out["signature"] = {"alg": "HMAC-SHA256", "value": _hm.new(a["key"].encode(), aid.encode(), _h.sha256).hexdigest()}
+        return out
+    if name == "verify_attestation":
+        import hashlib as _h, hmac as _hm, json as _j
+        att = dict(a.get("attestation", {}))
+        aid = att.pop("attestation_id", None); sig = att.pop("signature", None)
+        if not aid: return {"status": "INVALID", "problems": ["no attestation_id"]}
+        problems = []
+        if _h.sha256(kb._canon(att)).hexdigest() != aid: problems.append("attestation_id mismatch")
+        if sig:
+            if not a.get("key"): problems.append("signature present but no key supplied")
+            elif _hm.new(a["key"].encode(), aid.encode(), _h.sha256).hexdigest() != sig.get("value"): problems.append("HMAC signature does not verify")
+        local = kb.load_json("manifest.json").get("content_hash")
+        kb_ok = att.get("kb", {}).get("content_hash") == local
+        if not kb_ok: problems.append("kb content_hash mismatch")
+        if a.get("path") and att.get("target", {}).get("fingerprint"):
+            if kb.fingerprint_target(a["path"])[0] != att["target"]["fingerprint"]: problems.append("target fingerprint mismatch")
+        return {"status": "VALID" if not problems else "INVALID", "attestation_id": aid, "kb_match": kb_ok, "problems": problems}
     if name == "search_checks":
         return _search(a)
     if name == "get_check":

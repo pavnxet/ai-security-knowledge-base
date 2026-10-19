@@ -59,7 +59,7 @@ cat index/checks/*.jsonl | grep -c "SKB-ASVS"
 ## MCP setup
 
 The MCP server exposes `detect_stack`, `get_profile`, `search_checks`, `get_check`, `start_report`,
-`submit_result`, `list_tools` (7 tools — run `list_tools` to enumerate).
+`submit_result`, `list_tools`, **`attest`**, **`verify_attestation`** (9 tools — run `list_tools` to enumerate).
 
 **Claude Code**
 
@@ -76,6 +76,21 @@ claude mcp add secure-kb -- python3 /abs/path/to/secure-kb/mcp/server.py
 ```
 
 **Generic MCP client** — JSON-RPC 2.0 over stdio; `initialize` then `tools/call`.
+
+## Verifiable Security Attestation (new)
+
+An agent's security claim is normally unfalsifiable prose. `secure-kb` can instead emit a
+**Verifiable Security Attestation** — a deterministic, tamper-evident record of *which checks were
+run, against which KB build, on which exact code fingerprint* — that anyone can verify **offline**:
+
+```bash
+secure-kb attest ./my-app --gate fast --key "$KEY" --out attestation.json
+secure-kb verify-attestation attestation.json --key "$KEY" --path ./my-app   # -> VALID, exit 0
+```
+
+Any edit to the checks, a different KB build, or a changed target all make verification **fail**.
+See [`docs/ATTESTATION.md`](docs/ATTESTATION.md). Also available over MCP as `attest` /
+`verify_attestation`.
 
 ## What's in it
 

@@ -1,6 +1,6 @@
 {
   "name": "secure-kb",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "build_date": "2026-10-19",
   "content_hash": "0c921baa291a4af4",
   "cards": 2057,
@@ -28,6 +28,7 @@
   "distilled": 2042,
   "sources": 67,
   "index_files": [
+    "aliases.json",
     "brief.tsv",
     "by_cwe.json",
     "by_domain.json",
