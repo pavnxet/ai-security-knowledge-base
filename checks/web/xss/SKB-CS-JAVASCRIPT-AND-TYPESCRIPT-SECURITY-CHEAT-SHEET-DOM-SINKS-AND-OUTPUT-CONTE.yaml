@@ -1,0 +1,58 @@
+id: SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-DOM-SINKS-AND-OUTPUT-CONTE
+title: DOM Sinks and Output Context
+summary: DOM Sinks and Output Context Injecting attacker-controlled strings into HTML, script, or URL
+  contexts is cross-site scripting ([CWE-79](http
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#DOM Sinks and Output Context
+refs:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#DOM Sinks and Output Context
+check: DOM Sinks and Output Context Injecting attacker-controlled strings into HTML, script, or URL contexts
+  is cross-site scripting ([CWE-79](https://cwe.mitre.org/da
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md (anchor:
+  DOM Sinks and Output Context) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- sinks
+- output
+- context
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  anchor: DOM Sinks and Output Context
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

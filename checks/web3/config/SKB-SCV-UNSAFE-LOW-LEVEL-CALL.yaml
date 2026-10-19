@@ -1,0 +1,56 @@
+id: SKB-SCV-UNSAFE-LOW-LEVEL-CALL
+title: Unsafe Low-Level Call
+summary: Unsafe Low-Level Call Preconditions - Contract uses .call() , .delegatecall() , .staticcall()
+  , or .send() for external interactions - The r
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Unsafe Low-Level Call
+refs:
+- SCV:Unsafe Low-Level Call
+check: Unsafe Low-Level Call Preconditions - Contract uses .call() , .delegatecall() , .staticcall() ,
+  or .send() for external interactions - The return value is not checked, OR - The target address may
+  not have deployed code (user-provided, destroyed, or n
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/unsafe-low-level-call.md (anchor: Unsafe
+  Low-Level Call) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/unsafe-low-level-call.md
+  anchor: Unsafe Low-Level Call
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/unsafe-low-level-call.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-HTML5-WEB-STORAGE-API
+title: HTML5 Web Storage API
+summary: HTML5 Web Storage API The Web Hypertext Application Technology Working Group (WHATWG) describes
+  the HTML5 Web Storage APIs, localStorage and
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#HTML5 Web Storage API
+refs:
+- CS:Session_Management_Cheat_Sheet#HTML5 Web Storage API
+check: HTML5 Web Storage API The Web Hypertext Application Technology Working Group (WHATWG) describes
+  the HTML5 Web Storage APIs, localStorage and sessionStorage , as mechanisms for storing name-value pairs
+  client-side. Unlike
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: HTML5 Web Storage
+  API) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- html
+- storage
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: HTML5 Web Storage API
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

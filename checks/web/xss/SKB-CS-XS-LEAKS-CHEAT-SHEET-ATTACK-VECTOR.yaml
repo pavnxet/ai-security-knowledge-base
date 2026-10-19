@@ -1,0 +1,57 @@
+id: SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACK-VECTOR
+title: Attack vector
+summary: 'Attack vector ![XS Leaks Attack Vector](../assets/XS_Attack_Vector.png) - The entire attack
+  takes place on the victim''s browser side - just '
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XS_Leaks_Cheat_Sheet#Attack vector
+refs:
+- CS:XS_Leaks_Cheat_Sheet#Attack vector
+check: Attack vector ![XS Leaks Attack Vector](../assets/XS_Attack_Vector.png) - The entire attack takes
+  place on the victim's browser side - just like an XSS attack - In some cases, the victim must remain
+  on the attacker's site longer for the attack to succeed.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XS_Leaks_Cheat_Sheet.md (anchor: Attack vector) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- attack
+- vector
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XS_Leaks_Cheat_Sheet.md
+  anchor: Attack vector
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XS_Leaks_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

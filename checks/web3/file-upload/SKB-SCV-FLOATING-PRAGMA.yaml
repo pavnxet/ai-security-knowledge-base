@@ -1,0 +1,54 @@
+id: SKB-SCV-FLOATING-PRAGMA
+title: Floating Pragma
+summary: Floating Pragma Preconditions - Deployable contract uses a floating or range pragma (e.g., pragma
+  solidity ^0.8.0 , pragma solidity =0.8.0 )
+platforms:
+- web3
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Floating Pragma
+refs:
+- SCV:Floating Pragma
+check: Floating Pragma Preconditions - Deployable contract uses a floating or range pragma (e.g., pragma
+  solidity ^0.8.0 , pragma solidity =0.8.0 ) - The contract is intended for deployment (not a library
+  or package for external consumption) Vulnerable Pattern solidity // Floating pragm
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/floating-pragma.md (anchor: Floating Pragma)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/floating-pragma.md
+  anchor: Floating Pragma
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/floating-pragma.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

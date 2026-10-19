@@ -1,0 +1,56 @@
+id: SKB-NSSC-CONTRACTS-CAN-BE-FORCED-TO-RECEIVE-ETHER
+title: Contracts can be forced to receive ether
+summary: Contracts can be forced to receive ether In certain circunstances, contracts can be forced to
+  receive ether without triggering any code. Thi
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Contracts can be forced to receive ether
+refs:
+- NSSC:Contracts can be forced to receive ether
+check: Contracts can be forced to receive ether In certain circunstances, contracts can be forced to receive
+  ether without triggering any code. This should be considered by the contract developers in order to
+  avoid breaking i
+fix: 'See crytic/not-so-smart-contracts forced_ether_reception/README.md (anchor: Contracts can be forced
+  to receive ether) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: forced_ether_reception/README.md
+  anchor: Contracts can be forced to receive ether
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/forced_ether_reception/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

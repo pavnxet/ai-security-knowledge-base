@@ -1,0 +1,55 @@
+id: SKB-SCV-DELEGATECALL-TO-UNTRUSTED-CALLEE
+title: Delegatecall to Untrusted Callee
+summary: Delegatecall to Untrusted Callee Preconditions - Contract uses delegatecall - The target address
+  of the delegatecall is derived from user in
+platforms:
+- web3
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Delegatecall to Untrusted Callee
+refs:
+- SCV:Delegatecall to Untrusted Callee
+check: 'Delegatecall to Untrusted Callee Preconditions - Contract uses delegatecall - The target address
+  of the delegatecall is derived from user input, function parameters, or a mutable state variable settable
+  by non-admin users - OR: a proxy pattern where'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/delegatecall-untrusted-callee.md (anchor:
+  Delegatecall to Untrusted Callee) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/delegatecall-untrusted-callee.md
+  anchor: Delegatecall to Untrusted Callee
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/delegatecall-untrusted-callee.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

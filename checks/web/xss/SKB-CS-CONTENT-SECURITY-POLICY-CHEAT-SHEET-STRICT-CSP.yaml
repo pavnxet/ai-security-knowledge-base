@@ -1,0 +1,57 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-STRICT-CSP
+title: Strict CSP
+summary: Strict CSP A strict CSP can be created by using a limited number of the granular [Fetch Directives
+  listed below]( fetch-directives) along wi
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#Strict CSP
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#Strict CSP
+check: 'Strict CSP A strict CSP can be created by using a limited number of the granular [Fetch Directives
+  listed below]( fetch-directives) along with one of two mechanisms: - Nonce based - Hash based The strict-dynamic
+  directive can optionally also be used'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: Strict CSP)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- strict
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: Strict CSP
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

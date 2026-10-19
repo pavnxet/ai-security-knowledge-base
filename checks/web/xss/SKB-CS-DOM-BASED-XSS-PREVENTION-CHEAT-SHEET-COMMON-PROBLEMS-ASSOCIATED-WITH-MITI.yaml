@@ -1,0 +1,57 @@
+id: SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-COMMON-PROBLEMS-ASSOCIATED-WITH-MITI
+title: Common Problems Associated with Mitigating DOM Based XSS
+summary: Common Problems Associated with Mitigating DOM Based XSS Complex Contexts In many cases the context
+  isn't always straightforward to discern.
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#Common Problems Associated with Mitigati
+refs:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#Common Problems Associated with Mitigati
+check: Common Problems Associated with Mitigating DOM Based XSS Complex Contexts In many cases the contex
+fix: 'See OWASP/CheatSheetSeries cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md (anchor: Common Problems
+  Associated with Mitigating DOM Based XSS) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- common
+- problems
+- associated
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  anchor: Common Problems Associated with Mitigating DOM Based XSS
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,53 @@
+id: SKB-NSSC-INTEGER-OVERFLOW
+title: Integer Overflow
+summary: Integer Overflow It is possible to cause add and sub to overflow (or underflow) on any type of
+  integer in Solidity. Attack Scenarios - Attac
+platforms:
+- web3
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Integer Overflow
+refs:
+- NSSC:Integer Overflow
+check: Integer Overflow It is possible to cause add and sub to overflow (or underflow) on any type of
+  integer in Solidity. Attack Scenarios - Attacker has 5 of some ERC20 token. They spend 6, but because
+  the token doesn't check for underflows, they wind up with 2^256 tokens. - A contract contains a dynamic
+  array an
+fix: 'See crytic/not-so-smart-contracts integer_overflow/README.md (anchor: Integer Overflow) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: integer_overflow/README.md
+  anchor: Integer Overflow
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/integer_overflow/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

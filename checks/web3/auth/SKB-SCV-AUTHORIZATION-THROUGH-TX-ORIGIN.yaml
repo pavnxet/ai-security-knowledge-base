@@ -1,0 +1,55 @@
+id: SKB-SCV-AUTHORIZATION-THROUGH-TX-ORIGIN
+title: Authorization Through tx.origin
+summary: 'Authorization Through tx.origin Preconditions - Contract uses tx.origin for authorization or
+  access control checks (e.g., require(tx.origin '
+platforms:
+- web3
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Authorization Through tx.origin
+refs:
+- SCV:Authorization Through tx.origin
+check: Authorization Through tx.origin Preconditions - Contract uses tx.origin for authorization or access
+  control checks (e.g., require(tx.origin == owner) ) - A legitimate owner/admin may interact with untrusted
+  external contracts Vulnerable Pattern soli
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/authorization-txorigin.md (anchor: Authorization
+  Through tx.origin) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/authorization-txorigin.md
+  anchor: Authorization Through tx.origin
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/authorization-txorigin.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

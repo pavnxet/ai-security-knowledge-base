@@ -1,0 +1,54 @@
+id: SKB-SCV-ASSERT-VIOLATION
+title: Assert Violation
+summary: Assert Violation Preconditions - Contract uses assert() statements - The assert condition can
+  be reached through valid program execution (no
+platforms:
+- web3
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Assert Violation
+refs:
+- SCV:Assert Violation
+check: 'Assert Violation Preconditions - Contract uses assert() statements - The assert condition can
+  be reached through valid program execution (not a true invariant) - OR: assert() is used to validate
+  user input or external call results instead of require() Vulnerable Pattern solidity'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/assert-violation.md (anchor: Assert Violation)
+  for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/assert-violation.md
+  anchor: Assert Violation
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/assert-violation.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

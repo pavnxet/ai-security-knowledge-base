@@ -1,0 +1,58 @@
+id: SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-RELATED-CHEAT-SHEETS-TOP-L
+title: Related Cheat Sheets (Top-Level Links)
+summary: Related Cheat Sheets (Top-Level Links) - [Node.js Security Cheat Sheet](Nodejs_Security_Cheat_Sheet.md)
+  - backend and runtime guidance. - [C
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Related Cheat Sheets (Top-Level Links)
+refs:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Related Cheat Sheets (Top-Level Links)
+check: Related Cheat Sheets (Top-Level Links) - [Node.js Security Cheat Sheet](Nodejs_Security_Cheat_Sheet.md)
+  - backend and runtime gui
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md (anchor:
+  Related Cheat Sheets (Top-Level Links)) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- related
+- cheat
+- sheets
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  anchor: Related Cheat Sheets (Top-Level Links)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

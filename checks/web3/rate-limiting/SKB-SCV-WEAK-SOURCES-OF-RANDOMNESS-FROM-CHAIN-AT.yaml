@@ -1,0 +1,52 @@
+id: SKB-SCV-WEAK-SOURCES-OF-RANDOMNESS-FROM-CHAIN-AT
+title: Weak Sources of Randomness from Chain Attributes
+summary: 'Weak Sources of Randomness from Chain Attributes Preconditions - Contract generates "random"
+  values using on-chain data: block.timestamp , b'
+platforms:
+- web3
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Weak Sources of Randomness from Chain At
+refs:
+- SCV:Weak Sources of Randomness from Chain At
+check: 'Weak Sources of Randomness from Chain Attributes Preconditions - Contract generates "random" values
+  using on-chain data: block.timestamp , blockhash , block.difficulty / block.prevrandao ,'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/weak-sources-randomness.md (anchor: Weak
+  Sources of Randomness from Chain Attributes) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/weak-sources-randomness.md
+  anchor: Weak Sources of Randomness from Chain Attributes
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/weak-sources-randomness.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,53 @@
+id: SKB-SCV-LACK-OF-PRECISION
+title: Lack of Precision
+summary: Lack of Precision Preconditions - Contract performs integer arithmetic (division, fee calculations,
+  reward distributions) - Division is perf
+platforms:
+- web3
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Lack of Precision
+refs:
+- SCV:Lack of Precision
+check: Lack of Precision Preconditions - Contract performs integer arithmetic (division, fee calculations,
+  reward distributions) - Division is performed before multiplication, OR - Numerators can be smaller
+  than denominators (producing zero), OR - No fixed-point scaling (WAD/RAY) is used for fractional calculations
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/lack-of-precision.md (anchor: Lack of
+  Precision) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/lack-of-precision.md
+  anchor: Lack of Precision
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/lack-of-precision.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

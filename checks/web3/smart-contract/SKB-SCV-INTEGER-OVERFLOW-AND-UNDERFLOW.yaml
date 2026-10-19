@@ -1,0 +1,53 @@
+id: SKB-SCV-INTEGER-OVERFLOW-AND-UNDERFLOW
+title: Integer Overflow and Underflow
+summary: Integer Overflow and Underflow Preconditions - Solidity <0.8.0 without SafeMath, OR - Arithmetic
+  inside unchecked { } blocks, OR - Arithmeti
+platforms:
+- web3
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Integer Overflow and Underflow
+refs:
+- SCV:Integer Overflow and Underflow
+check: Integer Overflow and Underflow Preconditions - Solidity <0.8.0 without SafeMath, OR - Arithmetic
+  inside unchecked { } blocks, OR - Arithmetic inside assembly { } / Yul blocks, OR - Type downcasting
+  (e.g., uint8(uint256Var) ), OR - Shift operators ( <
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/overflow-underflow.md (anchor: Integer
+  Overflow and Underflow) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/overflow-underflow.md
+  anchor: Integer Overflow and Underflow
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/overflow-underflow.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

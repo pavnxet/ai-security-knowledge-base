@@ -1,0 +1,55 @@
+id: SKB-SCV-OFF-BY-ONE-ERRORS
+title: Off-By-One Errors
+summary: Off-By-One Errors Preconditions - Contract uses loops with boundary conditions, comparison operators
+  at thresholds, or array index calculati
+platforms:
+- web3
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Off-By-One Errors
+refs:
+- SCV:Off-By-One Errors
+check: Off-By-One Errors Preconditions - Contract uses loops with boundary conditions, comparison operators
+  at thresholds, or array index calculations - The boundary/comparison is off by exactly one from the
+  intended behavior Vulnerable Pattern solidity // Skips the last element functi
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/off-by-one.md (anchor: Off-By-One Errors)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/off-by-one.md
+  anchor: Off-By-One Errors
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/off-by-one.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

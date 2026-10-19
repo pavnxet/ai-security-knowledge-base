@@ -1,0 +1,58 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-CONTEXT
+title: Context
+summary: Context The increase in XSS (Cross-Site Scripting), clickjacking, and cross-site leak vulnerabilities
+  demands a more __defense in depth__ se
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#Context
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#Context
+check: 'Context The increase in XSS (Cross-Site Scripting), clickjacking, and cross-site leak vulnerabilities
+  demands a more __defense in depth__ security approach. Defense against XSS CSP defends against XSS attacks
+  in the following ways: 1. Restricting In'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: Context)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- context
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: Context
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

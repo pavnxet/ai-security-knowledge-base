@@ -1,0 +1,58 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CROSS-SITE-SCRIPTING-XSS
+title: Cross Site Scripting (XSS)
+summary: Cross Site Scripting (XSS) The recommendations in this section are in addition to XSS recommendations
+  already mentioned previously. - Use th
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Cross Site Scripting (XSS)
+refs:
+- CS:Django_Security_Cheat_Sheet#Cross Site Scripting (XSS)
+check: Cross Site Scripting (XSS) The recommendations in this section are in addition to XSS recommendations
+  already mentioned previously. - Use the built-in template system to render templates in
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Cross Site Scripting
+  (XSS)) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- cross
+- site
+- scripting
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Cross Site Scripting (XSS)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-6-POPULATE-THE-DOM-USING-SAFE-J
+title: RULE \#6 - Populate the DOM using safe JavaScript functions or properties
+summary: RULE \ 6 - Populate the DOM using safe JavaScript functions or properties The most fundamental
+  safe way to populate the DOM with untrusted d
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#RULE \#6 - Populate the DOM using safe J
+refs:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#RULE \#6 - Populate the DOM using safe J
+check: RULE \ 6 - Populate the DOM using safe JavaScript functions or properties The mo
+fix: 'See OWASP/CheatSheetSeries cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md (anchor: RULE \#6
+  - Populate the DOM using safe JavaScript functions or properties) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- rule
+- populate
+- using
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  anchor: RULE \#6 - Populate the DOM using safe JavaScript functions or properties
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-SCV-DEFAULT-VISIBILITY
+title: Default Visibility
+summary: 'Default Visibility Preconditions - Functions or state variables are declared without an explicit
+  visibility specifier - For functions: Solid'
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Default Visibility
+refs:
+- SCV:Default Visibility
+check: 'Default Visibility Preconditions - Functions or state variables are declared without an explicit
+  visibility specifier - For functions: Solidity <0.5.0 (compiler does not enforce explicit visibility;
+  defaults to public ) - For state variables: any Solidity version (defaults to int'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/default-visibility.md (anchor: Default
+  Visibility) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/default-visibility.md
+  anchor: Default Visibility
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/default-visibility.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

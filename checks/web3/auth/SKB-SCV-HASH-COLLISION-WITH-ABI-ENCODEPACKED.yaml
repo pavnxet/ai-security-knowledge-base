@@ -1,0 +1,55 @@
+id: SKB-SCV-HASH-COLLISION-WITH-ABI-ENCODEPACKED
+title: Hash Collision with abi.encodePacked()
+summary: Hash Collision with abi.encodePacked() Preconditions - Contract uses abi.encodePacked() to encode
+  data before hashing (typically with keccak
+platforms:
+- web3
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Hash Collision with abi.encodePacked()
+refs:
+- SCV:Hash Collision with abi.encodePacked()
+check: Hash Collision with abi.encodePacked() Preconditions - Contract uses abi.encodePacked() to encode
+  data before hashing (typically with keccak256 ) - Two or more adjacent arguments in the encodePacked
+  call are variable-length types (strings, bytes, d
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/hash-collision.md (anchor: Hash Collision
+  with abi.encodePacked()) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/hash-collision.md
+  anchor: Hash Collision with abi.encodePacked()
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/hash-collision.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,59 @@
+id: SKB-BASE-9CB784AA73
+title: What leaks / impact
+summary: What leaks / impact Webshell upload ( .php / .phtml / .aspx ), traversal via ../ in the name,
+  stored XSS via HTML, DoS via huge files.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What leaks / impact
+refs:
+- BASE:What leaks / impact
+check: What leaks / impact Webshell upload ( .php / .phtml / .aspx ), traversal via ../ in the name, stored
+  XSS via HTML, DoS via huge files.
+fix: 'See yesmayank/secure-coding-baseline 30-vibe-coded-config-deployment.md (anchor: What leaks / impact)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- what
+- leaks
+- impact
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 30-vibe-coded-config-deployment.md
+  anchor: What leaks / impact
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/30-vibe-coded-config-deployment.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

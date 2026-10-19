@@ -1,0 +1,56 @@
+id: SKB-SCV-UNCHECKED-RETURN-VALUES
+title: Unchecked Return Values
+summary: 'Unchecked Return Values Preconditions - Contract uses low-level calls: .call() , .send() , or
+  .delegatecall() - The boolean return value ind'
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Unchecked Return Values
+refs:
+- SCV:Unchecked Return Values
+check: 'Unchecked Return Values Preconditions - Contract uses low-level calls: .call() , .send() , or
+  .delegatecall() - The boolean return value indicating success/failure is not checked - State changes
+  occur after the unchecked call, assuming it succeeded V'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/unchecked-return-values.md (anchor: Unchecked
+  Return Values) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/unchecked-return-values.md
+  anchor: Unchecked Return Values
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/unchecked-return-values.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

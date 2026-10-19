@@ -1,0 +1,56 @@
+id: SKB-NSSC-BAD-RANDOMNESS
+title: Bad Randomness
+summary: 'Bad Randomness Pseudorandom number generation on the blockchain is generally unsafe. There are
+  a number of reasons for this, including: - Th'
+platforms:
+- web3
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Bad Randomness
+refs:
+- NSSC:Bad Randomness
+check: 'Bad Randomness Pseudorandom number generation on the blockchain is generally unsafe. There are
+  a number of reasons for this, including: - The blockchain does not provide any cryptographically secure
+  source of randomness. Block hashes in isolation are cryptographically random, however, a malicious miner
+  can modify block headers, introduce'
+fix: 'See crytic/not-so-smart-contracts bad_randomness/README.md (anchor: Bad Randomness) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: bad_randomness/README.md
+  anchor: Bad Randomness
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/bad_randomness/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

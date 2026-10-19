@@ -1,0 +1,55 @@
+id: SKB-SCV-MISSING-PROTECTION-AGAINST-SIGNATURE-REP
+title: Missing Protection Against Signature Replay
+summary: Missing Protection Against Signature Replay Preconditions - Contract verifies ECDSA signatures
+  for authorization - The signed message does n
+platforms:
+- web3
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Missing Protection Against Signature Rep
+refs:
+- SCV:Missing Protection Against Signature Rep
+check: Missing Protection Against Signature Replay Preconditions - Contract verifies ECDSA signatures
+  for authorization - The signed message does not include a nonce, OR does not include the contract address,
+  OR does not inclu
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/missing-protection-signature-replay.md
+  (anchor: Missing Protection Against Signature Replay) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/missing-protection-signature-replay.md
+  anchor: Missing Protection Against Signature Replay
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/missing-protection-signature-replay.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

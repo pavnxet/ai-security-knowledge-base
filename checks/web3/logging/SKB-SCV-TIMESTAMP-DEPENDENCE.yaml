@@ -1,0 +1,54 @@
+id: SKB-SCV-TIMESTAMP-DEPENDENCE
+title: Timestamp Dependence
+summary: 'Timestamp Dependence Preconditions - Contract uses block.timestamp (or the deprecated now alias)
+  for security-sensitive logic - The outcome '
+platforms:
+- web3
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Timestamp Dependence
+refs:
+- SCV:Timestamp Dependence
+check: Timestamp Dependence Preconditions - Contract uses block.timestamp (or the deprecated now alias)
+  for security-sensitive logic - The outcome of that logic can be influenced by a timestamp shift within
+  the manipulation window (~15s on PoW chains, slot-fixed on PoS Ethereum but var
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/timestamp-dependence.md (anchor: Timestamp
+  Dependence) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/timestamp-dependence.md
+  anchor: Timestamp Dependence
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/timestamp-dependence.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-SYMFONY-CHEAT-SHEET-MAIN-SECTIONS
+title: Main Sections
+summary: Main Sections Cross-Site Scripting (XSS) Cross-Site Scripting (XSS) is a type of attack where
+  malicious JavaScript code is injected into a d
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Symfony_Cheat_Sheet#Main Sections
+refs:
+- CS:Symfony_Cheat_Sheet#Main Sections
+check: Main Sections Cross-Site Scripting (XSS) Cross-Site Scripting (XSS) is a type of attack where malicious
+  JavaScript code is injected into a displayed variable. For example, if the value of the variable name
+  is <script alert('hello')</script , and we d
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Symfony_Cheat_Sheet.md (anchor: Main Sections) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- main
+- sections
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Symfony_Cheat_Sheet.md
+  anchor: Main Sections
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Symfony_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

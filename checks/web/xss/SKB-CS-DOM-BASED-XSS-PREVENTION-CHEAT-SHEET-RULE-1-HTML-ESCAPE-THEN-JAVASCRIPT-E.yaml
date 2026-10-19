@@ -1,0 +1,61 @@
+id: SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-1-HTML-ESCAPE-THEN-JAVASCRIPT-E
+title: RULE \#1 - HTML Escape then JavaScript Escape Before Inserting Untrusted Data into HTML Subcontext
+  within the Executio
+summary: RULE \ 1 - HTML Escape then JavaScript Escape Before Inserting Untrusted Data into HTML Subcontext
+  within the Execution
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#RULE \#1 - HTML Escape then JavaScript E
+refs:
+- CS:DOM_based_XSS_Prevention_Cheat_Sheet#RULE \#1 - HTML Escape then JavaScript E
+check: RULE \ 1 - HTML Escape then JavaScript Escape Before Inserting Untr
+fix: 'See OWASP/CheatSheetSeries cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md (anchor: RULE \#1
+  - HTML Escape then JavaScript Escape Before Inserting Untrusted Data into HTML Subcontext within the
+  Execution Context) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  files:
+  - '**/*.html'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  anchor: RULE \#1 - HTML Escape then JavaScript Escape Before Inserting Untrusted Data into HTML Subcontext
+    within the Execution Context
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-2-JAVASCRIPT-ESCAPE-BEFORE-INSE
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-4-JAVASCRIPT-ESCAPE-BEFORE-INSE
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-5-URL-ESCAPE-THEN-JAVASCRIPT-ES
+aliases:
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-2-JAVASCRIPT-ESCAPE-BEFORE-INSE
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-4-JAVASCRIPT-ESCAPE-BEFORE-INSE
+- SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-5-URL-ESCAPE-THEN-JAVASCRIPT-ES

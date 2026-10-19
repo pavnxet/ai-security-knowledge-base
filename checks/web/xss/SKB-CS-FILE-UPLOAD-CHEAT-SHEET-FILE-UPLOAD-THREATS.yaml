@@ -1,0 +1,59 @@
+id: SKB-CS-FILE-UPLOAD-CHEAT-SHEET-FILE-UPLOAD-THREATS
+title: File Upload Threats
+summary: 'File Upload Threats In order to assess and know exactly what controls to implement, knowing
+  what you''re facing is essential to protect your '
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:File_Upload_Cheat_Sheet#File Upload Threats
+refs:
+- CS:File_Upload_Cheat_Sheet#File Upload Threats
+check: File Upload Threats In order to assess and know exactly what controls to implement, knowing what
+  you're facing is essential to protect your assets. The following sections will hopefully showcase the
+  risks accompanying th
+fix: 'See OWASP/CheatSheetSeries cheatsheets/File_Upload_Cheat_Sheet.md (anchor: File Upload Threats)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- file
+- upload
+- threats
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/File_Upload_Cheat_Sheet.md
+  anchor: File Upload Threats
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/File_Upload_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

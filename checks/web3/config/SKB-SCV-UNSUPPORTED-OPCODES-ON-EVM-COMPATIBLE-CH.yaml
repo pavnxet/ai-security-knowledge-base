@@ -1,0 +1,55 @@
+id: SKB-SCV-UNSUPPORTED-OPCODES-ON-EVM-COMPATIBLE-CH
+title: Unsupported Opcodes on EVM-Compatible Chains
+summary: Unsupported Opcodes on EVM-Compatible Chains Preconditions - Contract is intended for deployment
+  on an EVM-compatible chain other than Ether
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Unsupported Opcodes on EVM-Compatible Ch
+refs:
+- SCV:Unsupported Opcodes on EVM-Compatible Ch
+check: Unsupported Opcodes on EVM-Compatible Chains Preconditions - Contract is intended for deployment
+  on an EVM-compatible chain other than Ethereum mainnet (zkSync Era, Arbitrum, Optimism, Poly
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/unsupported-opcodes.md (anchor: Unsupported
+  Opcodes on EVM-Compatible Chains) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/unsupported-opcodes.md
+  anchor: Unsupported Opcodes on EVM-Compatible Chains
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/unsupported-opcodes.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

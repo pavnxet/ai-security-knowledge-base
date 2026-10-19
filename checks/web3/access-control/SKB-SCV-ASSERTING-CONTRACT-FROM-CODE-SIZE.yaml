@@ -1,0 +1,54 @@
+id: SKB-SCV-ASSERTING-CONTRACT-FROM-CODE-SIZE
+title: Asserting Contract from Code Size
+summary: Asserting Contract from Code Size Preconditions - Contract uses extcodesize or address.code.length
+  to check whether an address is an EOA vs.
+platforms:
+- web3
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Asserting Contract from Code Size
+refs:
+- SCV:Asserting Contract from Code Size
+check: Asserting Contract from Code Size Preconditions - Contract uses extcodesize or address.code.length
+  to check whether an address is an EOA vs. a contract - This check gates access control, ant
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/asserting-contract-from-code-size.md (anchor:
+  Asserting Contract from Code Size) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/asserting-contract-from-code-size.md
+  anchor: Asserting Contract from Code Size
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/asserting-contract-from-code-size.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

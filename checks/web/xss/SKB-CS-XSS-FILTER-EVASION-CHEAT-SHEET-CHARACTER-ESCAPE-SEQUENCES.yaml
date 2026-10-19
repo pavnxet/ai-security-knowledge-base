@@ -1,0 +1,58 @@
+id: SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-CHARACTER-ESCAPE-SEQUENCES
+title: Character Escape Sequences
+summary: Character Escape Sequences Here are all the possible combinations of the character \< in HTML
+  and JavaScript. Most of these won't render out
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XSS_Filter_Evasion_Cheat_Sheet#Character Escape Sequences
+refs:
+- CS:XSS_Filter_Evasion_Cheat_Sheet#Character Escape Sequences
+check: Character Escape Sequences Here are all the possible combinations of the character \< in HTML and
+  JavaScript. Most of these won't render out of the box, but many of them can get rendered
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.md (anchor: Character Escape
+  Sequences) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- character
+- escape
+- sequences
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.md
+  anchor: Character Escape Sequences
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XSS_Filter_Evasion_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

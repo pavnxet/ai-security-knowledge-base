@@ -1,0 +1,56 @@
+id: SKB-NSSC-UNCHECKED-EXTERNAL-CALL
+title: Unchecked External Call
+summary: Unchecked External Call Certain Solidity operations known as "external calls", require the developer
+  to manually ensure that the operation s
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Unchecked External Call
+refs:
+- NSSC:Unchecked External Call
+check: Unchecked External Call Certain Solidity operations known as "external calls", require the developer
+  to manually ensure that the operation succeeded. This is in contrast to operations which throw an exception
+  on failure. If an external call fails, bu
+fix: 'See crytic/not-so-smart-contracts unchecked_external_call/README.md (anchor: Unchecked External
+  Call) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: unchecked_external_call/README.md
+  anchor: Unchecked External Call
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/unchecked_external_call/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

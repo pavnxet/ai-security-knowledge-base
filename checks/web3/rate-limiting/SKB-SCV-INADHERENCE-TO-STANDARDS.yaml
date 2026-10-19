@@ -1,0 +1,53 @@
+id: SKB-SCV-INADHERENCE-TO-STANDARDS
+title: Inadherence to Standards
+summary: Inadherence to Standards Preconditions - Contract claims to implement a standard (ERC20, ERC721,
+  ERC1155, etc.) but deviates from the specif
+platforms:
+- web3
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Inadherence to Standards
+refs:
+- SCV:Inadherence to Standards
+check: 'Inadherence to Standards Preconditions - Contract claims to implement a standard (ERC20, ERC721,
+  ERC1155, etc.) but deviates from the specification - OR: contract integrates external tokens assuming
+  strict standard compliance without handling common deviations Vulnerable Pattern'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/inadherence-to-standards.md (anchor: Inadherence
+  to Standards) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/inadherence-to-standards.md
+  anchor: Inadherence to Standards
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/inadherence-to-standards.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-WEB-WORKERS
+title: Web Workers
+summary: Web Workers Web Workers run JavaScript in a separate global context. The main window and worker
+  communicate through messages using [ postMes
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#Web Workers
+refs:
+- CS:Session_Management_Cheat_Sheet#Web Workers
+check: Web Workers Web Workers run JavaScript in a separate global context. The main window and worker
+  communicate through messages using [ postMessage() ](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers
+  sending_messages_t
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: Web Workers) for
+  remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- workers
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: Web Workers
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

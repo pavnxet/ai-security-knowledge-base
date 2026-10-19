@@ -1,0 +1,54 @@
+id: SKB-SCV-REQUIREMENT-VIOLATION
+title: Requirement Violation
+summary: Requirement Violation Preconditions - Contract uses require() statements for input or state validation
+  - The require condition is overly res
+platforms:
+- web3
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Requirement Violation
+refs:
+- SCV:Requirement Violation
+check: 'Requirement Violation Preconditions - Contract uses require() statements for input or state validation
+  - The require condition is overly restrictive (rejects valid inputs) or too loose (accepts invalid inputs)
+  - OR: require() validates return values'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/requirement-violation.md (anchor: Requirement
+  Violation) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/requirement-violation.md
+  anchor: Requirement Violation
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/requirement-violation.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

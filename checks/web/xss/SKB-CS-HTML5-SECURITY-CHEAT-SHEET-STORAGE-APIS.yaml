@@ -1,0 +1,58 @@
+id: SKB-CS-HTML5-SECURITY-CHEAT-SHEET-STORAGE-APIS
+title: Storage APIs
+summary: Storage APIs Local Storage - Also known as Offline Storage, Web Storage. Underlying storage mechanism
+  may vary from one user agent to the ne
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTML5_Security_Cheat_Sheet#Storage APIs
+refs:
+- CS:HTML5_Security_Cheat_Sheet#Storage APIs
+check: Storage APIs Local Storage - Also known as Offline Storage, Web Storage. Underlying storage mechanism
+  may vary from one user agent to the next. In other words, any authentication your application requires
+  can be bypassed by a user with local privileg
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTML5_Security_Cheat_Sheet.md (anchor: Storage APIs) for
+  remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- storage
+- apis
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTML5_Security_Cheat_Sheet.md
+  anchor: Storage APIs
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTML5_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

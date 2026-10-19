@@ -1,0 +1,54 @@
+id: SKB-SCV-MSG-VALUE-REUSE-IN-LOOPS
+title: msg.value Reuse in Loops
+summary: msg.value Reuse in Loops Preconditions - msg.value is referenced inside a loop ( for , while
+  ) or in a function called multiple times within
+platforms:
+- web3
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:msg.value Reuse in Loops
+refs:
+- SCV:msg.value Reuse in Loops
+check: msg.value Reuse in Loops Preconditions - msg.value is referenced inside a loop ( for , while )
+  or in a function called multiple times within a single external call - The contract has an existing
+  ETH balance or the logic assumes msg.value is "spent" per iteration Vulnerable Patter
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/msgvalue-loop.md (anchor: msg.value Reuse
+  in Loops) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/msgvalue-loop.md
+  anchor: msg.value Reuse in Loops
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/msgvalue-loop.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

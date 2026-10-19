@@ -1,0 +1,58 @@
+id: SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-3-CROSS-SITE-SCRIPTING-XSS
+title: 3. Cross-Site Scripting (XSS)
+summary: '3. Cross-Site Scripting (XSS) Vulnerability: Cross-Site Scripting (XSS) If user input is not
+  properly sanitized, attackers can inject malici'
+platforms:
+- web
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#3. Cross-Site Scripting (XSS)
+refs:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#3. Cross-Site Scripting (XSS)
+check: '3. Cross-Site Scripting (XSS) Vulnerability: Cross-Site Scripting (XSS) If user input is not properly
+  sanitized, attackers can inject malicious scripts into w'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md (anchor:
+  3. Cross-Site Scripting (XSS)) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- cross
+- site
+- scripting
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  anchor: 3. Cross-Site Scripting (XSS)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

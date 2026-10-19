@@ -1,0 +1,54 @@
+id: SKB-SCV-PRESENCE-OF-UNUSED-VARIABLES
+title: Presence of Unused Variables
+summary: Presence of Unused Variables Preconditions - Contract declares state variables, local variables,
+  function parameters, or imports that are ne
+platforms:
+- web3
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Presence of Unused Variables
+refs:
+- SCV:Presence of Unused Variables
+check: 'Presence of Unused Variables Preconditions - Contract declares state variables, local variables,
+  function parameters, or imports that are never referenced - OR: return values from function calls are
+  silently discarded Vulnerable Pattern solidity contract Vault { uint256 public'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/unused-variables.md (anchor: Presence
+  of Unused Variables) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/unused-variables.md
+  anchor: Presence of Unused Variables
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/unused-variables.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-NSSC-INCORRECT-INTERFACE
+title: Incorrect interface
+summary: Incorrect interface A contract interface defines functions with a different type signature than
+  the implementation, causing two different me
+platforms:
+- web3
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Incorrect interface
+refs:
+- NSSC:Incorrect interface
+check: Incorrect interface A contract interface defines functions with a different type signature than
+  the implementation, causing two different method id's to be created. As a result, when the interfact
+  is called, the fallback method will be executed. Attack Scenario - The interface is
+fix: 'See crytic/not-so-smart-contracts incorrect_interface/README.md (anchor: Incorrect interface) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: incorrect_interface/README.md
+  anchor: Incorrect interface
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/incorrect_interface/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

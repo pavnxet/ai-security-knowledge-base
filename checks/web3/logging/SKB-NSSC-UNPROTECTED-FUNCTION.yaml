@@ -1,0 +1,55 @@
+id: SKB-NSSC-UNPROTECTED-FUNCTION
+title: Unprotected function
+summary: Unprotected function Missing (or incorrectly used) modifier on a function allows an attacker
+  to use sensitive functionality in the contract.
+platforms:
+- web3
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- NSSC:Unprotected function
+refs:
+- NSSC:Unprotected function
+check: Unprotected function Missing (or incorrectly used) modifier on a function allows an attacker to
+  use sensitive functionality in the contract. Attack Scenario A contract with a changeOwner function
+  does not label it as private and therefore allows anyone to become the contract owner. Mitigations Always
+  specify
+fix: 'See crytic/not-so-smart-contracts unprotected_function/README.md (anchor: Unprotected function)
+  for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: crytic/not-so-smart-contracts
+  path: unprotected_function/README.md
+  anchor: Unprotected function
+  commit: 020dbdbde3e0c2e8de5f3944e7455e438b0995d5
+  url: https://github.com/crytic/not-so-smart-contracts/blob/020dbdbde3e0c2e8de5f3944e7455e438b0995d5/unprotected_function/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

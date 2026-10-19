@@ -1,0 +1,54 @@
+id: SKB-SCV-DOS-WITH-BLOCK-GAS-LIMIT
+title: DoS with Block Gas Limit
+summary: DoS with Block Gas Limit Preconditions - Contract iterates over a dynamic array or mapping whose
+  size can grow unboundedly - The iteration m
+platforms:
+- web3
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:DoS with Block Gas Limit
+refs:
+- SCV:DoS with Block Gas Limit
+check: 'DoS with Block Gas Limit Preconditions - Contract iterates over a dynamic array or mapping whose
+  size can grow unboundedly - The iteration must complete in a single transaction (no batching/pagination)
+  - OR: time-sensitive logic where block stuffing by an attacker can delay trans'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/dos-gas-limit.md (anchor: DoS with Block
+  Gas Limit) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/dos-gas-limit.md
+  anchor: DoS with Block Gas Limit
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/dos-gas-limit.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

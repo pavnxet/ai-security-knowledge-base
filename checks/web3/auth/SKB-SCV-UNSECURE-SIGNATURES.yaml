@@ -1,0 +1,56 @@
+id: SKB-SCV-UNSECURE-SIGNATURES
+title: Unsecure Signatures
+summary: 'Unsecure Signatures Preconditions - Contract uses ECDSA signatures for authorization, authentication,
+  or message verification - One or more '
+platforms:
+- web3
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- SCV:Unsecure Signatures
+refs:
+- SCV:Unsecure Signatures
+check: 'Unsecure Signatures Preconditions - Contract uses ECDSA signatures for authorization, authentication,
+  or message verification - One or more of the following sub-vulnerabilities are present: - Signature
+  malleability (tracking by raw bytes) - Missing replay protection (no nonce, chainId, or contract address)
+  -'
+fix: 'See kadenzipfel/smart-contract-vulnerabilities references/unsecure-signatures.md (anchor: Unsecure
+  Signatures) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: kadenzipfel/smart-contract-vulnerabilities
+  path: references/unsecure-signatures.md
+  anchor: Unsecure Signatures
+  commit: c3f75317fca76bbd40471a89ec8024d7c2298286
+  url: https://github.com/kadenzipfel/smart-contract-vulnerabilities/blob/c3f75317fca76bbd40471a89ec8024d7c2298286/references/unsecure-signatures.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
