@@ -1,0 +1,56 @@
+id: SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-BROKEN-OBJECT-LEVEL-AUTHORIZATION-BOLA
+title: Broken Object Level Authorization (BOLA)
+summary: Broken Object Level Authorization (BOLA) [Broken Object Level Authorization](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-obj
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- CS:REST_Assessment_Cheat_Sheet#Broken Object Level Authorization (BOLA)
+refs:
+- CS:REST_Assessment_Cheat_Sheet#Broken Object Level Authorization (BOLA)
+check: Broken Object Level Authorization (BOLA) [Broken Object Level Authorization](https://owasp.org/API-Security/editions/2023/en/0xa1-broken-object-level-authoriz
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Assessment_Cheat_Sheet.md (anchor: Broken Object Level
+  Authorization (BOLA)) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- broken
+- object
+- level
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Assessment_Cheat_Sheet.md
+  anchor: Broken Object Level Authorization (BOLA)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Assessment_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

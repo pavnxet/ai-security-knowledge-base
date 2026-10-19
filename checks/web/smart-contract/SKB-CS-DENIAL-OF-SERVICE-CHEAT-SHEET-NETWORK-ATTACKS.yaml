@@ -1,0 +1,53 @@
+id: SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-NETWORK-ATTACKS
+title: Network attacks
+summary: 'Network attacks For more information on network attacks, see: [Juniper](https://www.juniper.net/documentation/us/en/software/junos/denial-of'
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Denial_of_Service_Cheat_Sheet#Network attacks
+refs:
+- CS:Denial_of_Service_Cheat_Sheet#Network attacks
+check: 'Network attacks For more information on network attacks, see: [Juniper](https://www.juniper.net/documentation/us/en/software/junos/denial-of-service/topics/topic-map/security-network-dos-attack.html)
+  [eSecurityPlanet](https://www.esecurityplanet.com'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Denial_of_Service_Cheat_Sheet.md (anchor: Network attacks)
+  for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- network
+- attacks
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Denial_of_Service_Cheat_Sheet.md
+  anchor: Network attacks
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Denial_of_Service_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-OAUTH2-CHEAT-SHEET-TOKEN-REPLAY-PREVENTION
+title: Token Replay Prevention
+summary: Token Replay Prevention Token security is a critical aspect of OAuth 2.0 implementations. Sender-constrained
+  tokens establish a binding betw
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OAuth2_Cheat_Sheet#Token Replay Prevention
+refs:
+- CS:OAuth2_Cheat_Sheet#Token Replay Prevention
+check: Token Replay Prevention Token security is a critical aspect of OAuth 2.0 implementations. Sender-constrained
+  tokens establish a binding between the token and the client. Proof of Possession (PoP) tokens are a
+  specific type of sender-constrained toke
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OAuth2_Cheat_Sheet.md (anchor: Token Replay Prevention) for
+  remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- token
+- replay
+- prevention
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OAuth2_Cheat_Sheet.md
+  anchor: Token Replay Prevention
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OAuth2_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

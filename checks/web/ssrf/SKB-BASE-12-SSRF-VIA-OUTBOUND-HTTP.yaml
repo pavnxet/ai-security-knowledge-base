@@ -1,0 +1,94 @@
+id: SKB-BASE-12-SSRF-VIA-OUTBOUND-HTTP
+title: 12. SSRF via outbound HTTP
+summary: '12. SSRF via outbound HTTP What: axios / fetch to user-supplied URLs can hit internal metadata
+  endpoints ( 169.254.169.254 ). Fix: Allowlist'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. SSRF via outbound HTTP
+refs:
+- BASE:12. SSRF via outbound HTTP
+check: '12. SSRF via outbound HTTP What: axios / fetch to user-supplied URLs can hit internal metadata
+  endpoints ( 169.254.169.254 ). Fix: Allowlist outbound hosts; block link-local and RFC1918 ranges; validate
+  URL schemes. Detection: rg -n "axios\.(get post)\(.'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 12. SSRF via outbound HTTP) for
+  remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- ssrf
+- outbound
+- http
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 12. SSRF via outbound HTTP
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 04-flask.md
+  anchor: 12. SSRF via `requests.get(user_url)`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/04-flask.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 10. SSRF via `httpx`/`requests`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: 9. SSRF via `http.Get(userURL)`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-12-SSRF-VIA-REQUESTS-GET-USER-URL
+- SKB-BASE-10-SSRF-VIA-HTTPX-REQUESTS
+- SKB-BASE-9-SSRF-VIA-HTTP-GET-USERURL
+aliases:
+- SKB-BASE-12-SSRF-VIA-REQUESTS-GET-USER-URL
+- SKB-BASE-10-SSRF-VIA-HTTPX-REQUESTS
+- SKB-BASE-9-SSRF-VIA-HTTP-GET-USERURL

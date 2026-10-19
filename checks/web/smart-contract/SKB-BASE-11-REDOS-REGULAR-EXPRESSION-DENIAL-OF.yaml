@@ -1,0 +1,56 @@
+id: SKB-BASE-11-REDOS-REGULAR-EXPRESSION-DENIAL-OF
+title: 11. ReDoS (regular expression denial of service)
+summary: '11. ReDoS (regular expression denial of service) What: Catastrophic-backtracking regexes on
+  user input hang the event loop. Fix: Use safe-re'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- 'BASE:11. ReDoS (regular expression denial of '
+refs:
+- 'BASE:11. ReDoS (regular expression denial of '
+check: '11. ReDoS (regular expression denial of service) What: Catastrophic-backtracking regexes on user
+  input hang the event loop. Fix: Use safe-regex / re2 ; avoid nested quantifiers (a+)+ ; set timeouts'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 11. ReDoS (regular expression
+  denial of service)) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- redos
+- regular
+- expression
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 11. ReDoS (regular expression denial of service)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

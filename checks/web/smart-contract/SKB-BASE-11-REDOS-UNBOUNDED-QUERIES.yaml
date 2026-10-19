@@ -1,0 +1,56 @@
+id: SKB-BASE-11-REDOS-UNBOUNDED-QUERIES
+title: 11. ReDoS / unbounded queries
+summary: '11. ReDoS / unbounded queries What: Queries without limits/projection return huge result sets
+  → memory/DoS. Fix: Always .limit() ; project o'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. ReDoS / unbounded queries
+refs:
+- BASE:11. ReDoS / unbounded queries
+check: '11. ReDoS / unbounded queries What: Queries without limits/projection return huge result sets
+  → memory/DoS. Fix: Always .limit() ; project only needed fields; use indexes; paginate. Detection: rg
+  -n "\.find\(\{" app/ (che'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: 11. ReDoS / unbounded queries) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- redos
+- unbounded
+- queries
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: 11. ReDoS / unbounded queries
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

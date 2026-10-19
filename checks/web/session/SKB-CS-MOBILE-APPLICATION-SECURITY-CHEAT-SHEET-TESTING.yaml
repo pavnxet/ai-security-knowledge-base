@@ -1,0 +1,56 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-TESTING
+title: Testing
+summary: 'Testing 1. Penetration Testing - Perform ethical hacking to identify vulnerabilities. - Example
+  tests: - Cryptographic vulnerability assessm'
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Testing
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Testing
+check: 'Testing 1. Penetration Testing - Perform ethical hacking to identify vulnerabilities. - Example
+  tests: - Cryptographic vulnerability assessment. - Attempt to execute backend server functionality anonymously
+  by removing any session tokens from POST/GE'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Testing)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- testing
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Testing
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

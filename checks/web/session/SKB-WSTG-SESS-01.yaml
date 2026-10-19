@@ -1,0 +1,54 @@
+id: SKB-WSTG-SESS-01
+title: Session Management Schema
+summary: Session Management Schema. Gather session tokens, for the same user and for different users where
+  possible. Analyze and ensure that enough r
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-SESS-01
+refs:
+- WSTG-SESS-01
+check: Session Management Schema. Gather session tokens, for the same user and for different users where
+  possible. Analyze and ensure that enough randomness exists to stop session forging attacks. Modify cookies
+  that are not signed and contain information that can be manipulated.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-SESS-01) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-SESS-01
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

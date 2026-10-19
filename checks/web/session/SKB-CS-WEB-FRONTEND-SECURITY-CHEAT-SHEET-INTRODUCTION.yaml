@@ -1,0 +1,56 @@
+id: SKB-CS-WEB-FRONTEND-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This cheat sheet was previously named the AJAX Security Cheat Sheet. This document
+  will provide a starting point for AJAX secur
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Frontend_Security_Cheat_Sheet#Introduction
+refs:
+- CS:Web_Frontend_Security_Cheat_Sheet#Introduction
+check: Introduction This cheat sheet was previously named the AJAX Security Cheat Sheet. This document
+  will provide a starting point for AJAX security and will hopefully be updated and expanded reasonably
+  often to provide more detailed information about spe
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Frontend_Security_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Frontend_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Frontend_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

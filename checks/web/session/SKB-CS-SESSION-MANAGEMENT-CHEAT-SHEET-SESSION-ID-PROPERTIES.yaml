@@ -1,0 +1,57 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-ID-PROPERTIES
+title: Session ID Properties
+summary: Session ID Properties In order to keep the authenticated state and track the users progress within
+  the web application, applications provide
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#Session ID Properties
+refs:
+- CS:Session_Management_Cheat_Sheet#Session ID Properties
+check: Session ID Properties In order to keep the authenticated state and track the users progress within
+  the web application, applications provide users with a session identifier (session ID or token) that
+  is assigned at sess
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: Session ID Properties)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- session
+- properties
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: Session ID Properties
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

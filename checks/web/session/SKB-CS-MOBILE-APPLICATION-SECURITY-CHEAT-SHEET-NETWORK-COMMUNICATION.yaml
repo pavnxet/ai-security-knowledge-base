@@ -1,0 +1,56 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-NETWORK-COMMUNICATION
+title: Network Communication
+summary: Network Communication 1. Don't Trust the Network - Assume that all network communication is insecure
+  and can be intercepted. 2. Use Secure P
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Network Communication
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Network Communication
+check: Network Communication 1. Don't Trust the Network - Assume that all network communication is insecure
+  and can be intercepted. 2. Use Secure Protocols - Use HTTPS for all network communication
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Network
+  Communication) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- network
+- communication
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Network Communication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

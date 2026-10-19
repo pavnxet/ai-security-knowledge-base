@@ -1,0 +1,57 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-EXPIRATION
+title: Session Expiration
+summary: Session Expiration In order to minimize the time period an attacker can launch attacks over active
+  sessions and hijack them, it is mandatory
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#Session Expiration
+refs:
+- CS:Session_Management_Cheat_Sheet#Session Expiration
+check: Session Expiration In order to minimize the time period an attacker can launch attacks over active
+  sessions and hijack them, it is mandatory to set expiration timeouts for every session, establishing
+  the amount of time a session will remain active.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: Session Expiration)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- session
+- expiration
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: Session Expiration
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

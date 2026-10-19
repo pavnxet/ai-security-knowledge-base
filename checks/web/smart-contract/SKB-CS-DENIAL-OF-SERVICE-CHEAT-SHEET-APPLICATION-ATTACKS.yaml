@@ -1,0 +1,55 @@
+id: SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-APPLICATION-ATTACKS
+title: Application attacks
+summary: 'Application attacks Application layer attacks usually make applications unavailable by exhausting
+  system resources or by making it unusable '
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Denial_of_Service_Cheat_Sheet#Application attacks
+refs:
+- CS:Denial_of_Service_Cheat_Sheet#Application attacks
+check: Application attacks Application layer attacks usually make applications unavailable by exhausting
+  system resources or by making it unusable in a functional way. These attacks do not have to consume
+  the network bandwidth to be effective. Rather they
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Denial_of_Service_Cheat_Sheet.md (anchor: Application attacks)
+  for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- application
+- attacks
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Denial_of_Service_Cheat_Sheet.md
+  anchor: Application attacks
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Denial_of_Service_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

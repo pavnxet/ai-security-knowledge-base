@@ -1,0 +1,57 @@
+id: SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-REPLAY-PROTECTION
+title: Replay protection
+summary: Replay protection JWT denylist In some cases, the consumer of the token might want to maintain
+  a JWT denylist. This might be for example use
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JSON_Web_Token_Cheat_Sheet#Replay protection
+refs:
+- CS:JSON_Web_Token_Cheat_Sheet#Replay protection
+check: Replay protection JWT denylist In some cases, the consumer of the token might want to maintain
+  a JWT denylist. This might be for example used a simple form of JWT replay protection or as a workaround
+  for the “stateless session” invalidation problem.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JSON_Web_Token_Cheat_Sheet.md (anchor: Replay protection)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- replay
+- protection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  anchor: Replay protection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

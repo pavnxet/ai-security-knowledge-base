@@ -1,0 +1,55 @@
+id: SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-MESSAGE-SIZE
+title: Message Size
+summary: Message Size Web services like web applications could be a target for DOS attacks by automatically
+  sending the web services thousands of lar
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Service_Security_Cheat_Sheet#Message Size
+refs:
+- CS:Web_Service_Security_Cheat_Sheet#Message Size
+check: Message Size Web services like web applications could be a target for DOS attacks by automatically
+  sending the web services thousands of large size [SOAP](https://en.wikipedia.org/wiki/SOAP) messages.
+  This either cripples the application making it unable to respond to legitimate
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Service_Security_Cheat_Sheet.md (anchor: Message Size)
+  for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- message
+- size
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  anchor: Message Size
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

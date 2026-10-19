@@ -1,0 +1,82 @@
+id: SKB-BASE-11-SSRF-VIA-RESTTEMPLATE-WEBCLIENT
+title: 11. SSRF via `RestTemplate`/`WebClient`
+summary: '11. SSRF via RestTemplate / WebClient What: Outbound HTTP to user URLs hits internal metadata.
+  Fix: Allowlist hosts; block link-local/RFC191'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. SSRF via `RestTemplate`/`WebClient`
+refs:
+- BASE:11. SSRF via `RestTemplate`/`WebClient`
+check: '11. SSRF via RestTemplate / WebClient What: Outbound HTTP to user URLs hits internal metadata.
+  Fix: Allowlist hosts; block link-local/RFC1918. Detection: rg -n "RestTemplate WebClient" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 11. SSRF via `RestTemplate`/`WebClient`)
+  for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- ssrf
+- resttemplate
+- webclient
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 11. SSRF via `RestTemplate`/`WebClient`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 9. SSRF via `reqwest::get(user_url)`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 13-aspnet-core.md
+  anchor: 12. SSRF via `HttpClient`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/13-aspnet-core.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-9-SSRF-VIA-REQWEST-GET-USER-URL
+- SKB-BASE-12-SSRF-VIA-HTTPCLIENT
+aliases:
+- SKB-BASE-9-SSRF-VIA-REQWEST-GET-USER-URL
+- SKB-BASE-12-SSRF-VIA-HTTPCLIENT

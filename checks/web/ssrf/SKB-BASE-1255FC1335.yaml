@@ -1,0 +1,58 @@
+id: SKB-BASE-1255FC1335
+title: What leaks / impact
+summary: What leaks / impact Known CVEs in those exact versions (prototype pollution, ReDoS, auth bypass,
+  SSRF, RCE) — exploitable with public PoCs.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What leaks / impact
+refs:
+- BASE:What leaks / impact
+check: What leaks / impact Known CVEs in those exact versions (prototype pollution, ReDoS, auth bypass,
+  SSRF, RCE) — exploitable with public PoCs.
+fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: What leaks /
+  impact) for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- what
+- leaks
+- impact
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 27-vibe-coded-secrets-supplychain.md
+  anchor: What leaks / impact
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/27-vibe-coded-secrets-supplychain.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

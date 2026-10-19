@@ -1,0 +1,57 @@
+id: SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-DEPLOYMENT-AND-REVIEW-CHECKLIST
+title: Deployment and Review Checklist
+summary: Deployment and Review Checklist Use this checklist together with the W3C [registration](https://www.w3.org/TR/webauthn-3/
+  sctn-registering-a
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Passkey_Security_Cheat_Sheet#Deployment and Review Checklist
+refs:
+- CS:Passkey_Security_Cheat_Sheet#Deployment and Review Checklist
+check: Deployment and Review Checklist Use this checklist together with the W3C [registration](https://www.w3.org/TR/webauthn-3/
+  sctn-registering-a-new-credential) and [authentication](https://www.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Passkey_Security_Cheat_Sheet.md (anchor: Deployment and Review
+  Checklist) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- deployment
+- review
+- checklist
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Passkey_Security_Cheat_Sheet.md
+  anchor: Deployment and Review Checklist
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Passkey_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

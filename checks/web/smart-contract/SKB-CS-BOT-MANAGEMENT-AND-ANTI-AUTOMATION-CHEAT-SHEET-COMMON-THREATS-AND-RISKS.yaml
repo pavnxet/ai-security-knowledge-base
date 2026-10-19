@@ -1,0 +1,55 @@
+id: SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-COMMON-THREATS-AND-RISKS
+title: Common Threats and Risks
+summary: Common Threats and Risks - OAT-008 Credential Stuffing — replaying breached username/password
+  pairs. - OAT-011 Scraping — large-scale conten
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Common Threats and Risks
+refs:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Common Threats and Risks
+check: Common Threats and Risks - OAT-008 Credential Stuffing — replaying breached username/password pairs.
+  - OAT-011 Scraping — large-scale content, price, or PII ex
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md (anchor:
+  Common Threats and Risks) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- common
+- threats
+- risks
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  anchor: Common Threats and Risks
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-11-REDOS-ON-VALIDATION-REGEXES
+title: 11. ReDoS on validation regexes
+summary: '11. ReDoS on validation regexes What: Catastrophic-backtracking Field(pattern=...) on user input.
+  Fix: Test regexes with re2 / safe-regex ; '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. ReDoS on validation regexes
+refs:
+- BASE:11. ReDoS on validation regexes
+check: '11. ReDoS on validation regexes What: Catastrophic-backtracking Field(pattern=...) on user input.
+  Fix: Test regexes with re2 / safe-regex ; avoid nested quantifiers. Detection: rg -n "pattern= regex="
+  .py ---'
+fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 11. ReDoS on validation regexes) for
+  remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- redos
+- validation
+- regexes
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 11. ReDoS on validation regexes
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

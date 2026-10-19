@@ -1,0 +1,56 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: 'Introduction Web Authentication, Session Management, and Access Control : A web session is a
+  sequence of network HTTP request and response t'
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#Introduction
+refs:
+- CS:Session_Management_Cheat_Sheet#Introduction
+check: 'Introduction Web Authentication, Session Management, and Access Control : A web session is a sequence
+  of network HTTP request and response transactions associated with the same user. Modern and complex
+  web applications require the retaining of inform'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

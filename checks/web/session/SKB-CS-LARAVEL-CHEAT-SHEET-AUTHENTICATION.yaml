@@ -1,0 +1,55 @@
+id: SKB-CS-LARAVEL-CHEAT-SHEET-AUTHENTICATION
+title: Authentication
+summary: 'Authentication Guards and Providers At its core, Laravel''s authentication facilities are made
+  up of "guards" and "providers". Guards define '
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Laravel_Cheat_Sheet#Authentication
+refs:
+- CS:Laravel_Cheat_Sheet#Authentication
+check: Authentication Guards and Providers At its core, Laravel's authentication facilities are made up
+  of "guards" and "providers". Guards define how users are authenticated for each request. Providers define
+  how users are retrieved from your persistent storage. Laravel ships with a s
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Laravel_Cheat_Sheet.md (anchor: Authentication) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- authentication
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Laravel_Cheat_Sheet.md
+  anchor: Authentication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Laravel_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

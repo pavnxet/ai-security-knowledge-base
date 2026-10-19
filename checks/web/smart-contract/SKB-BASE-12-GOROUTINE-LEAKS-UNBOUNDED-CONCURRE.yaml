@@ -1,0 +1,57 @@
+id: SKB-BASE-12-GOROUTINE-LEAKS-UNBOUNDED-CONCURRE
+title: 12. Goroutine leaks / unbounded concurrency
+summary: '12. Goroutine leaks / unbounded concurrency What: Spawning a goroutine per request without limits
+  → memory/DoS. Fix: Use a bounded worker po'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Goroutine leaks / unbounded concurre
+refs:
+- BASE:12. Goroutine leaks / unbounded concurre
+check: '12. Goroutine leaks / unbounded concurrency What: Spawning a goroutine per request without limits
+  → memory/DoS. Fix: Use a bounded worker pool or semaphores; set timeouts on http.Server . Detection:
+  re'
+fix: 'See yesmayank/secure-coding-baseline 11-go.md (anchor: 12. Goroutine leaks / unbounded concurrency)
+  for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- goroutine
+- leaks
+- unbounded
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: 12. Goroutine leaks / unbounded concurrency
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

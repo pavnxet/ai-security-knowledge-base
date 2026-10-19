@@ -1,0 +1,57 @@
+id: SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-CONSIDERATIONS-ABOUT-USING-JWTS
+title: Considerations about using JWTs
+summary: Considerations about using JWTs Not using JWTs Before using JWTs to solve your problems, you
+  should consider if they are really necessary fo
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JSON_Web_Token_Cheat_Sheet#Considerations about using JWTs
+refs:
+- CS:JSON_Web_Token_Cheat_Sheet#Considerations about using JWTs
+check: Considerations about using JWTs Not using JWTs Before using JWTs to solve your problems, you should
+  consider if they are really necessary for your use case. JWTs are often suggested for “sta
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JSON_Web_Token_Cheat_Sheet.md (anchor: Considerations about
+  using JWTs) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- considerations
+- about
+- using
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  anchor: Considerations about using JWTs
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JSON_Web_Token_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

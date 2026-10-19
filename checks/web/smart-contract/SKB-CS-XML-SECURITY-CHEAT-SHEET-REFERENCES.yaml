@@ -1,0 +1,53 @@
+id: SKB-CS-XML-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [W3C: Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml/) - [W3C:
+  XML Schema Definition Language (XSD) 1.1, Part '
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XML_Security_Cheat_Sheet#References
+refs:
+- CS:XML_Security_Cheat_Sheet#References
+check: 'References - [W3C: Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml/) - [W3C: XML
+  Schema Definition Language (XSD) 1.1, Part 2 — Datatypes](https://www.w3.org/TR/xmlschema11-2/) - [Oracle
+  Java 25: JAXP Security Guide](https://docs.oracle.com/en/java/javase/25/security/java-api-xml-proces'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_Security_Cheat_Sheet.md (anchor: References) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XML_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XML_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

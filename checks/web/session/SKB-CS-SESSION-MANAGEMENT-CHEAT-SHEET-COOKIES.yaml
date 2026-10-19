@@ -1,0 +1,55 @@
+id: SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-COOKIES
+title: Cookies
+summary: 'Cookies The session ID exchange mechanism based on cookies provides multiple security features
+  in the form of cookie attributes that can be '
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Session_Management_Cheat_Sheet#Cookies
+refs:
+- CS:Session_Management_Cheat_Sheet#Cookies
+check: 'Cookies The session ID exchange mechanism based on cookies provides multiple security features
+  in the form of cookie attributes that can be used to protect the exchange of the session ID: Secure
+  Attribute The Secure cookie attribute instructs web browsers to only send the cookie'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Session_Management_Cheat_Sheet.md (anchor: Cookies) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- cookies
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Session_Management_Cheat_Sheet.md
+  anchor: Cookies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Session_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

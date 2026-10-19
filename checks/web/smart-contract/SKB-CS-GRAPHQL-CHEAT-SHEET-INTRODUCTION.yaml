@@ -1,0 +1,54 @@
+id: SKB-CS-GRAPHQL-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction [GraphQL](https://graphql.org) is an open source query language originally developed
+  by Facebook that can be used to build APIs
+platforms:
+- web
+stacks:
+- any
+domain: smart-contract
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GraphQL_Cheat_Sheet#Introduction
+refs:
+- CS:GraphQL_Cheat_Sheet#Introduction
+check: Introduction [GraphQL](https://graphql.org) is an open source query language originally developed
+  by Facebook that can be used to build APIs as an alternative to REST and SOAP. It has gained popularity
+  since its inception in 2012 because of the native flexibility it offers to those building and calling
+  the AP
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GraphQL_Cheat_Sheet.md (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - .call{
+  - transfer(
+  - delegatecall
+  - unchecked{
+  files:
+  - '**/*.sol'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- smart-contract
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GraphQL_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GraphQL_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
