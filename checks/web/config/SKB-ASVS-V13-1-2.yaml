@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-770
+cwe_source: mapped
 owasp:
 - ASVS:V13.1.2
 refs:
@@ -23,7 +24,7 @@ refs:
 - ASVS V13.1.2
 check: Verify that for each service the application uses, the documentation defines the maximum number
   of concurrent connections (e.g., connection pool limits) and how the application behaves when that limit
-  is reached, including any fallback or recovery mechanisms, to prevent
+  is reached, including any fallback or r
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V13.1.2) for remediation.'
 detect:
