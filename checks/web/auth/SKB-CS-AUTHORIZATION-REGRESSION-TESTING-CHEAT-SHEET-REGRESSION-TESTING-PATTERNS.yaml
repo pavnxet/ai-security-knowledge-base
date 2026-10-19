@@ -14,14 +14,15 @@ phase:
 severity: high
 priority: 55
 cwe:
+- CWE-269
 - CWE-639
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - CS:Authorization_Regression_Testing_Cheat_Sheet#Regression Testing Patterns
 refs:
 - CS:Authorization_Regression_Testing_Cheat_Sheet#Regression Testing Patterns
 check: Regression Testing Patterns Automated tests should specifically target the ways authorization usually
-  degrades over time. Implement the following test patterns in your regression suite. Hori
+  degrades over time. Implement the following test patterns
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md (anchor:
   Regression Testing Patterns) for remediation.'
 detect:

@@ -16,7 +16,7 @@ severity: high
 priority: 45
 cwe:
 - CWE-639
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - BASE:9. BOLA / IDOR
 refs:

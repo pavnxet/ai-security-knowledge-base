@@ -14,15 +14,15 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-639
+cwe_source: mapped
 owasp:
 - BASE:7. Trusting client-supplied keys for sen
 refs:
 - BASE:7. Trusting client-supplied keys for sen
 check: '7. Trusting client-supplied keys for sensitive ops What: App uses GET <user_key without authz
-  → BOLA via cache. Fix: Scope cache keys by tenant/user; validate access before returning. Detection:
-  review cache ac'
+  → BOLA via cache. Fix: Scope cache keys by tenant/user; validate access before returni'
 fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 7. Trusting client-supplied keys for sensitive
   ops) for remediation.'
 detect:

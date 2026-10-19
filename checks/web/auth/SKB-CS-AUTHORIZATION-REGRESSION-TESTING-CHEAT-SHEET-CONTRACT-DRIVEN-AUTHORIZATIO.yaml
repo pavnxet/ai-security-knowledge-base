@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-269
+cwe_source: mapped
 owasp:
 - CS:Authorization_Regression_Testing_Cheat_Sheet#Contract-Driven Authorization Validation
 refs:
 - CS:Authorization_Regression_Testing_Cheat_Sheet#Contract-Driven Authorization Validation
 check: Contract-Driven Authorization Validation When building APIs, the authorization schema should be
-  explicitly defined in the API contract. The [OpenAPI Specificat
+  explicitly defined in the API con
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md (anchor:
   Contract-Driven Authorization Validation) for remediation.'
 detect:
