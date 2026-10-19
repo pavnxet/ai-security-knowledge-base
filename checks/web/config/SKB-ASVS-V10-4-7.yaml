@@ -13,10 +13,11 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
+priority: 50
 cwe:
 - CWE-235
-cwe_source: extracted
+- CWE-306
+cwe_source: mapped
 owasp:
 - ASVS:V10.4.7
 refs:

@@ -13,9 +13,10 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-352
+cwe_source: mapped
 owasp:
 - ASVS:V10.2.1
 refs:
@@ -23,7 +24,7 @@ refs:
 - ASVS V10.2.1
 check: Verify that, if the code flow is used, the OAuth client has protection against browser-based request
   forgery attacks, commonly known as cross-site request forgery (CSRF), which trigger token requests,
-  either by using proof key for code exchange (PKCE) functionality or checking the '
+  either by using proof key for code exchange (PKCE) f
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V10.2.1) for remediation.'
 detect:

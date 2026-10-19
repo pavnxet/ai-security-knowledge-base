@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-770
+cwe_source: mapped
 owasp:
 - ASVS:V10.5.5
 refs:
@@ -23,7 +24,7 @@ refs:
 - ASVS V10.5.5
 check: Verify that, when using OIDC back-channel logout, the relying party mitigates denial of service
   through forced logout and cross-JWT confusion in the logout flow. The client must verify that the logout
-  token is correctly typed with a value of 'logout+jwt', contains the 'event' cla
+  token is correctly typed with a value of 'logout+
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V10.5.5) for remediation.'
 detect:
