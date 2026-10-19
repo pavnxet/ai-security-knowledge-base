@@ -15,6 +15,10 @@ for l in open(os.path.join(ROOT, "sources_files.tsv")):
         r, c, p = l.rstrip("\n").split("\t", 2)
         COMMITS[r] = c
 
+def strip_fm(t):
+    """Drop a leading YAML front-matter block (--- ... ---) before cleaning."""
+    return re.sub(r"^\s*---\s*\n.*?\n---\s*\n", "", t or "", count=1, flags=re.S)
+
 def cpath(repo, path): return os.path.join(CACHE, repo.replace("/", "__"), path)
 def clean(t): return re.sub(r"\s+", " ", re.sub(r"[#*`>|]", " ", t or "")).strip()
 def items_of(repo): return sorted(glob.glob(os.path.join(CACHE, repo.replace("/", "__"), "**", "*"), recursive=True))
@@ -209,11 +213,23 @@ PARSERS = [("OWASP__ASVS",asvs),("OWASP__masvs",masvs),("OWASP__wstg",wstg),("OW
            ("OWASP__owasp-istg",istg),("raroque__vibe-security-skill",vibe),
            ("tier2",tier2)]
 
+def _cwes_from_source(repo, path):
+    import re as _re
+    try:
+        t = open(cpath(repo, path), encoding="utf-8", errors="ignore").read()
+    except Exception:
+        return []
+    return sorted({f"CWE-{n}" for n in _re.findall(r"CWE-?(\d+)", t, _re.I)})
+
 def main():
     total=0
     for name, fn in PARSERS:
         try:
-            n=emit(name if not name.startswith("kadenzipfel") else "web3", fn())
+            items = fn()
+            for it in items:
+                cw = _cwes_from_source(it["source_repo"], it["path"])
+                if cw: it.setdefault("meta", {})["cwe"] = sorted(set(it["meta"].get("cwe") or []) | set(cw))
+            n=emit(name if not name.startswith("kadenzipfel") else "web3", items)
             total+=n; print(f"  {name}: {n}")
         except Exception as e:
             print(f"  {name}: ERROR {str(e)[:80]}")

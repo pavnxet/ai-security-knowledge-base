@@ -1,31 +1,31 @@
 {
   "name": "secure-kb",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "build_date": "2026-10-19",
-  "content_hash": "0c921baa291a4af4",
-  "cards": 2057,
+  "content_hash": "9eb8c611d148a27f",
+  "cards": 2032,
   "by_platform": {
-    "api": 731,
+    "api": 711,
     "browser-ext": 4,
     "cloud": 16,
     "desktop": 4,
     "iot": 15,
     "llm": 10,
-    "mobile": 52,
+    "mobile": 51,
     "android": 24,
-    "ios": 8,
+    "ios": 7,
     "telegram": 7,
     "vibe": 40,
-    "web": 1821,
+    "web": 1799,
     "web3": 49
   },
   "by_severity": {
     "critical": 36,
-    "high": 1236,
-    "medium": 785
+    "high": 1220,
+    "medium": 776
   },
   "authored": 15,
-  "distilled": 2042,
+  "distilled": 2017,
   "sources": 67,
   "index_files": [
     "aliases.json",

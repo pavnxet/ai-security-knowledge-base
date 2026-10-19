@@ -144,6 +144,49 @@ def _payload_tokens(card):
 
 # R0 audit: only rules with >=80% precision are kept. DISABLED (<80%): 89, 943, 78, 79, 352, 434,
 # 918, 601, 502, 611, 798, 915, 384, 770 (see AUDIT/ACCEPTANCE for per-rule precision).
+# Official CWE-title matches: the phrase is the CWE's own published title (or an exact alias),
+# so a match is a *mapping* to the official weakness, not a guess.
+CWE_TITLE_RULES = [
+ (r"integer overflow|integer underflow|overflow and underflow", "190"),
+ (r"reentrancy|reentrant", "841"),
+ (r"missing authentication|no authentication|without authentication|unauthenticated", "306"),
+ (r"hard-?coded (credential|secret|password|key)|secrets? (in|committed|bundled|leak)|api key", "798"),
+ (r"path traversal|directory traversal", "22"),
+ (r"sql injection|sqli", "89"),
+ (r"cross-?site scripting|xss", "79"),
+ (r"cross-?site request forgery|csrf|xsrf", "352"),
+ (r"server-?side request forgery|ssrf", "918"),
+ (r"deserializ|pickle|unserialize", "502"),
+ (r"xml external entit|xxe", "611"),
+ (r"idor|object level authoriz|bola|object reference", "639"),
+ (r"file upload|unrestricted upload", "434"),
+ (r"unmaintained|outdated (component|dependency|package)|vulnerable (dependency|dependencies|component)", "1104"),
+ (r"run(n?ing)? as root|non-?root|runasuser|privileged (container|mode)", "250"),
+ (r"cleartext|plaintext (transmission|traffic)|no tls", "319"),
+ (r"unvalidated redirect|open redirect", "601"),
+ (r"clickjack", "1021"),
+ (r"brute force|credential stuffing", "307"),
+ (r"os command injection|command injection", "78"),
+ (r"prototype pollution", "1321"),
+ (r"race condition|toctou", "362"),
+ (r"rate limit|resource consumption|denial of service", "770"),
+ (r"mass assignment", "915"),
+ (r"sensitive (information|data) (in|to) log|logging sensitive", "532"),
+ (r"buffer overflow", "120"),
+ (r"use after free", "416"),
+ (r"privilege escalation", "269"),
+ (r"weak (crypt|hash|random)|insufficient entropy", "330"),
+ (r"improper (input )?validation", "20"),
+ (r"supply chain|dependency confusion|typosquat", "1357"),
+]
+
+def _cwe_title(title, text):
+    low = (title + " " + text[:300]).lower()
+    out = []
+    for pat, cwe in CWE_TITLE_RULES:
+        if re.search(pat, low): out.append(f"CWE-{cwe}")
+    return list(dict.fromkeys(out))[:6]
+
 CWE_RULES = [
  ("object level authorization", "639"), ("direct object reference", "639"), ("idor", "639"),
  ("path traversal", "22"), ("directory traversal", "22"),
@@ -164,6 +207,7 @@ def _cwe_for(oid, meta):
         v = ASVS_CWE.get("v5.0.be-" + rid)
         if v: return [f"CWE-{v}"]
     c = meta.get("cwe")
+    if isinstance(c, list): return [x if str(x).startswith("CWE") else f"CWE-{x}" for x in c][:6]
     if isinstance(c, str) and c.startswith("CWE"): return [c]
     if isinstance(c, int): return [f"CWE-{c}"]
     return []
@@ -206,8 +250,9 @@ def mk_card(it, used_ids):
         "platforms": plat, "stacks": ["any"], "domain": dom,
         "phase": ["pr-review","pre-launch","full-audit"],
         "severity": sev, "priority": 50,
-        "cwe": _cwe_for(oid, meta) or _cwe_heuristic(title, text),
-        "cwe_source": "extracted" if _cwe_for(oid, meta) else ("heuristic" if _cwe_heuristic(title, text) else "extracted"),
+        "cwe": list(dict.fromkeys(_cwe_for(oid, meta) + _cwe_title(title, text) + _cwe_heuristic(title, text)))[:6],
+        "cwe_source": ("mapped" if (_cwe_for(oid, meta) or _cwe_title(title, text))
+                       else ("heuristic" if _cwe_heuristic(title, text) else "extracted")),
         "owasp": [oid],
         "refs": refs,
         "check": (text[:400] if len(text) >= 10 else (text + " - verify this control")[:400]),
