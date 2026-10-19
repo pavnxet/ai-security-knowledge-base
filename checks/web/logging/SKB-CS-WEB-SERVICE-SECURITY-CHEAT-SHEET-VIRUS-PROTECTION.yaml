@@ -1,0 +1,56 @@
+id: SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-VIRUS-PROTECTION
+title: Virus Protection
+summary: Virus Protection [SOAP](https://en.wikipedia.org/wiki/SOAP) provides the ability to attach files
+  and documents to [SOAP](https://en.wikipedi
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Service_Security_Cheat_Sheet#Virus Protection
+refs:
+- CS:Web_Service_Security_Cheat_Sheet#Virus Protection
+check: Virus Protection [SOAP](https://en.wikipedia.org/wiki/SOAP) provides the ability to attach files
+  and documents to [SOAP](https://en.wikipedia.org/wiki/SOAP) messages. This gives the opportunity for
+  hackers to attach viruses and malware to these [SOAP
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Service_Security_Cheat_Sheet.md (anchor: Virus Protection)
+  for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- virus
+- protection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  anchor: Virus Protection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

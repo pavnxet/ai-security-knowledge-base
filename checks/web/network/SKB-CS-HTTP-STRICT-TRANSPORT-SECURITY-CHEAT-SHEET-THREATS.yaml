@@ -1,0 +1,55 @@
+id: SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-THREATS
+title: Threats
+summary: 'Threats HSTS addresses the following threats: - User bookmarks or manually types http://example.com
+  and is subject to a man-in-the-middle at'
+platforms:
+- web
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTTP_Strict_Transport_Security_Cheat_Sheet#Threats
+refs:
+- CS:HTTP_Strict_Transport_Security_Cheat_Sheet#Threats
+check: 'Threats HSTS addresses the following threats: - User bookmarks or manually types http://example.com
+  and is subject to a man-in-the-middle attacker - HSTS automatically redirects HTTP requests to HTTPS
+  for the target domain - Web application that is'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md (anchor: Threats)
+  for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- threats
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md
+  anchor: Threats
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

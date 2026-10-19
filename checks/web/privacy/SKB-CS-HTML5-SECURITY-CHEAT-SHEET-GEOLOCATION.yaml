@@ -1,0 +1,54 @@
+id: SKB-CS-HTML5-SECURITY-CHEAT-SHEET-GEOLOCATION
+title: Geolocation
+summary: Geolocation - The [Geolocation API](https://www.w3.org/TR/2021/WD-geolocation-20211124/ security)
+  requires that user agents ask for the user
+platforms:
+- web
+stacks:
+- any
+domain: privacy
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTML5_Security_Cheat_Sheet#Geolocation
+refs:
+- CS:HTML5_Security_Cheat_Sheet#Geolocation
+check: Geolocation - The [Geolocation API](https://www.w3.org/TR/2021/WD-geolocation-20211124/ security)
+  requires that user agents ask for the user's permission before calculating location. Whether or how
+  this decision is remembered varies from browser to browser. Some user agents require the user to visit
+  the page
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTML5_Security_Cheat_Sheet.md (anchor: Geolocation) for remediation.'
+detect:
+  grep:
+  - pii
+  - personal
+  - gdpr
+  files:
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- privacy
+- geolocation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTML5_Security_Cheat_Sheet.md
+  anchor: Geolocation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTML5_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

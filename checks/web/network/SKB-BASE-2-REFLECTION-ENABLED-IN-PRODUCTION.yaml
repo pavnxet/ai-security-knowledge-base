@@ -1,0 +1,58 @@
+id: SKB-BASE-2-REFLECTION-ENABLED-IN-PRODUCTION
+title: 2. Reflection enabled in production
+summary: '2. Reflection enabled in production What: reflection.Register(s) exposes the full service/method
+  schema to any caller — recon aid. Fix: Disa'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. Reflection enabled in production
+refs:
+- BASE:2. Reflection enabled in production
+check: '2. Reflection enabled in production What: reflection.Register(s) exposes the full service/method
+  schema to any caller — recon aid. Fix: Disable reflection in prod or gate behind mTLS. Detection: rg
+  -n "reflection.Reg'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 2. Reflection enabled in production) for
+  remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- reflection
+- enabled
+- production
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 2. Reflection enabled in production
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

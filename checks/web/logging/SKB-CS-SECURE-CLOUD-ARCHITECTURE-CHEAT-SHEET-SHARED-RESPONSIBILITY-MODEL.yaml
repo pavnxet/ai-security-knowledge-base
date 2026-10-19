@@ -1,0 +1,56 @@
+id: SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-SHARED-RESPONSIBILITY-MODEL
+title: Shared Responsibility Model
+summary: 'Shared Responsibility Model The Shared Responsibility Model is a framework for cloud service
+  providers (CSPs) and those selling cloud based '
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Cloud_Architecture_Cheat_Sheet#Shared Responsibility Model
+refs:
+- CS:Secure_Cloud_Architecture_Cheat_Sheet#Shared Responsibility Model
+check: Shared Responsibility Model The Shared Responsibility Model is a framework for cloud service providers
+  (CSPs) and those selling cloud based services to properly identify and segment the res
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md (anchor: Shared
+  Responsibility Model) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- shared
+- responsibility
+- model
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md
+  anchor: Shared Responsibility Model
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

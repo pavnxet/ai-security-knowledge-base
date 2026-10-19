@@ -1,0 +1,57 @@
+id: SKB-BASE-8-NO-POD-SECURITY-ADMISSION-OLD-PODSE
+title: 8. No Pod Security Admission / old PodSecurityPolicy gaps
+summary: '8. No Pod Security Admission / old PodSecurityPolicy gaps What: Pods can request privileged/hostPath/hostNetwork
+  without enforcement. Fix: E'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:8. No Pod Security Admission / old PodSe
+refs:
+- BASE:8. No Pod Security Admission / old PodSe
+check: '8. No Pod Security Admission / old PodSecurityPolicy gaps What: Pods can request privileged/hostPath/hostNetwork
+  without enforcement. Fix: Enforce restricted'
+fix: 'See yesmayank/secure-coding-baseline 21-kubernetes.md (anchor: 8. No Pod Security Admission / old
+  PodSecurityPolicy gaps) for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- security
+- admission
+- podsecuritypolicy
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 21-kubernetes.md
+  anchor: 8. No Pod Security Admission / old PodSecurityPolicy gaps
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/21-kubernetes.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

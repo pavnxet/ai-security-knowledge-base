@@ -1,0 +1,54 @@
+id: SKB-BASE-AC66C1BB55
+title: Why AI generates it
+summary: Why AI generates it It's the shortest path from "I got JSON" to "I saved a row." The assistant
+  rarely adds an allowlist unless asked.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Why AI generates it
+refs:
+- BASE:Why AI generates it
+check: Why AI generates it It's the shortest path from "I got JSON" to "I saved a row." The assistant
+  rarely adds an allowlist unless asked.
+fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: Why AI generates it) for
+  remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- generates
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 28-vibe-coded-auth-authz.md
+  anchor: Why AI generates it
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/28-vibe-coded-auth-authz.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

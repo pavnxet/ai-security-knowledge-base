@@ -1,0 +1,50 @@
+id: SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-SECRULE-REQUEST-URI-CONTAINS-WP-CONTE
+title: SecRule REQUEST_URI "@contains /wp-content/plugins/levelfo
+summary: SecRule REQUEST_URI "@contains /wp-content/plugins/levelfour
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Virtual_Patching_Cheat_Sheet#SecRule REQUEST_URI "@contains /wp-conte
+refs:
+- CS:Virtual_Patching_Cheat_Sheet#SecRule REQUEST_URI "@contains /wp-conte
+check: SecRule REQUEST_URI "@contains /wp-content/plugins/levelfourstorefront/scripts/admini
+fix: See OWASP/CheatSheetSeries cheatsheets/Virtual_Patching_Chea
+detect:
+  grep:
+  - logger.
+  - console.log
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  anchor: SecRule REQUEST_URI "@contains /wp-content/plugins/levelfourstorefront/scripts/administration/exportsubscribers.php"
+    "chain,id:1,phase:2,t:none,t:Utf8toUnicode,t:urlDecodeUni,t:normalizePathWin,t:lowercase,block,msg:'Input
+    Validation Error for \'reqID\' parameter - Duplicate Parameters Names Seen.',logdata:'%{matched_var}'"
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

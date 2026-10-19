@@ -1,0 +1,56 @@
+id: SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-TRANSPORT-ENCODING
+title: Transport Encoding
+summary: Transport Encoding [SOAP](https://en.wikipedia.org/wiki/SOAP) encoding styles are meant to move
+  data between software objects into XML forma
+platforms:
+- web
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Service_Security_Cheat_Sheet#Transport Encoding
+refs:
+- CS:Web_Service_Security_Cheat_Sheet#Transport Encoding
+check: 'Transport Encoding [SOAP](https://en.wikipedia.org/wiki/SOAP) encoding styles are meant to move
+  data between software objects into XML format and back again. Rule : Enforce the same encoding style
+  between the client and the server.'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Service_Security_Cheat_Sheet.md (anchor: Transport Encoding)
+  for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- transport
+- encoding
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  anchor: Transport Encoding
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

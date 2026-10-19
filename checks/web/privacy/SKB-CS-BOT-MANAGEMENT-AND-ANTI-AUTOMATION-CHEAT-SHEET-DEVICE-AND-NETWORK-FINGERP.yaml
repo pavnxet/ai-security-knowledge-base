@@ -1,0 +1,55 @@
+id: SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-DEVICE-AND-NETWORK-FINGERP
+title: Device and Network Fingerprinting (Privacy-Aware)
+summary: Device and Network Fingerprinting (Privacy-Aware) Fingerprinting helps detect bots that rotate
+  IPs but reuse client environments. Use passiv
+platforms:
+- web
+stacks:
+- any
+domain: privacy
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Device and Network Fingerprinting (Priva
+refs:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Device and Network Fingerprinting (Priva
+check: Device and Network Fingerprinting (Privacy-Aware) Fingerprinting helps detect bots that rotate
+  IPs but reuse client environments. Use passive, network-level s
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md (anchor:
+  Device and Network Fingerprinting (Privacy-Aware)) for remediation.'
+detect:
+  grep:
+  - pii
+  - personal
+  - gdpr
+  files:
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- privacy
+- device
+- network
+- fingerprinting
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  anchor: Device and Network Fingerprinting (Privacy-Aware)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

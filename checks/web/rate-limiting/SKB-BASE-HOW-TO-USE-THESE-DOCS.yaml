@@ -1,0 +1,56 @@
+id: SKB-BASE-HOW-TO-USE-THESE-DOCS
+title: How to use these docs
+summary: How to use these docs - Run the detection greps in your generated codebase. - Treat every AI-generated
+  commit as unreviewed until checked ag
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:How to use these docs
+refs:
+- BASE:How to use these docs
+check: How to use these docs - Run the detection greps in your generated codebase. - Treat every AI-generated
+  commit as unreviewed until checked against the relevant doc. - Add the checks to CI (e.g., gitleaks
+  , semgrep , npm audit , pip-audit , trivy ). - Add a review step that
+fix: 'See yesmayank/secure-coding-baseline 26-vibe-coded-overview.md (anchor: How to use these docs) for
+  remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- these
+- docs
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 26-vibe-coded-overview.md
+  anchor: How to use these docs
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/26-vibe-coded-overview.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-BASE-0CA4CECA59
+title: Why AI generates it
+summary: Why AI generates it The assistant predicts the next likely token; package names are short and
+  easy to mispredict. It also mixes up ecosystem
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Why AI generates it
+refs:
+- BASE:Why AI generates it
+check: Why AI generates it The assistant predicts the next likely token; package names are short and easy
+  to mispredict. It also mixes up ecosystems (a JS helper name in Python, or a deprecated v3 API still
+  cited as current).
+fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: Why AI generates
+  it) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- generates
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 27-vibe-coded-secrets-supplychain.md
+  anchor: Why AI generates it
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/27-vibe-coded-secrets-supplychain.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

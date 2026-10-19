@@ -1,0 +1,57 @@
+id: SKB-BASE-2-DTOS-WITHOUT-CLASS-VALIDATOR-DECORATO
+title: 2. DTOs without class-validator decorators
+summary: '2. DTOs without class-validator decorators What: A DTO class with no @IsString / @IsInt etc.
+  validates nothing even with the pipe enabled. D'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. DTOs without class-validator decorato
+refs:
+- BASE:2. DTOs without class-validator decorato
+check: '2. DTOs without class-validator decorators What: A DTO class with no @IsString / @IsInt etc. validates
+  nothing even with the pipe enabled. Dangerous pattern: Fix: Decorate every property; use @Matches ,
+  @IsEnum ,'
+fix: 'See yesmayank/secure-coding-baseline 02-nestjs.md (anchor: 2. DTOs without class-validator decorators)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- dtos
+- without
+- class
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 02-nestjs.md
+  anchor: 2. DTOs without class-validator decorators
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/02-nestjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

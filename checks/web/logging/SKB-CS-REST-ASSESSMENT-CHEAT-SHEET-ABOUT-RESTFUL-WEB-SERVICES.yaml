@@ -1,0 +1,57 @@
+id: SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-ABOUT-RESTFUL-WEB-SERVICES
+title: About RESTful Web Services
+summary: 'About RESTful Web Services Web Services are an implementation of web technology used for machine
+  to machine communication. As such they are '
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Assessment_Cheat_Sheet#About RESTful Web Services
+refs:
+- CS:REST_Assessment_Cheat_Sheet#About RESTful Web Services
+check: About RESTful Web Services Web Services are an implementation of web technology used for machine
+  to machine communication. As such they are used for Inter application communication, Web 2.0 and Mashups
+  and by desktop a
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Assessment_Cheat_Sheet.md (anchor: About RESTful Web
+  Services) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- about
+- restful
+- services
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Assessment_Cheat_Sheet.md
+  anchor: About RESTful Web Services
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Assessment_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

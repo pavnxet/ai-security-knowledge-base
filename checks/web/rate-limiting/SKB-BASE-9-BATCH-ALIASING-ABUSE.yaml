@@ -1,0 +1,56 @@
+id: SKB-BASE-9-BATCH-ALIASING-ABUSE
+title: 9. Batch / aliasing abuse
+summary: '9. Batch / aliasing abuse What: Aliased queries ( a: user(id:1), b: user(id:2), ... ) bypass
+  rate limits. Fix: Limit aliases; per-query cost'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. Batch / aliasing abuse
+refs:
+- BASE:9. Batch / aliasing abuse
+check: '9. Batch / aliasing abuse What: Aliased queries ( a: user(id:1), b: user(id:2), ... ) bypass rate
+  limits. Fix: Limit aliases; per-query cost limits; rate limit by cost. Detection: review middleware
+  for alias limits. ---'
+fix: 'See yesmayank/secure-coding-baseline 14-graphql.md (anchor: 9. Batch / aliasing abuse) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- batch
+- aliasing
+- abuse
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 14-graphql.md
+  anchor: 9. Batch / aliasing abuse
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/14-graphql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

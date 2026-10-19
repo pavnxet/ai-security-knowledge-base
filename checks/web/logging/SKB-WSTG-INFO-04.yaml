@@ -1,0 +1,54 @@
+id: SKB-WSTG-INFO-04
+title: Attack Surface Identification
+summary: Attack Surface Identification. Enumerate all web applications within scope. Identify DNS names,
+  domains, and virtual hosts associated with t
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-INFO-04
+refs:
+- WSTG-INFO-04
+check: Attack Surface Identification. Enumerate all web applications within scope. Identify DNS names,
+  domains, and virtual hosts associated with the target. Discover additional domains and subdomains using
+  passive and active DNS techniques. Analyze digital certificates and Certificate Transparency logs for
+  additional hostnames.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-INFO-04) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-INFO-04
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

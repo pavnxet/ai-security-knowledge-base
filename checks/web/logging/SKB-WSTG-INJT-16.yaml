@@ -1,0 +1,53 @@
+id: SKB-WSTG-INJT-16
+title: HTTP Request Smuggling
+summary: HTTP Request Smuggling. Identify request boundary inconsistencies between frontend and backend
+  components Detect classic CL/TE desynchroniza
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-INJT-16
+refs:
+- WSTG-INJT-16
+check: HTTP Request Smuggling. Identify request boundary inconsistencies between frontend and backend
+  components Detect classic CL/TE desynchronization vulnerabilities Evaluate protocol translation logic
+  (HTTP/2 → HTTP/1.1) Assess H2C upgrade handling and downgrade safety Confirm backend request queue poisoning
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-INJT-16) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-INJT-16
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

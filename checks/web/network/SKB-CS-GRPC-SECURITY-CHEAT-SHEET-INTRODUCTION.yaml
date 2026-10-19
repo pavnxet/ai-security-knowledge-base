@@ -1,0 +1,54 @@
+id: SKB-CS-GRPC-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction gRPC (gRPC Remote Procedure Call) is a high-performance, language-neutral RPC framework
+  that uses HTTP/2 for transport and Prot
+platforms:
+- web
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:gRPC_Security_Cheat_Sheet#Introduction
+refs:
+- CS:gRPC_Security_Cheat_Sheet#Introduction
+check: Introduction gRPC (gRPC Remote Procedure Call) is a high-performance, language-neutral RPC framework
+  that uses HTTP/2 for transport and Protocol Buffers for serialization. While gRPC offers significant
+  performance advantages for microservices and distributed systems, it introduce
+fix: 'See OWASP/CheatSheetSeries cheatsheets/gRPC_Security_Cheat_Sheet.md (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/gRPC_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/gRPC_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

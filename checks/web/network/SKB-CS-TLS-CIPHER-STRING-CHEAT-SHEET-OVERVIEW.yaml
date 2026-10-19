@@ -1,0 +1,68 @@
+id: SKB-CS-TLS-CIPHER-STRING-CHEAT-SHEET-OVERVIEW
+title: (whole sheet)
+summary: 'DEPRECATED: TLS Cipher String Cheat Sheet The TLS Cipher String Cheat Sheet has been deprecated.
+  Please visit the [Transport Layer Security '
+platforms:
+- web
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:TLS_Cipher_String_Cheat_Sheet#overview
+refs:
+- CS:TLS_Cipher_String_Cheat_Sheet#overview
+check: 'DEPRECATED: TLS Cipher String Cheat Sheet The TLS Cipher String Cheat Sheet has been deprecated.
+  Please visit the [Transport Layer Security Cheat Sheet](Transport_Layer_Security_Cheat_Sheet.md) instead.'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/TLS_Cipher_String_Cheat_Sheet.md (anchor: (whole sheet))
+  for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- whole
+- sheet
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/TLS_Cipher_String_Cheat_Sheet.md
+  anchor: (whole sheet)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/TLS_Cipher_String_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Transport_Layer_Protection_Cheat_Sheet.md
+  anchor: (whole sheet)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Transport_Layer_Protection_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-CS-TRANSPORT-LAYER-PROTECTION-CHEAT-SHEET-OVERVIEW
+aliases:
+- SKB-CS-TRANSPORT-LAYER-PROTECTION-CHEAT-SHEET-OVERVIEW

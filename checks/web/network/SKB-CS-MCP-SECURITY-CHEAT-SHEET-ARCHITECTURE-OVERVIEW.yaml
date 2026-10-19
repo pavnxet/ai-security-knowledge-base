@@ -1,0 +1,56 @@
+id: SKB-CS-MCP-SECURITY-CHEAT-SHEET-ARCHITECTURE-OVERVIEW
+title: Architecture Overview
+summary: 'Architecture Overview - MCP Host : The AI application (e.g., Claude Desktop, Cursor, IDE plugins).
+  - MCP Client : Connects to one or more MC'
+platforms:
+- web
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:MCP_Security_Cheat_Sheet#Architecture Overview
+refs:
+- CS:MCP_Security_Cheat_Sheet#Architecture Overview
+check: 'Architecture Overview - MCP Host : The AI application (e.g., Claude Desktop, Cursor, IDE plugins).
+  - MCP Client : Connects to one or more MCP servers, passes tool definitions to the LLM. - MCP Server
+  : Lightweight progra'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/MCP_Security_Cheat_Sheet.md (anchor: Architecture Overview)
+  for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+- architecture
+- overview
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/MCP_Security_Cheat_Sheet.md
+  anchor: Architecture Overview
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/MCP_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

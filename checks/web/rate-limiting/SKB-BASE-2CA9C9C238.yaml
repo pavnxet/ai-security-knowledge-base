@@ -1,0 +1,54 @@
+id: SKB-BASE-2CA9C9C238
+title: What it is
+summary: What it is AI-generated handlers often accept any / dict /untyped params, so the app trusts whatever
+  the client sends.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What it is
+refs:
+- BASE:What it is
+check: What it is AI-generated handlers often accept any / dict /untyped params, so the app trusts whatever
+  the client sends.
+fix: 'See yesmayank/secure-coding-baseline 29-vibe-coded-injection-validation.md (anchor: What it is)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- what
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 29-vibe-coded-injection-validation.md
+  anchor: What it is
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/29-vibe-coded-injection-validation.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

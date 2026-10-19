@@ -1,0 +1,56 @@
+id: SKB-SCR-EXCEPTION-HANDLING
+title: Exception Handling
+summary: Exception Handling - [ ] Do all methods have appropriate exceptions? - [ ] Do error messages
+  shown to users NOT reveal sensitive information
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- SCR:Exception Handling
+refs:
+- SCR:Exception Handling
+check: Exception Handling - [ ] Do all methods have appropriate exceptions? - [ ] Do error messages shown
+  to users NOT reveal sensitive information including stack traces, or ids? - [ ] Does the application
+  fail securely when exceptions occur? - [ ] Are system errors NOT shown to users? - [ ] Are resources
+  released
+fix: 'See mgreiler/secure-code-review-checklist README.md (anchor: Exception Handling) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- exception
+- handling
+sources:
+- repo: mgreiler/secure-code-review-checklist
+  path: README.md
+  anchor: Exception Handling
+  commit: 40ce5d4b28f4ab4db3897d4aee3b63d8cd1323ad
+  url: https://github.com/mgreiler/secure-code-review-checklist/blob/40ce5d4b28f4ab4db3897d4aee3b63d8cd1323ad/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

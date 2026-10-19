@@ -1,0 +1,53 @@
+id: SKB-CS-USER-PRIVACY-PROTECTION-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [RFC 6973: Privacy Considerations for Internet Protocols](https://www.rfc-editor.org/info/rfc6973/)
+  - [RFC 6797: HTTP Strict Tr'
+platforms:
+- web
+stacks:
+- any
+domain: privacy
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:User_Privacy_Protection_Cheat_Sheet#References
+refs:
+- CS:User_Privacy_Protection_Cheat_Sheet#References
+check: 'References - [RFC 6973: Privacy Considerations for Internet Protocols](https://www.rfc-editor.org/info/rfc6973/)
+  - [RFC 6797: HTTP Strict Transport Security (HSTS)](https://www.rfc-editor.org/info/rfc6797/)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/User_Privacy_Protection_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - pii
+  - personal
+  - gdpr
+  files:
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- privacy
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/User_Privacy_Protection_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/User_Privacy_Protection_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
