@@ -1,0 +1,49 @@
+id: SKB-TG-INPUT-0036
+title: Bot treats every message as untrusted input
+summary: Message text, callbacks and file names are attacker-controlled.
+platforms:
+- telegram
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-20
+owasp: []
+check: Validate/sanitize update fields (text, callback_data, file names, ids) before use in queries, shell,
+  HTML or paths.
+fix: Validate and escape all update fields; never eval or interpolate them; cap lengths.
+detect:
+  grep:
+  - message.text
+  - callback_data
+  - update.
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- input
+sources:
+- repo: Telegram Bot API
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/api
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

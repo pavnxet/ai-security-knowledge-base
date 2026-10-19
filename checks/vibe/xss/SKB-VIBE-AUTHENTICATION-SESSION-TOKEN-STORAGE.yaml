@@ -1,0 +1,59 @@
+id: SKB-VIBE-AUTHENTICATION-SESSION-TOKEN-STORAGE
+title: Session & Token Storage
+summary: Session & Token Storage - Store tokens in HttpOnly + Secure + SameSite=Lax cookies, not localStorage
+  . - localStorage is accessible to any J
+platforms:
+- vibe
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:authentication#Session & Token Storage
+refs:
+- VIBE:authentication#Session & Token Storage
+check: Session & Token Storage - Store tokens in HttpOnly + Secure + SameSite=Lax cookies, not localStorage
+  . - localStorage is accessible to any JavaScript on the page — a single XSS vulnerability exposes all
+  tok
+fix: 'See raroque/vibe-security-skill vibe-security/references/authentication.md (anchor: Session & Token
+  Storage) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- session
+- token
+- storage
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/authentication.md
+  anchor: Session & Token Storage
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/authentication.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

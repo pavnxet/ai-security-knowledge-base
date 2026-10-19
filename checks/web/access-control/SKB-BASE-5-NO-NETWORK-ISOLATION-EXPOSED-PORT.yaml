@@ -1,0 +1,58 @@
+id: SKB-BASE-5-NO-NETWORK-ISOLATION-EXPOSED-PORT
+title: 5. No network isolation / exposed port
+summary: '5. No network isolation / exposed port What: 27017 reachable from the internet. Fix: Security
+  group / firewall to internal-only; VPN or priv'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. No network isolation / exposed port
+refs:
+- BASE:5. No network isolation / exposed port
+check: '5. No network isolation / exposed port What: 27017 reachable from the internet. Fix: Security
+  group / firewall to internal-only; VPN or private subnet for app access. Detection: check security gr'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: 5. No network isolation / exposed port)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- network
+- isolation
+- exposed
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: 5. No network isolation / exposed port
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

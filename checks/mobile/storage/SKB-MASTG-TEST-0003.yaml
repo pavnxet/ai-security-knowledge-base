@@ -1,0 +1,101 @@
+id: SKB-MASTG-TEST-0003
+title: MASTG-TEST-0003
+summary: '--- masvs_v1_id: - MSTG-STORAGE-3 masvs_v2_id: - MASVS-STORAGE-2 platform: android title: Testing
+  Logs for Sensitive Data masvs_v1_levels: -'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0003
+refs:
+- MASTG-TEST-0003
+check: '--- masvs_v1_id: - MSTG-STORAGE-3 masvs_v2_id: - MASVS-STORAGE-2 platform: android title: Testing
+  Logs for Sensitive Data masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [MASTG-TEST-0203, MASTG-TEST-0231] deprecation_note: New version available in MASTG V2 ---'
+fix: 'See OWASP/mastg tests/android/MASVS-STORAGE/MASTG-TEST-0003.md (anchor: MASTG-TEST-0003) for remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-STORAGE/MASTG-TEST-0003.md
+  anchor: MASTG-TEST-0003
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-STORAGE/MASTG-TEST-0003.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-STORAGE/MASTG-TEST-0012.md
+  anchor: MASTG-TEST-0012
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-STORAGE/MASTG-TEST-0012.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-STORAGE/MASTG-TEST-0053.md
+  anchor: MASTG-TEST-0053
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-STORAGE/MASTG-TEST-0053.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-STORAGE/MASTG-TEST-0055.md
+  anchor: MASTG-TEST-0055
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-STORAGE/MASTG-TEST-0055.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-STORAGE/MASTG-TEST-0058.md
+  anchor: MASTG-TEST-0058
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-STORAGE/MASTG-TEST-0058.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASTG-TEST-0012
+- SKB-MASTG-TEST-0053
+- SKB-MASTG-TEST-0055
+- SKB-MASTG-TEST-0058
+aliases:
+- SKB-MASTG-TEST-0012
+- SKB-MASTG-TEST-0053
+- SKB-MASTG-TEST-0055
+- SKB-MASTG-TEST-0058

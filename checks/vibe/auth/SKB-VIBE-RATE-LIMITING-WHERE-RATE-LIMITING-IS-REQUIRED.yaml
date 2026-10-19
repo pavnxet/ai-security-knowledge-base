@@ -1,0 +1,58 @@
+id: SKB-VIBE-RATE-LIMITING-WHERE-RATE-LIMITING-IS-REQUIRED
+title: Where Rate Limiting Is Required
+summary: 'Where Rate Limiting Is Required Every one of these endpoints needs rate limiting. AI assistants
+  almost never add it: - Auth endpoints — logi'
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:rate-limiting#Where Rate Limiting Is Required
+refs:
+- VIBE:rate-limiting#Where Rate Limiting Is Required
+check: 'Where Rate Limiting Is Required Every one of these endpoints needs rate limiting. AI assistants
+  almost never add it: - Auth endpoints — login, register, password reset, OTP verification, magic link.
+  Without limits, att'
+fix: 'See raroque/vibe-security-skill vibe-security/references/rate-limiting.md (anchor: Where Rate Limiting
+  Is Required) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- where
+- rate
+- limiting
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/rate-limiting.md
+  anchor: Where Rate Limiting Is Required
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/rate-limiting.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

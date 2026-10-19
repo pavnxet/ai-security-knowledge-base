@@ -1,0 +1,58 @@
+id: SKB-VIBE-DATABASE-SECURITY-FIREBASE-SECURITY-RULES
+title: Firebase Security Rules
+summary: 'Firebase Security Rules Default Rules Are Dangerous Never ship these: // BAD: world-readable
+  and writable allow read, write: if true; // BAD'
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:database-security#Firebase Security Rules
+refs:
+- VIBE:database-security#Firebase Security Rules
+check: 'Firebase Security Rules Default Rules Are Dangerous Never ship these: // BAD: world-readable and
+  writable allow read, write: if true; // BAD: any logged-in user can access everything allow read, write:
+  if request.auth != null; Always validate owners'
+fix: 'See raroque/vibe-security-skill vibe-security/references/database-security.md (anchor: Firebase
+  Security Rules) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- firebase
+- security
+- rules
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/database-security.md
+  anchor: Firebase Security Rules
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/database-security.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

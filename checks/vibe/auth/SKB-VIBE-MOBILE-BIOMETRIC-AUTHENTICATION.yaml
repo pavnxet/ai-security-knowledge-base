@@ -1,0 +1,57 @@
+id: SKB-VIBE-MOBILE-BIOMETRIC-AUTHENTICATION
+title: Biometric Authentication
+summary: Biometric Authentication A simple boolean success check from biometric auth ( isAuthenticated
+  = true ) can be hooked with tools like Frida o
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:mobile#Biometric Authentication
+refs:
+- VIBE:mobile#Biometric Authentication
+check: 'Biometric Authentication A simple boolean success check from biometric auth ( isAuthenticated
+  = true ) can be hooked with tools like Frida on a jailbroken device. Proper biometric auth must use
+  cryptographic verification : 1. Server sends a challenge'
+fix: 'See raroque/vibe-security-skill vibe-security/references/mobile.md (anchor: Biometric Authentication)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- biometric
+- authentication
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/mobile.md
+  anchor: Biometric Authentication
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/mobile.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

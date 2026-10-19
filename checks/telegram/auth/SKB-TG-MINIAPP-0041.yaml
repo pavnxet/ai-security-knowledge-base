@@ -1,0 +1,49 @@
+id: SKB-TG-MINIAPP-0041
+title: Telegram Mini App validates initData
+summary: Mini Apps must verify initData server-side, not trust the client.
+platforms:
+- telegram
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-345
+owasp: []
+check: Confirm the backend validates Web App initData (HMAC with bot token) and expiry before trusting
+  identity.
+fix: Validate initData hash server-side; enforce expiry; never authorize on client-provided ids.
+detect:
+  grep:
+  - initData
+  - WebApp
+  - validateInitData
+  files:
+  - '**/*.ts'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- miniapp
+sources:
+- repo: Telegram Mini Apps
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/webapps
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

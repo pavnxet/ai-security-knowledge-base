@@ -1,0 +1,56 @@
+id: SKB-VIBE-DEPLOYMENT-PRODUCTION-CONFIGURATION
+title: Production Configuration
+summary: Production Configuration - Disable debug mode in production. Debug pages often leak stack traces,
+  environment variables, and internal paths.
+platforms:
+- vibe
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:deployment#Production Configuration
+refs:
+- VIBE:deployment#Production Configuration
+check: Production Configuration - Disable debug mode in production. Debug pages often leak stack traces,
+  environment variables, and internal paths. - Disable source maps in production. Source maps
+fix: 'See raroque/vibe-security-skill vibe-security/references/deployment.md (anchor: Production Configuration)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- production
+- configuration
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/deployment.md
+  anchor: Production Configuration
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/deployment.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-BASE-12-REVERSE-TABNABBING-TARGET-BLANK
+title: 12. Reverse tabnabbing (`target="_blank"` without `rel`)
+summary: '12. Reverse tabnabbing ( target="_blank" without rel ) What: New tabs can access window.opener
+  . Fix: rel="noopener noreferrer" . Detection:'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Reverse tabnabbing (`target="_blank"
+refs:
+- BASE:12. Reverse tabnabbing (`target="_blank"
+check: '12. Reverse tabnabbing ( target="_blank" without rel ) What: New tabs can access window.opener
+  . Fix: rel="noopener noreferrer" . D'
+fix: 'See yesmayank/secure-coding-baseline 18-angular.md (anchor: 12. Reverse tabnabbing (`target="_blank"`
+  without `rel`)) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- reverse
+- tabnabbing
+- target
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 12. Reverse tabnabbing (`target="_blank"` without `rel`)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

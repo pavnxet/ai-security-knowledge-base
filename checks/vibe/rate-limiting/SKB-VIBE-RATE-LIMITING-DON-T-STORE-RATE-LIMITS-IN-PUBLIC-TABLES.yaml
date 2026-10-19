@@ -1,0 +1,55 @@
+id: SKB-VIBE-RATE-LIMITING-DON-T-STORE-RATE-LIMITS-IN-PUBLIC-TABLES
+title: Don't Store Rate Limits in Public Tables
+summary: 'Don''t Store Rate Limits in Public Tables If rate limit counters live in a Supabase public table,
+  users can reset their own counters via the '
+platforms:
+- vibe
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:rate-limiting#Don't Store Rate Limits in Public Tables
+refs:
+- VIBE:rate-limiting#Don't Store Rate Limits in Public Tables
+check: 'Don''t Store Rate Limits in Public Tables If rate limit counters live in a Supabase public table,
+  users can reset their own counters via the REST API. Use: - Upstash Redis — Serverless Redis'
+fix: 'See raroque/vibe-security-skill vibe-security/references/rate-limiting.md (anchor: Don''t Store
+  Rate Limits in Public Tables) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- store
+- rate
+- limits
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/rate-limiting.md
+  anchor: Don't Store Rate Limits in Public Tables
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/rate-limiting.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

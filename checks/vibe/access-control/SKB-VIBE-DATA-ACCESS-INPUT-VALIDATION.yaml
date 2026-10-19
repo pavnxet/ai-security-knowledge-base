@@ -1,0 +1,57 @@
+id: SKB-VIBE-DATA-ACCESS-INPUT-VALIDATION
+title: Input Validation
+summary: 'Input Validation Validate all external input at system boundaries using a runtime schema validator
+  (Zod, Yup, Joi, etc.): - API route handle'
+platforms:
+- vibe
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:data-access#Input Validation
+refs:
+- VIBE:data-access#Input Validation
+check: 'Input Validation Validate all external input at system boundaries using a runtime schema validator
+  (Zod, Yup, Joi, etc.): - API route handlers - Server Actions - Webhook handlers - Form submissions -
+  URL parameters and query strings Don''t rely on Ty'
+fix: 'See raroque/vibe-security-skill vibe-security/references/data-access.md (anchor: Input Validation)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- input
+- validation
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/data-access.md
+  anchor: Input Validation
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/data-access.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

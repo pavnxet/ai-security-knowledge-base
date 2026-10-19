@@ -1,0 +1,56 @@
+id: SKB-VIBE-RATE-LIMITING-IMPLEMENTATION-PATTERN
+title: Implementation Pattern
+summary: 'Implementation Pattern typescript // Example: rate limiting with Upstash Redis import { Ratelimit
+  } from ''@upstash/ratelimit''; import { Redi'
+platforms:
+- vibe
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:rate-limiting#Implementation Pattern
+refs:
+- VIBE:rate-limiting#Implementation Pattern
+check: 'Implementation Pattern typescript // Example: rate limiting with Upstash Redis import { Ratelimit
+  } from ''@upstash/ratelimit''; import { Redis } from ''@upstash/redis''; const ratelimit = new Ratelimit({
+  redis: Redis.fromEn'
+fix: 'See raroque/vibe-security-skill vibe-security/references/rate-limiting.md (anchor: Implementation
+  Pattern) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- implementation
+- pattern
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/rate-limiting.md
+  anchor: Implementation Pattern
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/rate-limiting.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

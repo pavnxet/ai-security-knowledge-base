@@ -1,0 +1,47 @@
+id: SKB-TG-WEBHOOK-0035
+title: Telegram webhook served over HTTPS only
+summary: All Bot API queries must be HTTPS; webhooks need a valid certificate.
+platforms:
+- telegram
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-319
+owasp: []
+check: Confirm the webhook URL is https:// with a valid certificate (Bot API requires HTTPS for all requests).
+fix: Terminate TLS properly; keep the certificate valid.
+detect:
+  grep:
+  - https://
+  - setWebhook
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- tls
+sources:
+- repo: Telegram Bot API
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/api
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

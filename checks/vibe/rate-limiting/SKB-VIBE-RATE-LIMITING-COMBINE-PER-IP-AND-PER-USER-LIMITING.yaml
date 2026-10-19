@@ -1,0 +1,55 @@
+id: SKB-VIBE-RATE-LIMITING-COMBINE-PER-IP-AND-PER-USER-LIMITING
+title: Combine Per-IP and Per-User Limiting
+summary: Combine Per-IP and Per-User Limiting - IP-only limits are defeated by rotating IPs (trivial with
+  VPNs or botnets) - User-only limits are def
+platforms:
+- vibe
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:rate-limiting#Combine Per-IP and Per-User Limiting
+refs:
+- VIBE:rate-limiting#Combine Per-IP and Per-User Limiting
+check: Combine Per-IP and Per-User Limiting - IP-only limits are defeated by rotating IPs (trivial with
+  VPNs or botnets) - User-only limits are defeated by creating new accounts - Use both tog
+fix: 'See raroque/vibe-security-skill vibe-security/references/rate-limiting.md (anchor: Combine Per-IP
+  and Per-User Limiting) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- combine
+- user
+- limiting
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/rate-limiting.md
+  anchor: Combine Per-IP and Per-User Limiting
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/rate-limiting.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

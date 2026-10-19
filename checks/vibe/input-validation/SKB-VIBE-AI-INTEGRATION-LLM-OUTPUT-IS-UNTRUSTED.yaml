@@ -1,0 +1,55 @@
+id: SKB-VIBE-AI-INTEGRATION-LLM-OUTPUT-IS-UNTRUSTED
+title: LLM Output Is Untrusted
+summary: 'LLM Output Is Untrusted LLM responses should be treated as untrusted user input: - Sanitize
+  before rendering as HTML — LLM output can contai'
+platforms:
+- vibe
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:ai-integration#LLM Output Is Untrusted
+refs:
+- VIBE:ai-integration#LLM Output Is Untrusted
+check: 'LLM Output Is Untrusted LLM responses should be treated as untrusted user input: - Sanitize before
+  rendering as HTML — LLM output can contain script tags or event handlers - Never execute LLM out'
+fix: 'See raroque/vibe-security-skill vibe-security/references/ai-integration.md (anchor: LLM Output Is
+  Untrusted) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- output
+- untrusted
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/ai-integration.md
+  anchor: LLM Output Is Untrusted
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/ai-integration.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

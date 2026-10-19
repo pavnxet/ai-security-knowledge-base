@@ -1,0 +1,56 @@
+id: SKB-VIBE-DEPLOYMENT-SECURITY-HEADERS
+title: Security Headers
+summary: 'Security Headers Set these headers on all responses: Content-Security-Policy: default-src ''self'';
+  script-src ''self'' Strict-Transport-Securit'
+platforms:
+- vibe
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:deployment#Security Headers
+refs:
+- VIBE:deployment#Security Headers
+check: 'Security Headers Set these headers on all responses: Content-Security-Policy: default-src ''self'';
+  script-src ''self'' Strict-Transport-Security: max-age=31536000; includeSubDomains X-Frame-Options:
+  DENY X-Content-Type-Options: nosniff Referrer-Policy:'
+fix: 'See raroque/vibe-security-skill vibe-security/references/deployment.md (anchor: Security Headers)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- security
+- headers
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/deployment.md
+  anchor: Security Headers
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/deployment.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

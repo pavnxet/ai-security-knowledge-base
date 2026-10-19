@@ -1,0 +1,48 @@
+id: SKB-TG-RATE-0038
+title: Bot applies rate limiting and flood control
+summary: Bots must throttle users and honor Telegram 429 retry_after.
+platforms:
+- telegram
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe:
+- CWE-770
+owasp: []
+check: Check for per-user throttling and handling of 429 / retry_after with backoff.
+fix: Throttle per user/chat; honor retry_after; cap concurrent work.
+detect:
+  grep:
+  - retry_after
+  - '429'
+  - throttle
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- rate-limit
+sources:
+- repo: Telegram Bot API
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/api
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

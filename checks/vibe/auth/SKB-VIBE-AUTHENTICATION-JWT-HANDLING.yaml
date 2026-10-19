@@ -1,0 +1,56 @@
+id: SKB-VIBE-AUTHENTICATION-JWT-HANDLING
+title: JWT Handling
+summary: 'JWT Handling - Use jwt.verify() , never jwt.decode() alone. decode reads the payload without
+  checking the signature — an attacker can forge '
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:authentication#JWT Handling
+refs:
+- VIBE:authentication#JWT Handling
+check: 'JWT Handling - Use jwt.verify() , never jwt.decode() alone. decode reads the payload without checking
+  the signature — an attacker can forge any payload. - Explicitly reject "alg": "none" . Some JWT libraries
+  accept unsigned tokens if the algorithm is set to "none" . Your verifica'
+fix: 'See raroque/vibe-security-skill vibe-security/references/authentication.md (anchor: JWT Handling)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- handling
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/authentication.md
+  anchor: JWT Handling
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/authentication.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

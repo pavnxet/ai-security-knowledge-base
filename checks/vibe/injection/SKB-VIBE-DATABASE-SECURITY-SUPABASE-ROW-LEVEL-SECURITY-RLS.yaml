@@ -1,0 +1,58 @@
+id: SKB-VIBE-DATABASE-SECURITY-SUPABASE-ROW-LEVEL-SECURITY-RLS
+title: Supabase Row-Level Security (RLS)
+summary: Supabase Row-Level Security (RLS) Enable RLS on Every Table Tables created via SQL Editor or
+  migrations have RLS disabled by default . A tab
+platforms:
+- vibe
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:database-security#Supabase Row-Level Security (RLS)
+refs:
+- VIBE:database-security#Supabase Row-Level Security (RLS)
+check: Supabase Row-Level Security (RLS) Enable RLS on Every Table Tables created via SQL Editor or migrations
+  have RLS disabled by default . A table without RLS is fully readable and writable by a
+fix: 'See raroque/vibe-security-skill vibe-security/references/database-security.md (anchor: Supabase
+  Row-Level Security (RLS)) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- supabase
+- level
+- security
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/database-security.md
+  anchor: Supabase Row-Level Security (RLS)
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/database-security.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

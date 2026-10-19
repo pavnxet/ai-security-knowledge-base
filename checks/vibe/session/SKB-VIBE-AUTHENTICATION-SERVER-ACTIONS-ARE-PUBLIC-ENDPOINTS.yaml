@@ -1,0 +1,57 @@
+id: SKB-VIBE-AUTHENTICATION-SERVER-ACTIONS-ARE-PUBLIC-ENDPOINTS
+title: Server Actions Are Public Endpoints
+summary: Server Actions Are Public Endpoints Server Actions compile into public POST endpoints. Anyone
+  can call them with curl . AI assistants freque
+platforms:
+- vibe
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:authentication#Server Actions Are Public Endpoints
+refs:
+- VIBE:authentication#Server Actions Are Public Endpoints
+check: Server Actions Are Public Endpoints Server Actions compile into public POST endpoints. Anyone can
+  call them with curl . AI assistants frequently generate Server Actions that assume they're
+fix: 'See raroque/vibe-security-skill vibe-security/references/authentication.md (anchor: Server Actions
+  Are Public Endpoints) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- server
+- actions
+- public
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/authentication.md
+  anchor: Server Actions Are Public Endpoints
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/authentication.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

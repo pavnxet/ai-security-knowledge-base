@@ -1,0 +1,57 @@
+id: SKB-BASE-2-PROTECTED-MODE-NO
+title: 2. `protected-mode no`
+summary: '2. protected-mode no What: Disables the built-in protection that blocks external access when
+  no password is set. Fix: Keep protected-mode ye'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. `protected-mode no`
+refs:
+- BASE:2. `protected-mode no`
+check: '2. protected-mode no What: Disables the built-in protection that blocks external access when no
+  password is set. Fix: Keep protected-mode yes ; set a password if external access is needed. Detection:
+  rg -n "protected-mode no" redis.conf ---'
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 2. `protected-mode no`) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- protected
+- mode
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: 2. `protected-mode no`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

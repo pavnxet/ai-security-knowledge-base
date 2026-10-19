@@ -1,0 +1,58 @@
+id: SKB-VIBE-AUTHENTICATION-NEXT-JS-MIDDLEWARE-IS-NOT-ENOUGH
+title: Next.js Middleware Is Not Enough
+summary: Next.js Middleware Is Not Enough Next.js middleware runs at the edge and is convenient for auth
+  checks, but it is not a reliable sole auth l
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:authentication#Next.js Middleware Is Not Enough
+refs:
+- VIBE:authentication#Next.js Middleware Is Not Enough
+check: Next.js Middleware Is Not Enough Next.js middleware runs at the edge and is convenient for auth
+  checks, but it is not a reliable sole auth layer . CVE-2025-29927 demonstrated that middleware could
+  be completely bypassed
+fix: 'See raroque/vibe-security-skill vibe-security/references/authentication.md (anchor: Next.js Middleware
+  Is Not Enough) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- next
+- middleware
+- enough
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/authentication.md
+  anchor: Next.js Middleware Is Not Enough
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/authentication.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

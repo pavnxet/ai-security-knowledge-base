@@ -1,0 +1,55 @@
+id: SKB-MASVS-STORAGE-1
+title: MASVS-STORAGE-1
+summary: The app securely stores sensitive data.
+platforms:
+- mobile
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- MASVS-STORAGE-1
+refs:
+- MASVS-STORAGE-1
+check: The app securely stores sensitive data.
+fix: 'See OWASP/masvs OWASP_MASVS.yaml (anchor: MASVS-STORAGE-1) for remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+sources:
+- repo: OWASP/masvs
+  path: OWASP_MASVS.yaml
+  anchor: MASVS-STORAGE-1
+  commit: bbe226fd17e6dab51927f392936deef31c816423
+  url: https://github.com/OWASP/masvs/blob/bbe226fd17e6dab51927f392936deef31c816423/OWASP_MASVS.yaml
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASVS-STORAGE-2
+aliases:
+- SKB-MASVS-STORAGE-2

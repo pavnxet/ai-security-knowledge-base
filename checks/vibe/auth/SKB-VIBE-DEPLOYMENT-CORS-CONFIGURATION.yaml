@@ -1,0 +1,57 @@
+id: SKB-VIBE-DEPLOYMENT-CORS-CONFIGURATION
+title: CORS Configuration
+summary: 'CORS Configuration - Never use Access-Control-Allow-Origin: on authenticated endpoints - Whitelist
+  only your own domains - Be careful with A'
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:deployment#CORS Configuration
+refs:
+- VIBE:deployment#CORS Configuration
+check: 'CORS Configuration - Never use Access-Control-Allow-Origin: on authenticated endpoints - Whitelist
+  only your own domains - Be careful with Access-Control-Allow-Credentials: true — it must be paired with
+  specific origins, not wildcards'
+fix: 'See raroque/vibe-security-skill vibe-security/references/deployment.md (anchor: CORS Configuration)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- cors
+- configuration
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/deployment.md
+  anchor: CORS Configuration
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/deployment.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

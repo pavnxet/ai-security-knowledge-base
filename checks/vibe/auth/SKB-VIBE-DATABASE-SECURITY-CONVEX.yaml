@@ -1,0 +1,56 @@
+id: SKB-VIBE-DATABASE-SECURITY-CONVEX
+title: Convex
+summary: Convex - Every public query and mutation must call ctx.auth.getUserIdentity() and handle the
+  unauthenticated case. - Mutations must verify o
+platforms:
+- vibe
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:database-security#Convex
+refs:
+- VIBE:database-security#Convex
+check: Convex - Every public query and mutation must call ctx.auth.getUserIdentity() and handle the unauthenticated
+  case. - Mutations must verify ownership — checking auth is not enough. Verify the user owns the specific
+  resource they're modifying. - Functions only called internally must use internalQuery / internal
+fix: 'See raroque/vibe-security-skill vibe-security/references/database-security.md (anchor: Convex) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- convex
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/database-security.md
+  anchor: Convex
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/database-security.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

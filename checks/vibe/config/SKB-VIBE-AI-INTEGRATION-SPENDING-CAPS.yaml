@@ -1,0 +1,58 @@
+id: SKB-VIBE-AI-INTEGRATION-SPENDING-CAPS
+title: Spending Caps
+summary: 'Spending Caps Set hard spending caps on every AI API provider: - OpenAI: Usage limits in dashboard
+  - Anthropic: Spending limits in console -'
+platforms:
+- vibe
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:ai-integration#Spending Caps
+refs:
+- VIBE:ai-integration#Spending Caps
+check: 'Spending Caps Set hard spending caps on every AI API provider: - OpenAI: Usage limits in dashboard
+  - Anthropic: Spending limits in console - Google: Budget alerts in Cloud Console Also implement per-user
+  usage limits in your application: - Track toke'
+fix: 'See raroque/vibe-security-skill vibe-security/references/ai-integration.md (anchor: Spending Caps)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- spending
+- caps
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/ai-integration.md
+  anchor: Spending Caps
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/ai-integration.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

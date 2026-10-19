@@ -1,0 +1,48 @@
+id: SKB-TG-ACCESS-0037
+title: Admin commands require authorization
+summary: Privileged bot commands must check the caller is an allowed admin.
+platforms:
+- telegram
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 70
+cwe:
+- CWE-862
+owasp: []
+check: For each privileged command, confirm the handler checks from.id against an allow-list before acting.
+fix: Maintain an admin allow-list; check sender id server-side; deny by default.
+detect:
+  grep:
+  - is_admin
+  - from.id
+  - ADMIN
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- authz
+sources:
+- repo: Telegram Bot API
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/api
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

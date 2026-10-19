@@ -1,0 +1,55 @@
+id: SKB-VIBE-RATE-LIMITING-BILLING-PROTECTION
+title: Billing Protection
+summary: Billing Protection - Set billing alerts on every cloud provider (AWS, GCP, Vercel, etc.) - Set
+  hard spending caps on AI API providers (OpenA
+platforms:
+- vibe
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- VIBE:rate-limiting#Billing Protection
+refs:
+- VIBE:rate-limiting#Billing Protection
+check: Billing Protection - Set billing alerts on every cloud provider (AWS, GCP, Vercel, etc.) - Set
+  hard spending caps on AI API providers (OpenAI, Anthropic) - Use per-user usage quotas with hard limits,
+  not just soft warnings - Monitor for anomalous usage patterns (sudden
+fix: 'See raroque/vibe-security-skill vibe-security/references/rate-limiting.md (anchor: Billing Protection)
+  for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- billing
+- protection
+sources:
+- repo: raroque/vibe-security-skill
+  path: vibe-security/references/rate-limiting.md
+  anchor: Billing Protection
+  commit: 850938f20f6915e7c3688d85c0a838f7909c87bb
+  url: https://github.com/raroque/vibe-security-skill/blob/850938f20f6915e7c3688d85c0a838f7909c87bb/vibe-security/references/rate-limiting.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

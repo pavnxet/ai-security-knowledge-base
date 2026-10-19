@@ -1,0 +1,49 @@
+id: SKB-TG-WEBHOOK-0034
+title: Telegram webhook verifies secret_token
+summary: setWebhook should set secret_token and the handler must check the header.
+platforms:
+- telegram
+stacks:
+- any
+domain: webhook
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-345
+owasp: []
+check: Confirm setWebhook passes secret_token and the endpoint rejects updates lacking the X-Telegram-Bot-Api-Secret-Token
+  header.
+fix: Call setWebhook with a random secret_token; validate the header on every update; reject otherwise.
+detect:
+  grep:
+  - setWebhook
+  - secret_token
+  - X-Telegram-Bot-Api-Secret-Token
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- telegram
+- webhook
+sources:
+- repo: Telegram Bot API
+  path: null
+  anchor: null
+  commit: null
+  url: https://core.telegram.org/bots/api
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

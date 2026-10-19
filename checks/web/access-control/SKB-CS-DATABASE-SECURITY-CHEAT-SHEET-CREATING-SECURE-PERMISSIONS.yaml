@@ -1,0 +1,57 @@
+id: SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-CREATING-SECURE-PERMISSIONS
+title: Creating Secure Permissions
+summary: Creating Secure Permissions When developers are assigning permissions to database user accounts,
+  they should employ the principle of least p
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Database_Security_Cheat_Sheet#Creating Secure Permissions
+refs:
+- CS:Database_Security_Cheat_Sheet#Creating Secure Permissions
+check: Creating Secure Permissions When developers are assigning permissions to database user accounts,
+  they should employ the principle of least privilege (i.e, the accounts should only have th
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Database_Security_Cheat_Sheet.md (anchor: Creating Secure
+  Permissions) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- creating
+- secure
+- permissions
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Database_Security_Cheat_Sheet.md
+  anchor: Creating Secure Permissions
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Database_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
