@@ -12,10 +12,11 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
+priority: 65
 cwe:
+- CWE-79
 - CWE-1021
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - CS:Content_Security_Policy_Cheat_Sheet#Context
 refs:

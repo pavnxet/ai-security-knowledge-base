@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-79
+cwe_source: mapped
 owasp:
 - CS:Django_Security_Cheat_Sheet#Cross Site Scripting (XSS)
 refs:

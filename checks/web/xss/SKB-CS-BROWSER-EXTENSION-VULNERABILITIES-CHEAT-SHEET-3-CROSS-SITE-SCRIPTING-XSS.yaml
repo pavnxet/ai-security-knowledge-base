@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-79
+cwe_source: mapped
 owasp:
 - CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#3. Cross-Site Scripting (XSS)
 refs:

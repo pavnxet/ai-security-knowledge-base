@@ -13,9 +13,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 45
-cwe: []
-cwe_source: extracted
+priority: 55
+cwe:
+- CWE-79
+cwe_source: mapped
 owasp:
 - BASE:9. XSS via Blade `{!! !!}`
 refs:
@@ -58,6 +59,15 @@ sources:
   type: github
   extraction: programmatic
   verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 13-aspnet-core.md
+  anchor: 9. XSS via `@Html.Raw`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/13-aspnet-core.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
@@ -66,5 +76,7 @@ corroboration: 1
 last_verified: '2026-10-19'
 merged_from:
 - SKB-BASE-9-XSS-VIA-RAW-HTML-SAFE
+- SKB-BASE-9-XSS-VIA-HTML-RAW
 aliases:
 - SKB-BASE-9-XSS-VIA-RAW-HTML-SAFE
+- SKB-BASE-9-XSS-VIA-HTML-RAW

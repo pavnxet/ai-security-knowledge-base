@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-79
+cwe_source: mapped
 owasp:
 - CS:DOM_based_XSS_Prevention_Cheat_Sheet#Guidelines for Developing Secure Applica
 refs:

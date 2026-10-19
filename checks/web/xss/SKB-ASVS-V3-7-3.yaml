@@ -16,7 +16,7 @@ severity: high
 priority: 65
 cwe:
 - CWE-306
-cwe_source: extracted
+cwe_source: mapped
 owasp:
 - ASVS:V3.7.3
 refs:
