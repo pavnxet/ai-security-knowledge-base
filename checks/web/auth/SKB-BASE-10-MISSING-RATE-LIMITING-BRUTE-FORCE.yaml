@@ -16,14 +16,14 @@ severity: high
 priority: 45
 cwe:
 - CWE-307
-cwe_source: heuristic
+- CWE-770
+cwe_source: mapped
 owasp:
 - 'BASE:10. Missing rate limiting / brute force '
 refs:
 - 'BASE:10. Missing rate limiting / brute force '
 check: '10. Missing rate limiting / brute force on login What: No lockout/throttle on auth endpoints.
-  Fix: Add rate limiting (bucket4j, filter) or integration with WAF/identity provider. Detection: review
-  auth controll'
+  Fix: Add rate limiting (bucket4j, filter) or integration with WAF/identity provider. D'
 fix: 'See yesmayank/secure-coding-baseline 07-spring-security.md (anchor: 10. Missing rate limiting /
   brute force on login) for remediation.'
 detect:

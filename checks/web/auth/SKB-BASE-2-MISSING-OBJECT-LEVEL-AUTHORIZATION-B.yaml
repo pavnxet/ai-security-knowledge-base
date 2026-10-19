@@ -15,7 +15,7 @@ severity: high
 priority: 45
 cwe:
 - CWE-639
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - BASE:2. Missing object-level authorization (B
 refs:

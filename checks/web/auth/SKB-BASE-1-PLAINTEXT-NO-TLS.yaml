@@ -14,16 +14,16 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-319
+cwe_source: mapped
 owasp:
 - BASE:1. Plaintext (no TLS)
 refs:
 - BASE:1. Plaintext (no TLS)
 check: '1. Plaintext (no TLS) What: grpc.NewServer() with grpc.Creds(insecure.NewCredentials()) sends
   everything in cleartext, including auth tokens. Fix: Use TLS: creds.NewServerTLSFromFile(certFile, keyFile)
-  ; enforce mTLS for service-to-service. Detection: rg -n "insecure.NewCredentials grpc.NewServer\(\)"
-  .go ---'
+  ; enforce mTLS for service-to-service. Detection: rg -n "insecure.NewCredentia'
 fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 1. Plaintext (no TLS)) for remediation.'
 detect:
   grep:
