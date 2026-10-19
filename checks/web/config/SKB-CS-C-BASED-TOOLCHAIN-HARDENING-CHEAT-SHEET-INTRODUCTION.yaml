@@ -1,0 +1,57 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction C-Based Toolchain Hardening is a treatment of project settings that will help you
+  deliver reliable and secure code when using C
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#Introduction
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#Introduction
+check: Introduction C-Based Toolchain Hardening is a treatment of project settings that will help you
+  deliver reliable and secure code when using C, C++ and Objective C languages in a number of development
+  environments. This
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-DETECTION
+title: Detection
+summary: Detection Cross-check each unfamiliar package name against the official registry and look for
+  typosquat patterns (extra/missing letters, -ut
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Detection
+refs:
+- BASE:Detection
+check: Detection Cross-check each unfamiliar package name against the official registry and look for typosquat
+  patterns (extra/missing letters, -utils , -js , 2 / x suffixes). ---
+fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: Detection) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- detection
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 27-vibe-coded-secrets-supplychain.md
+  anchor: Detection
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/27-vibe-coded-secrets-supplychain.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

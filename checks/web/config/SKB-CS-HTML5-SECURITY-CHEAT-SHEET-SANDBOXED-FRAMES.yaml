@@ -1,0 +1,58 @@
+id: SKB-CS-HTML5-SECURITY-CHEAT-SHEET-SANDBOXED-FRAMES
+title: Sandboxed frames
+summary: Sandboxed frames - Use the sandbox attribute of an iframe for untrusted content. - The sandbox
+  attribute of an iframe enables restrictions o
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTML5_Security_Cheat_Sheet#Sandboxed frames
+refs:
+- CS:HTML5_Security_Cheat_Sheet#Sandboxed frames
+check: 'Sandboxed frames - Use the sandbox attribute of an iframe for untrusted content. - The sandbox
+  attribute of an iframe enables restrictions on content within an iframe . The following restrictions
+  are active when the sandbox attribute is set: 1. All'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTML5_Security_Cheat_Sheet.md (anchor: Sandboxed frames)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- sandboxed
+- frames
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTML5_Security_Cheat_Sheet.md
+  anchor: Sandboxed frames
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTML5_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-BASE-A1B0D33406
+title: What it is
+summary: 'What it is AI sometimes invents package names that don''t exist, or suggests names that are
+  typosquats of popular packages. When a developer '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What it is
+refs:
+- BASE:What it is
+check: What it is AI sometimes invents package names that don't exist, or suggests names that are typosquats
+  of popular packages. When a developer runs npm install / pip install to satisfy the import, an attacker-controlled
+  package may be installed, or the build breaks on a name that resolves to malware.
+fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: What it is) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- what
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 27-vibe-coded-secrets-supplychain.md
+  anchor: What it is
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/27-vibe-coded-secrets-supplychain.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-CSP-TYPES-GRANULAR-ALLOWLIST-BASED-OR
+title: CSP Types (granular/allowlist based or strict)
+summary: CSP Types (granular/allowlist based or strict) For original research on allowlist weaknesses,
+  see [CSP Is Dead, Long Live CSP!](https://rese
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#CSP Types (granular/allowlist based or s
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#CSP Types (granular/allowlist based or s
+check: CSP Types (granular/allowlist based or strict) For original research on allowlist weaknesses, see
+  [CSP Is Dead, Long Live CSP!](ht
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: CSP Types
+  (granular/allowlist based or strict)) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- types
+- granular
+- allowlist
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: CSP Types (granular/allowlist based or strict)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

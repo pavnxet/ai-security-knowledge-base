@@ -1,0 +1,58 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-ERROR-BOTH-DEBUG-AND-NDEBUG-ARE-D
+title: error Both DEBUG and NDEBUG are defined.
+summary: error Both DEBUG and NDEBUG are defined. endif // The only time we switch to debug is when asked.
+  // NDEBUG or {nothing} results // in relea
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#error Both DEBUG and NDEBUG are defined.
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#error Both DEBUG and NDEBUG are defined.
+check: error Both DEBUG and NDEBUG are defined. endif // The only time we switch to debug is when asked.
+  // NDEBUG or {nothing} results // in release build (f
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: error
+  Both DEBUG and NDEBUG are defined.) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- error
+- both
+- debug
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: error Both DEBUG and NDEBUG are defined.
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

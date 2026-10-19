@@ -1,0 +1,57 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [Django 5.2: Clickjacking Protection](https://docs.djangoproject.com/en/5.2/topics/security/
+  clickjacking-protection) - [Django'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Django_Security_Cheat_Sheet#References
+refs:
+- CS:Django_Security_Cheat_Sheet#References
+check: 'References - [Django 5.2: Clickjacking Protection](https://docs.djangoproject.com/en/5.2/topics/security/
+  clickjacking-protection) - [Django 5.2: Security Middleware](https://docs.djangoproject.com/en/5.2/ref/middleware/
+  module-django.middleware.security)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: References) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-OUTPUT-ENCODING
+title: Output Encoding
+summary: 'Output Encoding When you need to safely display data exactly as a user types it in, output encoding
+  is recommended. Variables should not be '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cross_Site_Scripting_Prevention_Cheat_Sheet#Output Encoding
+refs:
+- CS:Cross_Site_Scripting_Prevention_Cheat_Sheet#Output Encoding
+check: Output Encoding When you need to safely display data exactly as a user types it in, output encoding
+  is recommended. Variables should not be interpreted as code instead of text. This section covers each
+  form of output en
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md (anchor: Output
+  Encoding) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- output
+- encoding
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md
+  anchor: Output Encoding
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-ERROR-MESSAGES
+title: Error Messages
+summary: 'Error Messages It is possible to specify a message ID with the validation annotation, so that
+  error messages are customized : Spring MVC wil'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bean_Validation_Cheat_Sheet#Error Messages
+refs:
+- CS:Bean_Validation_Cheat_Sheet#Error Messages
+check: 'Error Messages It is possible to specify a message ID with the validation annotation, so that
+  error messages are customized : Spring MVC will then look up a message with ID article.title.error in
+  a defined MessageSource. More on this [docum'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bean_Validation_Cheat_Sheet.md (anchor: Error Messages) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- error
+- messages
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bean_Validation_Cheat_Sheet.md
+  anchor: Error Messages
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bean_Validation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

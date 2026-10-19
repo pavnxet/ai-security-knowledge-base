@@ -1,0 +1,59 @@
+id: SKB-BASE-9-MASS-ASSIGNMENT-OVER-BROAD-INSERT
+title: 9. Mass assignment / over-broad `INSERT`/`UPDATE`
+summary: '9. Mass assignment / over-broad INSERT / UPDATE What: App updates all columns from request body,
+  including role / is_admin . Fix: Allowlist '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. Mass assignment / over-broad `INSERT`
+refs:
+- BASE:9. Mass assignment / over-broad `INSERT`
+check: '9. Mass assignment / over-broad INSERT / UPDATE What: App updates all columns from request body,
+  including role / is_admin . Fix: Allowlist columns in app code;'
+fix: 'See yesmayank/secure-coding-baseline 24-postgresql.md (anchor: 9. Mass assignment / over-broad `INSERT`/`UPDATE`)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- mass
+- assignment
+- over
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 24-postgresql.md
+  anchor: 9. Mass assignment / over-broad `INSERT`/`UPDATE`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/24-postgresql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-DEFINE-ESAPI-BUILD-RELEASE-1
+title: define ESAPI_BUILD_RELEASE 1
+summary: define ESAPI_BUILD_RELEASE 1 endif c // A debug assert which should be sprinkled liberally. //
+  This assert fires and then continues rather /
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#define ESAPI_BUILD_RELEASE 1
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#define ESAPI_BUILD_RELEASE 1
+check: define ESAPI_BUILD_RELEASE 1 endif c // A debug assert which should be sprinkled liberally. //
+  This assert fires and then continues rather // than calling abort(). Useful
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: define
+  ESAPI_BUILD_RELEASE 1) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- define
+- esapi
+- build
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: define ESAPI_BUILD_RELEASE 1
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-HTTPS
+title: HTTPS
+summary: HTTPS - Include the django.middleware.security.SecurityMiddleware module in the MIDDLEWARE setting
+  in your project's settings.py if not alre
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#HTTPS
+refs:
+- CS:Django_Security_Cheat_Sheet#HTTPS
+check: HTTPS - Include the django.middleware.security.SecurityMiddleware module in the MIDDLEWARE setting
+  in your project's settings.py if not already added. - Set the SECURE_SSL_REDIRECT = True in the settings.py
+  file to ensure that all communication is over HTTPS. This will redirect
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: HTTPS) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- https
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: HTTPS
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

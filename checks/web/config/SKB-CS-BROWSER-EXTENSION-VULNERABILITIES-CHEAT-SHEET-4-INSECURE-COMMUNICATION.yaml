@@ -1,0 +1,57 @@
+id: SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-4-INSECURE-COMMUNICATION
+title: 4. Insecure Communication
+summary: '4. Insecure Communication Vulnerability: Insecure Communication Some extensions send sensitive
+  data over unsecured HTTP connections, making '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#4. Insecure Communication
+refs:
+- CS:Browser_Extension_Vulnerabilities_Cheat_Sheet#4. Insecure Communication
+check: '4. Insecure Communication Vulnerability: Insecure Communication Some extensions send sensitive
+  data over unsecured HTTP connections, making it vulnerable to interception by attacker'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md (anchor:
+  4. Insecure Communication) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- insecure
+- communication
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  anchor: 4. Insecure Communication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Browser_Extension_Vulnerabilities_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

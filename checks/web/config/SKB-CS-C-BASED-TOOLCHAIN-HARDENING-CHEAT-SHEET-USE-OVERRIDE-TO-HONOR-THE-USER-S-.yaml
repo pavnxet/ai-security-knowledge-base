@@ -1,0 +1,58 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-USE-OVERRIDE-TO-HONOR-THE-USER-S-
+title: Use 'override' to honor the user's command line
+summary: 'Use ''override'' to honor the user''s command line override CFLAGS := $(MY_CC_FLAGS) $(CFLAGS)
+  override CXXFLAGS := $(MY_CC_FLAGS) $(CXXFLAGS) '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#Use 'override' to honor the user's comma
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#Use 'override' to honor the user's comma
+check: Use 'override' to honor the user's command line override CFLAGS := $(MY_CC_FLAGS) $(CFLAGS) override
+  CXXFLAGS := $(MY_CC_FLAGS) $
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: Use ''override''
+  to honor the user''s command line) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- override
+- honor
+- user
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: Use 'override' to honor the user's command line
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CONTENT-SECURITY-POLICY
+title: Content Security Policy
+summary: Content Security Policy Django 6.0 and later provide built-in Content Security Policy (CSP) support.
+  Enable django.middleware.csp.ContentSec
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Content Security Policy
+refs:
+- CS:Django_Security_Cheat_Sheet#Content Security Policy
+check: Content Security Policy Django 6.0 and later provide built-in Content Security Policy (CSP) support.
+  Enable django.middleware.csp.ContentSecurityPolicyMiddleware and configure SECURE_CSP to
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Content Security
+  Policy) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- content
+- security
+- policy
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Content Security Policy
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

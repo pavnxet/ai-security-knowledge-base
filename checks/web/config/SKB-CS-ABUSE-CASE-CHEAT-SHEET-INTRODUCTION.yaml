@@ -1,0 +1,56 @@
+id: SKB-CS-ABUSE-CASE-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: 'Introduction Often when the security level of an application is mentioned in requirements, the
+  following _expressions_ are met: - _The appli'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Abuse_Case_Cheat_Sheet#Introduction
+refs:
+- CS:Abuse_Case_Cheat_Sheet#Introduction
+check: 'Introduction Often when the security level of an application is mentioned in requirements, the
+  following _expressions_ are met: - _The application must be secure_. - _The application must defend
+  against all attacks targeting this category of application_. - _The application must'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Abuse_Case_Cheat_Sheet.md (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Abuse_Case_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Abuse_Case_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

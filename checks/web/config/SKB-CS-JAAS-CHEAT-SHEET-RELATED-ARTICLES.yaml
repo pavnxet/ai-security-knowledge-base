@@ -1,0 +1,57 @@
+id: SKB-CS-JAAS-CHEAT-SHEET-RELATED-ARTICLES
+title: Related Articles
+summary: Related Articles - [JAAS in Action](https://jaasbook.wordpress.com/2009/09/27/intro/), Michael
+  Coté, posted on September 27, 2009, URL as 5/
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JAAS_Cheat_Sheet#Related Articles
+refs:
+- CS:JAAS_Cheat_Sheet#Related Articles
+check: Related Articles - [JAAS in Action](https://jaasbook.wordpress.com/2009/09/27/intro/), Michael
+  Coté, posted on September 27, 2009, URL as 5/14/2012. - Pistoia Marco, Nagaratnam Nataraj, Koved Larry,
+  Nadalin Anthony from book ["Enterpr
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JAAS_Cheat_Sheet.md (anchor: Related Articles) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- related
+- articles
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JAAS_Cheat_Sheet.md
+  anchor: Related Articles
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JAAS_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

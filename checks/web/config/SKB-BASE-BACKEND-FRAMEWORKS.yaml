@@ -1,0 +1,58 @@
+id: SKB-BASE-BACKEND-FRAMEWORKS
+title: Backend frameworks
+summary: Backend frameworks 1. [Node.js + Express](./01-nodejs-express.md) 2. [NestJS](./02-nestjs.md)
+  3. [Python + Django](./03-django.md) 4. [Pytho
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Backend frameworks
+refs:
+- BASE:Backend frameworks
+check: Backend frameworks 1. [Node.js + Express](./01-nodejs-express.md) 2. [NestJS](./02-nestjs.md) 3.
+  [Python + Django](./03-django.md) 4. [Python + Flask](./04-flask.md) 5. [Python + FastAPI](./05-fastapi.md)
+  6. [Java + Spring Boot](./06-spring-boot.md) 7. [Java + Spring Security](./
+fix: 'See yesmayank/secure-coding-baseline README.md (anchor: Backend frameworks) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- backend
+- frameworks
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: README.md
+  anchor: Backend frameworks
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/README.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

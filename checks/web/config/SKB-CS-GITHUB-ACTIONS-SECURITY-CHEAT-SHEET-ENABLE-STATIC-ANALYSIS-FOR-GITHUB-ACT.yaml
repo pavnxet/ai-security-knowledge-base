@@ -1,0 +1,58 @@
+id: SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-ENABLE-STATIC-ANALYSIS-FOR-GITHUB-ACT
+title: Enable static analysis for GitHub Actions workflows
+summary: Enable static analysis for GitHub Actions workflows [!IMPORTANT] CodeQL is freely available for
+  open-source repositories on GitHub. Verify t
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Enable static analysis for GitHub Action
+refs:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Enable static analysis for GitHub Action
+check: Enable static analysis for GitHub Actions workflows [!IMPORTANT] CodeQL is freely available for
+  open-source repositories on Git
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md (anchor: Enable static
+  analysis for GitHub Actions workflows) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- enable
+- static
+- analysis
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  anchor: Enable static analysis for GitHub Actions workflows
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
