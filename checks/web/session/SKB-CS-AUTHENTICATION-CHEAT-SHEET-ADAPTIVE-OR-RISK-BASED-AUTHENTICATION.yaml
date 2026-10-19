@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHENTICATION-CHEAT-SHEET-ADAPTIVE-OR-RISK-BASED-AUTHENTICATION
+title: Adaptive or Risk Based Authentication
+summary: Adaptive or Risk Based Authentication A feature of more advanced applications is the ability
+  to require different authentication stages depe
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authentication_Cheat_Sheet#Adaptive or Risk Based Authentication
+refs:
+- CS:Authentication_Cheat_Sheet#Adaptive or Risk Based Authentication
+check: Adaptive or Risk Based Authentication A feature of more advanced applications is the ability to
+  require different authentication stages depending on various environmental and contextual att
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authentication_Cheat_Sheet.md (anchor: Adaptive or Risk Based
+  Authentication) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- adaptive
+- risk
+- based
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authentication_Cheat_Sheet.md
+  anchor: Adaptive or Risk Based Authentication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authentication_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

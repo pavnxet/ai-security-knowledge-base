@@ -1,0 +1,57 @@
+id: SKB-BASE-2-WEAK-LEAKED-APP-KEY
+title: 2. Weak/leaked `APP_KEY`
+summary: '2. Weak/leaked APP_KEY What: APP_KEY encrypts sessions, cookies, signed URLs. A leaked key lets
+  attackers forge sessions and decrypt encrypt'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. Weak/leaked `APP_KEY`
+refs:
+- BASE:2. Weak/leaked `APP_KEY`
+check: '2. Weak/leaked APP_KEY What: APP_KEY encrypts sessions, cookies, signed URLs. A leaked key lets
+  attackers forge sessions and decrypt encrypted data. Fix: php artisan key:generate ; store in env; rotate
+  if committed (re-encrypt affected data). Detection: rg -n "APP_KEY" .en'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 2. Weak/leaked `APP_KEY`) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- weak
+- leaked
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 2. Weak/leaked `APP_KEY`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

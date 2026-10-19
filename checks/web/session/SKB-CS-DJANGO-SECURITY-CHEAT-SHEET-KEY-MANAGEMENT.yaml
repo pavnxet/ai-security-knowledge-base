@@ -1,0 +1,56 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-KEY-MANAGEMENT
+title: Key Management
+summary: Key Management The SECRET_KEY parameter in settings.py is used for cryptographic signing and
+  should be kept confidential. Consider the follo
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Key Management
+refs:
+- CS:Django_Security_Cheat_Sheet#Key Management
+check: 'Key Management The SECRET_KEY parameter in settings.py is used for cryptographic signing and should
+  be kept confidential. Consider the following recommendations: - Generate a key at least 50 characters
+  or more, containing a mix of letters, digits, an'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Key Management) for
+  remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- management
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Key Management
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

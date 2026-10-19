@@ -1,0 +1,57 @@
+id: SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-LAYERED-DEFENSE-ARCHITECTU
+title: Layered Defense Architecture
+summary: 'Layered Defense Architecture A single control is brittle. Combine controls at three layers:
+  1. Edge layer — CDN, WAF, or anti-bot service: I'
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Layered Defense Architecture
+refs:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Layered Defense Architecture
+check: 'Layered Defense Architecture A single control is brittle. Combine controls at three layers: 1.
+  Edge layer — CDN, WAF, or anti-bot service: IP reputation,'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md (anchor:
+  Layered Defense Architecture) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- layered
+- defense
+- architecture
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  anchor: Layered Defense Architecture
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

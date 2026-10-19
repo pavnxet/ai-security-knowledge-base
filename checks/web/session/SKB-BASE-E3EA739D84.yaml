@@ -1,0 +1,56 @@
+id: SKB-BASE-E3EA739D84
+title: Checklist
+summary: Checklist - [ ] Bound to loopback/internal; not on 0.0.0.0 - [ ] requirepass /ACL set; strong
+  password from secret store - [ ] protected-mod
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] Bound to loopback/internal; not on 0.0.0.0 - [ ] requirepass /ACL set; strong password
+  from secret store - [ ] protected-mode yes - [ ] Dangerous commands renamed/disabled - [ ] TLS for non-loopback
+  traffic - [ ] maxmemory + eviction policy set - [ ] No secrets you can't afford to lose stored
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

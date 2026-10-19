@@ -1,0 +1,56 @@
+id: SKB-BASE-6-SESSION-FIXATION-WEAK-SESSION-CONFI
+title: 6. Session fixation / weak session config
+summary: 6. Session fixation / weak session config
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. Session fixation / weak session confi
+refs:
+- BASE:6. Session fixation / weak session confi
+check: 6. Session fixation / weak session config
+fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: 6. Session fixation /
+  weak session config) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- session
+- fixation
+- weak
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 28-vibe-coded-auth-authz.md
+  anchor: 6. Session fixation / weak session config
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/28-vibe-coded-auth-authz.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

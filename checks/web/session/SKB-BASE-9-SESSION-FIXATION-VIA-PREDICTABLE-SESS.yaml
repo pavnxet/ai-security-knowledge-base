@@ -1,0 +1,58 @@
+id: SKB-BASE-9-SESSION-FIXATION-VIA-PREDICTABLE-SESS
+title: 9. Session fixation via predictable session IDs
+summary: '9. Session fixation via predictable session IDs What: Using predictable keys for sessions enables
+  session hijacking. Fix: Use cryptographica'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. Session fixation via predictable sess
+refs:
+- BASE:9. Session fixation via predictable sess
+check: '9. Session fixation via predictable session IDs What: Using predictable keys for sessions enables
+  session hijacking. Fix: Use cryptographically random session IDs ( crypto.randomBytes / secret'
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 9. Session fixation via predictable session
+  IDs) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- session
+- fixation
+- predictable
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: 9. Session fixation via predictable session IDs
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

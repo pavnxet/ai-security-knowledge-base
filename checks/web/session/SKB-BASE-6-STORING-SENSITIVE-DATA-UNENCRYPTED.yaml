@@ -1,0 +1,59 @@
+id: SKB-BASE-6-STORING-SENSITIVE-DATA-UNENCRYPTED
+title: 6. Storing sensitive data unencrypted
+summary: '6. Storing sensitive data unencrypted What: PII, tokens, session data stored in plaintext; a
+  Redis breach = direct data leak. Fix: Don''t sto'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. Storing sensitive data unencrypted
+refs:
+- BASE:6. Storing sensitive data unencrypted
+check: '6. Storing sensitive data unencrypted What: PII, tokens, session data stored in plaintext; a Redis
+  breach = direct data leak. Fix: Don''t store secrets you can''t afford to leak; encrypt sensitive values
+  at the app lay'
+fix: 'See yesmayank/secure-coding-baseline 23-redis.md (anchor: 6. Storing sensitive data unencrypted)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- storing
+- sensitive
+- data
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 23-redis.md
+  anchor: 6. Storing sensitive data unencrypted
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/23-redis.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

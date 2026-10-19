@@ -1,0 +1,57 @@
+id: SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-RATE-LIMITING-AND-QUOTAS
+title: Rate Limiting and Quotas
+summary: Rate Limiting and Quotas Rate limiting is the foundational control. Apply it at multiple keys,
+  not just IP. - Per IP — coarse, defeated by r
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Rate Limiting and Quotas
+refs:
+- CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Rate Limiting and Quotas
+check: Rate Limiting and Quotas Rate limiting is the foundational control. Apply it at multiple keys,
+  not just IP. - Per IP — coarse, defeated by residential proxy
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md (anchor:
+  Rate Limiting and Quotas) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- rate
+- limiting
+- quotas
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  anchor: Rate Limiting and Quotas
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Bot_Management_and_Anti-Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

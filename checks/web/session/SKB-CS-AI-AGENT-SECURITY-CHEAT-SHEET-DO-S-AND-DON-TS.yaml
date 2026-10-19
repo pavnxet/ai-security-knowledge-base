@@ -1,0 +1,55 @@
+id: SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS
+title: Do's and Don'ts
+summary: 'Do''s and Don''ts Do: - Apply least privilege to all agent tools and permissions. - Validate
+  and sanitize all external inputs (user messages, '
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:AI_Agent_Security_Cheat_Sheet#Do's and Don'ts
+refs:
+- CS:AI_Agent_Security_Cheat_Sheet#Do's and Don'ts
+check: 'Do''s and Don''ts Do: - Apply least privilege to all agent tools and permissions. - Validate and
+  sanitize all external inputs (user messages, documents, API responses). - Implement human-in-the-loop
+  for high-risk actions. - Isolate memory and context between users/sessions. - Monit'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/AI_Agent_Security_Cheat_Sheet.md (anchor: Do''s and Don''ts)
+  for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/AI_Agent_Security_Cheat_Sheet.md
+  anchor: Do's and Don'ts
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/AI_Agent_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

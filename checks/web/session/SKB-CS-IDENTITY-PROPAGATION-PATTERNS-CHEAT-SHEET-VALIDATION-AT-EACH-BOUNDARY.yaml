@@ -1,0 +1,57 @@
+id: SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-VALIDATION-AT-EACH-BOUNDARY
+title: Validation at Each Boundary
+summary: Validation at Each Boundary Separate the identity of the calling service from the user on whose
+  behalf it acts. Authenticate service connect
+platforms:
+- web
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Identity_Propagation_Patterns_Cheat_Sheet#Validation at Each Boundary
+refs:
+- CS:Identity_Propagation_Patterns_Cheat_Sheet#Validation at Each Boundary
+check: Validation at Each Boundary Separate the identity of the calling service from the user on whose
+  behalf it acts. Authenticate service connections using the controls in [Microservices Securit
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Identity_Propagation_Patterns_Cheat_Sheet.md (anchor: Validation
+  at Each Boundary) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- validation
+- each
+- boundary
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Identity_Propagation_Patterns_Cheat_Sheet.md
+  anchor: Validation at Each Boundary
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Identity_Propagation_Patterns_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

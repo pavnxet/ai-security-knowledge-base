@@ -1,0 +1,56 @@
+id: SKB-BASE-A04202CA9D
+title: Checklist
+summary: 'Checklist - [ ] Passwords verified with bcrypt/argon2 - [ ] Every :id route scoped by authenticated
+  owner - [ ] No raw body bound to models '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: session
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] Passwords verified with bcrypt/argon2 - [ ] Every :id route scoped by authenticated
+  owner - [ ] No raw body bound to models (allowlists everywhere) - [ ] JWT short-lived, httpOnly cookie,
+  strong secret, pinned algorithm - [ ] Rate limiting on login/OTP/reset - [ ] Session ID rotated on login;
+fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - Set-Cookie
+  - res.cookie
+  - set_cookie
+  - SESSION
+  files:
+  - '**/*.js'
+  - '**/*.py'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- session
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 28-vibe-coded-auth-authz.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/28-vibe-coded-auth-authz.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
