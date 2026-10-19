@@ -13,15 +13,17 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Testing Business Logic
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Testing Business Logic
 check: Testing Business Logic Automated tests are how business rules stay enforced as the code evolves.
-  Focus test effort on the rules, not the happy path. Test the Rules, Not the Implementation For each
-  invariant you identifie
+  Focus test effort on the rules, not the happy path. Test the Rules, Not the Implementation Fo
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Testing Business
   Logic) for remediation.'
 detect:

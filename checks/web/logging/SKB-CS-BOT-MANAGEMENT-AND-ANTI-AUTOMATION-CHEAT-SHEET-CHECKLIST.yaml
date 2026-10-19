@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-770
+cwe_source: mapped
 owasp:
 - CS:Bot_Management_and_Anti-Automation_Cheat_Sheet#Checklist
 refs:

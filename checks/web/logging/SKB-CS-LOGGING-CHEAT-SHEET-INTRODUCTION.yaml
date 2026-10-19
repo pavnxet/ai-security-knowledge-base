@@ -13,16 +13,16 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-117
+cwe_source: mapped
 owasp:
 - CS:Logging_Cheat_Sheet#Introduction
 refs:
 - CS:Logging_Cheat_Sheet#Introduction
 check: Introduction This cheat sheet is focused on providing developers with concentrated guidance on
   building application logging mechanisms, especially related to security logging. Many systems enable
-  network device, operating system, web server, mail server and database server logging, but often custom
-  applicatio
+  network device, operating system, web server, mail server and database server loggin
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Cheat_Sheet.md (anchor: Introduction) for remediation.'
 detect:
   grep:

@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-770
+cwe_source: mapped
 owasp:
 - CS:Email_Validation_and_Verification_Cheat_Sheet#Anti-Enumeration Controls
 refs:

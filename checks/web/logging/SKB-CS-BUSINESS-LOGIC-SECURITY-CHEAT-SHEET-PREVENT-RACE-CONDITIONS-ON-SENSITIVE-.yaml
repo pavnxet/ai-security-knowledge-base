@@ -12,15 +12,18 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+- CWE-362
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Prevent Race Conditions on Sensitive Ope
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Prevent Race Conditions on Sensitive Ope
-check: Prevent Race Conditions on Sensitive Operations Any operation that reads a value, makes a decision,
-  and then writes a value is a potential race condition. If t
+check: Prevent Race Conditions on Sensitive Operations Any operation that reads a value, makes a decision
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Prevent Race
   Conditions on Sensitive Operations) for remediation.'
 detect:

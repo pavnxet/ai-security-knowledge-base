@@ -15,7 +15,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-1021
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - CS:Clickjacking_Defense_Cheat_Sheet#window.confirm() Protection
 refs:

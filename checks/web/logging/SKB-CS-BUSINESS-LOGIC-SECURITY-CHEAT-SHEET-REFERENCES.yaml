@@ -12,16 +12,20 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+- CWE-362
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#References
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#References
 check: 'References - [CWE-840: Business Logic Errors](https://cwe.mitre.org/data/definitions/840.html)
   - [CWE-841: Improper Enforcement of Behavioral Workflow](https://cwe.mitre.org/data/definitions/841.html)
-  - [CWE-367: Time-of-check Time-of-use Race Condition](https://cwe.mitre.'
+  - [CWE-367: Time-of-check Time-of-use Race'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: References)
   for remediation.'
 detect:

@@ -12,13 +12,14 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - CS:Mass_Assignment_Cheat_Sheet#Language & Framework specific solutions
 refs:
 - CS:Mass_Assignment_Cheat_Sheet#Language & Framework specific solutions
-check: Language & Framework specific solutions Spring MVC Allow-listing See [Spring's model design guidance](https://docs.spring.io/spring-framework/reference/web/web
+check: Language & Framework specific solutions Spring MVC Allow-listing See [Spring's model design guidance](https://docs.spring.io/spri
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Mass_Assignment_Cheat_Sheet.md (anchor: Language & Framework
   specific solutions) for remediation.'
 detect:

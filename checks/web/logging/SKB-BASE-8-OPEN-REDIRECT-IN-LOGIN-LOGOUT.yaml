@@ -14,8 +14,9 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-601
+cwe_source: mapped
 owasp:
 - BASE:8. Open redirect in login/logout
 refs:
