@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - CS:REST_Assessment_Cheat_Sheet#JWT and OAuth2 Assessment
 refs:
