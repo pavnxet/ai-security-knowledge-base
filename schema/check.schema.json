@@ -322,7 +322,8 @@
     "cwe_source": {
       "enum": [
         "extracted",
-        "heuristic"
+        "heuristic",
+        "mapped"
       ]
     }
   }
