@@ -1,0 +1,55 @@
+id: SKB-LLM-LLM08-2025
+title: LLM08_VectorAndEmbeddingWeaknesses.md
+summary: Vectors and embeddings vulnerabilities present significant security risks in systems utilizing
+  Retrieval Augmented Generation (RAG) with Lar
+platforms:
+- llm
+stacks:
+- any
+domain: llm
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- LLM08:2025
+refs:
+- LLM08:2025
+check: Vectors and embeddings vulnerabilities present significant security risks in systems utilizing
+  Retrieval Augmented Generation (RAG) with Large Language Models (LLMs). Weaknesses in how vectors and
+  embeddings are generated, stored, or retrieved can
+fix: 'See OWASP/www-project-top-10-for-large-language-model-applications 2_0_vulns/LLM08_VectorAndEmbeddingWeaknesses.md
+  (anchor: LLM08:2025) for remediation.'
+detect:
+  grep:
+  - system
+  - prompt
+  - completion
+  - tool_calls
+  files:
+  - '**/*.py'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- llm
+- vectorandembeddingweaknesses
+sources:
+- repo: OWASP/www-project-top-10-for-large-language-model-applications
+  path: 2_0_vulns/LLM08_VectorAndEmbeddingWeaknesses.md
+  anchor: LLM08:2025
+  commit: main
+  url: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM08_VectorAndEmbeddingWeaknesses.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

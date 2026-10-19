@@ -1,0 +1,48 @@
+id: SKB-DESK-CSP-0049
+title: Electron defines a restrictive CSP and webSecurity
+summary: Set a strict CSP, keep webSecurity on, and avoid insecure content.
+platforms:
+- desktop
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe:
+- CWE-693
+owasp: []
+check: Confirm a Content-Security-Policy (script-src 'self'), webSecurity not disabled and allowRunningInsecureContent
+  off.
+fix: Set a strict CSP; keep webSecurity enabled; do not enable insecure content.
+detect:
+  grep:
+  - Content-Security-Policy
+  - webSecurity
+  - allowRunningInsecureContent
+  files:
+  - '**/*.html'
+  - '**/main*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- electron
+- csp
+sources:
+- repo: Electron Security
+  path: null
+  anchor: null
+  commit: null
+  url: https://www.electronjs.org/docs/latest/tutorial/security
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

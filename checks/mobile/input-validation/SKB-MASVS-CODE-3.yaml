@@ -1,0 +1,50 @@
+id: SKB-MASVS-CODE-3
+title: MASVS-CODE-3
+summary: The app only uses software components without known vulnerabilities.
+platforms:
+- mobile
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASVS-CODE-3
+refs:
+- MASVS-CODE-3
+check: The app only uses software components without known vulnerabilities.
+fix: 'See OWASP/masvs OWASP_MASVS.yaml (anchor: MASVS-CODE-3) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: OWASP/masvs
+  path: OWASP_MASVS.yaml
+  anchor: MASVS-CODE-3
+  commit: bbe226fd17e6dab51927f392936deef31c816423
+  url: https://github.com/OWASP/masvs/blob/bbe226fd17e6dab51927f392936deef31c816423/OWASP_MASVS.yaml
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

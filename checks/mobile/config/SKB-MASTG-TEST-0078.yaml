@@ -1,0 +1,56 @@
+id: SKB-MASTG-TEST-0078
+title: MASTG-TEST-0078
+summary: '--- masvs_v1_id: - MSTG-PLATFORM-7 masvs_v2_id: - MASVS-PLATFORM-2 platform: ios title: Determining
+  Whether Native Methods Are Exposed Throu'
+platforms:
+- mobile
+- ios
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0078
+refs:
+- MASTG-TEST-0078
+check: '--- masvs_v1_id: - MSTG-PLATFORM-7 masvs_v2_id: - MASVS-PLATFORM-2 platform: ios title: Determining
+  Whether Native Methods Are Exposed Through WebViews masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status:
+  deprecated covered_by: [MASTG-TEST-0376, MASTG-TEST-0377, MASTG-TEST-0378,'
+fix: 'See OWASP/mastg tests/ios/MASVS-PLATFORM/MASTG-TEST-0078.md (anchor: MASTG-TEST-0078) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0078.md
+  anchor: MASTG-TEST-0078
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0078.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

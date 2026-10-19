@@ -1,0 +1,55 @@
+id: SKB-LLM-LLM07-2025
+title: LLM07_SystemPromptLeakage.md
+summary: The system prompt leakage vulnerability in LLMs refers to the risk that the system prompts or
+  instructions used to steer the behavior of the
+platforms:
+- llm
+stacks:
+- any
+domain: llm
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- LLM07:2025
+refs:
+- LLM07:2025
+check: The system prompt leakage vulnerability in LLMs refers to the risk that the system prompts or instructions
+  used to steer the behavior of the model can also contain sensitive information that was not intended
+  to be discovered. System prompts are designed to guide the model's outpu
+fix: 'See OWASP/www-project-top-10-for-large-language-model-applications 2_0_vulns/LLM07_SystemPromptLeakage.md
+  (anchor: LLM07:2025) for remediation.'
+detect:
+  grep:
+  - system
+  - prompt
+  - completion
+  - tool_calls
+  files:
+  - '**/*.py'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- llm
+- systempromptleakage
+sources:
+- repo: OWASP/www-project-top-10-for-large-language-model-applications
+  path: 2_0_vulns/LLM07_SystemPromptLeakage.md
+  anchor: LLM07:2025
+  commit: main
+  url: https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM07_SystemPromptLeakage.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

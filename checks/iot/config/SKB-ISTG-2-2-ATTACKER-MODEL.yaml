@@ -1,0 +1,55 @@
+id: SKB-ISTG-2-2-ATTACKER-MODEL
+title: 2.2. Attacker Model
+summary: 2.2. Attacker Model In this chapter, a selection scheme for test cases will be described, which
+  is based on potential attackers that are ass
+platforms:
+- iot
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:2.2. Attacker Model
+refs:
+- ISTG:2.2. Attacker Model
+check: 2.2. Attacker Model In this chapter, a selection scheme for test cases will be described, which
+  is based on potential attackers that are assumed to be a threat to a given IoT device. Contrary to a
+  full threat and risk modeling approach, like the STRIDE model, the attacker model
+fix: 'See OWASP/owasp-istg src/02_framework/attacker_model.md (anchor: 2.2. Attacker Model) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/owasp-istg
+  path: src/02_framework/attacker_model.md
+  anchor: 2.2. Attacker Model
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/02_framework/attacker_model.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

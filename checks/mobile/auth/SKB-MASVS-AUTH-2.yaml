@@ -1,0 +1,51 @@
+id: SKB-MASVS-AUTH-2
+title: MASVS-AUTH-2
+summary: The app performs local authentication securely according to the platform best practices.
+platforms:
+- mobile
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- MASVS-AUTH-2
+refs:
+- MASVS-AUTH-2
+check: The app performs local authentication securely according to the platform best practices.
+fix: 'See OWASP/masvs OWASP_MASVS.yaml (anchor: MASVS-AUTH-2) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/masvs
+  path: OWASP_MASVS.yaml
+  anchor: MASVS-AUTH-2
+  commit: bbe226fd17e6dab51927f392936deef31c816423
+  url: https://github.com/OWASP/masvs/blob/bbe226fd17e6dab51927f392936deef31c816423/OWASP_MASVS.yaml
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

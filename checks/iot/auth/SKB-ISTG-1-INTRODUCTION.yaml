@@ -1,0 +1,55 @@
+id: SKB-ISTG-1-INTRODUCTION
+title: 1. Introduction
+summary: '1. Introduction Motivation The networking of a multitude of different devices towards the Internet
+  of Things (IoT) poses new challenges for '
+platforms:
+- iot
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:1. Introduction
+refs:
+- ISTG:1. Introduction
+check: 1. Introduction Motivation The networking of a multitude of different devices towards the Internet
+  of Things (IoT) poses new challenges for manufacturers and operators of respective solutions. Due to
+  the interconnection of many different technologies, standards and protocols, a considerable amount of
+  effort is necessary to build up and m
+fix: 'See OWASP/owasp-istg src/01_introduction/README.md (anchor: 1. Introduction) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/owasp-istg
+  path: src/01_introduction/README.md
+  anchor: 1. Introduction
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/01_introduction/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

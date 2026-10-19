@@ -1,0 +1,70 @@
+id: SKB-MASTG-TEST-0014
+title: MASTG-TEST-0014
+summary: '--- masvs_v1_id: - MSTG-CRYPTO-2 - MSTG-CRYPTO-3 - MSTG-CRYPTO-4 masvs_v2_id: - MASVS-CRYPTO-1
+  platform: android title: Testing the Configur'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0014
+refs:
+- MASTG-TEST-0014
+check: '--- masvs_v1_id: - MSTG-CRYPTO-2 - MSTG-CRYPTO-3 - MSTG-CRYPTO-4 masvs_v2_id: - MASVS-CRYPTO-1
+  platform: android title: Testing the Configuration of Cryptographic Standard Algorithms masvs_v1_levels:
+  - L1 - L2 profiles: [L1, L2] status: deprecated covered_by: [MASTG-TEST-0312] deprecation_note: New
+  ver'
+fix: 'See OWASP/mastg tests/android/MASVS-CRYPTO/MASTG-TEST-0014.md (anchor: MASTG-TEST-0014) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CRYPTO/MASTG-TEST-0014.md
+  anchor: MASTG-TEST-0014
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CRYPTO/MASTG-TEST-0014.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-CRYPTO/MASTG-TEST-0061.md
+  anchor: MASTG-TEST-0061
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-CRYPTO/MASTG-TEST-0061.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASTG-TEST-0061
+aliases:
+- SKB-MASTG-TEST-0061

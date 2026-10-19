@@ -1,0 +1,57 @@
+id: SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-5-SECURING-A-MANAGED-SERVICE-KU
+title: 'SECTION 5: Securing a managed-service Kubernetes on Cloud Service Provider'
+summary: 'SECTION 5: Securing a managed-service Kubernetes on Cloud Service Provider AWS There are few
+  open source tools that can help you on securing'
+platforms:
+- cloud
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 5: Securing a managed-service Ku'
+refs:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 5: Securing a managed-service Ku'
+check: 'SECTION 5: Securing a managed-service Kubernetes on Cloud Servic'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Kubernetes_Security_Cheat_Sheet.md (anchor: SECTION 5: Securing
+  a managed-service Kubernetes on Cloud Service Provider) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- section
+- securing
+- managed
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  anchor: 'SECTION 5: Securing a managed-service Kubernetes on Cloud Service Provider'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

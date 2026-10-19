@@ -1,0 +1,54 @@
+id: SKB-MASTG-TEST-0021
+title: MASTG-TEST-0021
+summary: '--- masvs_v1_id: - MSTG-NETWORK-3 masvs_v2_id: - MASVS-NETWORK-1 platform: android title: Testing
+  Endpoint Identify Verification masvs_v1_le'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0021
+refs:
+- MASTG-TEST-0021
+check: '--- masvs_v1_id: - MSTG-NETWORK-3 masvs_v2_id: - MASVS-NETWORK-1 platform: android title: Testing
+  Endpoint Identify Verification masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [MASTG-TEST-0282, MASTG-TEST-0283, MASTG-TEST-0284, MASTG-TEST-0285, MASTG-TEST-0'
+fix: 'See OWASP/mastg tests/android/MASVS-NETWORK/MASTG-TEST-0021.md (anchor: MASTG-TEST-0021) for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-NETWORK/MASTG-TEST-0021.md
+  anchor: MASTG-TEST-0021
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-NETWORK/MASTG-TEST-0021.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

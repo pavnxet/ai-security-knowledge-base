@@ -1,0 +1,56 @@
+id: SKB-MASTG-TEST-0064
+title: MASTG-TEST-0064
+summary: '--- masvs_v1_id: - MSTG-AUTH-8 - MSTG-STORAGE-11 masvs_v2_id: - MASVS-AUTH-2 platform: ios title:
+  Testing Biometric Authentication masvs_v1_'
+platforms:
+- mobile
+- ios
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0064
+refs:
+- MASTG-TEST-0064
+check: '--- masvs_v1_id: - MSTG-AUTH-8 - MSTG-STORAGE-11 masvs_v2_id: - MASVS-AUTH-2 platform: ios title:
+  Testing Biometric Authentication masvs_v1_levels: - L2 profiles: [L2] status: deprecated covered_by:
+  [MASTG-TEST-0266, MASTG-TEST-0267, MASTG-TEST-0268, MASTG-TEST-0269, MASTG-TEST-0270, MASTG-TEST-0271]
+  deprecation_note: New ver'
+fix: 'See OWASP/mastg tests/ios/MASVS-AUTH/MASTG-TEST-0064.md (anchor: MASTG-TEST-0064) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-AUTH/MASTG-TEST-0064.md
+  anchor: MASTG-TEST-0064
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-AUTH/MASTG-TEST-0064.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

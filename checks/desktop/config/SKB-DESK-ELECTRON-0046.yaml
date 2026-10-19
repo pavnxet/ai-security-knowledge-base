@@ -1,0 +1,48 @@
+id: SKB-DESK-ELECTRON-0046
+title: Electron renderer is isolated and sandboxed
+summary: contextIsolation on, nodeIntegration off, sandbox on.
+platforms:
+- desktop
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 60
+cwe:
+- CWE-693
+owasp: []
+check: In BrowserWindow webPreferences, confirm contextIsolation=true, nodeIntegration=false and sandbox=true.
+fix: Enable contextIsolation and sandbox; disable nodeIntegration; expose only a minimal preload API.
+detect:
+  grep:
+  - nodeIntegration
+  - contextIsolation
+  - sandbox
+  - webPreferences
+  files:
+  - '**/main*.js'
+  - '**/*.ts'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- electron
+- desktop
+sources:
+- repo: Electron Security
+  path: null
+  anchor: null
+  commit: null
+  url: https://www.electronjs.org/docs/latest/tutorial/security
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-6-SUPPLY-CHAIN-SECURITY
+title: 'SECTION 6: Supply Chain Security'
+summary: 'SECTION 6: Supply Chain Security Container supply chain security is critical for preventing
+  attacks that exploit vulnerabilities in the soft'
+platforms:
+- cloud
+stacks:
+- any
+domain: rate-limiting
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 6: Supply Chain Security'
+refs:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 6: Supply Chain Security'
+check: 'SECTION 6: Supply Chain Security Container supply chain security is critical for preventing attacks
+  that exploit vulnerabilities in the software delivery process. A compromised supply chain'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Kubernetes_Security_Cheat_Sheet.md (anchor: SECTION 6: Supply
+  Chain Security) for remediation.'
+detect:
+  grep:
+  - rateLimit
+  - throttle
+  - attempts
+  files:
+  - '**/auth/**'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- rate-limiting
+- section
+- supply
+- chain
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  anchor: 'SECTION 6: Supply Chain Security'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

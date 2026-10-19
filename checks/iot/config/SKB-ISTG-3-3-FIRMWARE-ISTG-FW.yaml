@@ -1,0 +1,56 @@
+id: SKB-ISTG-3-3-FIRMWARE-ISTG-FW
+title: 3.3. Firmware (ISTG-FW)
+summary: '3.3. Firmware (ISTG-FW) Table of Contents [Overview]( overview) [Information Gathering (ISTG-FW-INFO)](
+  information-gathering-istg-fw-info) '
+platforms:
+- iot
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:3.3. Firmware (ISTG-FW)
+refs:
+- ISTG:3.3. Firmware (ISTG-FW)
+check: 3.3. Firmware (ISTG-FW) Table of Contents [Overview]( overview) [Information Gathering (ISTG-FW-INFO)](
+  information-gathering-istg-fw-info) [Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)]( disclosure-of-source-code-and-binaries-istg-fw-info-001)
+  [Disclosure of Impleme
+fix: 'See OWASP/owasp-istg src/03_test_cases/firmware/README.md (anchor: 3.3. Firmware (ISTG-FW)) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/firmware/README.md
+  anchor: 3.3. Firmware (ISTG-FW)
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/firmware/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

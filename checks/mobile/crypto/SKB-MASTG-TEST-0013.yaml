@@ -1,0 +1,81 @@
+id: SKB-MASTG-TEST-0013
+title: MASTG-TEST-0013
+summary: '--- masvs_v1_id: - MSTG-CRYPTO-1 masvs_v2_id: - MASVS-CRYPTO-1 platform: android title: Testing
+  Symmetric Cryptography masvs_v1_levels: - L1'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0013
+refs:
+- MASTG-TEST-0013
+check: '--- masvs_v1_id: - MSTG-CRYPTO-1 masvs_v2_id: - MASVS-CRYPTO-1 platform: android title: Testing
+  Symmetric Cryptography masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [''MASTG-TEST-0212'', ''MASTG-TEST-0221'', ''MASTG-TEST-0309'', ''MASTG-TEST-0310''] deprecation_reason:
+  New version available in MASTG V2 ---'
+fix: 'See OWASP/mastg tests/android/MASVS-CRYPTO/MASTG-TEST-0013.md (anchor: MASTG-TEST-0013) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CRYPTO/MASTG-TEST-0013.md
+  anchor: MASTG-TEST-0013
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CRYPTO/MASTG-TEST-0013.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CRYPTO/MASTG-TEST-0015.md
+  anchor: MASTG-TEST-0015
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CRYPTO/MASTG-TEST-0015.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CRYPTO/MASTG-TEST-0016.md
+  anchor: MASTG-TEST-0016
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CRYPTO/MASTG-TEST-0016.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASTG-TEST-0015
+- SKB-MASTG-TEST-0016
+aliases:
+- SKB-MASTG-TEST-0015
+- SKB-MASTG-TEST-0016

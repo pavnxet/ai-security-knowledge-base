@@ -1,0 +1,67 @@
+id: SKB-MASTG-TEST-0044
+title: MASTG-TEST-0044
+summary: '--- masvs_v1_id: - MSTG-CODE-9 masvs_v2_id: - MASVS-CODE-4 platform: android title: Make Sure
+  That Free Security Features Are Activated masv'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0044
+refs:
+- MASTG-TEST-0044
+check: '--- masvs_v1_id: - MSTG-CODE-9 masvs_v2_id: - MASVS-CODE-4 platform: android title: Make Sure
+  That Free Security Features Are Activated masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated
+  covered_by: [MASTG-TEST-0222, MASTG-TEST-0223] deprecation_note: New ver'
+fix: 'See OWASP/mastg tests/android/MASVS-CODE/MASTG-TEST-0044.md (anchor: MASTG-TEST-0044) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CODE/MASTG-TEST-0044.md
+  anchor: MASTG-TEST-0044
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CODE/MASTG-TEST-0044.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-CODE/MASTG-TEST-0087.md
+  anchor: MASTG-TEST-0087
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-CODE/MASTG-TEST-0087.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASTG-TEST-0087
+aliases:
+- SKB-MASTG-TEST-0087

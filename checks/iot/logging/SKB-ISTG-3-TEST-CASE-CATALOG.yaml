@@ -1,0 +1,53 @@
+id: SKB-ISTG-3-TEST-CASE-CATALOG
+title: 3. Test Case Catalog
+summary: 3. Test Case Catalog 3.1. [ Processing Units (ISTG-PROC) ](./processing_units/README.md) 3.2.
+  [ Memory (ISTG-MEM) ](./memory/README.md) 3.3.
+platforms:
+- iot
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:3. Test Case Catalog
+refs:
+- ISTG:3. Test Case Catalog
+check: 3. Test Case Catalog 3.1. [ Processing Units (ISTG-PROC) ](./processing_units/README.md) 3.2. [
+  Memory (ISTG-MEM) ](./memory/README.md) 3.3. [ Firmware (ISTG-FW) ](./firmware/README.md) 3.3.1. [Installed
+  Firmware (ISTG-FW[INST])](./firmware/installed_firmware.md) 3.3.1. [Firmware Update Mechnanism (ISTG-FW[UP
+fix: 'See OWASP/owasp-istg src/03_test_cases/README.md (anchor: 3. Test Case Catalog) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+sources:
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/README.md
+  anchor: 3. Test Case Catalog
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

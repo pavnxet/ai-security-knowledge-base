@@ -1,0 +1,52 @@
+id: SKB-MASVS-CRYPTO-2
+title: MASVS-CRYPTO-2
+summary: The app performs key management according to industry best practices.
+platforms:
+- mobile
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- MASVS-CRYPTO-2
+refs:
+- MASVS-CRYPTO-2
+check: The app performs key management according to industry best practices.
+fix: 'See OWASP/masvs OWASP_MASVS.yaml (anchor: MASVS-CRYPTO-2) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+sources:
+- repo: OWASP/masvs
+  path: OWASP_MASVS.yaml
+  anchor: MASVS-CRYPTO-2
+  commit: bbe226fd17e6dab51927f392936deef31c816423
+  url: https://github.com/OWASP/masvs/blob/bbe226fd17e6dab51927f392936deef31c816423/OWASP_MASVS.yaml
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

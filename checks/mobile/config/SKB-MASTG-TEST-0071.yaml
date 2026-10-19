@@ -1,0 +1,56 @@
+id: SKB-MASTG-TEST-0071
+title: MASTG-TEST-0071
+summary: '--- masvs_v1_id: - MSTG-PLATFORM-4 masvs_v2_id: - MASVS-PLATFORM-1 platform: ios title: Testing
+  UIActivity Sharing masvs_v1_levels: - L1 - L'
+platforms:
+- mobile
+- ios
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0071
+refs:
+- MASTG-TEST-0071
+check: '--- masvs_v1_id: - MSTG-PLATFORM-4 masvs_v2_id: - MASVS-PLATFORM-1 platform: ios title: Testing
+  UIActivity Sharing masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by: [] deprecation_note:
+  "This test has no MASTG v2 successor by design. Whether to share a'
+fix: 'See OWASP/mastg tests/ios/MASVS-PLATFORM/MASTG-TEST-0071.md (anchor: MASTG-TEST-0071) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0071.md
+  anchor: MASTG-TEST-0071
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0071.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

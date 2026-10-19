@@ -1,0 +1,48 @@
+id: SKB-DESK-IPC-0047
+title: Electron validates IPC sender and options
+summary: Validate the sender of IPC messages; do not expose dangerous APIs.
+platforms:
+- desktop
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-20
+owasp: []
+check: Check ipcMain handlers validate the sender and arguments; never pass untrusted input to shell.openExternal/exec.
+fix: Validate IPC sender and payload; allow-list URLs/channels; avoid exec/openExternal exposure.
+detect:
+  grep:
+  - ipcMain
+  - ipcRenderer
+  - openExternal
+  - shell.
+  files:
+  - '**/main*.js'
+  - '**/preload*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- electron
+- ipc
+sources:
+- repo: Electron Security
+  path: null
+  anchor: null
+  commit: null
+  url: https://www.electronjs.org/docs/latest/tutorial/security
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: low
+extraction: authored
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

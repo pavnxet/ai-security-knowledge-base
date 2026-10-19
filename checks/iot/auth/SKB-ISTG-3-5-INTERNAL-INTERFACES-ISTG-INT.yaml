@@ -1,0 +1,79 @@
+id: SKB-ISTG-3-5-INTERNAL-INTERFACES-ISTG-INT
+title: 3.5. Internal Interfaces (ISTG-INT)
+summary: '3.5. Internal Interfaces (ISTG-INT) Table of Contents - [3.5. Internal Interfaces (ISTG-INT)](
+  35-internal-interfaces-istg-int) - [Table of '
+platforms:
+- iot
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:3.5. Internal Interfaces (ISTG-INT)
+refs:
+- ISTG:3.5. Internal Interfaces (ISTG-INT)
+check: 3.5. Internal Interfaces (ISTG-INT) Table of Contents - [3.5. Internal Interfaces (ISTG-INT)](
+  35-internal-interfaces-istg-int) - [Table of Contents]( table-of-contents) - [Overview]( overview) -
+  [Authorization (ISTG-INT-AUTHZ)]( authorization-istg-i
+fix: 'See OWASP/owasp-istg src/03_test_cases/internal_interfaces/README.md (anchor: 3.5. Internal Interfaces
+  (ISTG-INT)) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/internal_interfaces/README.md
+  anchor: 3.5. Internal Interfaces (ISTG-INT)
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/internal_interfaces/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/physical_interfaces/README.md
+  anchor: 3.6. Physical Interfaces (ISTG-PHY)
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/physical_interfaces/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/wireless_interfaces/README.md
+  anchor: 3.7. Wireless Interfaces (ISTG-WRLS)
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/wireless_interfaces/README.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-ISTG-3-6-PHYSICAL-INTERFACES-ISTG-PHY
+- SKB-ISTG-3-7-WIRELESS-INTERFACES-ISTG-WRLS
+aliases:
+- SKB-ISTG-3-6-PHYSICAL-INTERFACES-ISTG-PHY
+- SKB-ISTG-3-7-WIRELESS-INTERFACES-ISTG-WRLS

@@ -1,0 +1,52 @@
+id: SKB-MASVS-PRIVACY-2
+title: MASVS-PRIVACY-2
+summary: The app prevents identification of the user.
+platforms:
+- mobile
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASVS-PRIVACY-2
+refs:
+- MASVS-PRIVACY-2
+check: The app prevents identification of the user.
+fix: 'See OWASP/masvs OWASP_MASVS.yaml (anchor: MASVS-PRIVACY-2) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/masvs
+  path: OWASP_MASVS.yaml
+  anchor: MASVS-PRIVACY-2
+  commit: bbe226fd17e6dab51927f392936deef31c816423
+  url: https://github.com/OWASP/masvs/blob/bbe226fd17e6dab51927f392936deef31c816423/OWASP_MASVS.yaml
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,54 @@
+id: SKB-ISTG-3-5-2-UNIVERSAL-ASYNCHRONOUS-RECEIVER-T
+title: 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+summary: 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART]) Table of Contents - [Overview](
+  overview) - [Authorization (ISTG-INT\[UA
+platforms:
+- iot
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- ISTG:3.5.2. Universal Asynchronous Receiver-T
+refs:
+- ISTG:3.5.2. Universal Asynchronous Receiver-T
+check: 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART]) Table of Contents - [Overview](
+  overview) - [Authorization (ISTG-INT\[UART\]-AUTHZ)]( autho
+fix: 'See OWASP/owasp-istg src/03_test_cases/internal_interfaces/universal_asynchronous_receiver_transmitter.md
+  (anchor: 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+sources:
+- repo: OWASP/owasp-istg
+  path: src/03_test_cases/internal_interfaces/universal_asynchronous_receiver_transmitter.md
+  anchor: 3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+  commit: c7602460d234733a235688c8fbeb0f8eb2e472ef
+  url: https://github.com/OWASP/owasp-istg/blob/c7602460d234733a235688c8fbeb0f8eb2e472ef/src/03_test_cases/internal_interfaces/universal_asynchronous_receiver_transmitter.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

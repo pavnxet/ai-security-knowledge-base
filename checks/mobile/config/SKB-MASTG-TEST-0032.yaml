@@ -1,0 +1,56 @@
+id: SKB-MASTG-TEST-0032
+title: MASTG-TEST-0032
+summary: '--- masvs_v1_id: - MSTG-PLATFORM-6 masvs_v2_id: - MASVS-PLATFORM-2 platform: android title:
+  Testing WebView Protocol Handlers masvs_v1_level'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0032
+refs:
+- MASTG-TEST-0032
+check: '--- masvs_v1_id: - MSTG-PLATFORM-6 masvs_v2_id: - MASVS-PLATFORM-2 platform: android title: Testing
+  WebView Protocol Handlers masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [MASTG-TEST-0250, MASTG-TEST-0251, MASTG-TEST-0252, MASTG-TEST-0253] deprecation_note: New ver'
+fix: 'See OWASP/mastg tests/android/MASVS-PLATFORM/MASTG-TEST-0032.md (anchor: MASTG-TEST-0032) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0032.md
+  anchor: MASTG-TEST-0032
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0032.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

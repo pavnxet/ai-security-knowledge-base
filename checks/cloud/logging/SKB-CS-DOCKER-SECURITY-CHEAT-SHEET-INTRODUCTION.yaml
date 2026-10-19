@@ -1,0 +1,55 @@
+id: SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction Docker is the most popular containerization technology. When used correctly, it
+  can enhance security compared to running applic
+platforms:
+- cloud
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Docker_Security_Cheat_Sheet#Introduction
+refs:
+- CS:Docker_Security_Cheat_Sheet#Introduction
+check: Introduction Docker is the most popular containerization technology. When used correctly, it can
+  enhance security compared to running applications directly on the host system. However, certain misconfigurations
+  can reduce security levels or introduce new vulnerabilities. The aim
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Docker_Security_Cheat_Sheet.md (anchor: Introduction) for
+  remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Docker_Security_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Docker_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

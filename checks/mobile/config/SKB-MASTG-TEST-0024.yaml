@@ -1,0 +1,388 @@
+id: SKB-MASTG-TEST-0024
+title: MASTG-TEST-0024
+summary: '--- masvs_v1_id: - MSTG-PLATFORM-1 masvs_v2_id: - MASVS-PLATFORM-1 platform: android title:
+  Testing for App Permissions masvs_v1_levels: - L'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0024
+refs:
+- MASTG-TEST-0024
+check: '--- masvs_v1_id: - MSTG-PLATFORM-1 masvs_v2_id: - MASVS-PLATFORM-1 platform: android title: Testing
+  for App Permissions masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by: [MASTG-TEST-0254]
+  deprecation_note: New version available in MASTG V2 ---'
+fix: 'See OWASP/mastg tests/android/MASVS-PLATFORM/MASTG-TEST-0024.md (anchor: MASTG-TEST-0024) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0024.md
+  anchor: MASTG-TEST-0024
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0024.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0028.md
+  anchor: MASTG-TEST-0028
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0028.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0030.md
+  anchor: MASTG-TEST-0030
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0030.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0033.md
+  anchor: MASTG-TEST-0033
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0033.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0035.md
+  anchor: MASTG-TEST-0035
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0035.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-PLATFORM/MASTG-TEST-0037.md
+  anchor: MASTG-TEST-0037
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-PLATFORM/MASTG-TEST-0037.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0038.md
+  anchor: MASTG-TEST-0038
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0038.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0039.md
+  anchor: MASTG-TEST-0039
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0039.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0040.md
+  anchor: MASTG-TEST-0040
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0040.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0041.md
+  anchor: MASTG-TEST-0041
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0041.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0045.md
+  anchor: MASTG-TEST-0045
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0045.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0046.md
+  anchor: MASTG-TEST-0046
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0046.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0047.md
+  anchor: MASTG-TEST-0047
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0047.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0048.md
+  anchor: MASTG-TEST-0048
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0048.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0049.md
+  anchor: MASTG-TEST-0049
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0049.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0050.md
+  anchor: MASTG-TEST-0050
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0050.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/android/MASVS-RESILIENCE/MASTG-TEST-0051.md
+  anchor: MASTG-TEST-0051
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-RESILIENCE/MASTG-TEST-0051.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0069.md
+  anchor: MASTG-TEST-0069
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0069.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0070.md
+  anchor: MASTG-TEST-0070
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0070.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0073.md
+  anchor: MASTG-TEST-0073
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0073.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0075.md
+  anchor: MASTG-TEST-0075
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0075.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0076.md
+  anchor: MASTG-TEST-0076
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0076.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-PLATFORM/MASTG-TEST-0077.md
+  anchor: MASTG-TEST-0077
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-PLATFORM/MASTG-TEST-0077.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0082.md
+  anchor: MASTG-TEST-0082
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0082.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0083.md
+  anchor: MASTG-TEST-0083
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0083.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0088.md
+  anchor: MASTG-TEST-0088
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0088.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0089.md
+  anchor: MASTG-TEST-0089
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0089.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0090.md
+  anchor: MASTG-TEST-0090
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0090.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0091.md
+  anchor: MASTG-TEST-0091
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0091.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0092.md
+  anchor: MASTG-TEST-0092
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0092.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/mastg
+  path: tests/ios/MASVS-RESILIENCE/MASTG-TEST-0093.md
+  anchor: MASTG-TEST-0093
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/ios/MASVS-RESILIENCE/MASTG-TEST-0093.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-MASTG-TEST-0028
+- SKB-MASTG-TEST-0030
+- SKB-MASTG-TEST-0033
+- SKB-MASTG-TEST-0035
+- SKB-MASTG-TEST-0037
+- SKB-MASTG-TEST-0038
+- SKB-MASTG-TEST-0039
+- SKB-MASTG-TEST-0040
+- SKB-MASTG-TEST-0041
+- SKB-MASTG-TEST-0045
+- SKB-MASTG-TEST-0046
+- SKB-MASTG-TEST-0047
+- SKB-MASTG-TEST-0048
+- SKB-MASTG-TEST-0049
+- SKB-MASTG-TEST-0050
+- SKB-MASTG-TEST-0051
+- SKB-MASTG-TEST-0069
+- SKB-MASTG-TEST-0070
+- SKB-MASTG-TEST-0073
+- SKB-MASTG-TEST-0075
+- SKB-MASTG-TEST-0076
+- SKB-MASTG-TEST-0077
+- SKB-MASTG-TEST-0082
+- SKB-MASTG-TEST-0083
+- SKB-MASTG-TEST-0088
+- SKB-MASTG-TEST-0089
+- SKB-MASTG-TEST-0090
+- SKB-MASTG-TEST-0091
+- SKB-MASTG-TEST-0092
+- SKB-MASTG-TEST-0093
+aliases:
+- SKB-MASTG-TEST-0028
+- SKB-MASTG-TEST-0030
+- SKB-MASTG-TEST-0033
+- SKB-MASTG-TEST-0035
+- SKB-MASTG-TEST-0037
+- SKB-MASTG-TEST-0038
+- SKB-MASTG-TEST-0039
+- SKB-MASTG-TEST-0040
+- SKB-MASTG-TEST-0041
+- SKB-MASTG-TEST-0045
+- SKB-MASTG-TEST-0046
+- SKB-MASTG-TEST-0047
+- SKB-MASTG-TEST-0048
+- SKB-MASTG-TEST-0049
+- SKB-MASTG-TEST-0050
+- SKB-MASTG-TEST-0051
+- SKB-MASTG-TEST-0069
+- SKB-MASTG-TEST-0070
+- SKB-MASTG-TEST-0073
+- SKB-MASTG-TEST-0075
+- SKB-MASTG-TEST-0076
+- SKB-MASTG-TEST-0077
+- SKB-MASTG-TEST-0082
+- SKB-MASTG-TEST-0083
+- SKB-MASTG-TEST-0088
+- SKB-MASTG-TEST-0089
+- SKB-MASTG-TEST-0090
+- SKB-MASTG-TEST-0091
+- SKB-MASTG-TEST-0092
+- SKB-MASTG-TEST-0093

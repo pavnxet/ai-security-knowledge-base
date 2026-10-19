@@ -1,0 +1,54 @@
+id: SKB-MASTG-TEST-0027
+title: MASTG-TEST-0027
+summary: '--- masvs_v1_id: - MSTG-PLATFORM-2 masvs_v2_id: - MASVS-CODE-4 platform: android title: Testing
+  for URL Loading in WebViews masvs_v1_levels:'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0027
+refs:
+- MASTG-TEST-0027
+check: '--- masvs_v1_id: - MSTG-PLATFORM-2 masvs_v2_id: - MASVS-CODE-4 platform: android title: Testing
+  for URL Loading in WebViews masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [MASTG-TEST-0398, MASTG-TEST-0399, MASTG-TEST-0400] deprecation_note: "New vers'
+fix: 'See OWASP/mastg tests/android/MASVS-CODE/MASTG-TEST-0027.md (anchor: MASTG-TEST-0027) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-CODE/MASTG-TEST-0027.md
+  anchor: MASTG-TEST-0027
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-CODE/MASTG-TEST-0027.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

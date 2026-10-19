@@ -1,0 +1,54 @@
+id: SKB-MASTG-TEST-0019
+title: MASTG-TEST-0019
+summary: '--- masvs_v1_id: - MSTG-NETWORK-1 masvs_v2_id: - MASVS-NETWORK-1 platform: android title: Testing
+  Data Encryption on the Network masvs_v1_le'
+platforms:
+- mobile
+- android
+stacks:
+- any
+domain: network
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- MASTG-TEST-0019
+refs:
+- MASTG-TEST-0019
+check: '--- masvs_v1_id: - MSTG-NETWORK-1 masvs_v2_id: - MASVS-NETWORK-1 platform: android title: Testing
+  Data Encryption on the Network masvs_v1_levels: - L1 - L2 profiles: [L1, L2] status: deprecated covered_by:
+  [MASTG-TEST-0233, MASTG-TEST-0234, MASTG-TEST-0235, MASTG-TEST-0236, MASTG-TEST-0237,'
+fix: 'See OWASP/mastg tests/android/MASVS-NETWORK/MASTG-TEST-0019.md (anchor: MASTG-TEST-0019) for remediation.'
+detect:
+  grep:
+  - http://
+  - verify=False
+  - Strict-Transport-Security
+  files:
+  - '**/*.conf'
+  - '**/*.yml'
+  - '**/*.env'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- network
+sources:
+- repo: OWASP/mastg
+  path: tests/android/MASVS-NETWORK/MASTG-TEST-0019.md
+  anchor: MASTG-TEST-0019
+  commit: 02ffd85fb74383ec2a30b42866d38f89d72c0ead
+  url: https://github.com/OWASP/mastg/blob/02ffd85fb74383ec2a30b42866d38f89d72c0ead/tests/android/MASVS-NETWORK/MASTG-TEST-0019.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
