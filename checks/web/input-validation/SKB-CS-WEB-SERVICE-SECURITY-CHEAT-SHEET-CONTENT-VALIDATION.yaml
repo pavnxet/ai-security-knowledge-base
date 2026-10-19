@@ -1,0 +1,56 @@
+id: SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-CONTENT-VALIDATION
+title: Content Validation
+summary: 'Content Validation Rule : Like any web application, web services need to validate input before
+  consuming it. Content validation for XML inpu'
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Service_Security_Cheat_Sheet#Content Validation
+refs:
+- CS:Web_Service_Security_Cheat_Sheet#Content Validation
+check: 'Content Validation Rule : Like any web application, web services need to validate input before
+  consuming it. Content validation for XML input should include: - Validation against malformed XML entities.
+  - Validation aga'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Service_Security_Cheat_Sheet.md (anchor: Content Validation)
+  for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- content
+- validation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  anchor: Content Validation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

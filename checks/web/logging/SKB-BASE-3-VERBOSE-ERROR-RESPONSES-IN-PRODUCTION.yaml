@@ -1,0 +1,58 @@
+id: SKB-BASE-3-VERBOSE-ERROR-RESPONSES-IN-PRODUCTION
+title: 3. Verbose error responses in production
+summary: '3. Verbose error responses in production What: Sending err.stack or raw err to the client leaks
+  absolute paths and code context. Dangerous p'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. Verbose error responses in production
+refs:
+- BASE:3. Verbose error responses in production
+check: '3. Verbose error responses in production What: Sending err.stack or raw err to the client leaks
+  absolute paths and code context. Dangerous pattern: Leaks: Stack traces like at /app/server.js:47:12
+  — a map of your source'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 3. Verbose error responses in
+  production) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- error
+- responses
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 3. Verbose error responses in production
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

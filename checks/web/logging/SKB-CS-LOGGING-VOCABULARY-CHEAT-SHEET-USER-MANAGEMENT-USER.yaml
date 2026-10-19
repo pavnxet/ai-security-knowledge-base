@@ -1,0 +1,57 @@
+id: SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-USER-MANAGEMENT-USER
+title: User Management [USER]
+summary: 'User Management [USER] user_created:[userid,newuserid,attributes[one,two,three]] Description
+  When creating new users, logging the specifics '
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Vocabulary_Cheat_Sheet#User Management [USER]
+refs:
+- CS:Logging_Vocabulary_Cheat_Sheet#User Management [USER]
+check: User Management [USER] user_created:[userid,newuserid,attributes[one,two,three]] Description When
+  creating new users, logging the specifics of the user creation event is helpful, especially if new users
+  can be created w
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Vocabulary_Cheat_Sheet.md (anchor: User Management
+  [USER]) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- user
+- management
+- user
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  anchor: User Management [USER]
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

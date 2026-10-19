@@ -1,0 +1,55 @@
+id: SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology
+  of Attacks and Mitigations](https://nvlpubs.nist'
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:AI-Powered_Advertising_Systems_Security_Cheat_Sheet#References
+refs:
+- CS:AI-Powered_Advertising_Systems_Security_Cheat_Sheet#References
+check: 'References - [NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology of
+  Attacks and Mitigations](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf) - [RFC 9421: HTTP
+  Message Signatures](h'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/AI-Powered_Advertising_Systems_Security_Cheat_Sheet.md (anchor:
+  References) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/AI-Powered_Advertising_Systems_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/AI-Powered_Advertising_Systems_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

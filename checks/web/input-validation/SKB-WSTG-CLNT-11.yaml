@@ -1,0 +1,52 @@
+id: SKB-WSTG-CLNT-11
+title: Web Messaging
+summary: Web Messaging. Assess the security of the message's origin. Validate that it's using safe methods
+  and validating its input.
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-CLNT-11
+refs:
+- WSTG-CLNT-11
+check: Web Messaging. Assess the security of the message's origin. Validate that it's using safe methods
+  and validating its input.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-CLNT-11) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-CLNT-11
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

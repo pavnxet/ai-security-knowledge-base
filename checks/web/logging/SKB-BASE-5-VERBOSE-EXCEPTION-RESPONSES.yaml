@@ -1,0 +1,58 @@
+id: SKB-BASE-5-VERBOSE-EXCEPTION-RESPONSES
+title: 5. Verbose exception responses
+summary: '5. Verbose exception responses What: Unhandled exceptions return FastAPI''s default 500 with
+  internal detail in some setups; custom handlers '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Verbose exception responses
+refs:
+- BASE:5. Verbose exception responses
+check: '5. Verbose exception responses What: Unhandled exceptions return FastAPI''s default 500 with internal
+  detail in some setups; custom handlers that return str(e) leak internals. Fix: Add a global exception
+  handler returning generic messages; log detail. Detecti'
+fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 5. Verbose exception responses) for
+  remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- exception
+- responses
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 5. Verbose exception responses
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-MANAGING-THE-ATTACK-SURFACE
+title: Managing the Attack Surface
+summary: Managing the Attack Surface Once you have a baseline understanding of the Attack Surface, you
+  can use it to incrementally identify and manag
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Attack_Surface_Analysis_Cheat_Sheet#Managing the Attack Surface
+refs:
+- CS:Attack_Surface_Analysis_Cheat_Sheet#Managing the Attack Surface
+check: 'Managing the Attack Surface Once you have a baseline understanding of the Attack Surface, you
+  can use it to incrementally identify and manage risks going forward as you make changes to the application.
+  Ask yourself: -'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.md (anchor: Managing
+  the Attack Surface) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- managing
+- attack
+- surface
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.md
+  anchor: Managing the Attack Surface
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Attack_Surface_Analysis_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-FORMAT-VALIDATION
+title: Email Format Validation
+summary: Email Format Validation Strict regex-based validation often rejects valid addresses or introduces
+  inconsistencies. Recommendations - Use wel
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Email_Validation_and_Verification_Cheat_Sheet#Email Format Validation
+refs:
+- CS:Email_Validation_and_Verification_Cheat_Sheet#Email Format Validation
+check: Email Format Validation Strict regex-based validation often rejects valid addresses or introduces
+  inconsistencies. Recommendations - Use well-tested libraries instead of
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Email_Validation_and_Verification_Cheat_Sheet.md (anchor:
+  Email Format Validation) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- email
+- format
+- validation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Email_Validation_and_Verification_Cheat_Sheet.md
+  anchor: Email Format Validation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Email_Validation_and_Verification_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

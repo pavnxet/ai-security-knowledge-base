@@ -1,0 +1,56 @@
+id: SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-5-FAIL-CLOSED-ENFORCE
+title: 'Section 5: Fail-Closed Enforcement'
+summary: 'Section 5: Fail-Closed Enforcement Treat an incomplete or unavailable screening result as unresolved,
+  never as clearance. Withhold transacti'
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 5: Fail-Closed Enforcement'
+refs:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 5: Fail-Closed Enforcement'
+check: 'Section 5: Fail-Closed Enforcement Treat an incomplete or unavailable screening result as unresolved,
+  never as clearance. Withhold transaction execution while t'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md (anchor: Section
+  5: Fail-Closed Enforcement) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- section
+- fail
+- closed
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  anchor: 'Section 5: Fail-Closed Enforcement'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

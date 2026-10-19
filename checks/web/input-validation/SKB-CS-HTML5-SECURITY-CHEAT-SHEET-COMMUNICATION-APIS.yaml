@@ -1,0 +1,56 @@
+id: SKB-CS-HTML5-SECURITY-CHEAT-SHEET-COMMUNICATION-APIS
+title: Communication APIs
+summary: Communication APIs Web Messaging Web Messaging (also known as Cross Domain Messaging) provides
+  a means of messaging between documents from d
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTML5_Security_Cheat_Sheet#Communication APIs
+refs:
+- CS:HTML5_Security_Cheat_Sheet#Communication APIs
+check: Communication APIs Web Messaging Web Messaging (also known as Cross Domain Messaging) provides
+  a means of messaging between documents from different origins in a way that is generally safer than
+  the multiple hacks used
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTML5_Security_Cheat_Sheet.md (anchor: Communication APIs)
+  for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- communication
+- apis
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTML5_Security_Cheat_Sheet.md
+  anchor: Communication APIs
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTML5_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

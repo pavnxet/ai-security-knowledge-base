@@ -1,0 +1,58 @@
+id: SKB-BASE-5-EXPOSED-ADMIN-WITH-WEAK-SETUP
+title: 5. Exposed `admin` with weak setup
+summary: '5. Exposed admin with weak setup What: /admin/ reachable on the public internet with no rate
+  limit, no 2FA, and default styling is a credent'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Exposed `admin` with weak setup
+refs:
+- BASE:5. Exposed `admin` with weak setup
+check: '5. Exposed admin with weak setup What: /admin/ reachable on the public internet with no rate limit,
+  no 2FA, and default styling is a credential-stuffing magnet. Fix: Move admin to a non-obvious path,
+  restrict to known IP ranges or VPN, enforce 2FA'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 5. Exposed `admin` with weak setup) for
+  remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- exposed
+- admin
+- with
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 5. Exposed `admin` with weak setup
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

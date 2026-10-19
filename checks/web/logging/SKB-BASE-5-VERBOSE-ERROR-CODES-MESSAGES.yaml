@@ -1,0 +1,57 @@
+id: SKB-BASE-5-VERBOSE-ERROR-CODES-MESSAGES
+title: 5. Verbose error codes/messages
+summary: '5. Verbose error codes/messages What: Returning status.Error(codes.Internal, err.Error()) leaks
+  internals. Fix: Log full error; return statu'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Verbose error codes/messages
+refs:
+- BASE:5. Verbose error codes/messages
+check: '5. Verbose error codes/messages What: Returning status.Error(codes.Internal, err.Error()) leaks
+  internals. Fix: Log full error; return status.Error(codes.Internal, "internal error") . Detection: rg
+  -n "codes.Internal, err status.Errorf\(. err\.Error" .go ---'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 5. Verbose error codes/messages) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- error
+- codes
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 5. Verbose error codes/messages
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

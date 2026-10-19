@@ -1,0 +1,56 @@
+id: SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-DATABASE-CONFIGURATION-AND-HARDENING
+title: Database Configuration and Hardening
+summary: 'Database Configuration and Hardening The database server''s underlying operating system should
+  be hardened by basing it on a secure baseline '
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Database_Security_Cheat_Sheet#Database Configuration and Hardening
+refs:
+- CS:Database_Security_Cheat_Sheet#Database Configuration and Hardening
+check: Database Configuration and Hardening The database server's underlying operating system should be
+  hardened by basing it on a secure baseline such as the [CIS Benchmarks](https://www.cisecuri
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Database_Security_Cheat_Sheet.md (anchor: Database Configuration
+  and Hardening) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- database
+- configuration
+- hardening
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Database_Security_Cheat_Sheet.md
+  anchor: Database Configuration and Hardening
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Database_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

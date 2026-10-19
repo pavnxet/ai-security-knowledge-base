@@ -1,0 +1,58 @@
+id: SKB-BASE-12-NO-AUDIT-LOGGING-NO-MONITORING
+title: 12. No audit logging / no monitoring
+summary: '12. No audit logging / no monitoring What: Without audit logs and monitoring, breaches go undetected.
+  Fix: Enable audit logging; ship to SIE'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. No audit logging / no monitoring
+refs:
+- BASE:12. No audit logging / no monitoring
+check: '12. No audit logging / no monitoring What: Without audit logs and monitoring, breaches go undetected.
+  Fix: Enable audit logging; ship to SIEM; alert on privilege escalations and unusual API calls. Detection:
+  check API'
+fix: 'See yesmayank/secure-coding-baseline 21-kubernetes.md (anchor: 12. No audit logging / no monitoring)
+  for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- audit
+- logging
+- monitoring
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 21-kubernetes.md
+  anchor: 12. No audit logging / no monitoring
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/21-kubernetes.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

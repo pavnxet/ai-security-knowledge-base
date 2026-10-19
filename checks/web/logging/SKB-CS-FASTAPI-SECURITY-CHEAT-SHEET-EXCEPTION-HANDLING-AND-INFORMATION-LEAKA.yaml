@@ -1,0 +1,56 @@
+id: SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-EXCEPTION-HANDLING-AND-INFORMATION-LEAKA
+title: Exception Handling and Information Leakage
+summary: Exception Handling and Information Leakage Control which error details reach clients and logs.
+  FastAPI supports [custom exception handlers](
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:FastAPI_Security_Cheat_Sheet#Exception Handling and Information Leaka
+refs:
+- CS:FastAPI_Security_Cheat_Sheet#Exception Handling and Information Leaka
+check: Exception Handling and Information Leakage Control which error details reach clients and logs.
+  FastAPI supports [custom exception handlers](https://fastapi.tia
+fix: 'See OWASP/CheatSheetSeries cheatsheets/FastAPI_Security_Cheat_Sheet.md (anchor: Exception Handling
+  and Information Leakage) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- exception
+- handling
+- information
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  anchor: Exception Handling and Information Leakage
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

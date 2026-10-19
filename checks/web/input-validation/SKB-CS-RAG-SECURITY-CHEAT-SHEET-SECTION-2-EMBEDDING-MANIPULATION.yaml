@@ -1,0 +1,56 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-2-EMBEDDING-MANIPULATION
+title: 'Section 2: Embedding Manipulation'
+summary: 'Section 2: Embedding Manipulation Embeddings are numerical representations of text used for
+  similarity search. Adversarial inputs can be cra'
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 2: Embedding Manipulation'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 2: Embedding Manipulation'
+check: 'Section 2: Embedding Manipulation Embeddings are numerical representations of text used for similarity
+  search. Adversarial inputs can be crafted to produce em'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 2: Embedding
+  Manipulation) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- section
+- embedding
+- manipulation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 2: Embedding Manipulation'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

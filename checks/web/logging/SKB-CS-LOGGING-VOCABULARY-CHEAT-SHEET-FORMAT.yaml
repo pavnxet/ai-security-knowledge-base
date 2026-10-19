@@ -1,0 +1,53 @@
+id: SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-FORMAT
+title: Format
+summary: 'Format _NOTE: All dates should be logged in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+  format WITH UTC offset to ensure maximum port'
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Vocabulary_Cheat_Sheet#Format
+refs:
+- CS:Logging_Vocabulary_Cheat_Sheet#Format
+check: 'Format _NOTE: All dates should be logged in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+  format WITH UTC offset to ensure maximum portability_'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Vocabulary_Cheat_Sheet.md (anchor: Format) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- format
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  anchor: Format
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

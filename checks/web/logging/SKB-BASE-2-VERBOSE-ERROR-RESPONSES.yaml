@@ -1,0 +1,57 @@
+id: SKB-BASE-2-VERBOSE-ERROR-RESPONSES
+title: 2. Verbose error responses
+summary: '2. Verbose error responses What: Returning err.to_string() or format!("{err:?}") to the client
+  leaks internals. Fix: Log full error server-s'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. Verbose error responses
+refs:
+- BASE:2. Verbose error responses
+check: '2. Verbose error responses What: Returning err.to_string() or format!("{err:?}") to the client
+  leaks internals. Fix: Log full error server-side ( tracing::error! ); return generic messages. Detection:
+  rg -n "to_string\(\) format!\(\"\{. :\?\}\"'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 2. Verbose error responses) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- error
+- responses
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 2. Verbose error responses
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

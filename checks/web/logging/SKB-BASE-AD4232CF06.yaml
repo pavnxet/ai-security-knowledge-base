@@ -1,0 +1,54 @@
+id: SKB-BASE-AD4232CF06
+title: What it is
+summary: What it is AI often produces a login route that "looks right" but doesn't actually verify credentials,
+  or compares passwords in plaintext.
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What it is
+refs:
+- BASE:What it is
+check: What it is AI often produces a login route that "looks right" but doesn't actually verify credentials,
+  or compares passwords in plaintext.
+fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: What it is) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- what
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 28-vibe-coded-auth-authz.md
+  anchor: What it is
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/28-vibe-coded-auth-authz.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-COMMON-EXAMPLES-OF-BUSINESS-LOGIC-FLA
+title: Common Examples of Business Logic Flaws
+summary: Common Examples of Business Logic Flaws Concrete examples help developers recognize the pattern
+  in their own code. The list below is not exh
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Business_Logic_Security_Cheat_Sheet#Common Examples of Business Logic Flaws
+refs:
+- CS:Business_Logic_Security_Cheat_Sheet#Common Examples of Business Logic Flaws
+check: Common Examples of Business Logic Flaws Concrete examples help developers recognize the pattern
+  in their own code. The list below is not exhaustive. Price and
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Common Examples
+  of Business Logic Flaws) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- common
+- examples
+- business
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Business_Logic_Security_Cheat_Sheet.md
+  anchor: Common Examples of Business Logic Flaws
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Business_Logic_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-CS-ERROR-HANDLING-CHEAT-SHEET-OBJECTIVE
+title: Objective
+summary: Objective The article shows how to configure a global error handler as part of your application's
+  runtime configuration. In some cases, it m
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Error_Handling_Cheat_Sheet#Objective
+refs:
+- CS:Error_Handling_Cheat_Sheet#Objective
+check: Objective The article shows how to configure a global error handler as part of your application's
+  runtime configuration. In some cases, it may be more efficient to define this error handler as part
+  of your code. The outcome being that when an unexpected error occurs then a generic response is returned
+  by the
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Error_Handling_Cheat_Sheet.md (anchor: Objective) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- objective
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Error_Handling_Cheat_Sheet.md
+  anchor: Objective
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Error_Handling_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

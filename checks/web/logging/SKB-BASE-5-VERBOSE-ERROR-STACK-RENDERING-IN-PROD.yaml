@@ -1,0 +1,58 @@
+id: SKB-BASE-5-VERBOSE-ERROR-STACK-RENDERING-IN-PROD
+title: 5. Verbose error/stack rendering in prod
+summary: '5. Verbose error/stack rendering in prod What: ErrorBoundary rendering err.stack to the UI leaks
+  source paths. Fix: Show generic error UI; l'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Verbose error/stack rendering in prod
+refs:
+- BASE:5. Verbose error/stack rendering in prod
+check: '5. Verbose error/stack rendering in prod What: ErrorBoundary rendering err.stack to the UI leaks
+  source paths. Fix: Show generic error UI; log to Sentry server-side. Detection: rg -n "err\.stack error\.stack
+  \.stack" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 5. Verbose error/stack rendering in
+  prod) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- error
+- stack
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 17-react-spa.md
+  anchor: 5. Verbose error/stack rendering in prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/17-react-spa.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

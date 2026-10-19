@@ -1,0 +1,57 @@
+id: SKB-BASE-6-VERBOSE-LOGGING-QUERY-LOGGING-WITH
+title: 6. Verbose logging / query logging with PII
+summary: '6. Verbose logging / query logging with PII What: operationProfiling.mode: all logs every operation
+  including sensitive fields. Fix: Profile'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- 'BASE:6. Verbose logging / query logging with '
+refs:
+- 'BASE:6. Verbose logging / query logging with '
+check: '6. Verbose logging / query logging with PII What: operationProfiling.mode: all logs every operation
+  including sensitive fields. Fix: Profile only when needed; avoid logging full documents in prod; sh'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: 6. Verbose logging / query logging with
+  PII) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- logging
+- query
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: 6. Verbose logging / query logging with PII
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,54 @@
+id: SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-LANGUAGE-FRAMEWORK-SPECIFIC-SOLUTIONS
+title: Language & Framework specific solutions
+summary: Language & Framework specific solutions Spring MVC Allow-listing See [Spring's model design guidance](https://docs.spring.io/spring-framewor
+platforms:
+- web
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mass_Assignment_Cheat_Sheet#Language & Framework specific solutions
+refs:
+- CS:Mass_Assignment_Cheat_Sheet#Language & Framework specific solutions
+check: Language & Framework specific solutions Spring MVC Allow-listing See [Spring's model design guidance](https://docs.spring.io/spring-framework/reference/web/web
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mass_Assignment_Cheat_Sheet.md (anchor: Language & Framework
+  specific solutions) for remediation.'
+detect:
+  grep:
+  - req.body
+  - request.data
+  - params[
+  files:
+  - '**/routes/**'
+  - '**/controllers/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- input-validation
+- language
+- framework
+- specific
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mass_Assignment_Cheat_Sheet.md
+  anchor: Language & Framework specific solutions
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mass_Assignment_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

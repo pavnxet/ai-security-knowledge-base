@@ -1,0 +1,57 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-WINDOW-CONFIRM-PROTECTION
+title: window.confirm() Protection
+summary: window.confirm() Protection The use of X-Frame-Options or a frame-breaking script is a more fail-safe
+  method of clickjacking protection. How
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Clickjacking_Defense_Cheat_Sheet#window.confirm() Protection
+refs:
+- CS:Clickjacking_Defense_Cheat_Sheet#window.confirm() Protection
+check: window.confirm() Protection The use of X-Frame-Options or a frame-breaking script is a more fail-safe
+  method of clickjacking protection. However, in scenarios where content must be frameabl
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: window.confirm()
+  Protection) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- window
+- confirm
+- protection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: window.confirm() Protection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

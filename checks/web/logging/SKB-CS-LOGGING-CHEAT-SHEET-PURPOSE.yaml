@@ -1,0 +1,55 @@
+id: SKB-CS-LOGGING-CHEAT-SHEET-PURPOSE
+title: Purpose
+summary: Purpose Application logging should always be included for security events. Application logs are
+  invaluable data for both security and operat
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Cheat_Sheet#Purpose
+refs:
+- CS:Logging_Cheat_Sheet#Purpose
+check: Purpose Application logging should always be included for security events. Application logs are
+  invaluable data for both security and operational use cases. Operational use cases - General debugging
+  - Establishing baselines - Business process monitoring e.g. sales process abandonment, transactions,
+  connection
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Cheat_Sheet.md (anchor: Purpose) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- purpose
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Cheat_Sheet.md
+  anchor: Purpose
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

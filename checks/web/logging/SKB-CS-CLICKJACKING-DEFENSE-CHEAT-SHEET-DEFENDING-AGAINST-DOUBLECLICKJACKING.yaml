@@ -1,0 +1,57 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-AGAINST-DOUBLECLICKJACKING
+title: Defending against DoubleClickjacking
+summary: Defending against DoubleClickjacking [DoubleClickjacking](https://evil.blog/2024/12/doubleclickjacking-what.html)
+  tricks a user into activat
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending against DoubleClickjacking
+refs:
+- CS:Clickjacking_Defense_Cheat_Sheet#Defending against DoubleClickjacking
+check: Defending against DoubleClickjacking [DoubleClickjacking](https://evil.blog/2024/12/doubleclickjacking-what.html)
+  tricks a user into activating a sensitive cont
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: Defending against
+  DoubleClickjacking) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- defending
+- against
+- doubleclickjacking
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: Defending against DoubleClickjacking
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,58 @@
+id: SKB-BASE-4-NO-DOCKERIGNORE-COPYING-WHOLE-RE
+title: 4. No `.dockerignore` / copying whole repo
+summary: '4. No .dockerignore / copying whole repo What: COPY . /app includes .git , node_modules , coverage
+  , .env , test fixtures — bloating and lea'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. No `.dockerignore` / copying whole re
+refs:
+- BASE:4. No `.dockerignore` / copying whole re
+check: '4. No .dockerignore / copying whole repo What: COPY . /app includes .git , node_modules , coverage
+  , .env , test fixtures — bloating and leaking. Fix: Use a .dockerignore excluding .git , node_modules
+  , .env'
+fix: 'See yesmayank/secure-coding-baseline 20-docker.md (anchor: 4. No `.dockerignore` / copying whole
+  repo) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- dockerignore
+- copying
+- whole
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 20-docker.md
+  anchor: 4. No `.dockerignore` / copying whole repo
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/20-docker.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-5-VERBOSE-ASSET-SOURCE-EXPOSURE
+title: 5. Verbose asset/source exposure
+summary: '5. Verbose asset/source exposure What: Shipping coverage/ , tmp/ , log/ , or .git under the
+  docroot. Fix: Keep these outside public/ ; nginx'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Verbose asset/source exposure
+refs:
+- BASE:5. Verbose asset/source exposure
+check: '5. Verbose asset/source exposure What: Shipping coverage/ , tmp/ , log/ , or .git under the docroot.
+  Fix: Keep these outside public/ ; nginx deny dotfiles. Detection: ls -la public/ ---'
+fix: 'See yesmayank/secure-coding-baseline 10-rails.md (anchor: 5. Verbose asset/source exposure) for
+  remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- verbose
+- asset
+- source
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 10-rails.md
+  anchor: 5. Verbose asset/source exposure
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/10-rails.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

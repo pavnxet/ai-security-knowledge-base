@@ -1,0 +1,56 @@
+id: SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-SYSTEM-EVENTS-SYS
+title: System Events [SYS]
+summary: System Events [SYS] sys_startup:[userid] Description When a system is first started it can be
+  valuable to log the startup, even if the syste
+platforms:
+- web
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Vocabulary_Cheat_Sheet#System Events [SYS]
+refs:
+- CS:Logging_Vocabulary_Cheat_Sheet#System Events [SYS]
+check: 'System Events [SYS] sys_startup:[userid] Description When a system is first started it can be
+  valuable to log the startup, even if the system is serverless or a container, especially if possible
+  to log the user that initiated the system. Level: WARN'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Vocabulary_Cheat_Sheet.md (anchor: System Events
+  [SYS]) for remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- system
+- events
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  anchor: System Events [SYS]
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Vocabulary_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
