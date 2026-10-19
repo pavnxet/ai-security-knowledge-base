@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1321
+cwe_source: mapped
 owasp:
 - CS:Prototype_Pollution_Prevention_Cheat_Sheet#References
 refs:

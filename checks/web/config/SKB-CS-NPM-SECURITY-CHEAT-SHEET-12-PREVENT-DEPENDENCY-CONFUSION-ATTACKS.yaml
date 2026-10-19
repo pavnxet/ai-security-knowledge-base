@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1357
+cwe_source: mapped
 owasp:
 - CS:NPM_Security_Cheat_Sheet#12) Prevent dependency confusion attacks
 refs:
 - CS:NPM_Security_Cheat_Sheet#12) Prevent dependency confusion attacks
 check: 12) Prevent dependency confusion attacks A dependency confusion attack occurs when an attacker
-  publishes a malicious package on the public npm registry using th
+  publishes a malicious package on th
 fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 12) Prevent dependency
   confusion attacks) for remediation.'
 detect:

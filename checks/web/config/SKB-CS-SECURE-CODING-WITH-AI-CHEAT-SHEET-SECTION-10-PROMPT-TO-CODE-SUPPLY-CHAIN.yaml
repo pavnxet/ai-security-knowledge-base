@@ -12,8 +12,9 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1357
+cwe_source: mapped
 owasp:
 - 'CS:Secure_Coding_with_AI_Cheat_Sheet#Section 10: Prompt-to-Code Supply Chain '
 refs:
