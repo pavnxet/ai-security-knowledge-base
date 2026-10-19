@@ -1,0 +1,59 @@
+id: SKB-BASE-5-SWAGGER-OPENAPI-EXPOSED-IN-PROD
+title: 5. Swagger/OpenAPI exposed in prod
+summary: '5. Swagger/OpenAPI exposed in prod What: /swagger-ui.html and /v3/api-docs leak route/schema
+  inventory. Fix: Disable or gate behind auth in '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Swagger/OpenAPI exposed in prod
+refs:
+- BASE:5. Swagger/OpenAPI exposed in prod
+check: '5. Swagger/OpenAPI exposed in prod What: /swagger-ui.html and /v3/api-docs leak route/schema inventory.
+  Fix: Disable or gate behind auth in prod. Detection: rg -n "springdoc swagger" pom.xml build.gradle
+  src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 5. Swagger/OpenAPI exposed in prod)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- swagger
+- openapi
+- exposed
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 5. Swagger/OpenAPI exposed in prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

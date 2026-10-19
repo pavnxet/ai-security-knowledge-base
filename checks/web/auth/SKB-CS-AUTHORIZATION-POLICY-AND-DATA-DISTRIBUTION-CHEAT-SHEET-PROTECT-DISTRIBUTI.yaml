@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-PROTECT-DISTRIBUTI
+title: Protect Distribution and Administration
+summary: Protect Distribution and Administration Protect network-exposed decision APIs and the APIs that
+  read or modify policy and data. Authenticate
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Policy_And_Data_Distribution_Cheat_Sheet#Protect Distribution and Administration
+refs:
+- CS:Authorization_Policy_And_Data_Distribution_Cheat_Sheet#Protect Distribution and Administration
+check: Protect Distribution and Administration Protect network-exposed decision APIs and the APIs that
+  read or modify policy and data. A
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Policy_And_Data_Distribution_Cheat_Sheet.md
+  (anchor: Protect Distribution and Administration) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- protect
+- distribution
+- administration
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Policy_And_Data_Distribution_Cheat_Sheet.md
+  anchor: Protect Distribution and Administration
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Policy_And_Data_Distribution_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

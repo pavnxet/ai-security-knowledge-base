@@ -1,0 +1,57 @@
+id: SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-3-AGENT-OPERATOR-SCRE
+title: 'Section 3: Agent Operator Screening'
+summary: 'Section 3: Agent Operator Screening Identify the customer and organization responsible for operating
+  the agent. Determine which parties requ'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 3: Agent Operator Screening'
+refs:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 3: Agent Operator Screening'
+check: 'Section 3: Agent Operator Screening Identify the customer and organization responsible for operating
+  the agent. Determine which parties require sanctions screening and due diligence under'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md (anchor: Section
+  3: Agent Operator Screening) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- section
+- agent
+- operator
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  anchor: 'Section 3: Agent Operator Screening'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

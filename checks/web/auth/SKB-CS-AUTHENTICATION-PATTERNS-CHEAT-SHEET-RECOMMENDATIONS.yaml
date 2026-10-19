@@ -1,0 +1,56 @@
+id: SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-RECOMMENDATIONS
+title: Recommendations
+summary: Recommendations - Authenticate external actors at the edge. Centralize external authentication
+  in a gateway or ingress proxy, as described i
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authentication_Patterns_Cheat_Sheet#Recommendations
+refs:
+- CS:Authentication_Patterns_Cheat_Sheet#Recommendations
+check: Recommendations - Authenticate external actors at the edge. Centralize external authentication
+  in a gateway or ingress proxy, as described in [NIST SP 800-207](https://csrc.nist.gov/pubs/sp/800/207/final)
+  and [NIST SP 800-204](https://nvlpubs.nist.go
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authentication_Patterns_Cheat_Sheet.md (anchor: Recommendations)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  anchor: Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

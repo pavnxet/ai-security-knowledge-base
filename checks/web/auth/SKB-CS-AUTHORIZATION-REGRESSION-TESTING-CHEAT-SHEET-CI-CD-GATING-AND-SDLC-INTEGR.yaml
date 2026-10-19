@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-CI-CD-GATING-AND-SDLC-INTEGR
+title: CI/CD Gating and SDLC Integration
+summary: CI/CD Gating and SDLC Integration The value of an authorization regression suite is only realized
+  if it prevents vulnerable code from mergin
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#CI/CD Gating and SDLC Integration
+refs:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#CI/CD Gating and SDLC Integration
+check: CI/CD Gating and SDLC Integration The value of an authorization regression suite is only realized
+  if it prevents vulnerable code from merging. The [OWASP CI/CD Security Cheat Sheet](CI_CD_Se
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md (anchor:
+  CI/CD Gating and SDLC Integration) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- gating
+- sdlc
+- integration
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  anchor: CI/CD Gating and SDLC Integration
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

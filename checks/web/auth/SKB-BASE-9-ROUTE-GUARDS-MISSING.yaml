@@ -1,0 +1,58 @@
+id: SKB-BASE-9-ROUTE-GUARDS-MISSING
+title: 9. Route guards missing
+summary: '9. Route guards missing What: Protected views rendered before auth check completes. Fix: beforeEach
+  / defineMiddleware guards; default-deny.'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. Route guards missing
+refs:
+- BASE:9. Route guards missing
+check: '9. Route guards missing What: Protected views rendered before auth check completes. Fix: beforeEach
+  / defineMiddleware guards; default-deny. Detection: rg -n "beforeEach router\.beforeEach defineNuxtRouteMiddleware
+  middleware" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 19-vue-nuxt.md (anchor: 9. Route guards missing) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- route
+- guards
+- missing
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 9. Route guards missing
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

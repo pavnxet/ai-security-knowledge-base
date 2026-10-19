@@ -1,0 +1,57 @@
+id: SKB-BASE-8-BOLA-IDOR
+title: 8. BOLA / IDOR
+summary: '8. BOLA / IDOR What: Model::find($id) without ownership check. Fix: Model::where(''user_id'',
+  Auth::id())- findOrFail($id) . Detection: rg -n '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- BASE:8. BOLA / IDOR
+refs:
+- BASE:8. BOLA / IDOR
+check: '8. BOLA / IDOR What: Model::find($id) without ownership check. Fix: Model::where(''user_id'',
+  Auth::id())- findOrFail($id) . Detection: rg -n "::find\( findOrFail\(" app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 8. BOLA / IDOR) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- bola
+- idor
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 8. BOLA / IDOR
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

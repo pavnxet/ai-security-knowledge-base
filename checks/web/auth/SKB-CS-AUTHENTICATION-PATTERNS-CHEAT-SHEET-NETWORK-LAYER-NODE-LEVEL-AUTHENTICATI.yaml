@@ -1,0 +1,56 @@
+id: SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-NETWORK-LAYER-NODE-LEVEL-AUTHENTICATI
+title: Network-Layer (Node-Level) Authentication
+summary: Network-Layer (Node-Level) Authentication This pattern authenticates peers at the [network layer](https://en.wikipedia.org/wiki/Network_laye
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authentication_Patterns_Cheat_Sheet#Network-Layer (Node-Level) Authenticatio
+refs:
+- CS:Authentication_Patterns_Cheat_Sheet#Network-Layer (Node-Level) Authenticatio
+check: Network-Layer (Node-Level) Authentication This pattern authenticates peers at the [network layer](https://en.wikipedia.org/wiki/Network_layer)
+  (layer 3), inside the operating system kernel,
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authentication_Patterns_Cheat_Sheet.md (anchor: Network-Layer
+  (Node-Level) Authentication) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- network
+- layer
+- node
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  anchor: Network-Layer (Node-Level) Authentication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

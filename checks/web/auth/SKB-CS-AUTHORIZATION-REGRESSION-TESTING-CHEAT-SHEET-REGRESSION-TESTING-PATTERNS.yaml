@@ -1,0 +1,58 @@
+id: SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-REGRESSION-TESTING-PATTERNS
+title: Regression Testing Patterns
+summary: Regression Testing Patterns Automated tests should specifically target the ways authorization
+  usually degrades over time. Implement the foll
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#Regression Testing Patterns
+refs:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#Regression Testing Patterns
+check: Regression Testing Patterns Automated tests should specifically target the ways authorization usually
+  degrades over time. Implement the following test patterns in your regression suite. Hori
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md (anchor:
+  Regression Testing Patterns) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- regression
+- testing
+- patterns
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  anchor: Regression Testing Patterns
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-9-BOLA-IDOR
+title: 9. BOLA / IDOR
+summary: '9. BOLA / IDOR What: @PathVariable Long id used without ownership check. Fix: Verify ownership
+  in the service; use @PreAuthorize with method'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- BASE:9. BOLA / IDOR
+refs:
+- BASE:9. BOLA / IDOR
+check: '9. BOLA / IDOR What: @PathVariable Long id used without ownership check. Fix: Verify ownership
+  in the service; use @PreAuthorize with method security. Detection: rg -n "@PathVariable. id" src/ ---'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 9. BOLA / IDOR) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- bola
+- idor
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 9. BOLA / IDOR
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

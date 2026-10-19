@@ -1,0 +1,58 @@
+id: SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-GATEWAY-AND-PROXY-ENFORCEMENT
+title: Gateway and Proxy Enforcement
+summary: Gateway and Proxy Enforcement A gateway can enforce coarse access rules before forwarding a request.
+  A service-local proxy can perform simil
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Patterns_Cheat_Sheet#Gateway and Proxy Enforcement
+refs:
+- CS:Authorization_Patterns_Cheat_Sheet#Gateway and Proxy Enforcement
+check: Gateway and Proxy Enforcement A gateway can enforce coarse access rules before forwarding a request.
+  A service-local proxy can perform similar checks on calls to one service. [Envoy's external authorization
+  filter](http
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Patterns_Cheat_Sheet.md (anchor: Gateway and
+  Proxy Enforcement) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- gateway
+- proxy
+- enforcement
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Patterns_Cheat_Sheet.md
+  anchor: Gateway and Proxy Enforcement
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Patterns_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-A1383BACF7
+title: Checklist
+summary: Checklist - [ ] Non-root USER in Dockerfile - [ ] Base image pinned to digest/minor tag - [ ]
+  No secrets in image layers/env - [ ] .dockerig
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] Non-root USER in Dockerfile - [ ] Base image pinned to digest/minor tag - [ ] No
+  secrets in image layers/env - [ ] .dockerignore excludes .git , node_modules , .env , logs - [ ] No
+  --privileged ; caps dropped; no-new-privileges - [ ] Docker socket never mounted into untrusted containers;
+  daemon not on 0.0.0.0 unauthentica
+fix: 'See yesmayank/secure-coding-baseline 20-docker.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 20-docker.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/20-docker.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

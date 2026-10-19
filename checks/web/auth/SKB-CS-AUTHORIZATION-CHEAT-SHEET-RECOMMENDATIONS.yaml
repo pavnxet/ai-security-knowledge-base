@@ -1,0 +1,56 @@
+id: SKB-CS-AUTHORIZATION-CHEAT-SHEET-RECOMMENDATIONS
+title: Recommendations
+summary: Recommendations Enforce Least Privileges As a security concept, Least Privileges refers to the
+  principle of assigning users only the minimum
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Cheat_Sheet#Recommendations
+refs:
+- CS:Authorization_Cheat_Sheet#Recommendations
+check: Recommendations Enforce Least Privileges As a security concept, Least Privileges refers to the
+  principle of assigning users only the minimum privileges necessary to complete their job. Although perhaps
+  most commonly applied in system administration, this principle has relevance t
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Cheat_Sheet.md (anchor: Recommendations) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Cheat_Sheet.md
+  anchor: Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

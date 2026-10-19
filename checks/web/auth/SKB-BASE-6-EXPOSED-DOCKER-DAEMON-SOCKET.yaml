@@ -1,0 +1,59 @@
+id: SKB-BASE-6-EXPOSED-DOCKER-DAEMON-SOCKET
+title: 6. Exposed Docker daemon socket
+summary: '6. Exposed Docker daemon socket What: Mounting /var/run/docker.sock into a container gives that
+  container root on the host. Binding the daem'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. Exposed Docker daemon socket
+refs:
+- BASE:6. Exposed Docker daemon socket
+check: '6. Exposed Docker daemon socket What: Mounting /var/run/docker.sock into a container gives that
+  container root on the host. Binding the daemon to 0.0.0.0 without TLS exposes it to the network. Fix:
+  Never mount the socket into untrusted containers; b'
+fix: 'See yesmayank/secure-coding-baseline 20-docker.md (anchor: 6. Exposed Docker daemon socket) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- exposed
+- docker
+- daemon
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 20-docker.md
+  anchor: 6. Exposed Docker daemon socket
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/20-docker.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

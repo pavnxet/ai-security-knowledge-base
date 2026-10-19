@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHENTICATION-CHEAT-SHEET-USE-OF-AUTHENTICATION-PROTOCOLS-THAT-REQ
+title: Use of authentication protocols that require no password
+summary: 'Use of authentication protocols that require no password While authentication through a combination
+  of username, password, and multi-factor '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authentication_Cheat_Sheet#Use of authentication protocols that req
+refs:
+- CS:Authentication_Cheat_Sheet#Use of authentication protocols that req
+check: Use of authentication protocols that require no password While authentication through a combination
+  of username, password, and multi-factor authentication is
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authentication_Cheat_Sheet.md (anchor: Use of authentication
+  protocols that require no password) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- authentication
+- protocols
+- that
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authentication_Cheat_Sheet.md
+  anchor: Use of authentication protocols that require no password
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authentication_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

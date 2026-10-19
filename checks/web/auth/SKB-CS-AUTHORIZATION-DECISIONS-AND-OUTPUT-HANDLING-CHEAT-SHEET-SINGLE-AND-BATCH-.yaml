@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-SINGLE-AND-BATCH-
+title: Single and Batch Decisions
+summary: Single and Batch Decisions Bind each decision to the authenticated subject, action, resource,
+  tenant, and relevant context. [AuthZEN's evalu
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Decisions_And_Output_Handling_Cheat_Sheet#Single and Batch Decisions
+refs:
+- CS:Authorization_Decisions_And_Output_Handling_Cheat_Sheet#Single and Batch Decisions
+check: Single and Batch Decisions Bind each decision to the authenticated subject, action, resource, tenant,
+  and relevant context. [AuthZEN's evaluation interfaces](https://openid.net/specs/authori
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Decisions_And_Output_Handling_Cheat_Sheet.md
+  (anchor: Single and Batch Decisions) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- single
+- batch
+- decisions
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Decisions_And_Output_Handling_Cheat_Sheet.md
+  anchor: Single and Batch Decisions
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Decisions_And_Output_Handling_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

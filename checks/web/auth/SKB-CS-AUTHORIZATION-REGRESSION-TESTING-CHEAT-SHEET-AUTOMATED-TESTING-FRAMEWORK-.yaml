@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-AUTOMATED-TESTING-FRAMEWORK-
+title: Automated Testing Framework Integration
+summary: Automated Testing Framework Integration Authorization tests must live alongside functional tests
+  in the developer's standard toolkit, follow
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#Automated Testing Framework Integration
+refs:
+- CS:Authorization_Regression_Testing_Cheat_Sheet#Automated Testing Framework Integration
+check: Automated Testing Framework Integration Authorization tests must live alongside functional tests
+  in the developer's standard toolkit, following the guidance in
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md (anchor:
+  Automated Testing Framework Integration) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- automated
+- testing
+- framework
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  anchor: Automated Testing Framework Integration
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

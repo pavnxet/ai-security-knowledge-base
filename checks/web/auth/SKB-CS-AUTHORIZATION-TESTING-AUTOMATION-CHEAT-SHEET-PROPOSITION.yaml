@@ -1,0 +1,56 @@
+id: SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-PROPOSITION
+title: Proposition
+summary: Proposition Preparing to automate the authorization matrix Before we start to automate a test
+  of the authorization matrix, we will need to d
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authorization_Testing_Automation_Cheat_Sheet#Proposition
+refs:
+- CS:Authorization_Testing_Automation_Cheat_Sheet#Proposition
+check: 'Proposition Preparing to automate the authorization matrix Before we start to automate a test
+  of the authorization matrix, we will need to do the following: 1. Formalize the authorization matrix
+  in a pivot format file, which will allow you to: 1. Ea'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.md (anchor:
+  Proposition) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- proposition
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.md
+  anchor: Proposition
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

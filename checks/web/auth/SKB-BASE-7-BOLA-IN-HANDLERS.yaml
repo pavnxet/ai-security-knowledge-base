@@ -1,0 +1,56 @@
+id: SKB-BASE-7-BOLA-IN-HANDLERS
+title: 7. BOLA in handlers
+summary: '7. BOLA in handlers What: GetResource(id) without ownership check. Fix: Verify caller (from
+  metadata/context) owns resource. Detection: revi'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. BOLA in handlers
+refs:
+- BASE:7. BOLA in handlers
+check: '7. BOLA in handlers What: GetResource(id) without ownership check. Fix: Verify caller (from metadata/context)
+  owns resource. Detection: review handler methods for ID params without authz. ---'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 7. BOLA in handlers) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- bola
+- handlers
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 7. BOLA in handlers
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

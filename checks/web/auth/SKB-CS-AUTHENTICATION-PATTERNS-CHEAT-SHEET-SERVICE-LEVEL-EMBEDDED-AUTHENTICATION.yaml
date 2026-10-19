@@ -1,0 +1,57 @@
+id: SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-SERVICE-LEVEL-EMBEDDED-AUTHENTICATION
+title: Service-Level Embedded Authentication
+summary: 'Service-Level Embedded Authentication In this pattern, each service handles primary authentication
+  itself: it manages identities and credent'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Authentication_Patterns_Cheat_Sheet#Service-Level Embedded Authentication
+refs:
+- CS:Authentication_Patterns_Cheat_Sheet#Service-Level Embedded Authentication
+check: 'Service-Level Embedded Authentication In this pattern, each service handles primary authentication
+  itself: it manages identities and credentials, verifies them, and implements the authentica'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Authentication_Patterns_Cheat_Sheet.md (anchor: Service-Level
+  Embedded Authentication) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- service
+- level
+- embedded
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  anchor: Service-Level Embedded Authentication
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Authentication_Patterns_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
