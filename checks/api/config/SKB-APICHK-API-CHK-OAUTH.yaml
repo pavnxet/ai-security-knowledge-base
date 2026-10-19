@@ -1,0 +1,57 @@
+id: SKB-APICHK-API-CHK-OAUTH
+title: OAuth
+summary: OAuth - [ ] Always validate redirect_uri server-side to allow only safelisted URLs. - [ ] Always
+  try to exchange for code and not tokens (do
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API-CHK:OAuth
+refs:
+- API-CHK:OAuth
+check: OAuth - [ ] Always validate redirect_uri server-side to allow only safelisted URLs. - [ ] Always
+  try to exchange for code and not tokens (don't allow response_type=token ). - [ ] Use state parameter
+  with a random hash to prevent CSRF on the OAuth authorization process. - [ ] Define the default scope,
+  and validate scope pa
+fix: 'See shieldfy/API-Security-Checklist README.md (anchor: OAuth) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- oauth
+sources:
+- repo: shieldfy/API-Security-Checklist
+  path: README.md
+  anchor: OAuth
+  commit: bd7a7d5d39cd807dec640046c0ada7c3f07663b5
+  url: https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

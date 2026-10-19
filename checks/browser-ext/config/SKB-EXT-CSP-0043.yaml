@@ -1,0 +1,57 @@
+id: SKB-EXT-CSP-0043
+title: Extension includes an explicit CSP and no remote code
+summary: MV3 requires a content security policy; remote code is banned.
+platforms:
+- browser-ext
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 50
+cwe:
+- CWE-829
+owasp: []
+check: Confirm content_security_policy is set (e.g. default-src 'self') and no eval/remote script loads
+  are allowed.
+fix: Bundle all code; remove eval; keep the restrictive MV3 CSP.
+detect:
+  grep:
+  - content_security_policy
+  - eval(
+  - <script src="http
+  files:
+  - '**/*.js'
+  - '**/manifest.json'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- extension
+- csp
+sources:
+- repo: 'Chrome: Stay secure'
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/develop/security-privacy/stay-secure
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+- repo: Chrome MV3 CSP
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/reference/manifest/content-security-policy
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: medium
+extraction: authored
+verified: true
+corroboration: 2
+last_verified: '2026-10-19'

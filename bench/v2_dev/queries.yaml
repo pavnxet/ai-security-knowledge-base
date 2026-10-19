@@ -1,0 +1,124 @@
+version: 1
+frozen: true
+set: v2_dev
+queries:
+- q: how do I secure a Cloudflare Worker endpoint
+  expect_refs:
+  - CWE-306
+- q: my serverless function has no authentication
+  expect_refs:
+  - CWE-306
+- q: are worker secrets safe in environment bindings
+  expect_refs:
+  - CWE-798
+- q: how do I rate limit a serverless API
+  expect_refs:
+  - CWE-770
+- q: how do I verify a telegram webhook secret
+  expect_refs:
+  - CWE-345
+- q: can someone steal my telegram bot token
+  expect_refs:
+  - CWE-798
+- q: how do I check telegram miniapp initData server side
+  expect_refs:
+  - CWE-345
+- q: how do I stop telegram admin commands being abused
+  expect_refs:
+  - CWE-862
+- q: how do I stop prompt injection in a RAG app
+  expect_refs:
+  - LLM01:2025
+- q: my agent can call tools, how do I limit it
+  expect_refs:
+  - LLM06:2025
+- q: is it safe to render model output as HTML
+  expect_refs:
+  - LLM05:2025
+- q: how do I stop the model leaking the system prompt
+  expect_refs:
+  - LLM07:2025
+- q: how do I cap token spend on an LLM app
+  expect_refs:
+  - LLM10:2025
+- q: how do I stop broken object level authorization
+  expect_refs:
+  - API1:2023
+- q: how do I stop the api returning too much data
+  expect_refs:
+  - API3:2023
+- q: how do I handle api versioning and deprecated routes
+  expect_refs:
+  - API9:2023
+- q: how do I stop SSRF in an api that fetches URLs
+  expect_refs:
+  - API7:2023
+- q: where should an android app store tokens
+  expect_refs:
+  - MASVS-STORAGE-1
+- q: how do I stop cleartext traffic on android
+  expect_refs:
+  - MASVS-NETWORK-1
+- q: is my ios app transport security too lax
+  expect_refs:
+  - MASVS-NETWORK-1
+- q: how do I detect a rooted android device
+  expect_refs:
+  - MASVS-RESILIENCE-1
+- q: how do I stop reentrancy in solidity
+  expect_refs:
+  - CWE-841
+- q: is my price oracle manipulable
+  expect_refs:
+  - CWE-345
+- q: how do I avoid integer overflow in solidity
+  expect_refs:
+  - CWE-190
+- q: how do I stop secrets leaking in github actions
+  expect_refs:
+  - CWE-532
+- q: how do I run a container as non root
+  expect_refs:
+  - CWE-250
+- q: how do I scan a docker image for vulnerabilities
+  expect_refs:
+  - CWE-1104
+- q: how do I stop a privileged kubernetes pod
+  expect_refs:
+  - CWE-250
+- q: how do I prevent sql injection
+  expect_refs:
+  - CWE-89
+- q: how do I prevent cross site scripting
+  expect_refs:
+  - CWE-79
+- q: how do I stop csrf on my forms
+  expect_refs:
+  - CWE-352
+- q: how do I stop open redirects
+  expect_refs:
+  - CWE-601
+- q: how do I stop insecure deserialization
+  expect_refs:
+  - CWE-502
+- q: how do I stop path traversal in a file download
+  expect_refs:
+  - CWE-22
+- q: how do I validate an uploaded file
+  expect_refs:
+  - CWE-434
+- q: how do I stop xml external entity attacks
+  expect_refs:
+  - CWE-611
+- q: how do I prevent clickjacking
+  expect_refs:
+  - CWE-1021
+- q: how do I keep secrets out of git
+  expect_refs:
+  - CWE-798
+- q: how do I stop mass assignment
+  expect_refs:
+  - CWE-915
+- q: how do I add security headers
+  expect_refs:
+  - Top10:A02:2025

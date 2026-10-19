@@ -1,0 +1,58 @@
+id: SKB-APICHK-API-CHK-GRAPHQL-SPECIFIC-SECURITY
+title: GraphQL-Specific Security
+summary: GraphQL-Specific Security - [ ] Disable introspection in production environments. - [ ] Implement
+  query depth limiting to prevent nested que
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API-CHK:GraphQL-Specific Security
+refs:
+- API-CHK:GraphQL-Specific Security
+check: GraphQL-Specific Security - [ ] Disable introspection in production environments. - [ ] Implement
+  query depth limiting to prevent nested query attacks. - [ ] Use query cost analysis to prevent resource
+  exhaustion. - [ ] Whitelist allowed querie
+fix: 'See shieldfy/API-Security-Checklist README.md (anchor: GraphQL-Specific Security) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- graphql
+- specific
+- security
+sources:
+- repo: shieldfy/API-Security-Checklist
+  path: README.md
+  anchor: GraphQL-Specific Security
+  commit: bd7a7d5d39cd807dec640046c0ada7c3f07663b5
+  url: https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

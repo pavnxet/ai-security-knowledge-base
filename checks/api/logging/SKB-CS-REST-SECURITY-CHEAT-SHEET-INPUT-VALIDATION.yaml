@@ -1,0 +1,56 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-INPUT-VALIDATION
+title: Input validation
+summary: 'Input validation - Do not trust input parameters/objects. - Validate input: length / range /
+  format and type. - Achieve an implicit input va'
+platforms:
+- api
+stacks:
+- any
+domain: logging
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#Input validation
+refs:
+- CS:REST_Security_Cheat_Sheet#Input validation
+check: 'Input validation - Do not trust input parameters/objects. - Validate input: length / range / format
+  and type. - Achieve an implicit input validation by using strong types like numbers, booleans, dates,
+  times or fixed data ranges in API parameters. - Constrain string inputs with r'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: Input validation) for
+  remediation.'
+detect:
+  grep:
+  - logger.
+  - console.log
+  - audit
+  files:
+  - '**/middleware/**'
+  - '**/*.js'
+  - '**/*.py'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- logging
+- input
+- validation
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: Input validation
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

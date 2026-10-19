@@ -1,0 +1,57 @@
+id: SKB-APICHK-API-CHK-OUTPUT
+title: Output
+summary: 'Output - [ ] Send X-Content-Type-Options: nosniff header. - [ ] Send X-Frame-Options: deny header.
+  - [ ] Send Content-Security-Policy: defau'
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API-CHK:Output
+refs:
+- API-CHK:Output
+check: 'Output - [ ] Send X-Content-Type-Options: nosniff header. - [ ] Send X-Frame-Options: deny header.
+  - [ ] Send Content-Security-Policy: default-src ''none'' header. - [ ] Remove fingerprinting headers
+  - X-Powered-By , Server , X-AspNet-Version , etc. - [ ] Force content-type for your response. If you
+  return application/json , then your conte'
+fix: 'See shieldfy/API-Security-Checklist README.md (anchor: Output) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- output
+sources:
+- repo: shieldfy/API-Security-Checklist
+  path: README.md
+  anchor: Output
+  commit: bd7a7d5d39cd807dec640046c0ada7c3f07663b5
+  url: https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

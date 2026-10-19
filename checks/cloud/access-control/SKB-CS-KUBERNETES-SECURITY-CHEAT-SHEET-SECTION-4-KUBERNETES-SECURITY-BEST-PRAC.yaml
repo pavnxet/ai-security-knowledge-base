@@ -1,0 +1,57 @@
+id: SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-4-KUBERNETES-SECURITY-BEST-PRAC
+title: 'SECTION 4: Kubernetes Security Best Practices: Deploy Phase'
+summary: 'SECTION 4: Kubernetes Security Best Practices: Deploy Phase Once a Kubernetes infrastructure
+  is in place, you must configure it securely bef'
+platforms:
+- cloud
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 4: Kubernetes Security Best Prac'
+refs:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 4: Kubernetes Security Best Prac'
+check: 'SECTION 4: Kubernetes Security Best Practices: Deploy Phase Once a Kubernetes infrastructure is
+  i'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Kubernetes_Security_Cheat_Sheet.md (anchor: SECTION 4: Kubernetes
+  Security Best Practices: Deploy Phase) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- section
+- kubernetes
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  anchor: 'SECTION 4: Kubernetes Security Best Practices: Deploy Phase'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

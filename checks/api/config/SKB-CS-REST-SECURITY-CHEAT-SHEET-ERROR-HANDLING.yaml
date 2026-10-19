@@ -1,0 +1,57 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-ERROR-HANDLING
+title: Error handling
+summary: Error handling - Respond with generic error messages - avoid revealing details of the failure
+  unnecessarily. - Do not pass technical details
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#Error handling
+refs:
+- CS:REST_Security_Cheat_Sheet#Error handling
+check: Error handling - Respond with generic error messages - avoid revealing details of the failure unnecessarily.
+  - Do not pass technical details (e.g. call stacks or other internal hints) to the client.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: Error handling) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- error
+- handling
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: Error handling
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

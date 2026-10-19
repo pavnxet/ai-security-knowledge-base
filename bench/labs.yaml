@@ -1,0 +1,9 @@
+# Lab-coverage set: known vulnerability classes -> expected official refs (independent of SKB ids).
+labs:
+  juice-shop: {platform: web, classes: ["CWE-79","CWE-89","CWE-639","Top10:A01:2025","CWE-614"]}
+  dvwa:       {platform: web, classes: ["CWE-89","CWE-79","CWE-352","CWE-434","CWE-307"]}
+  webgoat:    {platform: web, classes: ["CWE-89","CWE-79","CWE-639","CWE-502","CWE-918"]}
+  nodegoat:   {platform: web, classes: ["CWE-89","CWE-918","CWE-639","CWE-601"]}
+  vampi:      {platform: api, classes: ["API1:2023","API2:2023","API3:2023","CWE-770"]}
+  dvia-v2:    {platform: ios, classes: ["MASVS-STORAGE-1","MASVS-NETWORK-1","MASVS-RESILIENCE-1"]}
+  llmvault:   {platform: llm, classes: ["LLM01:2025","LLM05:2025","LLM06:2025","LLM02:2025"]}

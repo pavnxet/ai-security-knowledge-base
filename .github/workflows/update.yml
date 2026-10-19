@@ -1,0 +1,35 @@
+name: monthly-source-refresh
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"   # 06:00 UTC on the 1st of each month
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml jsonschema requests
+      - name: Re-resolve source SHAs / licenses (writes sources.yaml)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/refresh_sources.py --token "$GITHUB_TOKEN"
+      - name: Diff and open PR
+        run: |
+          git config user.name "secure-kb-bot"
+          git config user.email "bot@secure-kb.local"
+          git add sources.yaml
+          if git diff --cached --quiet; then
+            echo "no source changes"
+          else
+            git commit -m "chore(sources): monthly refresh $(date +%F)"
+            git push
+            echo "::notice::sources.yaml changed - review the PR for new/changed/removed items"
+          fi

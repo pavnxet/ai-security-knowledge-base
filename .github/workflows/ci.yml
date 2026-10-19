@@ -1,0 +1,62 @@
+name: ci
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install build deps
+        run: pip install pyyaml jsonschema
+      - name: Validate cards (schema, token limits, coverage, provenance, licences)
+        run: python tests/validate.py
+      - name: Held-out benchmark
+        run: python bench/run_bench.py
+      - name: CLI smoke test
+        run: |
+          python cli/secure_kb.py detect .
+          python cli/secure_kb.py profile web --gate fast --format brief | head -5
+          python cli/secure_kb.py get SKB-WEB-INJECT-0003 --format md | head -5
+      - name: Zero-dependency fallback works
+        run: |
+          jq -c 'select(.severity=="critical") | {id,title}' index/checks.jsonl | head -3
+          cut -f1,2 index/brief.tsv | head -3
+
+  secret-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Install scanners
+        run: |
+          curl -sSL https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz | tar xz gitleaks
+          curl -sSL https://github.com/trufflesecurity/trufflehog/releases/download/v3.99.2/trufflehog_3.99.2_linux_amd64.tar.gz | tar xz trufflehog
+      - name: gitleaks - working tree + history (gated by an explicit FP-shape filter)
+        run: |
+          ./gitleaks dir --config .gitleaks.toml --report-format json --report-path gl-dir.json . || true
+          python3 scripts/gitleaks_report.py gl-dir.json
+          ./gitleaks git --config .gitleaks.toml --report-format json --report-path gl-git.json . || true
+          python3 scripts/gitleaks_report.py gl-git.json
+      - name: canary - the allowlist must NOT blind gitleaks
+        run: |
+          printf 'aws_access_key_id = AKIAQWERTYUIOPASDFGH\n' > canary_secret.txt
+          ./gitleaks dir --config .gitleaks.toml --report-format json --report-path gl-canary.json . || true
+          if python3 scripts/gitleaks_report.py gl-canary.json; then
+            echo "CANARY FAILED: gitleaks did not flag the fake secret - allowlist is too broad"; exit 1
+          else
+            echo "CANARY OK: gitleaks flagged the fake secret"
+          fi
+          rm -f canary_secret.txt
+      - name: trufflehog - filesystem (report-only)
+        run: |
+          ./trufflehog filesystem . --no-verification --json --exclude-paths .trufflehog-exclude.txt > th.jsonl 2>/dev/null || true
+          echo "trufflehog findings (report-only; gitleaks is the gating scanner): $(wc -l < th.jsonl)"
+          python3 scripts/trufflehog_report.py th.jsonl || true

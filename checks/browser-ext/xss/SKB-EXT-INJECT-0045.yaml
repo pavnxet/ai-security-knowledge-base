@@ -1,0 +1,55 @@
+id: SKB-EXT-INJECT-0045
+title: Content scripts avoid document.write and innerHTML
+summary: Injecting page data into the DOM enables XSS in the extension context.
+platforms:
+- browser-ext
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 60
+cwe:
+- CWE-79
+owasp: []
+check: Check content scripts for document.write/innerHTML built from page data; the Chrome guide says
+  to build DOM nodes and use innerText.
+fix: Use createElement/innerText; never pass page data into the privileged extension context.
+detect:
+  grep:
+  - innerHTML
+  - document.write
+  files:
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- extension
+- xss
+sources:
+- repo: 'Chrome: Stay secure'
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/develop/security-privacy/stay-secure
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+- repo: Chrome MV3 CSP
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/reference/manifest/content-security-policy
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: medium
+extraction: authored
+verified: true
+corroboration: 2
+last_verified: '2026-10-19'

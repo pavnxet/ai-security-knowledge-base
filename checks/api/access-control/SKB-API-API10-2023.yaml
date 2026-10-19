@@ -1,0 +1,58 @@
+id: SKB-API-API10-2023
+title: 0xaa-unsafe-consumption-of-apis.md
+summary: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
+  Prevalence Common : Detectability Average Te'
+platforms:
+- api
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- API10:2023
+refs:
+- API10:2023
+check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
+  Prevalence Common : Detectability Average Technical Severe : Business Specific Exploiting this issue
+  requires attackers to identify and potentially comp'
+fix: 'See OWASP/API-Security editions/2023/en/0xaa-unsafe-consumption-of-apis.md (anchor: API10:2023)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- unsafe
+- consumption
+- apis
+sources:
+- repo: OWASP/API-Security
+  path: editions/2023/en/0xaa-unsafe-consumption-of-apis.md
+  anchor: API10:2023
+  commit: 33cea37b2ffde3e2e62f6b5d79a029a22a846633
+  url: https://github.com/OWASP/API-Security/blob/33cea37b2ffde3e2e62f6b5d79a029a22a846633/editions/2023/en/0xaa-unsafe-consumption-of-apis.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

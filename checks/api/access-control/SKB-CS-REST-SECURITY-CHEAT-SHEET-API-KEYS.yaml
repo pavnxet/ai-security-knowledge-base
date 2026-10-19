@@ -1,0 +1,55 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-API-KEYS
+title: API Keys
+summary: API Keys Public REST services without access control run the risk of being farmed leading to
+  excessive bills for bandwidth or compute cycles
+platforms:
+- api
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#API Keys
+refs:
+- CS:REST_Security_Cheat_Sheet#API Keys
+check: API Keys Public REST services without access control run the risk of being farmed leading to excessive
+  bills for bandwidth or compute cycles. API keys can be used to mitigate this risk. They are also often
+  used by organization to monetize APIs; instead of blocking high-frequency
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: API Keys) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- keys
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: API Keys
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

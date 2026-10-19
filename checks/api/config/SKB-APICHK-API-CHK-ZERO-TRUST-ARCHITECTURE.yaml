@@ -1,0 +1,58 @@
+id: SKB-APICHK-API-CHK-ZERO-TRUST-ARCHITECTURE
+title: Zero Trust Architecture
+summary: Zero Trust Architecture - [ ] Implement mutual TLS (mTLS) for service-to-service communication.
+  - [ ] Validate all requests even from intern
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API-CHK:Zero Trust Architecture
+refs:
+- API-CHK:Zero Trust Architecture
+check: Zero Trust Architecture - [ ] Implement mutual TLS (mTLS) for service-to-service communication.
+  - [ ] Validate all requests even from internal services. - [ ] Use short-lived tokens with automatic
+  refresh. - [ ] Implement request signing for sensiti
+fix: 'See shieldfy/API-Security-Checklist README.md (anchor: Zero Trust Architecture) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- zero
+- trust
+- architecture
+sources:
+- repo: shieldfy/API-Security-Checklist
+  path: README.md
+  anchor: Zero Trust Architecture
+  commit: bd7a7d5d39cd807dec640046c0ada7c3f07663b5
+  url: https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

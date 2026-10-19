@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: secure-kb
+message: "If you use this knowledge base, please cite it as below."
+type: software
+version: 0.9.0
+license: CC-BY-SA-4.0
+abstract: "Merged, AI-agent-searchable security verification knowledge base (2057 cards from 67 public repos)."

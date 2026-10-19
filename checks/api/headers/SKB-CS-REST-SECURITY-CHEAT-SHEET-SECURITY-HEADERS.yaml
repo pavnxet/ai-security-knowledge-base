@@ -1,0 +1,56 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-SECURITY-HEADERS
+title: Security Headers
+summary: Security Headers There are a number of [security related headers](https://owasp.org/www-project-secure-headers/)
+  that can be returned in the
+platforms:
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#Security Headers
+refs:
+- CS:REST_Security_Cheat_Sheet#Security Headers
+check: Security Headers There are a number of [security related headers](https://owasp.org/www-project-secure-headers/)
+  that can be returned in the HTTP responses to instruct browsers to act in specific ways. However, some
+  of these headers are intended t
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: Security Headers) for
+  remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- security
+- headers
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: Security Headers
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

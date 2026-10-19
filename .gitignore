@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+security-report.json
+security-report.md
+.DS_Store
+# regenerable / non-shipped
+staging/
+legacy/
+bin/
+*.zip
+cache/
+index/kb.sqlite
+index/

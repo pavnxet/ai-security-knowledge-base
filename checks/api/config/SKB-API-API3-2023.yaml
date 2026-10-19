@@ -1,0 +1,59 @@
+id: SKB-API-API3-2023
+title: 0xa3-broken-object-property-level-authorization.md
+summary: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
+  Prevalence Common : Detectability Easy Techn'
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API3:2023
+refs:
+- API3:2023
+check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
+  Prevalence Common : Detectability Easy Technical Moderate : Business Specific APIs tend to expose endpoints
+  that return all'
+fix: 'See OWASP/API-Security editions/2023/en/0xa3-broken-object-property-level-authorization.md (anchor:
+  API3:2023) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- broken
+- object
+- property
+sources:
+- repo: OWASP/API-Security
+  path: editions/2023/en/0xa3-broken-object-property-level-authorization.md
+  anchor: API3:2023
+  commit: 33cea37b2ffde3e2e62f6b5d79a029a22a846633
+  url: https://github.com/OWASP/API-Security/blob/33cea37b2ffde3e2e62f6b5d79a029a22a846633/editions/2023/en/0xa3-broken-object-property-level-authorization.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

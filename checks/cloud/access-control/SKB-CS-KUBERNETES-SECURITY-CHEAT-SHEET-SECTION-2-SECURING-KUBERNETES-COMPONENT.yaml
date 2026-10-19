@@ -1,0 +1,57 @@
+id: SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-2-SECURING-KUBERNETES-COMPONENT
+title: 'SECTION 2: Securing Kubernetes Components'
+summary: 'SECTION 2: Securing Kubernetes Components This section discusses how to secure Kubernetes components.
+  It covers the following topics: - Secu'
+platforms:
+- cloud
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 2: Securing Kubernetes Component'
+refs:
+- 'CS:Kubernetes_Security_Cheat_Sheet#SECTION 2: Securing Kubernetes Component'
+check: 'SECTION 2: Securing Kubernetes Components This section discusses how to secure Kubernetes components.
+  It covers the following top'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Kubernetes_Security_Cheat_Sheet.md (anchor: SECTION 2: Securing
+  Kubernetes Components) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- section
+- securing
+- kubernetes
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  anchor: 'SECTION 2: Securing Kubernetes Components'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Kubernetes_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

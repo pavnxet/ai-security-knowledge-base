@@ -1,0 +1,56 @@
+id: SKB-APICHK-API-CHK-PROCESSING
+title: Processing
+summary: Processing - [ ] Check if all the endpoints are protected behind authentication to avoid broken
+  authentication process. - [ ] User own resou
+platforms:
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- API-CHK:Processing
+refs:
+- API-CHK:Processing
+check: Processing - [ ] Check if all the endpoints are protected behind authentication to avoid broken
+  authentication process. - [ ] User own resource ID should be avoided. Use /me/orders instead of /user/654321/orders
+  . - [ ] Don't auto-increment IDs. Use UUID instead. - [ ] If you are parsing XML data, make sure e
+fix: 'See shieldfy/API-Security-Checklist README.md (anchor: Processing) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- processing
+sources:
+- repo: shieldfy/API-Security-Checklist
+  path: README.md
+  anchor: Processing
+  commit: bd7a7d5d39cd807dec640046c0ada7c3f07663b5
+  url: https://github.com/shieldfy/API-Security-Checklist/blob/bd7a7d5d39cd807dec640046c0ada7c3f07663b5/README.md
+  license: MIT
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

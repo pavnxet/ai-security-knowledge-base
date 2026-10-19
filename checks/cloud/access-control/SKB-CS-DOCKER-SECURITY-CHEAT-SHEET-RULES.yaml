@@ -1,0 +1,55 @@
+id: SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-RULES
+title: Rules
+summary: Rules RULE \ 0 - Keep Host and Docker up to date To protect against known container escape vulnerabilities
+  like [Leaky Vessels](https://snyk
+platforms:
+- cloud
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Docker_Security_Cheat_Sheet#Rules
+refs:
+- CS:Docker_Security_Cheat_Sheet#Rules
+check: Rules RULE \ 0 - Keep Host and Docker up to date To protect against known container escape vulnerabilities
+  like [Leaky Vessels](https://snyk.io/blog/cve-2024-21626-runc-process-cwd-container-breakout/), which
+  typically result in the attacker gaining root access to the host, it's
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Docker_Security_Cheat_Sheet.md (anchor: Rules) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- rules
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Docker_Security_Cheat_Sheet.md
+  anchor: Rules
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Docker_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

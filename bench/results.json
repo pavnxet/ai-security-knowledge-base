@@ -1,0 +1,67 @@
+{
+  "cards": 2108,
+  "heldout": {
+    "all": {
+      "set": "all",
+      "n": 154,
+      "recall@5": 0.584,
+      "recall@10": 0.617,
+      "mrr": 0.55,
+      "p50_ms": 61.06,
+      "p95_ms": 83.19,
+      "avg_tokens": 45.8
+    },
+    "curated_v1": {
+      "set": "curated",
+      "n": 59,
+      "recall@5": 0.271,
+      "recall@10": 0.305,
+      "mrr": 0.214,
+      "p50_ms": 53.64,
+      "p95_ms": 76.79,
+      "avg_tokens": 46.3
+    },
+    "curated_v2": {
+      "set": "curated_v2",
+      "n": 59,
+      "recall@5": 0.424,
+      "recall@10": 0.559,
+      "mrr": 0.272,
+      "p50_ms": 61.59,
+      "p95_ms": 85.07,
+      "avg_tokens": 46.3
+    },
+    "v2_dev": {
+      "set": "v2_dev",
+      "n": 40,
+      "recall@5": 0.25,
+      "recall@10": 0.3,
+      "mrr": 0.237,
+      "p50_ms": 57.93,
+      "p95_ms": 110.01,
+      "avg_tokens": 46.5
+    },
+    "templated": {
+      "set": "templated",
+      "n": 95,
+      "recall@5": 0.779,
+      "recall@10": 0.811,
+      "mrr": 0.759,
+      "p50_ms": 76.77,
+      "p95_ms": 101.49,
+      "avg_tokens": 45.5
+    },
+    "user": {
+      "set": "user",
+      "n": 0,
+      "note": "empty - add real queries"
+    }
+  },
+  "lab_coverage": {
+    "classes": 30,
+    "covered": 22,
+    "coverage_pct": 73.3,
+    "in_fast_gate": 7,
+    "gate_recall_pct": 23.3
+  }
+}

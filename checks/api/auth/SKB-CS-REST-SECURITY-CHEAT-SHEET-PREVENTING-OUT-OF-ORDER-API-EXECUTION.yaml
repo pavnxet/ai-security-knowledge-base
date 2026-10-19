@@ -1,0 +1,57 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-PREVENTING-OUT-OF-ORDER-API-EXECUTION
+title: Preventing Out-of-Order API Execution
+summary: Preventing Out-of-Order API Execution Modern REST APIs often implement business workflows through
+  a sequence of endpoints (for example, crea
+platforms:
+- api
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#Preventing Out-of-Order API Execution
+refs:
+- CS:REST_Security_Cheat_Sheet#Preventing Out-of-Order API Execution
+check: Preventing Out-of-Order API Execution Modern REST APIs often implement business workflows through
+  a sequence of endpoints (for example, create → validate → approve → finalize). If the back
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: Preventing Out-of-Order
+  API Execution) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- preventing
+- order
+- execution
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: Preventing Out-of-Order API Execution
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

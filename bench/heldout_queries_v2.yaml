@@ -1,0 +1,795 @@
+version: 2
+frozen: true
+note: expected refs derived from standards text (staging), independent of cards
+queries:
+- q: how do I stop someone forging my Telegram webhook?
+  expect_refs:
+  - WSTG-SESS-01
+  expected_refs_v1:
+  - CWE-345
+  set: curated
+- q: is my JWT validation actually safe?
+  expect_refs:
+  - ASVS:V1.4.2
+  - VIBE:payments#Subscription Status Validation
+  expected_refs_v1:
+  - ASVS:V9.1.1
+  - ASVS:V10.1.1
+  set: curated
+- q: how do I prevent SQL injection in my API?
+  expect_refs:
+  - ASVS:V16.4.1
+  - ASVS:V1.3.9
+  expected_refs_v1:
+  - ASVS:V1.2.1
+  - Top10:A03:2025
+  - WSTG-INPV-05
+  set: curated
+- q: what stops cross-site scripting in React?
+  expect_refs:
+  - WSTG-CLNT-01
+  - WSTG-INJT-01
+  expected_refs_v1:
+  - ASVS:V1.2.1
+  - WSTG-CLNT-01
+  set: curated
+- q: how do I store passwords safely?
+  expect_refs:
+  - ASVS:V6.2.9
+  - CS:Password_Storage_Cheat_Sheet#Introduction
+  expected_refs_v1:
+  - ASVS:V6.2.1
+  set: curated
+- q: my session cookies get stolen, what flags do I need?
+  expect_refs:
+  - WSTG-SESS-03
+  - WSTG-SESS-09
+  expected_refs_v1:
+  - ASVS:V3.4.1
+  - WSTG-SESS-02
+  set: curated
+- q: how do I stop CSRF on form posts?
+  expect_refs: &id001
+  - WSTG-SESS-05
+  - ASVS:V3.5.1
+  expected_refs_v1: *id001
+  set: curated
+- q: is my file upload endpoint dangerous?
+  expect_refs:
+  - CS:File_Upload_Cheat_Sheet#References
+  - WSTG-BUSL-09
+  expected_refs_v1:
+  - ASVS:V12.2.1
+  - WSTG-BUSL-09
+  set: curated
+- q: someone can read other users' data by changing the id
+  expect_refs:
+  - ASVS:V8.1.2
+  - ASVS:V11.7.1
+  expected_refs_v1:
+  - API1:2023
+  - ASVS:V8.2.1
+  - CWE-639
+  set: curated
+- q: how do I avoid leaking stack traces to users?
+  expect_refs:
+  - WSTG-ERRH-02
+  - ASVS:V11.2.4
+  expected_refs_v1:
+  - ASVS:V16.5.1
+  - WSTG-ERRH-01
+  set: curated
+- q: what security headers should my site send?
+  expect_refs:
+  - WSTG-CONF-14
+  - CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#References
+  expected_refs_v1:
+  - ASVS:V14.4.1
+  set: curated
+- q: how do I stop SSRF in a URL-fetch feature?
+  expect_refs:
+  - CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#References
+  - ASVS:V1.5.3
+  expected_refs_v1:
+  - ASVS:V1.3.6
+  - WSTG-INPV-19
+  set: curated
+- q: is my password reset flow safe from brute force?
+  expect_refs:
+  - ASVS:V6.3.1
+  - WSTG-ATHN-03
+  expected_refs_v1:
+  - ASVS:V2.2.1
+  - WSTG-ATHN-03
+  set: curated
+- q: how do I secure an S3 bucket?
+  expect_refs: &id002
+  - CWE-284
+  expected_refs_v1: *id002
+  set: curated
+- q: my kubernetes pods run as root, is that bad?
+  expect_refs:
+  - ASVS:V6.3.2
+  - 'CS:Kubernetes_Security_Cheat_Sheet#INTRODUCTION: What Is Kubernetes?'
+  expected_refs_v1:
+  - CWE-250
+  set: curated
+- q: how do I keep secrets out of my CI pipeline?
+  expect_refs:
+  - ASVS:V6.5.4
+  - ASVS:V6.5.1
+  expected_refs_v1:
+  - CWE-798
+  - CWE-532
+  set: curated
+- q: how do I check my dependencies for known CVEs?
+  expect_refs: &id003
+  - CWE-1104
+  - Top10:A06:2025
+  expected_refs_v1: *id003
+  set: curated
+- q: what stops reentrancy in a Solidity contract?
+  expect_refs:
+  - SCV:reentrancy
+  expected_refs_v1:
+  - CWE-841
+  set: curated
+- q: how do I protect an admin function in a smart contract?
+  expect_refs:
+  - SCV:delegatecall-untrusted-callee
+  - SCV:authorization-txorigin
+  expected_refs_v1:
+  - CWE-284
+  set: curated
+- q: is my price oracle manipulable?
+  expect_refs: &id004
+  - CWE-345
+  expected_refs_v1: *id004
+  set: curated
+- q: how do I stop prompt injection in my LLM app?
+  expect_refs:
+  - LLM01:2025
+  - VIBE:ai-integration#Prompt Injection
+  expected_refs_v1:
+  - LLM01:2025
+  set: curated
+- q: my chatbot runs whatever the model outputs, is that safe?
+  expect_refs:
+  - LLM08:2025
+  - LLM04:2025
+  expected_refs_v1:
+  - LLM05:2025
+  set: curated
+- q: how do I limit what an AI agent can do?
+  expect_refs: &id005
+  - LLM06:2025
+  expected_refs_v1: *id005
+  set: curated
+- q: is my Supabase database readable by anyone?
+  expect_refs:
+  - VIBE:secrets-and-env#Client-Side Environment Variable Prefixe
+  - VIBE:deployment#Environment Separation
+  expected_refs_v1:
+  - CWE-284
+  set: curated
+- q: 'my Firebase rules say allow read, write: if true - problem?'
+  expect_refs:
+  - ASVS:V8.1.2
+  - VIBE:deployment#CORS Configuration
+  expected_refs_v1:
+  - CWE-284
+  set: curated
+- q: an AI wrote my app and might have hardcoded an API key
+  expect_refs:
+  - MASVS-AUTH-2
+  - VIBE:authentication#API Route Handlers
+  expected_refs_v1:
+  - CWE-798
+  set: curated
+- q: how do I stop a package that doesn't exist from being installed?
+  expect_refs:
+  - WSTG-CONF-04
+  - MASVS-PLATFORM-3
+  expected_refs_v1:
+  - CWE-1357
+  set: curated
+- q: is my Electron app safe from remote code?
+  expect_refs:
+  - MASVS-AUTH-2
+  - MASTG-TEST-0082
+  expected_refs_v1:
+  - CWE-693
+  set: curated
+- q: how do I sandbox an Electron renderer?
+  expect_refs: &id006
+  - CWE-693
+  expected_refs_v1: *id006
+  set: curated
+- q: what permissions should my Chrome extension ask for?
+  expect_refs:
+  - ASVS:V8.2.1
+  expected_refs_v1:
+  - CWE-250
+  set: curated
+- q: how do I stop my extension loading remote scripts?
+  expect_refs:
+  - CS:Content_Security_Policy_Cheat_Sheet#Context
+  expected_refs_v1:
+  - CWE-829
+  set: curated
+- q: my Android app stores tokens in SharedPreferences
+  expect_refs:
+  - MASTG-TEST-0024
+  - MASTG-TEST-0039
+  expected_refs_v1:
+  - MASVS-STORAGE-1
+  - CWE-312
+  set: curated
+- q: how do I stop cleartext traffic on Android?
+  expect_refs: &id007
+  - MASVS-NETWORK-1
+  - CWE-319
+  expected_refs_v1: *id007
+  set: curated
+- q: is my iOS app transport security too lax?
+  expect_refs:
+  - ASVS:V17.2.1
+  - WSTG-CRYP-01
+  expected_refs_v1:
+  - MASVS-NETWORK-1
+  set: curated
+- q: my Android component is exported, is that a risk?
+  expect_refs:
+  - ASVS:V15.1.1
+  expected_refs_v1:
+  - CWE-926
+  set: curated
+- q: how do I secure an IoT device with a default password?
+  expect_refs:
+  - ASVS:V6.4.3
+  - ISTG:README
+  expected_refs_v1:
+  - CWE-1392
+  set: curated
+- q: how do I verify firmware updates are legitimate?
+  expect_refs:
+  - ASVS:V6.3.7
+  - ASVS:V17.3.1
+  expected_refs_v1:
+  - CWE-494
+  set: curated
+- q: how do I stop mass assignment in my API?
+  expect_refs:
+  - WSTG-INJT-20
+  - VIBE:data-access#Mass Assignment
+  expected_refs_v1:
+  - API3:2023
+  - CWE-915
+  set: curated
+- q: my API returns too many fields
+  expect_refs:
+  - ASVS:V15.3.1
+  - ASVS:V5.2.4
+  expected_refs_v1:
+  - API3:2023
+  set: curated
+- q: how do I rate limit my login endpoint?
+  expect_refs:
+  - ASVS:V2.4.1
+  - VIBE:rate-limiting#Where Rate Limiting Is Required
+  expected_refs_v1:
+  - API4:2023
+  - CWE-307
+  set: curated
+- q: is wildcard CORS with credentials a problem?
+  expect_refs:
+  - WSTG-ATHN-01
+  - VIBE:deployment#CORS Configuration
+  expected_refs_v1:
+  - CWE-942
+  - ASVS:V14.5.3
+  set: curated
+- q: how do I prevent clickjacking?
+  expect_refs:
+  - WSTG-CLNT-09
+  - ASVS:V16.4.1
+  expected_refs_v1:
+  - ASVS:V14.4.1
+  set: curated
+- q: what is broken access control and how do I fix it?
+  expect_refs:
+  - WSTG-APIT-04
+  - WSTG-CONF-06
+  expected_refs_v1:
+  - Top10:A01:2025
+  set: curated
+- q: how do I stop insecure deserialization?
+  expect_refs:
+  - ASVS:V1.5.2
+  - WSTG-INJT-23
+  expected_refs_v1:
+  - ASVS:V1.4.1
+  - CWE-502
+  set: curated
+- q: how should I log security events?
+  expect_refs:
+  - CS:REST_Security_Cheat_Sheet#Audit logs
+  - ASVS:V16.3.3
+  expected_refs_v1:
+  - ASVS:V16.2.1
+  set: curated
+- q: how do I store an API key on a mobile app safely?
+  expect_refs:
+  - VIBE:mobile#No Secrets in the JavaScript Bundle
+  - VIBE:authentication#API Route Handlers
+  expected_refs_v1:
+  - MASVS-STORAGE-1
+  set: curated
+- q: how do I stop a Telegram bot admin command being abused?
+  expect_refs:
+  - ASVS:V13.2.3
+  - CS:Django_Security_Cheat_Sheet#Django's built-in command `check --deplo
+  expected_refs_v1:
+  - CWE-862
+  set: curated
+- q: is my webhook signature check correct?
+  expect_refs:
+  - VIBE:payments#Webhook Signature Verification
+  - VIBE:mobile#Biometric Authentication
+  expected_refs_v1:
+  - CWE-345
+  set: curated
+- q: how do I stop client-side price tampering in checkout?
+  expect_refs:
+  - VIBE:payments#Checkout Session Metadata
+  - WSTG-CLNT-06
+  expected_refs_v1:
+  - CWE-602
+  set: curated
+- q: how do I secure a Cloudflare Worker?
+  expect_refs: &id008
+  - CWE-306
+  expected_refs_v1: *id008
+  set: curated
+- q: my serverless function has no auth
+  expect_refs:
+  - ASVS:V6.5.2
+  - ASVS:V8.2.1
+  expected_refs_v1:
+  - CWE-306
+  set: curated
+- q: how do I stop GraphQL introspection leaking schema?
+  expect_refs:
+  - ASVS:V4.3.2
+  - WSTG-SESS-01
+  expected_refs_v1:
+  - API9:2023
+  set: curated
+- q: how do I keep database backups safe?
+  expect_refs:
+  - VIBE:ai-integration#Tool / Function Calling
+  expected_refs_v1:
+  - ASVS:V8.3.1
+  set: curated
+- q: is MD5 ok for hashing passwords?
+  expect_refs:
+  - ASVS:V6.2.9
+  - ASVS:V11.4.2
+  expected_refs_v1:
+  - ASVS:V6.2.1
+  - CWE-916
+  set: curated
+- q: how do I stop open redirects?
+  expect_refs: &id009
+  - WSTG-CLNT-04
+  expected_refs_v1: *id009
+  set: curated
+- q: how do I validate file paths to stop traversal?
+  expect_refs:
+  - WSTG-ATHZ-01
+  - ASVS:V5.3.2
+  expected_refs_v1:
+  - CWE-22
+  - WSTG-INPV-01
+  set: curated
+- q: how do I stop XML external entity attacks?
+  expect_refs:
+  - ASVS:V1.5.1
+  - Top10:A02:2025
+  expected_refs_v1:
+  - ASVS:V1.5.1
+  - CWE-611
+  set: curated
+- q: how do I protect against tabnabbing?
+  expect_refs:
+  - WSTG-CLNT-14
+  - ASVS:V1.3.11
+  expected_refs_v1:
+  - ASVS:V14.4.1
+  set: curated
+- q: how do I securely implement remember-me?
+  expect_refs:
+  - WSTG-ATHN-05
+  expected_refs_v1:
+  - ASVS:V3.3.1
+  set: curated
+- q: 'Does this hold: Verify that when logging sensitive data, the application enforces?'
+  expect_refs:
+  - ASVS:V16.2.5
+  set: templated
+- q: 'Does this hold: Verify that application documentation defines risk based remediation time?'
+  expect_refs:
+  - ASVS:V15.1.1
+  set: templated
+- q: 'Does this hold: Verify that output encoding for an HTTP response, HTML?'
+  expect_refs:
+  - ASVS:V1.2.1
+  set: templated
+- q: 'Does this hold: Verify that, if the OAuth client can interact with?'
+  expect_refs:
+  - ASVS:V10.2.2
+  set: templated
+- q: 'Does this hold: Verify that the documented list of context specific words?'
+  expect_refs:
+  - ASVS:V6.2.11
+  set: templated
+- q: 'Does this hold: Verify that every HTTP response with a message body?'
+  expect_refs:
+  - ASVS:V4.1.1
+  set: templated
+- q: 'Does this hold: Verify that the application terminates all active sessions when?'
+  expect_refs:
+  - ASVS:V7.4.2
+  set: templated
+- q: 'Does this hold: Verify that the service receiving a token validates the?'
+  expect_refs:
+  - ASVS:V9.2.2
+  set: templated
+- q: 'Does this hold: Verify that self-contained tokens are validated using their digital?'
+  expect_refs:
+  - ASVS:V9.1.1
+  set: templated
+- q: 'Does this hold: Verify that the application sanitizes user input before passing?'
+  expect_refs:
+  - ASVS:V1.3.11
+  set: templated
+- q: 'Does this hold: Verify that resource allocation policies prevent thread starvation by?'
+  expect_refs:
+  - ASVS:V15.4.4
+  set: templated
+- q: 'Does this hold: Verify that the application uses approved key derivation functions?'
+  expect_refs:
+  - ASVS:V11.4.4
+  set: templated
+- q: 'Does this hold: Verify that creation of a session requires either the?'
+  expect_refs:
+  - ASVS:V7.6.2
+  set: templated
+- q: 'Does this hold: Verify that where the application connects to separate services,?'
+  expect_refs:
+  - ASVS:V13.2.6
+  set: templated
+- q: 'Does this hold: Verify that the resource server enforces authorization decisions based?'
+  expect_refs:
+  - ASVS:V10.3.2
+  set: templated
+- q: 'Does this hold: Verify that user set passwords are at least 8?'
+  expect_refs:
+  - ASVS:V6.2.1
+  set: templated
+- q: 'Does this hold: Verify that the application configures XML parsers to use?'
+  expect_refs:
+  - ASVS:V1.5.1
+  set: templated
+- q: 'Does this hold: Verify that any audio or video recording mechanisms associated?'
+  expect_refs:
+  - ASVS:V17.2.7
+  set: templated
+- q: 'Does this hold: Verify that only approved hash functions are used for?'
+  expect_refs:
+  - ASVS:V11.4.1
+  set: templated
+- q: 'Does this hold: Verify that Encrypted Client Hello (ECH) is enabled in?'
+  expect_refs:
+  - ASVS:V12.1.5
+  set: templated
+- q: 'Does this hold: Verify that the application checks compressed files (e.g., zip,?'
+  expect_refs:
+  - ASVS:V5.2.3
+  set: templated
+- q: 'Does this hold: Verify that tokens are only sent to components that?'
+  expect_refs:
+  - ASVS:V10.1.1
+  set: templated
+- q: 'Does this hold: Verify that any combination of an encryption algorithm and?'
+  expect_refs:
+  - ASVS:V11.3.5
+  set: templated
+- q: 'Does this hold: Verify that all sensitive data protection levels have a?'
+  expect_refs:
+  - ASVS:V14.1.2
+  set: templated
+- q: 'Does this hold: Verify that the application behaves as documented (such as?'
+  expect_refs:
+  - ASVS:V3.7.5
+  set: templated
+- q: 'Does this hold: Verify that application documentation highlights parts of the application?'
+  expect_refs:
+  - ASVS:V15.1.5
+  set: templated
+- q: 'Does this hold: Verify that the authorization code is short-lived. The maximum?'
+  expect_refs:
+  - ASVS:V10.4.3
+  set: templated
+- q: 'Does this hold: Verify that passwords are stored using an approved, computationally?'
+  expect_refs:
+  - ASVS:V11.4.2
+  set: templated
+- q: 'Does this hold: Verify that the application is designed to enforce input?'
+  expect_refs:
+  - ASVS:V2.2.2
+  set: templated
+- q: 'Does this hold: Verify that only approved cryptographic algorithms and modes of?'
+  expect_refs:
+  - ASVS:V11.6.1
+  set: templated
+- q: 'Does this hold: Verify that the OpenID Provider mitigates denial of service?'
+  expect_refs:
+  - ASVS:V10.6.2
+  set: templated
+- q: 'Does this hold: Verify that biometric authentication mechanisms are only used as?'
+  expect_refs:
+  - ASVS:V6.5.7
+  set: templated
+- q: 'Does this hold: Verify that the application performs output encoding and escaping?'
+  expect_refs:
+  - ASVS:V1.1.2
+  set: templated
+- q: 'Does this hold: Verify that the application only accepts HTTP/2 and HTTP/3?'
+  expect_refs:
+  - ASVS:V4.2.4
+  set: templated
+- q: 'Does this hold: Verify that the Content-Security-Policy header field specifies a location?'
+  expect_refs:
+  - ASVS:V3.4.7
+  set: templated
+- q: 'Does this hold: Verify that, if the application includes multiple authentication pathways,?'
+  expect_refs:
+  - ASVS:V6.1.3
+  set: templated
+- q: 'Does this hold: Verify that password hints or knowledge-based authentication (so-called "secret?'
+  expect_refs:
+  - ASVS:V6.4.2
+  set: templated
+- q: 'Does this hold: Verify that the application has implemented defenses against loss?'
+  expect_refs:
+  - ASVS:V15.2.2
+  set: templated
+- q: 'Does this hold: Verify that the client validates that the ID Token?'
+  expect_refs:
+  - ASVS:V10.5.4
+  set: templated
+- q: 'Does this hold: Verify that a "last resort" error handler is defined?'
+  expect_refs:
+  - ASVS:V16.5.4
+  set: templated
+- q: 'Does this hold: GraphQL. Assess that a secure and production-ready configuration is?'
+  expect_refs:
+  - WSTG-APIT-99
+  set: templated
+- q: 'Does this hold: HTTP Request Smuggling. Identify request boundary inconsistencies between frontend?'
+  expect_refs:
+  - WSTG-INJT-16
+  set: templated
+- q: 'Does this hold: HTTP Parameter Pollution. Identify the back end and the?'
+  expect_refs:
+  - WSTG-INJT-04
+  set: templated
+- q: 'Does this hold: Host Header Injection. Assess if the Host header is?'
+  expect_refs:
+  - WSTG-INJT-17
+  set: templated
+- q: 'Does this hold: Prototype Pollution. Identify functions and libraries that recursively merge,?'
+  expect_refs:
+  - WSTG-INJT-22
+  set: templated
+- q: 'Does this hold: WebSockets. Identify the usage of WebSockets. Assess its implementation?'
+  expect_refs:
+  - WSTG-CLNT-10
+  set: templated
+- q: 'Does this hold: Business Logic Data Validation. Identify data injection points. Validate?'
+  expect_refs:
+  - WSTG-BUSL-01
+  set: templated
+- q: 'Does this hold: Bypassing Authorization Schema. Assess if unauthenticated, horizontal, or vertical?'
+  expect_refs:
+  - WSTG-ATHZ-02
+  set: templated
+- q: 'Does this hold: HTTP Methods. Enumerate supported HTTP methods. Test for access?'
+  expect_refs:
+  - WSTG-CONF-06
+  set: templated
+- q: 'Does this hold: Bypassing Authentication Schema. Ensure that authentication is applied across?'
+  expect_refs:
+  - WSTG-ATHN-04
+  set: templated
+- q: 'Does this hold: Stored Cross Site Scripting. Identify stored input that is?'
+  expect_refs:
+  - WSTG-INJT-02
+  set: templated
+- q: 'Does this hold: Weak Cryptographic Primitives. Provide a guideline for the identification?'
+  expect_refs:
+  - WSTG-CRYP-04
+  set: templated
+- q: 'Does this hold: Sensitive Information Sent via Unencrypted Channels. Identify sensitive information?'
+  expect_refs:
+  - WSTG-CRYP-03
+  set: templated
+- q: 'Does this hold: Circumvention of Work Flows. Review the project documentation for?'
+  expect_refs:
+  - WSTG-BUSL-06
+  set: templated
+- q: 'Does this hold: Web Messaging. Assess the security of the message''s origin.?'
+  expect_refs:
+  - WSTG-CLNT-11
+  set: templated
+- q: 'Does this hold: Ability to Forge Requests. Review the project documentation looking?'
+  expect_refs:
+  - WSTG-BUSL-02
+  set: templated
+- q: 'Does this hold: Feature Flag Security Bypass. Identify feature flags and kill-switches?'
+  expect_refs:
+  - WSTG-CONF-15
+  set: templated
+- q: 'Does this hold: Client-side Template Injection. Identify the client-side framework and its?'
+  expect_refs:
+  - WSTG-CLNT-15
+  set: templated
+- q: 'Does this hold: Cross Site Script Inclusion. Locate sensitive data across the?'
+  expect_refs:
+  - WSTG-CLNT-13
+  set: templated
+- q: 'Does this hold: Session Puzzling. Identify all session variables. Break the logical?'
+  expect_refs:
+  - WSTG-SESS-08
+  set: templated
+- q: 'Does this hold: The app implements anti-static analysis mechanisms. Understanding the internals?'
+  expect_refs:
+  - MASVS-RESILIENCE-3
+  set: templated
+- q: 'Does this hold: The app securely stores sensitive data. Apps handle sensitive?'
+  expect_refs:
+  - MASVS-STORAGE-1
+  set: templated
+- q: 'Does this hold: The app performs identity pinning for all remote endpoints?'
+  expect_refs:
+  - MASVS-NETWORK-2
+  set: templated
+- q: 'Does this hold: The app validates and sanitizes all untrusted inputs. Apps?'
+  expect_refs:
+  - MASVS-CODE-4
+  set: templated
+- q: 'Does this hold: The app minimizes access to sensitive data and resources.?'
+  expect_refs:
+  - MASVS-PRIVACY-1
+  set: templated
+- q: 'Does this hold: The app validates the integrity of the platform. Running?'
+  expect_refs:
+  - MASVS-RESILIENCE-1
+  set: templated
+- q: 'Does this hold: The app performs local authentication securely according to the?'
+  expect_refs:
+  - MASVS-AUTH-2
+  set: templated
+- q: 'Does this hold: The app implements anti-tampering mechanisms. Apps run on a?'
+  expect_refs:
+  - MASVS-RESILIENCE-2
+  set: templated
+- q: 'Does this hold: The app uses WebViews securely. WebViews are typically used?'
+  expect_refs:
+  - MASVS-PLATFORM-2
+  set: templated
+- q: 'Does this hold: The app is transparent about data collection and usage.?'
+  expect_refs:
+  - MASVS-PRIVACY-3
+  set: templated
+- q: 'Does this hold: Threat agents/Attack vectors Security Weakness Impacts - - -?'
+  expect_refs:
+  - API2:2023
+  set: templated
+- q: 'Does this hold: Threat agents/Attack vectors Security Weakness Impacts - - -?'
+  expect_refs:
+  - API8:2023
+  set: templated
+- q: 'Does this hold: Threat agents/Attack vectors Security Weakness Impacts - - -?'
+  expect_refs:
+  - API7:2023
+  set: templated
+- q: 'Does this hold: Threat agents/Attack vectors Security Weakness Impacts - - -?'
+  expect_refs:
+  - API5:2023
+  set: templated
+- q: 'Does this hold: Threat agents/Attack vectors Security Weakness Impacts - - -?'
+  expect_refs:
+  - API6:2023
+  set: templated
+- q: 'Does this hold: A Prompt Injection Vulnerability occurs when user prompts alter?'
+  expect_refs:
+  - LLM01:2025
+  set: templated
+- q: 'Does this hold: Sensitive information can affect both the LLM and its?'
+  expect_refs:
+  - LLM02:2025
+  set: templated
+- q: 'Does this hold: An LLM-based system is often granted a degree of?'
+  expect_refs:
+  - LLM06:2025
+  set: templated
+- q: 'Does this hold: Vectors and embeddings vulnerabilities present significant security risks in?'
+  expect_refs:
+  - LLM08:2025
+  set: templated
+- q: 'Does this hold: Misinformation from LLMs poses a core vulnerability for applications?'
+  expect_refs:
+  - LLM09:2025
+  set: templated
+- q: 'Does this hold: Detection Tools - [Java deserialization cheat sheet aimed at?'
+  expect_refs:
+  - CS:Deserialization_Cheat_Sheet#Detection Tools
+  set: templated
+- q: 'Does this hold: Tools and code used for schemas - [Mermaid Online?'
+  expect_refs:
+  - CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Tools and code used for schemas
+  set: templated
+- q: 'Does this hold: 10 Secrets Management in a Multi-Cloud Environment 10.1 Introduction?'
+  expect_refs:
+  - CS:Secrets_Management_Cheat_Sheet#10 Secrets Management in a Multi-Cloud E
+  set: templated
+- q: 'Does this hold: CSP Types (granular/allowlist based or strict) For original research?'
+  expect_refs:
+  - CS:Content_Security_Policy_Cheat_Sheet#CSP Types (granular/allowlist based or s
+  set: templated
+- q: 'Does this hold: Introduction This cheat sheet is focused on providing developers?'
+  expect_refs:
+  - CS:Logging_Cheat_Sheet#Introduction
+  set: templated
+- q: 'Does this hold: What is Deserialization Serialization is the process of turning?'
+  expect_refs:
+  - CS:Deserialization_Cheat_Sheet#What is Deserialization
+  set: templated
+- q: 'Does this hold: Additional Client-Side Defenses for Session Management Web applications can?'
+  expect_refs:
+  - CS:Session_Management_Cheat_Sheet#Additional Client-Side Defenses for Sess
+  set: templated
+- q: 'Does this hold: Session ID Properties In order to keep the authenticated?'
+  expect_refs:
+  - CS:Session_Management_Cheat_Sheet#Session ID Properties
+  set: templated
+- q: 'Does this hold: Introduction Docker is the most popular containerization technology. When?'
+  expect_refs:
+  - CS:Docker_Security_Cheat_Sheet#Introduction
+  set: templated
+- q: 'Does this hold: JWT There seems to be a convergence towards using?'
+  expect_refs:
+  - CS:REST_Security_Cheat_Sheet#JWT
+  set: templated
+- q: 'Does this hold: HTML Sanitization When users need to author HTML, developers?'
+  expect_refs:
+  - CS:Cross_Site_Scripting_Prevention_Cheat_Sheet#HTML Sanitization
+  set: templated
+- q: 'Does this hold: Cookies The session ID exchange mechanism based on cookies?'
+  expect_refs:
+  - CS:Session_Management_Cheat_Sheet#Cookies
+  set: templated
+- q: 'Does this hold: 11 Related Cheat Sheets & further reading - [Key?'
+  expect_refs:
+  - CS:Secrets_Management_Cheat_Sheet#11 Related Cheat Sheets & further readin
+  set: templated
+- q: 'Does this hold: Introduction This cheat sheet provides guidance on implementing transport?'
+  expect_refs:
+  - CS:Transport_Layer_Security_Cheat_Sheet#Introduction
+  set: templated
+- q: 'Does this hold: Possible CSRF Vulnerabilities in Login Forms Most developers tend?'
+  expect_refs:
+  - CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Possible CSRF Vulnerabilities in Login F
+  set: templated

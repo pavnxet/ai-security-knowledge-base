@@ -1,0 +1,57 @@
+id: SKB-CS-REST-SECURITY-CHEAT-SHEET-HTTP-RETURN-CODE
+title: HTTP Return Code
+summary: HTTP Return Code HTTP defines [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+  When designing REST API, don't just us
+platforms:
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Security_Cheat_Sheet#HTTP Return Code
+refs:
+- CS:REST_Security_Cheat_Sheet#HTTP Return Code
+check: HTTP Return Code HTTP defines [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).
+  When designing REST API, don't just use 200 for success or 404 for error. Always use the semantically
+  appropriate status code for the response. Her
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: HTTP Return Code) for
+  remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- http
+- return
+- code
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Security_Cheat_Sheet.md
+  anchor: HTTP Return Code
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

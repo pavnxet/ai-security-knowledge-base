@@ -1,0 +1,57 @@
+id: SKB-EXT-MSG-0044
+title: Extension validates message passing and externally_connectable
+summary: Messages from content scripts or pages must be validated; restrict external connections.
+platforms:
+- browser-ext
+stacks:
+- any
+domain: input-validation
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 50
+cwe:
+- CWE-20
+owasp: []
+check: Validate sender and payload in onMessage; restrict externally_connectable to trusted ids/origins;
+  minimise web_accessible_resources.
+fix: Validate sender+payload; limit external connect; keep web-accessible resources minimal.
+detect:
+  grep:
+  - onMessage
+  - externally_connectable
+  - web_accessible_resources
+  files:
+  - '**/*.js'
+  - '**/manifest.json'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- extension
+- messaging
+sources:
+- repo: 'Chrome: Stay secure'
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/develop/security-privacy/stay-secure
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+- repo: Chrome MV3 CSP
+  path: null
+  anchor: null
+  commit: null
+  url: https://developer.chrome.com/docs/extensions/reference/manifest/content-security-policy
+  license: Official-doc
+  type: official-doc
+  extraction: authored
+  verified: true
+origin: authored
+confidence: medium
+extraction: authored
+verified: true
+corroboration: 2
+last_verified: '2026-10-19'
