@@ -15,7 +15,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-307
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - WSTG-ATHN-08
 refs:

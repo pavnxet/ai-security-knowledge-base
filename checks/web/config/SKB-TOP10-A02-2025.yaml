@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1004
+- CWE-11
+- CWE-1174
+- CWE-13
+- CWE-15
+- CWE-16
+cwe_source: mapped
 owasp:
 - Top10:A02:2025
 refs:
 - Top10:A02:2025
 check: Moving up from 5 in the previous edition, 100% of the applications tested were found to have some
-  form of misconfiguration, with an average incidence rate of 3.00%, and over 719k occurrences of a Common
-  Weakness Enumeration (CWE) in this risk catego
+  form of misconfiguration, with an average incidence rate of 3.00%, and over 719k occurrence
 fix: 'See OWASP/Top10 2025/docs/en/A02_2025-Security_Misconfiguration.md (anchor: A02:2025) for remediation.'
 detect:
   grep:

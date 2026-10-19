@@ -13,15 +13,21 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-103
+- CWE-104
+- CWE-112
+- CWE-113
+- CWE-114
+- CWE-115
+cwe_source: mapped
 owasp:
 - Top10:A05:2025
 refs:
 - Top10:A05:2025
 check: Injection falls two spots from 3 to 5 in the ranking, maintaining its position relative to A04:2025-Cryptographic
   Failures and A06:2025-Insecure Design. Injection is one of the most tested categories with 100% of applications
-  tested for some form of injection. It had the greatest number of CVEs for any catego
+  tested for some form of
 fix: 'See OWASP/Top10 2025/docs/en/A05_2025-Injection.md (anchor: A05:2025) for remediation.'
 detect:
   grep:

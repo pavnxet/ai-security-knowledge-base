@@ -14,7 +14,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-1021
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - WSTG-CLNT-09
 refs:

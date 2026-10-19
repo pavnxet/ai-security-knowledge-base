@@ -12,16 +12,21 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-345
+- CWE-353
+- CWE-426
+- CWE-427
+- CWE-494
+- CWE-502
+cwe_source: mapped
 owasp:
 - Top10:A08:2025
 refs:
 - Top10:A08:2025
 check: Software or Data Integrity Failures continues at 8, with a slight, clarifying name change from
-  "Software and Data Integrity Failures". This category is focused on the failure to maintain trust boundaries
-  and verify the i
+  "Software and Data Integrity Failures". This category is focused
 fix: 'See OWASP/Top10 2025/docs/en/A08_2025-Software_or_Data_Integrity_Failures.md (anchor: A08:2025)
   for remediation.'
 detect:

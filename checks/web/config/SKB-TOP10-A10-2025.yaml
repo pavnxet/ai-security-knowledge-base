@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-209
+- CWE-215
+- CWE-234
+- CWE-235
+- CWE-248
+- CWE-252
+cwe_source: mapped
 owasp:
 - Top10:A10:2025
 refs:
 - Top10:A10:2025
 check: Mishandling of Exceptional Conditions is a new category for 2025. This category contains 24 CWEs
-  and focuses on improper error handling, logical errors, failing open, and other related scenarios stemming
-  from abnormal
+  and focuses on improper error handling, logical errors, fail
 fix: 'See OWASP/Top10 2025/docs/en/A10_2025-Mishandling_of_Exceptional_Conditions.md (anchor: A10:2025)
   for remediation.'
 detect:

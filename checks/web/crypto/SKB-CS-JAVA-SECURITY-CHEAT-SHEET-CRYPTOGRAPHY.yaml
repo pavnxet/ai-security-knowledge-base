@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-93
+cwe_source: mapped
 owasp:
 - CS:Java_Security_Cheat_Sheet#Cryptography
 refs:

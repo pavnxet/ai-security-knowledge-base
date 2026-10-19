@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1390
+- CWE-1391
+- CWE-1392
+- CWE-1393
+- CWE-258
+- CWE-259
+cwe_source: mapped
 owasp:
 - Top10:A07:2025
 refs:
 - Top10:A07:2025
 check: Authentication Failures maintains its position at 7 with a slight name change to more accurately
-  reflect the 36 CWEs in this category. Despite benefits from standardized frameworks, this category has
-  kept its 7 rank from 2021. Notable CWEs included a
+  reflect the 36 CWEs in this category. Despite benefits from standardized frameworks, this cat
 fix: 'See OWASP/Top10 2025/docs/en/A07_2025-Authentication_Failures.md (anchor: A07:2025) for remediation.'
 detect:
   grep:

@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1240
+- CWE-1241
+- CWE-261
+- CWE-296
+- CWE-319
+- CWE-320
+cwe_source: mapped
 owasp:
 - Top10:A04:2025
 refs:
 - Top10:A04:2025
 check: Moving down two positions to 4, this weakness focuses on failures related to the lack of cryptography,
-  insufficiently strong cryptography, leaking of cryptographic keys, and related errors. Three of the
-  most common Common Weakness Enumerations (CWEs
+  insufficiently strong cryptography, leaking of cryptographic keys, and related errors.
 fix: 'See OWASP/Top10 2025/docs/en/A04_2025-Cryptographic_Failures.md (anchor: A04:2025) for remediation.'
 detect:
   grep:

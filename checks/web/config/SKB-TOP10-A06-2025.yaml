@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1021
+- CWE-1022
+- CWE-1125
+- CWE-183
+- CWE-256
+- CWE-266
+cwe_source: mapped
 owasp:
 - Top10:A06:2025
 refs:
 - Top10:A06:2025
 check: Insecure Design slides two spots from 4 to 6 in the ranking as [A02:2025-Security Misconfiguration](A02_2025-Security_Misconfiguration.md)
-  and [A03:2025-Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Failures.md) leapfrog it.
-  This category was introduced in 2021,
+  and [A03:2025-Software Supply Chain Failures](A03_2025-Software_Supply_Chain_Fai
 fix: 'See OWASP/Top10 2025/docs/en/A06_2025-Insecure_Design.md (anchor: A06:2025) for remediation.'
 detect:
   grep:
