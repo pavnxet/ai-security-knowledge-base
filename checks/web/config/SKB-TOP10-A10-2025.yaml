@@ -1,0 +1,59 @@
+id: SKB-TOP10-A10-2025
+title: A10_2025-Mishandling_of_Exceptional_Conditions.md
+summary: Mishandling of Exceptional Conditions is a new category for 2025. This category contains 24 CWEs
+  and focuses on improper error handling, log
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- Top10:A10:2025
+refs:
+- Top10:A10:2025
+check: Mishandling of Exceptional Conditions is a new category for 2025. This category contains 24 CWEs
+  and focuses on improper error handling, logical errors, failing open, and other related scenarios stemming
+  from abnormal
+fix: 'See OWASP/Top10 2025/docs/en/A10_2025-Mishandling_of_Exceptional_Conditions.md (anchor: A10:2025)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- mishandling
+- exceptional
+- conditions
+sources:
+- repo: OWASP/Top10
+  path: 2025/docs/en/A10_2025-Mishandling_of_Exceptional_Conditions.md
+  anchor: A10:2025
+  commit: 3a31f35346c3f4e90f350395124382fa53af2afe
+  url: https://github.com/OWASP/Top10/blob/3a31f35346c3f4e90f350395124382fa53af2afe/2025/docs/en/A10_2025-Mishandling_of_Exceptional_Conditions.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

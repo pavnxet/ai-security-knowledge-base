@@ -1,0 +1,58 @@
+id: SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-ARCHITECTURAL-DESIGN
+title: Architectural Design
+summary: 'Architectural Design The first step in designing any application is to consider the overall
+  architecture of the system, as this will have a '
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cryptographic_Storage_Cheat_Sheet#Architectural Design
+refs:
+- CS:Cryptographic_Storage_Cheat_Sheet#Architectural Design
+check: Architectural Design The first step in designing any application is to consider the overall architecture
+  of the system, as this will have a huge impact on the technical implementation. This process should
+  begin with considering the [threat model](Thr
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cryptographic_Storage_Cheat_Sheet.md (anchor: Architectural
+  Design) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- architectural
+- design
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cryptographic_Storage_Cheat_Sheet.md
+  anchor: Architectural Design
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cryptographic_Storage_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

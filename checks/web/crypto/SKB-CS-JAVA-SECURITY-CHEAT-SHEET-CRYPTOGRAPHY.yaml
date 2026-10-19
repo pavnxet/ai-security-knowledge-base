@@ -1,0 +1,56 @@
+id: SKB-CS-JAVA-SECURITY-CHEAT-SHEET-CRYPTOGRAPHY
+title: Cryptography
+summary: 'Cryptography General cryptography guidance - Never, ever write your own cryptographic functions.
+  - Wherever possible, try and avoid writing '
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Java_Security_Cheat_Sheet#Cryptography
+refs:
+- CS:Java_Security_Cheat_Sheet#Cryptography
+check: Cryptography General cryptography guidance - Never, ever write your own cryptographic functions.
+  - Wherever possible, try and avoid writing any cryptographic code at all. Instead try and either use
+  pre-existing secret management solutions or the secret management solution provid
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Java_Security_Cheat_Sheet.md (anchor: Cryptography) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- cryptography
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Java_Security_Cheat_Sheet.md
+  anchor: Cryptography
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Java_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

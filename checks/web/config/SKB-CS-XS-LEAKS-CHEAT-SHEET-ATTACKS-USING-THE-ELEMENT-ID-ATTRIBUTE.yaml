@@ -1,0 +1,58 @@
+id: SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-USING-THE-ELEMENT-ID-ATTRIBUTE
+title: Attacks using the element ID attribute
+summary: 'Attacks using the element ID attribute Elements in the DOM can have an ID attribute that is
+  unique within the document. For example: The bro'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XS_Leaks_Cheat_Sheet#Attacks using the element ID attribute
+refs:
+- CS:XS_Leaks_Cheat_Sheet#Attacks using the element ID attribute
+check: 'Attacks using the element ID attribute Elements in the DOM can have an ID attribute that is unique
+  within the document. For example: The browser will automatically focus on an element with'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XS_Leaks_Cheat_Sheet.md (anchor: Attacks using the element
+  ID attribute) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- attacks
+- using
+- element
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XS_Leaks_Cheat_Sheet.md
+  anchor: Attacks using the element ID attribute
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XS_Leaks_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

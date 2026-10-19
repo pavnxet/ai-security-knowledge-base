@@ -1,0 +1,60 @@
+id: SKB-BASE-12-EVENT-LOOP-BLOCKING-SYNC-CPU-WORK
+title: 12. Event loop blocking (sync CPU work)
+summary: '12. Event loop blocking (sync CPU work) What: Sync crypto/regex/JSON on large payloads blocks
+  the single-threaded event loop, causing DoS. F'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Event loop blocking (sync CPU work)
+refs:
+- BASE:12. Event loop blocking (sync CPU work)
+check: '12. Event loop blocking (sync CPU work) What: Sync crypto/regex/JSON on large payloads blocks
+  the single-threaded event loop, causing DoS. Fix: Move heavy work to a worker thread or queue; use streaming
+  parsers. Detection: review hot paths for'
+fix: 'See yesmayank/secure-coding-baseline 02-nestjs.md (anchor: 12. Event loop blocking (sync CPU work))
+  for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- event
+- loop
+- blocking
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 02-nestjs.md
+  anchor: 12. Event loop blocking (sync CPU work)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/02-nestjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

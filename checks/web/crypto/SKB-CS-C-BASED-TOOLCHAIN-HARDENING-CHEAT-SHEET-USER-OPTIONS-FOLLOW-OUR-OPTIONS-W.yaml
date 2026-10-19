@@ -1,0 +1,58 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-USER-OPTIONS-FOLLOW-OUR-OPTIONS-W
+title: user options follow our options, which should give user option's a preference.
+summary: user options follow our options, which should give user option's a preference. override CFLAGS
+  := $(ESAPI_CFLAGS) $(CFLAGS) override CXXFLAG
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#user options follow our options, which s
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#user options follow our options, which s
+check: user options follow our options, which should give user option's a preference. override CFLAGS
+  :=
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: user
+  options follow our options, which should give user option''s a preference.) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- user
+- options
+- follow
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: user options follow our options, which should give user option's a preference.
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

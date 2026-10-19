@@ -1,0 +1,58 @@
+id: SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-6-TRUST-TIERED-RATE-L
+title: 'Section 6: Trust-Tiered Rate Limiting'
+summary: 'Section 6: Trust-Tiered Rate Limiting Not all agents should be treated equally. Unverified or
+  low-trust agents should be rate-limited more a'
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 6: Trust-Tiered Rate Limiting'
+refs:
+- 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 6: Trust-Tiered Rate Limiting'
+check: 'Section 6: Trust-Tiered Rate Limiting Not all agents should be treated equally. Unverified or
+  low-trust agents should be rate-limited more aggressively than v'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md (anchor: Section
+  6: Trust-Tiered Rate Limiting) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- section
+- trust
+- tiered
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  anchor: 'Section 6: Trust-Tiered Rate Limiting'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/AML_Sanctions_AI_Agent_Payments_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

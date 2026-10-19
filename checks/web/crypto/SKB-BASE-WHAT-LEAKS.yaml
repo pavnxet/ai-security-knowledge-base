@@ -1,0 +1,58 @@
+id: SKB-BASE-WHAT-LEAKS
+title: What leaks
+summary: What leaks Cloud provider keys, DB credentials, payment provider keys, AI provider keys — each
+  can be abused for fraud, data theft, or crypt
+platforms:
+- web
+- api
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:What leaks
+refs:
+- BASE:What leaks
+check: What leaks Cloud provider keys, DB credentials, payment provider keys, AI provider keys — each
+  can be abused for fraud, data theft, or crypto-mining within minutes of being pushed to a public repo.
+fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: What leaks) for
+  remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- what
+- leaks
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 27-vibe-coded-secrets-supplychain.md
+  anchor: What leaks
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/27-vibe-coded-secrets-supplychain.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

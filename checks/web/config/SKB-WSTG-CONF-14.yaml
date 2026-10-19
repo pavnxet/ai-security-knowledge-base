@@ -1,0 +1,55 @@
+id: SKB-WSTG-CONF-14
+title: Other HTTP Security Header Misconfigurations
+summary: Other HTTP Security Header Misconfigurations. Identify improperly configured security headers.
+  Assess the impact of misconfigured security h
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-CONF-14
+refs:
+- WSTG-CONF-14
+check: Other HTTP Security Header Misconfigurations. Identify improperly configured security headers.
+  Assess the impact of misconfigured security headers. Validate the correct implementation of required
+  security headers.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-CONF-14) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-CONF-14
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

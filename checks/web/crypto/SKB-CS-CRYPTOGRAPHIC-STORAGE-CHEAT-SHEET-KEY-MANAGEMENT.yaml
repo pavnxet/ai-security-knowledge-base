@@ -1,0 +1,57 @@
+id: SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-KEY-MANAGEMENT
+title: Key Management
+summary: 'Key Management Processes Formal processes should be implemented (and tested) to cover all aspects
+  of key management, including: - Generating'
+platforms:
+- web
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Cryptographic_Storage_Cheat_Sheet#Key Management
+refs:
+- CS:Cryptographic_Storage_Cheat_Sheet#Key Management
+check: 'Key Management Processes Formal processes should be implemented (and tested) to cover all aspects
+  of key management, including: - Generating and storing new keys. - Distributing keys to the required
+  parties. - Deploying keys to application servers. - Rotating and decommissioning'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Cryptographic_Storage_Cheat_Sheet.md (anchor: Key Management)
+  for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+- management
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Cryptographic_Storage_Cheat_Sheet.md
+  anchor: Key Management
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Cryptographic_Storage_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

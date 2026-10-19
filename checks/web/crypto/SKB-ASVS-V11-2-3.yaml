@@ -1,0 +1,58 @@
+id: SKB-ASVS-V11-2-3
+title: Secure Cryptography Implementation - V11.2.3
+summary: 'Verify that all cryptographic primitives utilize a minimum of 128-bits of security based on
+  the algorithm, key size, and configuration. For '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: crypto
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V11.2.3
+refs:
+- ASVS:V11.2.3
+- ASVS V11.2.3
+check: Verify that all cryptographic primitives utilize a minimum of 128-bits of security based on the
+  algorithm, key size, and configuration. For example, a 256-bit ECC key provides roughly 128 bits of
+  security where RSA requires a 3072-bit key to achieve 128 bits of security.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V11.2.3) for remediation.'
+detect:
+  grep:
+  - md5(
+  - sha1(
+  - DES
+  - ECB
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.java'
+  - '**/*.kt'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- crypto
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V11.2.3
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,59 @@
+id: SKB-TOP10-A08-2025
+title: A08_2025-Software_or_Data_Integrity_Failures.md
+summary: 'Software or Data Integrity Failures continues at 8, with a slight, clarifying name change from
+  "Software and Data Integrity Failures". This '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- Top10:A08:2025
+refs:
+- Top10:A08:2025
+check: Software or Data Integrity Failures continues at 8, with a slight, clarifying name change from
+  "Software and Data Integrity Failures". This category is focused on the failure to maintain trust boundaries
+  and verify the i
+fix: 'See OWASP/Top10 2025/docs/en/A08_2025-Software_or_Data_Integrity_Failures.md (anchor: A08:2025)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- software
+- data
+- integrity
+sources:
+- repo: OWASP/Top10
+  path: 2025/docs/en/A08_2025-Software_or_Data_Integrity_Failures.md
+  anchor: A08:2025
+  commit: 3a31f35346c3f4e90f350395124382fa53af2afe
+  url: https://github.com/OWASP/Top10/blob/3a31f35346c3f4e90f350395124382fa53af2afe/2025/docs/en/A08_2025-Software_or_Data_Integrity_Failures.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
