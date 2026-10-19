@@ -18,4 +18,4 @@ secrets/deserialization/ssrf/smart-contract/firmware are high; the OWASP/API/LLM
 ASVS L1 critical-domain requirements are critical.
 
 Gates: `fast` = top 25 by priority; `standard` = top 100; `full` = all.
-Counts: {'critical': 36, 'high': 1236, 'medium': 785} by severity; 2057 cards total.
+Counts: {'critical': 36, 'high': 1220, 'medium': 776} by severity; 2032 cards total.

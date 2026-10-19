@@ -13,16 +13,16 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-841
+cwe_source: mapped
 owasp:
 - NSSC:Re-entrancy
 refs:
 - NSSC:Re-entrancy
 check: Re-entrancy A state variable is changed after a contract uses call.value . The attacker uses [a
   fallback function](ReentrancyExploit.sol L26-L33)—which is automatically executed after Ether is transferred
-  from the targeted contract—to execute the vulnerable function again, before the state variable is changed.
-  Attack Scenarios - A contra
+  from the targeted contract—to execute the vulnerable function again, before the state variable is change
 fix: 'See crytic/not-so-smart-contracts reentrancy/README.md (anchor: Re-entrancy) for remediation.'
 detect:
   grep:
