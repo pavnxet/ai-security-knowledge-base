@@ -12,16 +12,19 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-121
+- CWE-125
+- CWE-306
+cwe_source: mapped
 owasp:
 - CS:Drone_Security_Cheat_Sheet#Introduction
 refs:
 - CS:Drone_Security_Cheat_Sheet#Introduction
 check: Introduction Drone security is crucial due to their widespread adoption in industries such as military,
   construction, and community services. With the increasing use of drone swarms, even minor security lapses
-  can lead to significant risks. This cheat sheet provides an overvie
+  can lead to significant risks. This c
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Drone_Security_Cheat_Sheet.md (anchor: Introduction) for
   remediation.'
 detect:

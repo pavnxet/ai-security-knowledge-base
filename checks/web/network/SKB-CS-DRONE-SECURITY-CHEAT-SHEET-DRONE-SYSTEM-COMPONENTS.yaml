@@ -12,16 +12,18 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-121
+- CWE-125
+- CWE-306
+cwe_source: mapped
 owasp:
 - CS:Drone_Security_Cheat_Sheet#Drone System Components
 refs:
 - CS:Drone_Security_Cheat_Sheet#Drone System Components
 check: 'Drone System Components A typical drone architecture consists of three main components: 1. Unmanned
-  Aircraft (UmA) – The physical drone itself, including its sensors and onboard systems. 2. Ground Control
-  Station (GCS'
+  Aircraft (UmA) – The physical drone itself, including its sensors and onboard systems.'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Drone_Security_Cheat_Sheet.md (anchor: Drone System Components)
   for remediation.'
 detect:

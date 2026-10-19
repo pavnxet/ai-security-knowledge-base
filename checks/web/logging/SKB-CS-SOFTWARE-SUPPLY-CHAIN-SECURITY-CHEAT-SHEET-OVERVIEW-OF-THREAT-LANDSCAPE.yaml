@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1357
+cwe_source: mapped
 owasp:
 - CS:Software_Supply_Chain_Security_Cheat_Sheet#Overview of Threat Landscape
 refs:
 - CS:Software_Supply_Chain_Security_Cheat_Sheet#Overview of Threat Landscape
 check: Overview of Threat Landscape Given the breadth and complexity of the SSC, it is unsurprising that
-  the threat landscape for SSC is similarly expansive. Threats include [dependency confusion](
+  the threat landscape for SSC is similarly expansive. Threats i
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Software_Supply_Chain_Security_Cheat_Sheet.md (anchor: Overview
   of Threat Landscape) for remediation.'
 detect:
