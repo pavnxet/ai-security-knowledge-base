@@ -1,0 +1,57 @@
+id: SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-SEMGREP-RULES
+title: Semgrep Rules
+summary: Semgrep Rules [Semgrep](https://semgrep.dev/) is a command-line tool for offline static analysis.
+  Use pre-built or custom rules to enforce c
+platforms:
+- web
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Semgrep Rules
+refs:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Semgrep Rules
+check: Semgrep Rules [Semgrep](https://semgrep.dev/) is a command-line tool for offline static analysis.
+  Use pre-built or custom rules to enforce code and security standards in your codebase. Explore the [Semgrep
+  rules](https://semgrep.dev/
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Semgrep Rules) for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- semgrep
+- rules
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Semgrep Rules
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-BASE-CHECKLIST
+title: Checklist
+summary: Checklist - [ ] No express.static on root/parent dirs - [ ] All user-influenced file paths bounds-checked
+  - [ ] NODE_ENV=production ; no sta
+platforms:
+- web
+- api
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:Checklist
+refs:
+- BASE:Checklist
+check: Checklist - [ ] No express.static on root/parent dirs - [ ] All user-influenced file paths bounds-checked
+  - [ ] NODE_ENV=production ; no stack traces to clients - [ ] Catch-all routes return static 404 - [
+  ] .dockerignore excludes .git , node_modules , .env , .map - [ ] bodyParser limits set - [ ] helmet
+  enabled; x-powered-by disabled - [
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: Checklist) for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- checklist
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: Checklist
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

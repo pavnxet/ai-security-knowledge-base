@@ -1,0 +1,57 @@
+id: SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-ASSESSING-OPENAPI-AND-SWAGGER-BASED-REST
+title: Assessing OpenAPI and Swagger-Based REST APIs
+summary: Assessing OpenAPI and Swagger-Based REST APIs Modern REST APIs commonly publish a machine-readable
+  description in [OpenAPI](https://spec.ope
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:REST_Assessment_Cheat_Sheet#Assessing OpenAPI and Swagger-Based REST
+refs:
+- CS:REST_Assessment_Cheat_Sheet#Assessing OpenAPI and Swagger-Based REST
+check: 'Assessing OpenAPI and Swagger-Based REST APIs Modern REST APIs commonly publish a machine-readable
+  description in [OpenAPI](https:'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Assessment_Cheat_Sheet.md (anchor: Assessing OpenAPI
+  and Swagger-Based REST APIs) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- assessing
+- openapi
+- swagger
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/REST_Assessment_Cheat_Sheet.md
+  anchor: Assessing OpenAPI and Swagger-Based REST APIs
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/REST_Assessment_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

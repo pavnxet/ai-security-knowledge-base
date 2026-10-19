@@ -1,0 +1,59 @@
+id: SKB-BASE-3-HTML-TEMPLATE-VS-TEXT-TEMPLATE-MI
+title: 3. `html/template` vs `text/template` misuse
+summary: '3. html/template vs text/template misuse What: text/template does not auto-escape → XSS. Using
+  it for HTML output is unsafe. Fix: Use html/t'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. `html/template` vs `text/template` mi
+refs:
+- BASE:3. `html/template` vs `text/template` mi
+check: '3. html/template vs text/template misuse What: text/template does not auto-escape → XSS. Using
+  it for HTML output is unsafe. Fix: Use html/template for HTML; text/template'
+fix: 'See yesmayank/secure-coding-baseline 11-go.md (anchor: 3. `html/template` vs `text/template` misuse)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- html
+- template
+- text
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: 3. `html/template` vs `text/template` misuse
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

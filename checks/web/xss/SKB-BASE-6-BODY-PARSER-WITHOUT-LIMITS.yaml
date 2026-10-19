@@ -1,0 +1,60 @@
+id: SKB-BASE-6-BODY-PARSER-WITHOUT-LIMITS
+title: 6. Body parser without limits
+summary: '6. Body parser without limits What: bodyParser.json() with no limit allows memory/CPU exhaustion;
+  reflection of parsed bodies is an XSS/leak'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. Body parser without limits
+refs:
+- BASE:6. Body parser without limits
+check: '6. Body parser without limits What: bodyParser.json() with no limit allows memory/CPU exhaustion;
+  reflection of parsed bodies is an XSS/leak vector. Dangerous pattern: Fix: Detection: rg -n "bodyParser\.json\(\)
+  body'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 6. Body parser without limits)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- body
+- parser
+- without
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 6. Body parser without limits
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

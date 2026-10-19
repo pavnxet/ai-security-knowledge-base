@@ -1,0 +1,60 @@
+id: SKB-BASE-12-PATH-TRAVERSAL-IN-FILE-OPS
+title: 12. Path traversal in file ops
+summary: '12. Path traversal in file ops What: file_get_contents(storage_path($request- f)) with .. escapes.
+  Fix: Validate filename; resolve and bound'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:12. Path traversal in file ops
+refs:
+- BASE:12. Path traversal in file ops
+check: '12. Path traversal in file ops What: file_get_contents(storage_path($request- f)) with .. escapes.
+  Fix: Validate filename; resolve and bounds-check against base dir. Detection: rg -n "file_get_contents\(.
+  request sto'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 12. Path traversal in file ops) for
+  remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+- path
+- traversal
+- file
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 12. Path traversal in file ops
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

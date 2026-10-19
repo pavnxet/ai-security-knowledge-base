@@ -1,0 +1,56 @@
+id: SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-TOOLS
+title: Tools
+summary: Tools This section lists several tools that can used to analyze the dependencies used by a project
+  in order to detect the vulnerabilities. I
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Vulnerable_Dependency_Management_Cheat_Sheet#Tools
+refs:
+- CS:Vulnerable_Dependency_Management_Cheat_Sheet#Tools
+check: Tools This section lists several tools that can used to analyze the dependencies used by a project
+  in order to detect the vulnerabilities. It's important to ensure, during the selection process of a
+  vulnerable dependency detection tool, that this one
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.md (anchor:
+  Tools) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- tools
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.md
+  anchor: Tools
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

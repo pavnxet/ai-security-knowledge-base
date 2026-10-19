@@ -1,0 +1,58 @@
+id: SKB-BASE-7-XSS-VIA-UNESCAPED-OUTPUT
+title: 7. XSS via unescaped output
+summary: '7. XSS via unescaped output What: echo $_GET[''name''] outputs raw HTML. Fix: echo htmlspecialchars($val,
+  ENT_QUOTES, ''UTF-8'') in the correct '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. XSS via unescaped output
+refs:
+- BASE:7. XSS via unescaped output
+check: '7. XSS via unescaped output What: echo $_GET[''name''] outputs raw HTML. Fix: echo htmlspecialchars($val,
+  ENT_QUOTES, ''UTF-8'') in the correct context; use a templating layer. Detection: rg -n "echo \$_ echo
+  \$. \$_" .php ---'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 7. XSS via unescaped output) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- unescaped
+- output
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 7. XSS via unescaped output
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

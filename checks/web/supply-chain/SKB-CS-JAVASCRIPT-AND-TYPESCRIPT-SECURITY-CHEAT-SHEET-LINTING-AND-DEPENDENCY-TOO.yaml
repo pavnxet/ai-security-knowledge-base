@@ -1,0 +1,57 @@
+id: SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-LINTING-AND-DEPENDENCY-TOO
+title: Linting and Dependency Tooling
+summary: Linting and Dependency Tooling - Lint with [ typescript-eslint ](https://typescript-eslint.io/)
+  recommended sets plus no-eval , no-implied-e
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Linting and Dependency Tooling
+refs:
+- CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Linting and Dependency Tooling
+check: Linting and Dependency Tooling - Lint with [ typescript-eslint ](https://typescript-eslint.io/)
+  recommended sets plus no-eval , n
+fix: 'See OWASP/CheatSheetSeries cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md (anchor:
+  Linting and Dependency Tooling) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- linting
+- dependency
+- tooling
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  anchor: Linting and Dependency Tooling
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,59 @@
+id: SKB-BASE-9-JWT-IN-LOCALSTORAGE-LONG-LIVED-TO
+title: 9. JWT in `localStorage` / long-lived tokens
+summary: '9. JWT in localStorage / long-lived tokens What: Storing JWTs in browser localStorage exposes
+  them to XSS exfiltration. Fix: Short-lived acc'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:9. JWT in `localStorage` / long-lived to
+refs:
+- BASE:9. JWT in `localStorage` / long-lived to
+check: '9. JWT in localStorage / long-lived tokens What: Storing JWTs in browser localStorage exposes
+  them to XSS exfiltration. Fix: Short-lived access token + httpOnly, Secure, SameSite=Strict coo'
+fix: 'See yesmayank/secure-coding-baseline 02-nestjs.md (anchor: 9. JWT in `localStorage` / long-lived
+  tokens) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- localstorage
+- long
+- lived
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 02-nestjs.md
+  anchor: 9. JWT in `localStorage` / long-lived tokens
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/02-nestjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

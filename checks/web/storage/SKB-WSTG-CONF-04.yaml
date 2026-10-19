@@ -1,0 +1,54 @@
+id: SKB-WSTG-CONF-04
+title: Review Old Backup and Unreferenced Files for Sensitive Information
+summary: Review Old Backup and Unreferenced Files for Sensitive Information. Find and analyze old, backup,
+  and unreferenced files - including files e
+platforms:
+- web
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-CONF-04
+refs:
+- WSTG-CONF-04
+check: Review Old Backup and Unreferenced Files for Sensitive Information. Find and analyze old, backup,
+  and unreferenced files - including files exposed only through their extension, and objects left in cloud
+  storage - that might contain sensitive information. Validate that no system or fr
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-CONF-04) for remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-CONF-04
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-UPDATING-DJANGO-AND-DRF-AND-HAVING-A-PR
+title: Updating Django and DRF and Having a Process for Updating Dependencies
+summary: Updating Django and DRF and Having a Process for Updating Dependencies All applications have
+  dependencies and those dependencies can have vu
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_REST_Framework_Cheat_Sheet#Updating Django and DRF and Having a Pro
+refs:
+- CS:Django_REST_Framework_Cheat_Sheet#Updating Django and DRF and Having a Pro
+check: Updating Django and DRF and Having a Process for Updating Dependenci
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_REST_Framework_Cheat_Sheet.md (anchor: Updating Django
+  and DRF and Having a Process for Updating Dependencies) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- updating
+- django
+- having
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_REST_Framework_Cheat_Sheet.md
+  anchor: Updating Django and DRF and Having a Process for Updating Dependencies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_REST_Framework_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

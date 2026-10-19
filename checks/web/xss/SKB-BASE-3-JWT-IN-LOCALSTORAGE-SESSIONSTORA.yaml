@@ -1,0 +1,82 @@
+id: SKB-BASE-3-JWT-IN-LOCALSTORAGE-SESSIONSTORA
+title: 3. JWT in `localStorage` / `sessionStorage`
+summary: '3. JWT in localStorage / sessionStorage What: Tokens in JS-accessible storage are exfiltratable
+  by any XSS. Fix: Short-lived access token in'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. JWT in `localStorage` / `sessionStora
+refs:
+- BASE:3. JWT in `localStorage` / `sessionStora
+check: '3. JWT in localStorage / sessionStorage What: Tokens in JS-accessible storage are exfiltratable
+  by any XSS. Fix: Short-lived access token in memory + refresh via httpOnly, Secure, SameSite c'
+fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 3. JWT in `localStorage` / `sessionStorage`)
+  for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- localstorage
+- sessionstorage
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 17-react-spa.md
+  anchor: 3. JWT in `localStorage` / `sessionStorage`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/17-react-spa.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 6. JWT in `localStorage`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 6. JWT in `localStorage`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-6-JWT-IN-LOCALSTORAGE
+- SKB-BASE-B50B6DE8AC
+aliases:
+- SKB-BASE-6-JWT-IN-LOCALSTORAGE
+- SKB-BASE-B50B6DE8AC

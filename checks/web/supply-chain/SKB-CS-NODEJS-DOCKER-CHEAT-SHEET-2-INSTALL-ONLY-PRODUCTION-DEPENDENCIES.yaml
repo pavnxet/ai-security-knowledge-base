@@ -1,0 +1,56 @@
+id: SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-2-INSTALL-ONLY-PRODUCTION-DEPENDENCIES
+title: 2) Install only production dependencies in the Node.js Docker image
+summary: 2) Install only production dependencies in the Node.js Docker image The following Dockerfile
+  directive installs all dependencies in the cont
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:NodeJS_Docker_Cheat_Sheet#2) Install only production dependencies '
+refs:
+- 'CS:NodeJS_Docker_Cheat_Sheet#2) Install only production dependencies '
+check: 2) Install only production dependencies in the Node.js Docker image The following Dockerfile direc
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NodeJS_Docker_Cheat_Sheet.md (anchor: 2) Install only production
+  dependencies in the Node.js Docker image) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- install
+- only
+- production
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  anchor: 2) Install only production dependencies in the Node.js Docker image
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

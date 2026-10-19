@@ -1,0 +1,59 @@
+id: SKB-BASE-11-PATH-TRAVERSAL-IN-FILE-SERVING
+title: 11. Path traversal in file serving
+summary: '11. Path traversal in file serving What: open(os.path.join(MEDIA_ROOT, filename)) with user-controlled
+  filename escapes the dir. Fix: Valida'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: storage
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:11. Path traversal in file serving
+refs:
+- BASE:11. Path traversal in file serving
+check: '11. Path traversal in file serving What: open(os.path.join(MEDIA_ROOT, filename)) with user-controlled
+  filename escapes the dir. Fix: Validate with os.path.abspath + prefix check, or use django.c'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 11. Path traversal in file serving) for
+  remediation.'
+detect:
+  grep:
+  - SharedPreferences
+  - NSUserDefaults
+  - UserDefaults
+  - sqlite
+  files:
+  - '**/*.kt'
+  - '**/*.java'
+  - '**/*.swift'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- storage
+- path
+- traversal
+- file
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 11. Path traversal in file serving
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

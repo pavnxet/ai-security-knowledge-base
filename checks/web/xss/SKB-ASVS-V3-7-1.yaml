@@ -1,0 +1,59 @@
+id: SKB-ASVS-V3-7-1
+title: Other Browser Security Considerations - V3.7.1
+summary: Verify that the application only uses client-side technologies which are still supported and
+  considered secure. Examples of technologies whi
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 65
+cwe:
+- CWE-306
+cwe_source: extracted
+owasp:
+- ASVS:V3.7.1
+refs:
+- ASVS:V3.7.1
+- ASVS V3.7.1
+check: Verify that the application only uses client-side technologies which are still supported and considered
+  secure. Examples of technologies which do not meet this requirement include NSAPI plugins, Flash, Shockwave,
+  ActiveX, Silverlight, NACL
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V3.7.1) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V3.7.1
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

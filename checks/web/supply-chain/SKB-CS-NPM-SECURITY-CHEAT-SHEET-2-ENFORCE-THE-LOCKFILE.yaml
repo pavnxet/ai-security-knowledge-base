@@ -1,0 +1,57 @@
+id: SKB-CS-NPM-SECURITY-CHEAT-SHEET-2-ENFORCE-THE-LOCKFILE
+title: 2) Enforce the lockfile
+summary: '2) Enforce the lockfile We embraced the birth of package lockfiles with open arms, which introduced:
+  deterministic installations across diff'
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NPM_Security_Cheat_Sheet#2) Enforce the lockfile
+refs:
+- CS:NPM_Security_Cheat_Sheet#2) Enforce the lockfile
+check: '2) Enforce the lockfile We embraced the birth of package lockfiles with open arms, which introduced:
+  deterministic installations across different environments, and enforced dependency expectations across
+  team collaborat'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 2) Enforce the lockfile)
+  for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- enforce
+- lockfile
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NPM_Security_Cheat_Sheet.md
+  anchor: 2) Enforce the lockfile
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NPM_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,59 @@
+id: SKB-BASE-11-UNSAFE-RENDER-WITH-USER-INPUT-SS
+title: 11. Unsafe `@Render` with user input (SSTI / XSS)
+summary: '11. Unsafe @Render with user input (SSTI / XSS) What: Passing unvalidated data into a template
+  without escaping or using <%- % style interpo'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: xss
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. Unsafe `@Render` with user input (SS
+refs:
+- BASE:11. Unsafe `@Render` with user input (SS
+check: '11. Unsafe @Render with user input (SSTI / XSS) What: Passing unvalidated data into a template
+  without escaping or using <%- % style interpolation. Fix: Use auto-escaping engine'
+fix: 'See yesmayank/secure-coding-baseline 02-nestjs.md (anchor: 11. Unsafe `@Render` with user input
+  (SSTI / XSS)) for remediation.'
+detect:
+  grep:
+  - innerHTML
+  - dangerouslySetInnerHTML
+  - document.write
+  - '|safe'
+  files:
+  - '**/*.html'
+  - '**/*.js'
+  - '**/*.jsx'
+  - '**/*.tsx'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- xss
+- unsafe
+- render
+- with
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 02-nestjs.md
+  anchor: 11. Unsafe `@Render` with user input (SSTI / XSS)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/02-nestjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

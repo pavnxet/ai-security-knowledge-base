@@ -1,0 +1,57 @@
+id: SKB-CS-NPM-SECURITY-CHEAT-SHEET-4-ASSESS-NPM-PROJECT-HEALTH
+title: 4) Assess npm project health
+summary: 4) Assess npm project health npm outdated command Rushing to constantly upgrade dependencies
+  to their latest releases is not necessarily a g
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NPM_Security_Cheat_Sheet#4) Assess npm project health
+refs:
+- CS:NPM_Security_Cheat_Sheet#4) Assess npm project health
+check: 4) Assess npm project health npm outdated command Rushing to constantly upgrade dependencies to
+  their latest releases is not necessarily a good practice if it is done without reviewing rele
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 4) Assess npm project
+  health) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- assess
+- project
+- health
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NPM_Security_Cheat_Sheet.md
+  anchor: 4) Assess npm project health
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NPM_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

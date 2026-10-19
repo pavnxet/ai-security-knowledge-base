@@ -1,0 +1,58 @@
+id: SKB-BASE-2-MISSING-WEAK-DEPENDENCY-VALIDATION
+title: 2. Missing/weak dependency validation
+summary: '2. Missing/weak dependency validation What: Accepting dict or untyped params bypasses Pydantic
+  validation. Fix: Use typed BaseModel request '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. Missing/weak dependency validation
+refs:
+- BASE:2. Missing/weak dependency validation
+check: '2. Missing/weak dependency validation What: Accepting dict or untyped params bypasses Pydantic
+  validation. Fix: Use typed BaseModel request bodies and path/query params with constraints ( c'
+fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 2. Missing/weak dependency validation)
+  for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- missing
+- weak
+- dependency
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 2. Missing/weak dependency validation
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-CASES
+title: Cases
+summary: 'Cases Depending on the application''s functionality and requirements, there are two basic cases
+  in which SSRF can happen: - Application can s'
+platforms:
+- web
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Cases
+refs:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Cases
+check: 'Cases Depending on the application''s functionality and requirements, there are two basic cases
+  in which SSRF can happen: - Application can send request only to identified and trusted applications
+  : Case when [allowlist](https://en.wikipedia.org/wiki/Whitelisting) approach is ava'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  Cases) for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- cases
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: Cases
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

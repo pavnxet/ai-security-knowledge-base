@@ -1,0 +1,56 @@
+id: SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-IMDSV2-IN-AWS
+title: IMDSv2 in AWS
+summary: IMDSv2 in AWS In cloud environments SSRF is often used to access and steal credentials and access
+  tokens from metadata services (e.g. AWS In
+platforms:
+- web
+stacks:
+- any
+domain: ssrf
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#IMDSv2 in AWS
+refs:
+- CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#IMDSv2 in AWS
+check: IMDSv2 in AWS In cloud environments SSRF is often used to access and steal credentials and access
+  tokens from metadata services (e.g. AWS Instance Metadata Service, Azure Instance Metadata Service,
+  GCP metadata server). [IMDSv2](https://aws.amazon.co
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
+  IMDSv2 in AWS) for remediation.'
+detect:
+  grep:
+  - requests.get(
+  - fetch(
+  - axios(
+  - urlopen
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.go'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- ssrf
+- imdsv
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  anchor: IMDSv2 in AWS
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

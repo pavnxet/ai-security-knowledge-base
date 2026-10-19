@@ -1,0 +1,55 @@
+id: SKB-CS-HTML5-SECURITY-CHEAT-SHEET-TABNABBING
+title: Tabnabbing
+summary: Tabnabbing Attack is described in detail in this [article](https://owasp.org/www-community/attacks/Reverse_Tabnabbing).
+  To summarize, it's t
+platforms:
+- web
+stacks:
+- any
+domain: supply-chain
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTML5_Security_Cheat_Sheet#Tabnabbing
+refs:
+- CS:HTML5_Security_Cheat_Sheet#Tabnabbing
+check: Tabnabbing Attack is described in detail in this [article](https://owasp.org/www-community/attacks/Reverse_Tabnabbing).
+  To summarize, it's the capacity to act on parent page's content or location from a newly opened page
+  via the back link exposed by
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTML5_Security_Cheat_Sheet.md (anchor: Tabnabbing) for remediation.'
+detect:
+  grep:
+  - dependencies
+  - require(
+  - 'import '
+  files:
+  - '**/package.json'
+  - '**/requirements.txt'
+  - '**/go.mod'
+  - '**/Gemfile'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- supply-chain
+- tabnabbing
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTML5_Security_Cheat_Sheet.md
+  anchor: Tabnabbing
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTML5_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
