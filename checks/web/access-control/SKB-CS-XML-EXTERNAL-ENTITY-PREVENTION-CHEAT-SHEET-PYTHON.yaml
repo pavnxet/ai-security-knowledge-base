@@ -12,16 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-611
+cwe_source: mapped
 owasp:
 - CS:XML_External_Entity_Prevention_Cheat_Sheet#Python
 refs:
 - CS:XML_External_Entity_Prevention_Cheat_Sheet#Python
 check: Python Follow Python's current [XML security guidance](https://docs.python.org/3/library/xml.html
   xml-security). The built-in parsers rely on Expat, which may be bundled with Python or supplied by the
-  operating system. Check pyexpat.EXPAT_VERSION in
+  operating system.
 fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md (anchor: Python)
   for remediation.'
 detect:

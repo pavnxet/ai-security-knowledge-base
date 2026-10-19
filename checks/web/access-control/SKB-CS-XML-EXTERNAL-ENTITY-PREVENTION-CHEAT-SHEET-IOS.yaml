@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-611
+cwe_source: mapped
 owasp:
 - CS:XML_External_Entity_Prevention_Cheat_Sheet#iOS
 refs:

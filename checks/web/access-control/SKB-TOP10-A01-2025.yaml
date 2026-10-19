@@ -12,16 +12,21 @@ phase:
 - pre-launch
 - full-audit
 severity: critical
-priority: 85
-cwe: []
-cwe_source: extracted
+priority: 95
+cwe:
+- CWE-1275
+- CWE-200
+- CWE-201
+- CWE-219
+- CWE-22
+- CWE-23
+cwe_source: mapped
 owasp:
 - Top10:A01:2025
 refs:
 - Top10:A01:2025
 check: 'Maintaining its position at 1 in the Top Ten, 100% of the applications tested were found to have
-  some form of broken access control. Notable CWEs included are CWE-200: Exposure of Sensitive Information
-  to an Unauthorized Actor , CWE-201: Exposure of'
+  some form of broken access control. Notable CWEs included are CWE-200: Exposure of Sensitive'
 fix: 'See OWASP/Top10 2025/docs/en/A01_2025-Broken_Access_Control.md (anchor: A01:2025) for remediation.'
 detect:
   grep:

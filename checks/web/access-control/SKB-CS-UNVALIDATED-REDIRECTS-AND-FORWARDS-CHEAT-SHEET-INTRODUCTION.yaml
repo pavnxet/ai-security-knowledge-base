@@ -13,15 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-601
+cwe_source: mapped
 owasp:
 - CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#Introduction
 refs:
 - CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#Introduction
 check: Introduction Unvalidated redirects and forwards are possible when a web application accepts untrusted
-  input that could cause the web application to redirect the request to a URL contained within untrusted
-  input. By modi
+  input that could cause the web application to redirect the request to a URL contained w
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md (anchor:
   Introduction) for remediation.'
 detect:
