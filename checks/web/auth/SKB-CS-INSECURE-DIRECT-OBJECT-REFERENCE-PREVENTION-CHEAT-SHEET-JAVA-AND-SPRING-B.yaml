@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-639
+cwe_source: mapped
 owasp:
 - CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Java and Spring Boot example
 refs:
 - CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Java and Spring Boot example
 check: Java and Spring Boot example These illustrative examples assume authenticated requests and a policy
-  that only owners can read documents. currentUser() represents an application helper that
+  that only owners can read documents. currentUser() represe
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
   (anchor: Java and Spring Boot example) for remediation.'
 detect:

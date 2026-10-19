@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1104
+cwe_source: mapped
 owasp:
 - CS:Dependency_Graph_SBOM_Cheat_Sheet#Introduction
 refs:

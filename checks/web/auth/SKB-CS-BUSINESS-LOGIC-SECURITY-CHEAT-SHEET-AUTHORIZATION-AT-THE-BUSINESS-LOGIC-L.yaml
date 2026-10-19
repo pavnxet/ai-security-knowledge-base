@@ -13,14 +13,17 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Authorization at the Business-logic Laye
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Authorization at the Business-logic Laye
 check: Authorization at the Business-logic Layer Technical authorization (is this user authenticated,
-  do they have this role) is necessary but not sufficient. Many b
+  do they have this role) is necess
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Authorization
   at the Business-logic Layer) for remediation.'
 detect:
