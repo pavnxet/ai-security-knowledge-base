@@ -11,9 +11,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-352
+cwe_source: mapped
 owasp:
 - CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Disallowing simple requests
 refs:

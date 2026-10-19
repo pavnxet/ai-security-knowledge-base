@@ -13,15 +13,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 45
-cwe: []
-cwe_source: extracted
+priority: 55
+cwe:
+- CWE-502
+cwe_source: mapped
 owasp:
 - BASE:10. Deserialization RCE (BinaryFormatter
 refs:
 - BASE:10. Deserialization RCE (BinaryFormatter
-check: '10. Deserialization RCE (BinaryFormatter, Newtonsoft polymorphic) What: BinaryFormatter.Deserialize
-  or JsonConvert.D'
+check: '10. Deserialization RCE (BinaryFormatter, Newtonsoft polymorphic) What: BinaryFormatte'
 fix: 'See yesmayank/secure-coding-baseline 13-aspnet-core.md (anchor: 10. Deserialization RCE (BinaryFormatter,
   Newtonsoft polymorphic)) for remediation.'
 detect:

@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-601
+cwe_source: mapped
 owasp:
 - CS:OAuth2_Cheat_Sheet#OAuth 2.0 Essential Basics
 refs:

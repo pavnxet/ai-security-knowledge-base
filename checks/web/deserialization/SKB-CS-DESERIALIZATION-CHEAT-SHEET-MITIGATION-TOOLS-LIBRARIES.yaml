@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-502
+cwe_source: mapped
 owasp:
 - CS:Deserialization_Cheat_Sheet#Mitigation Tools/Libraries
 refs:

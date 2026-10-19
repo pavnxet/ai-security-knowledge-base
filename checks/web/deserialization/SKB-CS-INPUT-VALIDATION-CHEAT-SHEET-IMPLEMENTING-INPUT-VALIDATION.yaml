@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-20
+cwe_source: mapped
 owasp:
 - CS:Input_Validation_Cheat_Sheet#Implementing Input Validation
 refs:
