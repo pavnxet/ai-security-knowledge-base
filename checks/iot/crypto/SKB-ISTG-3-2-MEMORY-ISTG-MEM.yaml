@@ -12,16 +12,19 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 45
-cwe: []
-cwe_source: extracted
+priority: 55
+cwe:
+- CWE-119
+- CWE-121
+- CWE-693
+cwe_source: mapped
 owasp:
 - ISTG:3.2. Memory (ISTG-MEM)
 refs:
 - ISTG:3.2. Memory (ISTG-MEM)
 check: 3.2. Memory (ISTG-MEM) Table of Contents [Overview]( overview) [Information Gathering (ISTG-MEM-INFO)](
   information-gathering-istg-mem-info) [Disclosure of Source Code and Binaries (ISTG-MEM-INFO-001)]( disclosure-of-source-code-and-binaries-istg-mem-info-001)
-  [Disclosure of Implementation Details (ISTG-MEM-I
+  [Disclosure of Impl
 fix: 'See OWASP/owasp-istg src/03_test_cases/memory/README.md (anchor: 3.2. Memory (ISTG-MEM)) for remediation.'
 detect:
   grep:

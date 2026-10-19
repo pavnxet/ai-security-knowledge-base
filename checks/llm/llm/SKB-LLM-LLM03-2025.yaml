@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 70
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1357
+cwe_source: mapped
 owasp:
 - LLM03:2025
 refs:

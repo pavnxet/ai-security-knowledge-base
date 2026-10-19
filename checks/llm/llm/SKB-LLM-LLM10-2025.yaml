@@ -12,16 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 70
-cwe: []
-cwe_source: extracted
+priority: 80
+cwe:
+- CWE-400
+cwe_source: mapped
 owasp:
 - LLM10:2025
 refs:
 - LLM10:2025
 check: Unbounded Consumption refers to the process where a Large Language Model (LLM) generates outputs
   based on input queries or prompts. Inference is a critical function of LLMs, involving the application
-  of learned patterns and knowledge to produce relevant responses or predictions.
+  of learned patterns and knowledge to produce rele
 fix: 'See OWASP/www-project-top-10-for-large-language-model-applications 2_0_vulns/LLM10_UnboundedConsumption.md
   (anchor: LLM10:2025) for remediation.'
 detect:

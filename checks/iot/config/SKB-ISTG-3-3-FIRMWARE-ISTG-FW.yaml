@@ -12,16 +12,18 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 30
-cwe: []
-cwe_source: extracted
+priority: 40
+cwe:
+- CWE-119
+- CWE-121
+- CWE-693
+cwe_source: mapped
 owasp:
 - ISTG:3.3. Firmware (ISTG-FW)
 refs:
 - ISTG:3.3. Firmware (ISTG-FW)
 check: 3.3. Firmware (ISTG-FW) Table of Contents [Overview]( overview) [Information Gathering (ISTG-FW-INFO)](
-  information-gathering-istg-fw-info) [Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)]( disclosure-of-source-code-and-binaries-istg-fw-info-001)
-  [Disclosure of Impleme
+  information-gathering-istg-fw-info) [Disclosure of Source Code and Binaries (ISTG-FW-INFO-001)]( disclosure-of-source-code-and-binaries-istg-fw-in
 fix: 'See OWASP/owasp-istg src/03_test_cases/firmware/README.md (anchor: 3.3. Firmware (ISTG-FW)) for
   remediation.'
 detect:
