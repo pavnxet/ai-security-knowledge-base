@@ -1,0 +1,61 @@
+id: SKB-BASE-8-BOLA-IDOR-ON-OBJECT-LOOKUPS
+title: 8. BOLA / IDOR on object lookups
+summary: '8. BOLA / IDOR on object lookups What: get_object_or_404(Model, pk=pk) without ownership checks
+  lets users read others'' records. Fix: Filter'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- BASE:8. BOLA / IDOR on object lookups
+refs:
+- BASE:8. BOLA / IDOR on object lookups
+check: '8. BOLA / IDOR on object lookups What: get_object_or_404(Model, pk=pk) without ownership checks
+  lets users read others'' records. Fix: Filter by owner: get_object_or_404(Model, pk=pk, owner=request.user)
+  . Detection: rg -n "ge'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 8. BOLA / IDOR on object lookups) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- bola
+- idor
+- object
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 8. BOLA / IDOR on object lookups
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

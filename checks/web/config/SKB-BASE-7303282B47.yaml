@@ -1,0 +1,59 @@
+id: SKB-BASE-7303282B47
+title: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+summary: '4. Weak CSP / unsafe-inline / unsafe-eval What: Without nonce-based CSP, inline scripts run;
+  unsafe-eval weakens further. Fix: Nonce-based C'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. Weak CSP / `unsafe-inline` / `unsafe-
+refs:
+- BASE:4. Weak CSP / `unsafe-inline` / `unsafe-
+check: '4. Weak CSP / unsafe-inline / unsafe-eval What: Without nonce-based CSP, inline scripts run; unsafe-eval
+  weakens further. Fix: Nonce-based CSP; remove unsafe-eval . Detection: check CSP headers / i'
+fix: 'See yesmayank/secure-coding-baseline 19-vue-nuxt.md (anchor: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- weak
+- unsafe
+- inline
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

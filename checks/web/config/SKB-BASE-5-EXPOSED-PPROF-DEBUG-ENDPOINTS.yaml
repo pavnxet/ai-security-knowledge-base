@@ -1,0 +1,58 @@
+id: SKB-BASE-5-EXPOSED-PPROF-DEBUG-ENDPOINTS
+title: 5. Exposed pprof / debug endpoints
+summary: '5. Exposed pprof / debug endpoints What: import _ "net/http/pprof" registers /debug/pprof on
+  the default mux — leaks goroutines, heap, sourc'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Exposed pprof / debug endpoints
+refs:
+- BASE:5. Exposed pprof / debug endpoints
+check: '5. Exposed pprof / debug endpoints What: import _ "net/http/pprof" registers /debug/pprof on the
+  default mux — leaks goroutines, heap, source. Fix: Register pprof only on an internal listener; ne'
+fix: 'See yesmayank/secure-coding-baseline 11-go.md (anchor: 5. Exposed pprof / debug endpoints) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- exposed
+- pprof
+- debug
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 11-go.md
+  anchor: 5. Exposed pprof / debug endpoints
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/11-go.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

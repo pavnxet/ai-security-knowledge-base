@@ -1,0 +1,72 @@
+id: SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-WINDOW
+title: 7. Open redirect via `Router` / `window.location`
+summary: '7. Open redirect via Router / window.location What: this.router.navigateByUrl(queryReturn) to
+  attacker site. Fix: Allowlist local routes. De'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. Open redirect via `Router` / `window.
+refs:
+- BASE:7. Open redirect via `Router` / `window.
+check: '7. Open redirect via Router / window.location What: this.router.navigateByUrl(queryReturn) to
+  attacker site. Fix: Allowlist local routes. Detection: rg -n "navigateByUrl navigat'
+fix: 'See yesmayank/secure-coding-baseline 18-angular.md (anchor: 7. Open redirect via `Router` / `window.location`)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- open
+- redirect
+- router
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 7. Open redirect via `Router` / `window.location`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 7. Open redirect via `router.push` / `window.location`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-PUSH-WI
+aliases:
+- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-PUSH-WI

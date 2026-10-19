@@ -1,0 +1,60 @@
+id: SKB-BASE-4-DEVTOOLS-ACTIVE-IN-PROD
+title: 4. Devtools active in prod
+summary: '4. Devtools active in prod What: spring-boot-devtools enables live reload and a restart listener;
+  reachable in prod = remote code execution '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. Devtools active in prod
+refs:
+- BASE:4. Devtools active in prod
+check: '4. Devtools active in prod What: spring-boot-devtools enables live reload and a restart listener;
+  reachable in prod = remote code execution risk. Fix: Exclude devtools from the prod jar (it''s excluded
+  by default, but verify custom builds). Dete'
+fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 4. Devtools active in prod) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- devtools
+- active
+- prod
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 06-spring-boot.md
+  anchor: 4. Devtools active in prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/06-spring-boot.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

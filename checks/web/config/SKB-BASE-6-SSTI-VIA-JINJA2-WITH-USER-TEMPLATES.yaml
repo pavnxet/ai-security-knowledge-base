@@ -1,0 +1,59 @@
+id: SKB-BASE-6-SSTI-VIA-JINJA2-WITH-USER-TEMPLATES
+title: 6. SSTI via Jinja2 with user templates
+summary: '6. SSTI via Jinja2 with user templates What: render_template_string(user_input) renders user
+  content as a template → RCE via {{ config }} , '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. SSTI via Jinja2 with user templates
+refs:
+- BASE:6. SSTI via Jinja2 with user templates
+check: '6. SSTI via Jinja2 with user templates What: render_template_string(user_input) renders user content
+  as a template → RCE via {{ config }} , {{ ''''.__class__ }} . Dangerous pattern: Fix: Never render'
+fix: 'See yesmayank/secure-coding-baseline 04-flask.md (anchor: 6. SSTI via Jinja2 with user templates)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- ssti
+- jinja
+- with
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 04-flask.md
+  anchor: 6. SSTI via Jinja2 with user templates
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/04-flask.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

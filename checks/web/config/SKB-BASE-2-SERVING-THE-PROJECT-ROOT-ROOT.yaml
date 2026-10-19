@@ -1,0 +1,59 @@
+id: SKB-BASE-2-SERVING-THE-PROJECT-ROOT-ROOT
+title: 2. Serving the project root / `root .`
+summary: '2. Serving the project root / root . What: root /var/www/app; pointing at a dir containing source/config
+  leaks them if no location blocks re'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. Serving the project root / `root .`
+refs:
+- BASE:2. Serving the project root / `root .`
+check: '2. Serving the project root / root . What: root /var/www/app; pointing at a dir containing source/config
+  leaks them if no location blocks restrict. Fix: Serve only public/ or static/ ; deny dotfile'
+fix: 'See yesmayank/secure-coding-baseline 22-nginx.md (anchor: 2. Serving the project root / `root .`)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- serving
+- project
+- root
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 22-nginx.md
+  anchor: 2. Serving the project root / `root .`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/22-nginx.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

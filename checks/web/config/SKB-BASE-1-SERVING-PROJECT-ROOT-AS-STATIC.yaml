@@ -1,0 +1,59 @@
+id: SKB-BASE-1-SERVING-PROJECT-ROOT-AS-STATIC
+title: 1. Serving project root as static
+summary: '1. Serving project root as static What: Files::new("/", ".") (Actix) or ServeDir::new(".") (Axum)
+  exposes source and config. Fix: Serve only'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:1. Serving project root as static
+refs:
+- BASE:1. Serving project root as static
+check: '1. Serving project root as static What: Files::new("/", ".") (Actix) or ServeDir::new(".") (Axum)
+  exposes source and config. Fix: Serve only a dedicated static/ dir; never the crate root. Detecti'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 1. Serving project root as static) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- serving
+- project
+- root
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 1. Serving project root as static
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

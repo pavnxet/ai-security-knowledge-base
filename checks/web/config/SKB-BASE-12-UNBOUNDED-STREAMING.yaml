@@ -1,0 +1,58 @@
+id: SKB-BASE-12-UNBOUNDED-STREAMING
+title: 12. Unbounded streaming
+summary: '12. Unbounded streaming What: Server-streaming or bidi-streaming without per-stream quotas →
+  resource exhaustion. Fix: Cap concurrent stream'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Unbounded streaming
+refs:
+- BASE:12. Unbounded streaming
+check: '12. Unbounded streaming What: Server-streaming or bidi-streaming without per-stream quotas → resource
+  exhaustion. Fix: Cap concurrent streams per peer; set MaxConcurrentStreams ; timeouts. Detection: rg
+  -n "MaxConcurrentStreams St'
+fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 12. Unbounded streaming) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- unbounded
+- streaming
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 15-grpc.md
+  anchor: 12. Unbounded streaming
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/15-grpc.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

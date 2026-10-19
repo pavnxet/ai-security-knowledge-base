@@ -1,0 +1,59 @@
+id: SKB-BASE-7-MASS-ASSIGNMENT-VIA-MODELFORM
+title: 7. Mass assignment via `ModelForm` / `**request.POST`
+summary: '7. Mass assignment via ModelForm / request.POST What: Binding request data directly to a model
+  form lets attackers set fields like is_staff '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. Mass assignment via `ModelForm` / `**
+refs:
+- BASE:7. Mass assignment via `ModelForm` / `**
+check: '7. Mass assignment via ModelForm / request.POST What: Binding request data directly to a model
+  form lets attackers set fields like is_staff or role . Fi'
+fix: 'See yesmayank/secure-coding-baseline 03-django.md (anchor: 7. Mass assignment via `ModelForm` /
+  `**request.POST`) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- mass
+- assignment
+- modelform
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 03-django.md
+  anchor: 7. Mass assignment via `ModelForm` / `**request.POST`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/03-django.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

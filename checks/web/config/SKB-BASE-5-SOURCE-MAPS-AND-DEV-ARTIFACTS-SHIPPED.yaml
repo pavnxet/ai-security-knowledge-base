@@ -1,0 +1,59 @@
+id: SKB-BASE-5-SOURCE-MAPS-AND-DEV-ARTIFACTS-SHIPPED
+title: 5. Source maps and dev artifacts shipped to prod
+summary: '5. Source maps and dev artifacts shipped to prod What: .map , node_modules/ , .git/ , coverage/
+  in the image let attackers reconstruct sourc'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Source maps and dev artifacts shipped
+refs:
+- BASE:5. Source maps and dev artifacts shipped
+check: '5. Source maps and dev artifacts shipped to prod What: .map , node_modules/ , .git/ , coverage/
+  in the image let attackers reconstruct source or browse histor'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 5. Source maps and dev artifacts
+  shipped to prod) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- source
+- maps
+- artifacts
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 5. Source maps and dev artifacts shipped to prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

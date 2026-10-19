@@ -1,0 +1,60 @@
+id: SKB-BASE-12-ASYNC-BLOCKING-THE-EVENT-LOOP
+title: 12. Async blocking the event loop
+summary: '12. Async blocking the event loop What: Sync CPU/IO in async def endpoints blocks all requests.
+  Fix: Offload to run_in_executor or use async'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:12. Async blocking the event loop
+refs:
+- BASE:12. Async blocking the event loop
+check: '12. Async blocking the event loop What: Sync CPU/IO in async def endpoints blocks all requests.
+  Fix: Offload to run_in_executor or use async drivers. Detection: review async def endpoints for sync
+  reques'
+fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 12. Async blocking the event loop) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- async
+- blocking
+- event
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 05-fastapi.md
+  anchor: 12. Async blocking the event loop
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/05-fastapi.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

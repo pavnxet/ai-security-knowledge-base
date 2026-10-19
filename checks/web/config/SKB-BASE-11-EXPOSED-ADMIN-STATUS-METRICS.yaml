@@ -1,0 +1,60 @@
+id: SKB-BASE-11-EXPOSED-ADMIN-STATUS-METRICS
+title: 11. Exposed admin / status / metrics
+summary: '11. Exposed admin / status / metrics What: /status , /stub_status , /metrics , admin locations
+  reachable publicly. Fix: allow 10.0.0.0/8; de'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. Exposed admin / status / metrics
+refs:
+- BASE:11. Exposed admin / status / metrics
+check: '11. Exposed admin / status / metrics What: /status , /stub_status , /metrics , admin locations
+  reachable publicly. Fix: allow 10.0.0.0/8; deny all; or bind to internal listener. Detection: rg -n
+  "stub_status /sta'
+fix: 'See yesmayank/secure-coding-baseline 22-nginx.md (anchor: 11. Exposed admin / status / metrics)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- exposed
+- admin
+- status
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 22-nginx.md
+  anchor: 11. Exposed admin / status / metrics
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/22-nginx.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

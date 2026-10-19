@@ -1,0 +1,59 @@
+id: SKB-BASE-4-OVER-GRANTED-PRIVILEGES-GRANT-ALL
+title: 4. Over-granted privileges (`GRANT ALL`)
+summary: '4. Over-granted privileges ( GRANT ALL ) What: GRANT ALL ON DATABASE x TO app; lets the app
+  drop tables, write to any schema. Fix: GRANT SEL'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. Over-granted privileges (`GRANT ALL`)
+refs:
+- BASE:4. Over-granted privileges (`GRANT ALL`)
+check: '4. Over-granted privileges ( GRANT ALL ) What: GRANT ALL ON DATABASE x TO app; lets the app drop
+  tables, write to any schema. Fix: GRANT SELECT, INSERT, UPDATE, DELETE ON schema. TO app; only what''s'
+fix: 'See yesmayank/secure-coding-baseline 24-postgresql.md (anchor: 4. Over-granted privileges (`GRANT
+  ALL`)) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- over
+- granted
+- privileges
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 24-postgresql.md
+  anchor: 4. Over-granted privileges (`GRANT ALL`)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/24-postgresql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

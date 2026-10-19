@@ -1,0 +1,58 @@
+id: SKB-BASE-11-PATH-TRAVERSAL
+title: 11. Path traversal
+summary: '11. Path traversal What: open(os.path.join(BASE, path)) with user path containing .. . Fix:
+  Resolve and prefix-check against BASE . Detectio'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:11. Path traversal
+refs:
+- BASE:11. Path traversal
+check: '11. Path traversal What: open(os.path.join(BASE, path)) with user path containing .. . Fix: Resolve
+  and prefix-check against BASE . Detection: rg -n "os\.path\.join\(. request open\(. request" .py ---'
+fix: 'See yesmayank/secure-coding-baseline 04-flask.md (anchor: 11. Path traversal) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- path
+- traversal
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 04-flask.md
+  anchor: 11. Path traversal
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/04-flask.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

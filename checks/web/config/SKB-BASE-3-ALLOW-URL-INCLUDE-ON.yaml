@@ -1,0 +1,58 @@
+id: SKB-BASE-3-ALLOW-URL-INCLUDE-ON
+title: 3. `allow_url_include=On`
+summary: '3. allow_url_include=On What: Allows include / require of remote URLs → RFI → RCE. Fix: allow_url_include=Off
+  (default), allow_url_fopen=Off'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:3. `allow_url_include=On`
+refs:
+- BASE:3. `allow_url_include=On`
+check: '3. allow_url_include=On What: Allows include / require of remote URLs → RFI → RCE. Fix: allow_url_include=Off
+  (default), allow_url_fopen=Off if possible. Detection: rg -n "allow_url_include allow_url_fopen" php.ini
+  ---'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 3. `allow_url_include=On`) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- allow
+- include
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 3. `allow_url_include=On`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

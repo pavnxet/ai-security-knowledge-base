@@ -1,0 +1,59 @@
+id: SKB-BASE-7-OPEN-REDIRECT-IN-CLIENT-ROUTING
+title: 7. Open redirect in client routing
+summary: '7. Open redirect in client routing What: window.location = query.get(''next'') to attacker site.
+  Fix: Allowlist local targets; reject absolute'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. Open redirect in client routing
+refs:
+- BASE:7. Open redirect in client routing
+check: '7. Open redirect in client routing What: window.location = query.get(''next'') to attacker site.
+  Fix: Allowlist local targets; reject absolute URLs. Detection: rg -n "window\.location location\.h'
+fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 7. Open redirect in client routing)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- open
+- redirect
+- client
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 17-react-spa.md
+  anchor: 7. Open redirect in client routing
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/17-react-spa.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

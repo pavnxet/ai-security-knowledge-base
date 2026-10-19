@@ -1,0 +1,59 @@
+id: SKB-BASE-6-MASS-ASSIGNMENT-FILLABLE
+title: 6. Mass assignment (fillable)
+summary: '6. Mass assignment (fillable) What: Model::create($request- all()) without $fillable lets attackers
+  set is_admin . Fix: Define $fillable (al'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:6. Mass assignment (fillable)
+refs:
+- BASE:6. Mass assignment (fillable)
+check: '6. Mass assignment (fillable) What: Model::create($request- all()) without $fillable lets attackers
+  set is_admin . Fix: Define $fillable (allowlist); never $guarded = [] . Detection: rg -n "request- all\(\)
+  ::'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 6. Mass assignment (fillable)) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- mass
+- assignment
+- fillable
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 6. Mass assignment (fillable)
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
