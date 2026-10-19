@@ -1,0 +1,2033 @@
+id	severity	priority	title
+SKB-TOP10-A01-2025	critical	95	A01_2025-Broken_Access_Control.md
+SKB-API-API1-2023	critical	85	0xa1-broken-object-level-authorization.md
+SKB-LLM-LLM01-2025	critical	85	LLM01_PromptInjection.md
+SKB-TOP10-A03-2025	critical	85	A03_2025-Software_Supply_Chain_Failures.md
+SKB-ASVS-V1-2-4	critical	80	Injection Prevention - V1.2.4
+SKB-ASVS-V1-2-5	critical	80	Injection Prevention - V1.2.5
+SKB-ASVS-V1-5-1	critical	80	Safe Deserialization - V1.5.1
+SKB-LLM-LLM10-2025	high	80	LLM10_UnboundedConsumption.md
+SKB-API-API10-2023	high	70	0xaa-unsafe-consumption-of-apis.md
+SKB-ASVS-V1-2-1	critical	70	Injection Prevention - V1.2.1
+SKB-ASVS-V1-2-2	critical	70	Injection Prevention - V1.2.2
+SKB-ASVS-V1-2-3	critical	70	Injection Prevention - V1.2.3
+SKB-ASVS-V1-3-1	critical	70	Sanitization - V1.3.1
+SKB-ASVS-V1-3-2	critical	70	Sanitization - V1.3.2
+SKB-ASVS-V11-3-1	critical	70	Encryption Algorithms - V11.3.1
+SKB-ASVS-V11-3-2	critical	70	Encryption Algorithms - V11.3.2
+SKB-ASVS-V11-4-1	critical	70	Hashing and Hash-based Functions - V11.4.1
+SKB-ASVS-V6-1-1	critical	70	Authentication Documentation - V6.1.1
+SKB-ASVS-V6-2-1	critical	70	Password Security - V6.2.1
+SKB-ASVS-V6-2-2	critical	70	Password Security - V6.2.2
+SKB-ASVS-V6-2-3	critical	70	Password Security - V6.2.3
+SKB-ASVS-V6-2-4	critical	70	Password Security - V6.2.4
+SKB-ASVS-V6-2-5	critical	70	Password Security - V6.2.5
+SKB-ASVS-V6-2-6	critical	70	Password Security - V6.2.6
+SKB-ASVS-V6-2-7	critical	70	Password Security - V6.2.7
+SKB-ASVS-V6-2-8	critical	70	Password Security - V6.2.8
+SKB-ASVS-V6-3-1	critical	70	General Authentication Security - V6.3.1
+SKB-ASVS-V6-3-2	critical	70	General Authentication Security - V6.3.2
+SKB-ASVS-V6-4-1	critical	70	Authentication Factor Lifecycle and Recovery - V6.4.1
+SKB-ASVS-V6-4-2	critical	70	Authentication Factor Lifecycle and Recovery - V6.4.2
+SKB-ASVS-V9-1-1	critical	70	Token source and integrity - V9.1.1
+SKB-ASVS-V9-1-2	critical	70	Token source and integrity - V9.1.2
+SKB-ASVS-V9-1-3	critical	70	Token source and integrity - V9.1.3
+SKB-ASVS-V9-2-1	critical	70	Token content - V9.2.1
+SKB-LLM-LLM02-2025	high	70	LLM02_SensitiveInformationDisclosure.md
+SKB-LLM-LLM03-2025	high	70	LLM03_SupplyChain.md
+SKB-LLM-LLM04-2025	high	70	LLM04_DataModelPoisoning.md
+SKB-LLM-LLM05-2025	high	70	LLM05_ImproperOutputHandling.md
+SKB-LLM-LLM06-2025	high	70	LLM06_ExcessiveAgency.md
+SKB-LLM-LLM07-2025	high	70	LLM07_SystemPromptLeakage.md
+SKB-LLM-LLM08-2025	high	70	LLM08_VectorAndEmbeddingWeaknesses.md
+SKB-LLM-LLM09-2025	high	70	LLM09_Misinformation.md
+SKB-MASVS-STORAGE-1	critical	70	MASVS-STORAGE-1
+SKB-TG-ACCESS-0037	critical	70	Admin commands require authorization
+SKB-TG-SECRETS-0033	critical	70	Telegram bot token kept secret and rotatable
+SKB-API-API4-2023	medium	65	0xa4-unrestricted-resource-consumption.md
+SKB-API-API7-2023	medium	65	0xa7-server-side-request-forgery.md
+SKB-APICHK-API-CHK-OAUTH	medium	65	OAuth
+SKB-APICHK-API-CHK-RATE-LIMITING-ABUSE-PREVENTION	medium	65	Rate Limiting & Abuse Prevention
+SKB-APICHK-API-CHK-SECRETS-MANAGEMENT	medium	65	Secrets Management
+SKB-APICHK-API-CHK-SEE-ALSO	medium	65	See also:
+SKB-ASVS-V1-3-6	high	65	Sanitization - V1.3.6
+SKB-ASVS-V1-4-2	high	65	Memory, String, and Unmanaged Code - V1.4.2
+SKB-ASVS-V1-5-2	high	65	Safe Deserialization - V1.5.2
+SKB-ASVS-V1-5-3	high	65	Safe Deserialization - V1.5.3
+SKB-ASVS-V14-2-1	high	65	General Data Protection - V14.2.1
+SKB-ASVS-V3-3-2	high	65	Cookie Setup - V3.3.2
+SKB-ASVS-V3-5-6	high	65	Browser Origin Separation - V3.5.6
+SKB-ASVS-V3-5-7	high	65	Browser Origin Separation - V3.5.7
+SKB-ASVS-V3-7-1	high	65	Other Browser Security Considerations - V3.7.1
+SKB-ASVS-V3-7-3	high	65	Other Browser Security Considerations - V3.7.3
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-SERVICE-LEVEL-EMBEDDED-AUTHENTICATION	high	65	Service-Level Embedded Authentication
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-3-CROSS-SITE-SCRIPTING-XSS	high	65	3. Cross-Site Scripting (XSS)
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-WHY-BUSINESS-LOGIC-FLAWS-ARE-DIFFEREN	high	65	Why Business Logic Flaws Are Different
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-CONTEXT	high	65	Context
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-CSP-SAMPLE-POLICIES	high	65	CSP Sample Policies
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-DEALING-WITH-CLIENT-SID	high	65	Dealing with Client-Side CSRF Attacks (IMPORTANT)
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-DEFENSE-IN-DEPTH-TECHNI	high	65	Defense In Depth Techniques
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-DISALLOWING-SIMPLE-REQU	high	65	Disallowing simple requests
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-JAVASCRIPT-AUTOMATICALL	high	65	JavaScript: Automatically Including CSRF Tokens as an AJAX Request Header
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-POSSIBLE-CSRF-VULNERABI	high	65	Possible CSRF Vulnerabilities in Login Forms
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-REFERENCE-SAMPLE-JEE-FI	high	65	REFERENCE: Sample JEE Filter Demonstrating CSRF Protection
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-TOKEN-BASED-MITIGATION	high	65	Token-Based Mitigation
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-COMMON-ANTI-PATTERNS-INEFFECT	high	65	Common Anti-patterns: Ineffective Approaches to Avoid
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-FRAMEWORK-SECURITY	high	65	Framework Security
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-HTML-SANITIZATION	high	65	HTML Sanitization
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-RELATED-ARTICLES	high	65	Related Articles
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-SAFE-SINKS	high	65	Safe Sinks
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-XSS-DEFENSE-PHILOSOPHY	high	65	XSS Defense Philosophy
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-DETECTION-TOOLS	high	65	Detection Tools
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-GUIDANCE-ON-DESERIALIZING-OBJECTS-SAFELY	high	65	Guidance on Deserializing Objects Safely
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-LANGUAGE-AGNOSTIC-METHODS-FOR-DESERIALIZ	high	65	Language-Agnostic Methods for Deserializing Safely
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-MITIGATION-TOOLS-LIBRARIES	high	65	Mitigation Tools/Libraries
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-DESERIALIZATION-CHEAT-SHEET-WHAT-IS-DESERIALIZATION	high	65	What is Deserialization
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-COOKIES	high	65	Cookies
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CROSS-SITE-REQUEST-FORGERY-CSRF	high	65	Cross Site Request Forgery (CSRF)
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CROSS-SITE-SCRIPTING-XSS	high	65	Cross Site Scripting (XSS)
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-COMMON-PROBLEMS-ASSOCIATED-WITH-MITI	high	65	Common Problems Associated with Mitigating DOM Based XSS
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-GUIDELINES-FOR-DEVELOPING-SECURE-APP	high	65	Guidelines for Developing Secure Applications Utilizing JavaScript
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-7-FIXING-DOM-CROSS-SITE-SCRIPTI	high	65	RULE \#7 - Fixing DOM Cross-site Scripting Vulnerabilities
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-INPUT-HANDLING	high	65	Input handling
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-SECURE-COMMUNICATION-PROTOCOLS	high	65	Secure Communication Protocols
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-SUMMARY	high	65	Summary
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-VULNERABLE-ENDPOINTS-SECURITY-RISKS	high	65	Vulnerable Endpoints & Security Risks
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-FILE-UPLOAD-SECURITY	high	65	File Upload Security
+SKB-CS-FILE-UPLOAD-CHEAT-SHEET-FILE-UPLOAD-PROTECTION	high	65	File Upload Protection
+SKB-CS-FILE-UPLOAD-CHEAT-SHEET-FILE-UPLOAD-THREATS	high	65	File Upload Threats
+SKB-CS-FILE-UPLOAD-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-FILE-UPLOAD-CHEAT-SHEET-JAVA-CODE-SNIPPETS	high	65	Java Code Snippets
+SKB-CS-FILE-UPLOAD-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-ERROR-HANDLING-AND-INFORMATION-DISCLOSUR	high	65	Error Handling and Information Disclosure
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-FORMS-OF-INJECTION	high	65	Forms of Injection
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-OTHER-INJECTION-CHEATSHEETS	high	65	Other Injection Cheatsheets
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-ASYNC-ERROR-HANDLING-MESSA	high	65	Async Error Handling, Messaging, and Origin Checks
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-DANGEROUS-LANGUAGE-SURFACE	high	65	Dangerous Language Surface
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-DOM-SINKS-AND-OUTPUT-CONTE	high	65	DOM Sinks and Output Context
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-LINTING-AND-DEPENDENCY-TOO	high	65	Linting and Dependency Tooling
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-OBJECT-AND-PROPERTY-SAFETY	high	65	Object and Property Safety (Including Prototype Pollution)
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-RELATED-CHEAT-SHEETS-TOP-L	high	65	Related Cheat Sheets (Top-Level Links)
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-TYPESCRIPT-SPECIFIC-CAVEAT	high	65	TypeScript-Specific Caveats
+SKB-CS-LARAVEL-CHEAT-SHEET-COMMAND-INJECTION	high	65	Command Injection
+SKB-CS-LARAVEL-CHEAT-SHEET-CROSS-SITE-SCRIPTING-XSS	high	65	Cross Site Scripting (XSS)
+SKB-CS-LARAVEL-CHEAT-SHEET-PATH-TRAVERSAL	high	65	Path Traversal
+SKB-CS-LARAVEL-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-LARAVEL-CHEAT-SHEET-SQL-INJECTION	high	65	SQL Injection
+SKB-CS-LARAVEL-CHEAT-SHEET-UNRESTRICTED-FILE-UPLOADS	high	65	Unrestricted File Uploads
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-EXCLUSIONS	high	65	Exclusions
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-FILE-UPLOAD-UPLOAD	high	65	File Upload [UPLOAD]
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-10-MOUNTING-SECRETS-INTO-THE-DOCKER-BUI	high	65	10) Mounting secrets into the Docker build image
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-4-DON-T-RUN-CONTAINERS-AS-ROOT	high	65	4) Don’t run containers as root
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-PRACTICAL-DEFENSES-EXAMPLES	high	65	Practical Defenses & Examples
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-THREATS-COMMON-FAILURE-MODES	high	65	Threats & Common Failure Modes
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-1-AVOID-PUBLISHING-SECRETS-TO-THE-NPM-R	high	65	1) Avoid publishing secrets to the npm registry
+SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-ADDITIONAL-DEFENSES	high	65	Additional Defenses
+SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-CODE-EXAMPLES	high	65	Code examples
+SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-PRIMARY-DEFENSES	high	65	Primary Defenses
+SKB-CS-OS-COMMAND-INJECTION-DEFENSE-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-PARAMETERIZED-QUERY-EXAMPLES	high	65	Parameterized Query Examples
+SKB-CS-REST-SECURITY-CHEAT-SHEET-API-KEYS	high	65	API Keys
+SKB-CS-REST-SECURITY-CHEAT-SHEET-HTTPS	high	65	HTTPS
+SKB-CS-REST-SECURITY-CHEAT-SHEET-SENSITIVE-INFORMATION-IN-HTTP-REQUESTS	high	65	Sensitive information in HTTP requests
+SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-ITEMS	high	65	Items
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-UNSOLICITED-RESPONSE-IE-IDP-INITIATED	high	65	Unsolicited Response (ie. IdP Initiated SSO) Considerations for Service Providers
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-10-SECRETS-MANAGEMENT-IN-A-MULTI-CLOUD-E	high	65	10 Secrets Management in a Multi-Cloud Environment
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-5-CONTAINERS-ORCHESTRATORS	high	65	5 Containers & Orchestrators
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-SECURITY-TOOLING	high	65	Security Tooling
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-ADVANCED-TECHNIQUES	high	65	Advanced Techniques
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-COMMON-VULNERABILITY-PATTERNS	high	65	Common Vulnerability Patterns
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-CASES	high	65	Cases
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-CONTEXT	high	65	Context
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-DENY-LIST-LAST-RESORT	high	65	Deny-list (Last Resort)
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-IMDSV2-IN-AWS	high	65	IMDSv2 in AWS
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-OVERVIEW-OF-A-SSRF-COM	high	65	Overview of a SSRF common flow
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-SEMGREP-RULES	high	65	Semgrep Rules
+SKB-CS-SERVER-SIDE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-TOOLS-AND-CODE-USED-FO	high	65	Tools and code used for schemas
+SKB-CS-SERVERLESS-FAAS-SECURITY-CHEAT-SHEET-BEST-PRACTICES	high	65	Best Practices
+SKB-CS-SERVERLESS-FAAS-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	65	Do’s and Don’ts
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-ANATOMY-OF-A-TYPICAL-SQL-INJECTION-V	high	65	Anatomy of a Typical SQL Injection Vulnerability
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-WHAT-IS-A-SQL-INJECTION-ATTACK	high	65	What Is a SQL Injection Attack?
+SKB-CS-SYMFONY-CHEAT-SHEET-MAIN-SECTIONS	high	65	Main Sections
+SKB-CS-SYMFONY-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-EXAMPLE-PUBLIC-VULNERABILITY	high	65	Example Public Vulnerability
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-C-C	high	65	C/C++
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-GENERAL-GUIDANCE	high	65	General Guidance
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-IOS	high	65	iOS control
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-JAVA	high	65	Java control
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-NET	high	65	.NET control
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-PYTHON	high	65	Python
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACK-VECTOR	high	65	Attack vector
+SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-CHARACTER-ESCAPE-SEQUENCES	high	65	Character Escape Sequences
+SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-INTRODUCTION	high	65	Introduction
+SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-METHODS-TO-BYPASS-WAF-CROSS-SITE-SCRIP	high	65	Methods to Bypass WAF – Cross-Site Scripting
+SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-REFERENCES	high	65	References
+SKB-CS-XSS-FILTER-EVASION-CHEAT-SHEET-TESTS	high	65	Tests
+SKB-SCV-INTEGER-OVERFLOW-AND-UNDERFLOW	high	65	Integer Overflow and Underflow
+SKB-TOP10-A08-2025	medium	65	A08_2025-Software_or_Data_Integrity_Failures.md
+SKB-WSTG-ATHZ-01	high	65	Directory Traversal File Include
+SKB-WSTG-ATHZ-02	high	65	Bypassing Authorization Schema
+SKB-WSTG-BUSL-09	high	65	Upload of Malicious Files
+SKB-WSTG-CLNT-15	high	65	Client-side Template Injection
+SKB-WSTG-INJT-05	high	65	SQL Injection
+SKB-WSTG-INJT-12	high	65	Command Injection
+SKB-WSTG-INJT-19	high	65	Server-Side Request Forgery
+SKB-WSTG-INJT-23	high	65	Insecure Deserialization
+SKB-DESK-ELECTRON-0046	critical	60	Electron renderer is isolated and sandboxed
+SKB-EXT-INJECT-0045	high	60	Content scripts avoid document.write and innerHTML
+SKB-API-API2-2023	medium	55	0xa2-broken-authentication.md
+SKB-API-API3-2023	medium	55	0xa3-broken-object-property-level-authorization.md
+SKB-API-API9-2023	medium	55	0xa9-improper-inventory-management.md
+SKB-APICHK-API-CHK-ACCESS	medium	55	Access
+SKB-APICHK-API-CHK-AUTHENTICATION	medium	55	Authentication
+SKB-APICHK-API-CHK-CI-CD	medium	55	CI & CD
+SKB-APICHK-API-CHK-GRAPHQL-SPECIFIC-SECURITY	medium	55	GraphQL-Specific Security
+SKB-APICHK-API-CHK-INPUT	medium	55	Input
+SKB-APICHK-API-CHK-MONITORING	medium	55	Monitoring
+SKB-APICHK-API-CHK-OUTPUT	medium	55	Output
+SKB-APICHK-API-CHK-PROCESSING	medium	55	Processing
+SKB-APICHK-API-CHK-ZERO-TRUST-ARCHITECTURE	medium	55	Zero Trust Architecture
+SKB-ASVS-V1-1-1	high	55	Encoding and Sanitization Architecture - V1.1.1
+SKB-ASVS-V1-1-2	high	55	Encoding and Sanitization Architecture - V1.1.2
+SKB-ASVS-V1-2-10	high	55	Injection Prevention - V1.2.10
+SKB-ASVS-V1-2-6	high	55	Injection Prevention - V1.2.6
+SKB-ASVS-V1-2-7	high	55	Injection Prevention - V1.2.7
+SKB-ASVS-V1-2-8	high	55	Injection Prevention - V1.2.8
+SKB-ASVS-V1-2-9	high	55	Injection Prevention - V1.2.9
+SKB-ASVS-V1-3-10	high	55	Sanitization - V1.3.10
+SKB-ASVS-V1-3-11	high	55	Sanitization - V1.3.11
+SKB-ASVS-V1-3-12	high	55	Sanitization - V1.3.12
+SKB-ASVS-V1-3-3	high	55	Sanitization - V1.3.3
+SKB-ASVS-V1-3-4	high	55	Sanitization - V1.3.4
+SKB-ASVS-V1-3-5	high	55	Sanitization - V1.3.5
+SKB-ASVS-V1-3-7	high	55	Sanitization - V1.3.7
+SKB-ASVS-V1-3-8	high	55	Sanitization - V1.3.8
+SKB-ASVS-V1-3-9	high	55	Sanitization - V1.3.9
+SKB-ASVS-V1-4-1	high	55	Memory, String, and Unmanaged Code - V1.4.1
+SKB-ASVS-V1-4-3	high	55	Memory, String, and Unmanaged Code - V1.4.3
+SKB-ASVS-V11-1-1	high	55	Cryptographic Inventory and Documentation - V11.1.1
+SKB-ASVS-V11-1-2	high	55	Cryptographic Inventory and Documentation - V11.1.2
+SKB-ASVS-V11-1-3	high	55	Cryptographic Inventory and Documentation - V11.1.3
+SKB-ASVS-V11-1-4	high	55	Cryptographic Inventory and Documentation - V11.1.4
+SKB-ASVS-V11-2-1	high	55	Secure Cryptography Implementation - V11.2.1
+SKB-ASVS-V11-2-2	high	55	Secure Cryptography Implementation - V11.2.2
+SKB-ASVS-V11-2-3	high	55	Secure Cryptography Implementation - V11.2.3
+SKB-ASVS-V11-2-4	high	55	Secure Cryptography Implementation - V11.2.4
+SKB-ASVS-V11-2-5	high	55	Secure Cryptography Implementation - V11.2.5
+SKB-ASVS-V11-3-3	high	55	Encryption Algorithms - V11.3.3
+SKB-ASVS-V11-3-4	high	55	Encryption Algorithms - V11.3.4
+SKB-ASVS-V11-3-5	high	55	Encryption Algorithms - V11.3.5
+SKB-ASVS-V11-4-2	high	55	Hashing and Hash-based Functions - V11.4.2
+SKB-ASVS-V11-4-3	high	55	Hashing and Hash-based Functions - V11.4.3
+SKB-ASVS-V11-4-4	high	55	Hashing and Hash-based Functions - V11.4.4
+SKB-ASVS-V11-5-1	high	55	Random Values - V11.5.1
+SKB-ASVS-V11-5-2	high	55	Random Values - V11.5.2
+SKB-ASVS-V11-6-1	high	55	Public Key Cryptography - V11.6.1
+SKB-ASVS-V11-6-2	high	55	Public Key Cryptography - V11.6.2
+SKB-ASVS-V11-7-1	high	55	In-Use Data Cryptography - V11.7.1
+SKB-ASVS-V11-7-2	high	55	In-Use Data Cryptography - V11.7.2
+SKB-ASVS-V14-1-1	high	55	Data Protection Documentation - V14.1.1
+SKB-ASVS-V14-1-2	high	55	Data Protection Documentation - V14.1.2
+SKB-ASVS-V14-2-2	high	55	General Data Protection - V14.2.2
+SKB-ASVS-V14-2-3	high	55	General Data Protection - V14.2.3
+SKB-ASVS-V14-2-5	high	55	General Data Protection - V14.2.5
+SKB-ASVS-V14-2-6	high	55	General Data Protection - V14.2.6
+SKB-ASVS-V14-2-7	high	55	General Data Protection - V14.2.7
+SKB-ASVS-V14-2-8	high	55	General Data Protection - V14.2.8
+SKB-ASVS-V14-3-1	high	55	Client-side Data Protection - V14.3.1
+SKB-ASVS-V14-3-2	high	55	Client-side Data Protection - V14.3.2
+SKB-ASVS-V14-3-3	high	55	Client-side Data Protection - V14.3.3
+SKB-ASVS-V3-1-1	high	55	Web Frontend Security Documentation - V3.1.1
+SKB-ASVS-V3-2-1	high	55	Unintended Content Interpretation - V3.2.1
+SKB-ASVS-V3-2-2	high	55	Unintended Content Interpretation - V3.2.2
+SKB-ASVS-V3-2-3	high	55	Unintended Content Interpretation - V3.2.3
+SKB-ASVS-V3-3-1	high	55	Cookie Setup - V3.3.1
+SKB-ASVS-V3-3-3	high	55	Cookie Setup - V3.3.3
+SKB-ASVS-V3-3-4	high	55	Cookie Setup - V3.3.4
+SKB-ASVS-V3-3-5	high	55	Cookie Setup - V3.3.5
+SKB-ASVS-V3-4-1	high	55	Browser Security Mechanism Headers - V3.4.1
+SKB-ASVS-V3-4-2	high	55	Browser Security Mechanism Headers - V3.4.2
+SKB-ASVS-V3-4-3	high	55	Browser Security Mechanism Headers - V3.4.3
+SKB-ASVS-V3-4-4	high	55	Browser Security Mechanism Headers - V3.4.4
+SKB-ASVS-V3-4-5	high	55	Browser Security Mechanism Headers - V3.4.5
+SKB-ASVS-V3-4-6	high	55	Browser Security Mechanism Headers - V3.4.6
+SKB-ASVS-V3-4-7	high	55	Browser Security Mechanism Headers - V3.4.7
+SKB-ASVS-V3-4-8	high	55	Browser Security Mechanism Headers - V3.4.8
+SKB-ASVS-V3-5-1	high	55	Browser Origin Separation - V3.5.1
+SKB-ASVS-V3-5-2	high	55	Browser Origin Separation - V3.5.2
+SKB-ASVS-V3-5-3	high	55	Browser Origin Separation - V3.5.3
+SKB-ASVS-V3-5-4	high	55	Browser Origin Separation - V3.5.4
+SKB-ASVS-V3-5-5	high	55	Browser Origin Separation - V3.5.5
+SKB-ASVS-V3-5-8	high	55	Browser Origin Separation - V3.5.8
+SKB-ASVS-V3-6-1	high	55	External Resource Integrity - V3.6.1
+SKB-ASVS-V3-7-2	high	55	Other Browser Security Considerations - V3.7.2
+SKB-ASVS-V3-7-4	high	55	Other Browser Security Considerations - V3.7.4
+SKB-ASVS-V3-7-5	high	55	Other Browser Security Considerations - V3.7.5
+SKB-ASVS-V6-1-2	high	55	Authentication Documentation - V6.1.2
+SKB-ASVS-V6-1-3	high	55	Authentication Documentation - V6.1.3
+SKB-ASVS-V6-2-10	high	55	Password Security - V6.2.10
+SKB-ASVS-V6-2-11	high	55	Password Security - V6.2.11
+SKB-ASVS-V6-2-12	high	55	Password Security - V6.2.12
+SKB-ASVS-V6-2-9	high	55	Password Security - V6.2.9
+SKB-ASVS-V6-3-3	high	55	General Authentication Security - V6.3.3
+SKB-ASVS-V6-3-4	high	55	General Authentication Security - V6.3.4
+SKB-ASVS-V6-3-5	high	55	General Authentication Security - V6.3.5
+SKB-ASVS-V6-3-6	high	55	General Authentication Security - V6.3.6
+SKB-ASVS-V6-3-7	high	55	General Authentication Security - V6.3.7
+SKB-ASVS-V6-3-8	high	55	General Authentication Security - V6.3.8
+SKB-ASVS-V6-4-3	high	55	Authentication Factor Lifecycle and Recovery - V6.4.3
+SKB-ASVS-V6-4-4	high	55	Authentication Factor Lifecycle and Recovery - V6.4.4
+SKB-ASVS-V6-4-5	high	55	Authentication Factor Lifecycle and Recovery - V6.4.5
+SKB-ASVS-V6-4-6	high	55	Authentication Factor Lifecycle and Recovery - V6.4.6
+SKB-ASVS-V6-5-1	high	55	General Multi-factor authentication requirements - V6.5.1
+SKB-ASVS-V6-5-2	high	55	General Multi-factor authentication requirements - V6.5.2
+SKB-ASVS-V6-5-3	high	55	General Multi-factor authentication requirements - V6.5.3
+SKB-ASVS-V6-5-4	high	55	General Multi-factor authentication requirements - V6.5.4
+SKB-ASVS-V6-5-6	high	55	General Multi-factor authentication requirements - V6.5.6
+SKB-ASVS-V6-5-7	high	55	General Multi-factor authentication requirements - V6.5.7
+SKB-ASVS-V6-5-8	high	55	General Multi-factor authentication requirements - V6.5.8
+SKB-ASVS-V6-6-1	high	55	Out-of-Band authentication mechanisms - V6.6.1
+SKB-ASVS-V6-6-2	high	55	Out-of-Band authentication mechanisms - V6.6.2
+SKB-ASVS-V6-6-3	high	55	Out-of-Band authentication mechanisms - V6.6.3
+SKB-ASVS-V6-6-4	high	55	Out-of-Band authentication mechanisms - V6.6.4
+SKB-ASVS-V6-7-1	high	55	Cryptographic authentication mechanism - V6.7.1
+SKB-ASVS-V6-7-2	high	55	Cryptographic authentication mechanism - V6.7.2
+SKB-ASVS-V6-8-1	high	55	Authentication with an Identity Provider - V6.8.1
+SKB-ASVS-V6-8-2	high	55	Authentication with an Identity Provider - V6.8.2
+SKB-ASVS-V6-8-3	high	55	Authentication with an Identity Provider - V6.8.3
+SKB-ASVS-V6-8-4	high	55	Authentication with an Identity Provider - V6.8.4
+SKB-ASVS-V7-1-1	high	55	Session Management Documentation - V7.1.1
+SKB-ASVS-V7-1-2	high	55	Session Management Documentation - V7.1.2
+SKB-ASVS-V7-1-3	high	55	Session Management Documentation - V7.1.3
+SKB-ASVS-V7-2-1	high	55	Fundamental Session Management Security - V7.2.1
+SKB-ASVS-V7-2-2	high	55	Fundamental Session Management Security - V7.2.2
+SKB-ASVS-V7-2-3	high	55	Fundamental Session Management Security - V7.2.3
+SKB-ASVS-V7-2-4	high	55	Fundamental Session Management Security - V7.2.4
+SKB-ASVS-V7-3-1	high	55	Session Timeout - V7.3.1
+SKB-ASVS-V7-4-1	high	55	Session Termination - V7.4.1
+SKB-ASVS-V7-4-2	high	55	Session Termination - V7.4.2
+SKB-ASVS-V7-4-3	high	55	Session Termination - V7.4.3
+SKB-ASVS-V7-4-4	high	55	Session Termination - V7.4.4
+SKB-ASVS-V7-4-5	high	55	Session Termination - V7.4.5
+SKB-ASVS-V7-5-1	high	55	Defenses Against Session Abuse - V7.5.1
+SKB-ASVS-V7-5-2	high	55	Defenses Against Session Abuse - V7.5.2
+SKB-ASVS-V7-5-3	high	55	Defenses Against Session Abuse - V7.5.3
+SKB-ASVS-V7-6-1	high	55	Federated Re-authentication - V7.6.1
+SKB-ASVS-V7-6-2	high	55	Federated Re-authentication - V7.6.2
+SKB-ASVS-V9-2-2	high	55	Token content - V9.2.2
+SKB-ASVS-V9-2-3	high	55	Token content - V9.2.3
+SKB-ASVS-V9-2-4	high	55	Token content - V9.2.4
+SKB-BASE-1-ACTUATOR-ENDPOINTS-EXPOSED-AND-UNAUTH	high	55	1. Actuator endpoints exposed and unauthenticated
+SKB-BASE-1-BINDIP-0-0-0-0-WITH-NO-AUTH	high	55	1. `bindIp: 0.0.0.0` with no auth
+SKB-BASE-1-DEBUG-TRUE-IN-PRODUCTION	high	55	1. `DEBUG = True` in production
+SKB-BASE-1-SECRETS-BUNDLED-INTO-CLIENT-CODE	high	55	1. Secrets bundled into client code
+SKB-BASE-1-SECRETS-BUNDLED-INTO-CLIENT-ENVIRON	high	55	1. Secrets bundled into client (`environment.ts`)
+SKB-BASE-1-SECRETS-IN-CLIENT-COMPONENTS-NEXT	high	55	1. Secrets in client components / `NEXT_PUBLIC_`
+SKB-BASE-10-COMMAND-INJECTION	high	55	10. Command injection
+SKB-BASE-10-CSRF-DISABLED-EXCLUDED	high	55	10. CSRF disabled / excluded
+SKB-BASE-10-DESERIALIZATION-RCE-BINARYFORMATTER	high	55	10. Deserialization RCE (BinaryFormatter, Newtonsoft polymorphic)
+SKB-BASE-10-DESERIALIZATION-RCE-JACKSON-OBJECT	high	55	10. Deserialization RCE (Jackson, ObjectInputStream)
+SKB-BASE-10-ETCD-UNAUTHENTICATED-UNENCRYPTED	high	55	10. etcd unauthenticated / unencrypted
+SKB-BASE-10-INSECURE-DESERIALIZATION-VIA-PICKLE	high	55	10. Insecure deserialization via `pickle`
+SKB-BASE-10-NO-AUTHENTICATION-ON-SENTINEL-CLUS	high	55	10. No authentication on Sentinel / Cluster bus
+SKB-BASE-11-COMMAND-INJECTION-VIA-BACKTICKS-S	high	55	11. Command injection via backticks / `system`
+SKB-BASE-11-DESERIALIZATION-GOB-ON-UNTRUSTED-D	high	55	11. Deserialization / gob on untrusted data
+SKB-BASE-11-DESERIALIZATION-RCE-VIA-SERDE-YAML	high	55	11. Deserialization RCE via `serde_yaml` / unsafe `Deserialize`
+SKB-BASE-11-HASURA-ADMIN-SECRET-EXPOSED-DEFAUL	high	55	11. Hasura admin secret exposed / default
+SKB-BASE-11-UNSAFE-RENDER-WITH-USER-INPUT-SS	high	55	11. Unsafe `@Render` with user input (SSTI / XSS)
+SKB-BASE-12-SSRF-VIA-HTTPCLIENT	high	55	12. SSRF via `HttpClient`
+SKB-BASE-12-SSRF-VIA-OUTBOUND-HTTP	high	55	12. SSRF via outbound HTTP
+SKB-BASE-12-TEMPLATE-AUTOESCAPE-DISABLED	high	55	12. Template autoescape disabled
+SKB-BASE-12-XXE-VIA-XML-PARSING	high	55	12. XXE via XML parsing
+SKB-BASE-1255FC1335	high	55	What leaks / impact
+SKB-BASE-13-INSECURE-DESERIALIZATION	high	55	13. Insecure deserialization
+SKB-BASE-13-PATH-TRAVERSAL-IN-FILE-SEND	high	55	13. Path traversal in file send
+SKB-BASE-2-BYPASSSECURITYTRUSTHTML-INNERHTM	high	55	2. `bypassSecurityTrustHtml` / `innerHTML` without sanitization
+SKB-BASE-2-CSRF-DISABLED-GLOBALLY	high	55	2. CSRF disabled globally
+SKB-BASE-2-NO-AUTHENTICATION-AUTHORIZATION	high	55	2. No authentication / authorization
+SKB-BASE-2-PATH-TRAVERSAL-IN-FILE-READS	high	55	2. Path traversal in file reads
+SKB-BASE-2-SECRET-KEY-HARDCODED-OR-COMMITTED	high	55	2. `SECRET_KEY` hardcoded or committed
+SKB-BASE-2-SUPERUSER-USED-BY-APP	high	55	2. Superuser used by app
+SKB-BASE-2B04719AEB	high	55	Checklist
+SKB-BASE-3-HTML-TEMPLATE-VS-TEXT-TEMPLATE-MI	high	55	3. `html/template` vs `text/template` misuse
+SKB-BASE-3-JWT-IN-LOCALSTORAGE-SESSIONSTORA	high	55	3. JWT in `localStorage` / `sessionStorage`
+SKB-BASE-3543DA4A85	high	55	6. SQL injection via string concatenation
+SKB-BASE-4-CATCH-ALL-ROUTES-THAT-REFLECT-INPUT	high	55	4. Catch-all routes that reflect input
+SKB-BASE-4-DANGEROUSLYSETINNERHTML-WITHOUT-SAN	high	55	4. `dangerouslySetInnerHTML` without sanitization
+SKB-BASE-4-PROTECT-FROM-FORGERY-DISABLED	high	55	4. `protect_from_forgery` disabled
+SKB-BASE-4-PROXY-PASS-WITH-USER-INFLUENCED-PAT	high	55	4. `proxy_pass` with user-influenced path / SSRF
+SKB-BASE-5-SECRETS-IN-PLAINTEXT-CONFIGMAPS-ENV	high	55	5. Secrets in plaintext ConfigMaps / env
+SKB-BASE-5-SESSIONS-WITH-INSECURE-COOKIE-PARAMS	high	55	5. Sessions with insecure cookie params
+SKB-BASE-51C2B7F2C9	high	55	8. Path traversal in file serving
+SKB-BASE-6-BODY-PARSER-WITHOUT-LIMITS	high	55	6. Body parser without limits
+SKB-BASE-6-MIDDLEWARE-RUNNING-ON-EVERYTHING-SS	high	55	6. Middleware running on everything / SSRF in rewrites
+SKB-BASE-6-SQL-INJECTION-VIA-FORMAT-IN-QUERIE	high	55	6. SQL injection via `format!` in queries
+SKB-BASE-6-SQL-INJECTION-VIA-RAW-QUERIES	high	55	6. SQL injection via raw queries
+SKB-BASE-6-SQL-INJECTION-VIA-STRING-CONCATENATIO	high	55	6. SQL injection via string concatenation
+SKB-BASE-6-STORED-XSS-VIA-REFLECTED-STATE	high	55	6. Stored XSS via reflected state
+SKB-BASE-7-NOSQL-INJECTION-VIA-WHERE-FUNC	high	55	7. NoSQL injection via `$where` / `$func`
+SKB-BASE-7-SQL-INJECTION-IN-APP	high	55	7. SQL injection in app
+SKB-BASE-7-SQL-INJECTION-VIA-F-STRINGS	high	55	7. SQL injection via f-strings
+SKB-BASE-7-SQL-INJECTION-VIA-RAW-QUERIES	high	55	7. SQL injection via raw queries
+SKB-BASE-7-SQL-INJECTION-VIA-STRING-CONCATENATIO	high	55	7. SQL injection via string concatenation
+SKB-BASE-7-XSS-VIA-UNESCAPED-OUTPUT	high	55	7. XSS via unescaped output
+SKB-BASE-7155F89A7D	high	55	Checklist
+SKB-BASE-8-COMMAND-INJECTION	high	55	8. Command injection
+SKB-BASE-8-COPY-PG-READ-FILE-ABUSE-VIA-SQLI	high	55	8. `COPY`/`pg_read_file` abuse via SQLi
+SKB-BASE-8-CSRF-XSRF-MISCONFIGURED-NUXT-SERVE	high	55	8. CSRF / XSRF misconfigured (Nuxt server routes)
+SKB-BASE-8-CSRF-XSRF-TOKEN-MISCONFIGURED	high	55	8. CSRF / XSRF token misconfigured
+SKB-BASE-8-LAYER-HISTORY-LEAKS-SECRETS	high	55	8. Layer history leaks secrets
+SKB-BASE-8-PATH-TRAVERSAL-IN-FILE-SERVING	high	55	8. Path traversal in file serving
+SKB-BASE-8-SECRETS-COMMITTED-TO-THE-REPO	high	55	8. Secrets committed to the repo
+SKB-BASE-9-CSRF-DISABLED-GLOBALLY	high	55	9. CSRF disabled globally
+SKB-BASE-9-CSRF-ON-SERVER-ACTIONS-MUTATIONS	high	55	9. CSRF on server actions / mutations
+SKB-BASE-9-DESERIALIZATION-OF-UNTRUSTED-PROTO	high	55	9. Deserialization of untrusted proto
+SKB-BASE-9-FILE-UPLOAD-ABUSE	high	55	9. File upload abuse
+SKB-BASE-9-INSECURE-THIRD-PARTY-REDIRECTS-SSRF	high	55	9. Insecure third-party redirects / SSRF-like client calls
+SKB-BASE-9-JWT-IN-LOCALSTORAGE-LONG-LIVED-TO	high	55	9. JWT in `localStorage` / long-lived tokens
+SKB-BASE-9-MISSING-CSRF-ON-FORMS	high	55	9. Missing CSRF on forms
+SKB-BASE-9-XSS-VIA-BLADE	high	55	9. XSS via Blade `{!! !!}`
+SKB-BASE-9CB784AA73	high	55	What leaks / impact
+SKB-BASE-A1383BACF7	high	55	Checklist
+SKB-BASE-C61CCC48A7	high	55	Checklist
+SKB-BASE-CHECKLIST-CROSS-CUTTING	high	55	Checklist (cross-cutting)
+SKB-BASE-D410496B26	high	55	Checklist
+SKB-BASE-FC5A6F5D3F	high	55	Checklist
+SKB-BASE-FE1C75B68F	high	55	11. Insecure deserialization
+SKB-BASE-HOW-TO-USE	high	55	How to use
+SKB-BASE-TOP-RECURRING-VULNERABILITY-CLASSES-SUM	high	55	Top recurring vulnerability classes (summary index)
+SKB-BASE-WHAT-IT-IS	high	55	What it is
+SKB-CS-ABUSE-CASE-CHEAT-SHEET-SOURCES-OF-THE-SCHEMAS	high	55	Sources of the schemas
+SKB-CS-ACCESS-CONTROL-CHEAT-SHEET-OVERVIEW	high	55	(whole sheet)
+SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-BEST-PRACTICES	high	55	Best Practices
+SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	55	Do's and Don'ts
+SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-KEY-RISKS	high	55	Key Risks
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-1-GATE-AI-DECISIONS-O	high	55	1. Gate AI Decisions on Consent
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-2-PROTECT-THE-CORPUS-	high	55	2. Protect the Corpus (Training and Retrieval)
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-3-PROTECT-INFERENCE-A	high	55	3. Protect Inference and the Prompt Boundary
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-4-PROTECT-OUTCOME-EVE	high	55	4. Protect Outcome Events and Agentic Actions
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-5-PROTECT-THE-AI-SUPP	high	55	5. Protect the AI Supply Chain and Generative Provenance
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-REGULATORY-CONTEXT	high	55	Regulatory Context
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-1-AGENT-IDENTITY-BEFO	high	55	Section 1: Agent Identity Before Screening
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-11-REGULATORY-MAPPING	high	55	Section 11: Regulatory Mapping
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-12-DO-S-AND-DON-TS-SU	high	55	Section 12: Do's and Don'ts Summary
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-2-ENTITY-SCREENING	high	55	Section 2: Entity Screening
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-3-AGENT-OPERATOR-SCRE	high	55	Section 3: Agent Operator Screening
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-4-SIGNED-AUDIT-TRAIL	high	55	Section 4: Signed Audit Trail
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-6-TRUST-TIERED-RATE-L	high	55	Section 6: Trust-Tiered Rate Limiting
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-8-RECEIPT-CANONICALIZ	high	55	Section 8: Receipt Canonicalization (RFC 8785 / JCS)
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-9-CROSS-AGENT-PAYMENT	high	55	Section 9: Cross-Agent Payment Accountability
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-DEFINING-THE-ATTACK-SURFACE-OF-AN-APP	high	55	Defining the Attack Surface of an Application
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-IDENTIFYING-AND-MAPPING-THE-ATTACK-SU	high	55	Identifying and Mapping the Attack Surface
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-MEASURING-AND-ASSESSING-THE-ATTACK-SU	high	55	Measuring and Assessing the Attack Surface
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-WHAT-IS-ATTACK-SURFACE-ANALYSIS-AND-W	high	55	What is Attack Surface Analysis and Why is it Important
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-ADAPTIVE-OR-RISK-BASED-AUTHENTICATION	high	55	Adaptive or Risk Based Authentication
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-AUTHENTICATION-GENERAL-GUIDELINES	high	55	Authentication General Guidelines
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-CHANGING-A-USER-S-REGISTERED-EMAIL-ADDRE	high	55	Changing A User's Registered Email Address
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-LOGGING-AND-MONITORING	high	55	Logging and Monitoring
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-PASSWORD-MANAGERS	high	55	Password Managers
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHENTICATION-CHEAT-SHEET-USE-OF-AUTHENTICATION-PROTOCOLS-THAT-REQ	high	55	Use of authentication protocols that require no password
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-EDGE-LEVEL-AUTHENTICATION	high	55	Edge-Level Authentication
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-NETWORK-LAYER-NODE-LEVEL-AUTHENTICATI	high	55	Network-Layer (Node-Level) Authentication
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-OPERATIONAL-AND-SECURITY-CONSIDERATIO	high	55	Operational and Security Considerations
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-RECOMMENDATIONS	high	55	Recommendations
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-SERVICE-LEVEL-CODE-MEDIATED-AUTHENTIC	high	55	Service-Level Code-Mediated Authentication
+SKB-CS-AUTHENTICATION-PATTERNS-CHEAT-SHEET-SERVICE-LEVEL-PROXY-MEDIATED-AUTHENTI	high	55	Service-Level Proxy-Mediated Authentication
+SKB-CS-AUTHORIZATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-CHEAT-SHEET-RECOMMENDATIONS	high	55	Recommendations
+SKB-CS-AUTHORIZATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-ENFORCING-ACCESS-	high	55	Enforcing Access to Collections
+SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-SECURITY-CONSIDER	high	55	Security Considerations
+SKB-CS-AUTHORIZATION-DECISIONS-AND-OUTPUT-HANDLING-CHEAT-SHEET-SINGLE-AND-BATCH-	high	55	Single and Batch Decisions
+SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-GATEWAY-AND-PROXY-ENFORCEMENT	high	55	Gateway and Proxy Enforcement
+SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-PDP-DEPLOYMENT-AND-FAILURE-BEHAVIOR	high	55	PDP Deployment and Failure Behavior
+SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-PATTERNS-CHEAT-SHEET-SERVICE-LEVEL-AUTHORIZATION	high	55	Service-Level Authorization
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-DEFINE-OWNERSHIP-A	high	55	Define Ownership and Freshness Requirements
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-DELIVER-POLICIES-A	high	55	Deliver Policies and Data
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-FRESHNESS-AND-OUTA	high	55	Freshness and Outages
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-PROTECT-DISTRIBUTI	high	55	Protect Distribution and Administration
+SKB-CS-AUTHORIZATION-POLICY-AND-DATA-DISTRIBUTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-AUTHORIZATION-TEST-MATRIX-DE	high	55	Authorization Test Matrix Design
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-AUTOMATED-TESTING-FRAMEWORK-	high	55	Automated Testing Framework Integration
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-CI-CD-GATING-AND-SDLC-INTEGR	high	55	CI/CD Gating and SDLC Integration
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-CONTRACT-DRIVEN-AUTHORIZATIO	high	55	Contract-Driven Authorization Validation
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-REGRESSION-TESTING-CHEAT-SHEET-REGRESSION-TESTING-PATTERNS	high	55	Regression Testing Patterns
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-CONTEXT	high	55	Context
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-OBJECTIVE	high	55	Objective
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-PROPOSITION	high	55	Proposition
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-RENDERING-THE-AUTHORIZATION-	high	55	Rendering the authorization matrix for an audit / review
+SKB-CS-AUTHORIZATION-TESTING-AUTOMATION-CHEAT-SHEET-SOURCES-OF-THE-PROTOTYPE	high	55	Sources of the prototype
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-PROTECT-COMMUNICATIONS-AND-INPUTS	high	55	Protect Communications and Inputs
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-RESTRICT-ACCESS-AND-PROTECT-DATA	high	55	Restrict Access and Protect Data
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-TEST-AND-MAINTAIN-SECURITY	high	55	Test and Maintain Security
+SKB-CS-AUTOMOTIVE-SECURITY-CHEAT-SHEET-VERIFY-SOFTWARE-AND-UPDATES	high	55	Verify Software and Updates
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-ANTI-PATTERNS-TO-AVOID	high	55	Anti-Patterns to Avoid
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-CAPTCHA-AND-ITS-MODERN-ALT	high	55	CAPTCHA and Its Modern Alternatives
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-COMMON-THREATS-AND-RISKS	high	55	Common Threats and Risks
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-DEFENDING-SPECIFIC-FLOWS	high	55	Defending Specific Flows
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-LAYERED-DEFENSE-ARCHITECTU	high	55	Layered Defense Architecture
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-LOGGING-AND-MONITORING	high	55	Logging and Monitoring
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-PRIVACY-AND-COMPLIANCE	high	55	Privacy and Compliance
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-RATE-LIMITING-AND-QUOTAS	high	55	Rate Limiting and Quotas
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-RESPONSE-STRATEGY-DON-T-AL	high	55	Response Strategy: Don't Always Block
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-THREAT-MODELING-BEFORE-CON	high	55	Threat Modeling Before Controls
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-1-PERMISSIONS-OVERREACH	high	55	1. Permissions Overreach
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-10-INSUFFICIENT-PRIVACY-CON	high	55	10. Insufficient Privacy Controls
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-11-DOM-BASED-DATA-SKIMMING	high	55	11. DOM-based Data Skimming
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-12-PROTOTYPE-BASED-DATA-SKI	high	55	12. Prototype-based Data Skimming
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-13-INSECURE-MESSAGE-PASSING	high	55	13. Insecure Message Passing
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-5-CODE-INJECTION	high	55	5. Code Injection
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-6-MALICIOUS-UPDATES	high	55	6. Malicious Updates
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-7-THIRD-PARTY-DEPENDENCIES	high	55	7. Third-Party Dependencies
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-8-LACK-OF-CONTENT-SECURITY-	high	55	8. Lack of Content Security Policy (CSP)
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-9-INSECURE-STORAGE	high	55	9. Insecure Storage
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-ALWAYS-RE-DERIVE-SECURITY-RELEVANT-VA	high	55	Always Re-derive Security-relevant Values Server-side
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-AUTHORIZATION-AT-THE-BUSINESS-LOGIC-L	high	55	Authorization at the Business-logic Layer
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-ENFORCE-WORKFLOWS-AS-EXPLICIT-STATE-M	high	55	Enforce Workflows as Explicit State Machines
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-OBSERVABILITY-AND-ANOMALY-DETECTION	high	55	Observability and Anomaly Detection
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-PROTECT-ABUSE-FRIENDLY-FEATURES	high	55	Protect Abuse-friendly Features
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-SUMMARY-CHECKLIST	high	55	Summary Checklist
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-VALIDATE-INPUTS-FOR-BUSINESS-MEANING-	high	55	Validate Inputs for Business Meaning, Not Just Format
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-COMPILER-AND-LINKER	high	55	Compiler and Linker
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-DEFINE-ESAPI-ASSERT1-EXP	high	55	define ESAPI_ASSERT1(exp) {                                    \
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-MAKEFILE	high	55	makefile
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-USER-OPTIONS-FOLLOW-OUR-OPTIONS-W	high	55	user options follow our options, which should give user option's a preference.
+SKB-CS-C0E6026C84	high	55	SecRule REQUEST_URI "@contains /wp-content/plugins/levelfo
+SKB-CS-CHOOSING-AND-USING-SECURITY-QUESTIONS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-CHOOSING-AND-USING-SECURITY-QUESTIONS-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-CHOOSING-AND-USING-SECURITY-QUESTIONS-CHEAT-SHEET-USING-SECURITY-QUESTION	high	55	Using Security Questions
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-IAM	high	55	IAM control
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-MANAGING-THIRD-PARTY-CODE	high	55	Managing Third-Party Code
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-SECURE-CONFIGURATION	high	55	Secure Configuration
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-CONTENT-SECURITY-POLICY	high	55	Defending with Content Security Policy (CSP) frame-ancestors directive
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-SAMESITE-COOKIES	high	55	Defending with SameSite Cookies
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-INSECURE-NON-WORKING-SCRIPTS-DO-NOT-USE	high	55	Insecure Non-Working Scripts DO NOT USE
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-DETAILED-CSP-DIRECTIVES	high	55	Detailed CSP Directives
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-STRICT-CSP	high	55	Strict CSP
+SKB-CS-COOKIE-THEFT-MITIGATION-CHEAT-SHEET-COOKIE-THEFT-MITIGATION	high	55	Cookie Theft Mitigation
+SKB-CS-COOKIE-THEFT-MITIGATION-CHEAT-SHEET-DEVICE-BOUND-SESSION-CREDENTIALS	high	55	Device Bound Session Credentials
+SKB-CS-COOKIE-THEFT-MITIGATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-COOKIE-THEFT-MITIGATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-CREDENTIAL-STUFFING-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-CREDENTIAL-STUFFING-PREVENTION-CHEAT-SHEET-MULTI-FACTOR-AUTHENTICATION	high	55	Multi-Factor Authentication
+SKB-CS-CROSS-SITE-REQUEST-FORGERY-PREVENTION-CHEAT-SHEET-FETCH-METADATA-HEADERS	high	55	Fetch Metadata headers
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-OTHER-CONTROLS	high	55	Other Controls
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-ALGORITHMS	high	55	Algorithms
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-ARCHITECTURAL-DESIGN	high	55	Architectural Design
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-KEY-MANAGEMENT	high	55	Key Management
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-KEY-STORAGE	high	55	Key Storage
+SKB-CS-CRYPTOGRAPHIC-STORAGE-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-CONFIGURING-SECURE-AUTHENTICATION	high	55	Configuring Secure Authentication
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-CREATING-SECURE-PERMISSIONS	high	55	Creating Secure Permissions
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-PROTECTING-THE-BACKEND-DATABASE	high	55	Protecting the Backend Database
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-APPLICATION-ATTACKS	high	55	Application attacks
+SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-NETWORK-ATTACKS	high	55	Network attacks
+SKB-CS-DENIAL-OF-SERVICE-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-BIND-AND-VERIFY-RELEASE-EVIDENCE	high	55	Bind and verify release evidence
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-CAPTURE-COMPONENTS-AND-RELATIONSHIPS	high	55	Capture components and relationships
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-GENERATE-FOR-EACH-RELEASE	high	55	Generate for each release
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DEPENDENCY-GRAPH-SBOM-CHEAT-SHEET-USE-INVENTORY-FOR-VULNERABILITY-RESPONS	high	55	Use inventory for vulnerability response
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-OTHER-SECURITY-RISKS	high	55	Other Security Risks
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-OWASP-API-SECURITY-TOP-10-2019	high	55	OWASP API Security Top 10 (2019)
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-SETTINGS	high	55	Settings
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-UPDATING-DJANGO-AND-DRF-AND-HAVING-A-PR	high	55	Updating Django and DRF and Having a Process for Updating Dependencies
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-ADMIN-PANEL-URL	high	55	Admin panel URL
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-AUTHENTICATION	high	55	Authentication
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-HEADERS	high	55	Headers
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-KEY-MANAGEMENT	high	55	Key Management
+SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-RULES	high	55	Rules
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-1-HTML-ESCAPE-THEN-JAVASCRIPT-E	high	55	RULE \#1 - HTML Escape then JavaScript Escape Before Inserting Untrusted Data into HTML Subcontext w
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-3-BE-CAREFUL-WHEN-INSERTING-UNT	high	55	RULE \#3 - Be Careful when Inserting Untrusted Data into the Event Handler and JavaScript code Subco
+SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-6-POPULATE-THE-DOM-USING-SAFE-J	high	55	RULE \#6 - Populate the DOM using safe JavaScript functions or properties
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-BACKGROUND	high	55	Background
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-AUTHENTICATION-AND-AUTHORIZATION	high	55	Authentication and authorization
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-CONFIGURATION-AND-DEPLOYMENT	high	55	Configuration and deployment
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-DATA-PROTECTION	high	55	Data protection
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-LEGACY-NET-FRAMEWORK	high	55	Legacy .NET Framework
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-AS-AN-AUTHENTICATION-	high	55	Email as an Authentication Factor
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-CHANGE-WORKFLOWS	high	55	Email Change Workflows
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-OWNERSHIP-VERIFICATIO	high	55	Email Ownership Verification
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-LOGGING-AND-MONITORING	high	55	Logging and Monitoring
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-APPENDIX-HTTP-ERRORS	high	55	Appendix HTTP Errors
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-CONTEXT	high	55	Context
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-CROSS-ORIGIN-RESOURCE-SHARING-CORS-CON	high	55	Cross-Origin Resource Sharing (CORS) Configuration
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-DEPENDENCY-INJECTION-AND-ACCESS-CONTROL	high	55	Dependency Injection and Access Control
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-OPENAPI-AND-SWAGGER-UI-EXPOSURE	high	55	OpenAPI and Swagger UI Exposure
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-PYDANTIC-VALIDATION-AND-INPUT-HARDENING	high	55	Pydantic Validation and Input Hardening
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-SECURE-AUTHENTICATION-AND-JWT-IMPLEMENTA	high	55	Secure Authentication and JWT Implementation
+SKB-CS-FORGOT-PASSWORD-CHEAT-SHEET-ACCOUNT-LOCKOUT	high	55	Account Lockout
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-ASSUME-FAILURE-AND-HAVE-AN-INCIDENT-R	high	55	Assume failure and have an incident response plan in place
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-BE-CAREFUL-WITH-AI-ASSISTANT-RUNNING-	high	55	Be careful with AI assistant running in CI/CD pipeline
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-HARDEN-REPOSITORY-SETTINGS	high	55	Harden repository settings
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-PREVENT-ARTIFACT-POISONING	high	55	Prevent artifact poisoning
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-RESTRICT-EGRESS-TRAFFIC-FROM-GITHUB-H	high	55	Restrict egress traffic from GitHub-hosted runners
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-SEGREGATE-RUNNERS-USING-RUNNER-GROUPS	high	55	Segregate runners using runner groups and labels
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-TREAT-YOUR-CI-CD-PIPELINE-AS-A-CRITIC	high	55	Treat your CI/CD pipeline as a critical production code
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-USE-SELF-HOSTED-RUNNERS-WITH-EXTRA-CA	high	55	Use self-hosted runners with extra caution
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-WRITE-SECURE-GITHUB-WORKFLOWS	high	55	Write Secure GitHub Workflows
+SKB-CS-GRAPHQL-CHEAT-SHEET-BEST-PRACTICES-AND-RECOMMENDATIONS	high	55	Best Practices and Recommendations
+SKB-CS-GRAPHQL-CHEAT-SHEET-COMMON-ATTACKS	high	55	Common Attacks
+SKB-CS-GRAPHQL-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-GRAPHQL-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-AUTHENTICATION-AND-AUTHORIZATION	high	55	Authentication and Authorization
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-INPUT-VALIDATION-AND-DATA-SECURITY	high	55	Input Validation and Data Security
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-LANGUAGE-SPECIFIC-CONSIDERATIONS	high	55	Language-Specific Considerations
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-MONITORING-AND-INCIDENT-RESPONSE	high	55	Monitoring and Incident Response
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-RATE-LIMITING-AND-RESOURCE-PROTECTION	high	55	Rate Limiting and Resource Protection
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-SERVICE-DISCOVERY-AND-REFLECTION	high	55	Service Discovery and Reflection
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-TESTING-AND-VALIDATION	high	55	Testing and Validation
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-TRANSPORT-SECURITY	high	55	Transport Security
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-STORAGE-APIS	high	55	Storage APIs
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-TABNABBING	high	55	Tabnabbing
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-WEB-WORKERS	high	55	Web Workers
+SKB-CS-HTTP-HEADERS-CHEAT-SHEET-ADDING-HTTP-HEADERS-IN-DIFFERENT-TECHNOL	high	55	Adding HTTP Headers in Different Technologies
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-EXAMPLES	high	55	Examples
+SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-PROPAGATION-PATTERNS	high	55	Propagation Patterns
+SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-VALIDATION-AT-EACH-BOUNDARY	high	55	Validation at Each Boundary
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-APPLICATION-TYPES	high	55	Application Types
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-INJECTION-PREVENTION-RULES	high	55	Injection Prevention Rules
+SKB-CS-INJECTION-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-INJECTION-PREVENTION-IN-JAVA-CHEAT-SHEET-OVERVIEW	high	55	(whole sheet)
+SKB-CS-INPUT-VALIDATION-CHEAT-SHEET-IMPLEMENTING-INPUT-VALIDATION	high	55	Implementing Input Validation
+SKB-CS-INPUT-VALIDATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-EXAMPLES	high	55	Examples
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-IDENTIFIER-COMPLE	high	55	Identifier complexity
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-JAVA-AND-SPRING-B	high	55	Java and Spring Boot example
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-MITIGATION	high	55	Mitigation
+SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-VERIFYING-ACCESS-	high	55	Verifying access controls
+SKB-CS-JAAS-CHEAT-SHEET-CONFIGURATION-FILE	high	55	Configuration file
+SKB-CS-JAAS-CHEAT-SHEET-INTRODUCTION-WHAT-IS-JAAS-AUTHENTICATI	high	55	Introduction - What is JAAS authentication
+SKB-CS-JAAS-CHEAT-SHEET-LOGINMODULE-JAVA	high	55	LoginModule.java
+SKB-CS-JAAS-CHEAT-SHEET-MAIN-JAVA-THE-CLIENT	high	55	Main.java (The client)
+SKB-CS-JAAS-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-JAVA-SECURITY-CHEAT-SHEET-CRYPTOGRAPHY	high	55	Cryptography
+SKB-CS-JAVA-SECURITY-CHEAT-SHEET-INJECTION-PREVENTION-IN-JAVA	high	55	Injection Prevention in Java
+SKB-CS-JAVA-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-JAVA-SECURITY-CHEAT-SHEET-SPECIFIC-INJECTION-TYPES	high	55	Specific Injection types
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-CONSIDERATIONS-ABOUT-USING-JWTS	high	55	Considerations about using JWTs
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-JWT-REVOCATION	high	55	JWT revocation
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-REPLAY-PROTECTION	high	55	Replay protection
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-THREATS-ON-JWTS	high	55	Threats on JWTs
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-TOKEN-CONFIDENTIALITY-AND-JWE	high	55	Token Confidentiality and JWE
+SKB-CS-JSON-WEB-TOKEN-CHEAT-SHEET-TOKEN-STRUCTURE	high	55	Token Structure
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-CRYPTOGRAPHIC-KEY-MANAGEMENT-LIBRARIES	high	55	Cryptographic Key Management Libraries
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-GENERAL-GUIDELINES-AND-CONSIDERATIONS	high	55	General Guidelines and Considerations
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-KEY-MANAGEMENT-LIFECYCLE-BEST-PRACTICES	high	55	Key Management Lifecycle Best Practices
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-KEY-SELECTION	high	55	Key Selection
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-KEY-MANAGEMENT-CHEAT-SHEET-TRUST-STORES	high	55	Trust Stores
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-2-SECURING-KUBERNETES-COMPONENT	high	55	SECTION 2: Securing Kubernetes Components
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-3-KUBERNETES-SECURITY-BEST-PRAC	high	55	SECTION 3: Kubernetes Security Best Practices: Build Phase
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-4-KUBERNETES-SECURITY-BEST-PRAC	high	55	SECTION 4: Kubernetes Security Best Practices: Deploy Phase
+SKB-CS-LARAVEL-CHEAT-SHEET-AUTHENTICATION	high	55	Authentication
+SKB-CS-LARAVEL-CHEAT-SHEET-COOKIE-SECURITY-AND-SESSION-MANAGEMENT	high	55	Cookie Security and Session Management
+SKB-CS-LARAVEL-CHEAT-SHEET-OTHER-INJECTIONS	high	55	Other Injections
+SKB-CS-LARAVEL-CHEAT-SHEET-THE-BASICS	high	55	The Basics
+SKB-CS-LDAP-INJECTION-PREVENTION-CHEAT-SHEET-ADDITIONAL-DEFENSES	high	55	Additional Defenses
+SKB-CS-LDAP-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-LDAP-INJECTION-PREVENTION-CHEAT-SHEET-PRIMARY-DEFENSES	high	55	Primary Defenses
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-AUTHENTICATION-AUTHORIZATION	high	55	Authentication/Authorization
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-DATA-STORAGE	high	55	Data Storage
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-INVENTORY-AND-ASSET-MANAGEMENT	high	55	Inventory and Asset Management
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-ADDITIONAL-DEFENSES	high	55	Additional Defenses
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-ANATOMY-OF-PROMPT-INJECTION-V	high	55	Anatomy of Prompt Injection Vulnerabilities
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-BEST-PRACTICES-CHECKLIST	high	55	Best Practices Checklist
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-COMMON-ATTACK-TYPES	high	55	Common Attack Types
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-FRAMEWORK-SPECIFIC-IMPLEMENTA	high	55	Framework-Specific Implementations
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-PRIMARY-DEFENSES	high	55	Primary Defenses
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-SECURE-IMPLEMENTATION-PIPELIN	high	55	Secure Implementation Pipeline
+SKB-CS-LLM-PROMPT-INJECTION-PREVENTION-CHEAT-SHEET-SMOKE-TESTING-YOUR-DEFENSES	high	55	Smoke-Testing Your Defenses
+SKB-CS-LOGGING-CHEAT-SHEET-ATTACKS-ON-LOGS	high	55	Attacks on Logs
+SKB-CS-LOGGING-CHEAT-SHEET-DEPLOYMENT-AND-OPERATION	high	55	Deployment and operation
+SKB-CS-LOGGING-CHEAT-SHEET-DESIGN-IMPLEMENTATION-AND-TESTING	high	55	Design, implementation, and testing
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-AUTHENTICATION-AUTHN	high	55	Authentication [AUTHN]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-AUTHORIZATION-AUTHZ	high	55	Authorization [AUTHZ]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-ENCRYPTION-DECRYPTION-CRYPT	high	55	Encryption/Decryption [CRYPT]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-EXCESSIVE-USE-EXCESS	high	55	Excessive Use [EXCESS]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-GETTING-STARTED	high	55	Getting Started
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-MCP-SERVERS-MCP	high	55	MCP Servers [MCP]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-OVERVIEW	high	55	Overview
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-PRIVILEGE-CHANGES-PRIVILEGE	high	55	Privilege Changes [PRIVILEGE]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-SENSITIVE-DATA-CHANGES-DATA	high	55	Sensitive Data Changes [DATA]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-SESSION-MANAGEMENT-SESSION	high	55	Session Management [SESSION]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-THE-VOCABULARY	high	55	The Vocabulary
+SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-BEST-PRACTICES	high	55	Best Practices
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	55	Do's and Don'ts
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-KEY-RISKS	high	55	Key Risks
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-CHOOSE-AND-ENFORCE-RUNTIME-BOUNDARIES	high	55	Choose and Enforce Runtime Boundaries
+SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-ENFORCE-BACKEND-AUTHORIZATION-AND-LIM	high	55	Enforce Backend Authorization and Limit Shared Data
+SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-MICROSERVICES-BASED-SECURITY-ARCH-DOC-CHEAT-SHEET-CONTEXT	high	55	Context
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-EDGE-LEVEL-AUTHORIZATION	high	55	Edge-level authorization
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-EXTERNAL-ENTITY-IDENTITY-PROPAGATION	high	55	External Entity Identity Propagation
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-SERVICE-LEVEL-AUTHORIZATION	high	55	Service-level authorization
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-SERVICE-TO-SERVICE-AUTHENTICATION	high	55	Service-to-service authentication
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-APPLICATION-INTEGRITY	high	55	Application Integrity
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-ARCHITECTURE-DESIGN	high	55	Architecture & Design
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-AUTHENTICATION-AUTHORIZATION	high	55	Authentication & Authorization
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-DATA-STORAGE-PRIVACY	high	55	Data Storage & Privacy
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-NETWORK-COMMUNICATION	high	55	Network Communication
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-PLATFORM-SPECIFIC-GUIDANCE	high	55	Platform-Specific Guidance
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-TESTING	high	55	Testing
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-USER-INTERFACE	high	55	User Interface
+SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-BEST-PRACTICES	high	55	Best Practices
+SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	55	Do's and Don'ts
+SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-KEY-RISKS	high	55	Key Risks
+SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-ADAPTIVE-OR-RISK-BASED-AUTHENTICAT	high	55	Adaptive or Risk-Based Authentication
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-ADVANTAGES	high	55	Advantages
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-DISADVANTAGES	high	55	Disadvantages
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-IMPLEMENTING-MFA	high	55	Implementing MFA
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-MFA-ATTACK-PATTERNS-AND-MITIGATION	high	55	MFA Attack Patterns and Mitigations
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-QUICK-RECOMMENDATIONS	high	55	Quick Recommendations
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMETHING-YOU-ARE	high	55	Something You Are
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMETHING-YOU-DO	high	55	Something You Do
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMETHING-YOU-HAVE	high	55	Something You Have
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMETHING-YOU-KNOW	high	55	Something You Know
+SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMEWHERE-YOU-ARE	high	55	Somewhere You Are
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-INTERSERVICE-INTERACTION	high	55	Interservice interaction
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-NETWORK-SECURITY-POLICY	high	55	Network security policy
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-THREE-LAYER-NETWORK-ARCHITECTURE	high	55	Three-layer network architecture
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-CLASSIFY-AND-PROTECT-SERVER-ENTRY-POINTS	high	55	Classify and Protect Server Entry Points
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-CONTROL-DATA-CROSSING-INTO-THE-BROWSER	high	55	Control Data Crossing into the Browser
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-SCOPE-CACHES-TO-THEIR-AUDIENCES	high	55	Scope Caches to Their Audiences
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-TREAT-NEXT-JS-CONFIGURATION-AS-SECURITY	high	55	Treat Next.js Configuration as Security Code
+SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-VERIFY-THE-BOUNDARIES	high	55	Verify the Boundaries
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-1-USE-EXPLICIT-AND-DETERMINISTIC-DOCKER	high	55	1) Use explicit and deterministic Docker base image tags
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-2-INSTALL-ONLY-PRODUCTION-DEPENDENCIES	high	55	2) Install only production dependencies in the Node.js Docker image
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-5-PROPERLY-HANDLE-EVENTS-TO-SAFELY-TERM	high	55	5) Properly handle events to safely terminate a Node.js Docker web application
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-8-USE-MULTI-STAGE-BUILDS	high	55	8) Use multi-stage builds
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	55	Do’s and Don’ts
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-EXAMPLES-OF-DANGEROUS-PATTERNS-BRIEF	high	55	Examples of Dangerous Patterns (brief)
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-QUICK-NOSQL-SECURITY-CHECKLIST	high	55	Quick NoSQL Security Checklist
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-NOSQL-SECURITY-CHEAT-SHEET-SECURE-BY-DESIGN-PRINCIPLES	high	55	Secure-by-Design Principles
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-11-USE-TRUSTED-PUBLISHERS-FOR-SECURE-PA	high	55	11) Use trusted publishers for secure package publishing
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-2-ENFORCE-THE-LOCKFILE	high	55	2) Enforce the lockfile
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-4-ASSESS-NPM-PROJECT-HEALTH	high	55	4) Assess npm project health
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-8-ENABLE-2FA	high	55	8) Enable 2FA
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-9-MINIMIZE-NPM-ACCESS-TOKEN-USE	high	55	9) Minimize npm Access Token Use
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-ADDITIONAL-SECURITY-RESOURCES	high	55	Additional Security Resources
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-OAUTH2-CHEAT-SHEET-ACCESS-TOKEN-PRIVILEGE-RESTRICTION	high	55	Access Token Privilege Restriction
+SKB-CS-OAUTH2-CHEAT-SHEET-CLIENT-AUTHENTICATION	high	55	Client Authentication
+SKB-CS-OAUTH2-CHEAT-SHEET-IMPLICIT-GRANT-DEPRECATED-DO-NOT-USE	high	55	Implicit Grant (DEPRECATED — DO NOT USE)
+SKB-CS-OAUTH2-CHEAT-SHEET-OAUTH-2-0-ESSENTIAL-BASICS	high	55	OAuth 2.0 Essential Basics
+SKB-CS-OAUTH2-CHEAT-SHEET-OTHER-RECOMMENDATIONS	high	55	Other Recommendations
+SKB-CS-OAUTH2-CHEAT-SHEET-PKCE-PROOF-KEY-FOR-CODE-EXCHANGE-MECHA	high	55	PKCE - Proof Key for Code Exchange Mechanism
+SKB-CS-OAUTH2-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-OAUTH2-CHEAT-SHEET-RESOURCE-OWNER-PASSWORD-CREDENTIALS-GRAN	high	55	Resource Owner Password Credentials Grant
+SKB-CS-OAUTH2-CHEAT-SHEET-TERMINOLOGY	high	55	Terminology
+SKB-CS-OAUTH2-CHEAT-SHEET-TOKEN-REPLAY-PREVENTION	high	55	Token Replay Prevention
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-DEPLOYMENT-AND-REVIEW-CHECKLIST	high	55	Deployment and Review Checklist
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-PROTECT-THE-CREDENTIAL-LIFECYCLE-AND-REC	high	55	Protect the Credential Lifecycle and Recovery
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-SECURE-PASSKEY-AUTHENTICATION	high	55	Secure Passkey Authentication
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-SECURE-PASSKEY-REGISTRATION	high	55	Secure Passkey Registration
+SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-UNDERSTAND-THE-SECURITY-MODEL	high	55	Understand the Security Model
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-UPGRADING-LEGACY-HASHES	high	55	Upgrading Legacy Hashes
+SKB-CS-PHP-CONFIGURATION-CHEAT-SHEET-PHP-CONFIGURATION-AND-DEPLOYMENT	high	55	PHP Configuration and Deployment
+SKB-CS-PINNING-CHEAT-SHEET-EXAMPLES-OF-PINNING	high	55	Examples of Pinning
+SKB-CS-PINNING-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-PINNING-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-PINNING-CHEAT-SHEET-WHAT-IS-PINNING	high	55	What Is Pinning
+SKB-CS-PINNING-CHEAT-SHEET-WHAT-S-THE-PROBLEM	high	55	What's the problem
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-1-INVENTORY-CRYPTOGRAPHIC-DEP	high	55	Stage 1: Inventory cryptographic dependencies
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-2-PRIORITIZE-MIGRATION-WORK	high	55	Stage 2: Prioritize migration work
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-3-ADOPT-SUPPORTED-IMPLEMENTAT	high	55	Stage 3: Adopt supported implementations
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-4-TEST-THE-FULL-APPLICATION-P	high	55	Stage 4: Test the full application path
+SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-5-ROLL-OUT-AND-RETIRE-TEMPORA	high	55	Stage 5: Roll out and retire temporary exceptions
+SKB-CS-PROTOTYPE-POLLUTION-PREVENTION-CHEAT-SHEET-EXPLANATION	high	55	Explanation
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-DELETE	high	55	Delete
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-IMPLEMENTATION-PRIORITY	high	55	Implementation Priority
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-1-DOCUMENT-POISONING	high	55	Section 1: Document Poisoning
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-10-TOOL-INVOCATION-AND-AGENT-SA	high	55	Section 10: Tool Invocation and Agent Safety
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-11-CACHING-RISKS	high	55	Section 11: Caching Risks
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-12-MONITORING-AND-INCIDENT-RESP	high	55	Section 12: Monitoring and Incident Response
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-13-SUPPLY-CHAIN-RISK-IN-INGESTI	high	55	Section 13: Supply Chain Risk in Ingestion
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-14-FAIL-CLOSED-DESIGN	high	55	Section 14: Fail-Closed Design
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-3-CONTEXT-WINDOW-ATTACKS	high	55	Section 3: Context Window Attacks
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-4-ACCESS-CONTROL-INHERITANCE	high	55	Section 4: Access Control Inheritance
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-5-SOURCE-ATTRIBUTION-AND-PROVEN	high	55	Section 5: Source Attribution and Provenance
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-6-CHUNK-ISOLATION	high	55	Section 6: Chunk Isolation
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-7-INDEX-INTEGRITY	high	55	Section 7: Index Integrity
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-8-QUERY-INJECTION-VIA-RETRIEVAL	high	55	Section 8: Query Injection via Retrieval
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-9-OUTPUT-VALIDATION-AND-ENFORCE	high	55	Section 9: Output Validation and Enforcement
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-ASSESSING-OPENAPI-AND-SWAGGER-BASED-REST	high	55	Assessing OpenAPI and Swagger-Based REST APIs
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-BROKEN-OBJECT-LEVEL-AUTHORIZATION-BOLA	high	55	Broken Object Level Authorization (BOLA)
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-JWT-AND-OAUTH2-ASSESSMENT	high	55	JWT and OAuth2 Assessment
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-KEY-RELEVANT-PROPERTIES-OF-RESTFUL-WEB-S	high	55	Key relevant properties of RESTful web services
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-RATE-LIMITING-AND-THROTTLING-ASSESSMENT	high	55	Rate Limiting and Throttling Assessment
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-REST-SECURITY-CHEAT-SHEET-ACCESS-CONTROL	high	55	Access Control
+SKB-CS-REST-SECURITY-CHEAT-SHEET-AUDIT-LOGS	high	55	Audit logs
+SKB-CS-REST-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-REST-SECURITY-CHEAT-SHEET-JWT	high	55	JWT control
+SKB-CS-REST-SECURITY-CHEAT-SHEET-MANAGEMENT-ENDPOINTS	high	55	Management endpoints
+SKB-CS-REST-SECURITY-CHEAT-SHEET-PREVENTING-OUT-OF-ORDER-API-EXECUTION	high	55	Preventing Out-of-Order API Execution
+SKB-CS-REST-SECURITY-CHEAT-SHEET-RESTRICT-HTTP-METHODS	high	55	Restrict HTTP methods
+SKB-CS-REST-SECURITY-CHEAT-SHEET-VALIDATE-CONTENT-TYPES	high	55	Validate content types
+SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-UPDATING-RAILS-AND-HAVING-A-PROCESS-FOR	high	55	Updating Rails and Having a Process for Updating Dependencies
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-CRYPTOGRAPHY	high	55	Cryptography
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-IDENTITY-PROVIDER-AND-SERVICE-PROVIDER-C	high	55	Identity Provider and Service Provider Considerations
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-MESSAGE-CONFIDENTIALITY-AND-INT	high	55	Validate Message Confidentiality and Integrity
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-PROTOCOL-PROCESSING-RULES	high	55	Validate Protocol Processing Rules
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-PROTOCOL-USAGE	high	55	Validate Protocol Usage
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-1-INTRODUCTION	high	55	1 Introduction
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-11-RELATED-CHEAT-SHEETS-FURTHER-READIN	high	55	11 Related Cheat Sheets & further reading
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-2-GENERAL-SECRETS-MANAGEMENT	high	55	2 General Secrets Management
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-3-CONTINUOUS-INTEGRATION-CI-AND-CONTIN	high	55	3 Continuous Integration (CI) and Continuous Deployment (CD)
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-4-CLOUD-PROVIDERS	high	55	4 Cloud Providers
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-6-IMPLEMENTATION-GUIDANCE	high	55	6 Implementation Guidance
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-7-ENCRYPTION	high	55	7 Encryption
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-8-DETECTION	high	55	8 Detection
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-9-INCIDENT-RESPONSE	high	55	9 Incident Response
+SKB-CS-SECRETS-MANAGEMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-SECURE-AI-MODEL-OPS-CHEAT-SHEET-COMMON-SECURITY-ISSUES	high	55	Common Security Issues
+SKB-CS-SECURE-AI-MODEL-OPS-CHEAT-SHEET-REAL-WORLD-EXAMPLES	high	55	Real-World Examples
+SKB-CS-SECURE-AI-MODEL-OPS-CHEAT-SHEET-SECURITY-RECOMMENDATIONS	high	55	Security Recommendations
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-PUBLIC-AND-PRIVATE-COMPONENTS	high	55	Public and Private Components
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-TRUST-BOUNDARIES	high	55	Trust Boundaries
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REVIEW-CHECKLISTS	high	55	Review Checklists
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REVIEW-METHODOLOGY	high	55	Review Methodology
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REVIEW-TECHNIQUES	high	55	Review Techniques
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-TOOLS-AND-TECHNIQUES	high	55	Tools and Techniques
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-OWASP-TOP-10-MAPPING	high	55	OWASP Top 10 Mapping
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-1-HALLUCINATED-DEPENDENCIES	high	55	Section 1: Hallucinated Dependencies
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-11-CI-CD-AGENTS-AND-CONFUSED-DE	high	55	Section 11: CI/CD Agents and Confused Deputy Risk
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-12-MARKDOWN-LINK-AND-UNICODE	high	55	Section 12: Markdown, Link, and Unicode Injection
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-13-MULTI-AGENT-AND-SUB-AGENT-PR	high	55	Section 13: Multi-Agent and Sub-Agent Propagation
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-3-INDIRECT-PROMPT-INJECTION-IN	high	55	Section 3: Indirect Prompt Injection in the Development Loop
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-4-MCP-AND-TOOL-SECURITY	high	55	Section 4: MCP and Tool Security
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-5-AGENT-RUNTIME-SANDBOXING	high	55	Section 5: Agent Runtime Sandboxing
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-8-TEST-FABRICATION-AND-TEST-DEL	high	55	Section 8: Test Fabrication and Test Deletion
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-9-PROMPT-CONTEXT-LEAKAGE-AND-SE	high	55	Section 9: Prompt Context Leakage and Sensitive Code Exposure
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-THREAT-MODEL-AND-TRUST-BOUNDARIES	high	55	Threat Model and Trust Boundaries
+SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-SECURITY-FOCUS-AREAS	high	55	Security Focus Areas
+SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-SECURITY-PRINCIPLES	high	55	Security Principles
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-CRYPTOGRAPHY-ENCRYPTION-HASHING-AND-S	high	55	Cryptography: Encryption, Hashing, and Signatures
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-DATA-HANDLING-ENCODING-ESCAPING-SANIT	high	55	Data Handling: Encoding, Escaping, Sanitization, and Serialization
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-FEDERATED-IDENTITY-TERMS	high	55	Federated Identity Terms
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-IDENTITY-AUTHENTICATION-AND-AUTHORIZATI	high	55	Identity: Authentication and Authorization
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-TABLE-OF-CONTENTS	high	55	Table of Contents
+SKB-CS-SERVER-SIDE-TEMPLATE-INJECTION-PREVENTION-CHEAT-SHEET-ENGINE-CONFIGURATIO	high	55	Engine Configuration
+SKB-CS-SERVER-SIDE-TEMPLATE-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-SERVER-SIDE-TEMPLATE-INJECTION-PREVENTION-CHEAT-SHEET-PREVENTION	high	55	Prevention
+SKB-CS-SERVER-SIDE-TEMPLATE-INJECTION-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-SERVER-SIDE-TEMPLATE-INJECTION-PREVENTION-CHEAT-SHEET-USER-SUPPLIED-TEMPL	high	55	User-Supplied Templates
+SKB-CS-SERVERLESS-FAAS-SECURITY-CHEAT-SHEET-KEY-RISKS	high	55	Key Risks
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-ADDITIONAL-CLIENT-SIDE-DEFENSES-FOR-SESS	high	55	Additional Client-Side Defenses for Session Management
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-COOKIES	high	55	Cookies
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-HTML5-WEB-STORAGE-API	high	55	HTML5 Web Storage API
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-REAUTHENTICATION-AFTER-RISK-EVENTS	high	55	Reauthentication After Risk Events
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-ATTACKS-DETECTION	high	55	Session Attacks Detection
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-EXPIRATION	high	55	Session Expiration
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-ID-LIFE-CYCLE	high	55	Session ID Life Cycle
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-ID-PROPERTIES	high	55	Session ID Properties
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-MANAGEMENT-IMPLEMENTATION	high	55	Session Management Implementation
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-SESSION-MANAGEMENT-WAF-PROTECTIONS	high	55	Session Management WAF Protections
+SKB-CS-SESSION-MANAGEMENT-CHEAT-SHEET-WEB-WORKERS	high	55	Web Workers
+SKB-CS-SOFTWARE-SUPPLY-CHAIN-SECURITY-CHEAT-SHEET-MITIGATIONS-AND-SECURITY-BEST-	high	55	Mitigations and Security Best Practices
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-PRIMARY-DEFENSES	high	55	Primary Defenses
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-RELATED-ARTICLES	high	55	Related Articles
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-CLOUD-PROVIDER-VULNERABILITY-RE	high	55	Cloud Provider Vulnerability Reference
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-INCIDENT-RESPONSE	high	55	Incident Response
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-MAJOR-RISKS	high	55	Major risks
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-SECURITY-DEFENSE-CONSIDERAT	high	55	Security Defense Considerations
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-THIRD-PARTY-JAVASCRIPT-DEPL	high	55	Third-party JavaScript Deployment Architectures
+SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-LOGGING-AND-MONITORIN	high	55	Logging and Monitoring
+SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-WHAT-CAN-GO-WRONG-AT-	high	55	What Can Go Wrong at Each Step and How to Prevent It
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-ADDRESSING-EACH-QUESTION	high	55	Addressing Each Question
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-THREAT-MODELING-AND-THE-DEVELOPMENT-TEAM	high	55	Threat Modeling and the Development Team
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-1-FUNCTIONAL-GUIDELINES	high	55	1. Functional Guidelines
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-2-NON-FUNCTIONAL-GUIDELINES	high	55	2. Non-functional guidelines
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-PURPOSE-AND-AUDIENCE	high	55	Purpose and audience
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-REMARKS	high	55	Remarks
+SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-APPLICATION	high	55	Application
+SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-CERTIFICATES	high	55	Certificates
+SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-SERVER-CONFIGURATION	high	55	Server Configuration
+SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-DANGEROUS-URL-REDIRECTS	high	55	Dangerous URL Redirects
+SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-PREVENTING-UNVALIDATED-RED	high	55	Preventing Unvalidated Redirects and Forwards
+SKB-CS-USER-PRIVACY-PROTECTION-CHEAT-SHEET-GUIDELINES	high	55	Guidelines
+SKB-CS-VERIFYING-THIRD-PARTY-AGENT-EXECUTION-EVIDENCE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-VERIFYING-THIRD-PARTY-AGENT-EXECUTION-EVIDENCE-CHEAT-SHEET-SIX-QUESTIONS-	high	55	Six Questions to Ask About an Execution Record
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-ANALYSIS-PHASE	high	55	Analysis Phase
+SKB-CS-VULNERABILITY-DISCLOSURE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-VULNERABILITY-DISCLOSURE-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-CASES	high	55	Cases
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-CONTEXT	high	55	Context
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-REMARK-ABOUT-THE-SECURITY-IS	high	55	Remark about the security issue handling decision
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-TOOLS	high	55	Tools
+SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-BEST-PRACTICES	high	55	Best Practices
+SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-DO-S-AND-DON-TS	high	55	Do's and Don'ts
+SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-KEY-RISKS	high	55	Key Risks
+SKB-CS-WEB-FRONTEND-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-AUTHORIZATION	high	55	Authorization
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-ENDPOINT-SECURITY-PROFILE	high	55	Endpoint Security Profile
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-MESSAGE-CONFIDENTIALITY	high	55	Message Confidentiality
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-MESSAGE-INTEGRITY	high	55	Message Integrity
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-MESSAGE-SIZE	high	55	Message Size
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-SERVER-AUTHENTICATION	high	55	Server Authentication
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-TRANSPORT-CONFIDENTIALITY	high	55	Transport Confidentiality
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-USER-AUTHENTICATION	high	55	User Authentication
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-AUTHENTICATING-DELIVERIES	high	55	Authenticating Deliveries
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-ENDPOINT-HARDENING	high	55	Endpoint Hardening
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-QUICK-REFERENCE-CHECKLIST	high	55	Quick Reference Checklist
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-REPLAY-DUPLICATES-AND-ABUSE	high	55	Replay, Duplicates, and Abuse
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-SECURITY-TESTING	high	55	Security Testing
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-THREAT-MODEL-SUMMARY	high	55	Threat Model Summary
+SKB-CS-WEBSOCKET-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-LIMIT-CREDENTIAL-EXPOSURE-AND-PE	high	55	Limit Credential Exposure and Permissions
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-RESTRICT-WHICH-JOBS-ARE-TRUSTED	high	55	Restrict Which Jobs Are Trusted
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-UNDERSTAND-THE-TRUST-BOUNDARY	high	55	Understand the Trust Boundary
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-VERIFY-AND-MONITOR-ACCESS	high	55	Verify and Monitor Access
+SKB-CS-XML-SECURITY-CHEAT-SHEET-DEALING-WITH-INVALID-XML-DOCUMENTS	high	55	Dealing with invalid XML documents
+SKB-CS-XML-SECURITY-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-XML-SECURITY-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-XPATH-INJECTION-PREVENTION-CHEAT-SHEET-BIND-VALUES-TO-FIXED-EXPRESSIONS	high	55	Bind Values to Fixed Expressions
+SKB-CS-XPATH-INJECTION-PREVENTION-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-XPATH-INJECTION-PREVENTION-CHEAT-SHEET-KEEP-QUERY-STRUCTURE-UNDER-APPLICA	high	55	Keep Query Structure Under Application Control
+SKB-CS-XPATH-INJECTION-PREVENTION-CHEAT-SHEET-LIMIT-EXPOSURE-AND-REVIEW-USAGE	high	55	Limit Exposure and Review Usage
+SKB-CS-XPATH-INJECTION-PREVENTION-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-USING-BROWSER-CACHE	high	55	Attacks using browser cache
+SKB-CS-XS-LEAKS-CHEAT-SHEET-SAME-ORIGIN-POLICY-SOP	high	55	Same Origin Policy (SOP)
+SKB-CS-XS-LEAKS-CHEAT-SHEET-SAMESITE-COOKIES	high	55	SameSite Cookies
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-APPLICATION-AND-DATA-PROTECTION	high	55	Application and Data Protection
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-COMMON-MISTAKES-TO-AVOID	high	55	Common Mistakes to Avoid
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-COMPLIANCE-BENEFITS	high	55	Compliance Benefits
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-CORE-ZERO-TRUST-ARCHITECTURE-COMPONEN	high	55	Core Zero Trust Architecture Components
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-CORE-ZERO-TRUST-PRINCIPLES	high	55	Core Zero Trust Principles
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-DEVICE-SECURITY	high	55	Device Security
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-HOW-ZERO-TRUST-ADDRESSES-MODERN-SECUR	high	55	How Zero Trust Addresses Modern Security Challenges
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-IDENTITY-AND-ACCESS-MANAGEMENT	high	55	Identity and Access Management
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-IMPLEMENTATION-STEPS	high	55	Implementation Steps
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-INTRODUCTION	high	55	Introduction
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-LEGACY-SYSTEM-CHALLENGES	high	55	Legacy System Challenges
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-MONITORING-AND-ANALYTICS	high	55	Monitoring and Analytics
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-NETWORK-ARCHITECTURE	high	55	Network Architecture
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-REFERENCES	high	55	References
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-TECHNOLOGY-COMPONENTS	high	55	Technology Components
+SKB-ISTG-3-2-MEMORY-ISTG-MEM	high	55	3.2. Memory (ISTG-MEM)
+SKB-ISTG-3-5-2-UNIVERSAL-ASYNCHRONOUS-RECEIVER-T	high	55	3.5.2. Universal Asynchronous Receiver-Transmitter (ISTG-INT[UART])
+SKB-MASTG-TEST-0013	high	55	MASTG-TEST-0013
+SKB-MASTG-TEST-0014	high	55	MASTG-TEST-0014
+SKB-MASTG-TEST-0017	high	55	MASTG-TEST-0017
+SKB-MASTG-TEST-0062	high	55	MASTG-TEST-0062
+SKB-MASTG-TEST-0064	high	55	MASTG-TEST-0064
+SKB-MASVS-AUTH-1	high	55	MASVS-AUTH-1
+SKB-MASVS-AUTH-2	high	55	MASVS-AUTH-2
+SKB-MASVS-AUTH-3	high	55	MASVS-AUTH-3
+SKB-MASVS-CRYPTO-1	high	55	MASVS-CRYPTO-1
+SKB-MASVS-CRYPTO-2	high	55	MASVS-CRYPTO-2
+SKB-NSSC-INTEGER-OVERFLOW	high	55	Integer Overflow
+SKB-SCR-REDUCING-THE-ATTACK-SURFACE	high	55	Reducing the attack surface
+SKB-SCR-TLDR	high	55	TLDR;
+SKB-SCV-ASSERTING-CONTRACT-FROM-CODE-SIZE	high	55	Asserting Contract from Code Size
+SKB-SCV-AUTHORIZATION-THROUGH-TX-ORIGIN	high	55	Authorization Through tx.origin
+SKB-SCV-DELEGATECALL-TO-UNTRUSTED-CALLEE	high	55	Delegatecall to Untrusted Callee
+SKB-SCV-FLOATING-PRAGMA	high	55	Floating Pragma
+SKB-SCV-HASH-COLLISION-WITH-ABI-ENCODEPACKED	high	55	Hash Collision with abi.encodePacked()
+SKB-SCV-INCORRECT-CONSTRUCTOR-NAME	high	55	Incorrect Constructor Name
+SKB-SCV-INSUFFICIENT-ACCESS-CONTROL	high	55	Insufficient Access Control
+SKB-SCV-MISSING-PROTECTION-AGAINST-SIGNATURE-REP	high	55	Missing Protection Against Signature Replay
+SKB-SCV-OFF-BY-ONE-ERRORS	high	55	Off-By-One Errors
+SKB-SCV-OUTDATED-COMPILER-VERSION	high	55	Outdated Compiler Version
+SKB-SCV-REENTRANCY	high	55	Reentrancy
+SKB-SCV-SIGNATURE-MALLEABILITY	high	55	Signature Malleability
+SKB-SCV-TRANSACTION-ORDERING-DEPENDENCE-FRONTRU	high	55	Transaction-Ordering Dependence (Frontrunning)
+SKB-SCV-UNENCRYPTED-PRIVATE-DATA-ON-CHAIN	high	55	Unencrypted Private Data On-Chain
+SKB-SCV-UNSECURE-SIGNATURES	high	55	Unsecure Signatures
+SKB-SCV-USE-OF-DEPRECATED-FUNCTIONS	high	55	Use of Deprecated Functions
+SKB-TOP10-A02-2025	medium	55	A02_2025-Security_Misconfiguration.md
+SKB-TOP10-A04-2025	medium	55	A04_2025-Cryptographic_Failures.md
+SKB-TOP10-A05-2025	medium	55	A05_2025-Injection.md
+SKB-TOP10-A06-2025	medium	55	A06_2025-Insecure_Design.md
+SKB-TOP10-A07-2025	medium	55	A07_2025-Authentication_Failures.md
+SKB-TOP10-A09-2025	medium	55	A09_2025-Security_Logging_and_Alerting_Failures.md
+SKB-TOP10-A10-2025	medium	55	A10_2025-Mishandling_of_Exceptional_Conditions.md
+SKB-VIBE-AI-INTEGRATION-API-KEYS-ARE-SERVER-SIDE-ONLY	high	55	API Keys Are Server-Side Only
+SKB-VIBE-AUTHENTICATION-SESSION-TOKEN-STORAGE	high	55	Session & Token Storage
+SKB-VIBE-DATA-ACCESS-SQL-INJECTION	high	55	SQL Injection
+SKB-VIBE-DATABASE-SECURITY-CONVEX	high	55	Convex
+SKB-VIBE-DEPLOYMENT-PRE-SHIP-CHECKS	high	55	Pre-Ship Checks
+SKB-VIBE-MOBILE-NO-SECRETS-IN-THE-JAVASCRIPT-BUNDLE	high	55	No Secrets in the JavaScript Bundle
+SKB-VIBE-SECRETS-AND-ENV-HARDCODED-CREDENTIALS	high	55	Hardcoded Credentials
+SKB-WSTG-APIT-02	high	55	API Broken Object Level Authorization
+SKB-WSTG-APIT-03	high	55	Excessive Data Exposure
+SKB-WSTG-APIT-04	high	55	API Broken Function Level Authorization
+SKB-WSTG-APIT-99	high	55	GraphQL
+SKB-WSTG-ATHN-03	high	55	Weak Lock Out Mechanism
+SKB-WSTG-ATHN-04	high	55	Bypassing Authentication Schema
+SKB-WSTG-ATHN-05	high	55	Vulnerable Remember Password
+SKB-WSTG-ATHN-06	high	55	Browser Cache Weaknesses
+SKB-WSTG-ATHN-07	high	55	Weak Authentication Methods
+SKB-WSTG-ATHN-10	high	55	Weaker Authentication in Alternative Channel
+SKB-WSTG-ATHN-11	high	55	Multi-Factor Authentication (MFA)
+SKB-WSTG-ATHZ-03	high	55	Privilege Escalation
+SKB-WSTG-ATHZ-04	high	55	Insecure Direct Object References
+SKB-WSTG-ATHZ-05	high	55	OAuth Weaknesses
+SKB-WSTG-BUSL-01	high	55	Business Logic Data Validation
+SKB-WSTG-BUSL-08	high	55	Upload of Unexpected File Types
+SKB-WSTG-CLNT-02	high	55	JavaScript Execution
+SKB-WSTG-CLNT-03	high	55	HTML Injection
+SKB-WSTG-CLNT-04	high	55	Client-side URL Redirect
+SKB-WSTG-CLNT-05	high	55	CSS Injection
+SKB-WSTG-CLNT-12	high	55	Browser Storage
+SKB-WSTG-CONF-02	high	55	Application Platform Configuration
+SKB-WSTG-CONF-03	high	55	File Extensions Handling for Sensitive Information
+SKB-WSTG-CONF-06	high	55	HTTP Methods
+SKB-WSTG-CONF-09	high	55	File Permissions
+SKB-WSTG-CONF-10	high	55	Subdomain Takeover
+SKB-WSTG-CONF-11	high	55	Cloud Storage
+SKB-WSTG-CONF-13	high	55	Path Confusion
+SKB-WSTG-CONF-15	high	55	Feature Flag Security Bypass
+SKB-WSTG-CRYP-01	high	55	Weak Transport Layer Security
+SKB-WSTG-CRYP-02	high	55	Padding Oracle
+SKB-WSTG-CRYP-04	high	55	Weak Cryptographic Primitives
+SKB-WSTG-IDNT-01	high	55	Role Definitions
+SKB-WSTG-INFO-03	high	55	Review Webserver Metafiles for Information Leakage
+SKB-WSTG-INFO-05	high	55	Review Web Page Content for Information Leakage
+SKB-WSTG-INFO-06	high	55	Identify Application Entry Points
+SKB-WSTG-INJT-04	high	55	HTTP Parameter Pollution
+SKB-WSTG-INJT-07	high	55	XML Injection
+SKB-WSTG-INJT-09	high	55	XPath Injection
+SKB-WSTG-INJT-10	high	55	IMAP SMTP Injection
+SKB-WSTG-INJT-11	high	55	Code Injection
+SKB-WSTG-INJT-13	high	55	Format String Injection
+SKB-WSTG-INJT-14	high	55	Incubated Vulnerability
+SKB-WSTG-INJT-17	high	55	Host Header Injection
+SKB-WSTG-INJT-18	high	55	Server-side Template Injection
+SKB-WSTG-INJT-21	high	55	CSV Injection
+SKB-WSTG-SESS-01	high	55	Session Management Schema
+SKB-WSTG-SESS-03	high	55	Session Fixation
+SKB-WSTG-SESS-04	high	55	Exposed Session Variables
+SKB-WSTG-SESS-06	high	55	Logout Functionality
+SKB-WSTG-SESS-07	high	55	Session Timeout
+SKB-WSTG-SESS-08	high	55	Session Puzzling
+SKB-WSTG-SESS-09	high	55	Session Hijacking
+SKB-WSTG-SESS-11	high	55	Concurrent Sessions
+SKB-ASVS-V10-2-1	medium	50	OAuth Client - V10.2.1
+SKB-ASVS-V10-4-2	medium	50	OAuth Authorization Server - V10.4.2
+SKB-ASVS-V10-4-7	medium	50	OAuth Authorization Server - V10.4.7
+SKB-ASVS-V10-7-1	medium	50	Consent Management - V10.7.1
+SKB-ASVS-V12-1-1	medium	50	General TLS Security Guidance - V12.1.1
+SKB-ASVS-V12-1-5	medium	50	General TLS Security Guidance - V12.1.5
+SKB-ASVS-V15-4-1	medium	50	Safe Concurrency - V15.4.1
+SKB-ASVS-V15-4-2	medium	50	Safe Concurrency - V15.4.2
+SKB-ASVS-V17-2-6	medium	50	Media - V17.2.6
+SKB-ASVS-V17-3-2	medium	50	Signaling - V17.3.2
+SKB-ASVS-V5-2-1	medium	50	File Upload and Content - V5.2.1
+SKB-ASVS-V5-2-2	medium	50	File Upload and Content - V5.2.2
+SKB-ASVS-V5-2-3	medium	50	File Upload and Content - V5.2.3
+SKB-ASVS-V5-2-4	medium	50	File Upload and Content - V5.2.4
+SKB-ASVS-V5-2-5	medium	50	File Upload and Content - V5.2.5
+SKB-ASVS-V5-2-6	medium	50	File Upload and Content - V5.2.6
+SKB-ASVS-V5-3-2	medium	50	File Storage - V5.3.2
+SKB-ASVS-V5-4-3	medium	50	File Download - V5.4.3
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-PREVENT-RACE-CONDITIONS-ON-SENSITIVE-	medium	50	Prevent Race Conditions on Sensitive Operations
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-REFERENCES	medium	50	References
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-DRONE-SYSTEM-COMPONENTS	medium	50	Drone System Components
+SKB-CS-DRONE-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	50	Introduction
+SKB-CS-HTTP-HEADERS-CHEAT-SHEET-INTRODUCTION	medium	50	Introduction
+SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	50	Introduction
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-COLDFUSION	medium	50	ColdFusion
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-PHP	medium	50	PHP control
+SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-SEMGREP-RULES	medium	50	Semgrep Rules
+SKB-EXT-CSP-0043	high	50	Extension includes an explicit CSP and no remote code
+SKB-EXT-MSG-0044	high	50	Extension validates message passing and externally_connectable
+SKB-EXT-PERMS-0042	high	50	Extension requests minimal permissions
+SKB-BASE-027152647B	high	45	Checklist
+SKB-BASE-1-APP-DEBUG-TRUE-IN-PRODUCTION	high	45	1. `APP_DEBUG=true` in production
+SKB-BASE-1-ASPNETCORE-ENVIRONMENT-DEVELOPMENT	high	45	1. `ASPNETCORE_ENVIRONMENT=Development` in production
+SKB-BASE-1-AUTOINDEX-ON-ON-A-SERVED-DIRECTORY	high	45	1. `autoindex on` on a served directory
+SKB-BASE-1-BOUND-TO-0-0-0-0-WITH-NO-AUTH	high	45	1. Bound to `0.0.0.0` with no auth
+SKB-BASE-1-DISPLAY-ERRORS-ON-IN-PRODUCTION	high	45	1. `display_errors=On` in production
+SKB-BASE-1-INTROSPECTION-ENABLED-IN-PRODUCTION	high	45	1. Introspection enabled in production
+SKB-BASE-1-NO-RESPONSE-MODEL-RETURNING-ORM-OBJ	high	45	1. No response model / returning ORM objects directly
+SKB-BASE-1-OVER-BROAD-EXPRESS-STATIC	high	45	1. Over-broad `express.static`
+SKB-BASE-1-PERMITALL-ON-SENSITIVE-ROUTES	high	45	1. `permitAll()` on sensitive routes
+SKB-BASE-1-PLAINTEXT-NO-TLS	high	45	1. Plaintext (no TLS)
+SKB-BASE-1-PRIVILEGED-CONTAINERS	high	45	1. Privileged containers
+SKB-BASE-1-RUNNING-AS-ROOT	high	45	1. Running as root
+SKB-BASE-1-SERVING-HTTP-DIR-OR-PROJECT-RO	high	45	1. Serving `http.Dir(".")` or project root
+SKB-BASE-1-TRUST-MD5-AUTH-IN-PG-HBA-CONF	high	45	1. `trust` / `md5` auth in `pg_hba.conf`
+SKB-BASE-10-INSECURE-CRYPTO-MATH-RAND-FOR-TO	high	45	10. Insecure crypto / `math/rand` for tokens
+SKB-BASE-10-MISSING-RATE-LIMITING-BRUTE-FORCE	high	45	10. Missing rate limiting / brute force on login
+SKB-BASE-10-NO-RESOURCE-LIMITS	high	45	10. No resource limits
+SKB-BASE-10-PROTOTYPE-POLLUTION-VIA-OBJECT-ASSI	high	45	10. Prototype pollution via `Object.assign`/`merge`
+SKB-BASE-11-BUILD-CONTEXT-INJECTION-VIA-UNTRUSTE	high	45	11. Build context injection via untrusted Dockerfile / remote context
+SKB-BASE-11-OVERLY-PERMISSIVE-TARGET-BLANK	high	45	11. Overly permissive `target="_blank"` without `rel="noopener"`
+SKB-BASE-11-REDOS-ON-VALIDATION-REGEXES	high	45	11. ReDoS on validation regexes
+SKB-BASE-11-REDOS-REGULAR-EXPRESSION-DENIAL-OF	high	45	11. ReDoS (regular expression denial of service)
+SKB-BASE-11-REDOS-UNBOUNDED-QUERIES	high	45	11. ReDoS / unbounded queries
+SKB-BASE-11-TOKEN-IN-METADATA-WITHOUT-ROTATION	high	45	11. Token in metadata without rotation / weak
+SKB-BASE-12-CACHE-POISONING-VIA-HEADERS	high	45	12. Cache poisoning via headers
+SKB-BASE-12-DEFAULT-SECCOMP-APPARMOR-DISABLED	high	45	12. Default seccomp/AppArmor disabled
+SKB-BASE-12-EVENT-LOOP-BLOCKING-SYNC-CPU-WORK	high	45	12. Event loop blocking (sync CPU work)
+SKB-BASE-12-EXPOSING-INTERNAL-ROUTES-STATE-VIA-D	high	45	12. Exposing internal routes/state via deep links
+SKB-BASE-12-GOROUTINE-LEAKS-UNBOUNDED-CONCURRE	high	45	12. Goroutine leaks / unbounded concurrency
+SKB-BASE-12-NO-AUDIT-MONITORING	high	45	12. No audit / monitoring
+SKB-BASE-12-REVERSE-TABNABBING-TARGET-BLANK	high	45	12. Reverse tabnabbing (`target="_blank"` without `rel`)
+SKB-BASE-12-SUBSCRIPTION-AUTHZ-GAPS	high	45	12. Subscription authz gaps
+SKB-BASE-13-WEAK-CRYPTO-RAND	high	45	13. Weak crypto / `rand`
+SKB-BASE-2-DETAILED-ERRORS-ENABLED	high	45	2. Detailed errors enabled
+SKB-BASE-2-EXPOSED-API-ROUTES-ROUTE-HANDLERS-W	high	45	2. Exposed API routes / route handlers without auth
+SKB-BASE-2-LATEST-UNPINNED-TAGS	high	45	2. `:latest` / unpinned tags
+SKB-BASE-2-MISSING-OBJECT-LEVEL-AUTHORIZATION-B	high	45	2. Missing object-level authorization (BOLA / IDOR)
+SKB-BASE-2-MISSING-WEAK-DEPENDENCY-VALIDATION	high	45	2. Missing/weak dependency validation
+SKB-BASE-2-NO-DEPTH-COMPLEXITY-LIMITS	high	45	2. No depth/complexity limits
+SKB-BASE-2-PROTECTED-MODE-NO	high	45	2. `protected-mode no`
+SKB-BASE-2-RUNASUSER-0-NO-NON-ROOT-ENFORCEM	high	45	2. `runAsUser: 0` / no non-root enforcement
+SKB-BASE-2-SECRET-KEY-BASE-COMMITTED	high	45	2. `secret_key_base` committed
+SKB-BASE-2-SECRET-KEY-HARDCODED-OR-DEFAULT	high	45	2. `SECRET_KEY` hardcoded or default
+SKB-BASE-2-VERBOSE-ERROR-RESPONSES-PANIC-IN-HA	high	45	2. Verbose error responses / panic in handlers
+SKB-BASE-2-WEAK-LEAKED-APP-KEY	high	45	2. Weak/leaked `APP_KEY`
+SKB-BASE-21CBFEA71D	high	45	Checklist
+SKB-BASE-250ECF3FCA	high	45	Checklist
+SKB-BASE-3-APP-KEY-USED-FOR-PASSWORDS-WEAK-HAS	high	45	3. APP_KEY used for passwords / weak hashing
+SKB-BASE-3-DANGEROUS-COMMANDS-ENABLED	high	45	3. Dangerous commands enabled
+SKB-BASE-3-H2-CONSOLE-ENABLED-IN-PRODUCTION	high	45	3. H2 console enabled in production
+SKB-BASE-3-LISTENING-ON-0-0-0-0	high	45	3. Listening on `0.0.0.0`
+SKB-BASE-3-MISSING-DOTFILE-HIDDEN-FILE-PROTECT	high	45	3. Missing dotfile / hidden file protection
+SKB-BASE-3-NO-PER-METHOD-AUTHZ	high	45	3. No per-method authz
+SKB-BASE-3-NO-RESOURCE-LIMITS-REQUESTS	high	45	3. No resource limits / requests
+SKB-BASE-3-OVER-FETCHING-VIA-PERMISSIVE-RESOLVER	high	45	3. Over-fetching via permissive resolvers
+SKB-BASE-3-SECRETS-BAKED-INTO-IMAGE	high	45	3. Secrets baked into image
+SKB-BASE-3-STATIC-MEDIA-SERVED-WITH-DIRECTORY-LI	high	45	3. Static/media served with directory listing or no auth
+SKB-BASE-3-UNSAFE-UNWRAP-EXPECT-IN-REQUEST-P	high	45	3. Unsafe `unwrap`/`expect` in request paths
+SKB-BASE-3B992EC867	high	45	Checklist
+SKB-BASE-4-INSECURE-JWT-CONFIG	high	45	4. Insecure JWT config
+SKB-BASE-4-NO-MESSAGE-SIZE-LIMITS	high	45	4. No message size limits
+SKB-BASE-4-RUNSERVER-USED-IN-PRODUCTION	high	45	4. `runserver` used in production
+SKB-BASE-4-SEND-FILE-SEND-FROM-DIRECTORY-W	high	45	4. `send_file` / `send_from_directory` with user input
+SKB-BASE-4-SENSITIVE-FILES-IN-WEB-ROOT	high	45	4. Sensitive files in web root
+SKB-BASE-4-STORAGE-SYMLINK-EXPOSURE	high	45	4. Storage/symlink exposure
+SKB-BASE-4B957B502E	high	45	Checklist
+SKB-BASE-5-EXPOSED-TRACING-METRICS-ENDPOINTS	high	45	5. Exposed tracing/metrics endpoints
+SKB-BASE-5-NO-MAXMEMORY-EVICTION-POLICY	high	45	5. No maxmemory / eviction policy
+SKB-BASE-5-NO-NETWORK-ISOLATION-EXPOSED-PORT	high	45	5. No network isolation / exposed port
+SKB-BASE-5-NO-TLS	high	45	5. No TLS
+SKB-BASE-5-PRIVILEGED-MODE-EXCESSIVE-CAPABILIT	high	45	5. Privileged mode / excessive capabilities
+SKB-BASE-5-SESSION-FIXATION-NO-SESSION-HARDENI	high	45	5. Session fixation / no session hardening
+SKB-BASE-5-SOURCE-MAPS-SHIPPED-TO-PROD	high	45	5. Source maps shipped to prod
+SKB-BASE-5-SSTI-SERVER-SIDE-TEMPLATE-INJECTION	high	45	5. SSTI (server-side template injection)
+SKB-BASE-5-STATIC-FILES-SERVED-FROM-WEB-ROOT-WIT	high	45	5. Static files served from web root with secrets
+SKB-BASE-5-SWAGGER-OPENAPI-EXPOSED-IN-PROD	high	45	5. Swagger/OpenAPI exposed in prod
+SKB-BASE-520BBD63F3	high	45	Checklist
+SKB-BASE-580D6B7AE1	high	45	Checklist
+SKB-BASE-5B1F914C19	high	45	Checklist
+SKB-BASE-5DBB70E92B	high	45	Checklist
+SKB-BASE-5F264EF059	high	45	Checklist
+SKB-BASE-6-BYPASSED-AUTHORIZATION-VIA-METHOD-SEC	high	45	6. Bypassed authorization via method security gap
+SKB-BASE-6-EXPOSED-DOCKER-DAEMON-SOCKET	high	45	6. Exposed Docker daemon socket
+SKB-BASE-6-EXPOSED-LOADBALANCER-NODEPORT-T	high	45	6. Exposed `LoadBalancer` / `NodePort` to 0.0.0.0
+SKB-BASE-6-LOGGING-DISABLED-PASSWORDS-IN-LOGS	high	45	6. Logging disabled / passwords in logs
+SKB-BASE-6-MISSING-DEADLINE-TIMEOUT-PROPAGATION	high	45	6. Missing deadline/timeout propagation
+SKB-BASE-6-NO-RATE-LIMITING-NO-BODY-SIZE-LIMIT	high	45	6. No rate limiting / no body size limit
+SKB-BASE-6-SESSION-FIXATION-WEAK-SESSION-CONFI	high	45	6. Session fixation / weak session config
+SKB-BASE-6-SPEL-INJECTION	high	45	6. SpEL injection
+SKB-BASE-6-STORING-SENSITIVE-DATA-UNENCRYPTED	high	45	6. Storing sensitive data unencrypted
+SKB-BASE-66CA785A7F	high	45	What it is
+SKB-BASE-7-AUTHORITY-ROLE-ESCALATION-VIA-HASROL	high	45	7. Authority/role escalation via `hasRole` misuse
+SKB-BASE-7-BOLA-IN-HANDLERS	high	45	7. BOLA in handlers
+SKB-BASE-7-HOST-HEADER-INJECTION-OPEN-REDIRECT	high	45	7. Host header injection / open redirect
+SKB-BASE-7-TRUSTING-CLIENT-SUPPLIED-KEYS-FOR-SEN	high	45	7. Trusting client-supplied keys for sensitive ops
+SKB-BASE-744FA847D4	high	45	Checklist
+SKB-BASE-8-BOLA-IDOR	high	45	8. BOLA / IDOR
+SKB-BASE-8-BROKEN-OBJECT-LEVEL-AUTHORIZATION-BO	high	45	8. Broken object-level authorization (BOLA/IDOR)
+SKB-BASE-8-LUA-SCRIPT-INJECTION	high	45	8. Lua script injection
+SKB-BASE-8-MUTATION-AUTHZ-MISSING	high	45	8. Mutation authz missing
+SKB-BASE-8-OPERATOR-INJECTION-VIA-MERGED-QUERY-O	high	45	8. Operator injection via merged query objects
+SKB-BASE-9-BOLA-IDOR	high	45	9. BOLA / IDOR
+SKB-BASE-9-PROTOTYPE-POLLUTION	high	45	9. Prototype pollution
+SKB-BASE-9-PUBLIC-API-SERVER-ANONYMOUS-AUTH	high	45	9. Public API server / anonymous auth
+SKB-BASE-9-ROUTE-GUARDS-MISSING	high	45	9. Route guards missing
+SKB-BASE-9-SESSION-FIXATION-VIA-PREDICTABLE-SESS	high	45	9. Session fixation via predictable session IDs
+SKB-BASE-9-TIMING-SAFE-COMPARISON-MISSING	high	45	9. Timing-safe comparison missing
+SKB-BASE-9-UNVALIDATED-ROUTE-GUARDS	high	45	9. Unvalidated route guards
+SKB-BASE-9-WRITABLE-FILESYSTEM-NO-READ-ONLY	high	45	9. Writable filesystem / no `read-only`
+SKB-BASE-A04202CA9D	high	45	Checklist
+SKB-BASE-A974E85727	high	45	Checklist
+SKB-BASE-B3689E9CBD	high	45	Fix control
+SKB-BASE-C10237AE6F	high	45	Checklist
+SKB-BASE-C489BFBD9D	high	45	Checklist
+SKB-BASE-C65B2B4F1A	high	45	Checklist
+SKB-BASE-CC746EDA51	high	45	Checklist
+SKB-BASE-CF601A41D9	high	45	Checklist
+SKB-BASE-CHECKLIST	high	45	Checklist
+SKB-BASE-D7227BAF97	high	45	4. CORS allow-all
+SKB-BASE-E306D9A16F	high	45	Checklist
+SKB-BASE-E367341ACA	high	45	Fix control
+SKB-BASE-E3EA739D84	high	45	Checklist
+SKB-BASE-ECCDE14D09	high	45	What leaks
+SKB-BASE-FIX	high	45	Fix control
+SKB-BASE-INFRASTRUCTURE-DATA	high	45	Infrastructure / data
+SKB-BASE-SUGGESTED-TOOLING-TO-PAIR-WITH-THESE-DOC	high	45	Suggested tooling to pair with these docs
+SKB-BASE-VIBE-CODED-AI-GENERATED-APPLICATIONS	high	45	Vibe-coded (AI-generated) applications
+SKB-BASE-WHAT-LEAKS	high	45	What leaks
+SKB-BASE-WHAT-LEAKS-IMPACT	high	45	What leaks / impact
+SKB-BASE-WHY-AI-GENERATES-IT	high	45	Why AI generates it
+SKB-BASE-WHY-VIBE-CODED-APPS-HAVE-A-DISTINCT-RISK	high	45	Why vibe-coded apps have a distinct risk profile
+SKB-DESK-IPC-0047	high	45	Electron validates IPC sender and options
+SKB-DESK-UPDATE-0048	high	45	Electron uses a current version and validated updates
+SKB-ISTG-1-INTRODUCTION	high	45	1. Introduction
+SKB-ISTG-2-3-TESTING-METHODOLOGY	high	45	2.3. Testing Methodology
+SKB-ISTG-3-1-PROCESSING-UNITS-ISTG-PROC	high	45	3.1. Processing Units (ISTG-PROC)
+SKB-ISTG-3-3-2-FIRMWARE-UPDATE-MECHANISM-ISTG-F	high	45	3.3.2. Firmware Update Mechanism (ISTG-FW[UPDT])
+SKB-ISTG-3-4-DATA-EXCHANGE-SERVICES-ISTG-DES	high	45	3.4. Data Exchange Services (ISTG-DES)
+SKB-ISTG-3-5-1-INTER-INTEGRATED-CIRCUIT-ISTG-IN	high	45	3.5.1. Inter-Integrated Circuit (ISTG-INT[I2C])
+SKB-ISTG-3-5-INTERNAL-INTERFACES-ISTG-INT	high	45	3.5. Internal Interfaces (ISTG-INT)
+SKB-ISTG-3-8-USER-INTERFACES-ISTG-UI	high	45	3.8. User Interfaces (ISTG-UI)
+SKB-NSSC-BAD-RANDOMNESS	high	45	Bad Randomness
+SKB-NSSC-RE-ENTRANCY	high	45	Re-entrancy
+SKB-NSSC-VARIABLE-SHADOWING	high	45	Variable Shadowing
+SKB-SCR-AUTHENTICATION-AND-USER-MANAGEMENT	high	45	Authentication and User Management
+SKB-SCR-AUTHORIZATION	high	45	Authorization
+SKB-SCR-ENCRYPTION-CRYPTOGRAPHY	high	45	Encryption & Cryptography
+SKB-SCR-INPUT-VALIDATION	high	45	Input Validation
+SKB-SCR-SESSION-MANAGEMENT	high	45	Session Management
+SKB-TG-INPUT-0036	high	45	Bot treats every message as untrusted input
+SKB-TG-MINIAPP-0041	high	45	Telegram Mini App validates initData
+SKB-TG-WEBHOOK-0034	high	45	Telegram webhook verifies secret_token
+SKB-TG-WEBHOOK-0035	high	45	Telegram webhook served over HTTPS only
+SKB-VIBE-AI-INTEGRATION-PROMPT-INJECTION	high	45	Prompt Injection
+SKB-VIBE-AI-INTEGRATION-TOOL-FUNCTION-CALLING	high	45	Tool / Function Calling
+SKB-VIBE-AUTHENTICATION-API-ROUTE-HANDLERS	high	45	API Route Handlers
+SKB-VIBE-AUTHENTICATION-DATA-LEAKAGE-TO-CLIENT-COMPONENTS	high	45	Data Leakage to Client Components
+SKB-VIBE-AUTHENTICATION-JWT-HANDLING	high	45	JWT Handling
+SKB-VIBE-AUTHENTICATION-NEXT-JS-MIDDLEWARE-IS-NOT-ENOUGH	high	45	Next.js Middleware Is Not Enough
+SKB-VIBE-AUTHENTICATION-SERVER-ACTIONS-ARE-PUBLIC-ENDPOINTS	high	45	Server Actions Are Public Endpoints
+SKB-VIBE-DATA-ACCESS-INPUT-VALIDATION	high	45	Input Validation
+SKB-VIBE-DATA-ACCESS-MASS-ASSIGNMENT	high	45	Mass Assignment
+SKB-VIBE-DATA-ACCESS-ORM-SAFETY-PRISMA	high	45	ORM Safety (Prisma)
+SKB-VIBE-DATABASE-SECURITY-FIREBASE-SECURITY-RULES	high	45	Firebase Security Rules
+SKB-VIBE-DATABASE-SECURITY-SUPABASE-ROW-LEVEL-SECURITY-RLS	high	45	Supabase Row-Level Security (RLS)
+SKB-VIBE-DEPLOYMENT-CORS-CONFIGURATION	high	45	CORS Configuration
+SKB-VIBE-DEPLOYMENT-ENVIRONMENT-SEPARATION	high	45	Environment Separation
+SKB-VIBE-DEPLOYMENT-PRODUCTION-CONFIGURATION	high	45	Production Configuration
+SKB-VIBE-MOBILE-BIOMETRIC-AUTHENTICATION	high	45	Biometric Authentication
+SKB-VIBE-MOBILE-DEEP-LINK-SECURITY	high	45	Deep Link Security
+SKB-VIBE-MOBILE-SECURE-TOKEN-STORAGE	high	45	Secure Token Storage
+SKB-VIBE-PAYMENTS-CHECKOUT-SESSION-METADATA	high	45	Checkout Session Metadata
+SKB-VIBE-PAYMENTS-NEVER-TRUST-CLIENT-SUBMITTED-PRICES	high	45	Never Trust Client-Submitted Prices
+SKB-VIBE-PAYMENTS-SUBSCRIPTION-STATUS-VALIDATION	high	45	Subscription Status Validation
+SKB-VIBE-PAYMENTS-WEBHOOK-SIGNATURE-VERIFICATION	high	45	Webhook Signature Verification
+SKB-VIBE-RATE-LIMITING-WHERE-RATE-LIMITING-IS-REQUIRED	high	45	Where Rate Limiting Is Required
+SKB-VIBE-SECRETS-AND-ENV-CLIENT-SIDE-ENVIRONMENT-VARIABLE-PREFIXE	high	45	Client-Side Environment Variable Prefixes
+SKB-VIBE-SECRETS-AND-ENV-DETECTION-TIPS	high	45	Detection Tips
+SKB-VIBE-SECRETS-AND-ENV-GITIGNORE	high	45	.gitignore
+SKB-ASVS-V10-1-1	medium	40	Generic OAuth and OIDC Security - V10.1.1
+SKB-ASVS-V10-1-2	medium	40	Generic OAuth and OIDC Security - V10.1.2
+SKB-ASVS-V10-2-2	medium	40	OAuth Client - V10.2.2
+SKB-ASVS-V10-2-3	medium	40	OAuth Client - V10.2.3
+SKB-ASVS-V10-3-1	medium	40	OAuth Resource Server - V10.3.1
+SKB-ASVS-V10-3-2	medium	40	OAuth Resource Server - V10.3.2
+SKB-ASVS-V10-3-3	medium	40	OAuth Resource Server - V10.3.3
+SKB-ASVS-V10-3-4	medium	40	OAuth Resource Server - V10.3.4
+SKB-ASVS-V10-3-5	medium	40	OAuth Resource Server - V10.3.5
+SKB-ASVS-V10-4-1	medium	40	OAuth Authorization Server - V10.4.1
+SKB-ASVS-V10-4-10	medium	40	OAuth Authorization Server - V10.4.10
+SKB-ASVS-V10-4-12	medium	40	OAuth Authorization Server - V10.4.12
+SKB-ASVS-V10-4-13	medium	40	OAuth Authorization Server - V10.4.13
+SKB-ASVS-V10-4-14	medium	40	OAuth Authorization Server - V10.4.14
+SKB-ASVS-V10-4-15	medium	40	OAuth Authorization Server - V10.4.15
+SKB-ASVS-V10-4-16	medium	40	OAuth Authorization Server - V10.4.16
+SKB-ASVS-V10-4-3	medium	40	OAuth Authorization Server - V10.4.3
+SKB-ASVS-V10-4-4	medium	40	OAuth Authorization Server - V10.4.4
+SKB-ASVS-V10-4-5	medium	40	OAuth Authorization Server - V10.4.5
+SKB-ASVS-V10-4-6	medium	40	OAuth Authorization Server - V10.4.6
+SKB-ASVS-V10-4-8	medium	40	OAuth Authorization Server - V10.4.8
+SKB-ASVS-V10-4-9	medium	40	OAuth Authorization Server - V10.4.9
+SKB-ASVS-V10-5-1	medium	40	OIDC Client - V10.5.1
+SKB-ASVS-V10-5-2	medium	40	OIDC Client - V10.5.2
+SKB-ASVS-V10-5-3	medium	40	OIDC Client - V10.5.3
+SKB-ASVS-V10-5-4	medium	40	OIDC Client - V10.5.4
+SKB-ASVS-V10-5-5	medium	40	OIDC Client - V10.5.5
+SKB-ASVS-V10-6-1	medium	40	OpenID Provider - V10.6.1
+SKB-ASVS-V10-6-2	medium	40	OpenID Provider - V10.6.2
+SKB-ASVS-V10-7-2	medium	40	Consent Management - V10.7.2
+SKB-ASVS-V10-7-3	medium	40	Consent Management - V10.7.3
+SKB-ASVS-V12-1-2	medium	40	General TLS Security Guidance - V12.1.2
+SKB-ASVS-V12-1-3	medium	40	General TLS Security Guidance - V12.1.3
+SKB-ASVS-V12-1-4	medium	40	General TLS Security Guidance - V12.1.4
+SKB-ASVS-V12-2-1	medium	40	HTTPS Communication with External Facing Services - V12.2.1
+SKB-ASVS-V12-2-2	medium	40	HTTPS Communication with External Facing Services - V12.2.2
+SKB-ASVS-V12-3-1	medium	40	General Service to Service Communication Security - V12.3.1
+SKB-ASVS-V12-3-2	medium	40	General Service to Service Communication Security - V12.3.2
+SKB-ASVS-V12-3-3	medium	40	General Service to Service Communication Security - V12.3.3
+SKB-ASVS-V12-3-4	medium	40	General Service to Service Communication Security - V12.3.4
+SKB-ASVS-V12-3-5	medium	40	General Service to Service Communication Security - V12.3.5
+SKB-ASVS-V13-1-1	medium	40	Configuration Documentation - V13.1.1
+SKB-ASVS-V13-1-2	medium	40	Configuration Documentation - V13.1.2
+SKB-ASVS-V13-1-3	medium	40	Configuration Documentation - V13.1.3
+SKB-ASVS-V13-1-4	medium	40	Configuration Documentation - V13.1.4
+SKB-ASVS-V13-2-1	medium	40	Backend Communication Configuration - V13.2.1
+SKB-ASVS-V13-2-2	medium	40	Backend Communication Configuration - V13.2.2
+SKB-ASVS-V13-2-3	medium	40	Backend Communication Configuration - V13.2.3
+SKB-ASVS-V13-2-4	medium	40	Backend Communication Configuration - V13.2.4
+SKB-ASVS-V13-2-5	medium	40	Backend Communication Configuration - V13.2.5
+SKB-ASVS-V13-2-6	medium	40	Backend Communication Configuration - V13.2.6
+SKB-ASVS-V13-3-1	medium	40	Secret Management - V13.3.1
+SKB-ASVS-V13-3-2	medium	40	Secret Management - V13.3.2
+SKB-ASVS-V13-3-3	medium	40	Secret Management - V13.3.3
+SKB-ASVS-V13-3-4	medium	40	Secret Management - V13.3.4
+SKB-ASVS-V13-4-1	medium	40	Unintended Information Leakage - V13.4.1
+SKB-ASVS-V13-4-2	medium	40	Unintended Information Leakage - V13.4.2
+SKB-ASVS-V13-4-3	medium	40	Unintended Information Leakage - V13.4.3
+SKB-ASVS-V13-4-4	medium	40	Unintended Information Leakage - V13.4.4
+SKB-ASVS-V13-4-5	medium	40	Unintended Information Leakage - V13.4.5
+SKB-ASVS-V13-4-6	medium	40	Unintended Information Leakage - V13.4.6
+SKB-ASVS-V13-4-7	medium	40	Unintended Information Leakage - V13.4.7
+SKB-ASVS-V15-1-1	medium	40	Secure Coding and Architecture Documentation - V15.1.1
+SKB-ASVS-V15-1-2	medium	40	Secure Coding and Architecture Documentation - V15.1.2
+SKB-ASVS-V15-1-3	medium	40	Secure Coding and Architecture Documentation - V15.1.3
+SKB-ASVS-V15-1-4	medium	40	Secure Coding and Architecture Documentation - V15.1.4
+SKB-ASVS-V15-1-5	medium	40	Secure Coding and Architecture Documentation - V15.1.5
+SKB-ASVS-V15-2-1	medium	40	Security Architecture and Dependencies - V15.2.1
+SKB-ASVS-V15-2-2	medium	40	Security Architecture and Dependencies - V15.2.2
+SKB-ASVS-V15-2-3	medium	40	Security Architecture and Dependencies - V15.2.3
+SKB-ASVS-V15-2-4	medium	40	Security Architecture and Dependencies - V15.2.4
+SKB-ASVS-V15-2-5	medium	40	Security Architecture and Dependencies - V15.2.5
+SKB-ASVS-V15-3-1	medium	40	Defensive Coding - V15.3.1
+SKB-ASVS-V15-3-2	medium	40	Defensive Coding - V15.3.2
+SKB-ASVS-V15-3-3	medium	40	Defensive Coding - V15.3.3
+SKB-ASVS-V15-3-4	medium	40	Defensive Coding - V15.3.4
+SKB-ASVS-V15-3-5	medium	40	Defensive Coding - V15.3.5
+SKB-ASVS-V15-3-6	medium	40	Defensive Coding - V15.3.6
+SKB-ASVS-V15-3-7	medium	40	Defensive Coding - V15.3.7
+SKB-ASVS-V15-4-3	medium	40	Safe Concurrency - V15.4.3
+SKB-ASVS-V15-4-4	medium	40	Safe Concurrency - V15.4.4
+SKB-ASVS-V16-1-1	medium	40	Security Logging Documentation - V16.1.1
+SKB-ASVS-V16-2-1	medium	40	General Logging - V16.2.1
+SKB-ASVS-V16-2-2	medium	40	General Logging - V16.2.2
+SKB-ASVS-V16-2-3	medium	40	General Logging - V16.2.3
+SKB-ASVS-V16-2-4	medium	40	General Logging - V16.2.4
+SKB-ASVS-V16-2-5	medium	40	General Logging - V16.2.5
+SKB-ASVS-V16-3-1	medium	40	Security Events - V16.3.1
+SKB-ASVS-V16-3-2	medium	40	Security Events - V16.3.2
+SKB-ASVS-V16-3-3	medium	40	Security Events - V16.3.3
+SKB-ASVS-V16-3-4	medium	40	Security Events - V16.3.4
+SKB-ASVS-V16-4-1	medium	40	Log Protection - V16.4.1
+SKB-ASVS-V16-4-2	medium	40	Log Protection - V16.4.2
+SKB-ASVS-V16-4-3	medium	40	Log Protection - V16.4.3
+SKB-ASVS-V16-5-1	medium	40	Error Handling - V16.5.1
+SKB-ASVS-V16-5-2	medium	40	Error Handling - V16.5.2
+SKB-ASVS-V16-5-3	medium	40	Error Handling - V16.5.3
+SKB-ASVS-V16-5-4	medium	40	Error Handling - V16.5.4
+SKB-ASVS-V17-1-1	medium	40	TURN Server - V17.1.1
+SKB-ASVS-V17-1-2	medium	40	TURN Server - V17.1.2
+SKB-ASVS-V17-2-1	medium	40	Media - V17.2.1
+SKB-ASVS-V17-2-2	medium	40	Media - V17.2.2
+SKB-ASVS-V17-2-3	medium	40	Media - V17.2.3
+SKB-ASVS-V17-2-4	medium	40	Media - V17.2.4
+SKB-ASVS-V17-2-8	medium	40	Media - V17.2.8
+SKB-ASVS-V17-3-1	medium	40	Signaling - V17.3.1
+SKB-ASVS-V2-1-1	medium	40	Validation and Business Logic Documentation - V2.1.1
+SKB-ASVS-V2-1-2	medium	40	Validation and Business Logic Documentation - V2.1.2
+SKB-ASVS-V2-1-3	medium	40	Validation and Business Logic Documentation - V2.1.3
+SKB-ASVS-V2-2-1	medium	40	Input Validation - V2.2.1
+SKB-ASVS-V2-2-2	medium	40	Input Validation - V2.2.2
+SKB-ASVS-V2-2-3	medium	40	Input Validation - V2.2.3
+SKB-ASVS-V2-3-1	medium	40	Business Logic Security - V2.3.1
+SKB-ASVS-V2-3-2	medium	40	Business Logic Security - V2.3.2
+SKB-ASVS-V2-3-3	medium	40	Business Logic Security - V2.3.3
+SKB-ASVS-V2-3-4	medium	40	Business Logic Security - V2.3.4
+SKB-ASVS-V2-3-5	medium	40	Business Logic Security - V2.3.5
+SKB-ASVS-V2-4-1	medium	40	Anti-automation - V2.4.1
+SKB-ASVS-V2-4-2	medium	40	Anti-automation - V2.4.2
+SKB-ASVS-V4-1-1	medium	40	Generic Web Service Security - V4.1.1
+SKB-ASVS-V4-1-2	medium	40	Generic Web Service Security - V4.1.2
+SKB-ASVS-V4-1-3	medium	40	Generic Web Service Security - V4.1.3
+SKB-ASVS-V4-1-4	medium	40	Generic Web Service Security - V4.1.4
+SKB-ASVS-V4-1-5	medium	40	Generic Web Service Security - V4.1.5
+SKB-ASVS-V4-2-1	medium	40	HTTP Message Structure Validation - V4.2.1
+SKB-ASVS-V4-2-2	medium	40	HTTP Message Structure Validation - V4.2.2
+SKB-ASVS-V4-2-3	medium	40	HTTP Message Structure Validation - V4.2.3
+SKB-ASVS-V4-2-4	medium	40	HTTP Message Structure Validation - V4.2.4
+SKB-ASVS-V4-2-5	medium	40	HTTP Message Structure Validation - V4.2.5
+SKB-ASVS-V4-3-1	medium	40	GraphQL - V4.3.1
+SKB-ASVS-V4-3-2	medium	40	GraphQL - V4.3.2
+SKB-ASVS-V4-4-1	medium	40	WebSocket - V4.4.1
+SKB-ASVS-V4-4-2	medium	40	WebSocket - V4.4.2
+SKB-ASVS-V4-4-3	medium	40	WebSocket - V4.4.3
+SKB-ASVS-V4-4-4	medium	40	WebSocket - V4.4.4
+SKB-ASVS-V5-1-1	medium	40	File Handling Documentation - V5.1.1
+SKB-ASVS-V5-3-1	medium	40	File Storage - V5.3.1
+SKB-ASVS-V5-3-3	medium	40	File Storage - V5.3.3
+SKB-ASVS-V5-4-1	medium	40	File Download - V5.4.1
+SKB-ASVS-V5-4-2	medium	40	File Download - V5.4.2
+SKB-ASVS-V8-1-1	medium	40	Authorization Documentation - V8.1.1
+SKB-ASVS-V8-1-2	medium	40	Authorization Documentation - V8.1.2
+SKB-ASVS-V8-1-3	medium	40	Authorization Documentation - V8.1.3
+SKB-ASVS-V8-1-4	medium	40	Authorization Documentation - V8.1.4
+SKB-ASVS-V8-2-1	medium	40	General Authorization Design - V8.2.1
+SKB-ASVS-V8-2-2	medium	40	General Authorization Design - V8.2.2
+SKB-ASVS-V8-2-4	medium	40	General Authorization Design - V8.2.4
+SKB-ASVS-V8-3-1	medium	40	Operation Level Authorization - V8.3.1
+SKB-ASVS-V8-3-2	medium	40	Operation Level Authorization - V8.3.2
+SKB-ASVS-V8-3-3	medium	40	Operation Level Authorization - V8.3.3
+SKB-ASVS-V8-4-1	medium	40	Other Authorization Considerations - V8.4.1
+SKB-ASVS-V8-4-2	medium	40	Other Authorization Considerations - V8.4.2
+SKB-BASE-10-PATH-TRAVERSAL-LFI	medium	40	10. Path traversal / LFI
+SKB-BASE-11-PATH-TRAVERSAL	medium	40	11. Path traversal
+SKB-BASE-11-PATH-TRAVERSAL-IN-FILE-SERVING	medium	40	11. Path traversal in file serving
+SKB-BASE-12-PATH-TRAVERSAL-IN-FILE-OPS	medium	40	12. Path traversal in file ops
+SKB-BASE-13-XXE-VIA-XMLSERIALIZER-XMLDOCUME	medium	40	13. XXE via `XmlSerializer` / `XmlDocument`
+SKB-BASE-8-PATH-TRAVERSAL-VIA-ALIAS	medium	40	8. Path traversal via alias
+SKB-CS-ABUSE-CASE-CHEAT-SHEET-ARCHIVE-STATEMENT	medium	40	Archive Statement
+SKB-CS-ABUSE-CASE-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-ABUSE-CASE-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-AI-AGENT-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-AI-POWERED-ADVERTISING-SYSTEMS-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-10-BINDING-SANCTIONS-	medium	40	Section 10: Binding Sanctions-List Freshness to the Receipt
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-5-FAIL-CLOSED-ENFORCE	medium	40	Section 5: Fail-Closed Enforcement
+SKB-CS-AML-SANCTIONS-AI-AGENT-PAYMENTS-CHEAT-SHEET-SECTION-7-SELF-HOSTED-VS-HOST	medium	40	Section 7: Self-Hosted vs Hosted Screening Architecture
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-MANAGING-THE-ATTACK-SURFACE	medium	40	Managing the Attack Surface
+SKB-CS-ATTACK-SURFACE-ANALYSIS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-BASICS	medium	40	Basics
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-CUSTOM-CONSTRAINTS	medium	40	Custom Constraints
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-ERROR-MESSAGES	medium	40	Error Messages
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-PREDEFINED-CONSTRAINTS	medium	40	Predefined Constraints
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-BEAN-VALIDATION-CHEAT-SHEET-SETUP	medium	40	Setup
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-CHECKLIST	medium	40	Checklist
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-DEVICE-AND-NETWORK-FINGERP	medium	40	Device and Network Fingerprinting (Privacy-Aware)
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-HONEYPOTS-AND-TARPITS	medium	40	Honeypots and Tarpits
+SKB-CS-BOT-MANAGEMENT-AND-ANTI-AUTOMATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-2-DATA-LEAKAGE	medium	40	2. Data Leakage
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-4-INSECURE-COMMUNICATION	medium	40	4. Insecure Communication
+SKB-CS-BROWSER-EXTENSION-VULNERABILITIES-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-COMMON-EXAMPLES-OF-BUSINESS-LOGIC-FLA	medium	40	Common Examples of Business Logic Flaws
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-TESTING-BUSINESS-LOGIC	medium	40	Testing Business Logic
+SKB-CS-BUSINESS-LOGIC-SECURITY-CHEAT-SHEET-THREAT-MODEL-FROM-THE-BUSINESS-PROCES	medium	40	Threat Model from the Business Process
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-CONFIGURATION	medium	40	Configuration
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-DEFINE-ASSERT-EXP-ESAPI-ASSERT1-E	medium	40	define ASSERT(exp)     ESAPI_ASSERT1(exp)
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-DEFINE-ESAPI-ASSERT2-EXP-MSG-ASSE	medium	40	define ESAPI_ASSERT2(exp, msg) assert(exp)
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-DEFINE-ESAPI-BUILD-RELEASE-1	medium	40	define ESAPI_BUILD_RELEASE 1
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-ERROR-BOTH-DEBUG-AND-NDEBUG-ARE-D	medium	40	error Both DEBUG and NDEBUG are defined.
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-MERGE-ESAPI-FLAGS-WITH-USER-SUPPL	medium	40	Merge ESAPI flags with user supplied flags. We perform the extra step to ensure
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-PREPROCESSOR	medium	40	Preprocessor
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-RUNTIME	medium	40	Runtime
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-USE-OVERRIDE-TO-HONOR-THE-USER-S-	medium	40	Use 'override' to honor the user's command line
+SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-WISDOM	medium	40	Wisdom
+SKB-CS-CHOOSING-AND-USING-SECURITY-QUESTIONS-CHEAT-SHEET-CHOOSING-SECURITY-QUEST	medium	40	Choosing Security Questions
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-INTEGRITY-ASSURANCE	medium	40	Integrity Assurance
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-VISIBILITY-AND-MONITORING	medium	40	Visibility and Monitoring
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-BEST-FOR-NOW-LEGACY-BROWSER-FRAME-BREAKI	medium	40	Best-for-now Legacy Browser Frame Breaking Script
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-AGAINST-DOUBLECLICKJACKING	medium	40	Defending against DoubleClickjacking
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-X-FRAME-OPTIONS-RESPONSE	medium	40	Defending with X-Frame-Options Response Headers
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-WINDOW-CONFIRM-PROTECTION	medium	40	window.confirm() Protection
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-CSP-TYPES-GRANULAR-ALLOWLIST-BASED-OR	medium	40	CSP Types (granular/allowlist based or strict)
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-POLICY-DELIVERY	medium	40	Policy Delivery
+SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-CREDENTIAL-STUFFING-PREVENTION-CHEAT-SHEET-ALTERNATIVE-DEFENSES	medium	40	Alternative Defenses
+SKB-CS-CREDENTIAL-STUFFING-PREVENTION-CHEAT-SHEET-DEFENSE-IN-DEPTH-METRICS	medium	40	Defense in Depth & Metrics
+SKB-CS-CREDENTIAL-STUFFING-PREVENTION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-OUTPUT-ENCODING	medium	40	Output Encoding
+SKB-CS-CROSS-SITE-SCRIPTING-PREVENTION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-DATABASE-SECURITY-CHEAT-SHEET-DATABASE-CONFIGURATION-AND-HARDENING	medium	40	Database Configuration and Hardening
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-SAST-TOOLS	medium	40	SAST Tools
+SKB-CS-DJANGO-REST-FRAMEWORK-CHEAT-SHEET-WHAT-IS-A-VIEW-IN-DJANGO	medium	40	What is a view in Django?
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-CONTENT-SECURITY-POLICY	medium	40	Content Security Policy
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-DJANGO-S-BUILT-IN-COMMAND-CHECK-DEPLO	medium	40	Django's built-in command `check --deploy`
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-GENERAL-RECOMMENDATIONS	medium	40	General Recommendations
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-HTTPS	medium	40	HTTPS
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-PODMAN-AS-AN-ALTERNATIVE-TO-DOCKER	medium	40	Podman as an alternative to Docker
+SKB-CS-DOCKER-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-MITIGATION-TECHNIQUES	medium	40	Mitigation Techniques
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-SECURE-CODING-GUIDELINES	medium	40	Secure Coding Guidelines
+SKB-CS-DOM-CLOBBERING-PREVENTION-CHEAT-SHEET-SUMMARY-OF-GUIDELINES	medium	40	Summary of Guidelines
+SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-ANTI-ENUMERATION-CONTROLS	medium	40	Anti-Enumeration Controls
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-CASE-SENSITIVITY	medium	40	Case Sensitivity
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-CANONICALIZATION	medium	40	Email Canonicalization
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-EMAIL-FORMAT-VALIDATION	medium	40	Email Format Validation
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-GOALS	medium	40	Goals
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-PASSWORD-RESET-FLOWS	medium	40	Password Reset Flows
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-TEMPORARY-EMAIL-ABUSE	medium	40	Temporary Email Abuse
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-THREAT-MODEL	medium	40	Threat Model
+SKB-CS-EMAIL-VALIDATION-AND-VERIFICATION-CHEAT-SHEET-UNICODE-AND-IDN-CONSIDERATI	medium	40	Unicode and IDN Considerations
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-OBJECTIVE	medium	40	Objective
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-PROPOSITION	medium	40	Proposition
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-ERROR-HANDLING-CHEAT-SHEET-SOURCES-OF-THE-PROTOTYPE	medium	40	Sources of the prototype
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-ASGI-SERVER-HARDENING	medium	40	ASGI Server Hardening
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-ASYNC-EVENT-LOOP-AND-BACKGROUND-TASKS	medium	40	Async Event Loop and Background Tasks
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-EXCEPTION-HANDLING-AND-INFORMATION-LEAKA	medium	40	Exception Handling and Information Leakage
+SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-RATE-LIMITING	medium	40	Rate Limiting
+SKB-CS-FORGOT-PASSWORD-CHEAT-SHEET-FORGOT-PASSWORD-SERVICE	medium	40	Forgot Password Service
+SKB-CS-FORGOT-PASSWORD-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-FORGOT-PASSWORD-CHEAT-SHEET-METHODS	medium	40	Methods
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-ENABLE-STATIC-ANALYSIS-FOR-GITHUB-ACT	medium	40	Enable static analysis for GitHub Actions workflows
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-MAINTAIN-CURATED-SHARED-WORKFLOWS-AND	medium	40	Maintain curated shared workflows and actions
+SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-GRPC-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-COMMUNICATION-APIS	medium	40	Communication APIs
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-CREDENTIAL-AND-PERSONALLY-IDENTIFIABLE-I	medium	40	Credential and Personally Identifiable Information (PII) Input hints
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-GEOLOCATION	medium	40	Geolocation
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-HTTP-HEADERS-TO-ENHANCE-SECURITY	medium	40	HTTP Headers to enhance security
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-OFFLINE-APPLICATIONS	medium	40	Offline Applications
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-PROGRESSIVE-ENHANCEMENTS-AND-GRACEFUL-DE	medium	40	Progressive Enhancements and Graceful Degradation Risks
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-HTML5-SECURITY-CHEAT-SHEET-SANDBOXED-FRAMES	medium	40	Sandboxed frames
+SKB-CS-HTTP-HEADERS-CHEAT-SHEET-TESTING-PROPER-IMPLEMENTATION-OF-SECURIT	medium	40	Testing Proper Implementation of Security Headers
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-BROWSER-SUPPORT	medium	40	Browser Support
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-PROBLEMS	medium	40	Problems
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-THREATS	medium	40	Threats
+SKB-CS-IDENTITY-PROPAGATION-PATTERNS-CHEAT-SHEET-PRIVACY-AND-RECOMMENDATION	medium	40	Privacy and Recommendation
+SKB-CS-INFRASTRUCTURE-AS-CODE-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-INFRASTRUCTURE-AS-CODE-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-INPUT-VALIDATION-CHEAT-SHEET-COMMON-PITFALLS	medium	40	Common Pitfalls
+SKB-CS-INPUT-VALIDATION-CHEAT-SHEET-INPUT-VALIDATION-STRATEGIES	medium	40	Input Validation Strategies
+SKB-CS-INPUT-VALIDATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-JAAS-CHEAT-SHEET-CALLBACKHANDLER-JAVA	medium	40	CallbackHandler.java
+SKB-CS-JAAS-CHEAT-SHEET-DISCLOSURE	medium	40	Disclosure
+SKB-CS-JAAS-CHEAT-SHEET-RELATED-ARTICLES	medium	40	Related Articles
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-INTRODUCTION-WHAT-IS-KUBERNETES	medium	40	INTRODUCTION: What Is Kubernetes?
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-OVERVIEW	medium	40	Overview
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-RECEIVE-ALERTS-FOR-SECURITY-UPDATES-AND	medium	40	Receive Alerts for Security Updates and Reporting Vulnerabilities
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-1-SECURING-KUBERNETES-HOSTS	medium	40	SECTION 1: Securing Kubernetes Hosts
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-5-KUBERNETES-SECURITY-BEST-PRAC	medium	40	SECTION 5: Kubernetes Security Best Practices: Runtime Phase
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-5-SECURING-A-MANAGED-SERVICE-KU	medium	40	SECTION 5: Securing a managed-service Kubernetes on Cloud Service Provider
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-6-SUPPLY-CHAIN-SECURITY	medium	40	SECTION 6: Supply Chain Security
+SKB-CS-KUBERNETES-SECURITY-CHEAT-SHEET-SECTION-7-FINAL-THOUGHTS	medium	40	SECTION 7: Final Thoughts
+SKB-CS-LARAVEL-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-LARAVEL-CHEAT-SHEET-MASS-ASSIGNMENT	medium	40	Mass Assignment
+SKB-CS-LARAVEL-CHEAT-SHEET-OPEN-REDIRECTION	medium	40	Open Redirection
+SKB-CS-LARAVEL-CHEAT-SHEET-RATE-LIMITING	medium	40	Rate Limiting
+SKB-CS-LARAVEL-CHEAT-SHEET-SECURITY-HEADERS	medium	40	Security Headers
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-CHANGE-MANAGEMENT	medium	40	Change Management
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-CONTINUOUS-MONITORING-AND-INCID	medium	40	Continuous Monitoring and Incident Response
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-ENSURING-MAINTAINABILITY	medium	40	Ensuring Maintainability
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-VULNERABILITY-MANAGEMENT	medium	40	Vulnerability Management
+SKB-CS-LOGGING-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-LOGGING-CHEAT-SHEET-PURPOSE	medium	40	Purpose
+SKB-CS-LOGGING-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-ASSUMPTIONS	medium	40	Assumptions
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-FORMAT	medium	40	Format
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-INPUT-VALIDATION-INPUT	medium	40	Input Validation [INPUT]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-MALICIOUS-BEHAVIOR-MALICIOUS	medium	40	Malicious Behavior [MALICIOUS]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-SEQUENCE-ERRORS-SEQUENCE	medium	40	Sequence Errors [SEQUENCE]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-SYSTEM-EVENTS-SYS	medium	40	System Events [SYS]
+SKB-CS-LOGGING-VOCABULARY-CHEAT-SHEET-USER-MANAGEMENT-USER	medium	40	User Management [USER]
+SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-GENERAL-SOLUTIONS	medium	40	General Solutions
+SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-LANGUAGE-FRAMEWORK-SPECIFIC-SOLUTIONS	medium	40	Language & Framework specific solutions
+SKB-CS-MASS-ASSIGNMENT-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-MCP-SECURITY-CHEAT-SHEET-ARCHITECTURE-OVERVIEW	medium	40	Architecture Overview
+SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-RESTRICT-CROSS-APPLICATION-COMMUNICAT	medium	40	Restrict Cross-Application Communication
+SKB-CS-MICROSERVICES-BASED-SECURITY-ARCH-DOC-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-MICROSERVICES-BASED-SECURITY-ARCH-DOC-CHEAT-SHEET-OBJECTIVE	medium	40	Objective
+SKB-CS-MICROSERVICES-BASED-SECURITY-ARCH-DOC-CHEAT-SHEET-PROPOSITION	medium	40	Proposition
+SKB-CS-MICROSERVICES-BASED-SECURITY-ARCH-DOC-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-LOGGING	medium	40	Logging
+SKB-CS-MICROSERVICES-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-ADVANCED-HARDWARE-SECURITY-MONITO	medium	40	Advanced Hardware Security & Monitoring
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-CODE-QUALITY	medium	40	Code Quality
+SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-POST-DEPLOYMENT	medium	40	Post-Deployment
+SKB-CS-MULTI-TENANT-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-CONTENT	medium	40	Content
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-SCHEMATIC-SYMBOLS	medium	40	Schematic symbols
+SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-USEFUL-LINKS	medium	40	Useful links
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-3-OPTIMIZE-NODE-JS-TOOLING-FOR-PRODUCTI	medium	40	3) Optimize Node.js tooling for production
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-6-GRACEFUL-TEAR-DOWN-FOR-YOUR-NODE-JS-W	medium	40	6) Graceful tear down for your Node.js web applications
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-7-FIND-AND-FIX-SECURITY-VULNERABILITIES	medium	40	7) Find and fix security vulnerabilities in your Node.js docker image
+SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-9-KEEPING-UNNECESSARY-FILES-OUT-OF-YOUR	medium	40	9) Keeping unnecessary files out of your Node.js Docker images
+SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-CONTEXT	medium	40	Context
+SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-OBJECTIVE	medium	40	Objective
+SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-RECOMMENDATIONS	medium	40	Recommendations
+SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-10-UNDERSTANDING-TYPOSQUATTING-AND-SLOP	medium	40	10) Understanding typosquatting and slopsquatting attacks
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-12-PREVENT-DEPENDENCY-CONFUSION-ATTACKS	medium	40	12) Prevent dependency confusion attacks
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-13-VERIFY-DOCUMENTATION-EXAMPLES-BEFORE	medium	40	13) Verify documentation examples before copying into production
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-3-MINIMIZE-ATTACK-SURFACES-BY-IGNORING	medium	40	3) Minimize attack surfaces by ignoring run-scripts
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-5-AUDIT-FOR-VULNERABILITIES-IN-OPEN-SOU	medium	40	5) Audit for vulnerabilities in open source dependencies
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-6-ARTIFACT-GOVERNANCE-AND-SUPPLY-CHAIN	medium	40	6) Artifact governance and supply chain protections
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-7-RESPONSIBLY-DISCLOSE-SECURITY-VULNERA	medium	40	7) Responsibly disclose security vulnerabilities
+SKB-CS-NPM-SECURITY-CHEAT-SHEET-FINAL-RECOMMENDATIONS	medium	40	Final Recommendations
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-BACKGROUND	medium	40	Background
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-METHODS-FOR-ENHANCING-PASSWORD-STORAGE	medium	40	Methods for Enhancing Password Storage
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-PASSWORD-HASHING-ALGORITHMS	medium	40	Password Hashing Algorithms
+SKB-CS-PASSWORD-STORAGE-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-PHP-CONFIGURATION-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-PHP-CONFIGURATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-PROTOTYPE-POLLUTION-PREVENTION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-PROTOTYPE-POLLUTION-PREVENTION-CHEAT-SHEET-SUGGESTED-PROTECTION-MECHANISM	medium	40	Suggested protection mechanisms
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-READ	medium	40	Read control
+SKB-CS-QUERY-PARAMETERIZATION-CHEAT-SHEET-UPDATE	medium	40	Update
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-2-EMBEDDING-MANIPULATION	medium	40	Section 2: Embedding Manipulation
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-ABOUT-RESTFUL-WEB-SERVICES	medium	40	About RESTful Web Services
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-HOW-TO-PENTEST-A-RESTFUL-WEB-SERVICE	medium	40	How to pentest a RESTful web service
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-MASS-ASSIGNMENT-IN-JSON-APIS	medium	40	Mass Assignment in JSON APIs
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-RELATED-RESOURCES	medium	40	Related Resources
+SKB-CS-REST-ASSESSMENT-CHEAT-SHEET-THE-CHALLENGE-OF-SECURITY-TESTING-RESTFU	medium	40	The challenge of security testing RESTful web services
+SKB-CS-REST-SECURITY-CHEAT-SHEET-CORS	medium	40	CORS control
+SKB-CS-REST-SECURITY-CHEAT-SHEET-ERROR-HANDLING	medium	40	Error handling
+SKB-CS-REST-SECURITY-CHEAT-SHEET-HTTP-RETURN-CODE	medium	40	HTTP Return Code
+SKB-CS-REST-SECURITY-CHEAT-SHEET-INPUT-VALIDATION	medium	40	Input validation
+SKB-CS-REST-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-REST-SECURITY-CHEAT-SHEET-SECURITY-HEADERS	medium	40	Security Headers
+SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-TOOLS	medium	40	Tools
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-INPUT-VALIDATION	medium	40	Input Validation
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-BINDING-IMPLEMENTATION	medium	40	Validate Binding Implementation
+SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-SECURITY-COUNTERMEASURES	medium	40	Validate Security Countermeasures
+SKB-CS-SECURE-AI-MODEL-OPS-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SECURE-AI-MODEL-OPS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-RISK-ANALYSIS-THREAT-MODELING-AND-A	medium	40	Risk Analysis, Threat Modeling, and Attack Surface Assessments
+SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-SHARED-RESPONSIBILITY-MODEL	medium	40	Shared Responsibility Model
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-INTEGRATION-WITH-SDLC	medium	40	Integration with SDLC
+SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-10-PROMPT-TO-CODE-SUPPLY-CHAIN	medium	40	Section 10: Prompt-to-Code Supply Chain Risk
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-14-HUMAN-ACCOUNTABILITY	medium	40	Section 14: Human Accountability
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-2-OUTDATED-DEPENDENCIES-WITH-KN	medium	40	Section 2: Outdated Dependencies with Known CVEs
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-6-RULES-FILES-AND-PERSISTENT-ST	medium	40	Section 6: Rules Files and Persistent Steering
+SKB-CS-SECURE-CODING-WITH-AI-CHEAT-SHEET-SECTION-7-OUT-OF-SCOPE-EDITS-AND-REVIEW	medium	40	Section 7: Out-of-Scope Edits and Review Anchoring
+SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-METHODOLOGY	medium	40	Methodology
+SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SERVERLESS-FAAS-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SERVERLESS-FAAS-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SOFTWARE-SUPPLY-CHAIN-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-SOFTWARE-SUPPLY-CHAIN-SECURITY-CHEAT-SHEET-OVERVIEW-OF-THREAT-LANDSCAPE	medium	40	Overview of Threat Landscape
+SKB-CS-SOFTWARE-SUPPLY-CHAIN-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-HOW-SUBDOMAIN-TAKEOVER-WORKS	medium	40	How Subdomain Takeover Works
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-MONITORING-AND-DETECTION	medium	40	Monitoring and Detection
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-PREVENTION-STRATEGIES	medium	40	Prevention Strategies
+SKB-CS-SUBDOMAIN-TAKEOVER-PREVENTION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-SYMFONY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-MARSECOPS	medium	40	MarSecOps
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-MARTECHSEC	medium	40	MarTechSec
+SKB-CS-THIRD-PARTY-JAVASCRIPT-MANAGEMENT-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-UNDERSTANDING-THE-PAY	medium	40	Understanding the Payment Flow
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-ADVANTAGES	medium	40	Advantages
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-OVERVIEW	medium	40	Overview
+SKB-CS-THREAT-MODELING-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-TLS-CIPHER-STRING-CHEAT-SHEET-OVERVIEW	medium	40	(whole sheet)
+SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-SAFE-URL-REDIRECTS	medium	40	Safe URL Redirects
+SKB-CS-USER-PRIVACY-PROTECTION-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-USER-PRIVACY-PROTECTION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-VERIFYING-THIRD-PARTY-AGENT-EXECUTION-EVIDENCE-CHEAT-SHEET-DO-S-AND-DON-T	medium	40	Do's and Don'ts
+SKB-CS-VERIFYING-THIRD-PARTY-AGENT-EXECUTION-EVIDENCE-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-A-VIRTUAL-PATCHING-METHODOLOGY	medium	40	A Virtual Patching Methodology
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-DEFINITION-VIRTUAL-PATCHING	medium	40	Definition: Virtual Patching
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-IDENTIFICATION-PHASE	medium	40	Identification Phase
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-IMPLEMENTATION-TESTING-PHASE	medium	40	Implementation/Testing Phase
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-PREPARATION-PHASE	medium	40	Preparation Phase
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-RECOVERY-FOLLOW-UP-PHASE	medium	40	Recovery/Follow-Up Phase
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-SECRULE-REQUEST-URI-CONTAINS-WP-CONTE	medium	40	SecRule REQUEST_URI "@contains /wp-content/plugins/levelfo
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VALUE-OF-VIRTUAL-PATCHING	medium	40	Value of Virtual Patching
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VERIFY-REQID-S-PAYLOAD-ONLY-CONTAINS-INT	medium	40	Verify reqID's payload only contains integers
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VERIFY-WE-ONLY-RECEIVE-1-PARAMETER-CALLE	medium	40	Verify we only receive 1 parameter called "reqID"
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VIRTUAL-PATCH-CREATION-PHASE	medium	40	Virtual Patch Creation Phase
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VIRTUAL-PATCHING-TOOLS	medium	40	Virtual Patching Tools
+SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-WHY-NOT-JUST-FIX-THE-CODE	medium	40	Why Not Just Fix the Code
+SKB-CS-VULNERABILITY-DISCLOSURE-CHEAT-SHEET-METHODS-OF-DISCLOSURE	medium	40	Methods of Disclosure
+SKB-CS-VULNERABILITY-DISCLOSURE-CHEAT-SHEET-RECEIVING-VULNERABILITY-REPORTS	medium	40	Receiving Vulnerability Reports
+SKB-CS-VULNERABILITY-DISCLOSURE-CHEAT-SHEET-REPORTING-VULNERABILITIES	medium	40	Reporting Vulnerabilities
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-VULNERABLE-DEPENDENCY-MANAGEMENT-CHEAT-SHEET-REMARK-ABOUT-THE-DETECTION	medium	40	Remark about the detection
+SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-WEB-CACHE-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-WEB-FRONTEND-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-AVAILABILITY	medium	40	Availability
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-CONTENT-VALIDATION	medium	40	Content Validation
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-OUTPUT-ENCODING	medium	40	Output Encoding
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-SCHEMA-VALIDATION	medium	40	Schema Validation
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-TRANSPORT-ENCODING	medium	40	Transport Encoding
+SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-VIRUS-PROTECTION	medium	40	Virus Protection
+SKB-CS-WEBHOOK-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-WEBSOCKET-SECURITY-CHEAT-SHEET-PRIMARY-DEFENSES	medium	40	Primary Defenses
+SKB-CS-WEBSOCKET-SECURITY-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-WORKLOAD-IDENTITY-FEDERATION-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-XML-SECURITY-CHEAT-SHEET-DEALING-WITH-MALFORMED-XML-DOCUMENTS	medium	40	Dealing with malformed XML documents
+SKB-CS-XML-SECURITY-CHEAT-SHEET-VIOLATION-OF-XML-SPECIFICATION-RULES	medium	40	Violation of XML Specification Rules
+SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-BASED-ON-ERROR-EVENTS	medium	40	Attacks based on error events
+SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-ON-POSTMESSAGE-COMMUNICATION	medium	40	Attacks on postMessage communication
+SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-USING-THE-ELEMENT-ID-ATTRIBUTE	medium	40	Attacks using the element ID attribute
+SKB-CS-XS-LEAKS-CHEAT-SHEET-FRAME-COUNTING-ATTACKS	medium	40	Frame counting attacks
+SKB-CS-XS-LEAKS-CHEAT-SHEET-INTRODUCTION	medium	40	Introduction
+SKB-CS-XS-LEAKS-CHEAT-SHEET-QUICK-RECOMMENDATIONS	medium	40	Quick recommendations
+SKB-CS-XS-LEAKS-CHEAT-SHEET-REFERENCES	medium	40	References
+SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-CLOUD-SECURITY	medium	40	Cloud Security
+SKB-ISTG-3-3-FIRMWARE-ISTG-FW	medium	40	3.3. Firmware (ISTG-FW)
+SKB-MASTG-TEST-0001	medium	40	MASTG-TEST-0001
+SKB-MASTG-TEST-0002	medium	40	MASTG-TEST-0002
+SKB-MASTG-TEST-0003	medium	40	MASTG-TEST-0003
+SKB-MASTG-TEST-0004	medium	40	MASTG-TEST-0004
+SKB-MASTG-TEST-0006	medium	40	MASTG-TEST-0006
+SKB-MASTG-TEST-0007	medium	40	MASTG-TEST-0007
+SKB-MASTG-TEST-0008	medium	40	MASTG-TEST-0008
+SKB-MASTG-TEST-0010	medium	40	MASTG-TEST-0010
+SKB-MASTG-TEST-0011	medium	40	MASTG-TEST-0011
+SKB-MASTG-TEST-0019	medium	40	MASTG-TEST-0019
+SKB-MASTG-TEST-0020	medium	40	MASTG-TEST-0020
+SKB-MASTG-TEST-0021	medium	40	MASTG-TEST-0021
+SKB-MASTG-TEST-0022	medium	40	MASTG-TEST-0022
+SKB-MASTG-TEST-0024	medium	40	MASTG-TEST-0024
+SKB-MASTG-TEST-0027	medium	40	MASTG-TEST-0027
+SKB-MASTG-TEST-0029	medium	40	MASTG-TEST-0029
+SKB-MASTG-TEST-0031	medium	40	MASTG-TEST-0031
+SKB-MASTG-TEST-0032	medium	40	MASTG-TEST-0032
+SKB-MASTG-TEST-0042	medium	40	MASTG-TEST-0042
+SKB-MASTG-TEST-0043	medium	40	MASTG-TEST-0043
+SKB-MASTG-TEST-0044	medium	40	MASTG-TEST-0044
+SKB-MASTG-TEST-0052	medium	40	MASTG-TEST-0052
+SKB-MASTG-TEST-0071	medium	40	MASTG-TEST-0071
+SKB-MASTG-TEST-0072	medium	40	MASTG-TEST-0072
+SKB-MASTG-TEST-0078	medium	40	MASTG-TEST-0078
+SKB-MASTG-TEST-0081	medium	40	MASTG-TEST-0081
+SKB-MASVS-CODE-1	medium	40	MASVS-CODE-1
+SKB-MASVS-CODE-2	medium	40	MASVS-CODE-2
+SKB-MASVS-CODE-3	medium	40	MASVS-CODE-3
+SKB-MASVS-CODE-4	medium	40	MASVS-CODE-4
+SKB-MASVS-NETWORK-1	medium	40	MASVS-NETWORK-1
+SKB-MASVS-NETWORK-2	medium	40	MASVS-NETWORK-2
+SKB-MASVS-PLATFORM-1	medium	40	MASVS-PLATFORM-1
+SKB-MASVS-PRIVACY-1	medium	40	MASVS-PRIVACY-1
+SKB-MASVS-PRIVACY-2	medium	40	MASVS-PRIVACY-2
+SKB-MASVS-PRIVACY-3	medium	40	MASVS-PRIVACY-3
+SKB-MASVS-PRIVACY-4	medium	40	MASVS-PRIVACY-4
+SKB-MASVS-RESILIENCE-1	medium	40	MASVS-RESILIENCE-1
+SKB-MASVS-RESILIENCE-2	medium	40	MASVS-RESILIENCE-2
+SKB-MASVS-RESILIENCE-4	medium	40	MASVS-RESILIENCE-4
+SKB-NSSC-RACE-CONDITION	medium	40	Race Condition
+SKB-SCV-ASSERT-VIOLATION	medium	40	Assert Violation
+SKB-SCV-DEFAULT-VISIBILITY	medium	40	Default Visibility
+SKB-SCV-DOS-WITH-BLOCK-GAS-LIMIT	medium	40	DoS with Block Gas Limit
+SKB-SCV-DOS-WITH-UNEXPECTED-REVERT	medium	40	DoS with (Unexpected) Revert
+SKB-SCV-INADHERENCE-TO-STANDARDS	medium	40	Inadherence to Standards
+SKB-SCV-INCORRECT-INHERITANCE-ORDER	medium	40	Incorrect Inheritance Order
+SKB-SCV-INSUFFICIENT-GAS-GRIEFING	medium	40	Insufficient Gas Griefing
+SKB-SCV-LACK-OF-PRECISION	medium	40	Lack of Precision
+SKB-SCV-MSG-VALUE-REUSE-IN-LOOPS	medium	40	msg.value Reuse in Loops
+SKB-SCV-PRESENCE-OF-UNUSED-VARIABLES	medium	40	Presence of Unused Variables
+SKB-SCV-REQUIREMENT-VIOLATION	medium	40	Requirement Violation
+SKB-SCV-SHADOWING-STATE-VARIABLES	medium	40	Shadowing State Variables
+SKB-SCV-TIMESTAMP-DEPENDENCE	medium	40	Timestamp Dependence
+SKB-SCV-UNBOUNDED-RETURN-DATA	medium	40	Unbounded Return Data
+SKB-SCV-UNCHECKED-RETURN-VALUES	medium	40	Unchecked Return Values
+SKB-SCV-UNEXPECTED-ECRECOVER-NULL-ADDRESS	medium	40	Unexpected ecrecover Null Address
+SKB-SCV-UNINITIALIZED-STORAGE-POINTER	medium	40	Uninitialized Storage Pointer
+SKB-SCV-UNSAFE-LOW-LEVEL-CALL	medium	40	Unsafe Low-Level Call
+SKB-SCV-UNSUPPORTED-OPCODES-ON-EVM-COMPATIBLE-CH	medium	40	Unsupported Opcodes on EVM-Compatible Chains
+SKB-SCV-WEAK-SOURCES-OF-RANDOMNESS-FROM-CHAIN-AT	medium	40	Weak Sources of Randomness from Chain Attributes
+SKB-SCV-WRITE-TO-ARBITRARY-STORAGE-LOCATION	medium	40	Write to Arbitrary Storage Location
+SKB-WSTG-APIT-01	medium	40	API Reconnaissance
+SKB-WSTG-ATHN-01	medium	40	Credentials Transported over an Encrypted Channel
+SKB-WSTG-ATHN-02	medium	40	Default Credentials
+SKB-WSTG-ATHN-08	medium	40	Weak Security Question Answer
+SKB-WSTG-ATHN-09	medium	40	Weak Password Change or Reset Functionalities
+SKB-WSTG-BUSL-02	medium	40	Ability to Forge Requests
+SKB-WSTG-BUSL-03	medium	40	Integrity Checks
+SKB-WSTG-BUSL-04	medium	40	Process Timing
+SKB-WSTG-BUSL-05	medium	40	Number of Times a Function Can Be Used Limits
+SKB-WSTG-BUSL-06	medium	40	Circumvention of Work Flows
+SKB-WSTG-BUSL-07	medium	40	Defenses Against Application Misuse
+SKB-WSTG-BUSL-10	medium	40	Payment Functionality
+SKB-WSTG-CLNT-01	medium	40	DOM-Based Cross Site Scripting
+SKB-WSTG-CLNT-06	medium	40	Client-side Resource Manipulation
+SKB-WSTG-CLNT-07	medium	40	Cross Origin Resource Sharing
+SKB-WSTG-CLNT-09	medium	40	Clickjacking
+SKB-WSTG-CLNT-10	medium	40	WebSockets
+SKB-WSTG-CLNT-11	medium	40	Web Messaging
+SKB-WSTG-CLNT-13	medium	40	Cross Site Script Inclusion
+SKB-WSTG-CLNT-14	medium	40	Reverse Tabnabbing
+SKB-WSTG-CONF-01	medium	40	Network Infrastructure Configuration
+SKB-WSTG-CONF-04	medium	40	Review Old Backup and Unreferenced Files for Sensitive Information
+SKB-WSTG-CONF-05	medium	40	Enumerate Infrastructure and Application Admin Interfaces
+SKB-WSTG-CONF-07	medium	40	HTTP Strict Transport Security
+SKB-WSTG-CONF-12	medium	40	Content Security Policy
+SKB-WSTG-CONF-14	medium	40	Other HTTP Security Header Misconfigurations
+SKB-WSTG-CRYP-03	medium	40	Sensitive Information Sent via Unencrypted Channels
+SKB-WSTG-ERRH-01	medium	40	Improper Error Handling
+SKB-WSTG-ERRH-02	medium	40	Stack Traces
+SKB-WSTG-IDNT-02	medium	40	User Registration Process
+SKB-WSTG-IDNT-03	medium	40	Account Provisioning Process
+SKB-WSTG-IDNT-04	medium	40	Account Enumeration and Guessable User Account
+SKB-WSTG-IDNT-05	medium	40	Weak or Unenforced Username Policy
+SKB-WSTG-INFO-01	medium	40	Conduct Search Engine Reconnaissance for Information Leakage
+SKB-WSTG-INFO-02	medium	40	Fingerprint Web Server
+SKB-WSTG-INFO-04	medium	40	Attack Surface Identification
+SKB-WSTG-INFO-07	medium	40	Map Execution Paths Through Application
+SKB-WSTG-INFO-08	medium	40	Fingerprint Web Application Framework
+SKB-WSTG-INFO-09	medium	40	Fingerprint Web Application
+SKB-WSTG-INFO-10	medium	40	Map Application Architecture
+SKB-WSTG-INJT-01	medium	40	Reflected Cross Site Scripting
+SKB-WSTG-INJT-03	medium	40	HTTP Verb Tampering
+SKB-WSTG-INJT-15	medium	40	HTTP Response Splitting
+SKB-WSTG-INJT-16	medium	40	HTTP Request Smuggling
+SKB-WSTG-INJT-20	medium	40	Mass Assignment
+SKB-WSTG-INJT-22	medium	40	Prototype Pollution
+SKB-WSTG-SESS-02	medium	40	Cookies Attributes
+SKB-WSTG-SESS-05	medium	40	Cross Site Request Forgery
+SKB-WSTG-SESS-10	medium	40	JSON Web Tokens
+SKB-WSTG-WASM-01	medium	40	WebAssembly Reconnaissance
+SKB-BASE-0CA4CECA59	medium	30	Why AI generates it
+SKB-BASE-1-CONFIG-CONSIDER-ALL-REQUESTS-LOCAL	medium	30	1. `config.consider_all_requests_local = true` in production
+SKB-BASE-1-SERVING-PROJECT-ROOT-AS-STATIC	medium	30	1. Serving project root as static
+SKB-BASE-1-VALIDATIONPIPE-NOT-ENABLED-GLOBALLY	medium	30	1. ValidationPipe not enabled globally / no whitelist
+SKB-BASE-10-BOLA-IDOR-IN-QUERIES	medium	30	10. BOLA / IDOR in queries
+SKB-BASE-10-GATEWAY-TRANSCODING-WITHOUT-INPUT-VA	medium	30	10. Gateway/transcoding without input validation
+SKB-BASE-10-INSECURE-RANDOMNESS	medium	30	10. Insecure randomness
+SKB-BASE-10-MASS-ASSIGNMENT	medium	30	10. Mass assignment
+SKB-BASE-10-MASS-ASSIGNMENT-IN-API-ROUTES	medium	30	10. Mass assignment in API routes
+SKB-BASE-10-POSTMESSAGE-WITHOUT-ORIGIN-VALIDATIO	medium	30	10. PostMessage without origin validation
+SKB-BASE-10-PROXYING-INTERNAL-HEADERS-TO-UPSTREA	medium	30	10. Proxying internal headers to upstream
+SKB-BASE-11-DEFAULT-PORT-NO-FIREWALL	medium	30	11. Default port + no firewall
+SKB-BASE-11-EXPOSED-ADMIN-STATUS-METRICS	medium	30	11. Exposed admin / status / metrics
+SKB-BASE-11-IMAGE-PULL-FROM-PUBLIC-NO-ADMISSIO	medium	30	11. Image pull from public / no admission control
+SKB-BASE-11-OPEN-REDIRECT	medium	30	11. Open redirect
+SKB-BASE-11-PROTOTYPE-POLLUTION-VIA-OBJECT-ASSI	medium	30	11. Prototype pollution via `Object.assign` / `merge`
+SKB-BASE-11-TRUSTING-X-FORWARDED-WITHOUT-PRO	medium	30	11. Trusting `X-Forwarded-*` without proxy config
+SKB-BASE-11-WEAK-PASSWORD-STORAGE-MD5-CRYPT	medium	30	11. Weak password storage / `md5`/`crypt`
+SKB-BASE-12-ASYNC-BLOCKING-THE-EVENT-LOOP	medium	30	12. Async blocking the event loop
+SKB-BASE-12-EXTRACT-PARSE-STR-SUPERGLOBA	medium	30	12. `extract()` / `parse_str` superglobals pollution
+SKB-BASE-12-INSECURE-MERGE-SLASHES-PATH-NORM	medium	30	12. Insecure `merge_slashes` / path normalization gaps
+SKB-BASE-12-MISSING-INPUT-VALIDATION-TYPE-CONF	medium	30	12. Missing input validation / type confusion
+SKB-BASE-12-NO-AUDIT-LOGGING-NO-MONITORING	medium	30	12. No audit logging / no monitoring
+SKB-BASE-12-OVERLY-BROAD-CORS	medium	30	12. Overly broad CORS
+SKB-BASE-12-REVERSE-TABNABBING	medium	30	12. Reverse tabnabbing
+SKB-BASE-12-UNBOUNDED-STREAMING	medium	30	12. Unbounded streaming
+SKB-BASE-12-UNPATCHED-SERVER-EXTENSIONS	medium	30	12. Unpatched server / extensions
+SKB-BASE-12-UNSAFE-BLOCKS-FFI-WITH-UNTRUSTED	medium	30	12. `unsafe` blocks / FFI with untrusted input
+SKB-BASE-12-WEAK-PASSWORD-STORAGE-PLAINTEXT	medium	30	12. Weak password storage / plaintext
+SKB-BASE-13-OPEN-REDIRECT	medium	30	13. Open redirect
+SKB-BASE-16A762EB55	medium	30	Why AI generates it
+SKB-BASE-2-DTOS-WITHOUT-CLASS-VALIDATOR-DECORATO	medium	30	2. DTOs without class-validator decorators
+SKB-BASE-2-EXPOSE-PHP-ON	medium	30	2. `expose_php=On`
+SKB-BASE-2-REFLECTION-ENABLED-IN-PRODUCTION	medium	30	2. Reflection enabled in production
+SKB-BASE-2-SERVING-THE-PROJECT-ROOT-ROOT	medium	30	2. Serving the project root / `root .`
+SKB-BASE-2-STACK-TRACES-IN-ERROR-RESPONSES	medium	30	2. Stack traces in error responses
+SKB-BASE-2-VERBOSE-ERROR-RESPONSES	medium	30	2. Verbose error responses
+SKB-BASE-2CA9C9C238	medium	30	What it is
+SKB-BASE-2EBD4F1BE0	medium	30	4. No TLS
+SKB-BASE-3-ALLOW-URL-INCLUDE-ON	medium	30	3. `allow_url_include=On`
+SKB-BASE-3-APP-USING-ROOT-OVER-BROAD-ROLE	medium	30	3. App using root / over-broad role
+SKB-BASE-3-CONFIG-ACTION-DISPATCH-SHOW-EXCEPTIO	medium	30	3. `config.action_dispatch.show_exceptions` misconfigured
+SKB-BASE-3-DOCS-SWAGGER-REDOC-EXPOSED-IN-PRODU	medium	30	3. Docs (Swagger/ReDoc) exposed in production
+SKB-BASE-3-DOMSANITIZER-BYPASSSECURITYTRUSTURL	medium	30	3. `DomSanitizer.bypassSecurityTrustUrl` on user URLs
+SKB-BASE-3-FORROOT-CONFIG-LEAKING-VIA-SWAGGER	medium	30	3. `forRoot` config leaking via Swagger in production
+SKB-BASE-3-GETSERVERSIDEPROPS-RETURNING-SENSIT	medium	30	3. `getServerSideProps` returning sensitive data to client
+SKB-BASE-3-INNERHTML-SETATTRIBUTE-WITH-USE	medium	30	3. `innerHTML` / `setAttribute` with user input
+SKB-BASE-3-STATIC-FOLDER-SERVED-FROM-PROJECT-ROO	medium	30	3. Static folder served from project root
+SKB-BASE-3-SWAGGER-EXPOSED-IN-PRODUCTION	medium	30	3. Swagger exposed in production
+SKB-BASE-3-VERBOSE-ERROR-RESPONSES-IN-PRODUCTION	medium	30	3. Verbose error responses in production
+SKB-BASE-3-WEAK-LEGACY-PASSWORD-ENCODING	medium	30	3. Weak/legacy password encoding
+SKB-BASE-4-CORS-ALLOW-ALL	medium	30	4. CORS allow-all
+SKB-BASE-4-CORS-ALLOW-ALL-WITH-CREDENTIALS	medium	30	4. CORS allow-all with credentials
+SKB-BASE-4-DEVTOOLS-ACTIVE-IN-PROD	medium	30	4. Devtools active in prod
+SKB-BASE-4-EXPOSED-ACTUATOR-TERMINATION-ENDPOI	medium	30	4. Exposed actuator / termination endpoints
+SKB-BASE-4-NO-DOCKERIGNORE-COPYING-WHOLE-RE	medium	30	4. No `.dockerignore` / copying whole repo
+SKB-BASE-4-NO-TLS	medium	30	4. No TLS
+SKB-BASE-4-OVER-GRANTED-PRIVILEGES-GRANT-ALL	medium	30	4. Over-granted privileges (`GRANT ALL`)
+SKB-BASE-4-OVERLY-PERMISSIVE-RBAC-DEFAULT-SERV	medium	30	4. Overly permissive RBAC / default ServiceAccount
+SKB-BASE-4-WEAK-CSP-NO-CSP	medium	30	4. Weak CSP / no CSP
+SKB-BASE-4-WEAK-CSP-UNSAFE-INLINE-UNSAFE	medium	30	4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+SKB-BASE-5-EXPOSED-ADMIN-WITH-WEAK-SETUP	medium	30	5. Exposed `admin` with weak setup
+SKB-BASE-5-EXPOSED-PPROF-DEBUG-ENDPOINTS	medium	30	5. Exposed pprof / debug endpoints
+SKB-BASE-5-GLOBAL-USEGLOBALFILTERS-THAT-LEAK-E	medium	30	5. Global `useGlobalFilters` that leak exceptions
+SKB-BASE-5-MISSING-RATE-LIMITING-BRUTE-FORCE-P	medium	30	5. Missing rate limiting / brute-force protection
+SKB-BASE-5-MISSING-WEAK-TLS	medium	30	5. Missing / weak TLS
+SKB-BASE-5-SOURCE-MAPS-AND-DEV-ARTIFACTS-SHIPPED	medium	30	5. Source maps and dev artifacts shipped to prod
+SKB-BASE-5-VERBOSE-ASSET-SOURCE-EXPOSURE	medium	30	5. Verbose asset/source exposure
+SKB-BASE-5-VERBOSE-ERROR-CODES-MESSAGES	medium	30	5. Verbose error codes/messages
+SKB-BASE-5-VERBOSE-ERROR-DISPLAY	medium	30	5. Verbose error display
+SKB-BASE-5-VERBOSE-ERROR-PAGES	medium	30	5. Verbose error pages
+SKB-BASE-5-VERBOSE-ERROR-RESPONSES	medium	30	5. Verbose error responses
+SKB-BASE-5-VERBOSE-ERROR-STACK-RENDERING-IN-PROD	medium	30	5. Verbose error/stack rendering in prod
+SKB-BASE-5-VERBOSE-EXCEPTION-RESPONSES	medium	30	5. Verbose exception responses
+SKB-BASE-5890B2F330	medium	30	4. CORS allow-all
+SKB-BASE-6-BOLA-IDOR	medium	30	6. BOLA / IDOR
+SKB-BASE-6-BOLA-IDOR-IN-RESOLVERS	medium	30	6. BOLA / IDOR in resolvers
+SKB-BASE-6-E2E-TEST-MODULES-SHIPPED-OR-MOUNTED	medium	30	6. `e2e`/test modules shipped or mounted
+SKB-BASE-6-MASS-ASSIGNMENT-STRONG-PARAMS-BYPASS	medium	30	6. Mass assignment (strong params bypass)
+SKB-BASE-6-SSTI-VIA-JINJA2-WITH-USER-TEMPLATES	medium	30	6. SSTI via Jinja2 with user templates
+SKB-BASE-6-VERBOSE-LOGGING-QUERY-LOGGING-WITH	medium	30	6. Verbose logging / query logging with PII
+SKB-BASE-64E138FE92	medium	30	8. BOLA / IDOR
+SKB-BASE-6891C7BA08	medium	30	Detection
+SKB-BASE-6B00B00AF3	medium	30	1. `debug=True` in production
+SKB-BASE-7-INSECURE-IMAGE-NO-SCANNING	medium	30	7. Insecure image / no scanning
+SKB-BASE-7-MASS-ASSIGNMENT-BIND-MISUSE	medium	30	7. Mass assignment / `[Bind]` misuse
+SKB-BASE-7-MASS-ASSIGNMENT-VIA-MODELFORM	medium	30	7. Mass assignment via `ModelForm` / `**request.POST`
+SKB-BASE-7-MASS-ASSIGNMENT-VIA-PLAINTOINSTANCE	medium	30	7. Mass assignment via `plainToInstance` / `new User(dto)`
+SKB-BASE-7-MISSING-SECURITY-HEADERS	medium	30	7. Missing security headers
+SKB-BASE-7-NO-NETWORK-POLICIES-FLAT-CLUSTER	medium	30	7. No network policies (flat cluster)
+SKB-BASE-7-OPEN-REDIRECT-IN-CLIENT-ROUTING	medium	30	7. Open redirect in client routing
+SKB-BASE-7303282B47	medium	30	4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+SKB-BASE-73820C51B8	medium	30	Detection
+SKB-BASE-7467513649	medium	30	Fix control
+SKB-BASE-8-BOLA-IDOR-ON-OBJECT-LOOKUPS	medium	30	8. BOLA / IDOR on object lookups
+SKB-BASE-8-MASS-ASSIGNMENT-UNSAFE-REQUEST-J	medium	30	8. Mass assignment / unsafe `**request.json`
+SKB-BASE-8-MASS-ASSIGNMENT-VIA-MODEL-DUMP	medium	30	8. Mass assignment via `model_dump` / `**body`
+SKB-BASE-8-MASS-ASSIGNMENT-VIA-MODELATTRIBUTE	medium	30	8. Mass assignment via `@ModelAttribute` / direct binding
+SKB-BASE-8-NO-POD-SECURITY-ADMISSION-OLD-PODSE	medium	30	8. No Pod Security Admission / old PodSecurityPolicy gaps
+SKB-BASE-8-OPEN-REDIRECT-IN-LOGIN-LOGOUT	medium	30	8. Open redirect in login/logout
+SKB-BASE-8-POSTMESSAGE-WITHOUT-ORIGIN-VALIDATION	medium	30	8. PostMessage without origin validation
+SKB-BASE-82059F1A33	medium	30	What leaks
+SKB-BASE-9-BATCH-ALIASING-ABUSE	medium	30	9. Batch / aliasing abuse
+SKB-BASE-9-MASS-ASSIGNMENT-OVER-BROAD-INSERT	medium	30	9. Mass assignment / over-broad `INSERT`/`UPDATE`
+SKB-BASE-9-MISSING-SECURITY-HEADERS	medium	30	9. Missing security headers
+SKB-BASE-9-ROLE-CHECKS-BASED-ON-USER-SUPPLIED-DA	medium	30	9. Role checks based on user-supplied data
+SKB-BASE-A1B0D33406	medium	30	What it is
+SKB-BASE-AC66C1BB55	medium	30	Why AI generates it
+SKB-BASE-AD4232CF06	medium	30	What it is
+SKB-BASE-API-RPC	medium	30	API / RPC
+SKB-BASE-BACKEND-FRAMEWORKS	medium	30	Backend frameworks
+SKB-BASE-BD76076317	medium	30	Fix control
+SKB-BASE-DETECTION	medium	30	Detection
+SKB-BASE-DETECTION-CROSS-REF-THE-DOCKER-K8S-NGIN	medium	30	Detection (cross-ref the Docker/K8s/Nginx docs)
+SKB-BASE-FBE0FF2342	medium	30	Checklist
+SKB-BASE-FRONTEND-FULL-STACK	medium	30	Frontend / full-stack
+SKB-BASE-HOW-TO-USE-THESE-DOCS	medium	30	How to use these docs
+SKB-BASE-REVIEW-PROMPT-FOR-AI-GENERATED-CODE	medium	30	Review prompt for AI-generated code
+SKB-DESK-CSP-0049	medium	30	Electron defines a restrictive CSP and webSecurity
+SKB-ISTG-2-1-IOT-DEVICE-MODEL	medium	30	2.1. IoT Device Model
+SKB-ISTG-2-2-ATTACKER-MODEL	medium	30	2.2. Attacker Model
+SKB-ISTG-2-IOT-SECURITY-TESTING-FRAMEWORK	medium	30	2. IoT Security Testing Framework
+SKB-ISTG-3-TEST-CASE-CATALOG	medium	30	3. Test Case Catalog
+SKB-NSSC-CONTRACTS-CAN-BE-FORCED-TO-RECEIVE-ETHER	medium	30	Contracts can be forced to receive ether
+SKB-NSSC-DENIAL-OF-SERVICE	medium	30	Denial of Service
+SKB-NSSC-INCORRECT-INTERFACE	medium	30	Incorrect interface
+SKB-NSSC-UNCHECKED-EXTERNAL-CALL	medium	30	Unchecked External Call
+SKB-NSSC-UNPROTECTED-FUNCTION	medium	30	Unprotected function
+SKB-NSSC-WRONG-CONSTRUCTOR-NAME	medium	30	Wrong Constructor Name
+SKB-SCR-EXCEPTION-HANDLING	medium	30	Exception Handling
+SKB-TG-RATE-0038	medium	30	Bot applies rate limiting and flood control
+SKB-VIBE-AI-INTEGRATION-LLM-OUTPUT-IS-UNTRUSTED	medium	30	LLM Output Is Untrusted
+SKB-VIBE-AI-INTEGRATION-SPENDING-CAPS	medium	30	Spending Caps
+SKB-VIBE-DEPLOYMENT-SECURITY-HEADERS	medium	30	Security Headers
+SKB-VIBE-RATE-LIMITING-BILLING-PROTECTION	medium	30	Billing Protection
+SKB-VIBE-RATE-LIMITING-COMBINE-PER-IP-AND-PER-USER-LIMITING	medium	30	Combine Per-IP and Per-User Limiting
+SKB-VIBE-RATE-LIMITING-DON-T-STORE-RATE-LIMITS-IN-PUBLIC-TABLES	medium	30	Don't Store Rate Limits in Public Tables
+SKB-VIBE-RATE-LIMITING-IMPLEMENTATION-PATTERN	medium	30	Implementation Pattern
