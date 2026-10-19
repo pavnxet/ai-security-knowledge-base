@@ -10,11 +10,10 @@ FLOORS = {"all": 0.60, "templated": 0.85, "curated_v2": 0.38}
 
 out = subprocess.run([sys.executable, os.path.join(ROOT, "bench", "run_bench.py")],
                      capture_output=True, text=True)
-t = out.stdout
 try:
-    d = json.loads(t[t.index("{"):t.rindex("}") + 1])
-except Exception:
-    print("could not parse bench output:\n", t[-800:]); sys.exit(1)
+    d = json.load(open(os.path.join(ROOT, "bench", "results.json")))
+except Exception as e:
+    print("could not read bench/results.json:", e); sys.exit(1)
 
 h = d.get("heldout", {})
 bad = []
