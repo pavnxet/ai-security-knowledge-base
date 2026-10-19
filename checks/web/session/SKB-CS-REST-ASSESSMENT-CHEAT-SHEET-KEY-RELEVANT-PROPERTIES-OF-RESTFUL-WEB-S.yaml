@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - CS:REST_Assessment_Cheat_Sheet#Key relevant properties of RESTful web s
 refs:
 - CS:REST_Assessment_Cheat_Sheet#Key relevant properties of RESTful web s
 check: Key relevant properties of RESTful web services - Use of HTTP methods ( GET , POST , PUT and DELETE
-  ) as the primary verb for the requested operation. - Non-st
+  ) as the primary verb for the
 fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Assessment_Cheat_Sheet.md (anchor: Key relevant properties
   of RESTful web services) for remediation.'
 detect:

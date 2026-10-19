@@ -13,16 +13,18 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 45
-cwe: []
-cwe_source: extracted
+priority: 55
+cwe:
+- CWE-918
+- CWE-611
+cwe_source: mapped
 owasp:
 - BASE:12. XXE via XML parsing
 refs:
 - BASE:12. XXE via XML parsing
 check: '12. XXE via XML parsing What: DocumentBuilderFactory without disabling DTDs reads external entities
   → SSRF/file read. Fix: dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true)
-  ; disable external entities. Detection: rg -n "DocumentBuilderFactory SAXParserFac'
+  ; disable external entities. Detection: rg -n "Docum'
 fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 12. XXE via XML parsing) for remediation.'
 detect:
   grep:

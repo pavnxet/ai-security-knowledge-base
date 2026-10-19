@@ -12,16 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-918
+cwe_source: mapped
 owasp:
 - CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Cases
 refs:
 - CS:Server_Side_Request_Forgery_Prevention_Cheat_Sheet#Cases
 check: 'Cases Depending on the application''s functionality and requirements, there are two basic cases
   in which SSRF can happen: - Application can send request only to identified and trusted applications
-  : Case when [allowlist](https://en.wikipedia.org/wiki/Whitelisting) approach is ava'
+  : Case when [allowlist](https://en.wikipedia.org/wiki'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
   Cases) for remediation.'
 detect:

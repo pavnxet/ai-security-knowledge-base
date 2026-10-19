@@ -16,7 +16,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-22
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - BASE:11. Path traversal in file serving
 refs:
