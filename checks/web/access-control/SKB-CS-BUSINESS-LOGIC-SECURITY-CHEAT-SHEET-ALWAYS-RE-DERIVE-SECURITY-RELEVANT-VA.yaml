@@ -13,14 +13,16 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-367
+- CWE-840
+- CWE-841
+cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#Always Re-derive Security-relevant Value
 refs:
 - CS:Business_Logic_Security_Cheat_Sheet#Always Re-derive Security-relevant Value
-check: Always Re-derive Security-relevant Values Server-side The single most effective defensive habit
-  is
+check: Always Re-derive Security-relevant Values Server-side The single mos
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Business_Logic_Security_Cheat_Sheet.md (anchor: Always Re-derive
   Security-relevant Values Server-side) for remediation.'
 detect:

@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-770
+cwe_source: mapped
 owasp:
 - VIBE:rate-limiting#Don't Store Rate Limits in Public Tables
 refs:
