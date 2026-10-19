@@ -28,16 +28,16 @@
   "distilled": 2042,
   "sources": 67,
   "index_files": [
+    "brief.tsv",
     "by_cwe.json",
     "by_domain.json",
+    "by_platform",
     "by_platform.json",
     "by_ref.json",
     "by_severity.json",
     "by_tag.json",
-    "checks",
     "checks.jsonl",
     "kb.sqlite",
     "router.json"
-  ],
-  "release": "public-beta"
+  ]
 }

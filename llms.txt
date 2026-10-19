@@ -1,7 +1,7 @@
 # secure-kb
 
-> Merged, AI-agent-searchable security verification knowledge base: 76 atomic check cards distilled
-> from 67 public security repos, covering web, API, mobile, Telegram bots, cloud, IoT, smart
+> Merged, AI-agent-searchable security verification knowledge base: 2,057 atomic check cards distilled
+> from 67 tracked sources (cards drawn from 15 repositories + 5 official-doc sources), covering web, API, mobile, Telegram bots, cloud, IoT, smart
 > contracts, LLM apps, vibe-coded apps, browser extensions and desktop.
 
 Start here: [AGENTS.md](AGENTS.md) — the only file an agent needs to read first.

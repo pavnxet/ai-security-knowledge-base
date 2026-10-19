@@ -4,6 +4,8 @@ import os, glob, json, yaml, sqlite3, hashlib, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IDX = os.path.join(ROOT, "index")
+VERSION = (open(os.path.join(ROOT, "VERSION")).read().strip()
+           if os.path.exists(os.path.join(ROOT, "VERSION")) else "0.9.0")
 os.makedirs(IDX, exist_ok=True)
 
 def load_cards():
@@ -73,7 +75,7 @@ def main():
     h = hashlib.sha256(open(os.path.join(IDX, "checks.jsonl"), "rb").read()).hexdigest()[:16]
     from collections import Counter
     manifest = {
-        "name": "secure-kb", "version": "0.2.1",
+        "name": "secure-kb", "version": VERSION,
         "build_date": datetime.date.today().isoformat(),
         "content_hash": h,
         "cards": len(cards),

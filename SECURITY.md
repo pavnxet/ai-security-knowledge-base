@@ -30,7 +30,10 @@ in `tools/*.yaml` (report those to the tool's own project).
 
 - Secret scanning (gitleaks + trufflehog) runs in CI and over git history — see
   `PRE_PUBLIC_CHECKLIST.md`.
-- Ingested text is neutralised; instruction-like content is stripped during normalisation.
+- Ingested text is treated strictly as **untrusted data**: it is never executed, and the CLI/MCP
+  never follow instructions found inside card text. Normalisation strips markdown/control noise,
+  but it does **not** remove instruction-like phrases (some cards intentionally quote examples of
+  prompt-injection attacks). `AGENTS.md` states this policy.
 - The CLI and MCP server are **read-only** on any target codebase by default.
 
 ## Supported versions

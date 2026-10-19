@@ -12,7 +12,7 @@ ingestion**.
   `origin: authored` with a verified official-doc URL, or do not add it.
 - **One card per concept.** If a concept already exists, add your source to it (`sources[]`) rather
   than creating a duplicate. Dedupe runs in CI (`scripts/dedupe.py`).
-- **Budget.** A card's agent-facing payload must stay ≤ 250 tokens; `summary` ≤ 140 chars. CI fails
+- **Budget.** A card's agent-facing payload must stay ≤ 420 tokens; `summary` ≤ 140 chars. CI fails
   otherwise (`tests/validate.py`).
 
 ## Add a card

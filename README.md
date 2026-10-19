@@ -4,7 +4,8 @@
 
 > Keywords: AI security · AI agent security · OWASP ASVS · WSTG · MASTG · Top 10 · LLM security · prompt injection · secure code review · AppSec · DevSecOps · MCP · Claude · Cursor
 
-2,057 atomic check cards distilled from 67 public security repositories — each traceable to a real
+2,057 atomic check cards distilled from 67 **tracked sources** — cards are drawn from 15 public
+repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
 > **Status: public beta (v0.9.0).** The build is deterministic and reproducible; retrieval targets are
@@ -57,8 +58,8 @@ cat index/checks/*.jsonl | grep -c "SKB-ASVS"
 
 ## MCP setup
 
-The MCP server exposes `search_checks`, `get_check`, `profile_gate`, `detect_stack`, `report_init`,
-`report_validate`.
+The MCP server exposes `detect_stack`, `get_profile`, `search_checks`, `get_check`, `start_report`,
+`submit_result`, `list_tools` (7 tools — run `list_tools` to enumerate).
 
 **Claude Code**
 
@@ -80,16 +81,21 @@ claude mcp add secure-kb -- python3 /abs/path/to/secure-kb/mcp/server.py
 
 | Source | Cards | Licence |
 |---|---|---|
-| OWASP ASVS 5.0 | 345 | CC BY-SA 4.0 |
-| OWASP Cheat Sheet Series | 1,045 | CC BY-SA 4.0 |
-| OWASP MASTG (Android/iOS tests) | 92 | CC BY-SA 4.0 |
-| OWASP WSTG | 115 | CC BY-SA 4.0 |
-| OWASP MASVS | 24 | CC BY-SA 4.0 |
-| OWASP Top 10 / API Top 10 / LLM Top 10 | 30 | CC BY-SA 4.0 |
-| Web3 (kadenzipfel, crytic) | 49 | see `LICENSES/` |
-| OWASP ISTG (IoT) | 19 | CC BY-SA 4.0 |
-| vibe-security-skill, baselines, checklists (Tier-2) | 468 | see `LICENSES/` |
-| Authored (Telegram, browser-ext, desktop, IoT gaps) | 15 | CC BY-SA 4.0 |
+| OWASP Cheat Sheet Series | 1,032 | CC BY-SA 4.0 |
+| yesmayank/secure-coding-baseline (Tier-2) | 353 | MIT |
+| OWASP ASVS 5.0 | 339 | CC BY-SA 4.0 |
+| OWASP WSTG | 112 | CC BY-SA 4.0 |
+| raroque/vibe-security-skill (Tier-2) | 40 | see `LICENSES/` |
+| kadenzipfel/smart-contract-vulnerabilities | 38 | see `LICENSES/` |
+| OWASP MASTG (Android/iOS tests) | 32 | CC BY-SA 4.0 |
+| OWASP MASVS | 20 | CC BY-SA 4.0 |
+| OWASP ISTG (IoT) | 15 | CC BY-SA 4.0 |
+| shieldfy/API-Security-Checklist (Tier-2) | 13 | see `LICENSES/` |
+| crytic/not-so-smart-contracts | 11 | see `LICENSES/` |
+| OWASP Top 10 / LLM Top 10 / API Top 10 | 10 / 10 / 9 | CC BY-SA 4.0 |
+| mgreiler/secure-code-review-checklist (Tier-2) | 8 | see `LICENSES/` |
+| Authored (Telegram, Chrome, Electron — official docs) | 15 | CC BY-SA 4.0 |
+| **Total** | **2,057** | |
 
 Cards use **source-identity IDs** — `SKB-<SRC>-<official-id>` (e.g. `SKB-ASVS-V3-4-5`,
 `SKB-WSTG-INFO-01`) or a short hash of `repo|path|anchor`. Merged cards keep every member id in
@@ -104,6 +110,7 @@ Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as mea
 | Held-out (all) | 154 | **0.66** | ≥ 0.70 | below |
 | Curated v2 (standards-derived) | 59 | **0.44** | ≥ 0.60 | below |
 | v2_dev (developer vocabulary) | 40 | **0.25** | ≥ 0.60 | below |
+| Curated v1 | 59 | **0.25** | — | reference |
 | Templated | 95 | **0.92** | ≥ 0.90 | met |
 | Fast-gate recall (strict) | 30 | **26.7%** | ≥ 0.70 | below |
 
@@ -115,7 +122,8 @@ identical `manifest.content_hash` `0c921baa291a4af4`. Reproduce with
 
 - **Retrieval is below target.** Paraphrase recall is the weak spot; corpus growth added distractors
   that dedupe did not fully remove.
-- **First-call index build ≈ 19 s** on a cold checkout (later queries sub-second).
+- **First-call index build takes a few seconds** on a cold checkout (measured ~6 s on one machine,
+  ~19 s on another; later queries are sub-second).
 - **Not yet implemented:** `kind: check|guidance`, deterministic `fix_refs`, official-source CWE
   enrichment, real-lab end-to-end evaluation.
 - **Unverified:** 8 of 12 tool adapters; the Telegram `secret_token` claim; two project-declared

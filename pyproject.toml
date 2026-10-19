@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "secure-kb"
-version = "0.2.1"
-description = "Merged, AI-agent-searchable security verification knowledge base"
+version = "0.9.0"
+description = "AI security knowledge base: security check cards for AI coding agents"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
@@ -21,7 +21,9 @@ dev = ["jsonschema>=4", "pyyaml>=6", "pytest"]
 secure-kb = "secure_kb:main"
 
 [project.urls]
-Homepage = "https://github.com/secure-kb/secure-kb"
+Homepage = "https://github.com/pavnxet/ai-security-knowledge-base"
+Repository = "https://github.com/pavnxet/ai-security-knowledge-base"
+Documentation = "https://pavnxet.github.io/ai-security-knowledge-base/"
 
 [tool.setuptools]
 package-dir = { "" = "cli" }

@@ -11,6 +11,14 @@ ROOT = os.path.dirname(HERE)
 spec = importlib.util.spec_from_file_location("secure_kb", os.path.join(ROOT, "cli", "secure_kb.py"))
 kb = importlib.util.module_from_spec(spec); spec.loader.exec_module(kb)
 
+
+def _manifest_version():
+    import json as _j
+    try:
+        return _j.load(open(os.path.join(ROOT, "manifest.json")))["version"]
+    except Exception:
+        return "0.9.0"
+
 TOOLS = [
  {"name": "detect_stack", "description": "Fingerprint a codebase path and return ranked platforms + recommended profiles.",
   "inputSchema": {"type": "object", "properties": {"path": {"type": "string"}}, "required": ["path"]}},
@@ -34,8 +42,11 @@ def call(name, a):
     if name == "detect_stack":
         return _detect(a.get("path", "."))
     if name == "get_profile":
-        import yaml
-        with open(os.path.join(ROOT, "profiles", a["name"] + ".yaml")) as f:
+        import yaml, re as _re
+        _name = str(a.get("name", ""))
+        if not _re.fullmatch(r"[a-z0-9][a-z0-9_-]*", _name):
+            return {"error": "invalid profile name"}
+        with open(os.path.join(ROOT, "profiles", _name + ".yaml")) as f:
             prof = yaml.safe_load(f)
         ids = prof["gate"][a.get("gate", "fast")]
         cards = kb.load_cards()
@@ -123,7 +134,7 @@ def main():
         rid = req.get("id"); method = req.get("method")
         if method == "initialize":
             send({"jsonrpc": "2.0", "id": rid, "result": {"protocolVersion": "2024-11-05",
-                 "capabilities": {"tools": {}}, "serverInfo": {"name": "secure-kb", "version": "0.2.1"}}})
+                 "capabilities": {"tools": {}}, "serverInfo": {"name": "secure-kb", "version": _manifest_version()}}})
         elif method == "notifications/initialized":
             continue
         elif method == "tools/list":
