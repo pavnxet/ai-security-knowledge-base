@@ -1,0 +1,57 @@
+id: SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-USE-SELF-HOSTED-RUNNERS-WITH-EXTRA-CA
+title: Use self-hosted runners with extra caution
+summary: Use self-hosted runners with extra caution Self-hosted runners usually have access to internal
+  networks and may cache credentials, secrets o
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Use self-hosted runners with extra cauti
+refs:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Use self-hosted runners with extra cauti
+check: Use self-hosted runners with extra caution Self-hosted runners usually have access to internal
+  networks and may cache credential
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md (anchor: Use self-hosted
+  runners with extra caution) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- self
+- hosted
+- runners
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  anchor: Use self-hosted runners with extra caution
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

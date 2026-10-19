@@ -1,0 +1,56 @@
+id: SKB-CS-ZERO-TRUST-ARCHITECTURE-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This cheat sheet will help you implement Zero Trust Architecture (ZTA) in your organization.
+  Zero Trust means "never trust, alw
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Introduction
+refs:
+- CS:Zero_Trust_Architecture_Cheat_Sheet#Introduction
+check: Introduction This cheat sheet will help you implement Zero Trust Architecture (ZTA) in your organization.
+  Zero Trust means "never trust, always verify" - you don't trust anyone or anything by default, even
+  if they're in
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Zero_Trust_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

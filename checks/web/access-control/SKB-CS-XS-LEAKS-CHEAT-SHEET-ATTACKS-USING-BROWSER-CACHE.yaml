@@ -1,0 +1,57 @@
+id: SKB-CS-XS-LEAKS-CHEAT-SHEET-ATTACKS-USING-BROWSER-CACHE
+title: Attacks using browser cache
+summary: Attacks using browser cache Browser cache helps to significantly reduce the time it takes for
+  a page to load when revisited. However, it can
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XS_Leaks_Cheat_Sheet#Attacks using browser cache
+refs:
+- CS:XS_Leaks_Cheat_Sheet#Attacks using browser cache
+check: Attacks using browser cache Browser cache helps to significantly reduce the time it takes for a
+  page to load when revisited. However, it can also pose a risk of information leakage. If an a
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XS_Leaks_Cheat_Sheet.md (anchor: Attacks using browser cache)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- attacks
+- using
+- browser
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XS_Leaks_Cheat_Sheet.md
+  anchor: Attacks using browser cache
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XS_Leaks_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

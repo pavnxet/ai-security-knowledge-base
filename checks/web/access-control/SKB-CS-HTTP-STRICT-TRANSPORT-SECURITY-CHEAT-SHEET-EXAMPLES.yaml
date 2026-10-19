@@ -1,0 +1,56 @@
+id: SKB-CS-HTTP-STRICT-TRANSPORT-SECURITY-CHEAT-SHEET-EXAMPLES
+title: Examples
+summary: Examples This example sets a long (2 years = 63072000 seconds) max-age for the issuing host.
+  Without includeSubDomains , [this policy does n
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:HTTP_Strict_Transport_Security_Cheat_Sheet#Examples
+refs:
+- CS:HTTP_Strict_Transport_Security_Cheat_Sheet#Examples
+check: Examples This example sets a long (2 years = 63072000 seconds) max-age for the issuing host. Without
+  includeSubDomains , [this policy does not extend to its subdomains](https://www.rfc-editor.org/rfc/rfc6797.html
+  sectio
+fix: 'See OWASP/CheatSheetSeries cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md (anchor: Examples)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- examples
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md
+  anchor: Examples
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

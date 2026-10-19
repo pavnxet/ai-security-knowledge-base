@@ -1,0 +1,58 @@
+id: SKB-CS-XS-LEAKS-CHEAT-SHEET-SAME-ORIGIN-POLICY-SOP
+title: Same Origin Policy (SOP)
+summary: Same Origin Policy (SOP) Before describing attacks, it's good to understand one of the most critical
+  security mechanisms in browsers - The S
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XS_Leaks_Cheat_Sheet#Same Origin Policy (SOP)
+refs:
+- CS:XS_Leaks_Cheat_Sheet#Same Origin Policy (SOP)
+check: 'Same Origin Policy (SOP) Before describing attacks, it''s good to understand one of the most critical
+  security mechanisms in browsers - The Same-origin Policy. A few key aspects: - Two URLs are considered
+  as same-origin'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XS_Leaks_Cheat_Sheet.md (anchor: Same Origin Policy (SOP))
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- same
+- origin
+- policy
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XS_Leaks_Cheat_Sheet.md
+  anchor: Same Origin Policy (SOP)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XS_Leaks_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

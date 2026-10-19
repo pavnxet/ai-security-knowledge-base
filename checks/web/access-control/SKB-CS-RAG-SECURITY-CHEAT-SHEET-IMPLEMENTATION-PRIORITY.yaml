@@ -1,0 +1,56 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-IMPLEMENTATION-PRIORITY
+title: Implementation Priority
+summary: Implementation Priority Not all controls need to be implemented at once. The following priority
+  guide helps organizations focus on the highe
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:RAG_Security_Cheat_Sheet#Implementation Priority
+refs:
+- CS:RAG_Security_Cheat_Sheet#Implementation Priority
+check: 'Implementation Priority Not all controls need to be implemented at once. The following priority
+  guide helps organizations focus on the highest-impact controls first: Implement immediately (f'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Implementation Priority)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- implementation
+- priority
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: Implementation Priority
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

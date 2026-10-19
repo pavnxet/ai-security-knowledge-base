@@ -1,0 +1,57 @@
+id: SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-5-ROLL-OUT-AND-RETIRE-TEMPORA
+title: 'Stage 5: Roll out and retire temporary exceptions'
+summary: 'Stage 5: Roll out and retire temporary exceptions Deploy to a small group of services or clients,
+  then expand using the tests and monitoring'
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 5: Roll out and retire temporary e'
+refs:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 5: Roll out and retire temporary e'
+check: 'Stage 5: Roll out and retire temporary exceptions Deploy to a small group of services or clients,
+  t'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md (anchor: Stage 5:
+  Roll out and retire temporary exceptions) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- stage
+- roll
+- retire
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  anchor: 'Stage 5: Roll out and retire temporary exceptions'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

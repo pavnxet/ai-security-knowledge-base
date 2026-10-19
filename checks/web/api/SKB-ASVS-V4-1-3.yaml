@@ -1,0 +1,56 @@
+id: SKB-ASVS-V4-1-3
+title: Generic Web Service Security - V4.1.3
+summary: Verify that any HTTP header field used by the application and set by an intermediary layer, such
+  as a load balancer, a web proxy, or a backe
+platforms:
+- web
+- api
+stacks:
+- any
+domain: api
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-285
+cwe_source: extracted
+owasp:
+- ASVS:V4.1.3
+refs:
+- ASVS:V4.1.3
+- ASVS V4.1.3
+check: Verify that any HTTP header field used by the application and set by an intermediary layer, such
+  as a load balancer, a web proxy, or a backend-for-frontend service, cannot be overridden by the end-user.
+  Example headers might include X-Real-IP, X-Forwarded- , or X-User-ID.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V4.1.3) for remediation.'
+detect:
+  grep:
+  - /api/
+  - router.
+  - '@app.'
+  files:
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- api
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V4.1.3
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

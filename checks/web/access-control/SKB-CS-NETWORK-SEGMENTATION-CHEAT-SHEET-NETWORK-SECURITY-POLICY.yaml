@@ -1,0 +1,57 @@
+id: SKB-CS-NETWORK-SEGMENTATION-CHEAT-SHEET-NETWORK-SECURITY-POLICY
+title: Network security policy
+summary: Network security policy The organization must define a "paper" policy that describes firewall
+  rules and basic allowed network access. This p
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Network_Segmentation_Cheat_Sheet#Network security policy
+refs:
+- CS:Network_Segmentation_Cheat_Sheet#Network security policy
+check: 'Network security policy The organization must define a "paper" policy that describes firewall
+  rules and basic allowed network access. This policy is at least useful for: - network administ'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Network_Segmentation_Cheat_Sheet.md (anchor: Network security
+  policy) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- network
+- security
+- policy
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Network_Segmentation_Cheat_Sheet.md
+  anchor: Network security policy
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Network_Segmentation_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

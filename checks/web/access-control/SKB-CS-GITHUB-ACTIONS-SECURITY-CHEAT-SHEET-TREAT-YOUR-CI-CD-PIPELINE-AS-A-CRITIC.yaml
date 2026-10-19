@@ -1,0 +1,56 @@
+id: SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-TREAT-YOUR-CI-CD-PIPELINE-AS-A-CRITIC
+title: Treat your CI/CD pipeline as a critical production code
+summary: Treat your CI/CD pipeline as a critical production code Because a CI/CD pipeline usually has
+  access to sensitive credentials and functions/e
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:GitHub_Actions_Security_Cheat_Sheet#Treat your CI/CD pipeline as a critical '
+refs:
+- 'CS:GitHub_Actions_Security_Cheat_Sheet#Treat your CI/CD pipeline as a critical '
+check: Treat your CI/CD pipeline as a critical production code Because a CI/CD pipeline usually has acces
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md (anchor: Treat your
+  CI/CD pipeline as a critical production code) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- treat
+- your
+- pipeline
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  anchor: Treat your CI/CD pipeline as a critical production code
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-DJANGO-SECURITY-CHEAT-SHEET-ADMIN-PANEL-URL
+title: Admin panel URL
+summary: Admin panel URL It is advisable to modify the default URL leading to the admin panel (example.com/admin/),
+  in order to slightly increase the
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Django_Security_Cheat_Sheet#Admin panel URL
+refs:
+- CS:Django_Security_Cheat_Sheet#Admin panel URL
+check: 'Admin panel URL It is advisable to modify the default URL leading to the admin panel (example.com/admin/),
+  in order to slightly increase the difficulty for automated attacks. Here’s how to do it: In the default
+  app fold'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Django_Security_Cheat_Sheet.md (anchor: Admin panel URL)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- admin
+- panel
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Django_Security_Cheat_Sheet.md
+  anchor: Admin panel URL
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Django_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

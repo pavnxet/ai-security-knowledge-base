@@ -1,0 +1,56 @@
+id: SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-DATA-STORAGE
+title: Data Storage
+summary: Data Storage Confirm that, where ever possible, data handled by the application is both encrypted
+  at rest (i.e. when stored in a database) a
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Legacy_Application_Management_Cheat_Sheet#Data Storage
+refs:
+- CS:Legacy_Application_Management_Cheat_Sheet#Data Storage
+check: Data Storage Confirm that, where ever possible, data handled by the application is both encrypted
+  at rest (i.e. when stored in a database) and in transit. Cheat Sheets on [Cryptographic Storage](Cryptographic_Storage_Ch
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Legacy_Application_Management_Cheat_Sheet.md (anchor: Data
+  Storage) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- data
+- storage
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  anchor: Data Storage
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

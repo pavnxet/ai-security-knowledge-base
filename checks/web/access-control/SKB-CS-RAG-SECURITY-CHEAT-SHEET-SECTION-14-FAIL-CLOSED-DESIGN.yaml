@@ -1,0 +1,57 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-14-FAIL-CLOSED-DESIGN
+title: 'Section 14: Fail-Closed Design'
+summary: 'Section 14: Fail-Closed Design When any component of the RAG pipeline fails, the system must
+  deny the request rather than fall back to poten'
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 14: Fail-Closed Design'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 14: Fail-Closed Design'
+check: 'Section 14: Fail-Closed Design When any component of the RAG pipeline fails, the system must deny
+  the request rather than fall back to potentially unsafe behavior. This principle applies at'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 14: Fail-Closed
+  Design) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- section
+- fail
+- closed
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 14: Fail-Closed Design'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

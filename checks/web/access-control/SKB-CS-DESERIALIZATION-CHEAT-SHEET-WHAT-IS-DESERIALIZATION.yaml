@@ -1,0 +1,56 @@
+id: SKB-CS-DESERIALIZATION-CHEAT-SHEET-WHAT-IS-DESERIALIZATION
+title: What is Deserialization
+summary: What is Deserialization Serialization is the process of turning some object into a data format
+  that can be restored later. People often seri
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Deserialization_Cheat_Sheet#What is Deserialization
+refs:
+- CS:Deserialization_Cheat_Sheet#What is Deserialization
+check: What is Deserialization Serialization is the process of turning some object into a data format
+  that can be restored later. People often serialize objects in order to save them for storage,
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Deserialization_Cheat_Sheet.md (anchor: What is Deserialization)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- what
+- deserialization
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Deserialization_Cheat_Sheet.md
+  anchor: What is Deserialization
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Deserialization_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

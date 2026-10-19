@@ -1,0 +1,56 @@
+id: SKB-CS-INSECURE-DIRECT-OBJECT-REFERENCE-PREVENTION-CHEAT-SHEET-EXAMPLES
+title: Examples
+summary: 'Examples For instance, when a user accesses their profile, the application might generate a
+  URL like this: The 123 in the URL is a direct re'
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Examples
+refs:
+- CS:Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet#Examples
+check: 'Examples For instance, when a user accesses their profile, the application might generate a URL
+  like this: The 123 in the URL is a direct reference to the user''s record in the database, of'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  (anchor: Examples) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- examples
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  anchor: Examples
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Insecure_Direct_Object_Reference_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

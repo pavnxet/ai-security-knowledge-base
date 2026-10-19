@@ -1,0 +1,56 @@
+id: SKB-CS-DOTNET-SECURITY-CHEAT-SHEET-DATA-PROTECTION
+title: Data protection
+summary: Data protection Encryption for storage - For Windows-local secrets, [ ProtectedData uses the
+  Windows Data Protection API (DPAPI)](https://le
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:DotNet_Security_Cheat_Sheet#Data protection
+refs:
+- CS:DotNet_Security_Cheat_Sheet#Data protection
+check: Data protection Encryption for storage - For Windows-local secrets, [ ProtectedData uses the Windows
+  Data Protection API (DPAPI)](https://learn.microsoft.com/en-us/dotnet/standard/security/how-to-use-data-protection).
+fix: 'See OWASP/CheatSheetSeries cheatsheets/DotNet_Security_Cheat_Sheet.md (anchor: Data protection)
+  for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- data
+- protection
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/DotNet_Security_Cheat_Sheet.md
+  anchor: Data protection
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/DotNet_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

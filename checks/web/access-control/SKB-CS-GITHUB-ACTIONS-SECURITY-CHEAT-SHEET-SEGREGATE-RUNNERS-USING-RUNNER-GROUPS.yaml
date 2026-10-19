@@ -1,0 +1,56 @@
+id: SKB-CS-GITHUB-ACTIONS-SECURITY-CHEAT-SHEET-SEGREGATE-RUNNERS-USING-RUNNER-GROUPS
+title: Segregate runners using runner groups and labels
+summary: 'Segregate runners using runner groups and labels Use [runner groups](https://docs.github.com/en/actions/concepts/runners/runner-groups)
+  and '
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Segregate runners using runner groups an
+refs:
+- CS:GitHub_Actions_Security_Cheat_Sheet#Segregate runners using runner groups an
+check: Segregate runners using runner groups and labels Use [runner groups](https://docs.github.com/en/acti
+fix: 'See OWASP/CheatSheetSeries cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md (anchor: Segregate
+  runners using runner groups and labels) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- segregate
+- runners
+- using
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  anchor: Segregate runners using runner groups and labels
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/GitHub_Actions_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,54 @@
+id: SKB-WSTG-CONF-11
+title: Cloud Storage
+summary: Cloud Storage. Assess that the access control configuration for the storage services (bucket/container-level
+  public access, and object/princ
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-CONF-11
+refs:
+- WSTG-CONF-11
+check: Cloud Storage. Assess that the access control configuration for the storage services (bucket/container-level
+  public access, and object/principal-level ACLs or IAM policies) is properly in place. Assess whether
+  signed/presigned URLs are scoped, time-limited, and handled appropriately. Assess whether object ver
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-CONF-11) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-CONF-11
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

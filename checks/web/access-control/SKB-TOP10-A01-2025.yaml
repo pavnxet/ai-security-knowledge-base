@@ -1,0 +1,57 @@
+id: SKB-TOP10-A01-2025
+title: A01_2025-Broken_Access_Control.md
+summary: Maintaining its position at 1 in the Top Ten, 100% of the applications tested were found to have
+  some form of broken access control. Notable
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 85
+cwe: []
+cwe_source: extracted
+owasp:
+- Top10:A01:2025
+refs:
+- Top10:A01:2025
+check: 'Maintaining its position at 1 in the Top Ten, 100% of the applications tested were found to have
+  some form of broken access control. Notable CWEs included are CWE-200: Exposure of Sensitive Information
+  to an Unauthorized Actor , CWE-201: Exposure of'
+fix: 'See OWASP/Top10 2025/docs/en/A01_2025-Broken_Access_Control.md (anchor: A01:2025) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- broken
+- access
+- control
+sources:
+- repo: OWASP/Top10
+  path: 2025/docs/en/A01_2025-Broken_Access_Control.md
+  anchor: A01:2025
+  commit: 3a31f35346c3f4e90f350395124382fa53af2afe
+  url: https://github.com/OWASP/Top10/blob/3a31f35346c3f4e90f350395124382fa53af2afe/2025/docs/en/A01_2025-Broken_Access_Control.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

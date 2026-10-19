@@ -1,0 +1,54 @@
+id: SKB-WSTG-ATHZ-04
+title: Insecure Direct Object References
+summary: Insecure Direct Object References. Identify points where object references may occur. Assess
+  the access control measures and if they're vuln
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- WSTG-ATHZ-04
+refs:
+- WSTG-ATHZ-04
+check: Insecure Direct Object References. Identify points where object references may occur. Assess the
+  access control measures and if they're vulnerable to IDOR.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-ATHZ-04) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-ATHZ-04
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

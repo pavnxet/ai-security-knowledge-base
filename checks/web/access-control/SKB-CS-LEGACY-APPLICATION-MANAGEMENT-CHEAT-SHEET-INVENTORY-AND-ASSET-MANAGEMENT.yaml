@@ -1,0 +1,57 @@
+id: SKB-CS-LEGACY-APPLICATION-MANAGEMENT-CHEAT-SHEET-INVENTORY-AND-ASSET-MANAGEMENT
+title: Inventory and Asset Management
+summary: Inventory and Asset Management At a baseline, organizations should have a clear understanding
+  about what legacy applications are currently i
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Legacy_Application_Management_Cheat_Sheet#Inventory and Asset Management
+refs:
+- CS:Legacy_Application_Management_Cheat_Sheet#Inventory and Asset Management
+check: Inventory and Asset Management At a baseline, organizations should have a clear understanding about
+  what legacy applications are c
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Legacy_Application_Management_Cheat_Sheet.md (anchor: Inventory
+  and Asset Management) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- inventory
+- asset
+- management
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  anchor: Inventory and Asset Management
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Legacy_Application_Management_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

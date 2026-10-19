@@ -1,0 +1,57 @@
+id: SKB-CS-LOGGING-CHEAT-SHEET-DESIGN-IMPLEMENTATION-AND-TESTING
+title: Design, implementation, and testing
+summary: Design, implementation, and testing Event data sources The application itself has access to a
+  wide range of information events that should b
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Logging_Cheat_Sheet#Design, implementation, and testing
+refs:
+- CS:Logging_Cheat_Sheet#Design, implementation, and testing
+check: Design, implementation, and testing Event data sources The application itself has access to a wide
+  range of information events that should be used to generate
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Logging_Cheat_Sheet.md (anchor: Design, implementation, and
+  testing) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- design
+- implementation
+- testing
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Logging_Cheat_Sheet.md
+  anchor: Design, implementation, and testing
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Logging_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

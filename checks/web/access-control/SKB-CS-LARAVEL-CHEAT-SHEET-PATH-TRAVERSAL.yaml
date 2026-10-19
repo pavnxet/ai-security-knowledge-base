@@ -1,0 +1,57 @@
+id: SKB-CS-LARAVEL-CHEAT-SHEET-PATH-TRAVERSAL
+title: Path Traversal
+summary: Path Traversal A path traversal attack aims to access files by manipulating request input data
+  with ../ sequences and variations or by using
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 65
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- CS:Laravel_Cheat_Sheet#Path Traversal
+refs:
+- CS:Laravel_Cheat_Sheet#Path Traversal
+check: Path Traversal A path traversal attack aims to access files by manipulating request input data
+  with ../ sequences and variations or by using absolute file paths. If you allow users to download files
+  by filename, you may be exposed to this vulnerabili
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Laravel_Cheat_Sheet.md (anchor: Path Traversal) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- path
+- traversal
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Laravel_Cheat_Sheet.md
+  anchor: Path Traversal
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Laravel_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

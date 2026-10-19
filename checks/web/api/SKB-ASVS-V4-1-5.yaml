@@ -1,0 +1,54 @@
+id: SKB-ASVS-V4-1-5
+title: Generic Web Service Security - V4.1.5
+summary: Verify that per-message digital signatures are used to provide additional assurance on top of
+  transport protections for requests or transact
+platforms:
+- web
+- api
+stacks:
+- any
+domain: api
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V4.1.5
+refs:
+- ASVS:V4.1.5
+- ASVS V4.1.5
+check: Verify that per-message digital signatures are used to provide additional assurance on top of transport
+  protections for requests or transactions which are highly sensitive or which traverse a number of systems.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V4.1.5) for remediation.'
+detect:
+  grep:
+  - /api/
+  - router.
+  - '@app.'
+  files:
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- api
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V4.1.5
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-NPM-SECURITY-CHEAT-SHEET-9-MINIMIZE-NPM-ACCESS-TOKEN-USE
+title: 9) Minimize npm Access Token Use
+summary: 9) Minimize npm Access Token Use Classic npm tokens have been revoked. Prefer [trusted publishing
+  with OpenID Connect](https://docs.npmjs.co
+platforms:
+- web
+stacks:
+- any
+domain: access-control
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NPM_Security_Cheat_Sheet#9) Minimize npm Access Token Use
+refs:
+- CS:NPM_Security_Cheat_Sheet#9) Minimize npm Access Token Use
+check: 9) Minimize npm Access Token Use Classic npm tokens have been revoked. Prefer [trusted publishing
+  with OpenID Connect](https://docs.npmjs.com/trusted-publishers
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 9) Minimize npm Access
+  Token Use) for remediation.'
+detect:
+  grep:
+  - findById(
+  - get_object(
+  - params.id
+  - WHERE id
+  files:
+  - '**/controllers/**'
+  - '**/routes/**'
+  - '**/api/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- access-control
+- minimize
+- access
+- token
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NPM_Security_Cheat_Sheet.md
+  anchor: 9) Minimize npm Access Token Use
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NPM_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
