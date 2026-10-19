@@ -1,0 +1,57 @@
+id: SKB-CS-LARAVEL-CHEAT-SHEET-UNRESTRICTED-FILE-UPLOADS
+title: Unrestricted File Uploads
+summary: Unrestricted File Uploads Unrestricted file upload attacks entail attackers uploading malicious
+  files to compromise web applications. This s
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Laravel_Cheat_Sheet#Unrestricted File Uploads
+refs:
+- CS:Laravel_Cheat_Sheet#Unrestricted File Uploads
+check: Unrestricted File Uploads Unrestricted file upload attacks entail attackers uploading malicious
+  files to compromise web applications. This section describes how to protect against such attacks while
+  building Laravel appl
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Laravel_Cheat_Sheet.md (anchor: Unrestricted File Uploads)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- unrestricted
+- file
+- uploads
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Laravel_Cheat_Sheet.md
+  anchor: Unrestricted File Uploads
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Laravel_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

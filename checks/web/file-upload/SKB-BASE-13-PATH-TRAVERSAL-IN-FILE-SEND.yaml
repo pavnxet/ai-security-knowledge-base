@@ -1,0 +1,58 @@
+id: SKB-BASE-13-PATH-TRAVERSAL-IN-FILE-SEND
+title: 13. Path traversal in file send
+summary: '13. Path traversal in file send What: send_file(Rails.root.join("uploads", params[:f])) with
+  .. . Fix: Validate filename; File.basename ; re'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:13. Path traversal in file send
+refs:
+- BASE:13. Path traversal in file send
+check: '13. Path traversal in file send What: send_file(Rails.root.join("uploads", params[:f])) with ..
+  . Fix: Validate filename; File.basename ; resolve and bounds-check. Detection: rg -n "send_file File\.read\(.
+  params" app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 10-rails.md (anchor: 13. Path traversal in file send) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- path
+- traversal
+- file
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 10-rails.md
+  anchor: 13. Path traversal in file send
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/10-rails.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

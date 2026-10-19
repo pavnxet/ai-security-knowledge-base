@@ -1,0 +1,59 @@
+id: SKB-BASE-51C2B7F2C9
+title: 8. Path traversal in file serving
+summary: '8. Path traversal in file serving What: Path::new(base).join(user_path) without bounds check.
+  Fix: Canonicalize and verify the result starts'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:8. Path traversal in file serving
+refs:
+- BASE:8. Path traversal in file serving
+check: '8. Path traversal in file serving What: Path::new(base).join(user_path) without bounds check.
+  Fix: Canonicalize and verify the result starts with the canonical base; reject .. . Detection: rg -n
+  "Path::new\(. req \.joi'
+fix: 'See yesmayank/secure-coding-baseline 12-rust.md (anchor: 8. Path traversal in file serving) for
+  remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- path
+- traversal
+- file
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 12-rust.md
+  anchor: 8. Path traversal in file serving
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/12-rust.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

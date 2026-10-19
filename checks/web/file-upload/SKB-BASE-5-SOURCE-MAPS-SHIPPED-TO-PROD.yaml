@@ -1,0 +1,81 @@
+id: SKB-BASE-5-SOURCE-MAPS-SHIPPED-TO-PROD
+title: 5. Source maps shipped to prod
+summary: '5. Source maps shipped to prod What: productionBrowserSourceMaps: true (or default in some setups)
+  publishes original source via .map . Fix:'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Source maps shipped to prod
+refs:
+- BASE:5. Source maps shipped to prod
+check: '5. Source maps shipped to prod What: productionBrowserSourceMaps: true (or default in some setups)
+  publishes original source via .map . Fix: Disable browser source maps in prod or upload only to a private
+  error backend (Sentry). Detection: rg'
+fix: 'See yesmayank/secure-coding-baseline 16-nextjs.md (anchor: 5. Source maps shipped to prod) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- source
+- maps
+- shipped
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 16-nextjs.md
+  anchor: 5. Source maps shipped to prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/16-nextjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 5. Source maps shipped to prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 19-vue-nuxt.md
+  anchor: 5. Source maps shipped to prod
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-BASE-5549DBE0A5
+- SKB-BASE-892749132B
+aliases:
+- SKB-BASE-5549DBE0A5
+- SKB-BASE-892749132B

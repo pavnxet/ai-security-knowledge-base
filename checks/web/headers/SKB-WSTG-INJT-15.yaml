@@ -1,0 +1,54 @@
+id: SKB-WSTG-INJT-15
+title: HTTP Response Splitting
+summary: HTTP Response Splitting. Identify user-controlled input that is reflected into HTTP response
+  headers. Assess whether CR ( \r ) and LF ( \n )
+platforms:
+- web
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-INJT-15
+refs:
+- WSTG-INJT-15
+check: HTTP Response Splitting. Identify user-controlled input that is reflected into HTTP response headers.
+  Assess whether CR ( \r ) and LF ( \n ) characters can be injected into response headers. Determine the
+  potential impact of successful HTTP Response Splitting attacks, such as cache poisoning or client-side
+  exploitation.
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-INJT-15) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-INJT-15
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

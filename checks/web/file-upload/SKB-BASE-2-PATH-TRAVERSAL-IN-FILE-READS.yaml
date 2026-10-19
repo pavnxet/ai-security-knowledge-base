@@ -1,0 +1,59 @@
+id: SKB-BASE-2-PATH-TRAVERSAL-IN-FILE-READS
+title: 2. Path traversal in file reads
+summary: '2. Path traversal in file reads What: fs.readFile / fs.createReadStream / res.sendFile fed user
+  input without bounds-checking lets ../ escap'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe:
+- CWE-22
+cwe_source: heuristic
+owasp:
+- BASE:2. Path traversal in file reads
+refs:
+- BASE:2. Path traversal in file reads
+check: '2. Path traversal in file reads What: fs.readFile / fs.createReadStream / res.sendFile fed user
+  input without bounds-checking lets ../ escape the intended directory. Dangerous pattern: path.join does
+  not sanitize ../ .'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 2. Path traversal in file reads)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- path
+- traversal
+- file
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 2. Path traversal in file reads
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

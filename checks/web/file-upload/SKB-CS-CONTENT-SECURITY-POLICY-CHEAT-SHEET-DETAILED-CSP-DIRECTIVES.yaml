@@ -1,0 +1,56 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-DETAILED-CSP-DIRECTIVES
+title: Detailed CSP Directives
+summary: Detailed CSP Directives Multiple types of directives exist that allow the developer to control
+  the flow of the policies granularly. Note tha
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#Detailed CSP Directives
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#Detailed CSP Directives
+check: Detailed CSP Directives Multiple types of directives exist that allow the developer to control
+  the flow of the policies granularly. Note that creating a non-Strict policy that is too granular or
+  permissive is likely to
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: Detailed
+  CSP Directives) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- detailed
+- directives
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: Detailed CSP Directives
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

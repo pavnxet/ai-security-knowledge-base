@@ -1,0 +1,54 @@
+id: SKB-CS-XML-EXTERNAL-ENTITY-PREVENTION-CHEAT-SHEET-C-C
+title: C/C++
+summary: C/C++ libxml2 The Enum [xmlParserOption](https://gnome.pages.gitlab.gnome.org/libxml2/html/parser_8h.html)
+  should not have the following opt
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#C/C++
+refs:
+- CS:XML_External_Entity_Prevention_Cheat_Sheet#C/C++
+check: 'C/C++ libxml2 The Enum [xmlParserOption](https://gnome.pages.gitlab.gnome.org/libxml2/html/parser_8h.html)
+  should not have the following options defined: - XML_PARSE_NOENT : Expands entities and substitutes
+  them with replacement text - XML_PARSE_DTDLOAD : Load the external DTD No'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md (anchor: C/C++)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  anchor: C/C++
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

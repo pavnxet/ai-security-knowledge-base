@@ -1,0 +1,57 @@
+id: SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-SECURITY-FOCUS-AREAS
+title: Security Focus Areas
+summary: Security Focus Areas 1. Context Where does this application under consideration fit into the
+  ecosystem of the organization, which department
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Product_Design_Cheat_Sheet#Security Focus Areas
+refs:
+- CS:Secure_Product_Design_Cheat_Sheet#Security Focus Areas
+check: Security Focus Areas 1. Context Where does this application under consideration fit into the ecosystem
+  of the organization, which departments use it and for what reason? What kinds of data might it contain,
+  and what is t
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Product_Design_Cheat_Sheet.md (anchor: Security Focus
+  Areas) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- security
+- focus
+- areas
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  anchor: Security Focus Areas
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

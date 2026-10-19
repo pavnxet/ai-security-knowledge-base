@@ -1,0 +1,55 @@
+id: SKB-CS-C-BASED-TOOLCHAIN-HARDENING-CHEAT-SHEET-MAKEFILE
+title: makefile
+summary: makefile DEBUG_GOALS = $(filter $(MAKECMDGOALS), debug) ifneq ($(DEBUG_GOALS),) WANT_DEBUG :=
+  1 WANT_TEST := 0 WANT_RELEASE := 0 endif … ife
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#makefile
+refs:
+- CS:C-Based_Toolchain_Hardening_Cheat_Sheet#makefile
+check: makefile DEBUG_GOALS = $(filter $(MAKECMDGOALS), debug) ifneq ($(DEBUG_GOALS),) WANT_DEBUG := 1
+  WANT_TEST := 0 WANT_RELEASE := 0 endif … ifeq ($(WANT_DEBUG),1) ESAPI_CFLAGS += -DDEBUG=1 -UNDEBUG -g3
+  -ggdb -O0 ESAPI_CXXFLAGS += -DDEBUG=1 -UNDEBUG -g3
+fix: 'See OWASP/CheatSheetSeries cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md (anchor: makefile)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- makefile
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  anchor: makefile
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/C-Based_Toolchain_Hardening_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

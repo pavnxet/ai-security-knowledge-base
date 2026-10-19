@@ -1,0 +1,54 @@
+id: SKB-CS-FILE-UPLOAD-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: 'Introduction File upload is becoming a more and more essential part of any application, where
+  the user is able to upload their photo, their '
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:File_Upload_Cheat_Sheet#Introduction
+refs:
+- CS:File_Upload_Cheat_Sheet#Introduction
+check: Introduction File upload is becoming a more and more essential part of any application, where the
+  user is able to upload their photo, their CV, or a video showcasing a project they are working on. The
+  application should be able to fend off bogus and malicious files in a way to ke
+fix: 'See OWASP/CheatSheetSeries cheatsheets/File_Upload_Cheat_Sheet.md (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/File_Upload_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/File_Upload_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

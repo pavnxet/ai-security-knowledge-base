@@ -1,0 +1,56 @@
+id: SKB-CS-FILE-UPLOAD-CHEAT-SHEET-JAVA-CODE-SNIPPETS
+title: Java Code Snippets
+summary: Java Code Snippets [Document Upload Protection](https://github.com/righettod/document-upload-protection)
+  repository written by Dominique for
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:File_Upload_Cheat_Sheet#Java Code Snippets
+refs:
+- CS:File_Upload_Cheat_Sheet#Java Code Snippets
+check: Java Code Snippets [Document Upload Protection](https://github.com/righettod/document-upload-protection)
+  repository written by Dominique for certain document types in Java.
+fix: 'See OWASP/CheatSheetSeries cheatsheets/File_Upload_Cheat_Sheet.md (anchor: Java Code Snippets) for
+  remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- java
+- code
+- snippets
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/File_Upload_Cheat_Sheet.md
+  anchor: Java Code Snippets
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/File_Upload_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

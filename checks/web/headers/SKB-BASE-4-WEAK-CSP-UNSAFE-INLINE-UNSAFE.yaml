@@ -1,0 +1,57 @@
+id: SKB-BASE-4-WEAK-CSP-UNSAFE-INLINE-UNSAFE
+title: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+summary: '4. Weak CSP / unsafe-inline / unsafe-eval What: Angular requires either nonce-based CSP or unsafe-inline
+  ; adding unsafe-eval weakens it. Fi'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. Weak CSP / `unsafe-inline` / `unsafe-
+refs:
+- BASE:4. Weak CSP / `unsafe-inline` / `unsafe-
+check: '4. Weak CSP / unsafe-inline / unsafe-eval What: Angular requires either nonce-based CSP or unsafe-inline
+  ; adding unsafe-eval weakens it. Fix: Use nonce-based CSP; remove unsafe-eval ; ens'
+fix: 'See yesmayank/secure-coding-baseline 18-angular.md (anchor: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- weak
+- unsafe
+- inline
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 18-angular.md
+  anchor: 4. Weak CSP / `unsafe-inline` / `unsafe-eval`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

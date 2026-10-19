@@ -1,0 +1,54 @@
+id: SKB-CS-CI-CD-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [CISA, NSA, and ODNI: Securing the Software Supply Chain - Recommended Practices
+  for Developers](https://www.cisa.gov/sites/def'
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:CI_CD_Security_Cheat_Sheet#References
+refs:
+- CS:CI_CD_Security_Cheat_Sheet#References
+check: 'References - [CISA, NSA, and ODNI: Securing the Software Supply Chain - Recommended Practices
+  for Developers](https://www.cisa.gov/sites/default/files/publications/ESF_SECURING_THE_SOFTWARE_SUPPLY_CHAIN_DEVELOPERS.PDF)
+  - [NIST: Security Considerations for Code Signing](ht'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/CI_CD_Security_Cheat_Sheet.md (anchor: References) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/CI_CD_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/CI_CD_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

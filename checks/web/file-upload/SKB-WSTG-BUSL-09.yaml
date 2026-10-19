@@ -1,0 +1,54 @@
+id: SKB-WSTG-BUSL-09
+title: Upload of Malicious Files
+summary: Upload of Malicious Files. Identify the file upload functionality. Review the project documentation
+  to identify what file types are consider
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- WSTG-BUSL-09
+refs:
+- WSTG-BUSL-09
+check: Upload of Malicious Files. Identify the file upload functionality. Review the project documentation
+  to identify what file types are considered acceptable, and what types would be considered dangerous
+  or malicious. If documentation is not available then consider what would be appropriate based on the
+  purpose of the application. Determine h
+fix: 'See OWASP/wstg checklists/checklist.json (anchor: WSTG-BUSL-09) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+sources:
+- repo: OWASP/wstg
+  path: checklists/checklist.json
+  anchor: WSTG-BUSL-09
+  commit: 0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8
+  url: https://github.com/OWASP/wstg/blob/0dfbd5a585a503e27761b8f6c8bd8caf0903c8e8/checklists/checklist.json
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

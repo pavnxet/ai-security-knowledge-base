@@ -1,0 +1,56 @@
+id: SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-1-USE-EXPLICIT-AND-DETERMINISTIC-DOCKER
+title: 1) Use explicit and deterministic Docker base image tags
+summary: 1) Use explicit and deterministic Docker base image tags It may seem to be an obvious choice
+  to build your image based on the node Docker im
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NodeJS_Docker_Cheat_Sheet#1) Use explicit and deterministic Docker
+refs:
+- CS:NodeJS_Docker_Cheat_Sheet#1) Use explicit and deterministic Docker
+check: 1) Use explicit and deterministic Docker base image tags It may seem to be an obvious choice to
+  build your image based on the nod
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NodeJS_Docker_Cheat_Sheet.md (anchor: 1) Use explicit and
+  deterministic Docker base image tags) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- explicit
+- deterministic
+- docker
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  anchor: 1) Use explicit and deterministic Docker base image tags
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

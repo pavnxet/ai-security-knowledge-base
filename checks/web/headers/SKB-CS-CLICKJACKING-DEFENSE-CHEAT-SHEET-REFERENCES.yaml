@@ -1,0 +1,66 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [MDN: Content-Security-Policy frame-ancestors Directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Secu'
+platforms:
+- web
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Clickjacking_Defense_Cheat_Sheet#References
+refs:
+- CS:Clickjacking_Defense_Cheat_Sheet#References
+check: 'References - [MDN: Content-Security-Policy frame-ancestors Directive](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors)
+  - [MDN: X-Frame-Options](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/HTTP_Headers_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/HTTP_Headers_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-CS-HTTP-HEADERS-CHEAT-SHEET-REFERENCES
+aliases:
+- SKB-CS-HTTP-HEADERS-CHEAT-SHEET-REFERENCES

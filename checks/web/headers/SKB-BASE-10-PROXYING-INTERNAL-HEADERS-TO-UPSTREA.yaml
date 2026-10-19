@@ -1,0 +1,57 @@
+id: SKB-BASE-10-PROXYING-INTERNAL-HEADERS-TO-UPSTREA
+title: 10. Proxying internal headers to upstream
+summary: '10. Proxying internal headers to upstream What: Forwarding client X-Forwarded-For / X-Real-IP
+  without sanitizing lets upstream trust spoofed'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:10. Proxying internal headers to upstrea
+refs:
+- BASE:10. Proxying internal headers to upstrea
+check: '10. Proxying internal headers to upstream What: Forwarding client X-Forwarded-For / X-Real-IP
+  without sanitizing lets upstream trust spoofed IPs. Fix: proxy_set_header X-Forwarde'
+fix: 'See yesmayank/secure-coding-baseline 22-nginx.md (anchor: 10. Proxying internal headers to upstream)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- proxying
+- internal
+- headers
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 22-nginx.md
+  anchor: 10. Proxying internal headers to upstream
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/22-nginx.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

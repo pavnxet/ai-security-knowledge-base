@@ -1,0 +1,54 @@
+id: SKB-BASE-2-EXPOSE-PHP-ON
+title: 2. `expose_php=On`
+summary: '2. expose_php=On What: Adds X-Powered-By: PHP/x.y header — fingerprinting. Fix: expose_php=Off
+  . Detection: rg -n "expose_php" php.ini ---'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. `expose_php=On`
+refs:
+- BASE:2. `expose_php=On`
+check: '2. expose_php=On What: Adds X-Powered-By: PHP/x.y header — fingerprinting. Fix: expose_php=Off
+  . Detection: rg -n "expose_php" php.ini ---'
+fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 2. `expose_php=On`) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- expose
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 2. `expose_php=On`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

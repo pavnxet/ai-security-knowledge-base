@@ -1,0 +1,57 @@
+id: SKB-BASE-7-MISSING-SECURITY-HEADERS
+title: 7. Missing security headers
+summary: '7. Missing security headers What: Without helmet , Express advertises X-Powered-By and omits
+  X-Content-Type-Options , CSP, HSTS. Fix: Detect'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. Missing security headers
+refs:
+- BASE:7. Missing security headers
+check: '7. Missing security headers What: Without helmet , Express advertises X-Powered-By and omits X-Content-Type-Options
+  , CSP, HSTS. Fix: Detection: rg -n "helmet" app/package.json ---'
+fix: 'See yesmayank/secure-coding-baseline 01-nodejs-express.md (anchor: 7. Missing security headers)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- missing
+- security
+- headers
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 01-nodejs-express.md
+  anchor: 7. Missing security headers
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/01-nodejs-express.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

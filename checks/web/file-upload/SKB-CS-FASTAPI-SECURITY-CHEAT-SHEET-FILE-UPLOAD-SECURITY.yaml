@@ -1,0 +1,57 @@
+id: SKB-CS-FASTAPI-SECURITY-CHEAT-SHEET-FILE-UPLOAD-SECURITY
+title: File Upload Security
+summary: File Upload Security FastAPI parses multipart uploads into UploadFile objects, which spool larger
+  files to temporary disk storage. See the [
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:FastAPI_Security_Cheat_Sheet#File Upload Security
+refs:
+- CS:FastAPI_Security_Cheat_Sheet#File Upload Security
+check: File Upload Security FastAPI parses multipart uploads into UploadFile objects, which spool larger
+  files to temporary disk storage. See the [UploadFile documentation](https://fastapi.tiangolo.com/tutorial/request-files/
+  u
+fix: 'See OWASP/CheatSheetSeries cheatsheets/FastAPI_Security_Cheat_Sheet.md (anchor: File Upload Security)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- file
+- upload
+- security
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  anchor: File Upload Security
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/FastAPI_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

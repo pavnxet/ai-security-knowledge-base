@@ -1,0 +1,55 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-POLICY-DELIVERY
+title: Policy Delivery
+summary: Policy Delivery You can deliver a Content Security Policy to your website in three ways. 1. Content-Security-Policy
+  Header Send a Content-Se
+platforms:
+- web
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#Policy Delivery
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#Policy Delivery
+check: Policy Delivery You can deliver a Content Security Policy to your website in three ways. 1. Content-Security-Policy
+  Header Send a Content-Security-Policy HTTP response header from your web server. Using a header is the
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: Policy Delivery)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- policy
+- delivery
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: Policy Delivery
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

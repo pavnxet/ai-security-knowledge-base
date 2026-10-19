@@ -1,0 +1,56 @@
+id: SKB-CS-ABUSE-CASE-CHEAT-SHEET-SOURCES-OF-THE-SCHEMAS
+title: Sources of the schemas
+summary: Sources of the schemas All figures were created using <https://www.draw.io/ site and exported
+  (as PNG image) for integration into this artic
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Abuse_Case_Cheat_Sheet#Sources of the schemas
+refs:
+- CS:Abuse_Case_Cheat_Sheet#Sources of the schemas
+check: Sources of the schemas All figures were created using <https://www.draw.io/ site and exported (as
+  PNG image) for integration into this article. All XML descriptor files for each schema are available
+  below (using XML description, modification of the
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Abuse_Case_Cheat_Sheet.md (anchor: Sources of the schemas)
+  for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- sources
+- schemas
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Abuse_Case_Cheat_Sheet.md
+  anchor: Sources of the schemas
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Abuse_Case_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

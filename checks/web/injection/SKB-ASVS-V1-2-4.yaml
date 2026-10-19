@@ -1,0 +1,59 @@
+id: SKB-ASVS-V1-2-4
+title: Injection Prevention - V1.2.4
+summary: Verify that data selection or database queries (e.g., SQL, HQL, NoSQL, Cypher) use parameterized
+  queries, ORMs, entity frameworks, or are ot
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 80
+cwe:
+- CWE-306
+cwe_source: extracted
+owasp:
+- ASVS:V1.2.4
+refs:
+- ASVS:V1.2.4
+- ASVS V1.2.4
+check: Verify that data selection or database queries (e.g., SQL, HQL, NoSQL, Cypher) use parameterized
+  queries, ORMs, entity frameworks, or are otherwise protected from SQL Injection and other database injection
+  attacks. This is also relevant when writing stored procedures.
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V1.2.4) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V1.2.4
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

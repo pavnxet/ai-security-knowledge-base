@@ -1,0 +1,55 @@
+id: SKB-CS-CONTENT-SECURITY-POLICY-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This article brings forth a way to integrate the __defense in depth__ concept to
+  the client-side of web applications. By inject
+platforms:
+- web
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Content_Security_Policy_Cheat_Sheet#Introduction
+refs:
+- CS:Content_Security_Policy_Cheat_Sheet#Introduction
+check: Introduction This article brings forth a way to integrate the __defense in depth__ concept to the
+  client-side of web applications. By injecting the Content-Security-Policy (CSP) headers from the server,
+  the browser is aware and capable of protecting
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Content_Security_Policy_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

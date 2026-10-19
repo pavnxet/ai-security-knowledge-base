@@ -1,0 +1,58 @@
+id: SKB-ASVS-V1-2-2
+title: Injection Prevention - V1.2.2
+summary: Verify that when dynamically building URLs, untrusted data is encoded according to its context
+  (e.g., URL encoding or base64url encoding for
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: critical
+priority: 70
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V1.2.2
+refs:
+- ASVS:V1.2.2
+- ASVS V1.2.2
+check: 'Verify that when dynamically building URLs, untrusted data is encoded according to its context
+  (e.g., URL encoding or base64url encoding for query or path parameters). Ensure that only safe URL protocols
+  are permitted (e.g., disallow javascript: or data:).'
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V1.2.2) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V1.2.2
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

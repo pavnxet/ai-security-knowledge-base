@@ -1,0 +1,57 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-1-DOCUMENT-POISONING
+title: 'Section 1: Document Poisoning'
+summary: 'Section 1: Document Poisoning Document poisoning occurs when malicious content is injected into
+  the retrieval corpus. When the poisoned docu'
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 1: Document Poisoning'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 1: Document Poisoning'
+check: 'Section 1: Document Poisoning Document poisoning occurs when malicious content is injected into
+  the retrieval corpus. When the poisoned document is later retrieved by a query, the malicious content
+  is included in the la'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 1: Document
+  Poisoning) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- section
+- document
+- poisoning
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 1: Document Poisoning'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

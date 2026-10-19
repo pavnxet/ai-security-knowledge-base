@@ -1,0 +1,56 @@
+id: SKB-BASE-5-MISSING-WEAK-TLS
+title: 5. Missing / weak TLS
+summary: '5. Missing / weak TLS What: Old protocols ( ssl_protocols SSLv3 TLSv1 TLSv1.1 ), weak ciphers,
+  no HSTS. Fix: ssl_protocols TLSv1.2 TLSv1.3; '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:5. Missing / weak TLS
+refs:
+- BASE:5. Missing / weak TLS
+check: '5. Missing / weak TLS What: Old protocols ( ssl_protocols SSLv3 TLSv1 TLSv1.1 ), weak ciphers,
+  no HSTS. Fix: ssl_protocols TLSv1.2 TLSv1.3; modern ciphers; add_header Strict-Transport-Security "max-age=31536000"
+  always; . Detection: rg -n "ssl_protocols ssl_ciphers Strict'
+fix: 'See yesmayank/secure-coding-baseline 22-nginx.md (anchor: 5. Missing / weak TLS) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- missing
+- weak
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 22-nginx.md
+  anchor: 5. Missing / weak TLS
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/22-nginx.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

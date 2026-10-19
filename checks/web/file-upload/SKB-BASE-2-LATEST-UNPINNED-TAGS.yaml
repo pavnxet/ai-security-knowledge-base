@@ -1,0 +1,57 @@
+id: SKB-BASE-2-LATEST-UNPINNED-TAGS
+title: 2. `:latest` / unpinned tags
+summary: '2. :latest / unpinned tags What: FROM node:latest pulls whatever is current → supply-chain drift,
+  unreviewed base changes. Fix: Pin to a dig'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:2. `:latest` / unpinned tags
+refs:
+- BASE:2. `:latest` / unpinned tags
+check: '2. :latest / unpinned tags What: FROM node:latest pulls whatever is current → supply-chain drift,
+  unreviewed base changes. Fix: Pin to a digest or specific minor tag: FROM node:20.17-alpine@sha256:...
+  . Detection: rg -n "^FROM" Dockerfile ---'
+fix: 'See yesmayank/secure-coding-baseline 20-docker.md (anchor: 2. `:latest` / unpinned tags) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- latest
+- unpinned
+- tags
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 20-docker.md
+  anchor: 2. `:latest` / unpinned tags
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/20-docker.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-XML-SECURITY-CHEAT-SHEET-DEALING-WITH-INVALID-XML-DOCUMENTS
+title: Dealing with invalid XML documents
+summary: 'Dealing with invalid XML documents Attackers may introduce unexpected values in documents to
+  take advantage of an application that does not '
+platforms:
+- web
+stacks:
+- any
+domain: file-upload
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:XML_Security_Cheat_Sheet#Dealing with invalid XML documents
+refs:
+- CS:XML_Security_Cheat_Sheet#Dealing with invalid XML documents
+check: Dealing with invalid XML documents Attackers may introduce unexpected values in documents to take
+  advantage of an application that does not verify whether the document contains a valid set o
+fix: 'See OWASP/CheatSheetSeries cheatsheets/XML_Security_Cheat_Sheet.md (anchor: Dealing with invalid
+  XML documents) for remediation.'
+detect:
+  grep:
+  - upload
+  - move_uploaded_file
+  - save(
+  - multer
+  files:
+  - '**/upload*'
+  - '**/routes/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- file-upload
+- dealing
+- with
+- invalid
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/XML_Security_Cheat_Sheet.md
+  anchor: Dealing with invalid XML documents
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/XML_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

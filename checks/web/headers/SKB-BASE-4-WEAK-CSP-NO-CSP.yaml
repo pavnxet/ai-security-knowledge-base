@@ -1,0 +1,55 @@
+id: SKB-BASE-4-WEAK-CSP-NO-CSP
+title: 4. Weak CSP / no CSP
+summary: '4. Weak CSP / no CSP What: Without a Content-Security-Policy, injected scripts run freely. Fix:
+  Ship a strict CSP (nonce-based or hash-based'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:4. Weak CSP / no CSP
+refs:
+- BASE:4. Weak CSP / no CSP
+check: '4. Weak CSP / no CSP What: Without a Content-Security-Policy, injected scripts run freely. Fix:
+  Ship a strict CSP (nonce-based or hash-based for inline scripts); avoid unsafe-inline / unsafe-eval
+  . Detection: check index.html and server headers for Content-Security-Policy . ---'
+fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 4. Weak CSP / no CSP) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- weak
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 17-react-spa.md
+  anchor: 4. Weak CSP / no CSP
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/17-react-spa.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-CLICKJACKING-DEFENSE-CHEAT-SHEET-DEFENDING-WITH-X-FRAME-OPTIONS-RESPONSE
+title: Defending with X-Frame-Options Response Headers
+summary: Defending with X-Frame-Options Response Headers The X-Frame-Options HTTP response header can
+  be used to indicate whether or not a browser sh
+platforms:
+- web
+stacks:
+- any
+domain: headers
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe:
+- CWE-1021
+cwe_source: heuristic
+owasp:
+- 'CS:Clickjacking_Defense_Cheat_Sheet#Defending with X-Frame-Options Response '
+refs:
+- 'CS:Clickjacking_Defense_Cheat_Sheet#Defending with X-Frame-Options Response '
+check: Defending with X-Frame-Options Response Headers The X-Frame-Options HTTP response header can be
+  used to indicate whether or not
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Clickjacking_Defense_Cheat_Sheet.md (anchor: Defending with
+  X-Frame-Options Response Headers) for remediation.'
+detect:
+  grep:
+  - X-Frame-Options
+  - Content-Security-Policy
+  - helmet
+  files:
+  - '**/server*'
+  - '**/app*'
+  - '**/middleware/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- headers
+- defending
+- with
+- frame
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  anchor: Defending with X-Frame-Options Response Headers
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Clickjacking_Defense_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
