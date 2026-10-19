@@ -8,8 +8,8 @@ file, anchor and commit.
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
 
-[**Website →**](https://pavnxet.github.io/awesome-vulnerability-tests/) ·
-[Releases](https://github.com/pavnxet/awesome-vulnerability-tests/releases) ·
+[**Website →**](https://pavnxet.github.io/secure-kb/) ·
+[Releases](https://github.com/pavnxet/secure-kb/releases) ·
 [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 ---
@@ -28,8 +28,8 @@ Zero required dependencies (standard-library Python only). `index/` and `index/k
 themselves on first use.
 
 ```bash
-git clone https://github.com/pavnxet/awesome-vulnerability-tests.git
-cd awesome-vulnerability-tests
+git clone https://github.com/pavnxet/secure-kb.git
+cd secure-kb
 
 python3 cli/secure_kb.py detect /path/to/project
 python3 cli/secure_kb.py profile web --gate fast --format brief
@@ -60,7 +60,7 @@ The MCP server exposes `search_checks`, `get_check`, `profile_gate`, `detect_sta
 **Claude Code**
 
 ```bash
-claude mcp add secure-kb -- python3 /abs/path/to/awesome-vulnerability-tests/mcp/server.py
+claude mcp add secure-kb -- python3 /abs/path/to/secure-kb/mcp/server.py
 ```
 
 **Claude Desktop** (`claude_desktop_config.json`)
@@ -68,7 +68,7 @@ claude mcp add secure-kb -- python3 /abs/path/to/awesome-vulnerability-tests/mcp
 ```json
 { "mcpServers": { "secure-kb": {
   "command": "python3",
-  "args": ["/abs/path/to/awesome-vulnerability-tests/mcp/server.py"] } } }
+  "args": ["/abs/path/to/secure-kb/mcp/server.py"] } } }
 ```
 
 **Generic MCP client** — JSON-RPC 2.0 over stdio; `initialize` then `tools/call`.
