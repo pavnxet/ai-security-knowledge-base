@@ -1,0 +1,57 @@
+id: SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-TREAT-NEXT-JS-CONFIGURATION-AS-SECURITY
+title: Treat Next.js Configuration as Security Code
+summary: Treat Next.js Configuration as Security Code Review next.config. , Proxy matchers, and route
+  configuration with the same care as application
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Nextjs_Security_Cheat_Sheet#Treat Next.js Configuration as Security '
+refs:
+- 'CS:Nextjs_Security_Cheat_Sheet#Treat Next.js Configuration as Security '
+check: Treat Next.js Configuration as Security Code Review next.config. , Proxy matchers, and route configuration
+  with the same care as application handlers. Next.js [rewrites act as a URL proxy](
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Nextjs_Security_Cheat_Sheet.md (anchor: Treat Next.js Configuration
+  as Security Code) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- treat
+- next
+- configuration
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Nextjs_Security_Cheat_Sheet.md
+  anchor: Treat Next.js Configuration as Security Code
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Nextjs_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

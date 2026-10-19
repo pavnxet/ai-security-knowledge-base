@@ -1,0 +1,57 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-ARCHITECTURE-DESIGN
+title: Architecture & Design
+summary: 'Architecture & Design 1. Secure by Design - Opt for a secure design at the beginning of development,
+  not as an afterthought. - Keep in mind '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Architecture & Design
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Architecture & Design
+check: Architecture & Design 1. Secure by Design - Opt for a secure design at the beginning of development,
+  not as an afterthought. - Keep in mind security principles like least privilege, defense in depth, and
+  separation of co
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Architecture
+  & Design) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- architecture
+- design
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Architecture & Design
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

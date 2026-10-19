@@ -1,0 +1,57 @@
+id: SKB-CS-OAUTH2-CHEAT-SHEET-IMPLICIT-GRANT-DEPRECATED-DO-NOT-USE
+title: Implicit Grant (DEPRECATED — DO NOT USE)
+summary: Implicit Grant (DEPRECATED — DO NOT USE) The Implicit Grant ( response_type=token ) is deprecated
+  by [RFC 9700 §2.1.2](https://datatracker.i
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OAuth2_Cheat_Sheet#Implicit Grant (DEPRECATED — DO NOT USE)
+refs:
+- CS:OAuth2_Cheat_Sheet#Implicit Grant (DEPRECATED — DO NOT USE)
+check: Implicit Grant (DEPRECATED — DO NOT USE) The Implicit Grant ( response_type=token ) is deprecated
+  by [RFC 9700 §2.1.2](https://datatracker.ietf.org/doc/html/rfc
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OAuth2_Cheat_Sheet.md (anchor: Implicit Grant (DEPRECATED
+  — DO NOT USE)) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- implicit
+- grant
+- deprecated
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OAuth2_Cheat_Sheet.md
+  anchor: Implicit Grant (DEPRECATED — DO NOT USE)
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OAuth2_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-QUICK-RECOMMENDATIONS
+title: Quick Recommendations
+summary: Quick Recommendations Exactly when and how MFA is implemented in an application will vary on
+  a number of different factors, including the th
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Multifactor_Authentication_Cheat_Sheet#Quick Recommendations
+refs:
+- CS:Multifactor_Authentication_Cheat_Sheet#Quick Recommendations
+check: Quick Recommendations Exactly when and how MFA is implemented in an application will vary on a
+  number of different factors, including the threat model of the application, the technical level of the
+  users, and the level
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Multifactor_Authentication_Cheat_Sheet.md (anchor: Quick
+  Recommendations) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- quick
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  anchor: Quick Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

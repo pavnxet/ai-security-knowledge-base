@@ -1,0 +1,58 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-7-INDEX-INTEGRITY
+title: 'Section 7: Index Integrity'
+summary: 'Section 7: Index Integrity The vector index itself is a critical component. If an attacker can
+  modify the index, they can alter which docume'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 7: Index Integrity'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 7: Index Integrity'
+check: 'Section 7: Index Integrity The vector index itself is a critical component. If an attacker can
+  modify the index, they can alter which documents are retrieved for any query without modifying the documents
+  themselves. Most vector databases ship with m'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 7: Index Integrity)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- section
+- index
+- integrity
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 7: Index Integrity'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

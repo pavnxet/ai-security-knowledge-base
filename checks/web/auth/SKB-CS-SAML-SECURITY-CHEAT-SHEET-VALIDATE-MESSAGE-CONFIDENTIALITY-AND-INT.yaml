@@ -1,0 +1,57 @@
+id: SKB-CS-SAML-SECURITY-CHEAT-SHEET-VALIDATE-MESSAGE-CONFIDENTIALITY-AND-INT
+title: Validate Message Confidentiality and Integrity
+summary: Validate Message Confidentiality and Integrity [TLS 1.2](Transport_Layer_Security_Cheat_Sheet.md)
+  is the most common solution to guarantee m
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:SAML_Security_Cheat_Sheet#Validate Message Confidentiality and Int
+refs:
+- CS:SAML_Security_Cheat_Sheet#Validate Message Confidentiality and Int
+check: Validate Message Confidentiality and Integrity [TLS 1.2](Transport_Layer_Security_Cheat_Sheet.md)
+  is the most common solution to guarantee message confidentiali
+fix: 'See OWASP/CheatSheetSeries cheatsheets/SAML_Security_Cheat_Sheet.md (anchor: Validate Message Confidentiality
+  and Integrity) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- validate
+- message
+- confidentiality
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/SAML_Security_Cheat_Sheet.md
+  anchor: Validate Message Confidentiality and Integrity
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/SAML_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

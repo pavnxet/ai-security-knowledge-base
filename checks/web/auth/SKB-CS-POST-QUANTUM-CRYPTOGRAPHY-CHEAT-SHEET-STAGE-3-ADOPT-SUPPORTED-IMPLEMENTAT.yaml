@@ -1,0 +1,57 @@
+id: SKB-CS-POST-QUANTUM-CRYPTOGRAPHY-CHEAT-SHEET-STAGE-3-ADOPT-SUPPORTED-IMPLEMENTAT
+title: 'Stage 3: Adopt supported implementations'
+summary: 'Stage 3: Adopt supported implementations Upgrade maintained libraries and platform services
+  to implementations of standardized algorithms. S'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 3: Adopt supported implementations'
+refs:
+- 'CS:Post_Quantum_Cryptography_Cheat_Sheet#Stage 3: Adopt supported implementations'
+check: 'Stage 3: Adopt supported implementations Upgrade maintained libraries and platform services to
+  implementations of standardized algorithms. Select parameters'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md (anchor: Stage 3:
+  Adopt supported implementations) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- stage
+- adopt
+- supported
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  anchor: 'Stage 3: Adopt supported implementations'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Post_Quantum_Cryptography_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

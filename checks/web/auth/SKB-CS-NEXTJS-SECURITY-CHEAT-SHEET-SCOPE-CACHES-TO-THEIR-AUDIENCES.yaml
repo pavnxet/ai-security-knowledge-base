@@ -1,0 +1,58 @@
+id: SKB-CS-NEXTJS-SECURITY-CHEAT-SHEET-SCOPE-CACHES-TO-THEIR-AUDIENCES
+title: Scope Caches to Their Audiences
+summary: Scope Caches to Their Audiences Before caching a response or function result, classify its audience,
+  such as public, tenant-scoped, user-sco
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Nextjs_Security_Cheat_Sheet#Scope Caches to Their Audiences
+refs:
+- CS:Nextjs_Security_Cheat_Sheet#Scope Caches to Their Audiences
+check: Scope Caches to Their Audiences Before caching a response or function result, classify its audience,
+  such as public, tenant-scoped, user-scoped, permission-set, locale, cohort, or request-specific. A cache
+  entry must
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Nextjs_Security_Cheat_Sheet.md (anchor: Scope Caches to Their
+  Audiences) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- scope
+- caches
+- their
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Nextjs_Security_Cheat_Sheet.md
+  anchor: Scope Caches to Their Audiences
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Nextjs_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-SOMETHING-YOU-ARE
+title: Something You Are
+summary: Something You Are Inherence-based authentication is based on the physical attributes of the user.
+  This is less common for web applications a
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Multifactor_Authentication_Cheat_Sheet#Something You Are
+refs:
+- CS:Multifactor_Authentication_Cheat_Sheet#Something You Are
+check: Something You Are Inherence-based authentication is based on the physical attributes of the user.
+  This is less common for web applications as it requires the user to have specific hardware, and is often
+  considered to be the most invasive in terms of
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Multifactor_Authentication_Cheat_Sheet.md (anchor: Something
+  You Are) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- something
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  anchor: Something You Are
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

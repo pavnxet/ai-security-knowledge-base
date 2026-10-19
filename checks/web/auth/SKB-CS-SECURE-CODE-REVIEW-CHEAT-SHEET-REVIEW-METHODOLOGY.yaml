@@ -1,0 +1,57 @@
+id: SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REVIEW-METHODOLOGY
+title: Review Methodology
+summary: 'Review Methodology Preparation For All Reviews: - Understand application architecture and business
+  requirements - Gather [threat models](Thr'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Code_Review_Cheat_Sheet#Review Methodology
+refs:
+- CS:Secure_Code_Review_Cheat_Sheet#Review Methodology
+check: 'Review Methodology Preparation For All Reviews: - Understand application architecture and business
+  requirements - Gather [threat models](Threat_Modeling_Cheat_Sheet.md) and previous security findings
+  - Identify critical assets and high-risk functions'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Code_Review_Cheat_Sheet.md (anchor: Review Methodology)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- review
+- methodology
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  anchor: Review Methodology
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

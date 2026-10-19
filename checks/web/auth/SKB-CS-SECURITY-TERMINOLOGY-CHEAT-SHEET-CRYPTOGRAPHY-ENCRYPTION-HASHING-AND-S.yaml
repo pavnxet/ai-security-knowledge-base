@@ -1,0 +1,57 @@
+id: SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-CRYPTOGRAPHY-ENCRYPTION-HASHING-AND-S
+title: 'Cryptography: Encryption, Hashing, and Signatures'
+summary: 'Cryptography: Encryption, Hashing, and Signatures These terms relate to protecting the confidentiality,
+  integrity, and authenticity of data.'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Security_Terminology_Cheat_Sheet#Cryptography: Encryption, Hashing, and S'
+refs:
+- 'CS:Security_Terminology_Cheat_Sheet#Cryptography: Encryption, Hashing, and S'
+check: 'Cryptography: Encryption, Hashing, and Signatures These terms relate to protecting the confidentiality,
+  integrity, and authenticity of data. See the [Key Manage'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Security_Terminology_Cheat_Sheet.md (anchor: Cryptography:
+  Encryption, Hashing, and Signatures) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- cryptography
+- encryption
+- hashing
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Security_Terminology_Cheat_Sheet.md
+  anchor: 'Cryptography: Encryption, Hashing, and Signatures'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Security_Terminology_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

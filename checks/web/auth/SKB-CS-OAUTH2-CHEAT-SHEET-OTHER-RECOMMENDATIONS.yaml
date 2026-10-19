@@ -1,0 +1,57 @@
+id: SKB-CS-OAUTH2-CHEAT-SHEET-OTHER-RECOMMENDATIONS
+title: Other Recommendations
+summary: Other Recommendations 18. Authorization Servers do not allow clients to influence their "client_id"
+  or "sub" value or any other Claim that c
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:OAuth2_Cheat_Sheet#Other Recommendations
+refs:
+- CS:OAuth2_Cheat_Sheet#Other Recommendations
+check: Other Recommendations 18. Authorization Servers do not allow clients to influence their "client_id"
+  or "sub" value or any other Claim that can be confused with a genuine Resource Owner. It is recommended
+  to use end-to-end TLS. 19. Authorization resp
+fix: 'See OWASP/CheatSheetSeries cheatsheets/OAuth2_Cheat_Sheet.md (anchor: Other Recommendations) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- other
+- recommendations
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/OAuth2_Cheat_Sheet.md
+  anchor: Other Recommendations
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/OAuth2_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

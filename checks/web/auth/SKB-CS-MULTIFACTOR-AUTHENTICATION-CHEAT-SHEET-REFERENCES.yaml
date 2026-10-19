@@ -1,0 +1,69 @@
+id: SKB-CS-MULTIFACTOR-AUTHENTICATION-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [NIST SP 800-63B-4: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html)
+  - [W3C Web Aut'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Multifactor_Authentication_Cheat_Sheet#References
+refs:
+- CS:Multifactor_Authentication_Cheat_Sheet#References
+check: 'References - [NIST SP 800-63B-4: Authentication and Authenticator Management](https://pages.nist.gov/800-63-4/sp800-63b.html)
+  - [W3C Web Authentication Level 3](https://www.w3.org/TR/webauthn-3/) - [RFC 6238: Time-Based One-Time
+  Password Algorithm](https://datatrac'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Multifactor_Authentication_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Multifactor_Authentication_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Passkey_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Passkey_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
+merged_from:
+- SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-REFERENCES
+aliases:
+- SKB-CS-PASSKEY-SECURITY-CHEAT-SHEET-REFERENCES

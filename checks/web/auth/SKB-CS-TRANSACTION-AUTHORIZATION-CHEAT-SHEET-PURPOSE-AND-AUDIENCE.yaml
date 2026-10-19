@@ -1,0 +1,57 @@
+id: SKB-CS-TRANSACTION-AUTHORIZATION-CHEAT-SHEET-PURPOSE-AND-AUDIENCE
+title: Purpose and audience
+summary: Purpose and audience This cheat sheet discusses how developers can secure transaction authorizations
+  and prevent them from being bypassed. T
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Transaction_Authorization_Cheat_Sheet#Purpose and audience
+refs:
+- CS:Transaction_Authorization_Cheat_Sheet#Purpose and audience
+check: 'Purpose and audience This cheat sheet discusses how developers can secure transaction authorizations
+  and prevent them from being bypassed. These guidelines are for: - Banks - who must create functional
+  and non-functional requirements for transaction'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Transaction_Authorization_Cheat_Sheet.md (anchor: Purpose
+  and audience) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- purpose
+- audience
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Transaction_Authorization_Cheat_Sheet.md
+  anchor: Purpose and audience
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Transaction_Authorization_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

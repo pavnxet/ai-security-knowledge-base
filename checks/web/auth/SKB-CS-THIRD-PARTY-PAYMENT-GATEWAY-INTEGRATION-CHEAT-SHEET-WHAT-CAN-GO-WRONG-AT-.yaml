@@ -1,0 +1,57 @@
+id: SKB-CS-THIRD-PARTY-PAYMENT-GATEWAY-INTEGRATION-CHEAT-SHEET-WHAT-CAN-GO-WRONG-AT-
+title: What Can Go Wrong at Each Step and How to Prevent It
+summary: 'What Can Go Wrong at Each Step and How to Prevent It 1. Sending Order data Risks: - Price tampering
+  or product substitution via client-side '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Third_Party_Payment_Gateway_Integration_Cheat_Sheet#What Can Go Wrong at Each Step and How t
+refs:
+- CS:Third_Party_Payment_Gateway_Integration_Cheat_Sheet#What Can Go Wrong at Each Step and How t
+check: 'What Can Go Wrong at Each Step and How to Prevent It 1. Sending Order data Risks: - Price tampering
+  or product substitution via cl'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Third_Party_Payment_Gateway_Integration_Cheat_Sheet.md (anchor:
+  What Can Go Wrong at Each Step and How to Prevent It) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- what
+- wrong
+- each
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Third_Party_Payment_Gateway_Integration_Cheat_Sheet.md
+  anchor: What Can Go Wrong at Each Step and How to Prevent It
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Third_Party_Payment_Gateway_Integration_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

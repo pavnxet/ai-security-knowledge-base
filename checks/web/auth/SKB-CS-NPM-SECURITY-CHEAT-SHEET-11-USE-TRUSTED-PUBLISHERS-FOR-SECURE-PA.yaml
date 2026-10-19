@@ -1,0 +1,57 @@
+id: SKB-CS-NPM-SECURITY-CHEAT-SHEET-11-USE-TRUSTED-PUBLISHERS-FOR-SECURE-PA
+title: 11) Use trusted publishers for secure package publishing
+summary: 11) Use trusted publishers for secure package publishing Traditional npm publishing relies on
+  long-lived tokens that can be compromised or a
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NPM_Security_Cheat_Sheet#11) Use trusted publishers for secure pa
+refs:
+- CS:NPM_Security_Cheat_Sheet#11) Use trusted publishers for secure pa
+check: 11) Use trusted publishers for secure package publishing Traditional npm publishing relies on long-lived
+  tokens that can be compromised or accidentally exposed
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NPM_Security_Cheat_Sheet.md (anchor: 11) Use trusted publishers
+  for secure package publishing) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- trusted
+- publishers
+- secure
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NPM_Security_Cheat_Sheet.md
+  anchor: 11) Use trusted publishers for secure package publishing
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NPM_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

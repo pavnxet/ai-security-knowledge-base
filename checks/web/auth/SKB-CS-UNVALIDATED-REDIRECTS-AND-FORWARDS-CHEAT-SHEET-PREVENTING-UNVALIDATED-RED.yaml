@@ -1,0 +1,57 @@
+id: SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-PREVENTING-UNVALIDATED-RED
+title: Preventing Unvalidated Redirects and Forwards
+summary: 'Preventing Unvalidated Redirects and Forwards Safe use of redirects and forwards can be done
+  in a number of ways: - Simply avoid using redir'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#Preventing Unvalidated Redirects and For
+refs:
+- CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#Preventing Unvalidated Redirects and For
+check: 'Preventing Unvalidated Redirects and Forwards Safe use of redirects and forwards can be done in
+  a number of ways: - Simply avoid'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md (anchor:
+  Preventing Unvalidated Redirects and Forwards) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- preventing
+- unvalidated
+- redirects
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md
+  anchor: Preventing Unvalidated Redirects and Forwards
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

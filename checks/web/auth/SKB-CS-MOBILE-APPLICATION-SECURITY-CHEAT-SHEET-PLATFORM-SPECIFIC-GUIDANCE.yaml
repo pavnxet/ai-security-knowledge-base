@@ -1,0 +1,58 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-PLATFORM-SPECIFIC-GUIDANCE
+title: Platform-Specific Guidance
+summary: Platform-Specific Guidance Android - Use Android's ProGuard for code obfuscation. - Avoid storing
+  sensitive data in SharedPreferences. See t
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Platform-Specific Guidance
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Platform-Specific Guidance
+check: Platform-Specific Guidance Android - Use Android's ProGuard for code obfuscation. - Avoid storing
+  sensitive data in SharedPreferences. See the [Android docs](https://developer.android.com/topic/security/data)
+  on working
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Platform-Specific
+  Guidance) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- platform
+- specific
+- guidance
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Platform-Specific Guidance
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

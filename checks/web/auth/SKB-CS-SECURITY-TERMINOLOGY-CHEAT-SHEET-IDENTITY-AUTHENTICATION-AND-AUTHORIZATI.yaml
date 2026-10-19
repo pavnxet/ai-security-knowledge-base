@@ -1,0 +1,57 @@
+id: SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-IDENTITY-AUTHENTICATION-AND-AUTHORIZATI
+title: 'Identity: Authentication and Authorization'
+summary: 'Identity: Authentication and Authorization Authentication (AuthN) Definition: The process of
+  verifying who a user is. - Question: "Who are y'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Security_Terminology_Cheat_Sheet#Identity: Authentication and Authorizati'
+refs:
+- 'CS:Security_Terminology_Cheat_Sheet#Identity: Authentication and Authorizati'
+check: 'Identity: Authentication and Authorization Authentication (AuthN) Definition: The process of verifying
+  who a user is. - Question: "Who are you?" - Factors: Som'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Security_Terminology_Cheat_Sheet.md (anchor: Identity: Authentication
+  and Authorization) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- identity
+- authentication
+- authorization
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Security_Terminology_Cheat_Sheet.md
+  anchor: 'Identity: Authentication and Authorization'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Security_Terminology_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

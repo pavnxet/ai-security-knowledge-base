@@ -1,0 +1,56 @@
+id: SKB-CS-TRANSPORT-LAYER-SECURITY-CHEAT-SHEET-CERTIFICATES
+title: Certificates
+summary: Certificates Use Strong Keys and Protect Them The private key used to generate the cipher key
+  must be sufficiently strong for the anticipate
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Transport_Layer_Security_Cheat_Sheet#Certificates
+refs:
+- CS:Transport_Layer_Security_Cheat_Sheet#Certificates
+check: Certificates Use Strong Keys and Protect Them The private key used to generate the cipher key must
+  be sufficiently strong for the anticipated lifetime of the private key and corresponding certificate.
+  The current best practice is to select a key size of at least 2048 bits when u
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Transport_Layer_Security_Cheat_Sheet.md (anchor: Certificates)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- certificates
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Transport_Layer_Security_Cheat_Sheet.md
+  anchor: Certificates
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Transport_Layer_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

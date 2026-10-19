@@ -1,0 +1,57 @@
+id: SKB-CS-PINNING-CHEAT-SHEET-WHAT-S-THE-PROBLEM
+title: What's the problem
+summary: 'What''s the problem For baseline TLS configuration, see the [Transport Layer Security Cheat
+  Sheet](Transport_Layer_Security_Cheat_Sheet.md). '
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Pinning_Cheat_Sheet#What's the problem
+refs:
+- CS:Pinning_Cheat_Sheet#What's the problem
+check: What's the problem For baseline TLS configuration, see the [Transport Layer Security Cheat Sheet](Transport_Layer_Security_Cheat_Sheet.md).
+  Users, developers, and applications expect security on their communication channels, but some channels
+  may not meet this expectation. Channe
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Pinning_Cheat_Sheet.md (anchor: What''s the problem) for
+  remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- what
+- problem
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Pinning_Cheat_Sheet.md
+  anchor: What's the problem
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Pinning_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

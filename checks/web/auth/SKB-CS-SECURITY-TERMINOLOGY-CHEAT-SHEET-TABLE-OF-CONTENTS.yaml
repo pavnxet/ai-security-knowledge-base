@@ -1,0 +1,55 @@
+id: SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-TABLE-OF-CONTENTS
+title: Table of Contents
+summary: 'Table of Contents - [Data Handling: Encoding, Escaping, Sanitization, and Serialization]( data-handling-encoding-escaping-sanitization-and-s'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Security_Terminology_Cheat_Sheet#Table of Contents
+refs:
+- CS:Security_Terminology_Cheat_Sheet#Table of Contents
+check: 'Table of Contents - [Data Handling: Encoding, Escaping, Sanitization, and Serialization]( data-handling-encoding-escaping-sanitization-and-serialization)
+  - [Cryptography: Encryption, Hashing, and Signatures]( cryptography-encryption-hashing-and-sign'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Security_Terminology_Cheat_Sheet.md (anchor: Table of Contents)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- table
+- contents
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Security_Terminology_Cheat_Sheet.md
+  anchor: Table of Contents
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Security_Terminology_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

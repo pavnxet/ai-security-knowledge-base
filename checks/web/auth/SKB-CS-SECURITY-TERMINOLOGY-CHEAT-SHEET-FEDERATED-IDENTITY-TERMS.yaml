@@ -1,0 +1,58 @@
+id: SKB-CS-SECURITY-TERMINOLOGY-CHEAT-SHEET-FEDERATED-IDENTITY-TERMS
+title: Federated Identity Terms
+summary: 'Federated Identity Terms When working with OAuth2, SAML, or OIDC, these terms are frequently
+  used: Term Definition Context :--- :--- :--- Id'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Security_Terminology_Cheat_Sheet#Federated Identity Terms
+refs:
+- CS:Security_Terminology_Cheat_Sheet#Federated Identity Terms
+check: 'Federated Identity Terms When working with OAuth2, SAML, or OIDC, these terms are frequently used:
+  Term Definition Context :--- :--- :--- Identity Provider (IdP) The system that creates, maintains, and
+  manages identity i'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Security_Terminology_Cheat_Sheet.md (anchor: Federated Identity
+  Terms) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- federated
+- identity
+- terms
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Security_Terminology_Cheat_Sheet.md
+  anchor: Federated Identity Terms
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Security_Terminology_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

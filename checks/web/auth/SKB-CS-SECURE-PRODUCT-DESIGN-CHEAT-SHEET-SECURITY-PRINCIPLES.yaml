@@ -1,0 +1,57 @@
+id: SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-SECURITY-PRINCIPLES
+title: Security Principles
+summary: Security Principles 1. The principle of Least Privilege and Separation of Duties Least Privilege
+  is a security principle that states that us
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Product_Design_Cheat_Sheet#Security Principles
+refs:
+- CS:Secure_Product_Design_Cheat_Sheet#Security Principles
+check: Security Principles 1. The principle of Least Privilege and Separation of Duties Least Privilege
+  is a security principle that states that users should only be given the minimum amount of access necessary
+  to perform their job. This means that users sh
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Product_Design_Cheat_Sheet.md (anchor: Security Principles)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- security
+- principles
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  anchor: Security Principles
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,57 @@
+id: SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-UPDATING-RAILS-AND-HAVING-A-PROCESS-FOR
+title: Updating Rails and Having a Process for Updating Dependencies
+summary: Updating Rails and Having a Process for Updating Dependencies In early 2013, a number of critical
+  vulnerabilities were identified in the Rai
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:Ruby_on_Rails_Cheat_Sheet#Updating Rails and Having a Process for '
+refs:
+- 'CS:Ruby_on_Rails_Cheat_Sheet#Updating Rails and Having a Process for '
+check: Updating Rails and Having a Process for Updating Dependencies In early 2013, a number of critical
+  vulnerabilities were identified in the Rails Framework. Organ
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Ruby_on_Rails_Cheat_Sheet.md (anchor: Updating Rails and
+  Having a Process for Updating Dependencies) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- updating
+- rails
+- having
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  anchor: Updating Rails and Having a Process for Updating Dependencies
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

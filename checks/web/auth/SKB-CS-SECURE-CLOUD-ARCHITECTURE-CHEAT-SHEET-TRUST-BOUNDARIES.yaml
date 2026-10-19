@@ -1,0 +1,57 @@
+id: SKB-CS-SECURE-CLOUD-ARCHITECTURE-CHEAT-SHEET-TRUST-BOUNDARIES
+title: Trust Boundaries
+summary: Trust Boundaries Trust boundaries are connections between components within a system where a
+  trust decision has to be made by the components
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Cloud_Architecture_Cheat_Sheet#Trust Boundaries
+refs:
+- CS:Secure_Cloud_Architecture_Cheat_Sheet#Trust Boundaries
+check: Trust Boundaries Trust boundaries are connections between components within a system where a trust
+  decision has to be made by the components. Another way to phrase it, this boundary is a point where
+  two components with potentially different trust lev
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md (anchor: Trust Boundaries)
+  for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- trust
+- boundaries
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md
+  anchor: Trust Boundaries
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Cloud_Architecture_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

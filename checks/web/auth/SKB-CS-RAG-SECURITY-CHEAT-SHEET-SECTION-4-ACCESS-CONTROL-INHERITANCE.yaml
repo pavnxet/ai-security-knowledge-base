@@ -1,0 +1,58 @@
+id: SKB-CS-RAG-SECURITY-CHEAT-SHEET-SECTION-4-ACCESS-CONTROL-INHERITANCE
+title: 'Section 4: Access Control Inheritance'
+summary: 'Section 4: Access Control Inheritance Documents in the retrieval corpus often have access control
+  policies (classification levels, departmen'
+platforms:
+- web
+stacks:
+- any
+domain: auth
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 55
+cwe: []
+cwe_source: extracted
+owasp:
+- 'CS:RAG_Security_Cheat_Sheet#Section 4: Access Control Inheritance'
+refs:
+- 'CS:RAG_Security_Cheat_Sheet#Section 4: Access Control Inheritance'
+check: 'Section 4: Access Control Inheritance Documents in the retrieval corpus often have access control
+  policies (classification levels, department restrictions, role-based access). When documents are chunked
+  and embedded, th'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/RAG_Security_Cheat_Sheet.md (anchor: Section 4: Access Control
+  Inheritance) for remediation.'
+detect:
+  grep:
+  - password
+  - login
+  - jwt
+  - session
+  files:
+  - '**/auth/**'
+  - '**/*.py'
+  - '**/*.js'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- auth
+- section
+- access
+- control
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/RAG_Security_Cheat_Sheet.md
+  anchor: 'Section 4: Access Control Inheritance'
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/RAG_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
