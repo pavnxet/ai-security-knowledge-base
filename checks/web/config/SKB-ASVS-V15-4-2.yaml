@@ -1,0 +1,58 @@
+id: SKB-ASVS-V15-4-2
+title: Safe Concurrency - V15.4.2
+summary: Verify that checks on a resource's state, such as its existence or permissions, and the actions
+  that depend on them are performed as a singl
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- ASVS:V15.4.2
+refs:
+- ASVS:V15.4.2
+- ASVS V15.4.2
+check: Verify that checks on a resource's state, such as its existence or permissions, and the actions
+  that depend on them are performed as a single atomic operation to prevent time-of-check to time-of-use
+  (TOCTOU) race conditions. For example, checking if a file exists before
+fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
+  V15.4.2) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+sources:
+- repo: OWASP/ASVS
+  path: 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  anchor: V15.4.2
+  commit: 2b47a9dd16760ee484a6672d197f1f7e25d9c632
+  url: https://github.com/OWASP/ASVS/blob/2b47a9dd16760ee484a6672d197f1f7e25d9c632/5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
