@@ -1,0 +1,56 @@
+id: SKB-CS-NODEJS-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: References - [Node.js Security Best Practices](https://nodejs.org/learn/getting-started/security-best-practices)
+  - [Node.js Permissions](htt
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Nodejs_Security_Cheat_Sheet#References
+refs:
+- CS:Nodejs_Security_Cheat_Sheet#References
+check: 'References - [Node.js Security Best Practices](https://nodejs.org/learn/getting-started/security-best-practices)
+  - [Node.js Permissions](https://nodejs.org/api/permissions.html) - [Express: Production Security Best
+  Practices](https://expressjs.com/en/adv'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Nodejs_Security_Cheat_Sheet.md (anchor: References) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Nodejs_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Nodejs_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

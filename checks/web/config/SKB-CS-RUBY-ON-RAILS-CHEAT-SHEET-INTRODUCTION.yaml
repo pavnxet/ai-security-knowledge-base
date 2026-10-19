@@ -1,0 +1,56 @@
+id: SKB-CS-RUBY-ON-RAILS-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction This Cheatsheet intends to provide quick basic Ruby on Rails security tips for developers.
+  It complements, augments or emphasiz
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Ruby_on_Rails_Cheat_Sheet#Introduction
+refs:
+- CS:Ruby_on_Rails_Cheat_Sheet#Introduction
+check: Introduction This Cheatsheet intends to provide quick basic Ruby on Rails security tips for developers.
+  It complements, augments or emphasizes points brought up in the [Rails security guide](https://guides.rubyonrails.org/security.html)
+  from rails co
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Ruby_on_Rails_Cheat_Sheet.md (anchor: Introduction) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Ruby_on_Rails_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

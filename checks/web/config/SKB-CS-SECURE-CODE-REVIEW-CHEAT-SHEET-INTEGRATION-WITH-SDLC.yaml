@@ -1,0 +1,59 @@
+id: SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-INTEGRATION-WITH-SDLC
+title: Integration with SDLC
+summary: 'Integration with SDLC Review Timing Baseline Review Integration - Project Initiation : Comprehensive
+  security assessment of existing codebas'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Code_Review_Cheat_Sheet#Integration with SDLC
+refs:
+- CS:Secure_Code_Review_Cheat_Sheet#Integration with SDLC
+check: 'Integration with SDLC Review Timing Baseline Review Integration - Project Initiation : Comprehensive
+  security assessment of existing codebase - Major Releases : Full security review before significant
+  version releases -'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Code_Review_Cheat_Sheet.md (anchor: Integration with
+  SDLC) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- integration
+- with
+- sdlc
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  anchor: Integration with SDLC
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

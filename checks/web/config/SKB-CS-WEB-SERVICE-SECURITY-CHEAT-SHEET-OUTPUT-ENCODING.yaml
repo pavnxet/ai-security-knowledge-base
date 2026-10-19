@@ -1,0 +1,58 @@
+id: SKB-CS-WEB-SERVICE-SECURITY-CHEAT-SHEET-OUTPUT-ENCODING
+title: Output Encoding
+summary: 'Output Encoding Web services need to ensure that the output sent to clients is encoded to be
+  consumed as data and not as scripts. This gets '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Service_Security_Cheat_Sheet#Output Encoding
+refs:
+- CS:Web_Service_Security_Cheat_Sheet#Output Encoding
+check: Output Encoding Web services need to ensure that the output sent to clients is encoded to be consumed
+  as data and not as scripts. This gets pretty important when web service clients use the output to render
+  HTML pages ei
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Service_Security_Cheat_Sheet.md (anchor: Output Encoding)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- output
+- encoding
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  anchor: Output Encoding
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Service_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

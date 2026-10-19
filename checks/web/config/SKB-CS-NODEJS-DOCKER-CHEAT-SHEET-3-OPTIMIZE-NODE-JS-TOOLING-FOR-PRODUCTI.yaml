@@ -1,0 +1,58 @@
+id: SKB-CS-NODEJS-DOCKER-CHEAT-SHEET-3-OPTIMIZE-NODE-JS-TOOLING-FOR-PRODUCTI
+title: 3) Optimize Node.js tooling for production
+summary: 3) Optimize Node.js tooling for production When you build your Node.js Docker image for production,
+  you want to ensure that all frameworks a
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:NodeJS_Docker_Cheat_Sheet#3) Optimize Node.js tooling for producti
+refs:
+- CS:NodeJS_Docker_Cheat_Sheet#3) Optimize Node.js tooling for producti
+check: 3) Optimize Node.js tooling for production When you build your Node.js Docker image for production,
+  you want to ensure that all frameworks and libraries are
+fix: 'See OWASP/CheatSheetSeries cheatsheets/NodeJS_Docker_Cheat_Sheet.md (anchor: 3) Optimize Node.js
+  tooling for production) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- optimize
+- node
+- tooling
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  anchor: 3) Optimize Node.js tooling for production
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/NodeJS_Docker_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

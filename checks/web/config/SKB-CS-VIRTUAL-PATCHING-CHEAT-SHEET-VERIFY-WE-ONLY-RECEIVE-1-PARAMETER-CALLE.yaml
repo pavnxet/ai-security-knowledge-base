@@ -1,0 +1,56 @@
+id: SKB-CS-VIRTUAL-PATCHING-CHEAT-SHEET-VERIFY-WE-ONLY-RECEIVE-1-PARAMETER-CALLE
+title: Verify we only receive 1 parameter called "reqID"
+summary: Verify we only receive 1 parameter called "reqID"
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Virtual_Patching_Cheat_Sheet#Verify we only receive 1 parameter calle
+refs:
+- CS:Virtual_Patching_Cheat_Sheet#Verify we only receive 1 parameter calle
+check: Verify we only receive 1 parameter called "reqID"
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Virtual_Patching_Cheat_Sheet.md (anchor: Verify we only receive
+  1 parameter called "reqID") for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- verify
+- only
+- receive
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  anchor: Verify we only receive 1 parameter called "reqID"
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Virtual_Patching_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

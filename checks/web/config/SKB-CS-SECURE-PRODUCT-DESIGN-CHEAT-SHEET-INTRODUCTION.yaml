@@ -1,0 +1,57 @@
+id: SKB-CS-SECURE-PRODUCT-DESIGN-CHEAT-SHEET-INTRODUCTION
+title: Introduction
+summary: Introduction The purpose of Secure Product Design is to ensure that all products meet or exceed
+  the security requirements laid down by the o
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Product_Design_Cheat_Sheet#Introduction
+refs:
+- CS:Secure_Product_Design_Cheat_Sheet#Introduction
+check: Introduction The purpose of Secure Product Design is to ensure that all products meet or exceed
+  the security requirements laid down by the organization as part of the development lifecycle and to
+  ensure that all security decisions made about the p
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Product_Design_Cheat_Sheet.md (anchor: Introduction)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- introduction
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  anchor: Introduction
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Product_Design_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

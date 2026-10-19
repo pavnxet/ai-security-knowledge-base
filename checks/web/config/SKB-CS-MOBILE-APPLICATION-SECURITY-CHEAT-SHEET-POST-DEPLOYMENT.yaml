@@ -1,0 +1,58 @@
+id: SKB-CS-MOBILE-APPLICATION-SECURITY-CHEAT-SHEET-POST-DEPLOYMENT
+title: Post-Deployment
+summary: Post-Deployment 1. Incident Response - Have a clear incident response plan in place. 2. Updates
+  - Plan for regular updates and patches. In t
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Mobile_Application_Security_Cheat_Sheet#Post-Deployment
+refs:
+- CS:Mobile_Application_Security_Cheat_Sheet#Post-Deployment
+check: Post-Deployment 1. Incident Response - Have a clear incident response plan in place. 2. Updates
+  - Plan for regular updates and patches. In the case of mobile apps, this is especially important due
+  to the delay between wh
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Mobile_Application_Security_Cheat_Sheet.md (anchor: Post-Deployment)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- post
+- deployment
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  anchor: Post-Deployment
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Mobile_Application_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

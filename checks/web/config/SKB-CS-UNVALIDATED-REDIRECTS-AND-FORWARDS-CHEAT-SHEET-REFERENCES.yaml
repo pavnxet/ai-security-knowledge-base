@@ -1,0 +1,56 @@
+id: SKB-CS-UNVALIDATED-REDIRECTS-AND-FORWARDS-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [CWE Entry 601 on Open Redirects](https://cwe.mitre.org/data/definitions/601.html)
+  - [Microsoft: Prevent Open Redirect Attacks '
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#References
+refs:
+- CS:Unvalidated_Redirects_and_Forwards_Cheat_Sheet#References
+check: 'References - [CWE Entry 601 on Open Redirects](https://cwe.mitre.org/data/definitions/601.html)
+  - [Microsoft: Prevent Open Redirect Attacks in ASP.NET Core](https://learn.microsoft.com/en-us/aspnet/core/security/preventing-open-r'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md (anchor:
+  References) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,56 @@
+id: SKB-CS-PROTOTYPE-POLLUTION-PREVENTION-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [MDN: JavaScript prototype pollution](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/Prototype_pollution)
+  - [Nod'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Prototype_Pollution_Prevention_Cheat_Sheet#References
+refs:
+- CS:Prototype_Pollution_Prevention_Cheat_Sheet#References
+check: 'References - [MDN: JavaScript prototype pollution](https://developer.mozilla.org/en-US/docs/Web/Security/Attacks/Prototype_pollution)
+  - [Node.js: Command-line API](https://nodejs.org/download/release/v26.5.1/docs/api/cli.html)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

@@ -1,0 +1,55 @@
+id: SKB-CS-SECURE-CODE-REVIEW-CHEAT-SHEET-REFERENCES
+title: References
+summary: References - [OWASP Code Review Guide, Version 2](https://raw.githubusercontent.com/OWASP/www-project-code-review-guide/master/assets/OWASP_
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Secure_Code_Review_Cheat_Sheet#References
+refs:
+- CS:Secure_Code_Review_Cheat_Sheet#References
+check: 'References - [OWASP Code Review Guide, Version 2](https://raw.githubusercontent.com/OWASP/www-project-code-review-guide/master/assets/OWASP_Code_Review_Guide_v2.pdf)
+  - [NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1](https://nvlpub'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Secure_Code_Review_Cheat_Sheet.md (anchor: References) for
+  remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Secure_Code_Review_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

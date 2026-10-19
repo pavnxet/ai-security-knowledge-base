@@ -1,0 +1,56 @@
+id: SKB-CS-THREAT-MODELING-CHEAT-SHEET-ADVANTAGES
+title: Advantages
+summary: 'Advantages Before turning to an overview of the process, it may be worth addressing the question:
+  why threat model? Why bother adding more w'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Threat_Modeling_Cheat_Sheet#Advantages
+refs:
+- CS:Threat_Modeling_Cheat_Sheet#Advantages
+check: 'Advantages Before turning to an overview of the process, it may be worth addressing the question:
+  why threat model? Why bother adding more work to the development process? What are the benefits? The
+  following section will briefly outline some answer'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Threat_Modeling_Cheat_Sheet.md (anchor: Advantages) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- advantages
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Threat_Modeling_Cheat_Sheet.md
+  anchor: Advantages
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Threat_Modeling_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'

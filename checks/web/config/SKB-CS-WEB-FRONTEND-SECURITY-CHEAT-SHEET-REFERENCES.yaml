@@ -1,0 +1,56 @@
+id: SKB-CS-WEB-FRONTEND-SECURITY-CHEAT-SHEET-REFERENCES
+title: References
+summary: 'References - [MDN: innerHTML Security Considerations](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+  security_considerat'
+platforms:
+- web
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 40
+cwe: []
+cwe_source: extracted
+owasp:
+- CS:Web_Frontend_Security_Cheat_Sheet#References
+refs:
+- CS:Web_Frontend_Security_Cheat_Sheet#References
+check: 'References - [MDN: innerHTML Security Considerations](https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+  security_considerations) - [DOMPurify: HTML Sanitization](https://github.com/cure53/DOMPurify what-does-it-do)'
+fix: 'See OWASP/CheatSheetSeries cheatsheets/Web_Frontend_Security_Cheat_Sheet.md (anchor: References)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- references
+sources:
+- repo: OWASP/CheatSheetSeries
+  path: cheatsheets/Web_Frontend_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/Web_Frontend_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-19'
