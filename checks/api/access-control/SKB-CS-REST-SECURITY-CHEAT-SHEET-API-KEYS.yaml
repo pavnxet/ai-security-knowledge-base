@@ -12,16 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-798
+cwe_source: mapped
 owasp:
 - CS:REST_Security_Cheat_Sheet#API Keys
 refs:
 - CS:REST_Security_Cheat_Sheet#API Keys
 check: API Keys Public REST services without access control run the risk of being farmed leading to excessive
   bills for bandwidth or compute cycles. API keys can be used to mitigate this risk. They are also often
-  used by organization to monetize APIs; instead of blocking high-frequency
+  used by organization to monetize APIs; inst
 fix: 'See OWASP/CheatSheetSeries cheatsheets/REST_Security_Cheat_Sheet.md (anchor: API Keys) for remediation.'
 detect:
   grep:

@@ -13,8 +13,10 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-204
+- CWE-307
+cwe_source: mapped
 owasp:
 - API2:2023
 refs:
@@ -49,9 +51,22 @@ sources:
   type: github
   extraction: programmatic
   verified: true
+- repo: OWASP/API-Security
+  path: editions/2023/en/0xa8-security-misconfiguration.md
+  anchor: API8:2023
+  commit: 33cea37b2ffde3e2e62f6b5d79a029a22a846633
+  url: https://github.com/OWASP/API-Security/blob/33cea37b2ffde3e2e62f6b5d79a029a22a846633/editions/2023/en/0xa8-security-misconfiguration.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
 last_verified: '2026-10-19'
+merged_from:
+- SKB-API-API8-2023
+aliases:
+- SKB-API-API8-2023

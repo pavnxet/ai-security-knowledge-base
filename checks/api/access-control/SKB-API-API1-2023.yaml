@@ -13,15 +13,16 @@ phase:
 - full-audit
 severity: critical
 priority: 85
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-285
+- CWE-639
+cwe_source: mapped
 owasp:
 - API1:2023
 refs:
 - API1:2023
 check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
-  Prevalence Widespread : Detectability Easy Technical Moderate : Business Specific Attackers can exploit
-  API endpoints that'
+  Prevalence Widespread : Detectability Easy Technical Moderate : Business Specific Attackers'
 fix: 'See OWASP/API-Security editions/2023/en/0xa1-broken-object-level-authorization.md (anchor: API1:2023)
   for remediation.'
 detect:

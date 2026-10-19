@@ -1,55 +1,55 @@
 {
-  "cards": 2108,
+  "cards": 2032,
   "heldout": {
     "all": {
       "set": "all",
       "n": 154,
-      "recall@5": 0.584,
-      "recall@10": 0.617,
-      "mrr": 0.55,
-      "p50_ms": 61.06,
-      "p95_ms": 83.19,
-      "avg_tokens": 45.8
+      "recall@5": 0.708,
+      "recall@10": 0.727,
+      "mrr": 0.673,
+      "p50_ms": 55.81,
+      "p95_ms": 71.61,
+      "avg_tokens": 91.6
     },
     "curated_v1": {
       "set": "curated",
       "n": 59,
-      "recall@5": 0.271,
-      "recall@10": 0.305,
-      "mrr": 0.214,
-      "p50_ms": 53.64,
-      "p95_ms": 76.79,
-      "avg_tokens": 46.3
+      "recall@5": 0.373,
+      "recall@10": 0.407,
+      "mrr": 0.319,
+      "p50_ms": 40.6,
+      "p95_ms": 68.07,
+      "avg_tokens": 111.2
     },
     "curated_v2": {
       "set": "curated_v2",
       "n": 59,
-      "recall@5": 0.424,
-      "recall@10": 0.559,
-      "mrr": 0.272,
-      "p50_ms": 61.59,
-      "p95_ms": 85.07,
-      "avg_tokens": 46.3
+      "recall@5": 0.492,
+      "recall@10": 0.593,
+      "mrr": 0.307,
+      "p50_ms": 39.74,
+      "p95_ms": 66.11,
+      "avg_tokens": 111.2
     },
     "v2_dev": {
       "set": "v2_dev",
       "n": 40,
-      "recall@5": 0.25,
-      "recall@10": 0.3,
-      "mrr": 0.237,
-      "p50_ms": 57.93,
-      "p95_ms": 110.01,
-      "avg_tokens": 46.5
+      "recall@5": 0.6,
+      "recall@10": 0.65,
+      "mrr": 0.578,
+      "p50_ms": 45.25,
+      "p95_ms": 63.66,
+      "avg_tokens": 112.5
     },
     "templated": {
       "set": "templated",
       "n": 95,
-      "recall@5": 0.779,
-      "recall@10": 0.811,
-      "mrr": 0.759,
-      "p50_ms": 76.77,
-      "p95_ms": 101.49,
-      "avg_tokens": 45.5
+      "recall@5": 0.916,
+      "recall@10": 0.926,
+      "mrr": 0.894,
+      "p50_ms": 60.6,
+      "p95_ms": 77.59,
+      "avg_tokens": 79.5
     },
     "user": {
       "set": "user",
@@ -59,9 +59,9 @@
   },
   "lab_coverage": {
     "classes": 30,
-    "covered": 22,
-    "coverage_pct": 73.3,
-    "in_fast_gate": 7,
-    "gate_recall_pct": 23.3
+    "covered": 29,
+    "coverage_pct": 96.7,
+    "in_fast_gate": 18,
+    "gate_recall_pct": 60.0
   }
 }

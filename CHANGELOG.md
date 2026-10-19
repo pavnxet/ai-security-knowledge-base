@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.9.2] — beta
+### Added
+- **R1c: official CWE mapping.** Cards now carry CWEs from official sources only — ASVS→CWE,
+  OWASP Top 10 per-category CWE lists, API Top 10 per-category lists, CWEs cited in each card's own
+  source document, and official CWE-title matches — tagged `cwe_source: mapped`. See `docs/CWE.md`.
+- `scripts/cwe_audit.py` — per-rule n + topicality audit, written to `bench/cwe_audit.json`.
+### Changed
+- **Held-out all recall@5 0.662 → 0.708 (target met); v2_dev 0.25 → 0.60 (target met);
+  fast-gate recall 26.7% → 60.0%; lab-class coverage 73.3% → 96.7%.** Corpus 2,057 → 2,032 cards
+  (more merges, since dedupe may use mapped CWEs).
+
 ## [0.9.1] — beta
 ### Added
 - **Verifiable Security Attestation (VSA)** — `secure-kb attest` / `verify-attestation`, and the

@@ -12,16 +12,18 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-400
+- CWE-770
+- CWE-799
+cwe_source: mapped
 owasp:
 - API4:2023
 refs:
 - API4:2023
 check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Average
-  Prevalence Widespread : Detectability Easy Technical Severe : Business Specific Exploitation requires
-  simple API requests'
+  Prevalence Widespread : Detectability Easy Technical Severe : Business Specific Exploitatio'
 fix: 'See OWASP/API-Security editions/2023/en/0xa4-unrestricted-resource-consumption.md (anchor: API4:2023)
   for remediation.'
 detect:

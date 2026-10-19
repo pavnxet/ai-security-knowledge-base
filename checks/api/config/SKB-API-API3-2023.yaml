@@ -13,15 +13,16 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-213
+- CWE-915
+cwe_source: mapped
 owasp:
 - API3:2023
 refs:
 - API3:2023
 check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
-  Prevalence Common : Detectability Easy Technical Moderate : Business Specific APIs tend to expose endpoints
-  that return all'
+  Prevalence Common : Detectability Easy Technical Moderate : Business Specific APIs tend to ex'
 fix: 'See OWASP/API-Security editions/2023/en/0xa3-broken-object-property-level-authorization.md (anchor:
   API3:2023) for remediation.'
 detect:
@@ -51,9 +52,22 @@ sources:
   type: github
   extraction: programmatic
   verified: true
+- repo: OWASP/API-Security
+  path: editions/2023/en/0xa5-broken-function-level-authorization.md
+  anchor: API5:2023
+  commit: 33cea37b2ffde3e2e62f6b5d79a029a22a846633
+  url: https://github.com/OWASP/API-Security/blob/33cea37b2ffde3e2e62f6b5d79a029a22a846633/editions/2023/en/0xa5-broken-function-level-authorization.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
 last_verified: '2026-10-19'
+merged_from:
+- SKB-API-API5-2023
+aliases:
+- SKB-API-API5-2023

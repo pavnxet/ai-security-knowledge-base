@@ -13,15 +13,16 @@ phase:
 - full-audit
 severity: medium
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1059
+cwe_source: mapped
 owasp:
 - API9:2023
 refs:
 - API9:2023
 check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
   Prevalence Widespread : Detectability Average Technical Moderate : Business Specific Threat agents usually
-  get unauthorized access through old API version'
+  get unauthorized'
 fix: 'See OWASP/API-Security editions/2023/en/0xa9-improper-inventory-management.md (anchor: API9:2023)
   for remediation.'
 detect:

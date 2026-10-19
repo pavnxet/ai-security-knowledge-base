@@ -1,0 +1,219 @@
+[
+  {
+    "cwe": "CWE-79",
+    "rule": "cross-?site scripting|xss",
+    "n": 41,
+    "title_hit": 0.805,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-770",
+    "rule": "rate limit|resource consumption|denial of service",
+    "n": 36,
+    "title_hit": 0.75,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-798",
+    "rule": "hard-?coded (credential|secret|password|key)|secrets? (in|committed|bundled|leak)|api key",
+    "n": 32,
+    "title_hit": 0.75,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-352",
+    "rule": "cross-?site request forgery|csrf|xsrf",
+    "n": 30,
+    "title_hit": 0.633,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-89",
+    "rule": "sql injection|sqli",
+    "n": 29,
+    "title_hit": 0.862,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-502",
+    "rule": "deserializ|pickle|unserialize",
+    "n": 19,
+    "title_hit": 0.947,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-639",
+    "rule": "idor|object level authoriz|bola|object reference",
+    "n": 19,
+    "title_hit": 0.947,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-1357",
+    "rule": "supply chain|dependency confusion|typosquat",
+    "n": 19,
+    "title_hit": 0.842,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-918",
+    "rule": "server-?side request forgery|ssrf",
+    "n": 16,
+    "title_hit": 0.875,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-434",
+    "rule": "file upload|unrestricted upload",
+    "n": 16,
+    "title_hit": 0.875,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-915",
+    "rule": "mass assignment",
+    "n": 15,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-307",
+    "rule": "brute force|credential stuffing",
+    "n": 13,
+    "title_hit": 0.692,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-22",
+    "rule": "path traversal|directory traversal",
+    "n": 11,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-601",
+    "rule": "unvalidated redirect|open redirect",
+    "n": 10,
+    "title_hit": 0.9,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-78",
+    "rule": "os command injection|command injection",
+    "n": 10,
+    "title_hit": 0.9,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-1321",
+    "rule": "prototype pollution",
+    "n": 9,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-1021",
+    "rule": "clickjack",
+    "n": 9,
+    "title_hit": 0.889,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-306",
+    "rule": "missing authentication|no authentication|without authentication|unauthenticated",
+    "n": 8,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-611",
+    "rule": "xml external entit|xxe",
+    "n": 7,
+    "title_hit": 0.714,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-250",
+    "rule": "run(n?ing)? as root|non-?root|runasuser|privileged (container|mode)",
+    "n": 6,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-330",
+    "rule": "weak (crypt|hash|random)|insufficient entropy",
+    "n": 5,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-362",
+    "rule": "race condition|toctou",
+    "n": 5,
+    "title_hit": 0.8,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-319",
+    "rule": "cleartext|plaintext (transmission|traffic)|no tls",
+    "n": 4,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-190",
+    "rule": "integer overflow|integer underflow|overflow and underflow",
+    "n": 3,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-269",
+    "rule": "privilege escalation",
+    "n": 3,
+    "title_hit": 0.667,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-1104",
+    "rule": "unmaintained|outdated (component|dependency|package)|vulnerable (dependency|dependencies|component)",
+    "n": 3,
+    "title_hit": 0.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-841",
+    "rule": "reentrancy|reentrant",
+    "n": 2,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-532",
+    "rule": "sensitive (information|data) (in|to) log|logging sensitive",
+    "n": 2,
+    "title_hit": 1.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-120",
+    "rule": "buffer overflow",
+    "n": 0,
+    "title_hit": 0.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-416",
+    "rule": "use after free",
+    "n": 0,
+    "title_hit": 0.0,
+    "eligible": false
+  },
+  {
+    "cwe": "CWE-20",
+    "rule": "improper (input )?validation",
+    "n": 0,
+    "title_hit": 0.0,
+    "eligible": false
+  }
+]

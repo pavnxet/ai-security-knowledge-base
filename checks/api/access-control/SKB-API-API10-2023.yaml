@@ -13,15 +13,18 @@ phase:
 - full-audit
 severity: high
 priority: 70
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-20
+- CWE-200
+- CWE-319
+cwe_source: mapped
 owasp:
 - API10:2023
 refs:
 - API10:2023
 check: 'Threat agents/Attack vectors Security Weakness Impacts - - - API Specific : Exploitability Easy
   Prevalence Common : Detectability Average Technical Severe : Business Specific Exploiting this issue
-  requires attackers to identify and potentially comp'
+  requires attackers to'
 fix: 'See OWASP/API-Security editions/2023/en/0xaa-unsafe-consumption-of-apis.md (anchor: API10:2023)
   for remediation.'
 detect:

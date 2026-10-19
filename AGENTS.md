@@ -4,7 +4,7 @@ Security verification knowledge base. **Read this file only, then follow the 5 s
 the whole repo. Everything here works with zero install.
 
 ## What this is
-2,057 atomic "check cards", each one thing to verify in a codebase. Cards live in `checks/<platform>/<domain>/*.yaml`. The index ships as shards
+2,032 atomic "check cards", each one thing to verify in a codebase. Cards live in `checks/<platform>/<domain>/*.yaml`. The index ships as shards
 `index/checks/part-*.jsonl` (one JSON per line); `index/kb.sqlite` (FTS5), `index/by_*.json` and
 `index/router.json` are built on first use (not committed).
 

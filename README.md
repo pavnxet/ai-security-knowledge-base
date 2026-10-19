@@ -4,7 +4,7 @@
 
 > Keywords: AI security · AI agent security · OWASP ASVS · WSTG · MASTG · Top 10 · LLM security · prompt injection · secure code review · AppSec · DevSecOps · MCP · Claude · Cursor
 
-2,057 atomic check cards distilled from 67 **tracked sources** — cards are drawn from 15 public
+2,032 atomic check cards distilled from 67 **tracked sources** — cards are drawn from 15 public
 repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
@@ -110,7 +110,7 @@ See [`docs/ATTESTATION.md`](docs/ATTESTATION.md). Also available over MCP as `at
 | OWASP Top 10 / LLM Top 10 / API Top 10 | 10 / 10 / 9 | CC BY-SA 4.0 |
 | mgreiler/secure-code-review-checklist (Tier-2) | 8 | see `LICENSES/` |
 | Authored (Telegram, Chrome, Electron — official docs) | 15 | CC BY-SA 4.0 |
-| **Total** | **2,057** | |
+| **Total** | **2,032** | |
 
 Cards use **source-identity IDs** — `SKB-<SRC>-<official-id>` (e.g. `SKB-ASVS-V3-4-5`,
 `SKB-WSTG-INFO-01`) or a short hash of `repo|path|anchor`. Merged cards keep every member id in
@@ -122,12 +122,12 @@ Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as mea
 
 | Set | n | recall@5 | Target | Status |
 |---|---|---|---|---|
-| Held-out (all) | 154 | **0.66** | ≥ 0.70 | below |
-| Curated v2 (standards-derived) | 59 | **0.44** | ≥ 0.60 | below |
-| v2_dev (developer vocabulary) | 40 | **0.25** | ≥ 0.60 | below |
+| Held-out (all) | 154 | **0.71** | ≥ 0.70 | met |
+| Curated v2 (standards-derived) | 59 | **0.49** | ≥ 0.60 | below |
+| v2_dev (developer vocabulary) | 40 | **0.60** | ≥ 0.60 | met |
 | Curated v1 | 59 | **0.25** | — | reference |
 | Templated | 95 | **0.92** | ≥ 0.90 | met |
-| Fast-gate recall (strict) | 30 | **26.7%** | ≥ 0.70 | below |
+| Fast-gate recall (strict) | 30 | **60.0%** | ≥ 0.70 | below |
 
 Determinism: two consecutive rebuilds — and a rebuild with **shuffled** staging input — produce the
 identical `manifest.content_hash` `0c921baa291a4af4`. Reproduce with
