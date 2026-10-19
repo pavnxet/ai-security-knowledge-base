@@ -12,16 +12,19 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe: []
-cwe_source: extracted
+priority: 50
+cwe:
+- CWE-1321
+- CWE-1333
+- CWE-79
+- CWE-94
+cwe_source: mapped
 owasp:
 - CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Introduction
 refs:
 - CS:JavaScript_and_TypeScript_Security_Cheat_Sheet#Introduction
 check: 'Introduction This cheat sheet lists secure development practices for JavaScript and TypeScript
-  that apply everywhere the language runs: browsers, hybrid apps, server-side Node.js, and any other runtime
-  that implements th'
+  that apply everywhere the language runs: browsers, hybrid apps, s'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md (anchor:
   Introduction) for remediation.'
 detect:

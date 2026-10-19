@@ -48,6 +48,15 @@ sources:
   extraction: programmatic
   verified: true
 - repo: OWASP/CheatSheetSeries
+  path: cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  anchor: References
+  commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
+  url: https://github.com/OWASP/CheatSheetSeries/blob/83abf91f1c1ba706df94fb79150ad6dedf743253/cheatsheets/JavaScript_and_TypeScript_Security_Cheat_Sheet.md
+  license: CC-BY-SA-4.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: OWASP/CheatSheetSeries
   path: cheatsheets/Micro_Frontend_Security_Cheat_Sheet.md
   anchor: References
   commit: 83abf91f1c1ba706df94fb79150ad6dedf743253
@@ -63,6 +72,8 @@ verified: true
 corroboration: 1
 last_verified: '2026-10-19'
 merged_from:
+- SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-REFERENCES
 - SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-REFERENCES
 aliases:
+- SKB-CS-JAVASCRIPT-AND-TYPESCRIPT-SECURITY-CHEAT-SHEET-REFERENCES
 - SKB-CS-MICRO-FRONTEND-SECURITY-CHEAT-SHEET-REFERENCES

@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-915
+cwe_source: mapped
 owasp:
 - CS:Mass_Assignment_Cheat_Sheet#References
 refs:
 - CS:Mass_Assignment_Cheat_Sheet#References
 check: 'References - [Ruby on Rails: Strong Parameters](https://guides.rubyonrails.org/action_controller_overview.html
-  strong-parameters) - [Spring Framework: DataBinder Security Considerations](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframewo'
+  strong-parameters) - [Spring Framework: DataBinder Security Considerations](https://docs.spring.io/spring-framework/docs/current'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Mass_Assignment_Cheat_Sheet.md (anchor: References) for remediation.'
 detect:
   grep:
