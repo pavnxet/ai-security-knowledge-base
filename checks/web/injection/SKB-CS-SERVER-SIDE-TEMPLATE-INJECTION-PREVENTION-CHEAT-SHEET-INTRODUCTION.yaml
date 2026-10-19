@@ -13,14 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1336
+cwe_source: mapped
 owasp:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#Introduction
 refs:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#Introduction
 check: Introduction Server-Side Template Injection (SSTI) happens when a server-side template engine evaluates
-  untrusted input as template code instead of rendering it as data (Common Weakness Enumeration [CWE-1336](https://cwe
+  untrusted input as template code instead of rendering it as data (Common Weakness Enum
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Template_Injection_Prevention_Cheat_Sheet.md
   (anchor: Introduction) for remediation.'
 detect:

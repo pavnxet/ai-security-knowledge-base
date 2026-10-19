@@ -13,15 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1336
+cwe_source: mapped
 owasp:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#Prevention
 refs:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#Prevention
 check: Prevention Treat templates as code Keep templates with the application source, review changes to
-  them like code, and never build them from untrusted data. Do not let untrusted data choose a template
-  name, path, or inclu
+  them like code, and never build them from untrusted data. Do not let untrusted data choose a
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Template_Injection_Prevention_Cheat_Sheet.md
   (anchor: Prevention) for remediation.'
 detect:

@@ -12,14 +12,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1336
+cwe_source: mapped
 owasp:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#References
 refs:
 - CS:Server_Side_Template_Injection_Prevention_Cheat_Sheet#References
 check: 'References - [CWE-1336: Improper Neutralization of Special Elements Used in a Template Engine](https://cwe.mitre.org/data/definitions/1336.html)
-  - [Twig Documentation: Twig Sandbox](https://twig.symfony.com/doc/3.x/sandbox.h'
+  - [Twig Documentation: Twig Sandbox](https://twig'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Server_Side_Template_Injection_Prevention_Cheat_Sheet.md
   (anchor: References) for remediation.'
 detect:

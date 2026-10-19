@@ -13,8 +13,9 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-643
+cwe_source: mapped
 owasp:
 - CS:XPath_Injection_Prevention_Cheat_Sheet#Introduction
 refs:

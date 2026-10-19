@@ -12,14 +12,15 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-20
+cwe_source: mapped
 owasp:
 - CS:Input_Validation_Cheat_Sheet#References
 refs:
 - CS:Input_Validation_Cheat_Sheet#References
 check: 'References - [OWASP Top 10 Proactive Controls 2024: C3 — Validate all Input & Handle Exceptions](https://top10proactive.owasp.org/archive/2024/the-top-10/c3-validate-input-and-handle-exceptions/)
-  - [CWE-20: Improper Input Validation](https://cwe.mitre.org/dat'
+  - [CWE-20: Improper Input Validat'
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Input_Validation_Cheat_Sheet.md (anchor: References) for
   remediation.'
 detect:

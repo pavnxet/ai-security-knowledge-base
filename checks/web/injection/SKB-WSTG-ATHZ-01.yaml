@@ -15,7 +15,7 @@ severity: high
 priority: 65
 cwe:
 - CWE-22
-cwe_source: heuristic
+cwe_source: mapped
 owasp:
 - WSTG-ATHZ-01
 refs:

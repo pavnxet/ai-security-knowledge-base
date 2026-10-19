@@ -12,9 +12,10 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe: []
-cwe_source: extracted
+priority: 65
+cwe:
+- CWE-89
+cwe_source: mapped
 owasp:
 - CS:SQL_Injection_Prevention_Cheat_Sheet#What Is a SQL Injection Attack?
 refs:

@@ -13,15 +13,20 @@ phase:
 - full-audit
 severity: critical
 priority: 85
-cwe: []
-cwe_source: extracted
+cwe:
+- CWE-1035
+- CWE-1104
+- CWE-1329
+- CWE-1357
+- CWE-1395
+- CWE-447
+cwe_source: mapped
 owasp:
 - Top10:A03:2025
 refs:
 - Top10:A03:2025
 check: This was top-ranked in the Top 10 community survey with exactly 50% respondents ranking it 1. Since
-  initially appearing in the 2013 Top 10 as "A9 – Using Components with Known Vulnerabilities", the risk
-  has grown in sco
+  initially appearing in the 2013 Top 10 as "A9 – Using Compo
 fix: 'See OWASP/Top10 2025/docs/en/A03_2025-Software_Supply_Chain_Failures.md (anchor: A03:2025) for remediation.'
 detect:
   grep:
