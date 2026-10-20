@@ -15,7 +15,7 @@ severity: high
 priority: 65
 cwe:
 - CWE-22
-cwe_source: mapped
+cwe_source: heuristic
 owasp:
 - CS:Laravel_Cheat_Sheet#Path Traversal
 refs:
@@ -54,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

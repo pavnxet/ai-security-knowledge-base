@@ -13,16 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-770
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Denial_of_Service_Cheat_Sheet#Introduction
 refs:
 - CS:Denial_of_Service_Cheat_Sheet#Introduction
 check: Introduction This cheat sheet describes a methodology for handling denial of service (DoS) attacks
   on different layers. It also serves as a platform for further discussion and analysis, since there are
-  many different way
+  many different ways to perform DoS attacks. Fund
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Denial_of_Service_Cheat_Sheet.md (anchor: Introduction) for
   remediation.'
 detect:
@@ -54,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
