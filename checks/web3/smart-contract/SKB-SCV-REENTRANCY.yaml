@@ -13,9 +13,8 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-841
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - SCV:Reentrancy
 refs:
@@ -23,7 +22,7 @@ refs:
 check: 'Reentrancy Preconditions - Contract makes an external call (ETH transfer, token transfer, .call()
   , .send() , .transfer() , callback hook) - State is modified after the external call, not before - No
   reentrancy guard ( nonReentrant modifier) on the function - For cross-function: two or more functions
-  share st'
+  share state, and at least one makes an'
 fix: 'See kadenzipfel/smart-contract-vulnerabilities references/reentrancy.md (anchor: Reentrancy) for
   remediation.'
 detect:
@@ -52,4 +51,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

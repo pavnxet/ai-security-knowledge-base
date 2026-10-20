@@ -23,9 +23,25 @@ they remain in the corpus because they improve retrieval but are **excluded from
 
 | metric | before | after |
 |---|---|---|
-| held-out all r@5 | 0.662 | **0.708** ✅ |
-| v2_dev r@5 | 0.250 | **0.600** ✅ |
-| curated v2 r@5 | 0.441 | 0.492 |
-| templated r@5 | 0.916 | 0.916 ✅ |
-| fast-gate recall | 26.7% | **60.0%** |
-| lab-class coverage | 73.3% | 96.7% |
+| held-out all r@5 | 0.662 | **0.669** |
+| curated v2 r@5 | 0.441 | **0.458** |
+| v2_dev r@5 | 0.250 | **0.325** |
+| templated r@5 | 0.916 | 0.916 |
+| fast-gate recall | 26.7% | **46.7%** |
+| lab-class coverage | 73.3% | 76.7% |
+
+**None of the recall targets except `templated` are met.**
+
+## Correction (v0.9.3) — a rejected experiment, recorded
+
+An earlier revision added a keyword table mapping phrases like "integer overflow" to CWEs and
+tagged those `mapped`. That was **wrong** and has been removed:
+
+- It relabelled keyword *heuristics* as `mapped`, so they counted in the **strict** metric they are
+  defined to exclude — moving the goalposts rather than improving retrieval.
+- It added CWEs to ~332 cards, and because the benchmark scores `refs(card) ∩ expect_refs`, more
+  CWEs raise recall **mechanically**, regardless of ranking quality.
+
+Measured: with that table `all`=0.708 / `v2_dev`=0.600; without it (official sources only)
+`all`=0.669 / `v2_dev`=0.325. The gap was an artifact. Only official cross-mappings (ASVS, Top 10,
+API Top 10) and CWEs cited by a card's **own source document** are kept, tagged `mapped`.
