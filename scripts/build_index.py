@@ -63,7 +63,7 @@ def main():
         os.remove(db)
     con = sqlite3.connect(db)
     con.execute("CREATE TABLE checks (id TEXT PRIMARY KEY, severity TEXT, priority INT, platform TEXT, domain TEXT, json TEXT)")
-    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id UNINDEXED, title, summary, tags, aliases, check, cwe)")
+    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id UNINDEXED, title, summary, tags, aliases, check, cwe, tokenize='porter unicode61')")
     for c in cards:
         con.execute("INSERT INTO checks VALUES (?,?,?,?,?,?)",
                     (c["id"], c["severity"], c["priority"], c["platforms"][0], c["domain"], json.dumps(c)))

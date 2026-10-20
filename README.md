@@ -8,7 +8,7 @@
 repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
-> **Status: public beta (v0.9.5).** The build is deterministic and reproducible; retrieval targets are
+> **Status: public beta (v0.9.6).** The build is deterministic and reproducible; retrieval targets are
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
 
@@ -122,9 +122,9 @@ Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as mea
 
 | Set | n | recall@5 | Target | Status |
 |---|---|---|---|---|
-| Held-out (all) | 154 | **0.68** | ≥ 0.70 | below |
+| Held-out (all) | 154 | **0.70** | ≥ 0.70 | ~met |
 | Curated v2 (standards-derived) | 59 | **0.48** | ≥ 0.60 | below |
-| v2_dev (developer vocabulary) | 40 | **0.43** | ≥ 0.60 | below |
+| v2_dev (developer vocabulary) | 40 | **0.53** | ≥ 0.60 | below |
 | Curated v1 | 59 | **0.25** | — | reference |
 | Templated | 95 | **0.92** | ≥ 0.90 | met |
 | Fast-gate recall (strict) | 30 | **46.7%** | ≥ 0.70 | below |

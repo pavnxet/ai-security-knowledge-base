@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.9.6] — beta
+### Changed
+- **Query normalisation + porter stemming.** Queries are stripped of conversational intent ("how do I …") and abbreviations expanded (`sqli` → `sql injection`); the FTS index now uses `tokenize='porter unicode61'`. Query/index-side only — no card refs change, content_hash unchanged.
+- Strict recall: all 0.682→**0.695**, curated v1 0.305→**0.339**, v2_dev 0.425→**0.525**; curated v2 0.475 (flat); templated 0.916.
+- An external reviewer projected these fixes would reach 0.75/0.64/0.65. **Measured, they do not** — the real gain is ~+0.01/+0.10, not +0.07/+0.22.
+
+## [0.9.5] — beta
+### Fixed (found by an independent reviewer)
+- UTF-8 on every text `open()` (Windows cp1252 crash); index cache validated (no silent poisoning); order-insensitive `content_hash`.
+
 ## [0.9.2] — beta
 ### Added
 - **R1c: official CWE mapping.** Cards now carry CWEs from official sources only — ASVS→CWE,

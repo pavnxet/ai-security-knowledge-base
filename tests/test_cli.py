@@ -118,3 +118,9 @@ def test_cwe_query_expansion(kb):
     assert kb.expand_cwe("how do I stop reentrancy in solidity") == ["cwe841"]
     assert "cwe89" in kb.expand_cwe("sql injection in my api")
     assert kb.expand_cwe("what is the weather") == []
+
+
+def test_query_normalisation(kb):
+    assert kb.normalize_query("how do I stop sqli in my api") == "stop sql injection in api"
+    assert "xss" not in kb.normalize_query("how to fix xss")     # expanded
+    assert "cross site scripting" in kb.normalize_query("how to fix xss")

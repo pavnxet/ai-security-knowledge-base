@@ -55,7 +55,7 @@ def ensure_db():
     if not os.path.exists(src): return db
     con = sqlite3.connect(db)
     con.execute("DROP TABLE IF EXISTS checks_fts")
-    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check, cwe)")
+    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check, cwe, tokenize='porter unicode61')")
     for line in open(src, encoding="utf-8"):
         if not line.strip(): continue
         c = json.loads(line)
@@ -215,6 +215,21 @@ def expand_cwe(q):
 def cwe_tokens(c):
     return ["cwe" + str(x).split("-")[-1] for x in c.get("cwe", []) if str(x).startswith("CWE")]
 
+# Query normalisation: strip conversational intent, expand abbreviations.
+# Query-side only — it changes what we SEARCH FOR, never what a card contains.
+_ABBR = {"sqli":"sql injection","xss":"cross site scripting","idor":"insecure direct object reference",
+         "authz":"authorization","authn":"authentication","rce":"remote code execution",
+         "ssrf":"server side request forgery","csrf":"cross site request forgery","lfi":"local file inclusion",
+         "xxe":"xml external entity","jwt":"json web token","mfa":"multi factor authentication",
+         "rls":"row level security","sca":"software composition analysis","sast":"static analysis"}
+_STOP = [r"\bhow do i\b", r"\bhow to\b", r"\bhow can i\b", r"\bwhat is\b", r"\bkaise\b",
+         r"\bcan you\b", r"\bdo i\b", r"\bmy\b", r"\bi have\b", r"\bkaise roke\b", r"\bkaise bache\b"]
+
+def normalize_query(q):
+    low = (q or "").lower()
+    for p in _STOP: low = re.sub(p, " ", low)
+    return " ".join(_ABBR.get(t, t) for t in re.findall(r"[a-z0-9]+", low))
+
 def expand_query(q, synonyms, hubs=None):
     terms = re.findall(r"[a-zA-Z0-9_]+", q.lower())
     extra = []
@@ -273,7 +288,8 @@ def rank(query, cards, synonyms=None, hubs=None, k=10):
 def cmd_search(args):
     cards = load_cards()
     synonyms, hubs = load_synonyms() if getattr(args, 'synonyms', False) else ({}, {})
-    terms = expand_query(args.query, synonyms, hubs) + expand_cwe(args.query)
+    nq = normalize_query(args.query)
+    terms = expand_query(nq, synonyms, hubs) + expand_cwe(nq)
     scored = {}
     db = os.path.join(IDX, "kb.sqlite")
     if os.path.exists(db):

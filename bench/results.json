@@ -4,52 +4,52 @@
     "all": {
       "set": "all",
       "n": 154,
-      "recall@5": 0.682,
+      "recall@5": 0.695,
       "recall@10": 0.721,
-      "mrr": 0.636,
-      "p50_ms": 66.4,
-      "p95_ms": 128.46,
-      "avg_tokens": 90.8
+      "mrr": 0.624,
+      "p50_ms": 115.84,
+      "p95_ms": 305.51,
+      "avg_tokens": 90.9
     },
     "curated_v1": {
       "set": "curated",
       "n": 59,
-      "recall@5": 0.305,
+      "recall@5": 0.339,
       "recall@10": 0.39,
-      "mrr": 0.232,
-      "p50_ms": 57.56,
-      "p95_ms": 206.25,
-      "avg_tokens": 110.0
+      "mrr": 0.253,
+      "p50_ms": 78.98,
+      "p95_ms": 207.21,
+      "avg_tokens": 105.4
     },
     "curated_v2": {
       "set": "curated_v2",
       "n": 59,
       "recall@5": 0.475,
-      "recall@10": 0.61,
-      "mrr": 0.294,
-      "p50_ms": 104.99,
-      "p95_ms": 215.73,
-      "avg_tokens": 110.0
+      "recall@10": 0.559,
+      "mrr": 0.281,
+      "p50_ms": 116.24,
+      "p95_ms": 247.66,
+      "avg_tokens": 105.4
     },
     "v2_dev": {
       "set": "v2_dev",
       "n": 40,
-      "recall@5": 0.425,
-      "recall@10": 0.475,
-      "mrr": 0.367,
-      "p50_ms": 56.84,
-      "p95_ms": 154.18,
-      "avg_tokens": 113.7
+      "recall@5": 0.525,
+      "recall@10": 0.625,
+      "mrr": 0.435,
+      "p50_ms": 96.65,
+      "p95_ms": 190.73,
+      "avg_tokens": 110.1
     },
     "templated": {
       "set": "templated",
       "n": 95,
       "recall@5": 0.916,
       "recall@10": 0.926,
-      "mrr": 0.887,
-      "p50_ms": 93.14,
-      "p95_ms": 234.44,
-      "avg_tokens": 78.9
+      "mrr": 0.854,
+      "p50_ms": 164.16,
+      "p95_ms": 296.7,
+      "avg_tokens": 82.0
     },
     "user": {
       "set": "user",

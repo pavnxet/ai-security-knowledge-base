@@ -21,7 +21,8 @@ def refs_of(c, strict=False):
     return r
 
 def search_ids(q, k=10):
-    terms = kb.expand_query(q, SYN, HUBS) + kb.expand_cwe(q)
+    nq = kb.normalize_query(q)
+    terms = kb.expand_query(nq, SYN, HUBS) + kb.expand_cwe(nq)
     scored = {}
     db = os.path.join(ROOT, "index", "kb.sqlite")
     if os.path.exists(db):
