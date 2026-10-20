@@ -14,9 +14,8 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe:
-- CWE-601
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:7. Open redirect in client routing
 refs:
@@ -52,33 +51,9 @@ sources:
   type: github
   extraction: programmatic
   verified: true
-- repo: yesmayank/secure-coding-baseline
-  path: 18-angular.md
-  anchor: 7. Open redirect via `Router` / `window.location`
-  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
-  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/18-angular.md
-  license: Apache-2.0
-  type: github
-  extraction: programmatic
-  verified: true
-- repo: yesmayank/secure-coding-baseline
-  path: 19-vue-nuxt.md
-  anchor: 7. Open redirect via `router.push` / `window.location`
-  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
-  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/19-vue-nuxt.md
-  license: Apache-2.0
-  type: github
-  extraction: programmatic
-  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
-merged_from:
-- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-WINDOW
-- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-PUSH-WI
-aliases:
-- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-WINDOW
-- SKB-BASE-7-OPEN-REDIRECT-VIA-ROUTER-PUSH-WI
+last_verified: '2026-10-20'

@@ -14,9 +14,8 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe:
-- CWE-915
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:8. Mass assignment / unsafe `**request.j
 refs:
@@ -52,22 +51,9 @@ sources:
   type: github
   extraction: programmatic
   verified: true
-- repo: yesmayank/secure-coding-baseline
-  path: 08-laravel.md
-  anchor: 6. Mass assignment (fillable)
-  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
-  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
-  license: Apache-2.0
-  type: github
-  extraction: programmatic
-  verified: true
 origin: distilled
 confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
-merged_from:
-- SKB-BASE-6-MASS-ASSIGNMENT-FILLABLE
-aliases:
-- SKB-BASE-6-MASS-ASSIGNMENT-FILLABLE
+last_verified: '2026-10-20'
