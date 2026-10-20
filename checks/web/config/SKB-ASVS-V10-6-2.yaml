@@ -16,7 +16,6 @@ severity: medium
 priority: 40
 cwe:
 - CWE-427
-- CWE-770
 cwe_source: mapped
 owasp:
 - ASVS:V10.6.2
@@ -57,4 +56,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
