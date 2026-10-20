@@ -21,14 +21,14 @@ def refs_of(c, strict=False):
     return r
 
 def search_ids(q, k=10):
-    terms = kb.expand_query(q, SYN, HUBS)
+    terms = kb.expand_query(q, SYN, HUBS) + kb.expand_cwe(q)
     scored = {}
     db = os.path.join(ROOT, "index", "kb.sqlite")
     if os.path.exists(db):
         con = sqlite3.connect(db)
         match = " OR ".join(f'"{t}"' for t in terms if len(t) > 1) or q
         try:
-            for cid, r in con.execute("SELECT id, bm25(checks_fts,0,10,6,5,4,1) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 300", (match,)):
+            for cid, r in con.execute("SELECT id, bm25(checks_fts,0,10,6,5,4,1,6) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 300", (match,)):
                 scored[cid] = -r
         except sqlite3.OperationalError: pass
         con.close()

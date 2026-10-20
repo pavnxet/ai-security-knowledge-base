@@ -62,13 +62,14 @@ def main():
         os.remove(db)
     con = sqlite3.connect(db)
     con.execute("CREATE TABLE checks (id TEXT PRIMARY KEY, severity TEXT, priority INT, platform TEXT, domain TEXT, json TEXT)")
-    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id UNINDEXED, title, summary, tags, aliases, check)")
+    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id UNINDEXED, title, summary, tags, aliases, check, cwe)")
     for c in cards:
         con.execute("INSERT INTO checks VALUES (?,?,?,?,?,?)",
                     (c["id"], c["severity"], c["priority"], c["platforms"][0], c["domain"], json.dumps(c)))
-        con.execute("INSERT INTO checks_fts VALUES (?,?,?,?,?,?)",
+        con.execute("INSERT INTO checks_fts VALUES (?,?,?,?,?,?,?)",
                     (c["id"], c["title"], c["summary"], " ".join(c.get("tags", [])),
-                     " ".join(c.get("aliases", [])), c["check"]))
+                     " ".join(c.get("aliases", [])), c["check"],
+                     " ".join("cwe" + str(x).split("-")[-1] for x in c.get("cwe", []) if str(x).startswith("CWE"))))
     con.commit(); con.close()
 
     # manifest

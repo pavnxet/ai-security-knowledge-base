@@ -112,3 +112,9 @@ def test_attest_fingerprint_is_deterministic(tmp_path):
     j1 = json.loads(a1.read_text()); j2 = json.loads(a2.read_text())
     assert j1["attestation_id"] == j2["attestation_id"]
     assert j1["target"]["fingerprint"] == j2["target"]["fingerprint"]
+
+
+def test_cwe_query_expansion(kb):
+    assert kb.expand_cwe("how do I stop reentrancy in solidity") == ["cwe841"]
+    assert "cwe89" in kb.expand_cwe("sql injection in my api")
+    assert kb.expand_cwe("what is the weather") == []

@@ -122,9 +122,9 @@ Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as mea
 
 | Set | n | recall@5 | Target | Status |
 |---|---|---|---|---|
-| Held-out (all) | 154 | **0.67** | ≥ 0.70 | below |
-| Curated v2 (standards-derived) | 59 | **0.46** | ≥ 0.60 | below |
-| v2_dev (developer vocabulary) | 40 | **0.33** | ≥ 0.60 | below |
+| Held-out (all) | 154 | **0.68** | ≥ 0.70 | below |
+| Curated v2 (standards-derived) | 59 | **0.48** | ≥ 0.60 | below |
+| v2_dev (developer vocabulary) | 40 | **0.43** | ≥ 0.60 | below |
 | Curated v1 | 59 | **0.25** | — | reference |
 | Templated | 95 | **0.92** | ≥ 0.90 | met |
 | Fast-gate recall (strict) | 30 | **46.7%** | ≥ 0.70 | below |

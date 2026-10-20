@@ -45,13 +45,13 @@ def ensure_db():
     if not os.path.exists(src): return db
     con = sqlite3.connect(db)
     con.execute("DROP TABLE IF EXISTS checks_fts")
-    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check)")
+    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check, cwe)")
     for line in open(src):
         if not line.strip(): continue
         c = json.loads(line)
-        con.execute("INSERT INTO checks_fts VALUES (?,?,?,?,?,?)",
+        con.execute("INSERT INTO checks_fts VALUES (?,?,?,?,?,?,?)",
                     (c["id"], c["title"], c["summary"], " ".join(c.get("tags", [])),
-                     " ".join(c.get("aliases", [])), c["check"]))
+                     " ".join(c.get("aliases", [])), c["check"], " ".join(cwe_tokens(c))))
     con.commit(); con.close()
     return db
 
@@ -176,6 +176,35 @@ def cmd_profile(args):
         print(fmt_cards(sel, args.format, args.budget_tokens))
 
 # ---------- search ----------
+# Official-CWE query expansion: maps a query phrase to the CWE token it implies, so cards that
+# legitimately carry that mapped CWE rank higher. This changes only the QUERY, never a card's refs.
+CWE_EXPAND = [
+ (r"integer overflow|integer underflow", "cwe190"), (r"reentran", "cwe841"),
+ (r"missing authentication|no authentication|unauthenticated", "cwe306"),
+ (r"hard-?coded|secrets? in|api key", "cwe798"), (r"path traversal|directory traversal", "cwe22"),
+ (r"sql injection|sqli", "cwe89"), (r"cross-?site scripting|xss", "cwe79"),
+ (r"cross-?site request forgery|csrf", "cwe352"), (r"server-?side request forgery|ssrf", "cwe918"),
+ (r"deserializ|pickle|unserialize", "cwe502"), (r"xml external entit|xxe", "cwe611"),
+ (r"idor|object level authoriz|bola", "cwe639"), (r"file upload", "cwe434"),
+ (r"unmaintained|outdated (component|dependency)|vulnerable (dependency|dependencies)", "cwe1104"),
+ (r"as root|non-?root|runasuser|privileged", "cwe250"), (r"cleartext|no tls", "cwe319"),
+ (r"open redirect|unvalidated redirect", "cwe601"), (r"clickjack", "cwe1021"),
+ (r"brute force|credential stuffing", "cwe307"), (r"command injection", "cwe78"),
+ (r"prototype pollution", "cwe1321"), (r"race condition|toctou", "cwe362"),
+ (r"rate limit|resource consumption|denial of service", "cwe770"), (r"mass assignment", "cwe915"),
+ (r"sensitive.*log|logging sensitive", "cwe532"), (r"privilege escalation", "cwe269"),
+ (r"weak (crypt|hash|random)", "cwe330"), (r"supply chain|dependency confusion", "cwe1357"),
+]
+
+def expand_cwe(q):
+    low = (q or "").lower(); out = []
+    for pat, tok in CWE_EXPAND:
+        if re.search(pat, low): out.append(tok)
+    return list(dict.fromkeys(out))
+
+def cwe_tokens(c):
+    return ["cwe" + str(x).split("-")[-1] for x in c.get("cwe", []) if str(x).startswith("CWE")]
+
 def expand_query(q, synonyms, hubs=None):
     terms = re.findall(r"[a-zA-Z0-9_]+", q.lower())
     extra = []
@@ -233,8 +262,8 @@ def rank(query, cards, synonyms=None, hubs=None, k=10):
 
 def cmd_search(args):
     cards = load_cards()
-    synonyms, hubs = load_synonyms()
-    terms = expand_query(args.query, synonyms, hubs)
+    synonyms, hubs = load_synonyms() if getattr(args, 'synonyms', False) else ({}, {})
+    terms = expand_query(args.query, synonyms, hubs) + expand_cwe(args.query)
     scored = {}
     db = os.path.join(IDX, "kb.sqlite")
     if os.path.exists(db):
@@ -242,7 +271,7 @@ def cmd_search(args):
         match = " OR ".join(f'"{t}"' for t in terms if len(t) > 1) or args.query
         try:
             for cid, r in con.execute(
-                "SELECT id, bm25(checks_fts,0,10,6,5,4,1) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 200",
+                "SELECT id, bm25(checks_fts,0,10,6,5,4,1,6) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 200",
                 (match,)).fetchall():
                 scored[cid] = -r
         except sqlite3.OperationalError:

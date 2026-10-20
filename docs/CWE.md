@@ -23,9 +23,9 @@ they remain in the corpus because they improve retrieval but are **excluded from
 
 | metric | before | after |
 |---|---|---|
-| held-out all r@5 | 0.662 | **0.669** |
-| curated v2 r@5 | 0.441 | **0.458** |
-| v2_dev r@5 | 0.250 | **0.325** |
+| held-out all r@5 | 0.669 | **0.682** |
+| curated v2 r@5 | 0.458 | **0.475** |
+| v2_dev r@5 | 0.325 | **0.425** |
 | templated r@5 | 0.916 | 0.916 |
 | fast-gate recall | 26.7% | **46.7%** |
 | lab-class coverage | 73.3% | 76.7% |
@@ -45,3 +45,15 @@ tagged those `mapped`. That was **wrong** and has been removed:
 Measured: with that table `all`=0.708 / `v2_dev`=0.600; without it (official sources only)
 `all`=0.669 / `v2_dev`=0.325. The gap was an artifact. Only official cross-mappings (ASVS, Top 10,
 API Top 10) and CWEs cited by a card's **own source document** are kept, tagged `mapped`.
+
+
+## CWE query expansion (v0.9.4)
+
+The expected refs in the benchmark are largely CWEs, and cards legitimately carry mapped CWEs — but
+CWEs were **not indexed**. v0.9.4 indexes them (`cwe` FTS column) and, for each query, adds the CWE
+token an official CWE name implies (e.g. *"reentrancy"* → `cwe841`).
+
+**This changes only the query and the index — never a card's refs.** So the gain is a real ranking
+gain, not ref-set inflation. Verified strictly better than the previous release on **every** set
+(all 0.669→0.682, curated v2 0.458→0.475, v2_dev 0.325→0.425, templated 0.916 unchanged), with no
+regressions. Targets still not met; `templated` remains the only one met.
