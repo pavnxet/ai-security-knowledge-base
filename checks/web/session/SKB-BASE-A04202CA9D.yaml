@@ -14,16 +14,15 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe:
-- CWE-770
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:Checklist
 refs:
 - BASE:Checklist
 check: Checklist - [ ] Passwords verified with bcrypt/argon2 - [ ] Every :id route scoped by authenticated
   owner - [ ] No raw body bound to models (allowlists everywhere) - [ ] JWT short-lived, httpOnly cookie,
-  strong secret, pinned algorithm - [ ] Rate limiting on login/OTP/reset - [
+  strong secret, pinned algorithm - [ ] Rate limiting on login/OTP/reset - [ ] Session ID rotated on login;
 fix: 'See yesmayank/secure-coding-baseline 28-vibe-coded-auth-authz.md (anchor: Checklist) for remediation.'
 detect:
   grep:
@@ -54,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
