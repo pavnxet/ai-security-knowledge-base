@@ -1,0 +1,70 @@
+id: SKB-BASE-11-INSECURE-DESERIALIZATION
+title: 11. Insecure deserialization
+summary: '11. Insecure deserialization What: unserialize() on untrusted data → RCE via gadget chains.
+  Fix: Use json_encode / json_decode ; never unser'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: deserialization
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:11. Insecure deserialization
+refs:
+- BASE:11. Insecure deserialization
+check: '11. Insecure deserialization What: unserialize() on untrusted data → RCE via gadget chains. Fix:
+  Use json_encode / json_decode ; never unserialize untrusted input. Detection: rg -n "unserialize\("
+  app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 08-laravel.md (anchor: 11. Insecure deserialization) for remediation.'
+detect:
+  grep:
+  - pickle.load
+  - unserialize(
+  - yaml.load(
+  - ObjectInputStream
+  files:
+  - '**/*.py'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- deserialization
+- insecure
+- deserialization
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 08-laravel.md
+  anchor: 11. Insecure deserialization
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/08-laravel.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 09-php-raw.md
+  anchor: 11. Insecure deserialization
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/09-php-raw.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-20'
+merged_from:
+- SKB-BASE-FE1C75B68F
+aliases:
+- SKB-BASE-FE1C75B68F

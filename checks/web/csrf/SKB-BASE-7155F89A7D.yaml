@@ -13,10 +13,9 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-352
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:Checklist
 refs:
@@ -24,7 +23,7 @@ refs:
 check: Checklist - [ ] Default-deny authz; explicit public paths - [ ] CSRF enabled for session apps -
   [ ] BCrypt/Argon2 password encoding - [ ] JWT key from secret store; none alg rejected - [ ] Session
   fixation protection; secure cookies - [ ] Method-level authz where needed - [ ] Consistent role prefix;
-  no role from input - [ ] Redirect targe
+  no role from input - [ ] Redirect targets allowlisted - [ ] Constant-
 fix: 'See yesmayank/secure-coding-baseline 07-spring-security.md (anchor: Checklist) for remediation.'
 detect:
   grep:
@@ -52,4 +51,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

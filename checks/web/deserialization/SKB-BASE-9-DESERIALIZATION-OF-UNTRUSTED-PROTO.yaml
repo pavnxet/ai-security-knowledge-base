@@ -13,16 +13,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-502
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:9. Deserialization of untrusted proto
 refs:
 - BASE:9. Deserialization of untrusted proto
 check: '9. Deserialization of untrusted proto What: While protobuf is typed, custom Any payloads or JSON-gateway
-  transcoding can inject unexpected types. Fix: Restrict go'
+  transcoding can inject unexpected types. Fix: Restrict google.protobuf.Any type URLs; v'
 fix: 'See yesmayank/secure-coding-baseline 15-grpc.md (anchor: 9. Deserialization of untrusted proto)
   for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

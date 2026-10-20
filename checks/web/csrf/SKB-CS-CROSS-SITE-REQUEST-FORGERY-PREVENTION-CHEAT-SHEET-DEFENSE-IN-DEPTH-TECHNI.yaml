@@ -12,16 +12,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-352
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Defense In Depth Techniques
 refs:
 - CS:Cross-Site_Request_Forgery_Prevention_Cheat_Sheet#Defense In Depth Techniques
 check: Defense In Depth Techniques SameSite (Cookie Attribute) SameSite is a cookie attribute (similar
-  to HTTPOnly, Secure etc.) which aims to mitigate CSRF attacks. It is defined in [RFC6265bis](
+  to HTTPOnly, Secure etc.) which aims to mitigate CSRF attacks. It is defined in [RFC6265bis](https://tools.ietf.org/html/dr
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md (anchor:
   Defense In Depth Techniques) for remediation.'
 detect:
@@ -52,4 +51,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

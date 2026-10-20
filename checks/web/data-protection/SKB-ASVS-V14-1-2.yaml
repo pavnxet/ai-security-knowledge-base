@@ -16,7 +16,6 @@ severity: high
 priority: 55
 cwe:
 - CWE-120
-- CWE-532
 cwe_source: mapped
 owasp:
 - ASVS:V14.1.2
@@ -25,7 +24,7 @@ refs:
 - ASVS V14.1.2
 check: Verify that all sensitive data protection levels have a documented set of protection requirements.
   This must include (but not be limited to) requirements related to general encryption, integrity verification,
-  retention, how the data is to be logged,
+  retention, how the data is to be logged, access controls around sensit
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V14.1.2) for remediation.'
 detect:
@@ -54,8 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
-merged_from:
-- SKB-ASVS-V14-2-4
-aliases:
-- SKB-ASVS-V14-2-4
+last_verified: '2026-10-20'
