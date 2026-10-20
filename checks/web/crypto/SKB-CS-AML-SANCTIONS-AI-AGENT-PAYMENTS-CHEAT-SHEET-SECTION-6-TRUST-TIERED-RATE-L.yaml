@@ -13,9 +13,8 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-770
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - 'CS:AML_Sanctions_AI_Agent_Payments_Cheat_Sheet#Section 6: Trust-Tiered Rate Limiting'
 refs:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

@@ -14,7 +14,7 @@ severity: medium
 priority: 40
 cwe:
 - CWE-1021
-cwe_source: mapped
+cwe_source: heuristic
 owasp:
 - WSTG-CLNT-09
 refs:
@@ -50,4 +50,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
