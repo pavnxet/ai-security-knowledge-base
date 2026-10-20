@@ -15,7 +15,7 @@ severity: high
 priority: 45
 cwe:
 - CWE-639
-cwe_source: mapped
+cwe_source: heuristic
 owasp:
 - BASE:2. Missing object-level authorization (B
 refs:
@@ -54,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

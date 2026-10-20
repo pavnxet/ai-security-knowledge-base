@@ -16,8 +16,7 @@ severity: critical
 priority: 70
 cwe:
 - CWE-307
-- CWE-770
-cwe_source: mapped
+cwe_source: heuristic
 owasp:
 - ASVS:V6.1.1
 refs:
@@ -25,7 +24,7 @@ refs:
 - ASVS V6.1.1
 check: Verify that application documentation defines how controls such as rate limiting, anti-automation,
   and adaptive response, are used to defend against attacks such as credential stuffing and password brute
-  force. The documentation must make clear how these co
+  force. The documentation must make clear how these controls are configured and prev
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V6.1.1) for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
