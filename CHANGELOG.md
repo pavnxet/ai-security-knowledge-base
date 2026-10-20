@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.9.8] — beta
+### Added
+- Documented **direct slash-command invocation** of the agent skill (e.g. `/secure-kb-audit ./my-app`),
+  with `$ARGUMENTS` handling in the skill body: a path typed after the command is used as the target.
+  Frontmatter stays strictly spec-valid (the Claude Code `argument-hint` field is a harness extension
+  that the base Agent Skills spec rejects, so argument handling lives in the body instead).
+
 ## [0.9.7] — beta
 ### Added
 - **Agent Skill: `skills/secure-kb-audit/`.** A portable Agent Skills bundle (SKILL.md + references +

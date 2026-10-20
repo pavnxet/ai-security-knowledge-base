@@ -90,9 +90,17 @@ git clone https://github.com/pavnxet/ai-security-knowledge-base && cd ai-securit
 ./skills/secure-kb-audit/scripts/install.sh              # auto-detect every harness present
 ```
 
-Then ask your agent *"audit this repo for security bugs"* — it runs the detect → gate → check →
-report → attest workflow and returns a severity-grouped report where every finding carries
-`file:line` evidence. See [`skills/secure-kb-audit/SKILL.md`](skills/secure-kb-audit/SKILL.md).
+Then invoke it either way:
+
+- **Automatically** — ask *"audit this repo for security bugs"* and the skill loads on its own.
+- **Directly with a slash command** — a skill's `name` becomes the command, so in Claude Code type
+  **`/secure-kb-audit ./my-app`** (or `/` to pick it from the menu). Whatever you type after the
+  command is passed to the skill as `$ARGUMENTS`. Codex/OpenCode match on the description or invoke
+  the `skill` tool by name; Pi uses `/skill:secure-kb-audit`.
+
+Either way the agent runs the detect → gate → check → report → attest workflow and returns a
+severity-grouped report where every finding carries `file:line` evidence. See
+[`skills/secure-kb-audit/SKILL.md`](skills/secure-kb-audit/SKILL.md).
 
 ## Verifiable Security Attestation (new)
 

@@ -26,6 +26,18 @@ A model asked "is my app secure?" will improvise generic advice. secure-kb inste
 *2,052 check cards*, each mapped to the standard it came from (e.g. `ASVS:V1.2.4`, `WSTG-SESS-01`,
 `CWE-89`), grouped into per-platform **gates** (web, api, mobile, telegram, web3, llm, …). Use them.
 
+## Invoking it
+
+- **Automatically** — the `description` above is the trigger. "Audit this repo for security bugs"
+  loads the skill on its own; you don't need the command.
+- **Directly, with `/`** — a skill's `name` becomes a slash command. In Claude Code type
+  `/` to open the menu (the skill is listed as `secure-kb-audit`), or invoke it straight away with
+  the target: `/secure-kb-audit ./my-app`. **Anything you type after the command arrives as
+  `$ARGUMENTS`** — if it names a path, use that as the target; if it's empty, ask the user which path
+  to audit. Do not audit the current directory by default; guessing the target wastes the run.
+- **Other harnesses** — Codex and OpenCode match on the description, or invoke the `skill` tool by
+  name; Pi uses `/skill:secure-kb-audit`. The workflow is identical; only the invocation differs.
+
 ## Step 0 — Locate the knowledge base
 
 Run the bundled locator once:
