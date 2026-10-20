@@ -50,7 +50,7 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
 merged_from:
 - SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-2-JAVASCRIPT-ESCAPE-BEFORE-INSE
 - SKB-CS-DOM-BASED-XSS-PREVENTION-CHEAT-SHEET-RULE-4-JAVASCRIPT-ESCAPE-BEFORE-INSE

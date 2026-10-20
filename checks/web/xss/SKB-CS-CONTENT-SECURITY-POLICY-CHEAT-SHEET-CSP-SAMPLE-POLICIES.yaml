@@ -12,16 +12,16 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-79
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Content_Security_Policy_Cheat_Sheet#CSP Sample Policies
 refs:
 - CS:Content_Security_Policy_Cheat_Sheet#CSP Sample Policies
 check: CSP Sample Policies Strict Policy A strict policy's role is to protect against classical stored,
-  reflected, and some of the DOM XSS attacks and should be the optimal goal of any team trying
+  reflected, and some of the DOM XSS attacks and should be the optimal goal of any team trying to implement
+  CSP. As noted ab
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Content_Security_Policy_Cheat_Sheet.md (anchor: CSP Sample
   Policies) for remediation.'
 detect:
@@ -55,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

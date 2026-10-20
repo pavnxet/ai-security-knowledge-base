@@ -12,17 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 40
-cwe:
-- CWE-362
-cwe_source: mapped
+priority: 30
+cwe: []
+cwe_source: extracted
 owasp:
 - NSSC:Race Condition
 refs:
 - NSSC:Race Condition
 check: Race Condition There is a gap between the creation of a transaction and the moment it is accepted
   in the blockchain. Therefore, an attacker can take advantage of this gap to put a contract in a state
-  that advantages them. Attack Scenario - Bob creates RaceCondition(100, token) .
+  that advantages them. Attack Scenario - Bob creates RaceCondition(100, token) . Alice trusts RaceCondition
+  wi
 fix: 'See crytic/not-so-smart-contracts race_condition/README.md (anchor: Race Condition) for remediation.'
 detect:
   grep:
@@ -53,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

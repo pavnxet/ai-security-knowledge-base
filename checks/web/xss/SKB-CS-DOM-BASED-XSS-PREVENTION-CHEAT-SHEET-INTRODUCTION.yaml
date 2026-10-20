@@ -12,16 +12,16 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-79
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:DOM_based_XSS_Prevention_Cheat_Sheet#Introduction
 refs:
 - CS:DOM_based_XSS_Prevention_Cheat_Sheet#Introduction
 check: 'Introduction Commonly discussed, overlapping categories of [XSS (Cross-Site Scripting)](https://owasp.org/www-community/attacks/xss/)
-  include: - [Reflected or Stored](https://owasp.org/www-community/attacks/xss/ stored-'
+  include: - [Reflected or Stored](https://owasp.org/www-community/attacks/xss/ stored-and-reflected-xss-attacks)
+  - ['
 fix: 'See OWASP/CheatSheetSeries cheatsheets/DOM_based_XSS_Prevention_Cheat_Sheet.md (anchor: Introduction)
   for remediation.'
 detect:
@@ -54,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
