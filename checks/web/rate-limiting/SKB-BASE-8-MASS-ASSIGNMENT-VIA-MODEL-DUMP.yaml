@@ -14,15 +14,15 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe:
-- CWE-915
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:8. Mass assignment via `model_dump` / `*
 refs:
 - BASE:8. Mass assignment via `model_dump` / `*
 check: '8. Mass assignment via model_dump / body What: User( body.model_dump()) overwrites privileged
-  fields. Fix: Allowlist fields; use separate input/output schemas. Detection: rg -n "\ \'
+  fields. Fix: Allowlist fields; use separate input/output schemas. Detection: rg -n "\ \ . model_dump
+  \ \ body" .py ---'
 fix: 'See yesmayank/secure-coding-baseline 05-fastapi.md (anchor: 8. Mass assignment via `model_dump`
   / `**body`) for remediation.'
 detect:
@@ -54,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
