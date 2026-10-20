@@ -13,10 +13,9 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 50
-cwe:
-- CWE-362
-cwe_source: mapped
+priority: 40
+cwe: []
+cwe_source: extracted
 owasp:
 - ASVS:V15.4.1
 refs:
@@ -24,7 +23,7 @@ refs:
 - ASVS V15.4.1
 check: Verify that shared objects in multi-threaded code (such as caches, files, or in-memory objects
   accessed by multiple threads) are accessed safely by using thread-safe types and synchronization mechanisms
-  like locks or semaphores to avoid race c
+  like locks or semaphores to avoid race conditions and data corruption.
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V15.4.1) for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

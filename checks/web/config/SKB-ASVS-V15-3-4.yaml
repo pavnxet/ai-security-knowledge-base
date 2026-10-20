@@ -14,9 +14,8 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe:
-- CWE-770
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - ASVS:V15.3.4
 refs:
@@ -24,7 +23,7 @@ refs:
 - ASVS V15.3.4
 check: Verify that all proxying and middleware components transfer the user's original IP address correctly
   using trusted data fields that cannot be manipulated by the end user, and the application and web server
-  use this correct value for logging and secur
+  use this correct value for logging and security decisions such as rate lim
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V15.3.4) for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

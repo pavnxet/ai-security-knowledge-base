@@ -13,12 +13,9 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 50
-cwe:
-- CWE-190
-- CWE-770
-- CWE-120
-cwe_source: mapped
+priority: 40
+cwe: []
+cwe_source: extracted
 owasp:
 - ASVS:V17.3.2
 refs:
@@ -26,7 +23,7 @@ refs:
 - ASVS V17.3.2
 check: Verify that the signaling server is able to continue processing legitimate signaling messages when
   encountering malformed signaling message that could cause a denial of service condition. This could
-  include implementing input validatio
+  include implementing input validation, safely handling integer ove
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V17.3.2) for remediation.'
 detect:
@@ -58,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

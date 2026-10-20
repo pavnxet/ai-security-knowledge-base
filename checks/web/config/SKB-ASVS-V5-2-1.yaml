@@ -13,11 +13,9 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 50
+priority: 40
 cwe:
 - CWE-116
-- CWE-434
-- CWE-770
 cwe_source: mapped
 owasp:
 - ASVS:V5.2.1
@@ -57,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
