@@ -13,16 +13,15 @@ phase:
 - full-audit
 severity: medium
 priority: 40
-cwe:
-- CWE-770
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:FastAPI_Security_Cheat_Sheet#Rate Limiting
 refs:
 - CS:FastAPI_Security_Cheat_Sheet#Rate Limiting
 check: Rate Limiting Apply request limits to reduce abuse of sensitive or expensive endpoints. Mitigation
   Options - Use a dedicated library like [slowapi](https://github.com/laurentS/slowapi) to implement route-specific
-  rate limiting in code. - With multipl
+  rate limiting in code. - With multiple workers or replicas, use a s
 fix: 'See OWASP/CheatSheetSeries cheatsheets/FastAPI_Security_Cheat_Sheet.md (anchor: Rate Limiting) for
   remediation.'
 detect:
@@ -53,4 +52,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
