@@ -13,10 +13,9 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-79
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:12. Template autoescape disabled
 refs:
@@ -57,4 +56,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

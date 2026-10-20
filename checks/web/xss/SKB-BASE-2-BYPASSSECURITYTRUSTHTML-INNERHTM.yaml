@@ -13,16 +13,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-79
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:2. `bypassSecurityTrustHtml` / `innerHTM
 refs:
 - BASE:2. `bypassSecurityTrustHtml` / `innerHTM
 check: '2. bypassSecurityTrustHtml / innerHTML without sanitization What: Angular sanitizes [innerHTML]
-  by default,'
+  by default, but DomSanitizer.bypassSecuri'
 fix: 'See yesmayank/secure-coding-baseline 18-angular.md (anchor: 2. `bypassSecurityTrustHtml` / `innerHTML`
   without sanitization) for remediation.'
 detect:
@@ -57,4 +56,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

@@ -13,16 +13,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-918
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:9. Insecure third-party redirects / SSRF
 refs:
 - BASE:9. Insecure third-party redirects / SSRF
 check: '9. Insecure third-party redirects / SSRF-like client calls What: Fetching user-supplied URLs from
-  the client (less severe, but can leak tokens to third parties via URL'
+  the client (less severe, but can leak tokens to third parties via URL params). Fix: Don''t put tokens'
 fix: 'See yesmayank/secure-coding-baseline 17-react-spa.md (anchor: 9. Insecure third-party redirects
   / SSRF-like client calls) for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

@@ -13,16 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-1104
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Vulnerable_Dependency_Management_Cheat_Sheet#Tools
 refs:
 - CS:Vulnerable_Dependency_Management_Cheat_Sheet#Tools
 check: Tools This section lists several tools that can used to analyze the dependencies used by a project
   in order to detect the vulnerabilities. It's important to ensure, during the selection process of a
-  vulnerable dependency
+  vulnerable dependency detection tool, that this one
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Vulnerable_Dependency_Management_Cheat_Sheet.md (anchor:
   Tools) for remediation.'
 detect:
@@ -54,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
