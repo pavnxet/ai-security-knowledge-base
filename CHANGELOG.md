@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.9.7] — beta
+### Added
+- **Agent Skill: `skills/secure-kb-audit/`.** A portable Agent Skills bundle (SKILL.md + references +
+  assets + scripts) that lets Claude Code, Codex, OpenCode, Pi and any spec-compliant harness audit a
+  codebase with the KB. Includes `scripts/install.sh` (symlink/copy into `~/.claude/skills`,
+  `~/.agents/skills`, `~/.config/opencode/skills`, `~/.pi/agent/skills`, or project-local paths) and
+  `scripts/find_kb.py` to locate the KB.
+- `tests/test_skill.py` — validates frontmatter against the spec, that every file SKILL.md references
+  exists, and that the locator works.
+
 ## [0.9.6] — beta
 ### Changed
 - **Query normalisation + porter stemming.** Queries are stripped of conversational intent ("how do I …") and abbreviations expanded (`sqli` → `sql injection`); the FTS index now uses `tokenize='porter unicode61'`. Query/index-side only — no card refs change, content_hash unchanged.

@@ -77,6 +77,23 @@ claude mcp add secure-kb -- python3 /abs/path/to/secure-kb/mcp/server.py
 
 **Generic MCP client** — JSON-RPC 2.0 over stdio; `initialize` then `tools/call`.
 
+## Use it as an agent skill (new)
+
+`secure-kb` ships as an **Agent Skills** bundle, so Claude Code, Codex, OpenCode, Pi and any other
+harness that follows the spec can use it directly. A skill is just a folder with a `SKILL.md`, so
+installing it means placing (or symlinking) it where your harness looks for skills:
+
+```bash
+git clone https://github.com/pavnxet/ai-security-knowledge-base && cd ai-security-knowledge-base
+./skills/secure-kb-audit/scripts/install.sh --claude     # ~/.claude/skills/
+./skills/secure-kb-audit/scripts/install.sh --agents     # ~/.agents/skills/  (Codex/OpenCode/Pi)
+./skills/secure-kb-audit/scripts/install.sh              # auto-detect every harness present
+```
+
+Then ask your agent *"audit this repo for security bugs"* — it runs the detect → gate → check →
+report → attest workflow and returns a severity-grouped report where every finding carries
+`file:line` evidence. See [`skills/secure-kb-audit/SKILL.md`](skills/secure-kb-audit/SKILL.md).
+
 ## Verifiable Security Attestation (new)
 
 An agent's security claim is normally unfalsifiable prose. `secure-kb` can instead emit a
