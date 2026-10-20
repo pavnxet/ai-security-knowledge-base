@@ -12,18 +12,17 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 50
+priority: 40
 cwe:
-- CWE-79
 - CWE-1021
-cwe_source: mapped
+cwe_source: heuristic
 owasp:
 - CS:HTTP_Headers_Cheat_Sheet#Introduction
 refs:
 - CS:HTTP_Headers_Cheat_Sheet#Introduction
 check: Introduction HTTP Headers are a great booster for web security with easy implementation. Proper
   HTTP response headers can help prevent security vulnerabilities like Cross-Site Scripting, Clickjacking,
-  Information disclosure and more. I
+  Information disclosure and more. In this cheat sheet, we will re
 fix: 'See OWASP/CheatSheetSeries cheatsheets/HTTP_Headers_Cheat_Sheet.md (anchor: Introduction) for remediation.'
 detect:
   grep:
@@ -55,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

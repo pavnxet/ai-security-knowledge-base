@@ -14,15 +14,14 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe:
-- CWE-915
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:8. Mass assignment via `@ModelAttribute`
 refs:
 - BASE:8. Mass assignment via `@ModelAttribute`
 check: '8. Mass assignment via @ModelAttribute / direct binding What: Binding request params to an entity
-  with setters lets attackers set r'
+  with setters lets attackers set role , isAdmin . Fix: Use dedic'
 fix: 'See yesmayank/secure-coding-baseline 06-spring-boot.md (anchor: 8. Mass assignment via `@ModelAttribute`
   / direct binding) for remediation.'
 detect:
@@ -57,4 +56,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

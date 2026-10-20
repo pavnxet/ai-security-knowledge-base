@@ -14,16 +14,15 @@ phase:
 - full-audit
 severity: medium
 priority: 30
-cwe:
-- CWE-1357
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:What it is
 refs:
 - BASE:What it is
 check: What it is AI sometimes invents package names that don't exist, or suggests names that are typosquats
   of popular packages. When a developer runs npm install / pip install to satisfy the import, an attacker-controlled
-  package may be installed, or the build breaks on a
+  package may be installed, or the build breaks on a name that resolves to malware.
 fix: 'See yesmayank/secure-coding-baseline 27-vibe-coded-secrets-supplychain.md (anchor: What it is) for
   remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

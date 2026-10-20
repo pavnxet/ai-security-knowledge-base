@@ -1,0 +1,58 @@
+id: SKB-BASE-B0C15AC1A4
+title: 9. BOLA / IDOR
+summary: '9. BOLA / IDOR What: findOne({ _id: id }) without ownership filter. Fix: findOne({ _id: id,
+  ownerId: userId }) ; use tenant-scoped queries. '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe:
+- CWE-639
+cwe_source: heuristic
+owasp:
+- BASE:9. BOLA / IDOR
+refs:
+- BASE:9. BOLA / IDOR
+check: '9. BOLA / IDOR What: findOne({ _id: id }) without ownership filter. Fix: findOne({ _id: id, ownerId:
+  userId }) ; use tenant-scoped queries. Detection: rg -n "findOne\( find\(\{ ?_id" app/ ---'
+fix: 'See yesmayank/secure-coding-baseline 25-mongodb.md (anchor: 9. BOLA / IDOR) for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- bola
+- idor
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 25-mongodb.md
+  anchor: 9. BOLA / IDOR
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/25-mongodb.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-20'

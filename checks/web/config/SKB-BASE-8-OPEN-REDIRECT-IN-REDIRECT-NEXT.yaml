@@ -1,0 +1,59 @@
+id: SKB-BASE-8-OPEN-REDIRECT-IN-REDIRECT-NEXT
+title: 8. Open redirect in `redirect()` / `next/navigation`
+summary: '8. Open redirect in redirect() / next/navigation What: redirect(req.nextUrl.searchParams.get(''next''))
+  to attacker site. Fix: Allowlist local'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: config
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: medium
+priority: 30
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:8. Open redirect in `redirect()` / `next
+refs:
+- BASE:8. Open redirect in `redirect()` / `next
+check: '8. Open redirect in redirect() / next/navigation What: redirect(req.nextUrl.searchParams.get(''next''))
+  to attacker site. Fix: Allowlist local targets. Detection: rg -n "redirect\( r'
+fix: 'See yesmayank/secure-coding-baseline 16-nextjs.md (anchor: 8. Open redirect in `redirect()` / `next/navigation`)
+  for remediation.'
+detect:
+  grep:
+  - DEBUG
+  - allowBackup
+  - exported
+  - 0.0.0.0/0
+  files:
+  - '**/*.yml'
+  - '**/*.yaml'
+  - '**/*.json'
+  - '**/settings/**'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- config
+- open
+- redirect
+- redirect
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 16-nextjs.md
+  anchor: 8. Open redirect in `redirect()` / `next/navigation`
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/16-nextjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-20'
