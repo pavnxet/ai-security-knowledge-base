@@ -13,17 +13,15 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-1321
-- CWE-269
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Prototype_Pollution_Prevention_Cheat_Sheet#Explanation
 refs:
 - CS:Prototype_Pollution_Prevention_Cheat_Sheet#Explanation
 check: Explanation Prototype Pollution is a critical vulnerability that can allow attackers to manipulate
   an application's JavaScript objects and properties, leading to serious security issues such as unauthorized
-  access to data, privilege es
+  access to data, privilege escalation, and even remote code
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Prototype_Pollution_Prevention_Cheat_Sheet.md (anchor: Explanation)
   for remediation.'
 detect:
@@ -55,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
