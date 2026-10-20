@@ -1,0 +1,59 @@
+id: SKB-BASE-7-SQL-INJECTION-VIA-RAW-ORDER-WHERE-INT
+title: 7. SQL injection via raw/order/where interpolation
+summary: '7. SQL injection via raw/order/where interpolation What: Model.where("name = '' {q}''") or order("
+  {params[:sort]}") . Fix: Use parameterized:'
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. SQL injection via raw/order/where int
+refs:
+- BASE:7. SQL injection via raw/order/where int
+check: '7. SQL injection via raw/order/where interpolation What: Model.where("name = '' {q}''") or order("
+  {params[:sort]}") . Fix: Use parameterized: where(name: q) ; for order u'
+fix: 'See yesmayank/secure-coding-baseline 10-rails.md (anchor: 7. SQL injection via raw/order/where interpolation)
+  for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- order
+- where
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 10-rails.md
+  anchor: 7. SQL injection via raw/order/where interpolation
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/10-rails.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-20'

@@ -1,0 +1,70 @@
+id: SKB-BASE-7-SQL-INJECTION-IN-RESOLVERS
+title: 7. SQL injection in resolvers
+summary: '7. SQL injection in resolvers What: db.query("... WHERE id = " + args.id) . Fix: Parameterized
+  queries / ORM. Detection: rg -n "query\(. \+ '
+platforms:
+- web
+- api
+stacks:
+- any
+domain: injection
+phase:
+- pr-review
+- pre-launch
+- full-audit
+severity: high
+priority: 45
+cwe: []
+cwe_source: extracted
+owasp:
+- BASE:7. SQL injection in resolvers
+refs:
+- BASE:7. SQL injection in resolvers
+check: '7. SQL injection in resolvers What: db.query("... WHERE id = " + args.id) . Fix: Parameterized
+  queries / ORM. Detection: rg -n "query\(. \+ raw\(. \+" server/ ---'
+fix: 'See yesmayank/secure-coding-baseline 14-graphql.md (anchor: 7. SQL injection in resolvers) for remediation.'
+detect:
+  grep:
+  - execute\(
+  - query\(
+  - raw(
+  - SELECT .* \+
+  files:
+  - '**/*.py'
+  - '**/*.js'
+  - '**/*.php'
+  - '**/*.java'
+verify_evidence: Cite the file:line or config value inspected to justify pass/fail, or mark unknown.
+tags:
+- injection
+- injection
+- resolvers
+sources:
+- repo: yesmayank/secure-coding-baseline
+  path: 14-graphql.md
+  anchor: 7. SQL injection in resolvers
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/14-graphql.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+- repo: yesmayank/secure-coding-baseline
+  path: 16-nextjs.md
+  anchor: 11. SQL injection in route handlers
+  commit: 2c97236c65af103144a6453a9e97c86c7885a6eb
+  url: https://github.com/yesmayank/secure-coding-baseline/blob/2c97236c65af103144a6453a9e97c86c7885a6eb/16-nextjs.md
+  license: Apache-2.0
+  type: github
+  extraction: programmatic
+  verified: true
+origin: distilled
+confidence: high
+extraction: programmatic
+verified: true
+corroboration: 1
+last_verified: '2026-10-20'
+merged_from:
+- SKB-BASE-11-SQL-INJECTION-IN-ROUTE-HANDLERS
+aliases:
+- SKB-BASE-11-SQL-INJECTION-IN-ROUTE-HANDLERS
