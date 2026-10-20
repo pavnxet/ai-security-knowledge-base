@@ -12,12 +12,11 @@ phase:
 - pre-launch
 - full-audit
 severity: medium
-priority: 50
+priority: 40
 cwe:
 - CWE-367
 - CWE-840
 - CWE-841
-- CWE-362
 cwe_source: mapped
 owasp:
 - CS:Business_Logic_Security_Cheat_Sheet#References
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
