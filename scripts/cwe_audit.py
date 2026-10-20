@@ -20,7 +20,7 @@ try:
     spec.loader.exec_module(bc)
 except SystemExit:
     pass
-RULES = getattr(bc, "CWE_TITLE_RULES", [])
+RULES = getattr(bc, "CWE_TITLE_RULES", None) or getattr(bc, "CWE_RULES", [])
 
 def main():
     cards = [yaml.safe_load(open(p)) for p in sorted(glob.glob(os.path.join(ROOT, "checks", "**", "*.yaml"), recursive=True))]

@@ -1,6 +1,6 @@
 # secure-kb
 
-> Merged, AI-agent-searchable security verification knowledge base: 2,032 atomic check cards distilled
+> Merged, AI-agent-searchable security verification knowledge base: 2,052 atomic check cards distilled
 > from 67 tracked sources (cards drawn from 15 repositories + 5 official-doc sources), covering web, API, mobile, Telegram bots, cloud, IoT, smart
 > contracts, LLM apps, vibe-coded apps, browser extensions and desktop.
 
