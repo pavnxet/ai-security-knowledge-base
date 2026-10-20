@@ -13,17 +13,16 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 55
-cwe:
-- CWE-434
-cwe_source: mapped
+priority: 45
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:9. File upload abuse
 refs:
 - BASE:9. File upload abuse
 check: '9. File upload abuse What: Accepting any extension/MIME → upload of .php webshell. Fix: Allowlist
   extensions; verify MIME via finfo ; store outside docroot; randomize names; disable script execution
-  in upload dir. Detection: rg -n "move_up'
+  in upload dir. Detection: rg -n "move_uploaded_file \$_FILES" .php ---'
 fix: 'See yesmayank/secure-coding-baseline 09-php-raw.md (anchor: 9. File upload abuse) for remediation.'
 detect:
   grep:
@@ -55,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

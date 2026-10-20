@@ -16,7 +16,6 @@ severity: critical
 priority: 80
 cwe:
 - CWE-306
-- CWE-89
 cwe_source: mapped
 owasp:
 - ASVS:V1.2.4
@@ -25,7 +24,7 @@ refs:
 - ASVS V1.2.4
 check: Verify that data selection or database queries (e.g., SQL, HQL, NoSQL, Cypher) use parameterized
   queries, ORMs, entity frameworks, or are otherwise protected from SQL Injection and other database injection
-  attacks. This is also relevant w
+  attacks. This is also relevant when writing stored procedures.
 fix: 'See OWASP/ASVS 5.0/docs_en/OWASP_Application_Security_Verification_Standard_5.0.0_en.csv (anchor:
   V1.2.4) for remediation.'
 detect:
@@ -57,4 +56,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
