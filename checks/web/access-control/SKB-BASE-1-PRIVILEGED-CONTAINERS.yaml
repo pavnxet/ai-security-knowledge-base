@@ -14,9 +14,8 @@ phase:
 - full-audit
 severity: high
 priority: 45
-cwe:
-- CWE-250
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - BASE:1. Privileged containers
 refs:
@@ -55,4 +54,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
