@@ -64,7 +64,7 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
 merged_from:
 - SKB-CS-SQL-INJECTION-PREVENTION-CHEAT-SHEET-ADDITIONAL-DEFENSES
 aliases:

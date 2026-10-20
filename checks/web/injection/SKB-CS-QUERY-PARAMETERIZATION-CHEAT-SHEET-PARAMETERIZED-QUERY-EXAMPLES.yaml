@@ -12,16 +12,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-89
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Query_Parameterization_Cheat_Sheet#Parameterized Query Examples
 refs:
 - CS:Query_Parameterization_Cheat_Sheet#Parameterized Query Examples
 check: Parameterized Query Examples SQL Injection is best prevented through the use of [ parameterized
-  queries ](SQL_Injection_Prevention_Cheat_Sheet.md). The follow
+  queries ](SQL_Injection_Prevention_Cheat_Sheet.md). The following chart demonstrates, with r
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Query_Parameterization_Cheat_Sheet.md (anchor: Parameterized
   Query Examples) for remediation.'
 detect:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

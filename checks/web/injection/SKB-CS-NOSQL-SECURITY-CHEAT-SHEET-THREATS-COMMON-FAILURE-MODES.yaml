@@ -12,11 +12,9 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-306
-- CWE-89
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:NoSQL_Security_Cheat_Sheet#Threats & Common Failure Modes
 refs:
@@ -57,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

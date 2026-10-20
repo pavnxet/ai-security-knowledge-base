@@ -15,7 +15,6 @@ severity: high
 priority: 55
 cwe:
 - CWE-20
-- CWE-770
 cwe_source: mapped
 owasp:
 - CS:Input_Validation_Cheat_Sheet#Introduction
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

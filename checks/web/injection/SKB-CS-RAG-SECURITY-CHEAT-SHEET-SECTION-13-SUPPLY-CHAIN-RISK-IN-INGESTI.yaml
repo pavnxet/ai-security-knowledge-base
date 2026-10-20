@@ -13,9 +13,8 @@ phase:
 - full-audit
 severity: high
 priority: 55
-cwe:
-- CWE-1357
-cwe_source: mapped
+cwe: []
+cwe_source: extracted
 owasp:
 - 'CS:RAG_Security_Cheat_Sheet#Section 13: Supply Chain Risk in Ingesti'
 refs:
@@ -56,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

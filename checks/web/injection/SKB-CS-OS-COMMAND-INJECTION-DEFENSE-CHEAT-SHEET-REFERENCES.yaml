@@ -14,7 +14,6 @@ severity: high
 priority: 65
 cwe:
 - CWE-77
-- CWE-78
 cwe_source: mapped
 owasp:
 - CS:OS_Command_Injection_Defense_Cheat_Sheet#References
@@ -54,4 +53,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'

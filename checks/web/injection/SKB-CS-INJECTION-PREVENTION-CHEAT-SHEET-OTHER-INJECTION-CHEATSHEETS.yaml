@@ -12,17 +12,15 @@ phase:
 - pre-launch
 - full-audit
 severity: high
-priority: 65
-cwe:
-- CWE-89
-- CWE-78
-cwe_source: mapped
+priority: 55
+cwe: []
+cwe_source: extracted
 owasp:
 - CS:Injection_Prevention_Cheat_Sheet#Other Injection Cheatsheets
 refs:
 - CS:Injection_Prevention_Cheat_Sheet#Other Injection Cheatsheets
 check: Other Injection Cheatsheets [SQL Injection Prevention Cheat Sheet](SQL_Injection_Prevention_Cheat_Sheet.md)
-  [OS Command Injection Defense Cheat Sheet](OS_C
+  [OS Command Injection Defense Cheat Sheet](OS_Command_Injection_Defense_Cheat
 fix: 'See OWASP/CheatSheetSeries cheatsheets/Injection_Prevention_Cheat_Sheet.md (anchor: Other Injection
   Cheatsheets) for remediation.'
 detect:
@@ -57,4 +55,4 @@ confidence: high
 extraction: programmatic
 verified: true
 corroboration: 1
-last_verified: '2026-10-19'
+last_verified: '2026-10-20'
