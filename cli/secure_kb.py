@@ -40,13 +40,23 @@ def ensure_db():
     db = os.path.join(ROOT, "index", "kb.sqlite")
     src = os.path.join(ROOT, "index", "checks.jsonl")
     if os.path.exists(db) and os.path.exists(src) and os.path.getmtime(db) >= os.path.getmtime(src):
-        return db
+        # Never trust a cached DB on mtime alone: a build that died mid-way leaves a valid-looking
+        # but empty file. Verify the row count matches the source, else rebuild.
+        try:
+            con = sqlite3.connect(db)
+            rows = con.execute("SELECT count(*) FROM checks_fts").fetchone()[0]
+            con.close()
+            if rows == sum(1 for _ in open(src, encoding="utf-8")):
+                return db
+        except Exception:
+            pass
+        # fall through and rebuild
     import sqlite3
     if not os.path.exists(src): return db
     con = sqlite3.connect(db)
     con.execute("DROP TABLE IF EXISTS checks_fts")
     con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check, cwe)")
-    for line in open(src):
+    for line in open(src, encoding="utf-8"):
         if not line.strip(): continue
         c = json.loads(line)
         con.execute("INSERT INTO checks_fts VALUES (?,?,?,?,?,?,?)",
@@ -58,7 +68,7 @@ def ensure_db():
 def load_cards():
     ensure_index()
     cards = {}
-    with open(os.path.join(IDX, "checks.jsonl")) as f:
+    with open(os.path.join(IDX, "checks.jsonl"), encoding="utf-8") as f:
         for line in f:
             c = json.loads(line)
             cards[c["id"]] = c
@@ -66,10 +76,10 @@ def load_cards():
 
 def load_map(name):
     p = os.path.join(IDX, name)
-    return json.load(open(p)) if os.path.exists(p) else {}
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
 
 def load_json(p):
-    return json.load(open(os.path.join(ROOT, p)))
+    return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
 
 def load_synonyms():
     """Merge schema/vocab.json synonyms with synonyms.yaml (if present)."""
@@ -78,7 +88,7 @@ def load_synonyms():
     p = os.path.join(ROOT, "synonyms.yaml")
     if os.path.exists(p):
         import yaml
-        d = yaml.safe_load(open(p)) or {}
+        d = yaml.safe_load(open(p, encoding="utf-8")) or {}
         for k, v in (d.get("synonyms") or {}).items():
             syn.setdefault(k, [])
             for t in v:
@@ -143,7 +153,7 @@ def cmd_detect(args):
         try:
             if os.path.getsize(fp) > 200_000:
                 continue
-            with open(fp, "r", errors="ignore") as f:
+            with open(fp, "r", errors="ignore", encoding="utf-8") as f:
                 head = f.read(200_000)
         except Exception:
             continue
@@ -164,7 +174,7 @@ def cmd_detect(args):
 def cmd_profile(args):
     prof = load_json(os.path.join("profiles", args.name + ".yaml")) if False else None
     import yaml
-    with open(os.path.join(ROOT, "profiles", args.name + ".yaml")) as f:
+    with open(os.path.join(ROOT, "profiles", args.name + ".yaml"), encoding="utf-8") as f:
         prof = yaml.safe_load(f)
     ids = prof["gate"]["fast"] if args.gate == "fast" else prof["gate"]["full"]
     cards = load_cards()
@@ -339,7 +349,7 @@ def cmd_tools(args):
     import glob, yaml
     out = []
     for p in sorted(glob.glob(os.path.join(ROOT, "tools", "*.yaml"))):
-        with open(p) as f:
+        with open(p, encoding="utf-8") as f:
             t = yaml.safe_load(f)
         if not args.platform or args.platform in t.get("platforms", []):
             out.append({"tool": t["name"], "detects": t.get("detects", ""),
@@ -357,10 +367,10 @@ REPORT_SKELETON = {
 def cmd_report(args):
     if args.action == "init":
         out = args.out or "security-report.json"
-        json.dump(REPORT_SKELETON, open(out, "w"), indent=2)
+        json.dump(REPORT_SKELETON, open(out, "w", encoding="utf-8"), indent=2)
         print(f"wrote {out}")
     elif args.action == "validate":
-        r = json.load(open(args.file))
+        r = json.load(open(args.file, encoding="utf-8"))
         errs = []
         if r.get("schema") != "secure-kb/report@1": errs.append("bad schema tag")
         for res in r.get("results", []):
@@ -401,7 +411,7 @@ def _gate_ids(platform, gate):
     p = os.path.join(ROOT, "profiles", platform + ".yaml")
     if not os.path.exists(p):
         return []
-    prof = yaml.safe_load(open(p))
+    prof = yaml.safe_load(open(p, encoding="utf-8"))
     return list((prof.get("gate") or {}).get(gate, []))
 
 def _attest_payload(target_path, profile, gate, checks):
@@ -446,7 +456,7 @@ def cmd_attest(args):
                             "value": hmac.new(args.key.encode(), aid.encode(), hashlib.sha256).hexdigest()}
     out = json.dumps(att, indent=1, sort_keys=True)
     if args.out:
-        open(args.out, "w").write(out + "\n"); print(f"attestation written: {args.out}  id={aid}")
+        open(args.out, "w", encoding="utf-8").write(out + "\n"); print(f"attestation written: {args.out}  id={aid}")
     else:
         print(out)
 

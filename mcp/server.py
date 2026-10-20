@@ -105,7 +105,7 @@ def call(name, a):
         import glob, yaml
         out = []
         for p in sorted(glob.glob(os.path.join(ROOT, "tools", "*.yaml"))):
-            t = yaml.safe_load(open(p))
+            t = yaml.safe_load(open(p, encoding="utf-8"))
             if not a.get("platform") or a["platform"] in t.get("platforms", []):
                 out.append({"name": t["name"], "detects": t.get("detects"), "run": t.get("run")})
         return out
@@ -135,7 +135,7 @@ def _detect(path):
     for fp in kb.iter_files(path):
         try:
             if os.path.getsize(fp) > 200_000: continue
-            head = open(fp, errors="ignore").read(200_000)
+            head = open(fp, errors="ignore", encoding="utf-8").read(200_000)
         except Exception: continue
         for sig, profs in router.get("signals", {}).items():
             if sig in head:

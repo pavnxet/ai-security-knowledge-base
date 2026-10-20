@@ -11,7 +11,7 @@ os.makedirs(IDX, exist_ok=True)
 def load_cards():
     out = []
     for p in sorted(sorted(glob.glob(os.path.join(ROOT, "checks", "**", "*.yaml"), recursive=True))):
-        with open(p) as f:
+        with open(p, encoding="utf-8") as f:
             out.append(yaml.safe_load(f))
     return out
 
@@ -19,8 +19,9 @@ def main():
     cards = load_cards()
     byid = {c["id"]: c for c in cards}
 
-    # checks.jsonl (full cards, one per line)
-    with open(os.path.join(IDX, "checks.jsonl"), "w") as f:
+    # checks.jsonl (full cards, one per line) — sorted by id so content_hash is order-INSENSITIVE
+    cards = sorted(cards, key=lambda c: c["id"])
+    with open(os.path.join(IDX, "checks.jsonl"), "w", encoding="utf-8") as f:
         for c in cards:
             f.write(json.dumps(c, ensure_ascii=False) + "\n")
 
@@ -46,7 +47,7 @@ def main():
     # router.json from profile fingerprints
     router = {"files": {}, "signals": {}}
     for pf in glob.glob(os.path.join(ROOT, "profiles", "*.yaml")):
-        with open(pf) as f:
+        with open(pf, encoding="utf-8") as f:
             prof = yaml.safe_load(f)
         name = prof["name"]
         for g in prof.get("detect", {}).get("files", []):

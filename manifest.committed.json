@@ -1,23 +1,23 @@
 {
   "name": "secure-kb",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "build_date": "2026-10-20",
-  "content_hash": "f6dd40d923d5fe12",
+  "content_hash": "a57da404205eada6",
   "cards": 2052,
   "by_platform": {
     "api": 729,
-    "browser-ext": 4,
+    "web": 1819,
     "cloud": 16,
     "desktop": 4,
+    "browser-ext": 4,
     "iot": 15,
     "llm": 10,
     "mobile": 51,
     "android": 24,
     "ios": 7,
+    "web3": 49,
     "telegram": 7,
-    "vibe": 40,
-    "web": 1819,
-    "web3": 49
+    "vibe": 40
   },
   "by_severity": {
     "critical": 36,

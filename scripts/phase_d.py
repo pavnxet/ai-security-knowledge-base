@@ -49,8 +49,8 @@ def main():
     files = glob.glob(os.path.join(ROOT, "checks", "**", "*.yaml"), recursive=True)
     cards = []
     for p in files:
-        c = yaml.safe_load(open(p)); c["priority"] = compute(c); c["_p"] = p
-        yaml.safe_dump({k: v for k, v in c.items() if k != "_p"}, open(p, "w"),
+        c = yaml.safe_load(open(p, encoding="utf-8")); c["priority"] = compute(c); c["_p"] = p
+        yaml.safe_dump({k: v for k, v in c.items() if k != "_p"}, open(p, "w", encoding="utf-8"),
                        sort_keys=False, allow_unicode=True, width=100)
         cards.append(c)
     cards.sort(key=lambda c: (-c["priority"], c["id"]))

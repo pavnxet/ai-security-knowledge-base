@@ -8,7 +8,7 @@
 repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
-> **Status: public beta (v0.9.0).** The build is deterministic and reproducible; retrieval targets are
+> **Status: public beta (v0.9.5).** The build is deterministic and reproducible; retrieval targets are
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
 
@@ -130,7 +130,7 @@ Held-out sets, frozen. **Strict** metrics (mapped refs only) — reported as mea
 | Fast-gate recall (strict) | 30 | **46.7%** | ≥ 0.70 | below |
 
 Determinism: two consecutive rebuilds — and a rebuild with **shuffled** staging input — produce the
-identical `manifest.content_hash` `0c921baa291a4af4`. Reproduce with
+identical `manifest.content_hash` `a57da404205eada6`. Reproduce with
 `python3 scripts/fetch_sources.py && python3 scripts/ingest_from_cache.py && python3 scripts/build_cards_v2.py`.
 
 ## Known limitations

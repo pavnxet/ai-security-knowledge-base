@@ -83,7 +83,7 @@ def lab_coverage():
 def main():
     held = yaml.safe_load(open(os.path.join(ROOT,"bench","heldout_queries.yaml")))["queries"]
     v2path = os.path.join(ROOT,"bench","heldout_queries_v2.yaml")
-    held_v2 = yaml.safe_load(open(v2path))["queries"] if os.path.exists(v2path) else []
+    held_v2 = yaml.safe_load(open(v2path, encoding="utf-8"))["queries"] if os.path.exists(v2path) else []
     allr, worst_all = eval_set(held, "all")
     cur = [q for q in held if q.get("set")=="curated"]
     tmpl = [q for q in held if q.get("set")=="templated"]
@@ -91,10 +91,10 @@ def main():
     tmpl_r, _ = eval_set(tmpl, "templated")
     # user set
     v2d_path = os.path.join(ROOT,"bench","v2_dev","queries.yaml")
-    v2d = yaml.safe_load(open(v2d_path))["queries"] if os.path.exists(v2d_path) else []
+    v2d = yaml.safe_load(open(v2d_path, encoding="utf-8"))["queries"] if os.path.exists(v2d_path) else []
     v2d_r, _ = eval_set(v2d, "v2_dev") if v2d else ({"set":"v2_dev","n":0}, [])
     _uq = os.path.join(ROOT, "bench", "user_queries.yaml")
-    user = (yaml.safe_load(open(_uq)).get("queries") or []) if os.path.exists(_uq) else []
+    user = (yaml.safe_load(open(_uq, encoding="utf-8")).get("queries") or []) if os.path.exists(_uq) else []
     user_r = eval_set(user, "user")[0] if user else {"set":"user","n":0,"note":"empty - add real queries"}
 
     cur_v2 = [q for q in held_v2 if q.get("set")=="curated"]
