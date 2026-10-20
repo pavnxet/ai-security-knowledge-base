@@ -1,55 +1,55 @@
 {
-  "cards": 2032,
+  "cards": 2052,
   "heldout": {
     "all": {
       "set": "all",
       "n": 154,
-      "recall@5": 0.708,
-      "recall@10": 0.727,
-      "mrr": 0.668,
-      "p50_ms": 50.6,
-      "p95_ms": 69.05,
-      "avg_tokens": 91.1
+      "recall@5": 0.669,
+      "recall@10": 0.688,
+      "mrr": 0.633,
+      "p50_ms": 51.93,
+      "p95_ms": 72.67,
+      "avg_tokens": 91.2
     },
     "curated_v1": {
       "set": "curated",
       "n": 59,
-      "recall@5": 0.373,
-      "recall@10": 0.407,
-      "mrr": 0.316,
-      "p50_ms": 46.97,
-      "p95_ms": 67.69,
-      "avg_tokens": 110.6
+      "recall@5": 0.271,
+      "recall@10": 0.305,
+      "mrr": 0.214,
+      "p50_ms": 43.94,
+      "p95_ms": 66.3,
+      "avg_tokens": 110.4
     },
     "curated_v2": {
       "set": "curated_v2",
       "n": 59,
-      "recall@5": 0.475,
+      "recall@5": 0.458,
       "recall@10": 0.593,
-      "mrr": 0.299,
-      "p50_ms": 53.09,
-      "p95_ms": 67.92,
-      "avg_tokens": 110.6
+      "mrr": 0.28,
+      "p50_ms": 42.18,
+      "p95_ms": 66.03,
+      "avg_tokens": 110.4
     },
     "v2_dev": {
       "set": "v2_dev",
       "n": 40,
-      "recall@5": 0.6,
-      "recall@10": 0.65,
-      "mrr": 0.578,
-      "p50_ms": 50.13,
-      "p95_ms": 65.11,
-      "avg_tokens": 111.7
+      "recall@5": 0.325,
+      "recall@10": 0.35,
+      "mrr": 0.272,
+      "p50_ms": 40.97,
+      "p95_ms": 64.59,
+      "avg_tokens": 112.3
     },
     "templated": {
       "set": "templated",
       "n": 95,
       "recall@5": 0.916,
       "recall@10": 0.926,
-      "mrr": 0.887,
-      "p50_ms": 58.21,
-      "p95_ms": 71.18,
-      "avg_tokens": 78.9
+      "mrr": 0.894,
+      "p50_ms": 59.23,
+      "p95_ms": 70.2,
+      "avg_tokens": 79.4
     },
     "user": {
       "set": "user",
@@ -59,9 +59,9 @@
   },
   "lab_coverage": {
     "classes": 30,
-    "covered": 29,
-    "coverage_pct": 96.7,
-    "in_fast_gate": 18,
-    "gate_recall_pct": 60.0
+    "covered": 23,
+    "coverage_pct": 76.7,
+    "in_fast_gate": 14,
+    "gate_recall_pct": 46.7
   }
 }

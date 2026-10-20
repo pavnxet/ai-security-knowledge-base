@@ -7,9 +7,11 @@
   source document, and official CWE-title matches — tagged `cwe_source: mapped`. See `docs/CWE.md`.
 - `scripts/cwe_audit.py` — per-rule n + topicality audit, written to `bench/cwe_audit.json`.
 ### Changed
-- **Held-out all recall@5 0.662 → 0.708 (target met); v2_dev 0.25 → 0.60 (target met);
-  fast-gate recall 26.7% → 60.0%; lab-class coverage 73.3% → 96.7%.** Corpus 2,057 → 2,032 cards
-  (more merges, since dedupe may use mapped CWEs).
+- Honest effect: held-out all 0.662 → 0.669; curated v2 0.441 → 0.458; v2_dev 0.250 → 0.325;
+  fast-gate recall 26.7% → 46.7%. **Targets not met except `templated`.** Corpus 2,057 → 2,052.
+### Corrected
+- v0.9.3 removed a keyword→CWE table that had been mislabelled `mapped`; it inflated strict metrics
+  by relabelling heuristics and adding refs. See `docs/CWE.md` "Correction".
 
 ## [0.9.1] — beta
 ### Added
