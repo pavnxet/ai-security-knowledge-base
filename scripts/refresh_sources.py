@@ -28,7 +28,13 @@ def main():
             meta = api(f"https://api.github.com/repos/{repo}", a.token)
             br = meta.get("default_branch")
             commit = api(f"https://api.github.com/repos/{repo}/commits/{br}", a.token).get("sha")
-            new = {"license": (meta.get("license") or {}).get("spdx_id") or "NOASSERTION",
+            # Never downgrade a known licence to NOASSERTION. GitHub's licence detector produces
+            # false negatives (it reports OWASP's CC BY-SA 4.0 documents as NOASSERTION), and a
+            # downgrade silently weakens the provenance recorded on every derived card.
+            lic = (meta.get("license") or {}).get("spdx_id") or "NOASSERTION"
+            if lic == "NOASSERTION" and s.get("license") not in (None, "", "NOASSERTION"):
+                lic = s["license"]
+            new = {"license": lic,
                    "stars": meta.get("stargazers_count"), "archived": bool(meta.get("archived")),
                    "last_pushed": (meta.get("pushed_at") or "")[:10], "default_branch": br,
                    "commit": commit, "last_verified": time.strftime("%Y-%m-%d")}
