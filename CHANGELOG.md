@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.9.14] — beta
+### Changed (Phase 5 — teach the skill to dismiss a finding properly)
+- **The report template now opens with a threat model block** — assets, trust boundaries,
+  assumptions, out of scope — *before* any finding. Two equally true checks can have opposite
+  severities depending on whether the target is a single-user tool or a multi-tenant service; the
+  block is what makes the severity call reviewable.
+- **Every dismissal now carries a reason.** An `n/a` row must state why it does not apply **and what
+  would make it apply**; an accepted risk must state who it is acceptable for **and who it would not
+  be**. A dismissal nobody can argue with is indistinguishable from an oversight.
+- `references/reporting.md` gains **"Dismissing a finding"** with a worked strong-vs-weak example:
+  the strong one argues from the code's own invariant and names the assumption it rests on; the weak
+  one ("adds complexity without real protection") is true only for a subset of attackers and hides
+  its own scope.
+- `SKILL.md` step 4 now directs the agent to fill the threat model first and to reason about every
+  dismissal.
+
+### Added
+- 4 tests in `tests/test_skill.py` pinning this: the template must contain the threat model block
+  *before* Findings, must require the "what would make it apply" column and the "not acceptable for"
+  column, and `reporting.md` must explain the assumption/scoping discipline.
+
 ## [0.9.13] — beta
 ### Added
 - **`KNOWN_LIMITATIONS.md`** — one page with the honest, *measured* state of the project: retrieval
