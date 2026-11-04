@@ -8,7 +8,24 @@
 import os, json, glob, re, hashlib, yaml, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TODAY = datetime.date.today().isoformat()
+def _corpus_date() -> str:
+    """The corpus date is a COMMITTED constant, never `today()`.
+
+    Stamping the build date into every card made the corpus irreproducible across days: the
+    determinism job only passed when CI ran on the same day the corpus was built. Bump
+    CORPUS_DATE deliberately when re-freezing; the build fails closed if it is missing.
+    """
+    import os as _os, re as _re
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "CORPUS_DATE")
+    try:
+        value = open(path, encoding="utf-8").read().strip()
+    except OSError:
+        raise SystemExit(f"CORPUS_DATE not found at {path}")
+    if not _re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise SystemExit(f"CORPUS_DATE must be YYYY-MM-DD, got {value!r}")
+    return value
+
+TODAY = _corpus_date()
 SRC = {s["repo"]: s for s in yaml.safe_load(open(os.path.join(ROOT, "sources.yaml")))["sources"]}
 _cwemap_path = os.path.join(ROOT, "scripts", "ingest", "data", "asvs_cwe_mapping.json")
 ASVS_CWE = json.load(open(_cwemap_path)) if os.path.exists(_cwemap_path) else {}
