@@ -5,14 +5,25 @@
 **Knowledge base:** secure-kb `<version>` (`content_hash` `<hash>`)
 **Method:** static review against secure-kb cards. Not a dynamic test or professional audit.
 
+## Threat model
+
+Fill this in **before** writing findings. Without it, a dismissal is just an opinion.
+
+| | |
+|---|---|
+| **Assets** | <what this app actually protects: credentials, payment data, admin actions, the user's own account/session> |
+| **Trust boundaries** | <where untrusted input crosses into trusted code — the points worth checking hardest> |
+| **Assumptions** | <what you are taking for granted: single-user, local-only, TLS terminated upstream, no multi-tenant use, …> |
+| **Out of scope** | <what you are not assessing, and why> |
+
 ## Summary
 
-| Severity | Found | Verified pass | Unknown |
-|---|---|---|---|
-| Critical | | | |
-| High | | | |
-| Medium | | | |
-| Low | | | |
+| Severity | Found | Verified pass | Unknown | N/A |
+|---|---|---|---|---|
+| Critical | | | | |
+| High | | | | |
+| Medium | | | | |
+| Low | | | | |
 
 One-paragraph plain-language verdict: what the biggest risk is, and what to do first.
 
@@ -31,7 +42,7 @@ One-paragraph plain-language verdict: what the biggest risk is, and what to do f
 
 | Check | Evidence | What was confirmed |
 |---|---|---|
-| `<ID>` | `<file>:<line>` | <what you actually saw> |
+| `<ID>` | `<file>:<line>` | <what you actually saw — not "no problem found"> |
 
 ## Could not verify (unknown)
 
@@ -41,7 +52,20 @@ One-paragraph plain-language verdict: what the biggest risk is, and what to do f
 
 ## Not applicable
 
-- `<ID>` — <why, e.g. "no webhook; this bot uses long polling">
+Every row needs a reason **and** the condition that would make it apply.
+
+| Check | Why it does not apply | What would make it apply |
+|---|---|---|
+| `<ID>` | <argue from the code's own constraints> | <e.g. "if this ever adds a webhook endpoint"> |
+
+## Accepted risks
+
+A risk you are choosing not to fix must say who it is acceptable *for*. That sentence is what makes
+the decision reviewable — and it is where hand-waving shows.
+
+| Check | Why it is accepted | Acceptable for | **Not** acceptable for |
+|---|---|---|---|
+| `<ID>` | <the reason, argued from the code's constraints> | <e.g. single-user local tool> | <e.g. any multi-tenant deployment> |
 
 ## Coverage caveats
 
