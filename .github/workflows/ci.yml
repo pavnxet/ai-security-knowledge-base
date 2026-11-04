@@ -29,6 +29,8 @@ jobs:
         run: python tests/validate.py
       - name: Risk register (every accepted risk has a reason; every mitigation resolves)
         run: python scripts/check_risks.py
+      - name: Release coherence (version, counts, hash, shards, posture docs, skill)
+        run: python scripts/verify_release.py
       - name: Held-out benchmark (report)
         run: python bench/run_bench.py
       - name: Benchmark regression gate
