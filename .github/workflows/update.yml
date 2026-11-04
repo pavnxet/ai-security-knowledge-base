@@ -20,16 +20,25 @@ jobs:
       - name: Re-resolve source SHAs / licenses (writes sources.yaml)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/refresh_sources.py --token "$GITHUB_TOKEN"
-      - name: Diff and open PR
+        run: python scripts/refresh_sources.py
+      - name: Open a pull request if sources changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          if git diff --quiet -- sources.yaml; then
+            echo "no source changes"
+            exit 0
+          fi
+          branch="chore/source-refresh-$(date -u +%Y-%m-%d)"
           git config user.name "secure-kb-bot"
           git config user.email "bot@secure-kb.local"
+          git checkout -b "$branch"
           git add sources.yaml
-          if git diff --cached --quiet; then
-            echo "no source changes"
-          else
-            git commit -m "chore(sources): monthly refresh $(date +%F)"
-            git push
-            echo "::notice::sources.yaml changed - review the PR for new/changed/removed items"
-          fi
+          git commit -m "chore(sources): monthly refresh $(date -u +%F)"
+          git push -u origin "$branch"
+          gh pr create \
+            --base "${{ github.event.repository.default_branch }}" \
+            --head "$branch" \
+            --title "chore(sources): monthly refresh $(date -u +%F)" \
+            --body "Automated monthly re-resolve of source SHAs and licences. Every changed field is listed in the job log; review the diff before merging."
+          echo "::notice::sources.yaml changed - a pull request was opened for review"

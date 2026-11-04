@@ -224,13 +224,13 @@ risks:
     asset: target
     likelihood: medium
     impact: high
-    status: open
+    status: mitigated
     justification: >
-      Open bug. fingerprint_target walks the target independently of iter_files and calls read() on
-      every file, so one very large file (a disk image, a database dump) exhausts memory. Not
-      remotely exploitable — it requires a local user pointing the tool at a pathological tree — but
-      it is a real robustness defect and the fix is small (hash in chunks with a size guard).
-    verification: {kind: none, ref: null}
+      Was an open bug: fingerprint_target walked the target independently of iter_files and called
+      read() on every file, so one very large file (a disk image, a database dump) exhausted memory.
+      It now hashes in 1 MiB chunks, so peak memory is bounded regardless of file size, and it skips
+      symlinks so a link pointing outside the tree cannot attribute foreign bytes to the target.
+    verification: {kind: test, ref: tests/test_hardening.py::test_fingerprint_streams_and_skips_symlinks}
     review_by: 2027-05-01
     issue: null
 

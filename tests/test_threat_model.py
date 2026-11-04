@@ -81,9 +81,11 @@ def test_claims_about_the_code_still_hold():
 
     fp = cli[cli.index("def fingerprint_target"):]
     fp = fp[: fp.index("\ndef ")]
-    assert ".read()" in fp, "R-013: fingerprint_target no longer reads whole files"
-    assert "getsize" not in fp, (
-        "R-013 appears FIXED: fingerprint_target now has a size guard — update the threat model")
+    # R-013 was fixed: hashing is chunked (bounded memory) and symlinks are skipped, so a link
+    # pointing outside the tree cannot attribute foreign bytes to the target.
+    assert "fh.read(_HASH_CHUNK)" in fp, "R-013: fingerprint_target no longer streams in chunks"
+    assert "islink" in fp, "R-013: fingerprint_target follows symlinks again"
+    assert ".read()" not in fp, "R-013 regressed: whole-file read is back"
 
     mcp = open(os.path.join(ROOT, "mcp", "server.py"), encoding="utf-8").read()
     assert "fullmatch" in mcp, "R-015: profile-name guard removed from the MCP server"

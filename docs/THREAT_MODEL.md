@@ -131,7 +131,7 @@ Each row is a threat, the control that addresses it, and how we verify the contr
 
 | ID | Threat | Mitigation | Verification |
 |---|---|---|---|
-| R-013 | `fingerprint_target` reads **every file fully into memory** with no size cap, so one multi-GB file exhausts RAM | **Not mitigated.** `iter_files` caps at 8,000 files, but `fingerprint_target` walks independently and is unbounded | **Open finding — see R-013 in the register** |
+| R-013 | `fingerprint_target` reading **every file fully into memory** with no size cap, so one multi-GB file exhausts RAM | Hashes in 1 MiB chunks (bounded memory) and skips symlinks, so bytes outside the tree cannot be attributed to the target | `tests/test_hardening.py::test_fingerprint_streams_and_skips_symlinks` |
 | R-014 | A pathologically large tree makes `detect` slow | `iter_files(cap=8000)` bounds the walk | `cli/secure_kb.py` |
 
 ### Elevation of privilege
@@ -160,12 +160,12 @@ Each row is a threat, the control that addresses it, and how we verify the contr
 | R-010 | Reading unintended paths | Info disclosure | Medium | Low | Low | Accepted (bounded) |
 | R-011 | MCP runs as invoking user | Info disclosure | High | Medium | Medium | Accepted |
 | R-012 | Paths in reports | Info disclosure | High | Low | Low | Accepted (by design) |
-| R-013 | Unbounded file read in `fingerprint_target` | Denial of service | Medium | High | High | **Open** |
+| R-013 | Unbounded file read in `fingerprint_target` | Denial of service | Medium | High | Low | Mitigated (chunked hashing) |
 | R-014 | Large tree slows `detect` | Denial of service | Medium | Low | Low | Mitigated (cap) |
 | R-015 | Profile path traversal | Elevation | Low | High | None | Mitigated |
 | R-016 | Prompt injection from audited repo | Elevation | Medium | Medium | Medium | Mitigated (documented) |
 
-**Counts:** 6 mitigated · 4 accepted · 1 deferred · 1 open · 5 partially mitigated with residual.
+**Counts:** 9 mitigated · 5 accepted · 1 deferred · 0 open · 2 partially mitigated with residual.
 
 ---
 

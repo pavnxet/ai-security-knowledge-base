@@ -8,6 +8,13 @@ VERSION = (open(os.path.join(ROOT, "VERSION")).read().strip()
            if os.path.exists(os.path.join(ROOT, "VERSION")) else "0.9.0")
 os.makedirs(IDX, exist_ok=True)
 
+def write_atomic(path, text):
+    """Write via a temp file + rename so an interrupted build cannot leave a truncated index."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        f.write(text)
+    os.replace(tmp, path)
+
 def load_cards():
     out = []
     for p in sorted(sorted(glob.glob(os.path.join(ROOT, "checks", "**", "*.yaml"), recursive=True))):
@@ -21,9 +28,8 @@ def main():
 
     # checks.jsonl (full cards, one per line) — sorted by id so content_hash is order-INSENSITIVE
     cards = sorted(cards, key=lambda c: c["id"])
-    with open(os.path.join(IDX, "checks.jsonl"), "w", encoding="utf-8") as f:
-        for c in cards:
-            f.write(json.dumps(c, ensure_ascii=False) + "\n")
+    write_atomic(os.path.join(IDX, "checks.jsonl"),
+                 "".join(json.dumps(c, ensure_ascii=False) + "\n" for c in cards))
 
     # index/checks/part-*.jsonl — the zero-install fallback (jq/grep) shards.
     # These used to be maintained by hand, so they drifted: the shipped shards carried 2,057 records
@@ -35,9 +41,8 @@ def main():
         os.remove(stale)
     CHUNK = 500
     for n, start in enumerate(range(0, len(cards), CHUNK), start=1):
-        with open(os.path.join(shard_dir, f"part-{n:03d}.jsonl"), "w", encoding="utf-8") as f:
-            for c in cards[start:start + CHUNK]:
-                f.write(json.dumps(c, ensure_ascii=False) + "\n")
+        write_atomic(os.path.join(shard_dir, f"part-{n:03d}.jsonl"),
+                     "".join(json.dumps(c, ensure_ascii=False) + "\n" for c in cards[start:start + CHUNK]))
 
     def invert(keyfn):
         m = {}
@@ -55,8 +60,7 @@ def main():
         "by_ref.json": invert(lambda c: [r for r in c.get("owasp", []) if ":" in r] + c.get("refs", [])),
     }
     for name, m in maps.items():
-        with open(os.path.join(IDX, name), "w") as f:
-            json.dump(m, f, indent=0, ensure_ascii=False)
+        write_atomic(os.path.join(IDX, name), json.dumps(m, indent=0, ensure_ascii=False))
 
     # router.json from profile fingerprints
     router = {"files": {}, "signals": {}}
@@ -68,8 +72,7 @@ def main():
             router["files"].setdefault(g, []).append(name)
         for s in prof.get("detect", {}).get("signals", []):
             router["signals"].setdefault(s, []).append(name)
-    with open(os.path.join(IDX, "router.json"), "w") as f:
-        json.dump(router, f, indent=1)
+    write_atomic(os.path.join(IDX, "router.json"), json.dumps(router, indent=1))
 
     # SQLite FTS5
     db = os.path.join(IDX, "kb.sqlite")
@@ -88,7 +91,11 @@ def main():
     con.commit(); con.close()
 
     # manifest
-    h = hashlib.sha256(open(os.path.join(IDX, "checks.jsonl"), "rb").read()).hexdigest()[:16]
+    digest = hashlib.sha256()
+    with open(os.path.join(IDX, "checks.jsonl"), "rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(chunk)
+    h = digest.hexdigest()[:16]
     from collections import Counter
     manifest = {
         "name": "secure-kb", "version": VERSION,
@@ -102,8 +109,7 @@ def main():
         "sources": len(yaml.safe_load(open(os.path.join(ROOT, "sources.yaml")))["sources"]),
         "index_files": sorted(os.path.basename(p) for p in glob.glob(os.path.join(IDX, "*"))),
     }
-    with open(os.path.join(ROOT, "manifest.json"), "w") as f:
-        json.dump(manifest, f, indent=2)
+    write_atomic(os.path.join(ROOT, "manifest.json"), json.dumps(manifest, indent=2))
     print(json.dumps({k: manifest[k] for k in ("version","content_hash","cards","authored","distilled","sources")}, indent=0))
     print("index files:", manifest["index_files"])
 
