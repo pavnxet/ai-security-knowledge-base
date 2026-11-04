@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.9.12] — beta
+### Fixed (determinism — a real bug found by CI)
+- **The corpus stamped the build date into every card.** `build_cards_v2.py` and
+  `build_authored.py` set `last_verified = datetime.date.today()`, so the same pinned sources
+  produced a different `content_hash` on a different day. The determinism job only passed when CI
+  happened to run on the day the corpus was built — the "reproducible" claim was false across days.
+  `last_verified` now comes from a committed **`CORPUS_DATE`** file, and the build **fails closed**
+  if it is missing.
+- **A licence detector regression silently weakened provenance.** The 2026-11-01 source refresh
+  flipped three OWASP sources (API-Security, Top10, LLM Top 10) to `NOASSERTION`; because
+  `confidence` derives from `license`, that would have downgraded 27 cards. Those are CC BY-SA 4.0
+  documents, so the registry is corrected and **`refresh_sources.py` now refuses to downgrade a
+  known licence to `NOASSERTION`**.
+- Net effect: the full rebuild now reproduces the committed `content_hash` exactly
+  (`a57da404205eada6`) with **zero card changes** — the fix was in the inputs, not the corpus.
+
+### Added
+- `tests/test_determinism.py` (7 tests): `CORPUS_DATE` exists and is shaped; builders never call
+  `date.today()`/`datetime.now()`; they fail closed without `CORPUS_DATE`; cards on disk agree with
+  it; re-indexing is idempotent.
+- **R-017** in the threat model and risk register — the build-date bug, recorded as mitigated with a
+  verification that resolves.
+
 ## [0.9.11] — beta
 ### Changed
 - **`SECURITY.md` rewritten to the standard content set** — supported-versions table, private
