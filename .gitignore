@@ -15,4 +15,5 @@ bin/
 *.zip
 cache/
 index/kb.sqlite
-index/
+# index/ itself is SHIPPED (the jq/grep fallback reads index/checks/part-*.jsonl), so it must not be
+# ignored: an ignored directory silently drops newly generated shards from `git add`.
