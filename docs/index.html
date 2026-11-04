@@ -46,6 +46,7 @@
     <a href="#coverage">Coverage</a>
     <a href="#bench">Benchmarks</a>
     <a href="#attest">Attestation</a>
+    <a href="#posture">Security posture</a>
     <a href="#limits">Limitations</a>
   </nav>
 </div></header>
@@ -170,12 +171,24 @@ secure-kb verify-attestation attestation.json --key "$KEY" --path ./my-app
 
 <section id="limits"><div class="wrap">
   <h2 class="reveal">Known limitations</h2>
-  <p class="sub reveal">Stated plainly, so you can judge fit.</p>
+  <p class="sub reveal">Measured, not estimated — checked against <code>bench/results.json</code> by a test so this page cannot drift.</p>
   <div class="grid">
-    <div class="card reveal"><h3>Retrieval below target</h3><p>Free-text paraphrase recall is the weakest area. Corpus growth added distractors; dedupe and re-rank experiments did not recover it.</p></div>
-    <div class="card reveal"><h3>First-call index build</h3><p>Building <code>kb.sqlite</code> on first use takes ~19s on a cold checkout; later queries are sub-second.</p></div>
-    <div class="card reveal"><h3>Not-yet-implemented</h3><p><code>kind: check/guidance</code>, deterministic <code>fix_refs</code>, official-source CWE enrichment, and real-lab end-to-end runs.</p></div>
-    <div class="card reveal"><h3>Unverified items</h3><p>8 of 12 tool adapters; the Telegram <code>secret_token</code> claim; two project-declared licences.</p></div>
+    <div class="card reveal"><h3>Retrieval is below target on paraphrase</h3><p>Held-out recall@5 <b>0.695</b> (target 0.70); <code>curated_v2</code> <b>0.475</b> and <code>v2_dev</code> <b>0.525</b> (target 0.60). <code>templated</code> <b>0.916</b> meets its target. Retrieval is lexical, not semantic.</p></div>
+    <div class="card reveal"><h3>The fast gate covers 14 of 30 lab classes</h3><p><b>46.7%</b> against a 70% target. Use <code>--gate full</code> for coverage.</p></div>
+    <div class="card reveal"><h3>99% of cards point at remediation</h3><p><b>2,035 of 2,052</b> cards have a <code>fix</code> field that says "see &lt;source&gt; for remediation" rather than giving guidance. A card reliably says <i>what to check</i>, rarely <i>how to fix it</i>.</p></div>
+    <div class="card reveal"><h3>It does not scan anything</h3><p>A checklist with provenance, not a scanner. An attestation proves what was claimed, not that it is true.</p></div>
+  </div>
+  <p class="sub reveal" style="margin-top:18px"><a href="https://github.com/pavnxet/ai-security-knowledge-base/blob/main/KNOWN_LIMITATIONS.md">Full list with every measured number →</a></p>
+</div></section>
+
+<section id="posture"><div class="wrap">
+  <h2 class="reveal">Security posture</h2>
+  <p class="sub reveal">This project holds itself to the standard it asks of you — and CI enforces it.</p>
+  <div class="grid">
+    <div class="card reveal"><h3>Threat model</h3><p>Assets, trust boundaries, assumptions and 17 risks, each with a mitigation <i>and</i> a way to verify it.</p><p><a href="https://github.com/pavnxet/ai-security-knowledge-base/blob/main/docs/THREAT_MODEL.md">docs/THREAT_MODEL.md →</a></p></div>
+    <div class="card reveal"><h3>Risk register</h3><p>Every accepted, deferred or open risk with its reason and review date. CI fails if an accepted risk has no reason, if a mitigation cites a test that does not exist, or if a review date lapses.</p><p><a href="https://github.com/pavnxet/ai-security-knowledge-base/blob/main/risk-register.yaml">risk-register.yaml →</a></p></div>
+    <div class="card reveal"><h3>Known limitations</h3><p>The measured limits, kept in sync with the benchmark by a test.</p><p><a href="https://github.com/pavnxet/ai-security-knowledge-base/blob/main/KNOWN_LIMITATIONS.md">KNOWN_LIMITATIONS.md →</a></p></div>
+    <div class="card reveal"><h3>Reporting</h3><p>How to report a problem in this repo, the response timeline, and what counts as in scope.</p><p><a href="https://github.com/pavnxet/ai-security-knowledge-base/blob/main/SECURITY.md">SECURITY.md →</a></p></div>
   </div>
 </div></section>
 
