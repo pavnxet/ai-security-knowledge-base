@@ -15,7 +15,13 @@ Start here: [AGENTS.md](AGENTS.md) — the only file an agent needs to read firs
 
 ## Interfaces
 - CLI: `cli/secure_kb.py` (detect | profile | search | get | cwe | ref | tools | report)
-- MCP: `mcp/server.py` (detect_stack, get_profile, search_checks, get_check, list_tools, start_report, submit_result)
+- MCP: `mcp/server.py` (detect_stack, get_profile, search_checks, get_check, list_tools, start_report, submit_result, attest, verify_attestation)
+
+## Security posture
+- [docs/THREAT_MODEL.md](docs/THREAT_MODEL.md) — assets, trust boundaries, assumptions, 17 risks
+- [risk-register.yaml](risk-register.yaml) — accepted/deferred/open risks with reasons and review dates
+- [KNOWN_LIMITATIONS.md](KNOWN_LIMITATIONS.md) — measured limits: retrieval is lexical, 99% of `fix` fields are pointers
+- [SECURITY.md](SECURITY.md) — reporting policy for this repo
 
 ## Layout
 - `checks/<platform>/<domain>/*.yaml` — source-of-truth cards
