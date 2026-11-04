@@ -171,6 +171,18 @@ and a test that keeps them in sync with `bench/results.json`. The headlines:
   rarely *how to fix it*.
 - **It does not scan anything**, and an attestation proves what was claimed, not that it is true.
 
+## Security posture
+
+This project holds itself to the standard it asks of you. Four documents, all short, all
+machine-checked where it matters:
+
+| Document | What it settles |
+|---|---|
+| [`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md) | Assets, trust boundaries, assumptions, and 17 risks (`R-001`–`R-017`) each with a mitigation *and* a verification |
+| [`risk-register.yaml`](risk-register.yaml) | Every accepted, deferred or open risk with its reason and review date — CI fails if an accepted risk has no reason, if a mitigation points at a test that doesn't exist, or if a review date lapses |
+| [`KNOWN_LIMITATIONS.md`](KNOWN_LIMITATIONS.md) | The measured limits, checked against `bench/results.json` so the page cannot drift |
+| [`SECURITY.md`](SECURITY.md) | How to report a problem here, and what to expect |
+
 ## Licence & attribution
 
 - **Content:** CC BY-SA 4.0, where provenance and upstream terms permit; attribution and ShareAlike
