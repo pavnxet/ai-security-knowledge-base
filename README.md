@@ -186,7 +186,11 @@ commit, licence.
 
 ## Security
 
-See [SECURITY.md](SECURITY.md) for private vulnerability reporting.
+See [SECURITY.md](SECURITY.md) for private vulnerability reporting, and
+[`docs/THREAT_MODEL.md`](docs/THREAT_MODEL.md) for this project's own threat model — what it
+protects, what it assumes, and which risks it knowingly accepts. The decisions behind it live in
+[`risk-register.yaml`](risk-register.yaml), which CI checks: an "accepted" risk must carry a reason
+and a review date, and a "mitigated" one must point at a test or CI job that actually exists.
 
 ## Citation
 
