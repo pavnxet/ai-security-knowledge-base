@@ -161,17 +161,15 @@ identical `manifest.content_hash` `a57da404205eada6`. Reproduce with
 
 ## Known limitations
 
-- **Retrieval is below target.** Paraphrase recall is the weak spot; corpus growth added distractors
-  that dedupe did not fully remove.
-- **First-call index build takes a few seconds** on a cold checkout (measured ~6 s on one machine,
-  ~19 s on another; later queries are sub-second).
-- **Not yet implemented:** `kind: check|guidance`, deterministic `fix_refs`, official-source CWE
-  enrichment, real-lab end-to-end evaluation.
-- **Unverified:** 8 of 12 tool adapters; the Telegram `secret_token` claim; two project-declared
-  licences.
-- **32 MASTG cards still carry raw YAML front-matter** in their `check` text (a known ingestion
-  defect; fixing it changes dedupe and the corpus size, so it is deferred to v1.0).
-- **Card text is untrusted DATA** — never executable instructions or system policy (see `AGENTS.md`).
+The honest list lives in **[`KNOWN_LIMITATIONS.md`](KNOWN_LIMITATIONS.md)**, with the measured numbers
+and a test that keeps them in sync with `bench/results.json`. The headlines:
+
+- **Retrieval is below target on paraphrase** — held-out 0.695 (target 0.70), `curated_v2` 0.475 and
+  `v2_dev` 0.525 (target 0.60); `templated` 0.916 meets its target. Retrieval is lexical, not semantic.
+- **The `fast` gate covers 14 of 30 lab classes (46.7%)**, against a 70% target — use `--gate full`.
+- **99% of cards' `fix` field is a pointer, not guidance** — a card reliably says *what to check*,
+  rarely *how to fix it*.
+- **It does not scan anything**, and an attestation proves what was claimed, not that it is true.
 
 ## Licence & attribution
 
