@@ -1,5 +1,63 @@
 # Changelog
 
+## [0.9.11] — beta
+### Changed
+- **`SECURITY.md` rewritten to the standard content set** — supported-versions table, private
+  reporting via GitHub Security Advisories with a "what to include" list, an explicit response-time
+  table (48 h acknowledgement, 5 working days assessment, 14/30/90 days for critical/high/medium),
+  coordinated-disclosure policy, scope and out-of-scope, and links to the threat model, risk
+  register and known limitations.
+- Out of scope now says explicitly that a disagreement with an **accepted** risk is itself a valid
+  report — the register's IDs give a reviewer something to cite.
+
+### Added
+- `tests/test_docs.py` (11 tests) — every relative link and `#anchor` in README, SECURITY,
+  CONTRIBUTING, AGENTS and `docs/*.md` must resolve; SECURITY.md must carry the required sections;
+  the threat model and register must be linked from README and SECURITY.
+
+## [0.9.10] — beta
+### Added
+- **`risk-register.yaml`** — the machine-readable twin of `docs/THREAT_MODEL.md` and now the single
+  source of truth for risk decisions. 16 entries (`R-001`–`R-016`), each carrying the justification,
+  the artefact that verifies it, and the date it must be re-decided.
+- **`scripts/check_risks.py`** — enforces the rules that stop the register becoming prose:
+  `accepted`/`deferred`/`open` need a justification (≥ 40 chars) *and* a review date; `mitigated`
+  needs a verification that **resolves** — a pytest nodeid whose file defines that function, a CI job
+  that exists in `ci.yml`, or a doc that exists; a lapsed `review_by` fails the build; and the
+  register's ids must match the threat model's matrix exactly.
+- `tests/test_risks.py` (12 tests) — one per failure mode, so the validator is itself validated.
+- `tests/test_cli.py::test_ensure_db_rebuilds_empty_cache` — a real regression test for R-005: a
+  planted empty `kb.sqlite` with a newer mtime must be rebuilt, not trusted.
+- CI: a `check_risks.py` step inside `quality-gates`.
+
+### Notes
+- Deliberately **not** fixed here: R-007 (dependency lockfile) and R-013 (unbounded read in
+  `fingerprint_target`). The register records them; a ledger that also fixes is a ledger that never
+  ships.
+
+## [0.9.9] — beta
+### Added
+- **`docs/THREAT_MODEL.md`** — the project's own STRIDE threat model: scope, components, trust
+  boundaries (mermaid), assets ranked by blast radius, 16 risks (`R-001`–`R-016`) each with a
+  mitigation *and* a verification, a risk summary matrix, and the security assumptions the design
+  rests on. Every risk ID carries forward into `risk-register.yaml` (next phase).
+- `tests/test_threat_model.py` — fails when the document drifts: STRIDE tables and the summary
+  matrix must contain the same IDs, every status must be one of a fixed set, every relative link
+  must resolve, and the code facts it asserts (walk cap, read cap, the unbounded read in
+  `fingerprint_target`, the profile-name guard) are re-checked against the source.
+- `SECURITY.md` gains a "Threat model" section; the README links it from Security.
+
+### Fixed
+- **R-006 corrected during review.** The threat model first claimed `fetch_sources.py` "fails
+  closed". It does not: per-file failures are printed but the script exits 0, so a partial fetch is
+  not a CI failure by itself — the determinism job is the real backstop. The risk is now rated
+  *partially mitigated*.
+
+### Found (open, not fixed)
+- **R-013:** `fingerprint_target` reads every file fully into memory with no size cap, so one very
+  large file can exhaust RAM. `iter_files` caps at 8,000 files, but this walk is independent and
+  unbounded. Tracked in the threat model; a test now fails if it is fixed without updating the doc.
+
 ## [0.9.8] — beta
 ### Added
 - Documented **direct slash-command invocation** of the agent skill (e.g. `/secure-kb-audit ./my-app`),
