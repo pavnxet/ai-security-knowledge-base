@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.9.16] — beta
+### Added (Phase 7 — final verification)
+- **`scripts/verify_release.py`** — one command that answers "is this release internally
+  coherent?": version agreement across VERSION / pyproject / both manifests / README, card counts
+  across manifest and `checks/`, `content_hash` agreement, shard ids vs card ids, `kb.sqlite` not
+  committed, posture docs present and linked from all three front doors, skill frontmatter valid,
+  and the advertised MCP tool lists. Each check maps to a drift that actually happened here.
+- `tests/test_release.py` (13 tests) — asserts the verifier passes **and** that it detects a phantom
+  shard card, a version mismatch and a hash mismatch, so it cannot become a check that always says ok.
+- CI: a `verify_release.py` step in `quality-gates`.
+
+### Fixed
+- **The shipped `index/checks/part-*.jsonl` shards were stale.** They carried **2,057 records for
+  2,052 cards** — five phantom cards that no longer existed, returned by the zero-install `jq`/`grep`
+  fallback documented in `AGENTS.md`. Nothing generated them; they were hand-maintained. The build
+  now writes them from the cards and deletes stale parts, so they cannot drift again.
+- **README still advertised v0.9.12** after six releases. Now checked by the verifier.
+
 ## [0.9.15] — beta
 ### Changed (Phase 6 — make the posture discoverable)
 - **`AGENTS.md` and `llms.txt` now link the whole posture** — threat model, risk register, known
