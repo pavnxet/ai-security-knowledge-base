@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.9.13] — beta
+### Added
+- **`KNOWN_LIMITATIONS.md`** — one page with the honest, *measured* state of the project: retrieval
+  below target on paraphrase (0.695 / 0.475 / 0.525 vs 0.70 / 0.60 / 0.60, `templated` 0.916 met),
+  fast-gate coverage of 14/30 lab classes (46.7%), **99% of cards' `fix` field is a pointer rather
+  than guidance** (2,035 of 2,052), 31 cards leaking raw MASTG front-matter, 254 generic titles,
+  1,770 cards with no CWE, plus the honest caveats on scanning and attestation.
+- `tests/test_limitations.py` (9 tests) — parses the page's tables and compares them to
+  `bench/results.json`, re-counts the corpus defects from `checks/`, and requires the page to be
+  linked from README, SECURITY and the threat model. Publishing a better benchmark now forces the
+  page to be updated in the same change.
+
+### Changed
+- README's stale inline limitation list (which still claimed official-source CWE enrichment was
+  unimplemented) replaced with a summary plus a link.
+- The threat model's `KNOWN_LIMITATIONS.md` link is restored — it was removed in Phase 1 because the
+  file did not exist yet.
+
 ## [0.9.12] — beta
 ### Fixed (determinism — a real bug found by CI)
 - **The corpus stamped the build date into every card.** `build_cards_v2.py` and
