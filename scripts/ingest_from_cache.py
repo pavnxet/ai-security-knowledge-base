@@ -19,7 +19,19 @@ def strip_fm(t):
     """Drop a leading YAML front-matter block (--- ... ---) before cleaning."""
     return re.sub(r"^\s*---\s*\n.*?\n---\s*\n", "", t or "", count=1, flags=re.S)
 
-def cpath(repo, path): return os.path.join(CACHE, repo.replace("/", "__"), path)
+def _safe_join(base, *parts):
+    """Join under `base`, refusing anything that would escape it.
+
+    `repo` and `path` come from sources_files.tsv, so a `../` (typo, or a hostile edit in a PR)
+    must not be able to write or read outside cache/.
+    """
+    target = os.path.normpath(os.path.join(base, *parts))
+    root = os.path.abspath(base)
+    if os.path.commonpath([root, os.path.abspath(target)]) != root:
+        raise ValueError(f"refusing path outside {base}: {'/'.join(parts)}")
+    return target
+
+def cpath(repo, path): return _safe_join(CACHE, repo.replace("/", "__"), path)
 def clean(t): return re.sub(r"\s+", " ", re.sub(r"[#*`>|]", " ", t or "")).strip()
 def items_of(repo): return sorted(glob.glob(os.path.join(CACHE, repo.replace("/", "__"), "**", "*"), recursive=True))
 def rel(repo, full): return os.path.relpath(full, os.path.join(CACHE, repo.replace("/", "__")))

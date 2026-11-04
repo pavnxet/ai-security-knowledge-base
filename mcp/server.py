@@ -88,19 +88,32 @@ def call(name, a):
         if not aid: return {"status": "INVALID", "problems": ["no attestation_id"]}
         problems = []
         if _h.sha256(kb._canon(att)).hexdigest() != aid: problems.append("attestation_id mismatch")
+        key = a.get("key") or os.environ.get("SECURE_KB_HMAC_KEY")
         if sig:
-            if not a.get("key"): problems.append("signature present but no key supplied")
-            elif _hm.new(a["key"].encode(), aid.encode(), _h.sha256).hexdigest() != sig.get("value"): problems.append("HMAC signature does not verify")
+            if not key: problems.append("signature present but no key supplied")
+            elif not _hm.compare_digest(_hm.new(key.encode(), aid.encode(), _h.sha256).hexdigest(),
+                                        str(sig.get("value") or "")):
+                problems.append("HMAC signature does not verify")
+        elif key and not a.get("allow_unsigned"):
+            problems.append("signature missing: this attestation is unsigned and cannot be "
+                            "verified against a key (pass allow_unsigned to accept an "
+                            "integrity-only check)")
         local = kb.load_json("manifest.json").get("content_hash")
         kb_ok = att.get("kb", {}).get("content_hash") == local
         if not kb_ok: problems.append("kb content_hash mismatch")
         if a.get("path") and att.get("target", {}).get("fingerprint"):
             if kb.fingerprint_target(a["path"])[0] != att["target"]["fingerprint"]: problems.append("target fingerprint mismatch")
-        return {"status": "VALID" if not problems else "INVALID", "attestation_id": aid, "kb_match": kb_ok, "problems": problems}
+        return {"status": "VALID" if not problems else "INVALID", "attestation_id": aid,
+                "signed": sig is not None, "kb_match": kb_ok, "problems": problems}
     if name == "search_checks":
         return _search(a)
     if name == "get_check":
-        return kb.load_cards().get(a["id"], {"error": "not found"})
+        if not a.get("id"):
+            raise ValueError("missing required argument: id (e.g. SKB-ASVS-V1-2-4)")
+        card = kb.load_cards().get(a["id"])
+        if card is None:
+            raise ValueError(f"unknown check id: {a['id']} (try search_checks first)")
+        return card
     if name == "list_tools":
         import glob, yaml
         out = []
@@ -116,54 +129,28 @@ def call(name, a):
     if name == "submit_result":
         if _STATE["report"] is None:
             _STATE["report"] = {"schema": "secure-kb/report@1", "results": []}
+        for req in ("id", "status"):
+            if not a.get(req):
+                raise ValueError(f"missing required argument: {req}")
         if a["status"] == "pass" and not a.get("evidence"):
             return {"error": "pass requires evidence"}
         _STATE["report"]["results"].append({"id": a["id"], "status": a["status"], "evidence": a.get("evidence", "")})
         return {"ok": True, "results": len(_STATE["report"]["results"])}
-    return {"error": "unknown tool " + name}
+    raise ValueError("unknown tool " + str(name))
 
 def _detect(path):
-    import fnmatch
-    router = kb.load_map("router.json")
-    votes, ev = {}, {}
-    for fp in kb.iter_files(path):
-        base = os.path.basename(fp)
-        for g, profs in router.get("files", {}).items():
-            if fnmatch.fnmatch(base, g):
-                for p in profs:
-                    votes[p] = votes.get(p, 0) + 1; ev.setdefault(p, set()).add(base)
-    for fp in kb.iter_files(path):
-        try:
-            if os.path.getsize(fp) > 200_000: continue
-            head = open(fp, errors="ignore", encoding="utf-8").read(200_000)
-        except Exception: continue
-        for sig, profs in router.get("signals", {}).items():
-            if sig in head:
-                for p in profs:
-                    votes[p] = votes.get(p, 0) + 2; ev.setdefault(p, set()).add(sig)
-    ranked = sorted(votes.items(), key=lambda kv: -kv[1])
-    return {"platforms": [{"platform": p, "score": s, "evidence": sorted(ev.get(p, []))[:6]} for p, s in ranked if p != "generic"],
-            "recommended_profiles": [p for p, _ in ranked if p != "generic"][:3]}
+    """Delegates to kb.detect so MCP and CLI fingerprint a tree identically."""
+    return kb.detect(path)
 
 def _search(a):
-    cards = kb.load_cards()
-    vocab = kb.load_json("schema/vocab.json")
-    terms = kb.expand_query(a["query"], vocab.get("synonyms", {}))
-    scored = {}
-    for cid, c in cards.items():
-        hay = " ".join([c["title"], c["summary"], " ".join(c.get("tags", [])), " ".join(c.get("aliases", [])), c["check"]]).lower()
-        hits = sum(1 for t in terms if t in hay)
-        if hits: scored[cid] = hits * kb.SEV_W.get(c["severity"], 1.0) * (1 + c["priority"]/200.0)
-    res = sorted(scored.items(), key=lambda kv: -kv[1])
-    out = []
-    for cid, _ in res:
-        c = cards[cid]
-        if a.get("platform") and a["platform"] not in c["platforms"]: continue
-        if a.get("severity") and c["severity"] != a["severity"]: continue
-        if a.get("domain") and c["domain"] != a["domain"]: continue
-        out.append(kb.brief(c))
-        if len(out) >= a.get("k", 8): break
-    return {"results": out, "gap": not out}
+    """Same ranking as `secure-kb search`. This used to be a second, weaker scorer, which meant an
+    agent got different (and worse) cards than the CLI for the same query."""
+    if not a.get("query"):
+        raise ValueError("missing required argument: query")
+    cards = kb.search(a["query"], a.get("platform"), a.get("stack"), a.get("severity"),
+                      a.get("phase"), a.get("domain"), a.get("k", 8),
+                      bool(a.get("synonyms")))
+    return {"results": [kb.brief(c) for c in cards], "gap": not cards}
 
 def send(msg):
     sys.stdout.write(json.dumps(msg) + "\n"); sys.stdout.flush()

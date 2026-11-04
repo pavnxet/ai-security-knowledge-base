@@ -32,8 +32,12 @@ def ensure_index():
     src = os.path.join(ROOT, "index", "checks.jsonl")
     if os.path.exists(src): return
     import subprocess, sys as _sys
-    subprocess.run([_sys.executable, os.path.join(ROOT, "scripts", "build_index.py")],
-                   cwd=ROOT, capture_output=True)
+    r = subprocess.run([_sys.executable, os.path.join(ROOT, "scripts", "build_index.py")],
+                       cwd=ROOT, capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(src):
+        raise RuntimeError(
+            "could not build index/checks.jsonl (run `python scripts/build_index.py` to see why):\n"
+            + ((r.stderr or r.stdout or "")[-2000:] or "(no output)"))
 
 def ensure_db():
     """Build index/kb.sqlite from index/checks.jsonl on first use (cached, <2s). Never committed."""
@@ -46,7 +50,9 @@ def ensure_db():
             con = sqlite3.connect(db)
             rows = con.execute("SELECT count(*) FROM checks_fts").fetchone()[0]
             con.close()
-            if rows == sum(1 for _ in open(src, encoding="utf-8")):
+            with open(src, encoding="utf-8") as fh:
+                source_rows = sum(1 for line in fh if line.strip())
+            if rows == source_rows:
                 return db
         except Exception:
             pass
@@ -80,6 +86,29 @@ def load_map(name):
 
 def load_json(p):
     return json.load(open(os.path.join(ROOT, p), encoding="utf-8"))
+
+def user_path(p):
+    """Resolve a path the user typed on the command line.
+
+    Absolute paths are used as-is; otherwise the current directory wins (that is what a user
+    expects) and only then the KB root, so `secure-kb verify-attestation report.json` works from
+    anywhere instead of silently looking inside the installed corpus.
+    """
+    if os.path.isabs(p):
+        return p
+    if os.path.exists(p):
+        return os.path.abspath(p)
+    return os.path.join(ROOT, p)
+
+def load_user_json(p, what="file"):
+    """Load a JSON file given on the command line, with a clear error instead of a traceback."""
+    full = user_path(p)
+    if not os.path.exists(full):
+        sys.exit(f"{what} not found: {p}")
+    try:
+        return json.load(open(full, encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        sys.exit(f"{what} is not valid JSON ({p}): {e}")
 
 def load_synonyms():
     """Merge schema/vocab.json synonyms with synonyms.yaml (if present)."""
@@ -135,8 +164,9 @@ def iter_files(path, cap=8000):
             if n >= cap:
                 return
 
-def cmd_detect(args):
-    path = args.path
+def detect(path):
+    """Fingerprint a tree. Shared by `secure-kb detect` and the MCP `detect_stack` tool, so the
+    two surfaces cannot drift apart."""
     router = load_map("router.json")
     votes, evidence = {}, {}
     # 1) filename fingerprint
@@ -164,17 +194,29 @@ def cmd_detect(args):
                     evidence.setdefault(p, set()).add(sig)
     ranked = sorted(votes.items(), key=lambda kv: -kv[1])
     total = sum(votes.values()) or 1
-    result = {"path": os.path.abspath(path),
-              "platforms": [{"platform": p, "score": s, "confidence": round(s/total, 2),
-                             "evidence": sorted(list(evidence.get(p, [])))[:6]} for p, s in ranked if p != "generic"],
-              "recommended_profiles": [p for p, _ in ranked if p != "generic"][:3]}
-    print(json.dumps(result, indent=2))
+    return {"path": os.path.abspath(path),
+            "platforms": [{"platform": p, "score": s, "confidence": round(s/total, 2),
+                           "evidence": sorted(list(evidence.get(p, [])))[:6]} for p, s in ranked if p != "generic"],
+            "recommended_profiles": [p for p, _ in ranked if p != "generic"][:3]}
+
+def cmd_detect(args):
+    print(json.dumps(detect(args.path), indent=2))
 
 # ---------- profile ----------
+PROFILE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
+
+def profile_path(name):
+    """profiles/<name>.yaml, refusing anything that could escape the profiles/ directory."""
+    if not name or not PROFILE_RE.fullmatch(name):
+        sys.exit(f"invalid profile name: {name!r} (letters, digits, dot, dash and underscore only)")
+    p = os.path.join(ROOT, "profiles", name + ".yaml")
+    if not os.path.exists(p):
+        sys.exit(f"unknown profile: {name!r} (see profiles/ for the available names)")
+    return p
+
 def cmd_profile(args):
-    prof = load_json(os.path.join("profiles", args.name + ".yaml")) if False else None
     import yaml
-    with open(os.path.join(ROOT, "profiles", args.name + ".yaml"), encoding="utf-8") as f:
+    with open(profile_path(args.name), encoding="utf-8") as f:
         prof = yaml.safe_load(f)
     ids = prof["gate"]["fast"] if args.gate == "fast" else prof["gate"]["full"]
     cards = load_cards()
@@ -244,79 +286,51 @@ def expand_query(q, synonyms, hubs=None):
     return list(dict.fromkeys(terms + extra))
 
 
-# ---------- retrieval (field-weighted BM25 with query expansion) ----------
-def _tok(t):
-    return [w for w in re.findall(r"[a-z0-9]+", (t or "").lower()) if len(w) > 1]
-
-_FIELDS = (("title", 3.0), ("tags", 2.2), ("summary", 1.6), ("check", 1.0))
-
-def build_corpus_stats(cards):
-    """Per-card tokenised fields + document frequency. Cached on the cards dict."""
-    if getattr(build_corpus_stats, "_cache", None) is not None:
-        return build_corpus_stats._cache
-    docs, df, total = {}, {}, 0
-    for cid, c in cards.items():
-        f = {"title": _tok(c["title"]),
-             "tags": _tok(" ".join(c.get("tags", [])) + " " + " ".join(c.get("aliases", []))),
-             "summary": _tok(c["summary"]), "check": _tok(c["check"])}
-        docs[cid] = f
-        dl = sum(len(v) for v in f.values()); total += dl
-        for w in set().union(*f.values()): df[w] = df.get(w, 0) + 1
-    build_corpus_stats._cache = (docs, df, len(cards) or 1, total / (len(cards) or 1))
-    return build_corpus_stats._cache
-
-def rank(query, cards, synonyms=None, hubs=None, k=10):
-    """Field-weighted BM25. Query terms weigh 1.0; expanded (synonym/hub) terms 0.55."""
-    docs, df, N, avgdl = build_corpus_stats(cards)
-    base = _tok(query)
-    exp = [t for t in expand_query(query, synonyms or {}, hubs or {}) if t not in base]
-    qterms = [(t, 1.0) for t in dict.fromkeys(base)] + [(t, 0.55) for t in dict.fromkeys(exp)]
-    k1, b = 1.2, 0.75
-    scores = {}
-    for cid, f in docs.items():
-        dl = sum(len(v) for v in f.values())
-        s = 0.0
-        for t, w in qterms:
-            idf = math.log(1 + (N - df.get(t, 0) + 0.5) / (df.get(t, 0) + 0.5))
-            for fname, fw in _FIELDS:
-                tf = f[fname].count(t)
-                if tf:
-                    s += w * fw * idf * (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * dl / avgdl))
-        if s > 0: scores[cid] = s
-    return sorted(scores, key=lambda c: -scores[c])[:k]
-
-def cmd_search(args):
+def search(query, platform=None, stack=None, severity=None, phase=None, domain=None, k=8, synonyms=False):
+    """Ranked search. The CLI and the MCP server both call this, so they cannot disagree."""
     cards = load_cards()
-    synonyms, hubs = load_synonyms() if getattr(args, 'synonyms', False) else ({}, {})
-    nq = normalize_query(args.query)
-    terms = expand_query(nq, synonyms, hubs) + expand_cwe(nq)
+    syn, hubs = load_synonyms() if synonyms else ({}, {})
+    nq = normalize_query(query)
+    terms = expand_query(nq, syn, hubs) + expand_cwe(nq)
     scored = {}
+    fts_used = False
     db = os.path.join(IDX, "kb.sqlite")
+    try:
+        ensure_db()          # a missing/empty cache must not silently degrade to substring scoring
+    except Exception:
+        pass                 # no sqlite3 -> substring scoring below still answers
     if os.path.exists(db):
+        toks = [t for t in terms if len(t) > 1]
+        match = " OR ".join(f'"{t}"' for t in toks)
         con = sqlite3.connect(db)
-        match = " OR ".join(f'"{t}"' for t in terms if len(t) > 1) or args.query
         try:
-            for cid, r in con.execute(
-                "SELECT id, bm25(checks_fts,0,10,6,5,4,1,6) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 200",
-                (match,)).fetchall():
-                scored[cid] = -r
+            if match:
+                for cid, r in con.execute(
+                    "SELECT id, bm25(checks_fts,0,10,6,5,4,1,6) AS r FROM checks_fts WHERE checks_fts MATCH ? ORDER BY r LIMIT 200",
+                    (match,)).fetchall():
+                    scored[cid] = -r
+                fts_used = True
         except sqlite3.OperationalError:
             pass
-        con.close()
+        finally:
+            con.close()
+
+    # Substring signal. bm25 and a raw substring hit count are different scales, so they must not
+    # be merged with max(): that let a card matching many words loosely outrank a real bm25 hit.
+    # With FTS available the substring signal is a small tiebreaker; without it, it is the scorer.
     for cid, c in cards.items():
         hay = " ".join([c["title"], c["summary"], " ".join(c.get("tags", [])),
                         " ".join(c.get("aliases", [])), c["check"]]).lower()
         hits = sum(1 for t in terms if t in hay)
         if hits:
-            scored[cid] = max(scored.get(cid, 0), hits * 0.5)
+            scored[cid] = scored.get(cid, 0) + hits * (0.05 if fts_used else 0.5)
 
-    # filters + boosts
     def keep(c):
-        if args.platform and args.platform not in c["platforms"]: return False
-        if args.severity and c["severity"] != args.severity: return False
-        if args.domain and c["domain"] != args.domain: return False
-        if args.phase and args.phase not in c.get("phase", []): return False
-        if args.stack and args.stack not in c.get("stacks", []): return False
+        if platform and platform not in c["platforms"]: return False
+        if severity and c["severity"] != severity: return False
+        if domain and c["domain"] != domain: return False
+        if phase and phase not in c.get("phase", []): return False
+        if stack and stack not in c.get("stacks", []): return False
         return True
 
     ranked = []
@@ -324,11 +338,15 @@ def cmd_search(args):
         c = cards[cid]
         if not keep(c): continue
         score = base * SEV_W.get(c["severity"], 1.0) * (1 + c["priority"] / 200.0)
-        if args.platform and args.platform in c["platforms"]:
+        if platform and platform in c["platforms"]:
             score *= 1.25
         ranked.append((score, c))
     ranked.sort(key=lambda x: -x[0])
-    top = [c for _, c in ranked[:args.k]]
+    return [c for _, c in ranked[:k]]
+
+def cmd_search(args):
+    top = search(args.query, args.platform, args.stack, args.severity, args.phase, args.domain,
+                 args.k, getattr(args, "synonyms", False))
     if not top:
         print(json.dumps({"query": args.query, "results": [], "gap": True,
                           "hint": "No card matched. See references/ for candidate sources."}))
@@ -348,7 +366,7 @@ def cmd_get(args):
         print(f"# {c['id']} - {c['title']}\n\n**Severity:** {c['severity']}  **Domain:** {c['domain']}  "
               f"**Platforms:** {', '.join(c['platforms'])}\n\n**Check:** {c['check']}\n\n**Fix:** {c['fix']}\n\n"
               f"**Evidence required:** {c['verify_evidence']}\n\n**Refs:** {', '.join(c.get('refs', []))}\n\n"
-              f"**Sources:** " + "; ".join(f"{s['repo']}@{ (s['commit'] or 'doc')[:12]}" for s in c["sources"]))
+              f"**Sources:** " + "; ".join(f"{s['repo']}@{(s.get('commit') or 'doc')[:12]}" for s in c["sources"]))
     else:
         print(json.dumps(c, indent=2, ensure_ascii=False))
 
@@ -386,7 +404,9 @@ def cmd_report(args):
         json.dump(REPORT_SKELETON, open(out, "w", encoding="utf-8"), indent=2)
         print(f"wrote {out}")
     elif args.action == "validate":
-        r = json.load(open(args.file, encoding="utf-8"))
+        if not args.file:
+            sys.exit("usage: secure-kb report validate <FILE>")
+        r = load_user_json(args.file, "report")
         errs = []
         if r.get("schema") != "secure-kb/report@1": errs.append("bad schema tag")
         for res in r.get("results", []):
@@ -404,23 +424,39 @@ def _sha256_hex(b):
 
 _SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "venv", "dist", "build", ".mypy_cache", ".pytest_cache"}
 
+_HASH_CHUNK = 1 << 20  # 1 MiB
+
 def fingerprint_target(path):
-    """Deterministic content fingerprint of a target tree: sha256 over sorted (relpath, file-sha256)."""
+    """Deterministic content fingerprint of a target tree: sha256 over sorted (relpath, file-sha256).
+
+    Files are hashed in chunks (a multi-GB file cannot exhaust memory) and symlinks are skipped: a
+    symlink can point outside the tree, so hashing it would attribute someone else's bytes to the
+    target and make the fingerprint claim coverage it does not have.
+    """
     files = []
     for dp, dns, fns in os.walk(path):
         dns[:] = [d for d in dns if d not in _SKIP_DIRS]
         for fn in fns:
             fp = os.path.join(dp, fn)
+            if os.path.islink(fp):
+                continue
             try:
-                data = open(fp, "rb").read()
+                digest = hashlib.sha256()
+                with open(fp, "rb") as fh:
+                    for chunk in iter(lambda: fh.read(_HASH_CHUNK), b""):
+                        digest.update(chunk)
             except Exception:
                 continue
-            files.append((os.path.relpath(fp, path), hashlib.sha256(data).hexdigest()))
+            files.append((os.path.relpath(fp, path), digest.hexdigest()))
     files.sort()
     h = hashlib.sha256()
     for rel, dg in files:
         h.update(rel.encode("utf-8", "ignore")); h.update(b"\0"); h.update(dg.encode()); h.update(b"\n")
     return h.hexdigest(), len(files)
+
+def hmac_key(args):
+    """HMAC key from --key or SECURE_KB_HMAC_KEY (the env var keeps it out of `ps` and shell history)."""
+    return getattr(args, "key", None) or os.environ.get("SECURE_KB_HMAC_KEY") or None
 
 def _gate_ids(platform, gate):
     import yaml
@@ -457,8 +493,9 @@ def cmd_attest(args):
     ids = _gate_ids(profile, args.gate)
     statuses = {}
     if getattr(args, "results", None):
-        for r in load_json(args.results).get("results", []):
-            statuses[r["id"]] = (r.get("status", "unknown"), r.get("evidence"))
+        for r in load_user_json(args.results, "results file").get("results", []):
+            if "id" in r:
+                statuses[r["id"]] = (r.get("status", "unknown"), r.get("evidence"))
     checks = []
     for cid in ids:
         st, ev = statuses.get(cid, ("unknown", None))
@@ -467,9 +504,10 @@ def cmd_attest(args):
     payload = _attest_payload(args.path, profile, args.gate, checks)
     aid = _sha256_hex(_canon(payload))
     att = dict(payload); att["attestation_id"] = aid
-    if getattr(args, "key", None):
+    key = hmac_key(args)
+    if key:
         att["signature"] = {"alg": "HMAC-SHA256",
-                            "value": hmac.new(args.key.encode(), aid.encode(), hashlib.sha256).hexdigest()}
+                            "value": hmac.new(key.encode(), aid.encode(), hashlib.sha256).hexdigest()}
     out = json.dumps(att, indent=1, sort_keys=True)
     if args.out:
         open(args.out, "w", encoding="utf-8").write(out + "\n"); print(f"attestation written: {args.out}  id={aid}")
@@ -477,7 +515,7 @@ def cmd_attest(args):
         print(out)
 
 def cmd_verify_attestation(args):
-    att = load_json(args.file)
+    att = load_user_json(args.file, "attestation")
     aid = att.pop("attestation_id", None)
     sig = att.pop("signature", None)
     if not aid:
@@ -486,13 +524,19 @@ def cmd_verify_attestation(args):
     problems = []
     if recomputed != aid:
         problems.append(f"attestation_id mismatch (stored {aid[:12]}…, recomputed {recomputed[:12]}…)")
+    key = hmac_key(args)
     if sig:
-        if not args.key:
-            problems.append("signature present but no --key supplied")
+        if not key:
+            problems.append("signature present but no key supplied")
         else:
-            exp = hmac.new(args.key.encode(), aid.encode(), hashlib.sha256).hexdigest()
-            if exp != sig.get("value"):
+            exp = hmac.new(key.encode(), aid.encode(), hashlib.sha256).hexdigest()
+            if not hmac.compare_digest(exp, str(sig.get("value") or "")):
                 problems.append("HMAC signature does not verify")
+    elif key and not getattr(args, "allow_unsigned", False):
+        # Deleting the signature must not turn a signed attestation into a passing one.
+        problems.append("signature missing: this attestation is unsigned and cannot be verified "
+                        "against a key (re-run attest with --key, or pass --allow-unsigned to "
+                        "accept an integrity-only check)")
     local = load_json("manifest.json").get("content_hash")
     kb_ok = att.get("kb", {}).get("content_hash") == local
     if not kb_ok:
@@ -504,8 +548,9 @@ def cmd_verify_attestation(args):
         else:
             pass
     status = "VALID" if not problems else "INVALID"
-    print(json.dumps({"status": status, "attestation_id": aid, "kb_match": kb_ok,
-                      "checks": len(att.get("checks", [])), "problems": problems}, indent=1))
+    print(json.dumps({"status": status, "attestation_id": aid, "signed": sig is not None,
+                      "kb_match": kb_ok, "checks": len(att.get("checks", [])),
+                      "problems": problems}, indent=1))
     sys.exit(0 if not problems else 1)
 
 def main():
@@ -532,11 +577,15 @@ def main():
 
     a = sub.add_parser("attest", help="produce a verifiable security attestation")
     a.add_argument("path", nargs="?", default="."); a.add_argument("--profile"); a.add_argument("--gate", choices=["fast","full"], default="fast")
-    a.add_argument("--results", help="JSON file of {results:[{id,status,evidence}]}"); a.add_argument("--key", help="HMAC key (optional)"); a.add_argument("--out")
+    a.add_argument("--results", help="JSON file of {results:[{id,status,evidence}]}"); a.add_argument("--key", help="HMAC key (or set SECURE_KB_HMAC_KEY)"); a.add_argument("--out")
     a.set_defaults(fn=cmd_attest)
 
     va = sub.add_parser("verify-attestation", help="verify an attestation offline")
-    va.add_argument("file"); va.add_argument("--key"); va.add_argument("--path", help="re-verify the target fingerprint"); va.set_defaults(fn=cmd_verify_attestation)
+    va.add_argument("file")
+    va.add_argument("--key", help="HMAC key (or set SECURE_KB_HMAC_KEY)")
+    va.add_argument("--allow-unsigned", action="store_true",
+                    help="accept an attestation with no signature even when a key is supplied")
+    va.add_argument("--path", help="re-verify the target fingerprint"); va.set_defaults(fn=cmd_verify_attestation)
 
     args = ap.parse_args()
     args.fn(args)

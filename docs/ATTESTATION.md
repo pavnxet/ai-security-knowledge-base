@@ -45,6 +45,12 @@ Three things are bound together by cryptography:
 `attestation_id` = `SHA-256(canonical_json(payload))`. The signature (optional) is an HMAC over that
 id. Nothing else is needed to verify.
 
+**A signature cannot be removed silently.** If you verify with a key and the attestation carries no
+signature, verification fails — otherwise deleting the `signature` block would turn a signed
+attestation into a passing one. To accept an unsigned attestation on purpose (integrity check only),
+pass `--allow-unsigned`; the output then reports `"signed": false`. Prefer the
+`SECURE_KB_HMAC_KEY` environment variable over `--key`, which is visible in `ps` and shell history.
+
 ## Use
 
 ```bash
@@ -54,8 +60,14 @@ secure-kb attest ./my-app --gate fast --results results.json --out attestation.j
 
 # Verify offline — no network, no trust in the agent
 secure-kb verify-attestation attestation.json --key "$AGENT_KEY" --path ./my-app
-# -> {"status":"VALID","kb_match":true,"checks":25,"problems":[]}   exit 0
+# -> {"status":"VALID","signed":true,"kb_match":true,"checks":25,"problems":[]}   exit 0
+
+# Integrity-only check of an unsigned attestation
+secure-kb verify-attestation attestation.json --path ./my-app
+# -> {"status":"VALID","signed":false,...}
 ```
+
+Paths are resolved against the current directory first, so a relative path works from anywhere.
 
 `--path` re-computes the target fingerprint, so verification also catches *"the code changed after
 the attestation"*. Exit code is `0` for VALID and `1` for INVALID.

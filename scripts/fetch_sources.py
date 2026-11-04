@@ -9,7 +9,19 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "cache")
 LIST = os.path.join(ROOT, "sources_files.tsv")
 
-def dest(repo, path): return os.path.join(CACHE, repo.replace("/", "__"), path)
+def _safe_join(base, *parts):
+    """Join under `base`, refusing anything that would escape it.
+
+    `repo` and `path` come from sources_files.tsv, so a `../` (typo, or a hostile edit in a PR)
+    must not be able to write or read outside cache/.
+    """
+    target = os.path.normpath(os.path.join(base, *parts))
+    root = os.path.abspath(base)
+    if os.path.commonpath([root, os.path.abspath(target)]) != root:
+        raise ValueError(f"refusing path outside {base}: {'/'.join(parts)}")
+    return target
+
+def dest(repo, path): return _safe_join(CACHE, repo.replace("/", "__"), path)
 
 def fetch(row):
     repo, commit, path = row
@@ -19,7 +31,10 @@ def fetch(row):
     try:
         os.makedirs(os.path.dirname(d), exist_ok=True)
         with urllib.request.urlopen(url, timeout=30) as r: data = r.read()
-        open(d, "wb").write(data); return "ok"
+        tmp = d + ".part"
+        with open(tmp, "wb") as f: f.write(data)
+        os.replace(tmp, d)                      # never leave a half-written cache file behind
+        return "ok"
     except Exception as e:
         return f"FAIL {str(e)[:50]}"
 
