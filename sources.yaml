@@ -7,7 +7,7 @@ sources:
   area: web
   trust_tier: '1'
   ingest_mode: distill
-  license: NOASSERTION
+  license: CC-BY-SA-4.0
   stars: 6424
   archived: false
   last_pushed: '2026-09-24'
@@ -70,7 +70,7 @@ sources:
   area: api
   trust_tier: '1'
   ingest_mode: distill
-  license: NOASSERTION
+  license: CC-BY-SA-4.0
   stars: 2392
   archived: false
   last_pushed: '2026-09-22'
@@ -86,7 +86,7 @@ sources:
   area: llm
   trust_tier: '1'
   ingest_mode: distill
-  license: NOASSERTION
+  license: CC-BY-SA-4.0
   stars: 1476
   archived: false
   last_pushed: '2026-08-05'
