@@ -124,3 +124,30 @@ def test_query_normalisation(kb):
     assert kb.normalize_query("how do I stop sqli in my api") == "stop sql injection in api"
     assert "xss" not in kb.normalize_query("how to fix xss")     # expanded
     assert "cross site scripting" in kb.normalize_query("how to fix xss")
+
+
+def test_ensure_db_rebuilds_empty_cache(kb, tmp_path, monkeypatch):
+    """R-005: a build that died mid-way leaves a valid-looking empty kb.sqlite. It must be rebuilt,
+    not trusted on mtime alone."""
+    import sqlite3
+    idx = tmp_path / "index"
+    idx.mkdir()
+    src = idx / "checks.jsonl"
+    cards = kb.load_cards()
+    src.write_text("\n".join(json.dumps(c) for c in cards.values()) + "\n", encoding="utf-8")
+    db = idx / "kb.sqlite"
+
+    # a poisoned cache: correct schema, zero rows, and newer than the source
+    con = sqlite3.connect(db)
+    con.execute("CREATE VIRTUAL TABLE checks_fts USING fts5(id, title, summary, tags, aliases, check, cwe)")
+    con.commit(); con.close()
+    os.utime(db, (src.stat().st_atime + 10, src.stat().st_mtime + 10))
+    assert db.stat().st_mtime >= src.stat().st_mtime
+
+    monkeypatch.setattr(kb, "ROOT", str(tmp_path))
+    kb.ensure_db()
+
+    con = sqlite3.connect(db)
+    rows = con.execute("SELECT count(*) FROM checks_fts").fetchone()[0]
+    con.close()
+    assert rows == len(cards), f"empty cache was trusted: {rows} rows instead of {len(cards)}"
