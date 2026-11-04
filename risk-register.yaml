@@ -109,6 +109,24 @@ risks:
     review_by: 2027-05-01
     issue: null
 
+  - id: R-017
+    title: The corpus embeds the build date, so it cannot be reproduced on a different day
+    stride: Tampering
+    asset: corpus
+    likelihood: high
+    impact: medium
+    status: mitigated
+    justification: >
+      build_cards_v2 and build_authored stamped datetime.date.today() into every card as
+      last_verified, so the same pinned sources produced a different content_hash each day. The
+      determinism job passed only because CI happened to run on the day the corpus was built. Fixed
+      by reading a committed CORPUS_DATE instead, which the build fails closed without. Related: the
+      2026-11-01 source refresh flipped three OWASP licences to NOASSERTION (a detector false
+      negative); refresh_sources now refuses to downgrade a known licence.
+    verification: {kind: test, ref: "tests/test_determinism.py::test_builder_does_not_use_wall_clock"}
+    review_by: null
+    issue: null
+
   - id: R-007
     title: A Python dependency is compromised or typosquatted
     stride: Tampering
