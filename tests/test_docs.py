@@ -75,3 +75,37 @@ def test_threat_model_and_register_are_linked():
         text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
         assert "docs/THREAT_MODEL.md" in text, f"{doc} does not link the threat model"
         assert "risk-register.yaml" in text, f"{doc} does not link the risk register"
+
+
+# ---------- Phase 6: the posture must be discoverable from every front door ----------
+POSTURE_DOCS = ["docs/THREAT_MODEL.md", "risk-register.yaml", "KNOWN_LIMITATIONS.md", "SECURITY.md"]
+
+
+@pytest.mark.parametrize("doc", ["README.md", "AGENTS.md", "llms.txt"])
+def test_front_doors_link_the_whole_posture(doc):
+    text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
+    for target in POSTURE_DOCS:
+        assert target in text, f"{doc} does not link {target}"
+
+
+def test_readme_has_a_consolidated_posture_section():
+    text = open(os.path.join(ROOT, "README.md"), encoding="utf-8").read()
+    assert re.search(r"^## Security posture", text, re.M), "README needs a 'Security posture' section"
+
+
+def test_site_has_a_posture_section():
+    html = open(os.path.join(ROOT, "docs", "index.html"), encoding="utf-8").read()
+    assert 'id="posture"' in html, "the website should surface the security posture"
+    for name in ("THREAT_MODEL.md", "risk-register.yaml", "KNOWN_LIMITATIONS.md", "SECURITY.md"):
+        assert name in html, f"the site does not link {name}"
+
+
+def test_mcp_tool_lists_match_the_server():
+    """AGENTS.md and llms.txt must advertise exactly the tools mcp/server.py exposes."""
+    server = open(os.path.join(ROOT, "mcp", "server.py"), encoding="utf-8").read()
+    tools = re.findall(r'\{"name": "([a-z_]+)"', server)
+    assert len(tools) >= 9, f"expected the full tool set, parsed {tools}"
+    for doc in ("AGENTS.md", "llms.txt"):
+        text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
+        missing = [t for t in tools if t not in text]
+        assert not missing, f"{doc} is missing MCP tools: {missing}"
