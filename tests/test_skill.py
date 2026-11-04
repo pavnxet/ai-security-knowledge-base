@@ -31,3 +31,34 @@ def test_find_kb_locates_this_repo():
     r = subprocess.run([sys.executable, os.path.join(SKILL, "scripts", "find_kb.py")],
                        capture_output=True, text=True, env=env, timeout=60)
     assert r.returncode == 0 and r.stdout.strip() == ROOT
+
+
+# ---------- Phase 5: the skill must teach defensible dismissal ----------
+def test_template_requires_a_threat_model():
+    t = open(os.path.join(SKILL, "assets", "report-template.md"), encoding="utf-8").read()
+    assert "## Threat model" in t, "the report must open with a threat model block"
+    for field in ("Assets", "Trust boundaries", "Assumptions", "Out of scope"):
+        assert field in t, f"threat model block lacks {field!r}"
+    # the block must come before the findings, not after them
+    assert t.index("## Threat model") < t.index("## Findings")
+
+
+def test_template_forces_reasons_on_dismissals():
+    t = open(os.path.join(SKILL, "assets", "report-template.md"), encoding="utf-8").read()
+    assert "## Not applicable" in t and "What would make it apply" in t, (
+        "an n/a row must state the condition that would make the check apply")
+    assert "## Accepted risks" in t and "Not** acceptable for" in t, (
+        "an accepted risk must say who it is NOT acceptable for")
+
+
+def test_reporting_explains_how_to_dismiss():
+    t = open(os.path.join(SKILL, "references", "reporting.md"), encoding="utf-8").read()
+    assert "## Dismissing a finding" in t
+    assert "assumption" in t.lower(), "a dismissal must name the assumption it rests on"
+    assert "acceptable for" in t.lower(), "a dismissal must scope who it is acceptable for"
+
+
+def test_skill_body_sends_the_agent_to_the_threat_model_first():
+    body = open(os.path.join(SKILL, "SKILL.md"), encoding="utf-8").read()
+    assert "threat model block" in body.lower()
+    assert "dismissal needs a reason" in body.lower()
