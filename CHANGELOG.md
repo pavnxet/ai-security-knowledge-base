@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.9.15] — beta
+### Changed (Phase 6 — make the posture discoverable)
+- **`AGENTS.md` and `llms.txt` now link the whole posture** — threat model, risk register, known
+  limitations, SECURITY.md. These are the files an agent reads first, and they linked none of them.
+  `AGENTS.md` also gains the two rules that follow: an `accepted` risk is a **decision, not an
+  oversight** (don't re-report it; challenge it by ID), and a `search` that returns nothing does not
+  prove a class is absent.
+- **README gains a consolidated "Security posture" section** — a four-row table of what each document
+  settles, instead of the links being scattered across Security and Known limitations.
+- **The website gains a "Security posture" section** and its limitations cards are corrected: they
+  still claimed official-source CWE enrichment was unimplemented (shipped in 0.9.6) and quoted a
+  ~19 s cold build.
+
+### Fixed
+- **Stale MCP tool lists.** `AGENTS.md` and `llms.txt` advertised 7 tools; the server exposes **9**
+  (`attest` and `verify_attestation` were missing). Both corrected, and a test now compares the
+  advertised list against `mcp/server.py` so it cannot drift again.
+
+### Added
+- 6 tests in `tests/test_docs.py`: every front door must link all four posture documents; README must
+  have a consolidated section; the site must surface the posture; and the advertised MCP tool list
+  must equal the real one.
+
 ## [0.9.14] — beta
 ### Changed (Phase 5 — teach the skill to dismiss a finding properly)
 - **The report template now opens with a threat model block** — assets, trust boundaries,
