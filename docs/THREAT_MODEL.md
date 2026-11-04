@@ -109,6 +109,7 @@ Each row is a threat, the control that addresses it, and how we verify the contr
 | R-004 | Someone edits `checks/**` or `index/checks.jsonl` | `content_hash` in `manifest.json`, recomputed in CI | Determinism CI job fails on mismatch |
 | R-005 | A partial index build leaves a valid-looking empty `kb.sqlite` that is then trusted forever | `ensure_db()` validates the row count against the source and rebuilds | Planted-empty-DB test (v0.9.5) |
 | R-006 | Upstream force-pushes and a pinned commit disappears | Each file fails independently and is reported — but `fetch_sources.py` **still exits 0**, so a partial fetch is not a CI failure by itself. The real backstop is the determinism job: a corpus built from missing sources has a different `content_hash` | Determinism CI job; `fetch_sources.py` failure lines in the log |
+| R-017 | The corpus embeds the build date (`last_verified`), so identical sources produce a different `content_hash` on a different day — the determinism check can only pass on the day the corpus was built | `last_verified` now comes from a committed `CORPUS_DATE` file, and the build fails closed if it is missing | `tests/test_determinism.py::test_builder_does_not_use_wall_clock` |
 | R-007 | A Python dependency is compromised or typosquatted | Ranges are bounded (`telethon>=1.34,<2`); no lockfile or hashes yet | **Not yet verified — see R-007 in the register** |
 
 ### Repudiation
@@ -152,6 +153,7 @@ Each row is a threat, the control that addresses it, and how we verify the contr
 | R-004 | Corpus tampering | Tampering | Low | Critical | Medium | Partially mitigated (manifest unsigned) |
 | R-005 | Index cache poisoning | Tampering | Medium | High | None | Mitigated (v0.9.5) |
 | R-006 | Upstream commit disappears | Tampering | Low | Medium | Low | Partially mitigated (exit 0) |
+| R-017 | Build date stamped into card content | Tampering | High | Medium | None | Mitigated (CORPUS_DATE) |
 | R-007 | Dependency compromise | Tampering | Medium | High | Medium | Deferred |
 | R-008 | Backdated attestation | Repudiation | Low | Medium | Medium | Accepted |
 | R-009 | Attestation over-read as "safe" | Repudiation | Medium | Medium | Low | Mitigated (documented) |
@@ -163,7 +165,7 @@ Each row is a threat, the control that addresses it, and how we verify the contr
 | R-015 | Profile path traversal | Elevation | Low | High | None | Mitigated |
 | R-016 | Prompt injection from audited repo | Elevation | Medium | Medium | Medium | Mitigated (documented) |
 
-**Counts:** 5 mitigated · 4 accepted · 1 deferred · 1 open · 5 partially mitigated with residual.
+**Counts:** 6 mitigated · 4 accepted · 1 deferred · 1 open · 5 partially mitigated with residual.
 
 ---
 
