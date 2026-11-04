@@ -25,6 +25,20 @@ def main():
         for c in cards:
             f.write(json.dumps(c, ensure_ascii=False) + "\n")
 
+    # index/checks/part-*.jsonl — the zero-install fallback (jq/grep) shards.
+    # These used to be maintained by hand, so they drifted: the shipped shards carried 2,057 records
+    # for 2,052 cards, i.e. five phantom cards that no longer existed. The build owns them now, and
+    # scripts/verify_release.py fails if their ids ever diverge from checks/.
+    shard_dir = os.path.join(IDX, "checks")
+    os.makedirs(shard_dir, exist_ok=True)
+    for stale in glob.glob(os.path.join(shard_dir, "part-*.jsonl")):
+        os.remove(stale)
+    CHUNK = 500
+    for n, start in enumerate(range(0, len(cards), CHUNK), start=1):
+        with open(os.path.join(shard_dir, f"part-{n:03d}.jsonl"), "w", encoding="utf-8") as f:
+            for c in cards[start:start + CHUNK]:
+                f.write(json.dumps(c, ensure_ascii=False) + "\n")
+
     def invert(keyfn):
         m = {}
         for c in cards:
