@@ -27,6 +27,47 @@ nothing" is not evidence of absence. Rules:
 - Never let the report's tone exceed its evidence. If you reviewed statically, say so; do not imply
   runtime testing.
 
+## Dismissing a finding
+
+The most dangerous sentence in a security report is "not applicable". A dismissal that nobody can
+argue with is indistinguishable from an oversight, so a good one has three parts:
+
+1. **Argue from the code's own constraints**, not from preference. "This can't happen because the
+   only writer refuses that input" beats "we don't consider that a risk".
+2. **State the assumption the argument rests on.** Every invariant argument has one. Name it, so a
+   reviewer can attack it.
+3. **Name who it is acceptable for, and who it is not.** "Fine for a single-user local tool, not fine
+   for a multi-tenant service" is a decision. "Not a problem" is not.
+
+Then add the condition that would flip it: *"this becomes a finding if the app ever adds a webhook."*
+
+### Worked example — the same rejection, strong and weak
+
+A review flagged that a secrets-redaction minimum was set to 8 characters instead of 16.
+
+**Strong.** *"Rejected: `Settings` refuses to save a header or env value shorter than 8 characters,
+and redaction cuts every saved value of 8+ characters out of server responses. The save floor and the
+redaction floor are the same number, so raising the minimum to 16 would reject 8–15 character secrets
+without making redaction any stronger. Assumption: `Settings` is the only path by which a saved value
+enters — if a value can also arrive from the OS environment, shorter values can exist and this
+becomes a real finding. Acceptable for a single-user desktop app; not acceptable for a hosted
+service."*
+
+That is arguable. A reviewer can attack the assumption and knows exactly what would change the answer.
+
+**Weak.** *"Rejected: same-machine encryption adds complexity without real protection."*
+
+It sounds decisive and is close to true — against an attacker who already runs as the user. It is
+**false** against other local accounts, backups, cloud-synced folders, and malware that reads files
+but does not run as the user. The sentence hides its own scope, which is exactly the failure mode to
+avoid: the claim is only true for a subset of attackers, and the report does not say which.
+
+### The test for your own dismissal
+
+Before writing "not applicable", ask: *could a competent reviewer disagree with this from the
+information in my report alone?* If yes, the reason is incomplete — add the invariant, the
+assumption, or the scope.
+
 ## Severity — assign it, don't inherit it
 
 The card's severity is a **default for that check class**, not a verdict on this codebase. Adjust:
