@@ -27,6 +27,8 @@ jobs:
         run: python -m pytest tests/ -q
       - name: Validate cards (schema, token limits, coverage, provenance, licences)
         run: python tests/validate.py
+      - name: Risk register (every accepted risk has a reason; every mitigation resolves)
+        run: python scripts/check_risks.py
       - name: Held-out benchmark (report)
         run: python bench/run_bench.py
       - name: Benchmark regression gate
