@@ -1,0 +1,146 @@
+{
+ "attestation_id": "b853a09eb60d993af9c7d425ed2ddd8d0c03e0a515235de4f7356f688f4932e3",
+ "attestation_version": 1,
+ "checks": [
+  {
+   "evidence_sha256": "b871c2156be6f52615ff2299ee1cbe8a2049c420ea6a524aeceaba86c5180971",
+   "id": "SKB-API-API1-2023",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "263301e5e190e210fef0cba47293c7ade904ff3d29d964f26ddb2cd0783a2362",
+   "id": "SKB-ASVS-V1-2-4",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "e0f9dbb40cea262fa9b40bbdd3a1d5be20a1a6c142d42bef990fd862f165823b",
+   "id": "SKB-API-API10-2023",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "fc69885b32db5f28fba4bf572a8382db166235dde6636a6aa29dc72484eb3fd6",
+   "id": "SKB-ASVS-V1-2-1",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "2299fe93b1701721ff5c446f38eecaa316ace44f7153e51b1afdfc374f37b348",
+   "id": "SKB-ASVS-V1-2-2",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "4e8e2acca29fc4043d2ecdd222651d5755d632f00c75ad11e0cbc8f6b51fb146",
+   "id": "SKB-ASVS-V11-3-1",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "4e8e2acca29fc4043d2ecdd222651d5755d632f00c75ad11e0cbc8f6b51fb146",
+   "id": "SKB-ASVS-V11-3-2",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "c0c614014c3865fa977261c392f40fa81f30eac5478efbf5b79aba6fc98e5e0f",
+   "id": "SKB-ASVS-V11-4-1",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "3c531b66b7849132aabf2a10bc65c5807864d3e07ed1d9da9479d134637e0491",
+   "id": "SKB-ASVS-V6-1-1",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "f94d8bbef17e0cd3f72f0e4f06fb1618ea16eaa027fd6465ef8932630acedd81",
+   "id": "SKB-ASVS-V6-2-1",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "8e88f3ffd12ddefcfd8586cf1bcc0a48c95245ae4dc4b442dfd013188b3445e0",
+   "id": "SKB-ASVS-V6-2-2",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "bfaf2331f1fbfed058b12a317a23469f58f3837783759f85da243481e49e78c9",
+   "id": "SKB-API-API4-2023",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "2ff808ef77d83ffa1ab4e15cf7caf14bc421f75729768e210abf9c327d2b73be",
+   "id": "SKB-API-API7-2023",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "264cfb011f69308a6cda034583bee02f051bcaca62bfe6bf1aef038e621892dc",
+   "id": "SKB-ASVS-V3-7-1",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "4f8a61f3347fc82fa9ee581f9f2f3caa829b7b7da236510fdf612aea832c4e69",
+   "id": "SKB-ASVS-V3-7-3",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "5445ab9d50626f21702a30606524f460e605550ff35af06de888bb688f3a7a84",
+   "id": "SKB-API-API2-2023",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "3d342780c46790f17a559d096f5d8462564d73bc193793504be7f1f95184fc0a",
+   "id": "SKB-ASVS-V14-1-1",
+   "status": "unknown"
+  },
+  {
+   "evidence_sha256": "80085ba7261c68a917f34eeb8585c8dd8a5eeffff9fb24660cc0b2de64fbf842",
+   "id": "SKB-ASVS-V14-1-2",
+   "status": "unknown"
+  },
+  {
+   "evidence_sha256": "f706bbc0c643af00668fd24968a56fad96c0d8f6d804b7290b2f1e00dc6cca6b",
+   "id": "SKB-ASVS-V14-2-1",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "1ee3a74b13dbcd66bb519eb92103027669b375116de18c09ec7ee581133d7a3d",
+   "id": "SKB-ASVS-V3-1-1",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "4d09df78c6d2cc2544d231cda38ee14a792b0380a1b8c7942cf0e113099b6487",
+   "id": "SKB-ASVS-V7-1-1",
+   "status": "unknown"
+  },
+  {
+   "evidence_sha256": "50b66a25b59167299d90a1f891b0109af928d5597681274cf12b5137346bd1be",
+   "id": "SKB-ASVS-V7-1-2",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "f1222dd56fb9d8aeb0bbf942c06c0e0f6a13e5dd1e14df2d3d13a1312d0ae19d",
+   "id": "SKB-ASVS-V7-1-3",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "ff23a0c5dd8c2075e745e67f7d2a0d238ac9957bed17b4991c61e20ec8560c93",
+   "id": "SKB-BASE-13-PATH-TRAVERSAL-IN-FILE-SEND",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "cc7a0618ebd8224e29b0304c685fe91856de10722ce9df2c0527ea8ccdfc941f",
+   "id": "SKB-BASE-2-PATH-TRAVERSAL-IN-FILE-READS",
+   "status": "pass"
+  }
+ ],
+ "gate": {
+  "check_count": 25,
+  "name": "fast",
+  "profile": "api"
+ },
+ "kb": {
+  "content_hash": "a57da404205eada6",
+  "name": "secure-kb",
+  "version": "0.9.16"
+ },
+ "target": {
+  "file_count": 96,
+  "fingerprint": "ae0ad743617b94780ab74f8bfff921cd6dc9a30daff396598b533fcdd2fa8775",
+  "path": "openai-api-server-via-codex"
+ }
+}

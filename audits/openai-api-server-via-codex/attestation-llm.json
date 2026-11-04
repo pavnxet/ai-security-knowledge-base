@@ -1,0 +1,71 @@
+{
+ "attestation_id": "2b63d54bb7f41fa2223cba2a5dc0dd8ff4cdd4cc792f23743d39a70d2204949c",
+ "attestation_version": 1,
+ "checks": [
+  {
+   "evidence_sha256": "5fa427a90d13eee7f80ce58d6f04d88622532027af8306b58e6e14142f11a417",
+   "id": "SKB-LLM-LLM01-2025",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "7b27b6d4d69d5f77f0647a9b27ef5d41c5ec9eabbe437410ef1ac8dae6a2882d",
+   "id": "SKB-LLM-LLM10-2025",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "7b44796d8b0d8094771aae6921cf62270c9bbac595b318dfa1d80f92c7747971",
+   "id": "SKB-LLM-LLM02-2025",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "ba5f97d2ee7846b2c65a31d6868b1a082c8cd1d337e1b981c9f69635b85cf38c",
+   "id": "SKB-LLM-LLM03-2025",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "423e388f1b13d1220b5dd5a04d527bf91a78e65d058e6161ce4c7b53cecfda85",
+   "id": "SKB-LLM-LLM04-2025",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "d008c681f875d77ca2a7f5bef8450aaa95c96473804993cdf4ab38e8847441f1",
+   "id": "SKB-LLM-LLM05-2025",
+   "status": "pass"
+  },
+  {
+   "evidence_sha256": "e6db5fc36d88ed69c62c1a5be15b99c7ca05f5857b0b16d6d504c90eb53b8c34",
+   "id": "SKB-LLM-LLM06-2025",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "dda00d36e49dc30b89882a4bb018a085c7273456c28fa4559f93de18da80f3a7",
+   "id": "SKB-LLM-LLM07-2025",
+   "status": "fail"
+  },
+  {
+   "evidence_sha256": "61b5f6e6bbf14d2d820ac53f184df9dbbc462bb5ccc401c36b062748317223dd",
+   "id": "SKB-LLM-LLM08-2025",
+   "status": "n/a"
+  },
+  {
+   "evidence_sha256": "4c7a71be898952960393f246de371e1c165ec875edc7f15f73f9566d5210452b",
+   "id": "SKB-LLM-LLM09-2025",
+   "status": "n/a"
+  }
+ ],
+ "gate": {
+  "check_count": 10,
+  "name": "fast",
+  "profile": "llm"
+ },
+ "kb": {
+  "content_hash": "a57da404205eada6",
+  "name": "secure-kb",
+  "version": "0.9.16"
+ },
+ "target": {
+  "file_count": 96,
+  "fingerprint": "ae0ad743617b94780ab74f8bfff921cd6dc9a30daff396598b533fcdd2fa8775",
+  "path": "openai-api-server-via-codex"
+ }
+}

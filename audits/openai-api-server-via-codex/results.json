@@ -1,0 +1,322 @@
+{
+  "schema": "secure-kb/report@1",
+  "target": "https://github.com/hotchpotch/openai-api-server-via-codex @ 1d87f332166194c6de5b96ee61106dc58cc9291a",
+  "date": "2026-11-04",
+  "knowledge_base": {
+    "name": "secure-kb",
+    "version": "0.9.16",
+    "content_hash": "a57da404205eada6"
+  },
+  "gates": [
+    {
+      "profile": "api",
+      "gate": "fast",
+      "checks": 25
+    },
+    {
+      "profile": "llm",
+      "gate": "fast",
+      "checks": 10
+    }
+  ],
+  "summary": {
+    "pass": 8,
+    "fail": 9,
+    "n/a": 15,
+    "unknown": 3,
+    "coverage_pct": 100.0,
+    "note": "Counts are for the 35 gate cards in results[] only; targeted extras are in targeted_extra_results[]."
+  },
+  "results": [
+    {
+      "id": "SKB-API-API1-2023",
+      "status": "fail",
+      "evidence": "internal/app/store.go:8-17,78-88 (stores keyed only by object id); internal/app/server.go:831-880 (list/get/update/delete chats with no owner check); internal/app/server.go:429-464 (response get/delete/input_items by id only)",
+      "note": "No principal/owner is stored or checked. Safe only for one principal; see F-05."
+    },
+    {
+      "id": "SKB-ASVS-V1-2-4",
+      "status": "n/a",
+      "evidence": "go.mod:5-8 (only websocket and TOML deps); no database/query API use found in internal/ or cmd/",
+      "note": "No SQL/NoSQL/database layer exists."
+    },
+    {
+      "id": "SKB-API-API10-2023",
+      "status": "fail",
+      "evidence": "internal/app/backend.go:653-668 (models response decoded with no byte limit); internal/app/backend.go:835-842 (http backend scheme allowed)",
+      "note": "Most upstream handling is strong (see report passes); two residual gaps. See F-11/F-13."
+    },
+    {
+      "id": "SKB-ASVS-V1-2-1",
+      "status": "pass",
+      "evidence": "internal/app/server.go:991-994 (JSON encoder + application/json); internal/app/server.go:1045-1047 (SSE via json.Marshal); internal/app/server.go:218 (nosniff on /v1)",
+      "note": "No first-party HTML rendering; model text is JSON/SSE-encoded, not interpolated into HTML."
+    },
+    {
+      "id": "SKB-ASVS-V1-2-2",
+      "status": "pass",
+      "evidence": "internal/app/backend.go:835-848 (proxy URL rebuilt from parsed base + cleaned path); internal/app/backend.go:655 (url.QueryEscape for client_version); internal/app/fuzz_test.go:9-38 (fuzz asserts scheme/host cannot escape base)",
+      "note": ""
+    },
+    {
+      "id": "SKB-ASVS-V11-3-1",
+      "status": "n/a",
+      "evidence": "internal/app/server.go:7 and internal/app/compat.go:4 (only crypto/subtle and crypto/rand in runtime imports)",
+      "note": "The application performs no block-cipher encryption of its own; TLS is delegated to Go stdlib/upstream."
+    },
+    {
+      "id": "SKB-ASVS-V11-3-2",
+      "status": "n/a",
+      "evidence": "internal/app/server.go:7 and internal/app/compat.go:4 (only crypto/subtle and crypto/rand in runtime imports)",
+      "note": "No application-selected ciphers/modes."
+    },
+    {
+      "id": "SKB-ASVS-V11-4-1",
+      "status": "pass",
+      "evidence": "scripts/build-release-archives.py:127 and scripts/build-platform-wheels.py:40 (SHA-256 only); no MD5/SHA-1 use found in runtime code",
+      "note": "Runtime itself does not use general-purpose hashes for security decisions."
+    },
+    {
+      "id": "SKB-ASVS-V6-1-1",
+      "status": "fail",
+      "evidence": "internal/app/server.go:205-213 (401 path, no throttle/backoff/lockout); README.md:263-312 (auth model documented, anti-automation controls not defined)",
+      "note": "See F-02."
+    },
+    {
+      "id": "SKB-ASVS-V6-2-1",
+      "status": "n/a",
+      "evidence": "internal/app/config.go:34 (single operator API key, no user passwords)",
+      "note": "There are no user-set passwords. The analogous local-key strength gap is F-02."
+    },
+    {
+      "id": "SKB-ASVS-V6-2-2",
+      "status": "n/a",
+      "evidence": "internal/app/config.go:34 (operator-managed API key only)",
+      "note": "There are no user passwords; the operator rotates the key by config/restart and Codex credentials by `codex login`."
+    },
+    {
+      "id": "SKB-API-API4-2023",
+      "status": "fail",
+      "evidence": "internal/app/backend.go:732-760 esp. 755 (unbounded copy to temp file); internal/app/server.go:1074-1080 (uncapped chat n); internal/app/server.go:410-425 (input_tokens takes no concurrency slot)",
+      "note": "See F-03, F-04, F-11."
+    },
+    {
+      "id": "SKB-API-API7-2023",
+      "status": "pass",
+      "evidence": "internal/app/backend.go:835-848 (destination host is the parsed operator backend base, path cannot change it); internal/app/fuzz_test.go:9-38; internal/app/compat.go:318-323 (image_url is forwarded to upstream, not fetched locally)",
+      "note": "No locally-executed fetch of caller-supplied URLs. The credentialed fixed-host proxy is assessed separately as F-07 (API9/least privilege), not classic SSRF."
+    },
+    {
+      "id": "SKB-ASVS-V3-7-1",
+      "status": "n/a",
+      "evidence": "No first-party browser client/plugin code in the target file inventory (Go server, Python launcher, docs only)",
+      "note": "No NSAPI/Flash/ActiveX/etc. surface."
+    },
+    {
+      "id": "SKB-ASVS-V3-7-3",
+      "status": "n/a",
+      "evidence": "internal/app/server.go:214-216 (only redirect is fixed internal /v1 -> /v1/)",
+      "note": "No user-controlled or external redirects."
+    },
+    {
+      "id": "SKB-API-API2-2023",
+      "status": "fail",
+      "evidence": "internal/app/server.go:205 (auth skipped entirely when APIKey is empty); internal/app/config.go:133-135 (no host/key validation); internal/app/server.go:205-213 (no failure throttle)",
+      "note": "See F-02. When a key is set, comparison itself is constant-time (server.go:264-271)."
+    },
+    {
+      "id": "SKB-ASVS-V14-1-1",
+      "status": "unknown",
+      "evidence": "README.md:263-312 identifies Codex tokens/log redaction but no in-repo data inventory/classification for prompts, stored inputs or outputs was found",
+      "note": "Cannot verify out-of-repo organisational classification. See report unknown table."
+    },
+    {
+      "id": "SKB-ASVS-V14-1-2",
+      "status": "unknown",
+      "evidence": "README.md:586-588 documents store count/concurrency only; internal/app/store.go:31-52 has no TTL/byte retention policy",
+      "note": "Protection/retention requirements per data class are not documented in-repo; out-of-repo policy unknown."
+    },
+    {
+      "id": "SKB-ASVS-V14-2-1",
+      "status": "pass",
+      "evidence": "internal/app/server.go:205,264-271 (local key accepted only via Authorization header); internal/app/backend.go:214-216 (Codex token only in Authorization header)",
+      "note": "Resource ids and metadata filters appear in URLs by API design, but credentials/session tokens are not accepted or sent in URL/query."
+    },
+    {
+      "id": "SKB-ASVS-V3-1-1",
+      "status": "n/a",
+      "evidence": "No browser frontend is served; internal/app/server.go:192-242 routes only /healthz and /v1 API paths",
+      "note": "SDK/API clients, not a browser application."
+    },
+    {
+      "id": "SKB-ASVS-V7-1-1",
+      "status": "unknown",
+      "evidence": "internal/app/auth.go:185-186 (upstream token freshness read from JWT exp); internal/app/websocket.go:136-152 (WS stays open until relay ends; no documented idle/absolute client-session lifetime)",
+      "note": "The server issues no user sessions; Codex session lifetime is external and WS lifetime policy is undocumented."
+    },
+    {
+      "id": "SKB-ASVS-V7-1-2",
+      "status": "pass",
+      "evidence": "internal/app/config.go:23 (default concurrency 10); internal/app/server.go:275-289 (slot cap with 503 + Retry-After); README.md:587-588 (documented behaviour)",
+      "note": "For the single borrowed account, concurrent use is bounded and documented."
+    },
+    {
+      "id": "SKB-ASVS-V7-1-3",
+      "status": "n/a",
+      "evidence": "internal/app/auth.go:165-182 (refresh-token exchange only; server issues/manages no federated sessions)",
+      "note": "It borrows an existing Codex login; it is not an SSO/session provider."
+    },
+    {
+      "id": "SKB-BASE-13-PATH-TRAVERSAL-IN-FILE-SEND",
+      "status": "n/a",
+      "evidence": "internal/app/server.go:192-242 (no file-send/static-file route exists)",
+      "note": "Responses are generated JSON/SSE or proxied upstream bodies."
+    },
+    {
+      "id": "SKB-BASE-2-PATH-TRAVERSAL-IN-FILE-READS",
+      "status": "pass",
+      "evidence": "All runtime os.ReadFile sites are operator-configured paths: internal/app/auth.go:86, internal/app/config.go:245, internal/app/daemon.go:312; request paths never become filesystem paths (proxy path handling at internal/app/backend.go:814-848)",
+      "note": "Config-file paths themselves are operator-trusted input."
+    },
+    {
+      "id": "SKB-LLM-LLM01-2025",
+      "status": "n/a",
+      "evidence": "internal/app/compat.go:141-150 (caller instructions/input separated as API fields); no server-side browsing, document ingestion or tool execution in internal/",
+      "note": "The server is a transport for one API caller. Prompt-injection risk shifts to downstream apps that mix untrusted content into prompts; that code is not in this repo."
+    },
+    {
+      "id": "SKB-LLM-LLM10-2025",
+      "status": "fail",
+      "evidence": "internal/app/server.go:1074-1080 (uncapped chat n); internal/app/backend.go:755 (unbounded body spool); internal/app/backend.go:291 (client max_output_tokens deleted before forwarding)",
+      "note": "See F-03/F-04/F-11."
+    },
+    {
+      "id": "SKB-LLM-LLM02-2025",
+      "status": "fail",
+      "evidence": "internal/app/server.go:350,384 (Responses always remembered locally); internal/app/server.go:831-880 (stored chats shared/listable); internal/app/store.go:31-52 (no TTL)",
+      "note": "See F-05/F-06. Log redaction strengths are recorded in the report passes."
+    },
+    {
+      "id": "SKB-LLM-LLM03-2025",
+      "status": "fail",
+      "evidence": "Dockerfile:28-32 (CODEX_VERSION=latest, npm install -g @openai/codex@latest); .github/workflows/ci.yml:42,45 (actions referenced by mutable semver tags in workflow source)",
+      "note": "Narrow residual; most supply-chain controls are unusually strong. See F-09."
+    },
+    {
+      "id": "SKB-LLM-LLM04-2025",
+      "status": "n/a",
+      "evidence": "No training, fine-tuning or embedding-data pipeline in the target file inventory",
+      "note": "Models are remote Codex models."
+    },
+    {
+      "id": "SKB-LLM-LLM05-2025",
+      "status": "pass",
+      "evidence": "internal/app/server.go:991-994,1045-1047 (model output returned only as encoded JSON/SSE); tool/function calls are translated/relayed in internal/app/compat.go:395-450, never executed server-side; exec use is limited to self-daemon/tasklist (internal/app/daemon.go:172,217; internal/app/process_windows.go:17-24)",
+      "note": "Pass is for this server only. Whether downstream clients safely handle model output/tool calls is unknown/out of scope."
+    },
+    {
+      "id": "SKB-LLM-LLM06-2025",
+      "status": "n/a",
+      "evidence": "No server-side tool/plugin execution: function calls are relayed to the API client (internal/app/compat.go:395-450)",
+      "note": "The related least-privilege problem is caller agency over the backend, assessed as F-07 under API9 \u2014 not model agency inside this server."
+    },
+    {
+      "id": "SKB-LLM-LLM07-2025",
+      "status": "fail",
+      "evidence": "internal/app/server.go:461-490 (input_items returns effective input incl. system/developer messages); internal/app/server.go:429-464 (any caller with an id can retrieve them); internal/app/store.go:8-17 (no owner recorded)",
+      "note": "Only matters when more than one principal/app shares the instance; the server's own constant prompts are public source text."
+    },
+    {
+      "id": "SKB-LLM-LLM08-2025",
+      "status": "n/a",
+      "evidence": "No embeddings/vector store/RAG implementation in the target file inventory (README states embeddings have no implemented endpoint)",
+      "note": ""
+    },
+    {
+      "id": "SKB-LLM-LLM09-2025",
+      "status": "n/a",
+      "evidence": "No user-facing presentation, citation or fact-assertion layer; internal/app/server.go:192-242 exposes only API transport endpoints",
+      "note": "Misinformation controls belong to the consuming application."
+    }
+  ],
+  "targeted_extra_results": [
+    {
+      "id": "SKB-ASVS-V3-5-1",
+      "status": "fail",
+      "evidence": "internal/app/server.go:192-242 (no Host/Origin validation on HTTP API); internal/app/server.go:971-975 (no Content-Type requirement before JSON decode)",
+      "note": "F-01. Non-gate card found via secure-kb search."
+    },
+    {
+      "id": "SKB-CS-REST-SECURITY-CHEAT-SHEET-VALIDATE-CONTENT-TYPES",
+      "status": "fail",
+      "evidence": "internal/app/server.go:971-975 decodeObject never inspects r.Header Content-Type",
+      "note": "F-01. Enables CORS-simple cross-origin POSTs with text/plain."
+    },
+    {
+      "id": "SKB-ASVS-V4-4-2",
+      "status": "fail",
+      "evidence": "internal/app/websocket.go:89-95 compares Origin host to request Host, not to an allowlist of allowed origins",
+      "note": "F-01. Correctly rejects ordinary cross-origin handshakes; fails the card as written and is rebinding-compatible."
+    },
+    {
+      "id": "SKB-WSTG-INJT-17",
+      "status": "fail",
+      "evidence": "Only Host use in request handling is internal/app/websocket.go:91; internal/app/server.go:192-242 never validates Host",
+      "note": "F-01."
+    },
+    {
+      "id": "SKB-CS-REST-SECURITY-CHEAT-SHEET-API-KEYS",
+      "status": "fail",
+      "evidence": "internal/app/server.go:205 (no key => no incoming access control); internal/app/config.go:133-135 (non-loopback bind does not require a key)",
+      "note": "F-02. Acceptable on loopback per docs; not fail-closed when exposed."
+    },
+    {
+      "id": "SKB-CS-REST-SECURITY-CHEAT-SHEET-HTTPS",
+      "status": "fail",
+      "evidence": "internal/app/server.go:65-70 (plain TCP listener + http.Server, no TLS serving path)",
+      "note": "F-02 for any non-loopback use; a TLS reverse proxy is an out-of-repo unknown."
+    },
+    {
+      "id": "SKB-BASE-10-MISSING-RATE-LIMITING-BRUTE-FORCE",
+      "status": "fail",
+      "evidence": "internal/app/server.go:205-213 returns 401 with no counter/delay; concurrency slot (275-289) is only acquired after auth and does not throttle guesses",
+      "note": "F-02."
+    },
+    {
+      "id": "SKB-API-API9-2023",
+      "status": "fail",
+      "evidence": "internal/app/server.go:239-240 (every unmatched /v1 method/path falls through to proxy); internal/app/backend.go:702-713 (forwards with server Codex credentials)",
+      "note": "F-07."
+    },
+    {
+      "id": "SKB-ASVS-V14-3-2",
+      "status": "fail",
+      "evidence": "internal/app/server.go:991-994 writeJSON sets only Content-Type (no Cache-Control: no-store)",
+      "note": "F-12."
+    },
+    {
+      "id": "SKB-ASVS-V3-4-4",
+      "status": "fail",
+      "evidence": "internal/app/server.go:218 sets nosniff only after /healthz (193-200), 404 (201-204) and 401 (205-213) branches have already returned",
+      "note": "F-12; card retrieved via secure-kb search requires the header on all responses."
+    }
+  ],
+  "gaps": [
+    {
+      "gap": true,
+      "topic": "Predictable temporary-file names / symlink following (CWE-377, CWE-59)",
+      "evidence": "internal/app/auth.go:125-129; internal/app/daemon.go:322-327",
+      "note": "secure-kb `cwe 377` and `cwe 59` return no card on v0.9.16; assessed from general knowledge as F-08."
+    },
+    {
+      "gap": true,
+      "topic": "PID-file process-identity verification before signalling",
+      "evidence": "internal/app/daemon.go:269-295,311-320",
+      "note": "No matching secure-kb card found; assessed from general knowledge as F-10."
+    }
+  ],
+  "launch_gate": {
+    "passed": false,
+    "rule": "zero critical/high fails"
+  }
+}
