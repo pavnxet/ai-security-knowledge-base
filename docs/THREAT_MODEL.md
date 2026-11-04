@@ -7,8 +7,8 @@ protect. It exists so that a security decision — including a decision to *acce
 argued with rather than guessed at. Every risk below has an ID that is carried into
 `risk-register.yaml`, where the justification and re-check date live.
 
-Read it alongside [`SECURITY.md`](../SECURITY.md) (how to report). The project's known
-limitations are stated in the README's benchmark section.
+Read it alongside [`SECURITY.md`](../SECURITY.md) (how to report) and
+[`KNOWN_LIMITATIONS.md`](../KNOWN_LIMITATIONS.md) (what it cannot do).
 
 ---
 
