@@ -98,13 +98,25 @@ python3 "$KB/cli/secure_kb.py" search "jwt expiry validation" --k 5
 
 ## Step 4 — Write the report
 
-Follow `assets/report-template.md` exactly. Group by severity (Critical → High → Medium → Low), and
-for every finding give: the check ID, the standard ref, the `file:line` evidence, why it matters, and
-a concrete fix. Then list checks that **passed** and checks that were **`unknown`** (couldn't be
-verified) — the unknown list is often the most useful part.
+Follow `assets/report-template.md` exactly.
 
-Read `references/reporting.md` before writing — it covers how to phrase findings so a developer can
-act on them, and how to avoid the two failure modes (vague findings, and false confidence).
+**Start with the threat model block**, before writing a single finding: assets, trust boundaries,
+assumptions, out of scope. Two checks can be equally true and have opposite severities depending on
+whether the app is a single-user local tool or a multi-tenant service — the block is what makes the
+severity judgement reviewable instead of arbitrary.
+
+Then group findings by severity (Critical → High → Medium → Low). For every finding give the check
+ID, the standard ref, the `file:line` evidence, why it matters *for this app*, and a concrete fix.
+List the checks that **passed** (with evidence — "no problem found" is not evidence) and the checks
+that were **`unknown`**; the unknown list is often the most useful part.
+
+**Every dismissal needs a reason.** A check marked `n/a` must say why it does not apply *and* what
+would make it apply; an accepted risk must say who it is acceptable for *and* who it would not be.
+A dismissal nobody can argue with is indistinguishable from an oversight.
+
+Read `references/reporting.md` before writing — it covers phrasing findings so a developer can act on
+them, the two failure modes (vague findings, false confidence), and how to dismiss a finding so the
+reasoning can be attacked.
 
 ## Step 5 — Make it verifiable (optional, high value)
 
