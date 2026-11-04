@@ -91,10 +91,10 @@ or if a review date has lapsed.
 
 ## Known limitations
 
-The benchmark numbers, the retrieval ceiling, and the corpus defects we have not fixed are stated
-plainly in the README's [benchmark](README.md#benchmarks) and
-[known limitations](README.md#known-limitations) sections. None of them are secrets; publishing them
-is the point.
+The benchmark numbers, the retrieval ceiling and the corpus defects we have not fixed are stated
+plainly in [`KNOWN_LIMITATIONS.md`](KNOWN_LIMITATIONS.md) — with the measured values, checked against
+`bench/results.json` by a test so the page cannot drift. None of it is a secret; publishing it is the
+point.
 
 ## What we do on our side
 
