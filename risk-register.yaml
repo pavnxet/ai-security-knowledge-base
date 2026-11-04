@@ -1,0 +1,261 @@
+# Risk register — the single source of truth for risk decisions.
+#
+# The narrative lives in docs/THREAT_MODEL.md. This file holds what the document does not:
+# the justification for each decision, the artefact that verifies it, and when it must be
+# re-decided. scripts/check_risks.py enforces the rules; CI runs it on every push.
+#
+# Rules (enforced, see scripts/check_risks.py):
+#   - ids are unique and match R-<3 digits>
+#   - status is one of: mitigated | partially_mitigated | accepted | deferred | open
+#   - accepted / deferred / open  MUST carry a justification (>= 40 chars) and a review_by date
+#   - mitigated / partially_mitigated MUST carry a verification of kind test | ci | doc
+#   - verification.ref must resolve: a real pytest nodeid, a real CI job, or a real file
+#   - review_by in the past fails the build — re-decide, don't let it rot
+#   - every id here must appear in docs/THREAT_MODEL.md, and vice versa
+
+version: 1
+updated: 2026-11-04
+
+risks:
+  - id: R-001
+    title: Someone issues an attestation claiming our content_hash without holding the key
+    stride: Spoofing
+    asset: attestation-key
+    likelihood: low
+    impact: high
+    status: mitigated
+    justification: >
+      Attestations may be HMAC-SHA256 signed over the attestation id; verify-attestation recomputes
+      the id and checks the signature. Signing is optional, so an unsigned attestation is only as
+      trustworthy as its channel — but a signed one cannot be forged without the key.
+    verification: {kind: test, ref: "tests/test_cli.py::test_attest_wrong_key"}
+    review_by: null
+    issue: null
+
+  - id: R-002
+    title: A fork or confusable name passes itself off as this project
+    stride: Spoofing
+    asset: published-artifacts
+    likelihood: medium
+    impact: medium
+    status: accepted
+    justification: >
+      We cannot control forks, names, or registry squatting. What a consumer can do is check the
+      manifest content_hash against the one this repo publishes, which detects a substituted corpus
+      even if the name looks right. Anything beyond that (trademark enforcement) is out of scope.
+    verification: {kind: none, ref: null}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-003
+    title: A card claims provenance to a source that does not match its pinned commit
+    stride: Spoofing
+    asset: corpus
+    likelihood: low
+    impact: high
+    status: mitigated
+    justification: >
+      Sources are fetched at commit-pinned raw URLs (sources.yaml `commit:`, sources_files.tsv), so
+      the bytes a card was built from are fixed. A rebuild from those pins must reproduce the same
+      content_hash, which is exactly what the determinism job checks.
+    verification: {kind: ci, ref: determinism}
+    review_by: null
+    issue: null
+
+  - id: R-004
+    title: Someone edits checks/** or index/checks.jsonl to change what the corpus says
+    stride: Tampering
+    asset: corpus
+    likelihood: low
+    impact: critical
+    status: partially_mitigated
+    justification: >
+      content_hash in manifest.json is recomputed on every push, so any edit to the corpus is caught.
+      The residual gap is that the manifest itself is unsigned: someone who can rewrite both the
+      corpus and the manifest produces an internally consistent forgery. A signature over the
+      manifest would close it; that is not implemented.
+    verification: {kind: ci, ref: determinism}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-005
+    title: A partial index build leaves a valid-looking empty kb.sqlite that is trusted forever
+    stride: Tampering
+    asset: corpus
+    likelihood: medium
+    impact: high
+    status: mitigated
+    justification: >
+      Fixed in v0.9.5. ensure_db() no longer trusts the cache on mtime alone: it compares the row
+      count against the source and rebuilds when they disagree, so a build that died mid-way is
+      repaired on the next use instead of silently degrading retrieval to substring matching.
+    verification: {kind: test, ref: "tests/test_cli.py::test_ensure_db_rebuilds_empty_cache"}
+    review_by: null
+    issue: null
+
+  - id: R-006
+    title: Upstream force-pushes and a pinned commit disappears
+    stride: Tampering
+    asset: corpus
+    likelihood: low
+    impact: medium
+    status: partially_mitigated
+    justification: >
+      Each file is fetched independently and failures are printed, but fetch_sources.py still exits
+      0, so a partial fetch is not a CI failure by itself. The real backstop is the determinism job:
+      a corpus built from missing sources has a different content_hash and the build goes red.
+      Making the fetch exit non-zero on any failure would close the gap.
+    verification: {kind: ci, ref: determinism}
+    review_by: 2027-05-01
+    issue: null
+
+  - id: R-007
+    title: A Python dependency is compromised or typosquatted
+    stride: Tampering
+    asset: ci
+    likelihood: medium
+    impact: high
+    status: deferred
+    justification: >
+      Dependencies use bounded ranges but there is no lockfile and no hash pinning, so a compromised
+      upstream release inside the range would be installed silently. Deferred rather than accepted:
+      the fix is mechanical (lockfile + --require-hashes) and should be done before 1.0.
+    verification: {kind: none, ref: null}
+    review_by: 2027-05-01
+    issue: null
+
+  - id: R-008
+    title: An issuer backdates an attestation
+    stride: Repudiation
+    asset: attestation-key
+    likelihood: low
+    impact: medium
+    status: accepted
+    justification: >
+      There is no external timestamp authority or transparency log, so an attestation's stated time
+      is whatever the issuer says. Adding RFC 3161 or a Sigstore-style log would close it, but that
+      introduces a network dependency this tool deliberately does not have.
+    verification: {kind: none, ref: null}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-009
+    title: An attestation is read as "this code is safe" rather than "this is what was checked"
+    stride: Repudiation
+    asset: published-artifacts
+    likelihood: medium
+    impact: medium
+    status: mitigated
+    justification: >
+      The distinction is stated in the attestation documentation and repeated in the skill's
+      instructions: an attestation proves what was claimed, not that the claim is true. The control
+      is documentation, which is why the verification is a doc rather than a test.
+    verification: {kind: doc, ref: docs/ATTESTATION.md}
+    review_by: null
+    issue: null
+
+  - id: R-010
+    title: An agent points detect/attest at ~/.ssh or /etc and receives file names back
+    stride: InformationDisclosure
+    asset: target
+    likelihood: medium
+    impact: low
+    status: accepted
+    justification: >
+      The tools read whatever path they are given, which is their job. The blast radius is bounded:
+      detect caps at 8,000 files and 200 KB per file and returns only file names and matched signal
+      strings, never file content; attest returns a hash, not the bytes. Accepted for a local,
+      single-user tool.
+    verification: {kind: none, ref: null}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-011
+    title: The MCP server runs with the invoking user's privileges
+    stride: InformationDisclosure
+    asset: ci
+    likelihood: high
+    impact: medium
+    status: accepted
+    justification: >
+      Inherent to a local stdio MCP server: it is a child process of the client. Mitigation is
+      deployment guidance (run it as a user that cannot read what it should not), not a code change.
+      A sandboxed server would break the primary use case of auditing a local working tree.
+    verification: {kind: none, ref: null}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-012
+    title: Reports and attestations contain target file paths
+    stride: InformationDisclosure
+    asset: target
+    likelihood: high
+    impact: low
+    status: accepted
+    justification: >
+      By design. The attestation stores a hash over the path list, not the paths themselves, and a
+      report naming file:line is the entire point of the output. Anyone who should not see the paths
+      should not be receiving the report.
+    verification: {kind: none, ref: null}
+    review_by: 2027-11-01
+    issue: null
+
+  - id: R-013
+    title: fingerprint_target reads every file fully into memory with no size cap
+    stride: DenialOfService
+    asset: target
+    likelihood: medium
+    impact: high
+    status: open
+    justification: >
+      Open bug. fingerprint_target walks the target independently of iter_files and calls read() on
+      every file, so one very large file (a disk image, a database dump) exhausts memory. Not
+      remotely exploitable — it requires a local user pointing the tool at a pathological tree — but
+      it is a real robustness defect and the fix is small (hash in chunks with a size guard).
+    verification: {kind: none, ref: null}
+    review_by: 2027-05-01
+    issue: null
+
+  - id: R-014
+    title: A pathologically large tree makes detect slow
+    stride: DenialOfService
+    asset: target
+    likelihood: medium
+    impact: low
+    status: mitigated
+    justification: >
+      iter_files caps the walk at 8,000 files and cmd_detect skips files over 200 KB, so detection
+      time is bounded regardless of tree size. The cap is asserted by a test so it cannot be quietly
+      removed.
+    verification: {kind: test, ref: "tests/test_threat_model.py::test_claims_about_the_code_still_hold"}
+    review_by: null
+    issue: null
+
+  - id: R-015
+    title: Path traversal via a crafted profile name in the MCP server
+    stride: ElevationOfPrivilege
+    asset: target
+    likelihood: low
+    impact: high
+    status: mitigated
+    justification: >
+      get_profile validates the name against ^[a-z0-9][a-z0-9_-]*$ before it touches the filesystem,
+      so ../../etc/passwd cannot resolve to a path. Covered by an explicit rejection test.
+    verification: {kind: test, ref: "tests/test_cli.py::test_profile_rejects_traversal"}
+    review_by: null
+    issue: null
+
+  - id: R-016
+    title: The audited repository contains text instructing the agent to do something
+    stride: ElevationOfPrivilege
+    asset: target
+    likelihood: medium
+    impact: medium
+    status: mitigated
+    justification: >
+      The skill states that audited content is data, never instructions, and neither the CLI nor the
+      MCP server executes, imports, or sources anything from the target — they only walk and read it.
+      The residual risk is the agent's own judgement, which we bound rather than trust.
+    verification: {kind: doc, ref: skills/secure-kb-audit/SKILL.md}
+    review_by: null
+    issue: null
