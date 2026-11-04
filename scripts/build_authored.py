@@ -6,7 +6,24 @@ own guidance. confidence is 'low' when a platform has a single authoritative sou
 """
 import os, yaml, datetime
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-TODAY = datetime.date.today().isoformat()
+def _corpus_date() -> str:
+    """The corpus date is a COMMITTED constant, never `today()`.
+
+    Stamping the build date into every card made the corpus irreproducible across days: the
+    determinism job only passed when CI ran on the same day the corpus was built. Bump
+    CORPUS_DATE deliberately when re-freezing; the build fails closed if it is missing.
+    """
+    import os as _os, re as _re
+    path = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), "CORPUS_DATE")
+    try:
+        value = open(path, encoding="utf-8").read().strip()
+    except OSError:
+        raise SystemExit(f"CORPUS_DATE not found at {path}")
+    if not _re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        raise SystemExit(f"CORPUS_DATE must be YYYY-MM-DD, got {value!r}")
+    return value
+
+TODAY = _corpus_date()
 
 TG = [("https://core.telegram.org/bots/api","Telegram Bot API"),
       ("https://core.telegram.org/bots/webapps","Telegram Mini Apps"),
