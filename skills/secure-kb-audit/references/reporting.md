@@ -88,6 +88,17 @@ Aim for precision about *why* something is unknown:
 
 Each of those implies a different next action for the user, so name the category.
 
+## The machine-checked form
+
+The prose report is for humans; `findings.json` is the contract (see `docs/AUDIT-OUTPUT.md`). The two
+must agree — deriving the prose from the validated JSON is the only way to guarantee that. Three rules
+the validator enforces, and they map directly onto the advice above:
+
+- `confirmed` must trace `entrypoint` → `sink` — the same "point at where it takes effect" rule.
+- `needs_validation` may not carry a severity — an unproven issue has no impact to rate.
+- `rejected` must carry a reason — a dismissal nobody can argue with is indistinguishable from an
+  oversight.
+
 ## Tone
 
 Write for the developer who has to act on it, and for the reviewer who has to trust it. Direct,
