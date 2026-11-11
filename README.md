@@ -8,7 +8,7 @@
 repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
-> **Status: public beta (v0.9.17).** The build is reproducible — the same pinned sources produce the
+> **Status: public beta (v0.9.18).** The build is reproducible — the same pinned sources produce the
 > same `content_hash` on any day, verified in CI against `CORPUS_DATE`; retrieval targets are
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
@@ -170,6 +170,29 @@ and a test that keeps them in sync with `bench/results.json`. The headlines:
 - **99% of cards' `fix` field is a pointer, not guidance** — a card reliably says *what to check*,
   rarely *how to fix it*.
 - **It does not scan anything**, and an attestation proves what was claimed, not that it is true.
+
+## Audit output contract
+
+An audit produces **`findings.json`**, not prose. Every record is validated against
+[`audit/report-schema.json`](audit/report-schema.json) by
+[`scripts/validate_findings.py`](scripts/validate_findings.py) — zero dependencies, CI-enforced.
+
+Three verdicts, and the rules that make them mean something:
+
+| Verdict | Carries severity? | Requires |
+|---|---|---|
+| `confirmed` | yes | a trace from `entrypoint` → `sink`, so the claim actually reaches where it takes effect |
+| `needs_validation` | **no** | a `blockers` list and a `validation_plan` — an unproven issue has no impact to rate |
+| `rejected` | no | a `reason` — a dismissal without one is indistinguishable from an oversight |
+
+Every record can cite the `card_id` that motivated it and the `kb` (`version` + `content_hash`) that
+produced it, so two audits are comparable and a run is reproducible.
+
+```bash
+python3 scripts/validate_findings.py audit/findings.json
+```
+
+Full contract, record shapes and worked examples: [`docs/AUDIT-OUTPUT.md`](docs/AUDIT-OUTPUT.md).
 
 ## Security posture
 
