@@ -1,0 +1,49 @@
+[
+  {
+    "verdict": "confirmed",
+    "fingerprint": "authz/admin-route-missing-guard",
+    "title": "Admin route reachable without the owner check",
+    "description": "The privileged /admin handler is registered outside the guard that covers the other routes.",
+    "root_cause": "The auth middleware is applied per-route and the admin route was added after the wiring block.",
+    "intended_behavior": "Every privileged route requires an allow-listed caller.",
+    "trace": [
+      { "kind": "entrypoint", "file": "internal/app/server.go", "line": 205, "scope": "ServeHTTP", "description": "request enters the router" },
+      { "kind": "propagation", "file": "internal/app/server.go", "line": 215, "scope": "route switch", "description": "path dispatch without a guard" },
+      { "kind": "sink", "file": "internal/app/admin.go", "line": 42, "scope": "adminHandler", "description": "privileged action executes" }
+    ],
+    "evidence": "Read at the stated lines; no guard between entrypoint and sink.",
+    "conditions": "Any caller who can reach the port.",
+    "execution": "Static only; not executed.",
+    "remediation": "Register the route behind the same guard, or default-deny in the router.",
+    "severity": "high",
+    "confidence": "high",
+    "card_id": "SKB-TG-ACCESS-0037",
+    "kb": { "version": "0.9.16", "content_hash": "a57da404205eada6" }
+  },
+  {
+    "verdict": "needs_validation",
+    "fingerprint": "ratelimit/absent-on-login",
+    "title": "Login endpoint may have no rate limit",
+    "description": "No limiter is visible in the handler, but the deployment may add one at the proxy.",
+    "claimed_root_cause": "Throttling is assumed to be handled upstream.",
+    "trace": [
+      { "kind": "entrypoint", "file": "internal/app/server.go", "line": 300, "scope": "login", "description": "POST /login" }
+    ],
+    "evidence": "No limiter in the handler; proxy config is not in the repo.",
+    "blockers": ["proxy configuration is not in the repository"],
+    "validation_plan": "Inspect the deployment's ingress config, or run a bounded local loop against a fixture.",
+    "card_id": "SKB-API-API4-2023"
+  },
+  {
+    "verdict": "rejected",
+    "fingerprint": "injection/sql-in-query-builder",
+    "title": "Possible SQL injection in the query builder",
+    "description": "A string-built query looked suspicious at first read.",
+    "claimed_root_cause": "String concatenation into SQL.",
+    "trace": [
+      { "kind": "entrypoint", "file": "internal/store/query.go", "line": 88, "scope": "Build", "description": "query built from a map" }
+    ],
+    "evidence": "The concatenated fragment is a fixed column name from a closed allowlist; values are bound.",
+    "reason": "Disproved: the interpolated part is a compile-time constant chosen from an allowlist, not attacker-controlled."
+  }
+]
