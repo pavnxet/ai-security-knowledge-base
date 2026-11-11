@@ -1,0 +1,293 @@
+{
+  "$comment": "Contract for findings.json — the machine-checked output of a secure-kb audit. scripts/validate_findings.py interprets this schema directly, so this file is the single source of truth. Adapted from cloudflare/security-audit-skill's three-verdict model, extended with card_id and kb so every record is bound to the corpus that motivated it.",
+  "type": "array",
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "description": "A source-grounded issue that was independently demonstrated, with a complete entrypoint→sink trace.",
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "const": "confirmed"
+          },
+          "fingerprint": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/@+-]*$",
+            "description": "Stable source-derived id. Must not change between validation states."
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "root_cause": {
+            "type": "string",
+            "minLength": 1
+          },
+          "intended_behavior": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trace": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/trace_step"
+            }
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "conditions": {
+            "type": "string",
+            "minLength": 1
+          },
+          "execution": {
+            "type": "string",
+            "minLength": 1
+          },
+          "remediation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "info"
+            ]
+          },
+          "confidence": {
+            "type": "string",
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "card_id": {
+            "type": "string",
+            "pattern": "^SKB-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "kb": {
+            "$ref": "#/definitions/kb"
+          }
+        },
+        "required": [
+          "verdict",
+          "fingerprint",
+          "title",
+          "description",
+          "root_cause",
+          "intended_behavior",
+          "trace",
+          "evidence",
+          "conditions",
+          "execution",
+          "remediation",
+          "severity",
+          "confidence"
+        ]
+      },
+      {
+        "type": "object",
+        "description": "A candidate with one exact unresolved fact. Carries NO severity — an unproven issue has no impact to rate.",
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "const": "needs_validation"
+          },
+          "fingerprint": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/@+-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claimed_root_cause": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trace": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/trace_step"
+            }
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "blockers": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "validation_plan": {
+            "type": "string",
+            "minLength": 1
+          },
+          "card_id": {
+            "type": "string",
+            "pattern": "^SKB-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "kb": {
+            "$ref": "#/definitions/kb"
+          }
+        },
+        "required": [
+          "verdict",
+          "fingerprint",
+          "title",
+          "description",
+          "claimed_root_cause",
+          "trace",
+          "evidence",
+          "blockers",
+          "validation_plan"
+        ],
+        "not": {
+          "required": [
+            "severity"
+          ]
+        }
+      },
+      {
+        "type": "object",
+        "description": "A candidate that was disproved. The reason is mandatory — a rejection without one is indistinguishable from an oversight.",
+        "properties": {
+          "verdict": {
+            "type": "string",
+            "const": "rejected"
+          },
+          "fingerprint": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/@+-]*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claimed_root_cause": {
+            "type": "string",
+            "minLength": 1
+          },
+          "trace": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/trace_step"
+            }
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 1
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          },
+          "card_id": {
+            "type": "string",
+            "pattern": "^SKB-[A-Z0-9][A-Z0-9-]*$"
+          },
+          "kb": {
+            "$ref": "#/definitions/kb"
+          }
+        },
+        "required": [
+          "verdict",
+          "fingerprint",
+          "title",
+          "description",
+          "claimed_root_cause",
+          "trace",
+          "evidence",
+          "reason"
+        ],
+        "not": {
+          "required": [
+            "severity"
+          ]
+        }
+      }
+    ]
+  },
+  "definitions": {
+    "trace_step": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "entrypoint",
+            "propagation",
+            "sink"
+          ]
+        },
+        "file": {
+          "type": "string",
+          "minLength": 1
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "kind",
+        "file",
+        "line",
+        "scope",
+        "description"
+      ]
+    },
+    "kb": {
+      "type": "object",
+      "description": "Which corpus produced this record — makes an audit reproducible and comparable.",
+      "properties": {
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "content_hash": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        }
+      },
+      "required": [
+        "version",
+        "content_hash"
+      ]
+    }
+  }
+}
