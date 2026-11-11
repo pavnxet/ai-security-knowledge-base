@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.9.18] — beta
+### Docs (the audit contract is now documented everywhere)
+- **`docs/AUDIT-OUTPUT.md`** — the full contract: the three verdicts, why `needs_validation` carries no
+  severity, why `confirmed` needs a `sink`, the record shapes, the `card_id`/`kb` binding fields, and
+  what the validator checks.
+- **README** gains an "Audit output contract" section; **`AGENTS.md`** tells an agent the three rules
+  it must not break; **`llms.txt`** lists the schema and the doc; the **skill** and
+  **`references/reporting.md`** point at the validator.
+- 3 new tests in `tests/test_docs.py` keep it that way: every front door must link the contract, the
+  doc must state the three rules, and the skill must reference the validator.
+
+### Note
+The schema shipped in 0.9.17 with only a CHANGELOG entry — no README, AGENTS, llms.txt or skill
+mention. That is the same doc-drift this repo has a test for elsewhere, so it now has one here too.
+
 ## [0.9.17] — beta
 ### Added (harness Phase A — machine-checked audit output)
 - **`audit/report-schema.json`** — the output contract for an audit, adopting the three-verdict model
