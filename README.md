@@ -8,7 +8,7 @@
 repositories plus 5 official-doc sources — each traceable to a real
 file, anchor and commit.
 
-> **Status: public beta (v0.9.16).** The build is reproducible — the same pinned sources produce the
+> **Status: public beta (v0.9.17).** The build is reproducible — the same pinned sources produce the
 > same `content_hash` on any day, verified in CI against `CORPUS_DATE`; retrieval targets are
 > **not yet met**, so this is deliberately not v1.0.0. See [Benchmarks](#benchmarks) and
 > [Known limitations](#known-limitations).
