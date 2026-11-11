@@ -109,3 +109,28 @@ def test_mcp_tool_lists_match_the_server():
         text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
         missing = [t for t in tools if t not in text]
         assert not missing, f"{doc} is missing MCP tools: {missing}"
+
+
+# ---------- the audit output contract must be documented everywhere ----------
+AUDIT_DOC = "docs/AUDIT-OUTPUT.md"
+
+
+@pytest.mark.parametrize("doc", ["README.md", "AGENTS.md", "llms.txt"])
+def test_front_doors_document_the_audit_contract(doc):
+    text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
+    assert AUDIT_DOC in text or "audit/report-schema.json" in text, (
+        f"{doc} does not point at the audit output contract")
+
+
+def test_audit_doc_states_the_three_rules():
+    text = open(os.path.join(ROOT, AUDIT_DOC), encoding="utf-8").read()
+    for needle in ("confirmed", "needs_validation", "rejected", "sink", "severity", "reason"):
+        assert needle in text, f"{AUDIT_DOC} never mentions {needle!r}"
+
+
+def test_skill_points_at_the_validator():
+    for doc in ("skills/secure-kb-audit/SKILL.md",
+                "skills/secure-kb-audit/references/reporting.md"):
+        text = open(os.path.join(ROOT, doc), encoding="utf-8").read()
+        assert "validate_findings.py" in text or "AUDIT-OUTPUT.md" in text, (
+            f"{doc} does not reference the findings validator")
