@@ -40,6 +40,60 @@ A prose report cannot be deduplicated, re-verified or compared across runs. Thre
 to make and hard to see in prose: a "confirmed" claim whose trace never reaches a sink, a severity on
 an unvalidated candidate, and a rejection with no reason. All three are now build failures.
 
+## [Unreleased] — hardening pass
+
+Every item below was found by auditing the shipped code, and each has a regression test in
+`tests/test_hardening.py` (19 tests) that fails on the previous behaviour.
+
+### Fixed (security)
+- **A deleted signature made an attestation verify.** `verify-attestation --key K` returned VALID
+  for an attestation whose `signature` block had been removed, because signatures were only checked
+  when present — so removing the field removed the check. A keyed verification now fails when the
+  signature is missing; `--allow-unsigned` is the explicit opt-in for an integrity-only check, and
+  the output reports `"signed": false`. HMAC comparison is now `hmac.compare_digest`.
+- **`verify-attestation` could not read a relative path.** Every user-supplied path was joined onto
+  the KB root, so `secure-kb verify-attestation report.json` looked inside the installed corpus and
+  died on a traceback. Paths now resolve against the current directory first (`attest --results`,
+  `report validate` and MCP verification included).
+- **The HMAC key no longer has to be a CLI argument.** `SECURE_KB_HMAC_KEY` is read when `--key` is
+  absent, keeping the secret out of `ps`, shell history and CI logs. The monthly source refresh now
+  passes its token by environment variable only.
+- **Cache paths from `sources_files.tsv` are constrained.** A `../` in the repo or path field could
+  read or write outside `cache/`; `fetch_sources.py` and `ingest_from_cache.py` now refuse to build
+  such a path.
+- **The secret scanners are checksum-verified** before CI runs them.
+
+### Fixed (correctness)
+- **The MCP server and the CLI disagreed on search.** `search_checks` used a second, weaker scorer,
+  so for `"sql injection"` an agent received Business-Logic and Database-Security cards while the
+  CLI returned the SQL-injection cards. Both now call one `search()` implementation, and
+  `detect_stack` delegates to `detect()` for the same reason.
+- **Score scales were mixed.** BM25 scores and raw substring hit counts were merged with `max()`;
+  the substring signal is now a small tiebreaker when the FTS index is available and only becomes
+  the scorer when it is not.
+- **The benchmark gate graded stale results.** `bench/gate.py` ignored `run_bench.py`'s exit code
+  and then read the existing `results.json`, so a crashed benchmark passed on last week's numbers.
+  It now refuses to grade after a failed run (`evaluate()` is extracted and unit-tested).
+- **`report validate` with no argument** died on `TypeError`; it is now a usage error.
+- **`profile <name>`** accepted a traversal (`../…`) in the name; names are validated against
+  `[A-Za-z0-9._-]` and an unknown profile is reported, not raised.
+- **`get --format md`** raised `KeyError` for a source entry with no `commit` field.
+- **Dead code removed**: `rank()` and `build_corpus_stats()` (never called since search moved to
+  FTS5) and a `load_json(...) if False else None` leftover in `cmd_profile`.
+- **MCP error messages**: `get_check` with no `id` returned the literal string `'id'`; missing
+  arguments and unknown tools now return actionable messages and `isError: true`.
+
+### Fixed (robustness / build)
+- **`fingerprint_target` streams and skips symlinks** (R-013 closed): hashing in 1 MiB chunks bounds
+  memory for a multi-GB file, and a symlink pointing outside the tree no longer contributes bytes.
+- **Atomic writes** in `build_index.py`, `refresh_sources.py` and `fetch_sources.py` — an interrupted
+  build can no longer truncate `checks.jsonl`, a shard, `manifest.json` or `sources.yaml`.
+- **`.gitignore` no longer hides `index/`**, which is shipped; a newly generated shard used to be
+  silently dropped by `git add`.
+- **The monthly refresh opens a pull request** instead of pushing to the default branch, matching
+  the step name, the commit message and the `pull-requests: write` permission.
+- **Risk counts corrected** in `docs/THREAT_MODEL.md` (they had drifted from the register).
+
 ## [0.9.16] — beta
 ### Added (Phase 7 — final verification)
 - **`scripts/verify_release.py`** — one command that answers "is this release internally
