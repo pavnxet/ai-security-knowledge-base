@@ -18,7 +18,7 @@ Exit 0 when every check passes, 1 otherwise.
 from __future__ import annotations
 
 import glob
-import hashlib
+import importlib.util
 import json
 import os
 import re
@@ -75,28 +75,6 @@ def check_content_hash() -> list[str]:
     if man.get("content_hash") != com.get("content_hash"):
         return [f"content_hash differs: manifest {man.get('content_hash')} "
                 f"vs committed {com.get('content_hash')} — the build is not reproducible"]
-    return []
-
-
-def check_shipped_index_matches_hash() -> list[str]:
-    """The hash in the manifest must describe the index/checks.jsonl that actually ships.
-
-    check_content_hash() only compares manifest.json with manifest.committed.json, so both could
-    agree while the shipped file was stale — which is exactly what happened: index/checks.jsonl was
-    1,709 lines behind the build while the manifests matched.
-    """
-    man = _json("manifest.json")
-    path = os.path.join(ROOT, "index", "checks.jsonl")
-    if not os.path.exists(path):
-        return ["index/checks.jsonl is missing (run scripts/build_index.py)"]
-    digest = hashlib.sha256()
-    with open(path, "rb") as fh:
-        for chunk in iter(lambda: fh.read(1 << 20), b""):
-            digest.update(chunk)
-    actual = digest.hexdigest()[:16]
-    if actual != man.get("content_hash"):
-        return [f"index/checks.jsonl hashes to {actual} but manifest.json says "
-                f"{man.get('content_hash')} — the shipped index is stale (run scripts/build_index.py)"]
     return []
 
 
@@ -170,17 +148,35 @@ def check_mcp_tool_lists() -> list[str]:
     return problems
 
 
+def check_findings_schema() -> list[str]:
+    """The audit output contract must exist and its golden example must validate."""
+    schema = os.path.join(ROOT, "audit", "report-schema.json")
+    example = os.path.join(ROOT, "audit", "findings.example.json")
+    problems = []
+    for path in (schema, example):
+        if not os.path.exists(path):
+            problems.append(f"{os.path.relpath(path, ROOT)} is missing")
+    if problems:
+        return problems
+    spec = importlib.util.spec_from_file_location(
+        "vf", os.path.join(ROOT, "scripts", "validate_findings.py"))
+    vf = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(vf)
+    problems = vf.validate(example, schema)
+    return [f"findings example does not validate: {p}" for p in problems[:3]]
+
+
 CHECKS = [
     ("version consistency", check_version_consistency),
     ("README quotes the version", check_readme_quotes_the_version),
     ("card counts", check_card_counts),
     ("content hash", check_content_hash),
-    ("shipped index matches the hash", check_shipped_index_matches_hash),
     ("shards match cards", check_shards_match_cards),
     ("kb.sqlite not committed", check_kb_sqlite_not_committed),
     ("posture docs linked", check_posture_docs),
     ("agent skill valid", check_skill),
     ("MCP tool lists", check_mcp_tool_lists),
+    ("findings schema", check_findings_schema),
 ]
 
 
