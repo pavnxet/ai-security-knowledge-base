@@ -12,6 +12,8 @@ Start here: [AGENTS.md](AGENTS.md) — the only file an agent needs to read firs
 - [manifest.json](manifest.json) — version, counts, content hash
 - [sources.yaml](sources.yaml) — all 67 sources with commit SHA + license
 - [schema/check.schema.json](schema/check.schema.json) — card schema
+- [audit/report-schema.json](audit/report-schema.json) — audit output contract (`findings.json`)
+- [docs/AUDIT-OUTPUT.md](docs/AUDIT-OUTPUT.md) — the three verdicts and what each requires
 
 ## Interfaces
 - CLI: `cli/secure_kb.py` (detect | profile | search | get | cwe | ref | tools | report)
