@@ -40,6 +40,25 @@ jq -r '.cwe[]? as $c | select($c=="CWE-79") | .id' index/checks.jsonl
 grep -l 'ASVS:3.4.1' checks/**/*.yaml
 ```
 
+## Audit output (findings.json)
+
+When you produce audit results, write them as `findings.json` and validate them:
+
+```bash
+python3 scripts/validate_findings.py findings.json
+```
+
+The contract is [`audit/report-schema.json`](audit/report-schema.json) (explained in
+[`docs/AUDIT-OUTPUT.md`](docs/AUDIT-OUTPUT.md)). Three verdicts, and three rules you must not break:
+
+- **`confirmed` needs a `sink`.** A trace must run `entrypoint` → … → `sink`. If you cannot name where
+  the input takes effect, the record is `needs_validation`, not `confirmed`.
+- **`needs_validation` carries no `severity`.** An unproven issue has no impact to rate; give
+  `blockers` and a `validation_plan` instead.
+- **`rejected` needs a `reason`.** A dismissal without one is indistinguishable from an oversight.
+
+Cite the `card_id` that motivated the check and the `kb` (`version` + `content_hash`) you ran against.
+
 ## Evidence rules (mandatory)
 - A check is `pass` **only** with evidence: a `file:line` or a config value. No evidence → `unknown`.
 - `unknown` and `n/a` are valid results and must be listed.
