@@ -118,6 +118,19 @@ Read `references/reporting.md` before writing — it covers phrasing findings so
 them, the two failure modes (vague findings, false confidence), and how to dismiss a finding so the
 reasoning can be attacked.
 
+### Validate the output
+
+Write the results as `findings.json` and check them before handing anything over:
+
+```bash
+python3 "$KB/scripts/validate_findings.py" findings.json
+```
+
+The contract is `audit/report-schema.json` (documented in `docs/AUDIT-OUTPUT.md`). Three rules it
+enforces, which are also the three easiest mistakes to make: a `confirmed` record must trace to a
+`sink` (not just to a suspicious line), a `needs_validation` record must **not** carry a severity, and
+a `rejected` record must carry a reason.
+
 ## Step 5 — Make it verifiable (optional, high value)
 
 If the user wants a provable record of what was checked:
